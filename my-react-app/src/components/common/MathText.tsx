@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { useState } from 'react';
 import { InlineMath, BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import { prepareBookOcrMathContent } from '../../utils/bookOcrMathNormalize';
@@ -59,9 +60,62 @@ function splitExplicitTexSegments(input: string): TexSeg[] {
 type TextPart = string | { type: 'math'; content: string };
 type RenderablePart = string | { type: 'image'; alt: string; src: string; title?: string };
 
+/** Mathpix MMD often escapes query strings as \\& — browsers need real &. */
+function normalizeMathpixImageUrl(src: string): string {
+  let url = src.replace(/\\&/g, '&').replace(/\\#/g, '#');
+  url = url.replace(/\u2212/g, '-');
+  if (!url.includes('?')) {
+    return url.replace(/\s+/g, '');
+  }
+  const q = url.indexOf('?');
+  const base = url.slice(0, q);
+  let query = url.slice(q + 1).replace(/\s+/g, '');
+  query = query.replace(/\|/g, '&').replace(/\u2223/g, '&');
+  query = query.replace(/&(width|top_left)/g, '&$1');
+  query = query.replace(/(height=\d+)(?=width)/, '$1&');
+  query = query.replace(/(width=\d+)(?=top_left)/, '$1&');
+  query = query.replace(/(top_left_y=\d+)(?=top_left_x)/, '$1&');
+  query = query.replace(/top\s*left_y/gi, 'top_left_y');
+  query = query.replace(/top\s*left_x/gi, 'top_left_x');
+  return `${base}?${query}`;
+}
+
+function MarkdownOcrImage({
+  src,
+  alt,
+  title,
+}: {
+  src: string;
+  alt: string;
+  title?: string;
+}) {
+  const [failed, setFailed] = useState(false);
+  const normalized = normalizeMathpixImageUrl(src);
+
+  if (failed) {
+    return (
+      <span className="inline-block rounded border border-dashed border-[#D1CFC5] bg-[#FAF9F5] px-2 py-1 text-[12px] text-[#87867F]">
+        [{alt || 'Hình minh họa — không tải được từ Mathpix CDN'}]
+      </span>
+    );
+  }
+
+  return (
+    <img
+      src={normalized}
+      alt={alt || 'image'}
+      title={title ?? alt}
+      className="inline-block max-w-full max-h-[260px] object-contain rounded align-middle"
+      loading="lazy"
+      referrerPolicy="no-referrer"
+      onError={() => setFailed(true)}
+    />
+  );
+}
+
 function splitMarkdownImageParts(value: string): RenderablePart[] {
   const parts: RenderablePart[] = [];
-  const imagePattern = /!\[([^\]]*)\]\(([^)\s]+)(?:\s+"([^"]*)")?\)/g;
+  const imagePattern = /!\[([^\]]*)\]\(([^)]+)\)/g;
   let lastIndex = 0;
   let match: RegExpExecArray | null = imagePattern.exec(value);
 
@@ -73,7 +127,7 @@ function splitMarkdownImageParts(value: string): RenderablePart[] {
     parts.push({
       type: 'image',
       alt: alt ?? '',
-      src: src ?? '',
+      src: normalizeMathpixImageUrl(src ?? ''),
       title: title || undefined,
     });
     lastIndex = match.index + full.length;
@@ -263,12 +317,11 @@ function renderPlainWithMathDelimiters(plain: string): ReactNode {
             );
           }
           return (
-            <img
+            <MarkdownOcrImage
               key={`plain-img-${item.src}-${item.alt}-${item.title ?? ''}-${ii}`}
               src={item.src}
-              alt={item.alt || 'image'}
-              title={item.title ?? item.alt}
-              className="inline-block max-w-full max-h-[260px] object-contain rounded align-middle"
+              alt={item.alt}
+              title={item.title}
             />
           );
         })}
@@ -293,12 +346,11 @@ function renderPlainWithMathDelimiters(plain: string): ReactNode {
                   );
                 }
                 return (
-                  <img
+                  <MarkdownOcrImage
                     key={`img-${item.src}-${item.alt}-${item.title ?? ''}-${ii}`}
                     src={item.src}
-                    alt={item.alt || 'image'}
-                    title={item.title ?? item.alt}
-                    className="inline-block max-w-full max-h-[260px] object-contain rounded align-middle"
+                    alt={item.alt}
+                    title={item.title}
                   />
                 );
               })}

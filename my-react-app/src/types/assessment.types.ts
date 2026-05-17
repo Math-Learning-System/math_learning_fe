@@ -204,6 +204,14 @@ export interface AssessmentResponse {
     submissionCount: number;
     createdAt: string;
     updatedAt: string;
+    /** MinIO object key when created via PDF import. */
+    sourcePdfPath?: string;
+    sourcePdfOriginalName?: string;
+}
+
+export interface AssessmentSourcePdfUrlResponse {
+    url: string;
+    fileName: string;
 }
 
 // BUG FIX #4: Detailed lesson information with subject and grade
@@ -316,6 +324,37 @@ export interface AssessmentImportFromPdfParams {
     pdfLayout?: string;
     /** Admin-configured: pdf | latex */
     importContentMode?: string;
+    /** Wizard step 2 OCR result — skips Python re-extract on import */
+    preExtractedJson?: string;
+}
+
+export interface AssessmentPdfInfoResponse {
+    totalPages: number;
+    sourceFile?: string;
+    draftId?: string;
+}
+
+export interface AssessmentPdfOcrPageResponse {
+    pageNumber: number;
+    text: string;
+    confidence: number;
+    success: boolean;
+    ocrSource?: string;
+    draftId?: string;
+}
+
+export interface AssessmentPdfImportDraftResponse {
+    draftId: string;
+    fileKey: string;
+    fileName: string;
+    totalPages: number;
+    pages: Array<{
+        pageNumber: number;
+        text: string;
+        confidence: number;
+        status: string;
+        error?: string;
+    }>;
 }
 
 export interface PdfImportedTableData {

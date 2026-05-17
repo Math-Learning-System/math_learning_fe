@@ -57,7 +57,13 @@ export const API_ENDPOINTS = {
   // Assessments
   ASSESSMENTS: '/assessments',
   ASSESSMENTS_IMPORT_FROM_PDF: '/assessments/import-from-pdf',
+  ASSESSMENTS_PDF_INFO: '/assessments/pdf-info',
+  ASSESSMENTS_OCR_PDF_PAGE: '/assessments/ocr-pdf-page',
+  ASSESSMENTS_PDF_IMPORT_DRAFT: (draftId: string) => `/assessments/pdf-import-draft/${draftId}`,
+  ASSESSMENTS_PDF_IMPORT_DRAFT_BY_FILE: '/assessments/pdf-import-draft',
   ASSESSMENTS_IMPORT_FORM_OPTIONS: '/assessments/import-form-options',
+  ASSESSMENTS_IMPORT_SOURCE_PDF_URL: (id: string) =>
+    `/assessments/${id}/import-source-pdf-url`,
   ASSESSMENTS_MY: '/assessments/my',
   ASSESSMENTS_SEARCH: '/assessments/search',
   ASSESSMENTS_DETAIL: (id: string) => `/assessments/${id}`,
@@ -561,4 +567,9 @@ export const API_ENDPOINTS = {
   ADMIN_SYSTEM_CONFIG: '/admin/system-config',
   ADMIN_SYSTEM_CONFIG_DETAIL: (key: string) => `/admin/system-config/${key}`,
   ADMIN_SYSTEM_CONFIG_UPDATE: (key: string) => `/admin/system-config/${key}`,
+
+  ADMIN_STORAGE_BUCKETS: '/admin/storage/buckets',
+  ADMIN_STORAGE_OBJECTS: '/admin/storage/objects',
+  ADMIN_STORAGE_PRESIGN: '/admin/storage/presign',
+  ADMIN_STORAGE_UPLOAD: '/admin/storage/objects/upload',
 };

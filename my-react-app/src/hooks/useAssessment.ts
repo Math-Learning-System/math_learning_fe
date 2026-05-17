@@ -165,6 +165,38 @@ export function useAssessmentImportFormOptions() {
   });
 }
 
+/** Presigned URL for PDF stored on MinIO after import. */
+export function useAssessmentImportSourcePdfUrl(assessmentId: string | undefined) {
+  return useQuery({
+    queryKey: [...assessmentKeys.all, 'import-source-pdf-url', assessmentId],
+    queryFn: () => AssessmentService.getImportSourcePdfUrl(assessmentId as string),
+    enabled: Boolean(assessmentId),
+    staleTime: 4 * 60 * 1000,
+  });
+}
+
+export function useAssessmentPdfInfo() {
+  return useMutation({
+    mutationFn: (file: File) => AssessmentService.getAssessmentPdfInfo(file),
+  });
+}
+
+export function useOcrAssessmentPdfPage() {
+  return useMutation({
+    mutationFn: ({
+      file,
+      pageNumber,
+      fileKey,
+      draftId,
+    }: {
+      file: File;
+      pageNumber: number;
+      fileKey?: string;
+      draftId?: string;
+    }) => AssessmentService.ocrAssessmentPdfPage(file, pageNumber, { fileKey, draftId }),
+  });
+}
+
 /** Import assessment from PDF (AI extraction) */
 export function useImportAssessmentFromPdf() {
   const queryClient = useQueryClient();

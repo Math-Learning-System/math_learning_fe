@@ -18,6 +18,7 @@ import type {
     AssessmentImportFormOptions,
     AssessmentImportFromPdfParams,
     AssessmentImportResponse,
+    AssessmentSourcePdfUrlResponse,
     ApiResponse,
     PagedDataResponse,
     PaginatedResponse,
@@ -44,6 +45,40 @@ export class AssessmentService {
             `${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_IMPORT_FORM_OPTIONS}`,
             { method: 'GET', headers }
         );
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(translateApiError(error.message, error.code));
+        }
+        return response.json();
+    }
+
+    /** GET /assessments/pdf-import-draft/{draftId} */
+    static async getPdfImportDraft(
+        draftId: string
+    ): Promise<ApiResponse<import('../../types').AssessmentPdfImportDraftResponse>> {
+        const headers = await this.getHeaders();
+        const response = await fetch(
+            `${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_PDF_IMPORT_DRAFT(draftId)}`,
+            { method: 'GET', headers }
+        );
+        if (response.status === 404) {
+            throw new Error('Không tìm thấy bản lưu OCR');
+        }
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(translateApiError(error.message, error.code));
+        }
+        return response.json();
+    }
+
+    /** GET /assessments/pdf-import-draft?fileKey= */
+    static async getPdfImportDraftByFileKey(
+        fileKey: string
+    ): Promise<ApiResponse<import('../../types').AssessmentPdfImportDraftResponse> | null> {
+        const headers = await this.getHeaders();
+        const url = `${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_PDF_IMPORT_DRAFT_BY_FILE}?fileKey=${encodeURIComponent(fileKey)}`;
+        const response = await fetch(url, { method: 'GET', headers });
+        if (response.status === 404) return null;
         if (!response.ok) {
             const error = await response.json().catch(() => ({}));
             throw new Error(translateApiError(error.message, error.code));
@@ -84,6 +119,9 @@ export class AssessmentService {
         if (params.importContentMode) {
             formData.append('importContentMode', params.importContentMode);
         }
+        if (params.preExtractedJson) {
+            formData.append('preExtractedJson', params.preExtractedJson);
+        }
 
         const signal =
             typeof AbortSignal !== 'undefined' && 'timeout' in AbortSignal
@@ -98,6 +136,75 @@ export class AssessmentService {
                 body: formData,
                 signal,
             }
+        );
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(translateApiError(error.message, error.code));
+        }
+        return response.json();
+    }
+
+    /** POST /assessments/pdf-info */
+    static async getAssessmentPdfInfo(
+        file: File,
+        params?: { fileKey?: string; draftId?: string }
+    ): Promise<ApiResponse<import('../../types').AssessmentPdfInfoResponse>> {
+        const token = AuthService.getToken();
+        if (!token) throw new Error('Bạn chưa đăng nhập. Vui lòng đăng nhập lại.');
+        const formData = new FormData();
+        formData.append('file', file);
+        if (params?.fileKey) formData.append('fileKey', params.fileKey);
+        if (params?.draftId) formData.append('draftId', params.draftId);
+        const response = await fetch(`${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_PDF_INFO}`, {
+            method: 'POST',
+            headers: { Authorization: `Bearer ${token}`, accept: '*/*' },
+            body: formData,
+        });
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(translateApiError(error.message, error.code));
+        }
+        return response.json();
+    }
+
+    /** POST /assessments/ocr-pdf-page — one page, Mathpix PDF API */
+    static async ocrAssessmentPdfPage(
+        file: File,
+        pageNumber: number,
+        params?: { fileKey?: string; draftId?: string }
+    ): Promise<ApiResponse<import('../../types').AssessmentPdfOcrPageResponse>> {
+        const token = AuthService.getToken();
+        if (!token) throw new Error('Bạn chưa đăng nhập. Vui lòng đăng nhập lại.');
+        const formData = new FormData();
+        formData.append('file', file);
+        formData.append('pageNumber', String(pageNumber));
+        if (params?.fileKey) formData.append('fileKey', params.fileKey);
+        if (params?.draftId) formData.append('draftId', params.draftId);
+        const signal =
+            typeof AbortSignal !== 'undefined' && 'timeout' in AbortSignal
+                ? AbortSignal.timeout(LONG_RUNNING_FETCH_MS)
+                : undefined;
+        const response = await fetch(`${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_OCR_PDF_PAGE}`, {
+            method: 'POST',
+            headers: { Authorization: `Bearer ${token}`, accept: '*/*' },
+            body: formData,
+            signal,
+        });
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(translateApiError(error.message, error.code));
+        }
+        return response.json();
+    }
+
+    /** GET /assessments/{id}/import-source-pdf-url */
+    static async getImportSourcePdfUrl(
+        assessmentId: string
+    ): Promise<ApiResponse<AssessmentSourcePdfUrlResponse>> {
+        const headers = await this.getHeaders();
+        const response = await fetch(
+            `${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_IMPORT_SOURCE_PDF_URL(assessmentId)}`,
+            { method: 'GET', headers }
         );
         if (!response.ok) {
             const error = await response.json().catch(() => ({}));

@@ -121,10 +121,15 @@ const AdminFeedbacksPage: React.FC = () => {
   };
 
   return (
-    <DashboardLayout role="admin" user={{ name: '', avatar: '', role: 'admin' }} notificationCount={0}>
-      <div className="p-6 lg:p-8 min-h-screen bg-[#F5F4ED]">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex items-center gap-3 mb-5">
+    <DashboardLayout
+      role="admin"
+      user={{ name: '', avatar: '', role: 'admin' }}
+      notificationCount={0}
+      contentClassName="dashboard-content--flush-bleed"
+    >
+      <div className="px-6 py-8 lg:px-8 min-h-screen">
+        <div className="w-full space-y-6">
+          <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] text-[#5E5D59] flex items-center justify-center">
               <MessageSquare className="w-5 h-5" />
             </div>

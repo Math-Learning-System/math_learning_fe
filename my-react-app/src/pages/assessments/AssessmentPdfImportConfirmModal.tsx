@@ -47,7 +47,7 @@ export function AssessmentPdfImportConfirmModal({
         <div className="space-y-5 px-5 py-4">
           <OptionGroup
             title="Dạng file PDF"
-            hint="Chọn đúng cấu trúc đề trong file để AI trích xuất chính xác hơn."
+            hint="Chọn đề chỉ phần làm bài hay kèm đáp án (cả hai đều trích theo trang, không tách câu tự động)."
             options={pdfLayouts}
             value={pdfLayout}
             onChange={onPdfLayoutChange}
@@ -56,7 +56,7 @@ export function AssessmentPdfImportConfirmModal({
 
           <OptionGroup
             title="Cách xử lý nội dung"
-            hint="Hiện tại hệ thống hỗ trợ import trực tiếp từ PDF."
+            hint="Mỗi trang PDF → một khối text (Mathpix). Bạn tự tách câu/ý và chỉnh đáp án khi rà soát."
             options={importContentModes}
             value={importContentMode}
             onChange={onImportContentModeChange}
@@ -205,7 +205,7 @@ function Footer({
         disabled={confirming || confirmDisabled}
         onClick={onConfirm}
       >
-        {confirming ? 'Đang phân tích PDF…' : 'Bắt đầu tạo đề'}
+        {confirming ? 'Đang trích text PDF…' : 'Bắt đầu tạo đề'}
       </button>
     </div>
   );

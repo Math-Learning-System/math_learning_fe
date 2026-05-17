@@ -1,19 +1,27 @@
 import {
   AlertCircle,
   CheckCircle2,
+  ChevronLeft,
   ChevronRight,
+  ExternalLink,
   FileUp,
-  UploadCloud,
 } from 'lucide-react';
 import { useEffect, useRef, useState, type RefObject } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AssessmentPdfImportConfirmModal } from './AssessmentPdfImportConfirmModal';
+import { AssessmentPdfImportStepNav } from './AssessmentPdfImportStepNav';
+import { AssessmentPdfOcrPanel } from './AssessmentPdfOcrPanel';
 import {
+  buildPdfImportFileKey,
+  buildPreExtractedJson,
   clearAssessmentPdfImportDraft,
   emptyAssessmentPdfImportDraft,
   loadAssessmentPdfImportDraft,
+  PDF_IMPORT_WIZARD_STEPS,
   saveAssessmentPdfImportDraft,
+  type AssessmentPdfImportWizardStep,
+  type PdfImportPageDraft,
 } from '../../utils/assessmentPdfImportDraft';
+import { isPdfImportExtractConfigValid } from './PdfImportExtractOptions';
 import MathText from '../../components/common/MathText';
 import { PdfPreviewWithToggle } from '../../components/common/PdfPreviewWithToggle';
 import { formatSchoolGradeLabel } from '../../utils/schoolGradeLabel';
@@ -24,11 +32,12 @@ import {
 } from '../../utils/examImportScope';
 import {
   useAssessmentImportFormOptions,
+  useAssessmentImportSourcePdfUrl,
   useImportAssessmentFromPdf,
 } from '../../hooks/useAssessment';
 import { useCurriculumHierarchyCatalog } from '../../hooks/useCurriculumHierarchyCatalog';
 import { useGetMyQuestionBanks } from '../../hooks/useQuestionBank';
-import type { AssessmentImportResponse, PdfImportedExam } from '../../types';
+import type { AssessmentImportResponse, CodeLabelOption, PdfImportedExam } from '../../types';
 import '../../styles/module-refactor.css';
 import '../courses/TeacherCourses.css';
 import './assessment-builder-flow.css';
@@ -37,7 +46,15 @@ export function AssessmentPdfImportFlow() {
   const navigate = useNavigate();
   const inputRef = useRef<HTMLInputElement>(null);
   const savedDraft = loadAssessmentPdfImportDraft();
+  const [step, setStep] = useState<AssessmentPdfImportWizardStep>(savedDraft?.step ?? 1);
   const [file, setFile] = useState<File | null>(null);
+  const [fileName, setFileName] = useState(savedDraft?.fileName ?? '');
+  const [draftId, setDraftId] = useState(savedDraft?.draftId ?? '');
+  const [fileKey, setFileKey] = useState(savedDraft?.fileKey ?? '');
+  const [totalPages, setTotalPages] = useState(savedDraft?.totalPages ?? 0);
+  const [extractedPages, setExtractedPages] = useState<PdfImportPageDraft[]>(
+    savedDraft?.extractedPages ?? []
+  );
   const [examTitle, setExamTitle] = useState(savedDraft?.examTitle ?? '');
   const [schoolYear, setSchoolYear] = useState(savedDraft?.schoolYear ?? '');
   const [department, setDepartment] = useState(savedDraft?.department ?? '');
@@ -55,9 +72,10 @@ export function AssessmentPdfImportFlow() {
   const [schoolName, setSchoolName] = useState(savedDraft?.schoolName ?? '');
   const [formError, setFormError] = useState('');
   const [result, setResult] = useState<AssessmentImportResponse | null>(null);
-  const [confirmOpen, setConfirmOpen] = useState(false);
-  const [pdfLayout, setPdfLayout] = useState('');
-  const [importContentMode, setImportContentMode] = useState('');
+  const [pdfLayout, setPdfLayout] = useState(savedDraft?.pdfLayout ?? '');
+  const [importContentMode, setImportContentMode] = useState(
+    savedDraft?.importContentMode ?? ''
+  );
 
   const importMutation = useImportAssessmentFromPdf();
   const optionsQuery = useAssessmentImportFormOptions();
@@ -67,6 +85,14 @@ export function AssessmentPdfImportFlow() {
 
   useEffect(() => {
     saveAssessmentPdfImportDraft({
+      step,
+      draftId,
+      fileKey,
+      fileName,
+      totalPages,
+      extractedPages,
+      pdfLayout,
+      importContentMode,
       examTitle,
       schoolYear,
       department,
@@ -84,6 +110,14 @@ export function AssessmentPdfImportFlow() {
       schoolName,
     });
   }, [
+    step,
+    draftId,
+    fileKey,
+    fileName,
+    totalPages,
+    extractedPages,
+    pdfLayout,
+    importContentMode,
     examTitle,
     schoolYear,
     department,
@@ -101,6 +135,81 @@ export function AssessmentPdfImportFlow() {
     schoolName,
   ]);
 
+  function selectFile(next: File | null) {
+    setFile(next);
+    setFileName(next?.name ?? '');
+    if (next) {
+      const key = buildPdfImportFileKey(next);
+      if (fileKey && fileKey !== key) {
+        setDraftId('');
+        setExtractedPages([]);
+        setTotalPages(0);
+      }
+      setFileKey(key);
+    } else {
+      setFileKey('');
+      setDraftId('');
+      setExtractedPages([]);
+      setTotalPages(0);
+    }
+  }
+
+  function validateStep(target: AssessmentPdfImportWizardStep): string | null {
+    if (target === 1) {
+      if (!schoolYear.trim()) return 'Vui lòng chọn năm học.';
+      if (!examType.trim()) return 'Vui lòng chọn loại đề.';
+      if (!schoolGradeId) return 'Vui lòng chọn chương trình (lớp).';
+      if (!subjectId) return 'Vui lòng chọn môn học.';
+      return null;
+    }
+    if (target === 2) {
+      if (!file) return 'Vui lòng chọn file PDF (kéo thả hoặc chọn file ở đầu bước 2).';
+      if (
+        !isPdfImportExtractConfigValid(
+          pdfLayout,
+          importContentMode,
+          opts?.importContentModes ?? []
+        )
+      ) {
+        return 'Chọn dạng PDF và cách xử lý nội dung (ngay trên nút trích text).';
+      }
+      if (totalPages < 1) {
+        return 'Đợi đếm xong số trang PDF hoặc bấm «Đếm lại trang» nếu lỗi.';
+      }
+      const done = extractedPages.filter((p) => p.status === 'done' && p.text.trim());
+      if (done.length === 0) {
+        return 'Bấm nút «Bắt đầu trích text» (góc phải khối trắng) và đợi ít nhất một trang xong.';
+      }
+      return null;
+    }
+    return null;
+  }
+
+  function goNext() {
+    const err = validateStep(step);
+    if (err) {
+      setFormError(err);
+      return;
+    }
+    setFormError('');
+    if (step < 3) {
+      setStep((s) => (s + 1) as AssessmentPdfImportWizardStep);
+    }
+  }
+
+  function goBack() {
+    setFormError('');
+    if (step > 1) {
+      setStep((s) => (s - 1) as AssessmentPdfImportWizardStep);
+    }
+  }
+
+  function jumpTo(target: AssessmentPdfImportWizardStep) {
+    if (target >= step) return;
+    setFormError('');
+    setStep(target);
+  }
+
   useEffect(() => {
     const layouts = opts?.pdfLayouts ?? [];
     if (!pdfLayout && layouts.length > 0) {
@@ -114,7 +223,13 @@ export function AssessmentPdfImportFlow() {
   }, [opts?.pdfLayouts, opts?.importContentModes, pdfLayout, importContentMode]);
 
   function reset() {
+    setStep(1);
     setFile(null);
+    setFileName('');
+    setDraftId('');
+    setFileKey('');
+    setTotalPages(0);
+    setExtractedPages([]);
     const empty = emptyAssessmentPdfImportDraft();
     setExamTitle(empty.examTitle);
     setSchoolYear(empty.schoolYear);
@@ -131,38 +246,25 @@ export function AssessmentPdfImportFlow() {
     setProvinceCity(empty.provinceCity);
     setDistrict(empty.district);
     setSchoolName(empty.schoolName);
+    setPdfLayout(empty.pdfLayout);
+    setImportContentMode(empty.importContentMode);
     setFormError('');
     setResult(null);
-    setConfirmOpen(false);
     clearAssessmentPdfImportDraft();
     importMutation.reset();
   }
 
-  function openConfirmModal() {
-    if (!file) return;
-    if (!schoolYear.trim()) {
-      setFormError('Vui lòng chọn năm học.');
-      return;
-    }
-    if (!examType.trim()) {
-      setFormError('Vui lòng chọn loại đề.');
-      return;
-    }
-    if (!schoolGradeId) {
-      setFormError('Vui lòng chọn chương trình (lớp).');
-      return;
-    }
-    if (!subjectId) {
-      setFormError('Vui lòng chọn môn học.');
-      return;
-    }
-    setFormError('');
-    setConfirmOpen(true);
-  }
-
   async function handleImport() {
+    for (const s of [1, 2, 3] as const) {
+      const err = validateStep(s);
+      if (err) {
+        setFormError(err);
+        setStep(s);
+        return;
+      }
+    }
     if (!file || !pdfLayout || !importContentMode) return;
-    setConfirmOpen(false);
+    setFormError('');
     try {
       const response = await importMutation.mutateAsync({
         file,
@@ -186,6 +288,13 @@ export function AssessmentPdfImportFlow() {
         timeLimitMinutes: timeLimitMinutes ? Number(timeLimitMinutes) : undefined,
         pdfLayout,
         importContentMode,
+        preExtractedJson: buildPreExtractedJson({
+          fileName: file.name,
+          examTitle,
+          pdfLayout,
+          pages: extractedPages,
+          totalPages: totalPages || extractedPages.length,
+        }),
       });
       setResult(response.result ?? null);
     } catch {
@@ -203,51 +312,81 @@ export function AssessmentPdfImportFlow() {
           Import đề từ PDF
         </h3>
         <p className="mt-2 max-w-[62ch] font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#87867F]">
-          Tải file PDF đề thi có sẵn. Hệ thống dùng AI trích xuất câu hỏi và tạo đề nháp để bạn rà
-          soát trước khi công khai.
+          Bước 1: thông tin đề. Bước 2: tải PDF và OCR từng trang (Mathpix PDF).
+          OCR lưu MongoDB (7 ngày); form lưu tạm trên trình duyệt. File PDF chọn lại sau F5.
         </p>
 
         {!result ? (
-          <ImportForm
-            inputRef={inputRef}
-            file={file}
-            setFile={setFile}
-            examTitle={examTitle}
-            setExamTitle={setExamTitle}
-            schoolYear={schoolYear}
-            setSchoolYear={setSchoolYear}
-            department={department}
-            setDepartment={setDepartment}
-            examDate={examDate}
-            setExamDate={setExamDate}
-            examType={examType}
-            setExamType={setExamType}
-            schoolGradeId={schoolGradeId}
-            setSchoolGradeId={setSchoolGradeId}
-            subjectId={subjectId}
-            setSubjectId={setSubjectId}
-            timeLimitMinutes={timeLimitMinutes}
-            setTimeLimitMinutes={setTimeLimitMinutes}
-            contextHint={contextHint}
-            setContextHint={setContextHint}
-            questionBankId={questionBankId}
-            setQuestionBankId={setQuestionBankId}
-            examScope={examScope}
-            setExamScope={setExamScope}
-            organizerType={organizerType}
-            setOrganizerType={setOrganizerType}
-            provinceCity={provinceCity}
-            setProvinceCity={setProvinceCity}
-            district={district}
-            setDistrict={setDistrict}
-            schoolName={schoolName}
-            setSchoolName={setSchoolName}
-            banks={banks}
-            formError={formError}
-            importMutation={importMutation}
-            onReset={reset}
-            onRequestImport={openConfirmModal}
-          />
+          <>
+            <AssessmentPdfImportStepNav current={step} onJump={jumpTo} />
+
+            {step === 2 && !file && fileName ? (
+              <p className="mt-4 rounded-lg border border-[#FDE68A] bg-[#FFFBEB] px-3 py-2 font-[Be_Vietnam_Pro] text-[12px] text-[#92400E]">
+                Đã lưu OCR trước đó với file <strong>{fileName}</strong>. Chọn lại PDF ở bước 2 để
+                import.
+              </p>
+            ) : null}
+
+            <PdfImportWizardSteps
+              step={step}
+              stepMeta={PDF_IMPORT_WIZARD_STEPS[step - 1]}
+              inputRef={inputRef}
+              file={file}
+              fileName={fileName}
+              onSelectFile={selectFile}
+              examTitle={examTitle}
+              setExamTitle={setExamTitle}
+              schoolYear={schoolYear}
+              setSchoolYear={setSchoolYear}
+              department={department}
+              setDepartment={setDepartment}
+              examDate={examDate}
+              setExamDate={setExamDate}
+              examType={examType}
+              setExamType={setExamType}
+              schoolGradeId={schoolGradeId}
+              setSchoolGradeId={setSchoolGradeId}
+              subjectId={subjectId}
+              setSubjectId={setSubjectId}
+              timeLimitMinutes={timeLimitMinutes}
+              setTimeLimitMinutes={setTimeLimitMinutes}
+              contextHint={contextHint}
+              setContextHint={setContextHint}
+              questionBankId={questionBankId}
+              setQuestionBankId={setQuestionBankId}
+              examScope={examScope}
+              setExamScope={setExamScope}
+              organizerType={organizerType}
+              setOrganizerType={setOrganizerType}
+              provinceCity={provinceCity}
+              setProvinceCity={setProvinceCity}
+              district={district}
+              setDistrict={setDistrict}
+              schoolName={schoolName}
+              setSchoolName={setSchoolName}
+              pdfLayout={pdfLayout}
+              setPdfLayout={setPdfLayout}
+              importContentMode={importContentMode}
+              setImportContentMode={setImportContentMode}
+              draftId={draftId}
+              setDraftId={setDraftId}
+              fileKey={fileKey}
+              setFileKey={setFileKey}
+              totalPages={totalPages}
+              setTotalPages={setTotalPages}
+              extractedPages={extractedPages}
+              setExtractedPages={setExtractedPages}
+              pdfLayouts={opts?.pdfLayouts ?? []}
+              importContentModes={opts?.importContentModes ?? []}
+              banks={banks}
+              formError={formError}
+              importMutation={importMutation}
+              onBack={goBack}
+              onNext={goNext}
+              onReset={reset}
+              onImport={() => void handleImport()}
+            />
+          </>
         ) : (
           <ImportResult
             result={result}
@@ -256,27 +395,17 @@ export function AssessmentPdfImportFlow() {
           />
         )}
       </section>
-
-      <AssessmentPdfImportConfirmModal
-        isOpen={confirmOpen}
-        pdfLayouts={opts?.pdfLayouts ?? []}
-        importContentModes={opts?.importContentModes ?? []}
-        pdfLayout={pdfLayout}
-        importContentMode={importContentMode}
-        onPdfLayoutChange={setPdfLayout}
-        onImportContentModeChange={setImportContentMode}
-        onClose={() => setConfirmOpen(false)}
-        onConfirm={() => void handleImport()}
-        confirming={importMutation.isPending}
-      />
     </div>
   );
 }
 
-function ImportForm({
+function PdfImportWizardSteps({
+  step,
+  stepMeta,
   inputRef,
   file,
-  setFile,
+  fileName,
+  onSelectFile,
   examTitle,
   setExamTitle,
   schoolYear,
@@ -307,15 +436,34 @@ function ImportForm({
   setDistrict,
   schoolName,
   setSchoolName,
+  pdfLayout,
+  setPdfLayout,
+  importContentMode,
+  setImportContentMode,
+  draftId,
+  setDraftId,
+  fileKey,
+  setFileKey,
+  totalPages,
+  setTotalPages,
+  extractedPages,
+  setExtractedPages,
+  pdfLayouts,
+  importContentModes,
   banks,
   formError,
   importMutation,
+  onBack,
+  onNext,
   onReset,
-  onRequestImport,
+  onImport,
 }: {
+  step: AssessmentPdfImportWizardStep;
+  stepMeta: (typeof PDF_IMPORT_WIZARD_STEPS)[number];
   inputRef: RefObject<HTMLInputElement | null>;
   file: File | null;
-  setFile: (f: File | null) => void;
+  fileName: string;
+  onSelectFile: (f: File | null) => void;
   examTitle: string;
   setExamTitle: (v: string) => void;
   schoolYear: string;
@@ -346,11 +494,27 @@ function ImportForm({
   setDistrict: (v: string) => void;
   schoolName: string;
   setSchoolName: (v: string) => void;
+  pdfLayout: string;
+  setPdfLayout: (v: string) => void;
+  importContentMode: string;
+  setImportContentMode: (v: string) => void;
+  draftId: string;
+  setDraftId: (v: string) => void;
+  fileKey: string;
+  setFileKey: (v: string) => void;
+  totalPages: number;
+  setTotalPages: (n: number) => void;
+  extractedPages: PdfImportPageDraft[];
+  setExtractedPages: React.Dispatch<React.SetStateAction<PdfImportPageDraft[]>>;
+  pdfLayouts: CodeLabelOption[];
+  importContentModes: CodeLabelOption[];
   banks: { id: string; name: string }[];
   formError: string;
   importMutation: ReturnType<typeof useImportAssessmentFromPdf>;
+  onBack: () => void;
+  onNext: () => void;
   onReset: () => void;
-  onRequestImport: () => void;
+  onImport: () => void;
 }) {
   const optionsQuery = useAssessmentImportFormOptions();
   const opts = optionsQuery.data?.result;
@@ -408,57 +572,24 @@ function ImportForm({
     setSubjectId('');
   }
 
+  const layoutLabel = pdfLayouts.find((l) => l.id === pdfLayout)?.label ?? '—';
+  const modeLabel = importContentModes.find((m) => m.id === importContentMode)?.label ?? '—';
+  const selectedGrade = schoolGrades.find((g) => g.id === schoolGradeId);
+  const gradeLabel = selectedGrade ? formatSchoolGradeLabel(selectedGrade) : '—';
+  const subjectName = subjects.find((s) => s.id === subjectId)?.name ?? '—';
+  const scopeLabel = examScopes.find((s) => s.id === examScope)?.label ?? '—';
+
   return (
     <>
-      <button
-        type="button"
-        className="mt-5 flex w-full flex-col items-center gap-2 rounded-2xl border-2 border-dashed border-[#D1CFC5] bg-white px-6 py-10 text-center transition-colors hover:border-[#C96442]/50 hover:bg-[#FFFBF8]"
-        onClick={() => inputRef.current?.click()}
-        onDrop={(event) => {
-          event.preventDefault();
-          const next = event.dataTransfer.files?.[0];
-          if (
-            next &&
-            (next.type === 'application/pdf' || next.name.toLowerCase().endsWith('.pdf'))
-          ) {
-            setFile(next);
-          }
-        }}
-        onDragOver={(event) => event.preventDefault()}
-      >
-        <UploadCloud className="h-8 w-8 text-[#87867F]" aria-hidden />
-        <span className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413]">
-          {file ? file.name : 'Kéo thả hoặc chọn file PDF'}
-        </span>
-        <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">Chỉ hỗ trợ .pdf — tối đa 10MB</span>
-      </button>
+      <div className="mt-5">
+        <h4 className="assessment-pdf-import__panel-title">
+          Bước {step}: {stepMeta.title}
+        </h4>
+        <p className="assessment-pdf-import__panel-hint">{stepMeta.hint}</p>
+      </div>
 
-      <input
-        ref={inputRef}
-        type="file"
-        className="hidden"
-        accept=".pdf,application/pdf"
-        onChange={(event) => {
-          const next = event.target.files?.[0];
-          if (next) setFile(next);
-        }}
-      />
-
-      {file ? (
-        <PdfPreviewWithToggle
-          file={file}
-          collapsible
-          defaultOpen
-          showLabel="Xem trước đề PDF"
-          hideLabel="Ẩn preview PDF"
-          variant="warm"
-          iframeTitle="Xem trước đề thi PDF"
-          subtitle="Kiểm tra đúng file trước khi AI trích xuất câu hỏi"
-          className="mt-4"
-        />
-      ) : null}
-
-      <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {step === 1 ? (
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <label className="abf-field sm:col-span-2">
           <span className="abf-field__label">Tên đề</span>
           <input
@@ -697,21 +828,67 @@ function ImportForm({
           </select>
         </label>
       </div>
+      ) : null}
 
-      {optionsQuery.isError && (
+      {step === 2 ? (
+        <AssessmentPdfOcrPanel
+          file={file}
+          fileName={fileName}
+          fileKey={fileKey}
+          draftId={draftId}
+          onDraftIdChange={setDraftId}
+          totalPages={totalPages}
+          setTotalPages={setTotalPages}
+          pages={extractedPages}
+          setPages={setExtractedPages}
+          pdfLayout={pdfLayout}
+          setPdfLayout={setPdfLayout}
+          importContentMode={importContentMode}
+          setImportContentMode={setImportContentMode}
+          pdfLayouts={pdfLayouts}
+          importContentModes={importContentModes}
+          onSelectFile={onSelectFile}
+          inputRef={inputRef}
+        />
+      ) : null}
+
+      {step === 3 ? (
+        <div className="mt-1 space-y-3 rounded-xl border border-[#E8E6DC] bg-white p-4">
+          <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+            Tóm tắt trước khi tạo đề
+          </p>
+          <dl className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+            <SummaryRow label="File PDF" value={file?.name ?? (fileName || '—')} />
+            <SummaryRow label="Tên đề" value={examTitle.trim() || '(tự đặt sau import)'} />
+            <SummaryRow label="Năm học" value={schoolYear} />
+            <SummaryRow label="Loại đề" value={examType} />
+            <SummaryRow label="Cấp đề" value={scopeLabel} />
+            <SummaryRow label="Chương trình" value={gradeLabel} />
+            <SummaryRow label="Môn học" value={subjectName} />
+            <SummaryRow label="Thời gian" value={timeLimitMinutes ? `${timeLimitMinutes} phút` : '—'} />
+            <SummaryRow label="Dạng PDF" value={layoutLabel} />
+            <SummaryRow label="Xử lý nội dung" value={modeLabel} />
+          </dl>
+          <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+            Mỗi trang PDF sẽ thành một khối text trong đề nháp. Bạn tách câu/ý trong Rà soát đề.
+          </p>
+        </div>
+      ) : null}
+
+      {step === 1 && optionsQuery.isError && (
         <p className="mt-4 font-[Be_Vietnam_Pro] text-[13px] text-[#BE123C]">
           Không tải được năm học / loại đề. Liên hệ admin cấu hình tại Cấu trúc học thuật.
         </p>
       )}
 
-      {!gradesLoading && !catalogError && schoolGrades.length === 0 && (
+      {step === 2 && !gradesLoading && !catalogError && schoolGrades.length === 0 && (
         <p className="mt-4 font-[Be_Vietnam_Pro] text-[13px] text-[#B45309]">
           Chưa có chương trình/lớp đang bật. Admin cần tạo hoặc kích hoạt lớp (vd. Lớp 9) tại{' '}
           <strong>Cấu trúc học thuật</strong> — mục bị vô hiệu hóa sẽ không hiện ở đây.
         </p>
       )}
 
-      {catalogError && (
+      {step === 2 && catalogError && (
         <p className="mt-4 font-[Be_Vietnam_Pro] text-[13px] text-[#BE123C]">
           Không tải được danh mục lớp/môn.{' '}
           <button
@@ -724,7 +901,7 @@ function ImportForm({
         </p>
       )}
 
-      {schoolGradeId && !subjectsLoading && subjects.length === 0 && (
+      {step === 2 && schoolGradeId && !subjectsLoading && subjects.length === 0 && (
         <p className="mt-4 font-[Be_Vietnam_Pro] text-[13px] text-[#B45309]">
           Lớp đã chọn chưa có môn đang hoạt động. Kiểm tra môn Toán (và các môn khác) đã gắn lớp và
           đang bật trong Cấu trúc học thuật.
@@ -741,21 +918,87 @@ function ImportForm({
         </p>
       )}
 
-      <div className="mt-6 flex flex-wrap items-center justify-end gap-2">
-        <button type="button" className="btn secondary" onClick={onReset} disabled={importMutation.isPending}>
-          Xóa form
-        </button>
-        <button
-          type="button"
-          className="btn inline-flex items-center gap-2"
-          disabled={!file || importMutation.isPending}
-          onClick={onRequestImport}
-        >
-          <FileUp className="h-4 w-4" aria-hidden />
-          {importMutation.isPending ? 'Đang phân tích PDF…' : 'Tạo đề từ PDF'}
-        </button>
-      </div>
+      <PdfImportWizardFooter
+        step={step}
+        onBack={onBack}
+        onNext={onNext}
+        onReset={onReset}
+        onImport={onImport}
+        importPending={importMutation.isPending}
+      />
     </>
+  );
+}
+
+function SummaryRow({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-lg bg-[#FAF9F5] px-3 py-2">
+      <dt className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]">{label}</dt>
+      <dd className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413]">{value}</dd>
+    </div>
+  );
+}
+
+function PdfImportWizardFooter({
+  step,
+  onBack,
+  onNext,
+  onReset,
+  onImport,
+  importPending,
+}: {
+  step: AssessmentPdfImportWizardStep;
+  onBack: () => void;
+  onNext: () => void;
+  onReset: () => void;
+  onImport: () => void;
+  importPending: boolean;
+}) {
+  return (
+    <div className="assessment-pdf-import__wizard-footer">
+      <button
+        type="button"
+        className="btn secondary text-[13px]"
+        onClick={onReset}
+        disabled={importPending}
+      >
+        Xóa toàn bộ
+      </button>
+      <div className="assessment-pdf-import__wizard-footer-actions">
+        {step > 1 ? (
+          <button
+            type="button"
+            className="btn secondary inline-flex items-center gap-1.5"
+            onClick={onBack}
+            disabled={importPending}
+          >
+            <ChevronLeft className="h-4 w-4" aria-hidden />
+            Quay lại
+          </button>
+        ) : null}
+        {step < 3 ? (
+          <button
+            type="button"
+            className="btn inline-flex items-center gap-1.5"
+            onClick={onNext}
+            disabled={importPending}
+          >
+            Tiếp theo
+            <ChevronRight className="h-4 w-4" aria-hidden />
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="btn inline-flex items-center gap-2"
+            disabled={importPending}
+            onClick={onImport}
+          >
+            <FileUp className="h-4 w-4" aria-hidden />
+            {importPending ? 'Đang trích text PDF…' : 'Tạo đề từ PDF'}
+          </button>
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -799,6 +1042,13 @@ function ImportResult({
 
       {result.exam && <ExamMetadataCard exam={result.exam} />}
 
+      {result.assessment?.sourcePdfPath ? (
+        <ImportSourcePdfPanel
+          assessmentId={result.assessment.id}
+          fileName={result.assessment.sourcePdfOriginalName ?? result.exam?.sourceFile}
+        />
+      ) : null}
+
       {result.parsedQuestions && result.parsedQuestions.length > 0 && (
         <ParsedQuestionsList items={result.parsedQuestions} />
       )}
@@ -818,6 +1068,56 @@ function ImportResult({
           </button>
         )}
       </div>
+    </div>
+  );
+}
+
+function ImportSourcePdfPanel({
+  assessmentId,
+  fileName,
+}: {
+  assessmentId: string;
+  fileName?: string;
+}) {
+  const pdfUrlQuery = useAssessmentImportSourcePdfUrl(assessmentId);
+  const url = pdfUrlQuery.data?.result?.url;
+  const displayName =
+    fileName ?? pdfUrlQuery.data?.result?.fileName ?? 'PDF gốc';
+
+  return (
+    <div className="rounded-xl border border-[#E8E6DC] bg-white p-4">
+      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase tracking-wide text-[#87867F]">
+        File PDF nguồn (MinIO)
+      </p>
+      <p className="mt-1 font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59]">{displayName}</p>
+      <div className="mt-3 flex flex-wrap gap-2">
+        <button
+          type="button"
+          className="btn secondary inline-flex items-center gap-2 text-[13px]"
+          disabled={pdfUrlQuery.isLoading || !url}
+          onClick={() => url && globalThis.open(url, '_blank', 'noopener,noreferrer')}
+        >
+          <ExternalLink className="h-4 w-4" aria-hidden />
+          {pdfUrlQuery.isLoading ? 'Đang lấy link…' : 'Mở PDF gốc'}
+        </button>
+      </div>
+      {pdfUrlQuery.isError && (
+        <p className="mt-2 font-[Be_Vietnam_Pro] text-[12px] text-[#BE123C]">
+          Không tải được link PDF. Kiểm tra MinIO đang chạy.
+        </p>
+      )}
+      {url ? (
+        <PdfPreviewWithToggle
+          src={url}
+          collapsible
+          defaultOpen={false}
+          showLabel="Xem PDF đã lưu"
+          hideLabel="Ẩn PDF đã lưu"
+          variant="warm"
+          iframeTitle="PDF nguồn đã lưu trên MinIO"
+          className="mt-4"
+        />
+      ) : null}
     </div>
   );
 }
@@ -894,7 +1194,7 @@ function ParsedQuestionsList({
   return (
     <div className="rounded-xl border border-[#E8E6DC] bg-white p-4">
       <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase tracking-wide text-[#87867F]">
-        Câu hỏi đã phân tích (cấp câu / ý)
+        Nội dung theo trang (tự tách câu/ý khi rà soát)
       </p>
       <ol className="mt-3 max-h-80 list-none space-y-2 overflow-y-auto p-0">
         {items.map((q) => (

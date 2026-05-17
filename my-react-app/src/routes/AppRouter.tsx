@@ -60,6 +60,7 @@ import AdminSlideTemplates from '../pages/admin/AdminSlideTemplates';
 import AdminCommissionProposals from '../pages/admin/AdminCommissionProposals';
 import AdminFeedbacksPage from '../pages/admin/AdminFeedbacksPage';
 import AdminSystemConfigPage from '../pages/admin/AdminSystemConfigPage';
+import AdminStorageConfigPage from '../pages/admin/AdminStorageConfigPage';
 import AdminWithdrawals from '../pages/admin/AdminWithdrawals';
 import CashFlowDashboard from '../pages/admin/CashFlowDashboard';
 import TokenCostConfigPage from '../pages/admin/TokenCostConfigPage';
@@ -784,6 +785,14 @@ export const router = createBrowserRouter([
     element: (
       <PrivateRoute>
         <AdminSystemConfigPage />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: '/admin/storage-config',
+    element: (
+      <PrivateRoute>
+        <AdminStorageConfigPage />
       </PrivateRoute>
     ),
   },
