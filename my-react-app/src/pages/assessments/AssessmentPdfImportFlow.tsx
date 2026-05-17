@@ -82,6 +82,10 @@ export function AssessmentPdfImportFlow() {
   const opts = optionsQuery.data?.result;
   const banksQuery = useGetMyQuestionBanks(0, 100);
   const banks = banksQuery.data?.result?.content ?? [];
+  const { schoolGrades, subjects } = useCurriculumHierarchyCatalog(
+    { gradeId: schoolGradeId, subjectId, chapterId: '' },
+    { refetchOnMount: 'always', staleTime: 0 }
+  );
 
   useEffect(() => {
     saveAssessmentPdfImportDraft({
@@ -294,6 +298,31 @@ export function AssessmentPdfImportFlow() {
           pdfLayout,
           pages: extractedPages,
           totalPages: totalPages || extractedPages.length,
+          wizardForm: {
+            examTitle: examTitle.trim() || undefined,
+            schoolYear: schoolYear.trim() || undefined,
+            department: department.trim() || undefined,
+            examDate: examDate || undefined,
+            examType: examType.trim() || undefined,
+            examScope: examScope || undefined,
+            organizerType: organizerType || undefined,
+            provinceCity: provinceCity.trim() || undefined,
+            district: district.trim() || undefined,
+            schoolName: schoolName.trim() || undefined,
+            organizerName: department.trim() || undefined,
+            schoolGradeId: schoolGradeId || undefined,
+            subjectId: subjectId || undefined,
+            contextHint: contextHint.trim() || undefined,
+            questionBankId: questionBankId || undefined,
+            timeLimitMinutes: timeLimitMinutes ? Number(timeLimitMinutes) : undefined,
+            pdfLayout,
+            importContentMode,
+            schoolGradeName:
+              schoolGrades.find((g) => g.id === schoolGradeId) != null
+                ? formatSchoolGradeLabel(schoolGrades.find((g) => g.id === schoolGradeId)!)
+                : undefined,
+            subjectName: subjects.find((s) => s.id === subjectId)?.name,
+          },
         }),
       });
       setResult(response.result ?? null);

@@ -97,6 +97,7 @@ export interface CreateQuestionRequest {
   canonicalQuestionId?: string | null;
   solutionSteps?: string;
   diagramData?: string;
+  generationMetadata?: Record<string, unknown>;
 }
 
 export interface GetMyQuestionsParams {
@@ -139,6 +140,7 @@ export interface UpdateQuestionRequest {
   tags?: string[];
   status?: QuestionStatus;
   diagramData?: string;
+  generationMetadata?: Record<string, unknown>;
 }
 
 export interface BulkApproveRequest {

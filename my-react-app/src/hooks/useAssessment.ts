@@ -175,6 +175,42 @@ export function useAssessmentImportSourcePdfUrl(assessmentId: string | undefined
   });
 }
 
+export function useUpdatePdfImportDocument(assessmentId: string) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (data: import('../types/assessment.types').UpdateAssessmentPdfImportDocumentRequest) =>
+      AssessmentService.updatePdfImportDocument(assessmentId, data),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: assessmentKeys.detail(assessmentId) });
+      queryClient.invalidateQueries({
+        queryKey: [...assessmentKeys.all, 'pdf-import-document', assessmentId],
+      });
+    },
+  });
+}
+
+export function useUpdatePdfImportMetadata(assessmentId: string) {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (
+      data: import('../types/assessment.types').UpdateAssessmentPdfImportMetadataRequest
+    ) => AssessmentService.updatePdfImportMetadata(assessmentId, data),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: assessmentKeys.detail(assessmentId) });
+    },
+  });
+}
+
+/** Structured OCR document (BE seeds from pages when empty). */
+export function usePdfImportDocument(assessmentId: string | undefined, enabled = true) {
+  return useQuery({
+    queryKey: [...assessmentKeys.all, 'pdf-import-document', assessmentId],
+    queryFn: () => AssessmentService.getPdfImportDocument(assessmentId as string),
+    enabled: Boolean(assessmentId) && enabled,
+    staleTime: 30_000,
+  });
+}
+
 export function useAssessmentPdfInfo() {
   return useMutation({
     mutationFn: (file: File) => AssessmentService.getAssessmentPdfInfo(file),

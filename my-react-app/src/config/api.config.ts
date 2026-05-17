@@ -64,6 +64,13 @@ export const API_ENDPOINTS = {
   ASSESSMENTS_IMPORT_FORM_OPTIONS: '/assessments/import-form-options',
   ASSESSMENTS_IMPORT_SOURCE_PDF_URL: (id: string) =>
     `/assessments/${id}/import-source-pdf-url`,
+  ASSESSMENTS_PDF_IMPORT_DOCUMENT: (id: string) => `/assessments/${id}/pdf-import-document`,
+  ASSESSMENTS_PDF_IMPORT_METADATA: (id: string) => `/assessments/${id}/pdf-import-metadata`,
+  ASSESSMENTS_IMPORT_IMAGE_UPLOAD: (id: string) => `/assessments/${id}/import-images`,
+  ASSESSMENTS_IMPORT_IMAGE_PRESIGNED: (id: string) =>
+    `/assessments/${id}/import-images/presigned`,
+  ASSESSMENTS_IMPORT_IMAGE: (id: string, fileName: string) =>
+    `/assessments/${id}/import-images/${fileName}`,
   ASSESSMENTS_MY: '/assessments/my',
   ASSESSMENTS_SEARCH: '/assessments/search',
   ASSESSMENTS_DETAIL: (id: string) => `/assessments/${id}`,

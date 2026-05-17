@@ -32,6 +32,8 @@ import {
 import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { QuestionCard } from '../../components/assessment';
+import { AssessmentPdfImportDetailSection } from '../../components/assessment/AssessmentPdfImportDetailSection';
+import { AssessmentPdfReviewWorkspace } from '../../components/assessment/AssessmentPdfReviewWorkspace';
 import '../../components/assessment/question-card.css';
 import MathText from '../../components/common/MathText';
 import Pagination from '../../components/common/Pagination';
@@ -53,6 +55,8 @@ import {
 } from '../../hooks/useAssessment';
 import '../../styles/module-refactor.css';
 import type { AssessmentRequest } from '../../types';
+import { shouldShowAssessmentDescription } from '../../utils/assessmentPdfImportDetail';
+import { ensureQuestionList, filterExamQuestions } from '../../utils/pdfImportPages';
 import AssessmentModal from './AssessmentModal';
 
 const assessmentStatusLabel: Record<string, string> = {
@@ -238,21 +242,28 @@ export default function AssessmentDetailRefactored() {
   }, [searchKeyword, searchTag]);
 
   const assessment = data?.result;
-  const questions = questionsData?.result ?? [];
+  const questions = useMemo(
+    () => ensureQuestionList(questionsData?.result),
+    [questionsData?.result]
+  );
+  const examQuestions = useMemo(
+    () => filterExamQuestions(questions, { assessment }),
+    [questions, assessment]
+  );
 
   // ── Drag-and-drop reorder state ─────────────────────────────────────────
   // Local order is the array of question IDs in the order the user has dragged
   // them into. It's seeded from the server-returned order and reset whenever
   // the server data changes. "Save Order" persists localOrder to the BE.
   const [localOrder, setLocalOrder] = useState<string[]>([]);
-  const serverOrder = useMemo(() => questions.map((q) => getQuestionId(q)), [questions]);
+  const serverOrder = useMemo(() => examQuestions.map((q) => getQuestionId(q)), [examQuestions]);
   useEffect(() => {
     setLocalOrder(serverOrder);
   }, [serverOrder.join('|')]);
 
   const orderedQuestions = useMemo(() => {
-    if (localOrder.length === 0) return questions;
-    const byId = new Map(questions.map((q) => [getQuestionId(q), q]));
+    if (localOrder.length === 0) return examQuestions;
+    const byId = new Map(examQuestions.map((q) => [getQuestionId(q), q]));
     return localOrder.map((qid) => byId.get(qid)).filter((q): q is NonNullable<typeof q> => !!q);
   }, [localOrder, questions]);
 
@@ -403,7 +414,7 @@ export default function AssessmentDetailRefactored() {
   async function handleDistributePoints() {
     if (!id) return;
     setQuestionCrudError(null);
-    if (questions.length === 0) {
+    if (examQuestions.length === 0) {
       setQuestionCrudError('Bài kiểm tra chưa có câu hỏi để phân bổ điểm.');
       return;
     }
@@ -558,9 +569,11 @@ export default function AssessmentDetailRefactored() {
                 {typeLabel} · {modeLabel}
                 {assessment.examMatrixName ? ` · Ma trận: ${assessment.examMatrixName}` : ''}
               </p>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] mt-1.5 leading-relaxed m-0">
-                {assessment.description?.trim() ? assessment.description : 'Không có mô tả'}
-              </p>
+              {shouldShowAssessmentDescription(assessment.description, assessment) ? (
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] mt-1.5 leading-relaxed m-0">
+                  {assessment.description?.trim()}
+                </p>
+              ) : null}
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-2 shrink-0">
@@ -651,47 +664,23 @@ export default function AssessmentDetailRefactored() {
           ))}
         </div>
 
-        <article className="bg-white rounded-2xl border border-[#E8E6DC] p-4 lg:p-5">
-          <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#141413] m-0 mb-3">
-            Thông tin chi tiết
-          </h3>
-          <dl className="m-0 flex flex-col divide-y divide-[#F0EEE6]">
-            <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-3 first:pt-0">
-              <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0 shrink-0 sm:w-40">
-                Bài học
-              </dt>
-              <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0 sm:flex-1">
-                {assessment.lessonTitles?.join(', ') || 'Không có'}
-              </dd>
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-3">
-              <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0 shrink-0 sm:w-40">
-                Thời gian làm bài
-              </dt>
-              <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0 sm:flex-1">
-                {assessment.timeLimitMinutes != null
-                  ? `${assessment.timeLimitMinutes} phút`
-                  : 'Không giới hạn'}
-              </dd>
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-3">
-              <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0 shrink-0 sm:w-40">
-                Chế độ tạo đề
-              </dt>
-              <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0 sm:flex-1">
-                {modeLabel}
-              </dd>
-            </div>
-            <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-3">
-              <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0 shrink-0 sm:w-40">
-                Ma trận đề
-              </dt>
-              <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0 sm:flex-1 break-words">
-                {assessment.examMatrixName ?? assessment.examMatrixId ?? 'Không có'}
-              </dd>
-            </div>
-          </dl>
-        </article>
+        <AssessmentPdfImportDetailSection
+          assessment={assessment}
+          modeLabel={modeLabel}
+          onEditGeneral={() => setOpenEdit(true)}
+          onSaved={() => void refetch()}
+        />
+
+        {assessment?.sourcePdfPath && id ? (
+          <AssessmentPdfReviewWorkspace
+            assessment={assessment}
+            questions={questions}
+            isDraft={assessment.status === 'DRAFT'}
+            onRefresh={async () => {
+              await Promise.all([refetchQuestions(), refetch()]);
+            }}
+          />
+        ) : null}
 
         <article className="bg-white rounded-2xl border border-[#E8E6DC] overflow-hidden">
           <div className="px-4 py-4 lg:px-6 lg:py-5 border-b border-[#F0EEE6] bg-[#FAF9F5] flex flex-wrap items-center justify-between gap-3">
@@ -715,7 +704,7 @@ export default function AssessmentDetailRefactored() {
                     type="button"
                     className="btn"
                     onClick={() => void handleDistributePoints()}
-                    disabled={questions.length === 0 || distributePointsMutation.isPending}
+                    disabled={examQuestions.length === 0 || distributePointsMutation.isPending}
                   >
                     {distributePointsMutation.isPending
                       ? 'Đang phân bổ...'
@@ -725,7 +714,7 @@ export default function AssessmentDetailRefactored() {
                     type="button"
                     className="btn secondary"
                     onClick={() => void handleDistributePoints()}
-                    disabled={questions.length === 0 || distributePointsMutation.isPending}
+                    disabled={examQuestions.length === 0 || distributePointsMutation.isPending}
                   >
                     Reset về auto
                   </button>
@@ -909,7 +898,7 @@ export default function AssessmentDetailRefactored() {
             </div>
           )}
 
-          {!questionsLoading && !questionsError && questions.length === 0 && (
+          {!questionsLoading && !questionsError && examQuestions.length === 0 && (
             <div className="question-list__empty">{UI_TEXT.QUIZ} chưa có câu hỏi.</div>
           )}
 

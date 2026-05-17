@@ -1,3 +1,5 @@
+import type { ContentBlockDto } from './book.types';
+
 // ─── Enums ────────────────────────────────────────────────────────────────────
 export type AssessmentType = 'QUIZ' | 'TEST' | 'EXAM' | 'HOMEWORK';
 export type AssessmentStatus = 'DRAFT' | 'PUBLISHED' | 'CLOSED';
@@ -124,6 +126,11 @@ export interface AssessmentQuestionItem {
     cognitiveLevel?: string;
     questionSourceType?: 'MANUAL' | 'TEMPLATE_GENERATED' | 'AI_GENERATED' | 'BANK_IMPORTED' | 'BANK' | 'AI';
     source?: 'BANK' | 'AI';
+    pointsOverride?: number | null;
+    pageNumber?: number;
+    sectionLabel?: string;
+    /** Full-page OCR placeholder — hidden from exam question list. */
+    pageSource?: boolean;
     studentAnswer?: string;  // NEW: MCQ="B", SA="8", TF="A,C"
     scoringDetail?: Record<string, unknown>;  // NEW: Clause breakdown for TF questions
 }
@@ -207,6 +214,80 @@ export interface AssessmentResponse {
     /** MinIO object key when created via PDF import. */
     sourcePdfPath?: string;
     sourcePdfOriginalName?: string;
+    /** OCR LaTeX per PDF page (import Cách 2). */
+    pdfImportPages?: PdfImportPage[];
+    /** Editable OCR blocks (câu hỏi / đáp án). */
+    pdfImportDocument?: AssessmentPdfImportDocument;
+
+    /** Wizard step 1–2 metadata (PDF import). */
+    pdfImportMetadata?: AssessmentPdfImportMetadata;
+}
+
+export interface AssessmentPdfImportMetadata {
+    examTitle?: string;
+    schoolYear?: string;
+    examType?: string;
+    examScope?: string;
+    examScopeLabel?: string;
+    organizerType?: string;
+    organizerTypeLabel?: string;
+    provinceCity?: string;
+    district?: string;
+    schoolName?: string;
+    department?: string;
+    organizerName?: string;
+    examDate?: string;
+    schoolGradeName?: string;
+    subjectName?: string;
+    contextHint?: string;
+    questionBankName?: string;
+    assessmentType?: string;
+    assessmentTypeLabel?: string;
+    timeLimitMinutes?: number;
+    pdfLayout?: string;
+    pdfLayoutLabel?: string;
+    importContentMode?: string;
+    importContentModeLabel?: string;
+    sourceFileName?: string;
+}
+
+export interface AssessmentPdfImportDocument {
+    questionBlocks: ContentBlockDto[];
+    answerBlocks: ContentBlockDto[];
+}
+
+export interface UpdateAssessmentPdfImportMetadataRequest {
+    examTitle?: string;
+    schoolYear?: string;
+    examType?: string;
+    examScope?: string;
+    organizerType?: string;
+    provinceCity?: string;
+    district?: string;
+    schoolName?: string;
+    department?: string;
+    organizerName?: string;
+    examDate?: string;
+    schoolGradeId?: string;
+    subjectId?: string;
+    contextHint?: string;
+    questionBankId?: string;
+    assessmentType?: AssessmentType;
+    timeLimitMinutes?: number;
+    pdfLayout?: string;
+    importContentMode?: string;
+}
+
+export interface UpdateAssessmentPdfImportDocumentRequest {
+    questionBlocks: ContentBlockDto[];
+    answerBlocks: ContentBlockDto[];
+}
+
+export interface PdfImportPage {
+    pageNumber: number;
+    text: string;
+    sectionLabel?: string;
+    confidence?: number;
 }
 
 export interface AssessmentSourcePdfUrlResponse {

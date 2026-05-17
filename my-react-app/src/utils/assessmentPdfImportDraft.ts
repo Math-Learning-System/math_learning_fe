@@ -142,12 +142,36 @@ export function clearAssessmentPdfImportDraft(): void {
   globalThis.sessionStorage.removeItem('math:assessment-pdf-import-draft:v1');
 }
 
+export type PdfImportWizardFormSnapshot = {
+  examTitle?: string;
+  schoolYear?: string;
+  department?: string;
+  examDate?: string;
+  examType?: string;
+  examScope?: string;
+  organizerType?: string;
+  provinceCity?: string;
+  district?: string;
+  schoolName?: string;
+  organizerName?: string;
+  schoolGradeId?: string;
+  subjectId?: string;
+  contextHint?: string;
+  questionBankId?: string;
+  timeLimitMinutes?: number;
+  pdfLayout?: string;
+  importContentMode?: string;
+  schoolGradeName?: string;
+  subjectName?: string;
+};
+
 export function buildPreExtractedJson(params: {
   fileName: string;
   examTitle: string;
   pdfLayout: string;
   pages: PdfImportPageDraft[];
   totalPages: number;
+  wizardForm?: PdfImportWizardFormSnapshot;
 }): string {
   const donePages = params.pages.filter((p) => p.status === 'done' && p.text.trim());
   const combined = donePages
@@ -169,10 +193,11 @@ export function buildPreExtractedJson(params: {
     mathLatex: [],
   }));
   const payload = {
+    manualQuestionBuild: true,
     analysisSuccessful: questions.length > 0,
     confidenceScore: Math.round(avgConf * 10000) / 10000,
     warnings: [
-      `Đã OCR ${questions.length}/${params.totalPages} trang (Gemini + Mathpix). Tách câu/ý trong Rà soát đề.`,
+      `Đã OCR ${questions.length}/${params.totalPages} trang (Mathpix). Tạo và chỉnh câu hỏi theo từng trang tại Chi tiết đề.`,
     ],
     extractedText: combined,
     exam: {
@@ -189,6 +214,7 @@ export function buildPreExtractedJson(params: {
       confidence: p.confidence,
       mathpixSuccess: true,
     })),
+    wizardForm: params.wizardForm,
   };
   return JSON.stringify(payload);
 }

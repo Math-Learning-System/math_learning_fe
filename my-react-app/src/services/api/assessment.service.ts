@@ -19,11 +19,14 @@ import type {
     AssessmentImportFromPdfParams,
     AssessmentImportResponse,
     AssessmentSourcePdfUrlResponse,
+    AssessmentPdfImportDocument,
+    UpdateAssessmentPdfImportDocumentRequest,
     ApiResponse,
     PagedDataResponse,
     PaginatedResponse,
 } from '../../types';
 import type { QuestionResponse } from '../../types/question';
+import type { BookPageImagePresignedUrlResponse, BookPageImageResponse } from '../../types/book.types';
 
 export class AssessmentService {
     private static async getHeaders() {
@@ -204,6 +207,93 @@ export class AssessmentService {
         const headers = await this.getHeaders();
         const response = await fetch(
             `${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_IMPORT_SOURCE_PDF_URL(assessmentId)}`,
+            { method: 'GET', headers }
+        );
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(translateApiError(error.message, error.code));
+        }
+        return response.json();
+    }
+
+    static async getPdfImportDocument(
+        assessmentId: string
+    ): Promise<ApiResponse<AssessmentPdfImportDocument>> {
+        const headers = await this.getHeaders();
+        const response = await fetch(
+            `${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_PDF_IMPORT_DOCUMENT(assessmentId)}`,
+            { method: 'GET', headers }
+        );
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(translateApiError(error.message, error.code));
+        }
+        return response.json();
+    }
+
+    static async updatePdfImportDocument(
+        assessmentId: string,
+        data: UpdateAssessmentPdfImportDocumentRequest
+    ): Promise<ApiResponse<AssessmentPdfImportDocument>> {
+        const headers = await this.getHeaders();
+        const response = await fetch(
+            `${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_PDF_IMPORT_DOCUMENT(assessmentId)}`,
+            { method: 'PUT', headers, body: JSON.stringify(data) }
+        );
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(translateApiError(error.message, error.code));
+        }
+        return response.json();
+    }
+
+    static async updatePdfImportMetadata(
+        assessmentId: string,
+        data: import('../types/assessment.types').UpdateAssessmentPdfImportMetadataRequest
+    ): Promise<ApiResponse<AssessmentResponse>> {
+        const headers = await this.getHeaders();
+        const response = await fetch(
+            `${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_PDF_IMPORT_METADATA(assessmentId)}`,
+            { method: 'PUT', headers, body: JSON.stringify(data) }
+        );
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(translateApiError(error.message, error.code));
+        }
+        return response.json();
+    }
+
+    static async uploadImportBlockImage(
+        assessmentId: string,
+        file: File
+    ): Promise<ApiResponse<BookPageImageResponse>> {
+        const token = AuthService.getToken();
+        if (!token) throw new Error('Bạn chưa đăng nhập. Vui lòng đăng nhập lại.');
+        const form = new FormData();
+        form.append('file', file);
+        const response = await fetch(
+            `${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_IMPORT_IMAGE_UPLOAD(assessmentId)}`,
+            {
+                method: 'POST',
+                headers: { Authorization: `Bearer ${token}`, accept: '*/*' },
+                body: form,
+            }
+        );
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(translateApiError(error.message, error.code));
+        }
+        return response.json();
+    }
+
+    static async getImportBlockImagePresignedUrl(
+        assessmentId: string,
+        fileName: string
+    ): Promise<ApiResponse<BookPageImagePresignedUrlResponse>> {
+        const headers = await this.getHeaders();
+        const params = new URLSearchParams({ fileName });
+        const response = await fetch(
+            `${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_IMPORT_IMAGE_PRESIGNED(assessmentId)}?${params}`,
             { method: 'GET', headers }
         );
         if (!response.ok) {
