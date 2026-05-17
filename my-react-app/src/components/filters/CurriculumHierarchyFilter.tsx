@@ -1,6 +1,7 @@
 import { BookMarked, BookOpen, FileText, Filter, GraduationCap } from 'lucide-react';
 import type { ReactNode } from 'react';
 import { useCurriculumHierarchyCatalog } from '../../hooks/useCurriculumHierarchyCatalog';
+import { formatSchoolGradeLabel } from '../../utils/schoolGradeLabel';
 
 export type CurriculumHierarchyDepth = 'subject' | 'chapter' | 'lesson';
 
@@ -84,7 +85,7 @@ export function CurriculumHierarchyFilter({
             <option value="">Tất cả lớp</option>
             {schoolGrades.map((grade) => (
               <option key={grade.id} value={grade.id}>
-                {grade.name}
+                {formatSchoolGradeLabel(grade)}
               </option>
             ))}
           </select>

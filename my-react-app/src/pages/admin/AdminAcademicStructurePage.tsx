@@ -34,8 +34,10 @@ import type {
   UpdateSchoolGradeRequest,
   UpdateSubjectRequest,
 } from '../../types/academic.types';
+import { formatSchoolGradeLabel } from '../../utils/schoolGradeLabel';
 import type { ModalTarget } from './AcademicNodeModal';
 import { AcademicNodeModal } from './AcademicNodeModal';
+import { AssessmentImportOptionsPanel } from './AssessmentImportOptionsPanel';
 import './admin-academic-structure-page.css';
 
 type EditorMode = 'program' | 'subject' | 'chapter' | 'lesson';
@@ -724,15 +726,7 @@ export default function AdminAcademicStructurePage() {
     return [...collection, id];
   };
 
-  const getGradeLabel = (grade: SchoolGradeResponse) => {
-    const levelLabel = `Lớp ${grade.gradeLevel}`;
-    const name = grade.name?.trim() ?? '';
-
-    if (!name) return levelLabel;
-    if (name.toLowerCase() === levelLabel.toLowerCase()) return levelLabel;
-
-    return `${levelLabel} - ${name}`;
-  };
+  const getGradeLabel = (grade: SchoolGradeResponse) => formatSchoolGradeLabel(grade);
 
   const getGradeTreeLabel = (grade: SchoolGradeResponse) => {
     if (grade.id !== gradeForm.id) return getGradeLabel(grade);
@@ -1677,6 +1671,10 @@ export default function AdminAcademicStructurePage() {
           </div>
         </section>
       </div>
+
+      <section className="aas-import-options mt-8 px-1">
+        <AssessmentImportOptionsPanel />
+      </section>
 
       <AcademicNodeModal
         target={modalTarget}

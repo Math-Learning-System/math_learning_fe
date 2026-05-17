@@ -10,6 +10,7 @@ import type {
   GenerateAssessmentFromMatrixRequest,
   GenerateQuestionsForAssessmentRequest,
   GetMyAssessmentsParams,
+  AssessmentImportFromPdfParams,
   PagedDataResponse,
   PaginatedResponse,
   PointsOverrideRequest,
@@ -150,6 +151,33 @@ export function useCreateAssessment() {
     mutationFn: (data: AssessmentRequest) => AssessmentService.createAssessment(data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: assessmentKeys.lists() });
+    },
+  });
+}
+
+/** Options for PDF import form (school years, exam types from admin config). */
+export function useAssessmentImportFormOptions() {
+  return useQuery({
+    queryKey: [...assessmentKeys.all, 'import-form-options'],
+    queryFn: () => AssessmentService.getImportFormOptions(),
+    staleTime: 5 * 60 * 1000,
+    refetchOnMount: 'always',
+  });
+}
+
+/** Import assessment from PDF (AI extraction) */
+export function useImportAssessmentFromPdf() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (params: AssessmentImportFromPdfParams) =>
+      AssessmentService.importAssessmentFromPdf(params),
+    onSuccess: (data) => {
+      queryClient.invalidateQueries({ queryKey: assessmentKeys.lists() });
+      const id = data.result?.assessment?.id;
+      if (id) {
+        queryClient.invalidateQueries({ queryKey: assessmentKeys.detail(id) });
+        queryClient.invalidateQueries({ queryKey: assessmentKeys.questions(id) });
+      }
     },
   });
 }

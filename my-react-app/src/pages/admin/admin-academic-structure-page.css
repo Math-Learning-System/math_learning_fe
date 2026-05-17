@@ -9,12 +9,19 @@
   background: #f5f4ed;
 }
 
-/* Override .module-layout-container .module-page (specificity 0,2,0) to stay full-width */
+/* Override .module-layout-container .module-page — full width of main content area */
 .module-layout-container .aas-page__content.module-page {
   max-width: none;
   width: 100%;
   margin: 0;
-  padding: 1.25rem 1.5rem 1.75rem;
+  padding: 1.25rem 1.25rem 1.75rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 1280px) {
+  .module-layout-container .aas-page__content.module-page {
+    padding: 1.25rem 1.75rem 2rem;
+  }
 }
 
 .aas-page__content {
@@ -26,10 +33,19 @@
   padding-top: 0;
 }
 
+/* Xếp dọc: cây chương trình full width trên, trình chỉnh sửa dưới */
 .aas-layout {
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
   gap: 1.5rem;
-  grid-template-columns: minmax(320px, 1fr) minmax(380px, 1.3fr);
+  align-items: stretch;
+  width: 100%;
+}
+
+.aas-layout > * {
+  min-width: 0;
+  width: 100%;
 }
 
 .aas-tree-shell,
@@ -44,7 +60,16 @@
 .aas-tree-shell {
   display: grid;
   grid-template-rows: auto auto 1fr;
-  min-height: 620px;
+  width: 100%;
+  min-height: min(56vh, 720px);
+  max-height: min(72vh, 880px);
+}
+
+.aas-editor-shell {
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
 }
 
 .aas-tree-shell:hover,
@@ -98,7 +123,8 @@
 
 .aas-tree {
   overflow: auto;
-  padding: 0.875rem;
+  padding: 0.875rem 1.25rem 1.25rem;
+  min-height: 0;
 }
 
 .aas-tree-node {
@@ -202,8 +228,16 @@
   cursor: not-allowed;
 }
 
+.aas-editor-shell .aas-editor-tabs,
+.aas-editor-shell .aas-draft-preview,
+.aas-editor-shell .aas-editor-card {
+  flex-shrink: 0;
+}
+
 .aas-editor-card {
-  padding: 1.25rem;
+  padding: 1.25rem 1.5rem 1.5rem;
+  flex: 1;
+  overflow: auto;
 }
 
 .aas-draft-preview {
@@ -450,23 +484,22 @@
   font-size: 0.78rem;
 }
 
-@media (max-width: 1200px) {
-  .aas-layout {
-    grid-template-columns: 1fr;
-  }
+.aas-import-options {
+  width: 100%;
+}
 
+.aas-editor-shell__head {
+  flex-wrap: wrap;
+}
+
+.aas-editor-shell__head p {
+  text-align: left;
+}
+
+@media (max-width: 640px) {
   .aas-tree-shell {
-    min-height: 420px;
-  }
-
-  .aas-editor-shell__head {
-    display: grid;
-    gap: 0.25rem;
-    justify-content: start;
-  }
-
-  .aas-editor-shell__head p {
-    text-align: left;
+    min-height: min(48vh, 520px);
+    max-height: min(65vh, 640px);
   }
 }
 

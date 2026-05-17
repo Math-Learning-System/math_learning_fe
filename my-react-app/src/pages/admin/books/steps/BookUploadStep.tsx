@@ -1,12 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import {
   Loader2,
   UploadCloud,
   FileText,
   AlertCircle,
   CheckCircle2,
-  Eye,
-  EyeOff,
   Plus,
   RefreshCw,
   Trash2,
@@ -51,21 +49,9 @@ const BookUploadStep: React.FC<Props> = ({
   const [ocrPageTo, setOcrPageTo] = useState<number | ''>(book?.ocrPageTo ?? '');
   const [pdfFile, setPdfFile] = useState<File | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [showPreview, setShowPreview] = useState(false);
   const [isAddingAnother, setIsAddingAnother] = useState(false);
   const [pendingDeleteBook, setPendingDeleteBook] = useState<BookResponse | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const localPdfObjectUrl = useMemo(() => {
-    if (!pdfFile) return null;
-    return URL.createObjectURL(pdfFile);
-  }, [pdfFile]);
-
-  useEffect(() => {
-    return () => {
-      if (localPdfObjectUrl) URL.revokeObjectURL(localPdfObjectUrl);
-    };
-  }, [localPdfObjectUrl]);
 
   const grades = useGrades();
   const gradeLevel = useMemo(() => {
@@ -176,7 +162,6 @@ const BookUploadStep: React.FC<Props> = ({
     try {
       await uploadPdf.mutateAsync(pdfFile);
       setPdfFile(null);
-      setShowPreview(true);
       if (fileInputRef.current) fileInputRef.current.value = '';
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Lỗi khi upload PDF.');
@@ -197,7 +182,6 @@ const BookUploadStep: React.FC<Props> = ({
 
   const startAddAnotherBook = () => {
     setError(null);
-    setShowPreview(false);
     setPdfFile(null);
     setIsAddingAnother(true);
     setTitle('');
@@ -220,7 +204,6 @@ const BookUploadStep: React.FC<Props> = ({
     setOcrPageFrom(book.ocrPageFrom ?? '');
     setOcrPageTo(book.ocrPageTo ?? '');
     setPdfFile(null);
-    setShowPreview(false);
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
@@ -480,23 +463,14 @@ const BookUploadStep: React.FC<Props> = ({
         </div>
 
         {!isAddingAnother && book?.id && (book.pdfPath || pdfFile) ? (
-          <div className="mt-4 space-y-3">
-            <button
-              type="button"
-              onClick={() => setShowPreview((prev) => !prev)}
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-300 bg-white text-sm text-slate-700 hover:bg-slate-50"
-            >
-              {showPreview ? <EyeOff size={16} /> : <Eye size={16} />}
-              {showPreview ? 'Ẩn Sách' : 'Xem Sách'}
-            </button>
-
-            {showPreview ? (
-              <BookPdfPreview
-                bookId={book.id}
-                localObjectUrl={localPdfObjectUrl}
-                hasServerPdf={Boolean(book.pdfPath)}
-              />
-            ) : null}
+          <div className="mt-4">
+            <BookPdfPreview
+              bookId={book.id}
+              file={pdfFile}
+              hasServerPdf={Boolean(book.pdfPath)}
+              collapsible
+              defaultOpen={false}
+            />
           </div>
         ) : null}
       </div>

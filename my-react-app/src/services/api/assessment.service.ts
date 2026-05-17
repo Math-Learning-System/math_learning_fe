@@ -1,4 +1,4 @@
-import { API_BASE_URL, API_ENDPOINTS } from '../../config/api.config';
+import { API_BASE_URL, API_ENDPOINTS, LONG_RUNNING_FETCH_MS } from '../../config/api.config';
 import { AuthService } from './auth.service';
 import { translateApiError } from '../../utils/errorCodes';
 import type {
@@ -15,6 +15,9 @@ import type {
     GenerateQuestionsForAssessmentRequest,
     DistributeAssessmentPointsRequest,
     DistributeAssessmentPointsResponse,
+    AssessmentImportFormOptions,
+    AssessmentImportFromPdfParams,
+    AssessmentImportResponse,
     ApiResponse,
     PagedDataResponse,
     PaginatedResponse,
@@ -33,6 +36,71 @@ export class AssessmentService {
     }
 
     // ─── CREATE / UPDATE ─────────────────────────────────────────────────────
+
+    /** GET /assessments/import-form-options */
+    static async getImportFormOptions(): Promise<ApiResponse<AssessmentImportFormOptions>> {
+        const headers = await this.getHeaders();
+        const response = await fetch(
+            `${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_IMPORT_FORM_OPTIONS}`,
+            { method: 'GET', headers }
+        );
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(translateApiError(error.message, error.code));
+        }
+        return response.json();
+    }
+
+    /** POST /assessments/import-from-pdf */
+    static async importAssessmentFromPdf(
+        params: AssessmentImportFromPdfParams
+    ): Promise<ApiResponse<AssessmentImportResponse>> {
+        const token = AuthService.getToken();
+        if (!token) throw new Error('Bạn chưa đăng nhập. Vui lòng đăng nhập lại.');
+
+        const formData = new FormData();
+        formData.append('file', params.file);
+        if (params.examTitle) formData.append('examTitle', params.examTitle);
+        if (params.schoolYear) formData.append('schoolYear', params.schoolYear);
+        if (params.department) formData.append('department', params.department);
+        if (params.examDate) formData.append('examDate', params.examDate);
+        if (params.examType) formData.append('examType', params.examType);
+        if (params.examScope) formData.append('examScope', params.examScope);
+        if (params.organizerName) formData.append('organizerName', params.organizerName);
+        if (params.organizerType) formData.append('organizerType', params.organizerType);
+        if (params.provinceCity) formData.append('provinceCity', params.provinceCity);
+        if (params.district) formData.append('district', params.district);
+        if (params.schoolName) formData.append('schoolName', params.schoolName);
+        if (params.country) formData.append('country', params.country);
+        if (params.schoolGradeId) formData.append('schoolGradeId', params.schoolGradeId);
+        if (params.subjectId) formData.append('subjectId', params.subjectId);
+        if (params.contextHint) formData.append('contextHint', params.contextHint);
+        if (params.questionBankId) formData.append('questionBankId', params.questionBankId);
+        if (params.assessmentType) formData.append('assessmentType', params.assessmentType);
+        if (params.timeLimitMinutes != null) {
+            formData.append('timeLimitMinutes', String(params.timeLimitMinutes));
+        }
+
+        const signal =
+            typeof AbortSignal !== 'undefined' && 'timeout' in AbortSignal
+                ? AbortSignal.timeout(LONG_RUNNING_FETCH_MS)
+                : undefined;
+
+        const response = await fetch(
+            `${API_BASE_URL}${API_ENDPOINTS.ASSESSMENTS_IMPORT_FROM_PDF}`,
+            {
+                method: 'POST',
+                headers: { Authorization: `Bearer ${token}`, accept: '*/*' },
+                body: formData,
+                signal,
+            }
+        );
+        if (!response.ok) {
+            const error = await response.json().catch(() => ({}));
+            throw new Error(translateApiError(error.message, error.code));
+        }
+        return response.json();
+    }
 
     /** POST /assessments */
     static async createAssessment(data: AssessmentRequest): Promise<ApiResponse<AssessmentResponse>> {

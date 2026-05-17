@@ -4,6 +4,7 @@ import {
   CheckCircle2,
   ClipboardList,
   FileText,
+  FileUp,
   LayoutGrid,
   List,
   Lock,
@@ -11,11 +12,12 @@ import {
   Search,
   Send,
   Sparkles,
+  TableProperties,
   Trash2,
   X,
 } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import Pagination from '../../components/common/Pagination';
 import { CurriculumHierarchyFilter } from '../../components/filters/CurriculumHierarchyFilter';
 import DashboardLayout from '../../components/layout/DashboardLayout/DashboardLayout';
@@ -35,7 +37,10 @@ import { useCurriculumHierarchyCatalog } from '../../hooks/useCurriculumHierarch
 import { useDebounce } from '../../hooks/useDebounce';
 import type { AssessmentRequest, AssessmentResponse, AssessmentStatus } from '../../types';
 import { AssessmentBuilderFlowBody } from './AssessmentBuilderFlow';
+import { AssessmentPdfImportFlow } from './AssessmentPdfImportFlow';
 import AssessmentModal from './AssessmentModal';
+
+type CreateMethod = 'matrix' | 'pdf';
 
 const coverGradients = [
   'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
@@ -72,6 +77,7 @@ const formatDate = (dateString: string) =>
 
 export default function TeacherAssessments() {
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
   const [statusFilter, setStatusFilter] = useState<'ALL' | AssessmentStatus>('ALL');
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(0);
@@ -79,7 +85,40 @@ export default function TeacherAssessments() {
   const [openForm, setOpenForm] = useState(false);
   const [mode] = useState<'create' | 'edit'>('create');
   const [selected] = useState<AssessmentResponse | null>(null);
-  const [view, setView] = useState<'create' | 'manage'>('manage');
+
+  const view: 'create' | 'manage' =
+    searchParams.get('view') === 'create' ? 'create' : 'manage';
+  const createMethod: CreateMethod =
+    searchParams.get('method') === 'pdf' ? 'pdf' : 'matrix';
+
+  const setView = (nextView: 'create' | 'manage') => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        if (nextView === 'create') {
+          next.set('view', 'create');
+          if (!next.get('method')) next.set('method', 'matrix');
+        } else {
+          next.delete('view');
+          next.delete('method');
+        }
+        return next;
+      },
+      { replace: true }
+    );
+  };
+
+  const setCreateMethod = (method: CreateMethod) => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev);
+        next.set('view', 'create');
+        next.set('method', method);
+        return next;
+      },
+      { replace: true }
+    );
+  };
   const [cardLayout, setCardLayout] = useState<'grid' | 'list'>('grid');
 
   const [filterGradeId, setFilterGradeId] = useState('');
@@ -386,7 +425,9 @@ export default function TeacherAssessments() {
                 </div>
                 <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
                   {view === 'create'
-                    ? 'Tạo đề từ ma trận đã duyệt hoặc cấu hình thủ công.'
+                    ? createMethod === 'pdf'
+                      ? 'Upload file PDF đề có sẵn — AI trích xuất câu hỏi và tạo đề nháp.'
+                      : 'Tạo đề từ ma trận đã duyệt và ngân hàng câu hỏi.'
                     : 'Quản lý vòng đời đề: nháp, công khai, đóng và chỉnh sửa.'}
                 </p>
               </div>
@@ -423,11 +464,18 @@ export default function TeacherAssessments() {
 
           {/* ── Create flow ── */}
           {view === 'create' && (
-            <div className="bg-white rounded-2xl border border-[#E8E6DC] shadow-[rgba(0,0,0,0.04)_0px_4px_24px]">
+            <div className="space-y-4">
+              <CreateMethodTabs createMethod={createMethod} setCreateMethod={setCreateMethod} />
+              <div className="bg-white rounded-2xl border border-[#E8E6DC] shadow-[rgba(0,0,0,0.04)_0px_4px_24px]">
               {/* assessment-builder-flow.css chỉ áp dụng trong .module-layout-container */}
               <div className="module-layout-container p-4 sm:p-6 lg:p-8">
-                <AssessmentBuilderFlowBody />
+                {createMethod === 'matrix' ? (
+                    <AssessmentBuilderFlowBody />
+                  ) : (
+                    <AssessmentPdfImportFlow />
+                  )}
               </div>
+            </div>
             </div>
           )}
 
@@ -821,5 +869,42 @@ export default function TeacherAssessments() {
         onSubmit={saveAssessment}
       />
     </DashboardLayout>
+  );
+}
+
+function CreateMethodTabs({
+  createMethod,
+  setCreateMethod,
+}: {
+  createMethod: CreateMethod;
+  setCreateMethod: (m: CreateMethod) => void;
+}) {
+  return (
+    <div className="flex flex-wrap items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl w-fit">
+      <button
+        type="button"
+        onClick={() => setCreateMethod('matrix')}
+        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
+          createMethod === 'matrix'
+            ? 'bg-white text-[#141413] shadow-sm'
+            : 'text-[#87867F] hover:text-[#5E5D59]'
+        }`}
+      >
+        <TableProperties className="w-3.5 h-3.5" aria-hidden />
+        Cách 1: Ma trận + ngân hàng
+      </button>
+      <button
+        type="button"
+        onClick={() => setCreateMethod('pdf')}
+        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
+          createMethod === 'pdf'
+            ? 'bg-white text-[#141413] shadow-sm'
+            : 'text-[#87867F] hover:text-[#5E5D59]'
+        }`}
+      >
+        <FileUp className="w-3.5 h-3.5" aria-hidden />
+        Cách 2: Import PDF
+      </button>
+    </div>
   );
 }

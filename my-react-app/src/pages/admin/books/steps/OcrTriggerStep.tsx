@@ -3,8 +3,6 @@ import {
   AlertCircle,
   ArrowRight,
   CheckCircle2,
-  Eye,
-  EyeOff,
   Info,
   Loader2,
   OctagonAlert,
@@ -86,8 +84,6 @@ const OcrTriggerStep: React.FC<Props> = ({ book, onSelectSeriesBook, onComplete 
   const [error, setError] = useState<string | null>(null);
   const [showCancelConfirm, setShowCancelConfirm] = useState(false);
   const [showRerunConfirm, setShowRerunConfirm] = useState(false);
-  const [showPdfPreview, setShowPdfPreview] = useState(false);
-
   const progress = progressQuery.data?.result;
   const uiStatus = (progress?.status ?? book.status) as BookResponse['status'];
 
@@ -95,10 +91,6 @@ const OcrTriggerStep: React.FC<Props> = ({ book, onSelectSeriesBook, onComplete 
     if (!progress?.status || progress.status === book.status) return;
     void qc.invalidateQueries({ queryKey: bookKeys.detail(book.id) });
   }, [progress?.status, book.status, book.id, qc]);
-
-  useEffect(() => {
-    setShowPdfPreview(false);
-  }, [book.id]);
 
   const ocrConnectionIssue =
     uiStatus === 'OCR_RUNNING' &&
@@ -271,18 +263,7 @@ const OcrTriggerStep: React.FC<Props> = ({ book, onSelectSeriesBook, onComplete 
       )}
 
       {book.pdfPath ? (
-        <div className="space-y-3">
-          <button
-            type="button"
-            onClick={() => setShowPdfPreview((prev) => !prev)}
-            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-300 bg-white text-sm text-slate-700 hover:bg-slate-50"
-          >
-            {showPdfPreview ? <EyeOff size={16} /> : <Eye size={16} />}
-            {showPdfPreview ? 'Ẩn Sách' : 'Xem Sách'}
-          </button>
-
-          {showPdfPreview ? <BookPdfPreview bookId={book.id} hasServerPdf /> : null}
-        </div>
+        <BookPdfPreview bookId={book.id} hasServerPdf collapsible defaultOpen={false} />
       ) : null}
 
       {/* Summary */}

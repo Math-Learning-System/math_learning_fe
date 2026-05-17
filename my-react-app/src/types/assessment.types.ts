@@ -264,3 +264,127 @@ export interface GetMyAssessmentsParams {
     sortDirection?: 'ASC' | 'DESC';
 }
 
+export interface CodeLabelOption {
+    id: string;
+    label: string;
+    /** Form fields to show when this scope is selected (admin-configured). */
+    fields?: string[];
+}
+
+export interface ProvinceCityOption {
+    name: string;
+    type: 'municipality' | 'province';
+}
+
+export interface AssessmentImportFormOptions {
+    schoolYears: string[];
+    examTypes: string[];
+    departments: string[];
+    examScopes: CodeLabelOption[];
+    organizerTypes: CodeLabelOption[];
+    provinceCities: ProvinceCityOption[];
+    adminVersion?: string;
+    country?: string;
+}
+
+export interface AssessmentImportFromPdfParams {
+    file: File;
+    examTitle?: string;
+    schoolYear?: string;
+    department?: string;
+    examDate?: string;
+    examType?: string;
+    examScope?: string;
+    organizerName?: string;
+    organizerType?: string;
+    provinceCity?: string;
+    district?: string;
+    schoolName?: string;
+    country?: string;
+    schoolGradeId?: string;
+    subjectId?: string;
+    contextHint?: string;
+    questionBankId?: string;
+    assessmentType?: AssessmentType;
+    timeLimitMinutes?: number;
+}
+
+export interface PdfImportedTableData {
+    tableTitle?: string;
+    headers?: string[];
+    rows?: unknown[][];
+    tableRawHtml?: string;
+    tableMarkdown?: string;
+}
+
+export interface PdfImportedExam {
+    examTitle?: string;
+    schoolYear?: string;
+    department?: string;
+    subject?: string;
+    examDate?: string;
+    durationMinutes?: number;
+    examType?: string;
+    totalPages?: number;
+    gradeLevel?: string;
+    sourceFile?: string;
+    rawHeaderText?: string;
+    examScope?: string;
+    organizerName?: string;
+    organizerType?: string;
+    provinceCity?: string;
+    provinceCityType?: string;
+    district?: string;
+    schoolName?: string;
+    country?: string;
+    adminVersion?: string;
+}
+
+export interface PdfImportedQuestion {
+    orderIndex?: number;
+    sectionLabel?: string;
+    sectionScore?: number;
+    subQuestionLabel?: string;
+    questionText?: string;
+    questionType?: string;
+    points?: number;
+    pageNumber?: number;
+    hasTable?: boolean;
+    tableData?: PdfImportedTableData;
+    mathLatex?: string[];
+    conditions?: string;
+    task?: string;
+    rawText?: string;
+    answerKey?: string;
+    solution?: string;
+    difficulty?: string;
+    topicTags?: string[];
+    images?: string[];
+    rawImportPayload?: Record<string, unknown>;
+}
+
+export interface AssessmentImportParsedQuestion {
+    orderIndex: number;
+    sectionLabel?: string;
+    subQuestionLabel?: string;
+    questionText: string;
+    questionType?: string;
+    displayLabel?: string;
+    hasTable?: boolean;
+    imported: boolean;
+    skipReason?: string | null;
+    detail?: PdfImportedQuestion;
+}
+
+export interface AssessmentImportResponse {
+    analysisSuccessful: boolean;
+    confidenceScore?: number;
+    warnings?: string[];
+    extractedTextPreview?: string;
+    questionsImported: number;
+    questionsSkipped: number;
+    assessment: AssessmentResponse;
+    exam?: PdfImportedExam;
+    parsedQuestions?: AssessmentImportParsedQuestion[];
+}
+

@@ -56,6 +56,8 @@ export const API_ENDPOINTS = {
 
   // Assessments
   ASSESSMENTS: '/assessments',
+  ASSESSMENTS_IMPORT_FROM_PDF: '/assessments/import-from-pdf',
+  ASSESSMENTS_IMPORT_FORM_OPTIONS: '/assessments/import-form-options',
   ASSESSMENTS_MY: '/assessments/my',
   ASSESSMENTS_SEARCH: '/assessments/search',
   ASSESSMENTS_DETAIL: (id: string) => `/assessments/${id}`,

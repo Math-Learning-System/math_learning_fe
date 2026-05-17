@@ -1,23 +1,37 @@
 import { useQuery } from '@tanstack/react-query';
 import { LessonSlideService } from '../services/api/lesson-slide.service';
 
+type CatalogQueryOptions = {
+  /** Refetch when form mounts (e.g. sau khi admin thêm lớp/môn mới). */
+  refetchOnMount?: boolean | 'always';
+  staleTime?: number;
+};
+
 /** Cascading catalog for Lớp → Môn → Chương → Bài (aligned with /student/public-slides). */
-export function useCurriculumHierarchyCatalog(state: {
-  gradeId: string;
-  subjectId: string;
-  chapterId: string;
-}) {
+export function useCurriculumHierarchyCatalog(
+  state: {
+    gradeId: string;
+    subjectId: string;
+    chapterId: string;
+  },
+  options?: CatalogQueryOptions
+) {
+  const refetchOnMount = options?.refetchOnMount;
+  const staleTime = options?.staleTime ?? 5 * 60 * 1000;
+
   const gradesQuery = useQuery({
     queryKey: ['school-grades', 'active'],
     queryFn: () => LessonSlideService.getSchoolGrades(true),
-    staleTime: 5 * 60 * 1000,
+    staleTime,
+    refetchOnMount,
   });
 
   const subjectsQuery = useQuery({
     queryKey: ['subjects', 'by-school-grade', state.gradeId],
     queryFn: () => LessonSlideService.getSubjectsBySchoolGrade(state.gradeId),
     enabled: !!state.gradeId,
-    staleTime: 5 * 60 * 1000,
+    staleTime,
+    refetchOnMount,
   });
 
   const chaptersQuery = useQuery({
@@ -34,19 +48,26 @@ export function useCurriculumHierarchyCatalog(state: {
     staleTime: 5 * 60 * 1000,
   });
 
+  const schoolGrades = gradesQuery.data?.result ?? [];
+  const subjects = subjectsQuery.data?.result ?? [];
+
   const loadingCatalog =
-    gradesQuery.isFetching ||
-    subjectsQuery.isFetching ||
+    (gradesQuery.isFetching && schoolGrades.length === 0) ||
+    (subjectsQuery.isFetching && !!state.gradeId && subjects.length === 0) ||
     chaptersQuery.isFetching ||
     lessonsQuery.isFetching;
 
   return {
-    schoolGrades: gradesQuery.data?.result ?? [],
-    subjects: subjectsQuery.data?.result ?? [],
+    schoolGrades,
+    subjects,
     chapters: chaptersQuery.data?.result ?? [],
     lessons: lessonsQuery.data?.result ?? [],
     loadingCatalog,
+    gradesLoading: gradesQuery.isLoading && schoolGrades.length === 0,
+    subjectsLoading: subjectsQuery.isLoading && !!state.gradeId && subjects.length === 0,
     catalogError:
       gradesQuery.error || subjectsQuery.error || chaptersQuery.error || lessonsQuery.error,
+    refetchGrades: () => void gradesQuery.refetch(),
+    refetchSubjects: () => void subjectsQuery.refetch(),
   };
 }
