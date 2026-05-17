@@ -7,6 +7,13 @@ import {
 } from 'lucide-react';
 import { useEffect, useRef, useState, type RefObject } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AssessmentPdfImportConfirmModal } from './AssessmentPdfImportConfirmModal';
+import {
+  clearAssessmentPdfImportDraft,
+  emptyAssessmentPdfImportDraft,
+  loadAssessmentPdfImportDraft,
+  saveAssessmentPdfImportDraft,
+} from '../../utils/assessmentPdfImportDraft';
 import MathText from '../../components/common/MathText';
 import { PdfPreviewWithToggle } from '../../components/common/PdfPreviewWithToggle';
 import { formatSchoolGradeLabel } from '../../utils/schoolGradeLabel';
@@ -15,7 +22,6 @@ import {
   organizerTypeLabel,
   scopeShowsField,
 } from '../../utils/examImportScope';
-import type { AssessmentImportFromPdfParams } from '../../types';
 import {
   useAssessmentImportFormOptions,
   useImportAssessmentFromPdf,
@@ -30,42 +36,109 @@ import './assessment-builder-flow.css';
 export function AssessmentPdfImportFlow() {
   const navigate = useNavigate();
   const inputRef = useRef<HTMLInputElement>(null);
+  const savedDraft = loadAssessmentPdfImportDraft();
   const [file, setFile] = useState<File | null>(null);
-  const [examTitle, setExamTitle] = useState('');
-  const [schoolYear, setSchoolYear] = useState('');
-  const [department, setDepartment] = useState('');
-  const [examDate, setExamDate] = useState('');
-  const [examType, setExamType] = useState('');
-  const [schoolGradeId, setSchoolGradeId] = useState('');
-  const [subjectId, setSubjectId] = useState('');
-  const [contextHint, setContextHint] = useState('');
-  const [questionBankId, setQuestionBankId] = useState('');
-  const [timeLimitMinutes, setTimeLimitMinutes] = useState('');
+  const [examTitle, setExamTitle] = useState(savedDraft?.examTitle ?? '');
+  const [schoolYear, setSchoolYear] = useState(savedDraft?.schoolYear ?? '');
+  const [department, setDepartment] = useState(savedDraft?.department ?? '');
+  const [examDate, setExamDate] = useState(savedDraft?.examDate ?? '');
+  const [examType, setExamType] = useState(savedDraft?.examType ?? '');
+  const [schoolGradeId, setSchoolGradeId] = useState(savedDraft?.schoolGradeId ?? '');
+  const [subjectId, setSubjectId] = useState(savedDraft?.subjectId ?? '');
+  const [contextHint, setContextHint] = useState(savedDraft?.contextHint ?? '');
+  const [questionBankId, setQuestionBankId] = useState(savedDraft?.questionBankId ?? '');
+  const [timeLimitMinutes, setTimeLimitMinutes] = useState(savedDraft?.timeLimitMinutes ?? '');
+  const [examScope, setExamScope] = useState(savedDraft?.examScope ?? '');
+  const [organizerType, setOrganizerType] = useState(savedDraft?.organizerType ?? '');
+  const [provinceCity, setProvinceCity] = useState(savedDraft?.provinceCity ?? '');
+  const [district, setDistrict] = useState(savedDraft?.district ?? '');
+  const [schoolName, setSchoolName] = useState(savedDraft?.schoolName ?? '');
   const [formError, setFormError] = useState('');
   const [result, setResult] = useState<AssessmentImportResponse | null>(null);
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [pdfLayout, setPdfLayout] = useState('');
+  const [importContentMode, setImportContentMode] = useState('');
 
   const importMutation = useImportAssessmentFromPdf();
+  const optionsQuery = useAssessmentImportFormOptions();
+  const opts = optionsQuery.data?.result;
   const banksQuery = useGetMyQuestionBanks(0, 100);
   const banks = banksQuery.data?.result?.content ?? [];
 
+  useEffect(() => {
+    saveAssessmentPdfImportDraft({
+      examTitle,
+      schoolYear,
+      department,
+      examDate,
+      examType,
+      schoolGradeId,
+      subjectId,
+      contextHint,
+      questionBankId,
+      timeLimitMinutes,
+      examScope,
+      organizerType,
+      provinceCity,
+      district,
+      schoolName,
+    });
+  }, [
+    examTitle,
+    schoolYear,
+    department,
+    examDate,
+    examType,
+    schoolGradeId,
+    subjectId,
+    contextHint,
+    questionBankId,
+    timeLimitMinutes,
+    examScope,
+    organizerType,
+    provinceCity,
+    district,
+    schoolName,
+  ]);
+
+  useEffect(() => {
+    const layouts = opts?.pdfLayouts ?? [];
+    if (!pdfLayout && layouts.length > 0) {
+      setPdfLayout(layouts[0].id);
+    }
+    const modes = opts?.importContentModes ?? [];
+    if (!importContentMode && modes.length > 0) {
+      const enabled = modes.find((m) => m.enabled !== false) ?? modes[0];
+      setImportContentMode(enabled.id);
+    }
+  }, [opts?.pdfLayouts, opts?.importContentModes, pdfLayout, importContentMode]);
+
   function reset() {
     setFile(null);
-    setExamTitle('');
-    setSchoolYear('');
-    setDepartment('');
-    setExamDate('');
-    setExamType('');
-    setSchoolGradeId('');
-    setSubjectId('');
-    setContextHint('');
-    setQuestionBankId('');
-    setTimeLimitMinutes('');
+    const empty = emptyAssessmentPdfImportDraft();
+    setExamTitle(empty.examTitle);
+    setSchoolYear(empty.schoolYear);
+    setDepartment(empty.department);
+    setExamDate(empty.examDate);
+    setExamType(empty.examType);
+    setSchoolGradeId(empty.schoolGradeId);
+    setSubjectId(empty.subjectId);
+    setContextHint(empty.contextHint);
+    setQuestionBankId(empty.questionBankId);
+    setTimeLimitMinutes(empty.timeLimitMinutes);
+    setExamScope(empty.examScope);
+    setOrganizerType(empty.organizerType);
+    setProvinceCity(empty.provinceCity);
+    setDistrict(empty.district);
+    setSchoolName(empty.schoolName);
     setFormError('');
     setResult(null);
+    setConfirmOpen(false);
+    clearAssessmentPdfImportDraft();
     importMutation.reset();
   }
 
-  async function handleImport(extra: Omit<AssessmentImportFromPdfParams, 'file'>) {
+  function openConfirmModal() {
     if (!file) return;
     if (!schoolYear.trim()) {
       setFormError('Vui lòng chọn năm học.');
@@ -84,6 +157,12 @@ export function AssessmentPdfImportFlow() {
       return;
     }
     setFormError('');
+    setConfirmOpen(true);
+  }
+
+  async function handleImport() {
+    if (!file || !pdfLayout || !importContentMode) return;
+    setConfirmOpen(false);
     try {
       const response = await importMutation.mutateAsync({
         file,
@@ -92,13 +171,21 @@ export function AssessmentPdfImportFlow() {
         department: department.trim() || undefined,
         examDate: examDate || undefined,
         examType: examType.trim(),
+        examScope: examScope || undefined,
+        organizerName: department.trim() || undefined,
+        organizerType: organizerType || undefined,
+        provinceCity: provinceCity.trim() || undefined,
+        district: district.trim() || undefined,
+        schoolName: schoolName.trim() || undefined,
+        country: opts?.country || undefined,
         schoolGradeId,
         subjectId,
         contextHint: contextHint.trim() || undefined,
         questionBankId: questionBankId || undefined,
         assessmentType: 'EXAM',
         timeLimitMinutes: timeLimitMinutes ? Number(timeLimitMinutes) : undefined,
-        ...extra,
+        pdfLayout,
+        importContentMode,
       });
       setResult(response.result ?? null);
     } catch {
@@ -145,11 +232,21 @@ export function AssessmentPdfImportFlow() {
             setContextHint={setContextHint}
             questionBankId={questionBankId}
             setQuestionBankId={setQuestionBankId}
+            examScope={examScope}
+            setExamScope={setExamScope}
+            organizerType={organizerType}
+            setOrganizerType={setOrganizerType}
+            provinceCity={provinceCity}
+            setProvinceCity={setProvinceCity}
+            district={district}
+            setDistrict={setDistrict}
+            schoolName={schoolName}
+            setSchoolName={setSchoolName}
             banks={banks}
             formError={formError}
             importMutation={importMutation}
             onReset={reset}
-            onImport={(extra) => void handleImport(extra)}
+            onRequestImport={openConfirmModal}
           />
         ) : (
           <ImportResult
@@ -159,6 +256,19 @@ export function AssessmentPdfImportFlow() {
           />
         )}
       </section>
+
+      <AssessmentPdfImportConfirmModal
+        isOpen={confirmOpen}
+        pdfLayouts={opts?.pdfLayouts ?? []}
+        importContentModes={opts?.importContentModes ?? []}
+        pdfLayout={pdfLayout}
+        importContentMode={importContentMode}
+        onPdfLayoutChange={setPdfLayout}
+        onImportContentModeChange={setImportContentMode}
+        onClose={() => setConfirmOpen(false)}
+        onConfirm={() => void handleImport()}
+        confirming={importMutation.isPending}
+      />
     </div>
   );
 }
@@ -187,11 +297,21 @@ function ImportForm({
   setContextHint,
   questionBankId,
   setQuestionBankId,
+  examScope,
+  setExamScope,
+  organizerType,
+  setOrganizerType,
+  provinceCity,
+  setProvinceCity,
+  district,
+  setDistrict,
+  schoolName,
+  setSchoolName,
   banks,
   formError,
   importMutation,
   onReset,
-  onImport,
+  onRequestImport,
 }: {
   inputRef: RefObject<HTMLInputElement | null>;
   file: File | null;
@@ -216,11 +336,21 @@ function ImportForm({
   setContextHint: (v: string) => void;
   questionBankId: string;
   setQuestionBankId: (v: string) => void;
+  examScope: string;
+  setExamScope: (v: string) => void;
+  organizerType: string;
+  setOrganizerType: (v: string) => void;
+  provinceCity: string;
+  setProvinceCity: (v: string) => void;
+  district: string;
+  setDistrict: (v: string) => void;
+  schoolName: string;
+  setSchoolName: (v: string) => void;
   banks: { id: string; name: string }[];
   formError: string;
   importMutation: ReturnType<typeof useImportAssessmentFromPdf>;
   onReset: () => void;
-  onImport: (extra: Omit<AssessmentImportFromPdfParams, 'file'>) => void;
+  onRequestImport: () => void;
 }) {
   const optionsQuery = useAssessmentImportFormOptions();
   const opts = optionsQuery.data?.result;
@@ -230,13 +360,7 @@ function ImportForm({
   const examScopes = opts?.examScopes ?? [];
   const organizerTypes = opts?.organizerTypes ?? [];
   const provinceCities = opts?.provinceCities ?? [];
-  const configCountry = opts?.country ?? '';
 
-  const [examScope, setExamScope] = useState('');
-  const [organizerType, setOrganizerType] = useState('');
-  const [provinceCity, setProvinceCity] = useState('');
-  const [district, setDistrict] = useState('');
-  const [schoolName, setSchoolName] = useState('');
   const selectedScope = examScopes.find((s) => s.id === examScope);
 
   const {
@@ -625,17 +749,7 @@ function ImportForm({
           type="button"
           className="btn inline-flex items-center gap-2"
           disabled={!file || importMutation.isPending}
-          onClick={() =>
-            onImport({
-              examScope: examScope || undefined,
-              organizerName: department.trim() || undefined,
-              organizerType: organizerType || undefined,
-              provinceCity: provinceCity.trim() || undefined,
-              district: district.trim() || undefined,
-              schoolName: schoolName.trim() || undefined,
-              country: configCountry || undefined,
-            })
-          }
+          onClick={onRequestImport}
         >
           <FileUp className="h-4 w-4" aria-hidden />
           {importMutation.isPending ? 'Đang phân tích PDF…' : 'Tạo đề từ PDF'}

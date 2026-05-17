@@ -80,6 +80,10 @@ export class AssessmentService {
         if (params.timeLimitMinutes != null) {
             formData.append('timeLimitMinutes', String(params.timeLimitMinutes));
         }
+        if (params.pdfLayout) formData.append('pdfLayout', params.pdfLayout);
+        if (params.importContentMode) {
+            formData.append('importContentMode', params.importContentMode);
+        }
 
         const signal =
             typeof AbortSignal !== 'undefined' && 'timeout' in AbortSignal

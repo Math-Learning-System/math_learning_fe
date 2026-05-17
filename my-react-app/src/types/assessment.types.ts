@@ -269,6 +269,9 @@ export interface CodeLabelOption {
     label: string;
     /** Form fields to show when this scope is selected (admin-configured). */
     fields?: string[];
+    description?: string;
+    /** When false, shown but not selectable (e.g. LaTeX mode). */
+    enabled?: boolean;
 }
 
 export interface ProvinceCityOption {
@@ -285,6 +288,8 @@ export interface AssessmentImportFormOptions {
     provinceCities: ProvinceCityOption[];
     adminVersion?: string;
     country?: string;
+    pdfLayouts?: CodeLabelOption[];
+    importContentModes?: CodeLabelOption[];
 }
 
 export interface AssessmentImportFromPdfParams {
@@ -307,6 +312,10 @@ export interface AssessmentImportFromPdfParams {
     questionBankId?: string;
     assessmentType?: AssessmentType;
     timeLimitMinutes?: number;
+    /** Admin-configured: questions_only | questions_with_answers */
+    pdfLayout?: string;
+    /** Admin-configured: pdf | latex */
+    importContentMode?: string;
 }
 
 export interface PdfImportedTableData {

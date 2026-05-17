@@ -19,6 +19,8 @@ export function AssessmentImportOptionsPanel() {
   const [provinceCities, setProvinceCities] = useState<ProvinceCityOption[]>([]);
   const [examScopes, setExamScopes] = useState<CodeLabelOption[]>([]);
   const [organizerTypes, setOrganizerTypes] = useState<CodeLabelOption[]>([]);
+  const [pdfLayouts, setPdfLayouts] = useState<CodeLabelOption[]>([]);
+  const [importContentModes, setImportContentModes] = useState<CodeLabelOption[]>([]);
   const [adminVersion, setAdminVersion] = useState('');
   const [country, setCountry] = useState('');
   const [newScopeId, setNewScopeId] = useState('');
@@ -51,6 +53,8 @@ export function AssessmentImportOptionsPanel() {
     setProvinceCities(opts.provinceCities ?? []);
     setExamScopes(opts.examScopes ?? []);
     setOrganizerTypes(opts.organizerTypes ?? []);
+    setPdfLayouts(opts.pdfLayouts ?? []);
+    setImportContentModes(opts.importContentModes ?? []);
     setAdminVersion(opts.adminVersion ?? '');
     setCountry(opts.country ?? '');
   }
@@ -96,6 +100,8 @@ export function AssessmentImportOptionsPanel() {
         examScopes,
         organizerTypes,
         provinceCities,
+        pdfLayouts,
+        importContentModes,
         adminVersion,
         country,
       };
@@ -192,6 +198,24 @@ export function AssessmentImportOptionsPanel() {
             placeholder="Việt Nam"
           />
         </label>
+      </div>
+
+      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+        Dạng PDF và chế độ nội dung khi giáo viên bấm &quot;Tạo đề từ PDF&quot;.
+      </p>
+
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <CatalogOptionColumn
+          title="Dạng PDF"
+          items={pdfLayouts}
+          onRemove={(id) => setPdfLayouts((prev) => prev.filter((x) => x.id !== id))}
+        />
+        <CatalogOptionColumn
+          title="Chế độ xử lý nội dung"
+          items={importContentModes}
+          onRemove={(id) => setImportContentModes((prev) => prev.filter((x) => x.id !== id))}
+          showEnabled
+        />
       </div>
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -412,6 +436,58 @@ function ListColumn({
         ))}
       </ul>
       <div className="mt-2 flex gap-2">{input}</div>
+    </div>
+  );
+}
+
+function CatalogOptionColumn({
+  title,
+  items,
+  onRemove,
+  showEnabled,
+}: {
+  title: string;
+  items: CodeLabelOption[];
+  onRemove: (id: string) => void;
+  showEnabled?: boolean;
+}) {
+  return (
+    <div>
+      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase text-[#87867F]">
+        {title}
+      </p>
+      <ul className="mt-2 max-h-40 space-y-1 overflow-y-auto">
+        {items.map((item) => (
+          <li
+            key={item.id}
+            className="flex items-start justify-between gap-2 rounded-lg bg-[#FAF9F5] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px]"
+          >
+            <span>
+              <span className="font-medium">{item.label}</span>
+              <span className="ml-2 text-[11px] text-[#87867F]">({item.id})</span>
+              {item.description ? (
+                <span className="mt-0.5 block text-[11px] text-[#87867F]">{item.description}</span>
+              ) : null}
+              {showEnabled ? (
+                <span className="mt-0.5 block text-[11px] text-[#87867F]">
+                  enabled: {item.enabled === false ? 'false' : 'true'}
+                </span>
+              ) : null}
+            </span>
+            <button
+              type="button"
+              className="shrink-0 text-[#BE123C]"
+              onClick={() => onRemove(item.id)}
+              aria-label={`Xóa ${item.label}`}
+            >
+              <Trash2 className="h-3.5 w-3.5" />
+            </button>
+          </li>
+        ))}
+      </ul>
+      <p className="mt-2 font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]">
+        Thêm/sửa chi tiết qua JSON nâng cao hoặc migration V29.
+      </p>
     </div>
   );
 }
