@@ -40,6 +40,14 @@
 }
 
 /* ── Base ── */
+.homepage--embedded {
+  min-height: auto;
+}
+
+.homepage--embedded .homepage-header {
+  display: none;
+}
+
 .homepage {
   font-family: var(--f-body);
   color: var(--c-text-2);

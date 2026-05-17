@@ -3,8 +3,8 @@ import { CreditCard, Layers, Plus, Tag, X, Zap } from 'lucide-react';
 import React, { useEffect, useId, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { SubscriptionPlanCard } from '../components/SubscriptionPlanCard';
-import Footer from '../components/Footer';
 import DashboardLayout from '../components/layout/DashboardLayout/DashboardLayout';
+import MarketingPageShell from '../components/marketing/MarketingPageShell';
 import { UI_TEXT } from '../constants/uiText';
 import { mockAdmin, mockStudent, mockTeacher } from '../data/mockData';
 import { AuthService } from '../services/api/auth.service';
@@ -699,42 +699,7 @@ const Pricing: React.FC = () => {
      UNAUTHENTICATED VIEW
      ════════════════════════════════════ */
   return (
-    <div className="homepage">
-      <header className="homepage-header">
-        <div className="container">
-          <nav className="navbar">
-            <div className="navbar-brand">
-              <Link to="/" className="logo">
-                <span className="logo-icon">∑π</span>
-                <span className="logo-text">MathMaster</span>
-              </Link>
-            </div>
-            <div className="navbar-menu">
-              <Link to="/features" className="nav-link">
-                Tính năng
-              </Link>
-              <Link to="/about" className="nav-link">
-                Về chúng tôi
-              </Link>
-              <Link to="/pricing" className="nav-link active">
-                Giá cả
-              </Link>
-              <Link to="/contact" className="nav-link">
-                Liên hệ
-              </Link>
-            </div>
-            <div className="navbar-actions">
-              <Link to="/login" className="btn btn-outline-white">
-                Đăng nhập
-              </Link>
-              <Link to="/register" className="btn btn-primary-gradient">
-                Đăng ký miễn phí
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </header>
-
+    <MarketingPageShell activeNav="pricing">
       <main id="pricing-main">
         {/* ── Hero ── */}
         <section className="pricing-hero" aria-labelledby="pricing-public-heading">
@@ -944,10 +909,9 @@ const Pricing: React.FC = () => {
           </div>
         </section>
 
-        <Footer />
         {walletModal}
       </main>
-    </div>
+    </MarketingPageShell>
   );
 };
 

@@ -33,6 +33,7 @@ import {
 } from 'lucide-react';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { isMarketingPath } from '../../../constants/marketingRoutes';
 import { AuthService } from '../../../services/api/auth.service';
 import { LessonSlideService } from '../../../services/api/lesson-slide.service';
 import { MindmapService } from '../../../services/api/mindmap.service';
@@ -373,11 +374,23 @@ const Sidebar: React.FC<SidebarProps> = ({ role, collapsed, onToggle }) => {
     }
   };
 
+  const onMarketing = isMarketingPath(location.pathname);
+  const sidebarLogoTo = AuthService.isAuthenticated()
+    ? onMarketing
+      ? AuthService.getDashboardUrl()
+      : '/'
+    : '/';
+  const sidebarLogoAriaLabel = AuthService.isAuthenticated()
+    ? onMarketing
+      ? 'Quay về bảng điều khiển'
+      : 'Xem trang chủ MathMaster'
+    : 'Trang chủ MathMaster';
+
   return (
     <aside className={`sidebar${collapsed ? ' sidebar--collapsed' : ''}`}>
       {/* Header */}
       <div className="sidebar-header">
-        <Link to={AuthService.getDashboardUrl()} className="sidebar-logo">
+        <Link to={sidebarLogoTo} className="sidebar-logo" aria-label={sidebarLogoAriaLabel}>
           <span className="sb-logo-icon">∑π</span>
           {!collapsed && <span className="sb-logo-text">MathMaster</span>}
         </Link>

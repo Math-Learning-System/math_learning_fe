@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
-import Footer from '../components/Footer';
+import MarketingPageShell from '../components/marketing/MarketingPageShell';
 import './Contact.css';
 import './Homepage.css';
 
@@ -59,43 +58,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="homepage">
-      <header className="homepage-header">
-        <div className="container">
-          <nav className="navbar">
-            <div className="navbar-brand">
-              <Link to="/" className="logo">
-                <span className="logo-icon">∑π</span>
-                <span className="logo-text">MathMaster</span>
-              </Link>
-            </div>
-            <div className="navbar-menu">
-              <Link to="/features" className="nav-link">
-                Tính năng
-              </Link>
-              <Link to="/about" className="nav-link">
-                Về chúng tôi
-              </Link>
-              <Link to="/pricing" className="nav-link">
-                Giá cả
-              </Link>
-              <Link to="/contact" className="nav-link active">
-                Liên hệ
-              </Link>
-            </div>
-            <div className="navbar-actions">
-              <Link to="/login" className="btn btn-outline-white">
-                Đăng nhập
-              </Link>
-              <Link to="/register" className="btn btn-primary-gradient">
-                Đăng ký miễn phí
-              </Link>
-            </div>
-          </nav>
-        </div>
-      </header>
-
-      {/* ── Hero ── */}
+    <MarketingPageShell activeNav="contact">
+{/* ── Hero ── */}
       <section className="contact-hero">
         <div className="contact-hero-dots" aria-hidden="true" />
         <div className="container">
@@ -278,8 +242,7 @@ const Contact: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
-    </div>
+    </MarketingPageShell>
   );
 };
 

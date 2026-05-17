@@ -7,6 +7,7 @@ import {
   SUBSCRIPTION_UPDATED_EVENT,
   SubscriptionPlanService,
 } from '../../../services/api/subscription-plan.service';
+import MarketingNavLinks from '../../marketing/MarketingNavLinks';
 import './Navbar.css';
 
 interface NavbarProps {
@@ -126,6 +127,7 @@ const Navbar: React.FC<NavbarProps> = ({ user }) => {
   return (
     <nav className="navbar-top">
       <div className="navbar-content">
+        <MarketingNavLinks variant="dashboard" className="navbar-marketing-links" />
         <div className="navbar-actions">
           <button
             className="navbar-action-btn notifications-toggle"
