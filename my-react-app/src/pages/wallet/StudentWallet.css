@@ -187,7 +187,7 @@
 }
 .wallet-stat-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(79, 70, 229, 0.1);
+  box-shadow: 0 8px 28px rgba(2, 132, 199, 0.1);
 }
 .wallet-stat-item:nth-child(1) {
   animation-delay: 0.04s;
@@ -208,7 +208,7 @@
   bottom: 0;
   width: 4px;
   border-radius: 18px 0 0 18px;
-  background: linear-gradient(180deg, #6366f1, #4f46e5);
+  background: linear-gradient(180deg, #0ea5e9, #0284c7);
 }
 .wallet-stat-item:nth-child(2)::before {
   content: '';
@@ -353,8 +353,8 @@
   background-size: 250% 250%;
   animation: cardGlow 10s ease infinite;
   box-shadow:
-    0 24px 60px rgba(79, 70, 229, 0.4),
-    0 8px 24px rgba(79, 70, 229, 0.24),
+    0 24px 60px rgba(2, 132, 199, 0.4),
+    0 8px 24px rgba(2, 132, 199, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.18);
   display: flex;
   flex-direction: column;
@@ -442,8 +442,8 @@
 
 .balance-card:hover {
   box-shadow:
-    0 32px 80px rgba(79, 70, 229, 0.5),
-    0 14px 36px rgba(79, 70, 229, 0.3),
+    0 32px 80px rgba(2, 132, 199, 0.5),
+    0 14px 36px rgba(2, 132, 199, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
@@ -621,10 +621,10 @@
   transition: all 0.2s ease;
 }
 .method-card:hover {
-  border-color: #a5b4fc;
-  background: #eef2ff;
+  border-color: #38bdf8;
+  background: #f0f9ff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.1);
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.1);
 }
 .method-card.selected {
   border-color: var(--wallet-accent);
@@ -765,10 +765,10 @@
 @keyframes depositPulse {
   0%,
   100% {
-    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.38);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.38);
   }
   50% {
-    box-shadow: 0 10px 36px rgba(79, 70, 229, 0.65);
+    box-shadow: 0 10px 36px rgba(2, 132, 199, 0.65);
   }
 }
 /* Processing state — replaces button entirely */
@@ -980,7 +980,7 @@
   gap: 0.6rem;
 }
 .empty-icon {
-  color: #c7d2fe;
+  color: #bae6fd;
   margin-bottom: 0.5rem;
 }
 .empty-state h3 {
@@ -1146,7 +1146,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: #6366f1;
+  color: #0ea5e9;
   transition:
     border-color 0.15s,
     background 0.15s;
@@ -1154,7 +1154,7 @@
 }
 
 .tx-bill-btn:hover:not(:disabled) {
-  border-color: #6366f1;
+  border-color: #0ea5e9;
   background: #f0f0ff;
 }
 
@@ -1166,8 +1166,8 @@
 .tx-bill-spin {
   width: 12px;
   height: 12px;
-  border: 2px solid #c7d2fe;
-  border-top-color: #6366f1;
+  border: 2px solid #bae6fd;
+  border-top-color: #0ea5e9;
   border-radius: 50%;
   animation: tx-bill-spin 0.7s linear infinite;
   display: inline-block;
@@ -1384,10 +1384,10 @@
   transition: all 0.18s ease;
 }
 .bank-chip:hover {
-  border-color: #a5b4fc;
+  border-color: #38bdf8;
   background: #f8f8ff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.1);
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.1);
 }
 .bank-chip.selected {
   transform: translateY(-2px);
@@ -1431,7 +1431,7 @@
 }
 .payos-note svg {
   flex-shrink: 0;
-  color: #4f46e5;
+  color: #0284c7;
 }
 
 /* ══════════════════════════════════════════════════════════
@@ -1469,7 +1469,7 @@
 .card-tpl-swatch.active {
   border-color: #fff;
   transform: scale(1.22);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.45);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.45);
 }
 .card-tpl-hint {
   font-size: 0.7rem;
@@ -1902,7 +1902,7 @@
 
 /* ── Hero gradient header ── */
 .sw-modal-hero {
-  background: linear-gradient(145deg, #1e3a8a 0%, #3730a3 40%, #4f46e5 100%);
+  background: linear-gradient(145deg, #1e3a8a 0%, #0284c7 40%, #0284c7 100%);
   padding: 2rem 2rem 1.75rem;
   display: flex;
   flex-direction: column;
@@ -2187,8 +2187,8 @@
   line-height: 1;
 }
 .bc-tpl-more-btn:hover {
-  border-color: #6366f1;
-  color: #6366f1;
+  border-color: #0ea5e9;
+  color: #0ea5e9;
   transform: scale(1.15);
 }
 .bc-tpl-more-dot {
@@ -2196,7 +2196,7 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.4);
 }
 
 /* ── Template Picker Modal ───────────────────────────────────── */
@@ -2270,8 +2270,8 @@
   border-color: #e2e8f0;
 }
 .bc-tpl-card-btn.active {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.25);
 }
 .bc-tpl-card-preview {
   position: relative;
@@ -2296,7 +2296,7 @@
   position: absolute;
   top: 0.35rem;
   right: 0.35rem;
-  background: #6366f1;
+  background: #0ea5e9;
   color: #fff;
   font-size: 0.6rem;
   font-weight: 900;
@@ -2306,7 +2306,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 6px rgba(99, 102, 241, 0.5);
+  box-shadow: 0 2px 6px rgba(14, 165, 233, 0.5);
 }
 
 /* ── Template Category Tabs ──────────────────────────────── */
@@ -2340,8 +2340,8 @@
   color: #1e293b;
 }
 .bc-tpl-cat-tab.active {
-  background: #6366f1;
-  border-color: #6366f1;
+  background: #0ea5e9;
+  border-color: #0ea5e9;
   color: #fff;
 }
 .bc-tpl-cat-count {
@@ -2524,12 +2524,12 @@
   padding: 0.5rem;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(135deg, #6366f1, #14b8a6);
+  background: linear-gradient(135deg, #0ea5e9, #14b8a6);
   color: #fff;
   font-size: 0.78rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 3px 10px rgba(99, 102, 241, 0.35);
+  box-shadow: 0 3px 10px rgba(14, 165, 233, 0.35);
   transition:
     opacity 0.15s,
     transform 0.15s;

@@ -83,7 +83,7 @@ export function AIExtractPanel({
   return (
     <div
       style={{
-        border: '1px solid #e0e7ff',
+        border: '1px solid #e0f2fe',
         borderRadius: 10,
         background: '#f5f3ff',
         padding: '14px 16px',
@@ -283,7 +283,7 @@ export function AIExtractPanel({
                 justifyContent: 'flex-end',
                 marginTop: 8,
                 paddingTop: 12,
-                borderTop: '1px solid #e0e7ff',
+                borderTop: '1px solid #e0f2fe',
               }}
             >
               <button

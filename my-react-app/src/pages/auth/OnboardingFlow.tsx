@@ -45,10 +45,10 @@ const MascotOwl: React.FC = () => (
     aria-hidden="true"
   >
     {/* Graduation cap */}
-    <polygon points="36,4 14,14 58,14" fill="#4f46e5" />
-    <rect x="14" y="13" width="44" height="5" rx="2.5" fill="#4338ca" />
-    <line x1="55" y1="14" x2="60" y2="26" stroke="#4338ca" strokeWidth="2" strokeLinecap="round" />
-    <circle cx="61" cy="28" r="3.5" fill="#a78bfa" />
+    <polygon points="36,4 14,14 58,14" fill="#0284c7" />
+    <rect x="14" y="13" width="44" height="5" rx="2.5" fill="#0369a1" />
+    <line x1="55" y1="14" x2="60" y2="26" stroke="#0369a1" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="61" cy="28" r="3.5" fill="#38bdf8" />
     {/* Ear tufts */}
     <ellipse cx="22" cy="27" rx="5" ry="7" fill="#fbbf24" transform="rotate(-15 22 27)" />
     <ellipse cx="50" cy="27" rx="5" ry="7" fill="#fbbf24" transform="rotate(15 50 27)" />
@@ -423,7 +423,7 @@ const OnboardingFlow: React.FC = () => {
                 e.preventDefault();
                 setShowPrivacyModal(true);
               }}
-              className="text-[#0ea5e9] underline underline-offset-2 hover:text-[#A8532E] transition-colors duration-150 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:rounded-sm"
+              className="text-[#0ea5e9] underline underline-offset-2 hover:text-[#0284c7] transition-colors duration-150 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:rounded-sm"
             >
               chính sách bảo mật
             </button>{' '}

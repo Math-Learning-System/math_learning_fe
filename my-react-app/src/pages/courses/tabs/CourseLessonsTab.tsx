@@ -974,7 +974,7 @@ function SortableLessonItem({
               <span
                 style={{
                   fontSize: '0.75rem',
-                  color: '#6366f1',
+                  color: '#0ea5e9',
                   fontWeight: 600,
                   display: 'flex',
                   alignItems: 'center',

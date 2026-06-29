@@ -86,7 +86,7 @@ const levelMap: Record<string, { label: string; color: string }> = {
   BEGINNER: { label: 'Cơ bản', color: '#10b981' },
   INTERMEDIATE: { label: 'Trung bình', color: '#f59e0b' },
   ADVANCED: { label: 'Nâng cao', color: '#ef4444' },
-  ALL_LEVELS: { label: 'Mọi cấp độ', color: '#6366f1' },
+  ALL_LEVELS: { label: 'Mọi cấp độ', color: '#0ea5e9' },
 };
 
 /**
@@ -454,7 +454,7 @@ const UnifiedCourseView: React.FC<UnifiedCourseViewProps> = ({
                         <Link
                           to={`/student/instructors/${teacherProfile.userId}`}
                           style={{
-                            color: '#4f46e5',
+                            color: '#0284c7',
                             textDecoration: 'none',
                             fontWeight: 600,
                             transition: 'all 0.2s',
@@ -479,7 +479,7 @@ const UnifiedCourseView: React.FC<UnifiedCourseViewProps> = ({
                         <span
                           className="course-badge"
                           style={{
-                            background: levelMap[course.level]?.color ?? '#6366f1',
+                            background: levelMap[course.level]?.color ?? '#0ea5e9',
                           }}
                         >
                           {levelMap[course.level]?.label ?? 'Mọi cấp độ'}

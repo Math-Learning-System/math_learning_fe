@@ -681,8 +681,8 @@ const BALANCE_CARD_TEMPLATES: CardTemplate[] = [
   {
     id: 0,
     label: 'Indigo',
-    gradient: 'linear-gradient(135deg,#1e1b4b 0%,#3730a3 25%,#4f46e5 55%,#6d28d9 85%,#7c3aed 100%)',
-    swatch: '#4f46e5',
+    gradient: 'linear-gradient(135deg,#1e1b4b 0%,#0284c7 25%,#0284c7 55%,#6d28d9 85%,#7c3aed 100%)',
+    swatch: '#0284c7',
     patternEl: (
       <svg
         className="cp-pattern"
@@ -3753,7 +3753,7 @@ const StudentWallet: React.FC = () => {
 
   const WITHDRAWAL_STATUS_COLORS: Record<WithdrawalStatus, string> = {
     PENDING_VERIFY: '#f59e0b',
-    PENDING_ADMIN: '#6366f1',
+    PENDING_ADMIN: '#0ea5e9',
     PROCESSING: '#3b82f6',
     SUCCESS: '#10b981',
     REJECTED: '#ef4444',

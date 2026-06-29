@@ -403,7 +403,7 @@ export function QuestionReviewQueue() {
                       style={{
                         minHeight: 0,
                         padding: '0.9rem 1rem',
-                        borderColor: selected.has(q.id) ? '#a78bfa' : undefined,
+                        borderColor: selected.has(q.id) ? '#38bdf8' : undefined,
                       }}
                     >
                       <div className="row" style={{ alignItems: 'flex-start', gap: 12 }}>

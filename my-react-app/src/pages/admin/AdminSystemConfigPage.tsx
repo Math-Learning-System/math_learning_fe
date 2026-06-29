@@ -216,7 +216,7 @@ const SectionEditor: React.FC<SectionEditorProps> = ({
               </span>
               <button
                 onClick={() => set({ paragraphs: [...(section.paragraphs ?? []), ''] })}
-                className="flex items-center gap-1 text-[12px] text-[#0ea5e9] hover:text-[#A8532E] font-medium transition-colors"
+                className="flex items-center gap-1 text-[12px] text-[#0ea5e9] hover:text-[#0284c7] font-medium transition-colors"
               >
                 <Plus className="w-3.5 h-3.5" />
                 Thêm đoạn
@@ -254,7 +254,7 @@ const SectionEditor: React.FC<SectionEditorProps> = ({
               </span>
               <button
                 onClick={() => set({ bulletPoints: [...(section.bulletPoints ?? []), ''] })}
-                className="flex items-center gap-1 text-[12px] text-[#0ea5e9] hover:text-[#A8532E] font-medium transition-colors"
+                className="flex items-center gap-1 text-[12px] text-[#0ea5e9] hover:text-[#0284c7] font-medium transition-colors"
               >
                 <Plus className="w-3.5 h-3.5" />
                 Thêm mục

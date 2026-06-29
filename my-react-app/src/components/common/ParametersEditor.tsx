@@ -78,7 +78,7 @@ export function ParametersEditor({
       className="data-card"
       style={{
         minHeight: 0,
-        border: '1px solid #c7d2fe',
+        border: '1px solid #bae6fd',
         background: '#f8fafc',
         padding: '1rem 1.1rem',
         borderRadius: 12,

@@ -60,8 +60,8 @@ const MathSpiral = () => (
   >
     <defs>
       <linearGradient id="spiralGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#9896f5" />
-        <stop offset="100%" stopColor="#c084fc" />
+        <stop offset="0%" stopColor="#7dd3fc" />
+        <stop offset="100%" stopColor="#38bdf8" />
       </linearGradient>
     </defs>
 
@@ -139,7 +139,7 @@ const MathSpiral = () => (
     {/* Dashed extension */}
     <path
       d="M 274,75 Q 308,75 308,43"
-      stroke="rgba(192,132,252,0.4)"
+      stroke="rgba(56,189,248,0.4)"
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeDasharray="5 4"
@@ -147,15 +147,15 @@ const MathSpiral = () => (
     />
 
     {/* Highlight dots */}
-    <circle cx="240" cy="130" r="4.5" fill="#9896f5" />
-    <circle cx="185" cy="75" r="3.5" fill="rgba(152,150,245,0.7)" />
-    <circle cx="308" cy="143" r="3" fill="rgba(192,132,252,0.6)" />
+    <circle cx="240" cy="130" r="4.5" fill="#7dd3fc" />
+    <circle cx="185" cy="75" r="3.5" fill="rgba(14,165,233,0.7)" />
+    <circle cx="308" cy="143" r="3" fill="rgba(56,189,248,0.6)" />
 
     {/* Label */}
     <text
       x="56"
       y="56"
-      fill="rgba(152,150,245,0.88)"
+      fill="rgba(14,165,233,0.88)"
       fontSize="13"
       fontFamily="Georgia, serif"
       fontStyle="italic"
@@ -165,7 +165,7 @@ const MathSpiral = () => (
     <text
       x="56"
       y="73"
-      fill="rgba(192,132,252,0.5)"
+      fill="rgba(56,189,248,0.5)"
       fontSize="10"
       fontFamily="Georgia, serif"
       fontStyle="italic"
@@ -339,21 +339,21 @@ const ResetPassword: React.FC = () => {
               cx="100"
               cy="100"
               r="70"
-              stroke="rgba(94,92,230,0.12)"
+              stroke="rgba(14,165,233,0.12)"
               strokeWidth="1"
               strokeDasharray="4 3"
             />
-            <circle cx="100" cy="30" r="5" fill="rgba(94,92,230,0.4)" />
+            <circle cx="100" cy="30" r="5" fill="rgba(14,165,233,0.4)" />
           </svg>
           <svg className="rdeco-parabola" viewBox="0 0 180 100" fill="none">
             <path
               d="M10,90 Q90,5 170,90"
-              stroke="rgba(94,92,230,0.2)"
+              stroke="rgba(14,165,233,0.2)"
               strokeWidth="1.5"
               strokeDasharray="5 4"
               strokeLinecap="round"
             />
-            <circle className="rdeco-tracer" r="4" fill="rgba(94,92,230,0.55)" />
+            <circle className="rdeco-tracer" r="4" fill="rgba(14,165,233,0.55)" />
           </svg>
           <span className="rdeco-sym rdeco-sym--1">∑</span>
           <span className="rdeco-sym rdeco-sym--2">∞</span>
@@ -415,12 +415,12 @@ const ResetPassword: React.FC = () => {
                   <svg viewBox="0 0 64 64" fill="none">
                     <defs>
                       <linearGradient id="successGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#6b69f0" />
-                        <stop offset="100%" stopColor="#9896f5" />
+                        <stop offset="0%" stopColor="#0ea5e9" />
+                        <stop offset="100%" stopColor="#7dd3fc" />
                       </linearGradient>
                     </defs>
-                    <circle cx="32" cy="32" r="30" fill="rgba(94,92,230,0.08)" />
-                    <circle cx="32" cy="32" r="24" fill="rgba(94,92,230,0.12)" />
+                    <circle cx="32" cy="32" r="30" fill="rgba(14,165,233,0.08)" />
+                    <circle cx="32" cy="32" r="24" fill="rgba(14,165,233,0.12)" />
                     <circle cx="32" cy="32" r="18" fill="url(#successGrad)" />
                     <polyline
                       points="23,32 29,38 41,26"

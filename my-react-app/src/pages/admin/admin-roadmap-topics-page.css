@@ -187,15 +187,15 @@
 }
 
 .art-btn--add {
-  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
   color: #fff;
-  border-color: #6366f1;
-  box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2);
+  border-color: #0ea5e9;
+  box-shadow: 0 2px 4px rgba(14, 165, 233, 0.2);
 }
 .art-btn--add:hover:not(:disabled) {
-  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
-  border-color: #4f46e5;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  border-color: #0284c7;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
 }
 
 .art-btn--save {
@@ -329,7 +329,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: var(--pin-color, #6366f1);
+  background: var(--pin-color, #0ea5e9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -371,7 +371,7 @@
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 14px solid var(--pin-color, #6366f1);
+  border-top: 14px solid var(--pin-color, #0ea5e9);
   margin-top: -1px;
   filter: drop-shadow(0 3px 4px rgba(0, 0, 0, 0.18));
 }
@@ -1140,14 +1140,14 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: #6366f1;
+  color: #0ea5e9;
 }
 
 .art-drawer__section-title {
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.06em;
-  color: #4338ca;
+  color: #0369a1;
   margin-bottom: 2px;
   padding-bottom: 12px;
   border-bottom: 1px solid #e8e9ff;
@@ -1193,7 +1193,7 @@
 .art-textarea:focus,
 .art-select:focus {
   outline: none;
-  border-color: #6366f1;
+  border-color: #0ea5e9;
   background: #fff;
 }
 
@@ -1412,13 +1412,13 @@
   position: relative;
 }
 .art-picker__card:hover {
-  border-color: #6366f1;
+  border-color: #0ea5e9;
   background: #fafafa;
-  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.12);
+  box-shadow: 0 4px 16px rgba(14, 165, 233, 0.12);
 }
 .art-picker__card--selected {
-  border-color: #6366f1;
-  background: #eef2ff;
+  border-color: #0ea5e9;
+  background: #f0f9ff;
 }
 
 .art-picker__card-thumb {
@@ -1455,7 +1455,7 @@
   right: 10px;
   width: 26px;
   height: 26px;
-  background: #6366f1;
+  background: #0ea5e9;
   color: #fff;
   border-radius: 50%;
   display: flex;

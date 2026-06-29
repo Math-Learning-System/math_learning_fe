@@ -65,7 +65,7 @@ const levelMap: Record<string, { label: string; color: string }> = {
   BEGINNER: { label: 'Cơ bản', color: '#10b981' },
   INTERMEDIATE: { label: 'Trung bình', color: '#f59e0b' },
   ADVANCED: { label: 'Nâng cao', color: '#ef4444' },
-  ALL_LEVELS: { label: 'Mọi cấp độ', color: '#6366f1' },
+  ALL_LEVELS: { label: 'Mọi cấp độ', color: '#0ea5e9' },
 };
 
 const secondaryBtn =
@@ -554,7 +554,7 @@ const StudentCourseDetail: React.FC = () => {
                   justify-content: center;
                   font-size: 2.5rem;
                   font-weight: 800;
-                  color: #4f46e5;
+                  color: #0284c7;
                 }
 
                 .instructor-name {
@@ -606,7 +606,7 @@ const StudentCourseDetail: React.FC = () => {
                  }
 
                  .instructor-identity-link:hover .instructor-name {
-                   color: #4f46e5;
+                   color: #0284c7;
                  }
 
                  .instructor-social-links-mini {

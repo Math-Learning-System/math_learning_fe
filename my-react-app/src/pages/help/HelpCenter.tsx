@@ -335,7 +335,7 @@ const HelpCenter: React.FC = () => {
                       <span className="font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#64748b] uppercase tracking-[0.5px]">
                         {article.readTime}
                       </span>
-                      <button className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0ea5e9] flex items-center gap-1 group-hover:gap-2 transition-all duration-200 hover:text-[#A8532E]">
+                      <button className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0ea5e9] flex items-center gap-1 group-hover:gap-2 transition-all duration-200 hover:text-[#0284c7]">
                         Đọc ngay <ArrowRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
@@ -532,7 +532,7 @@ const HelpCenter: React.FC = () => {
                 >
                   Hủy
                 </button>
-                <button className="px-5 py-2.5 rounded-xl font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#ffffff] bg-[#0ea5e9] shadow-[#0ea5e9_0px_0px_0px_0px,#0ea5e9_0px_0px_0px_1px] hover:shadow-[#0ea5e9_0px_0px_0px_0px,#A8532E_0px_0px_0px_1px] hover:brightness-95 active:scale-[0.98] transition-all duration-150">
+                <button className="px-5 py-2.5 rounded-xl font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#ffffff] bg-[#0ea5e9] shadow-[#0ea5e9_0px_0px_0px_0px,#0ea5e9_0px_0px_0px_1px] hover:shadow-[#0ea5e9_0px_0px_0px_0px,#0284c7_0px_0px_0px_1px] hover:brightness-95 active:scale-[0.98] transition-all duration-150">
                   Gửi yêu cầu
                 </button>
               </div>

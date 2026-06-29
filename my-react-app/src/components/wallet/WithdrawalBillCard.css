@@ -37,7 +37,7 @@
 }
 
 .wbc-header__icon {
-  color: #6366f1;
+  color: #0ea5e9;
   flex-shrink: 0;
   margin-top: 2px;
 }
@@ -56,7 +56,7 @@
 }
 
 .wbc-header__sub span {
-  color: #6366f1;
+  color: #0ea5e9;
   font-weight: 600;
   font-family: monospace;
 }
@@ -134,7 +134,7 @@
 }
 
 .wbc-amount {
-  color: #4f46e5;
+  color: #0284c7;
   font-size: 1rem;
 }
 

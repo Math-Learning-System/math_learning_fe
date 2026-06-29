@@ -60,7 +60,7 @@
 
 .sat-stat-warm .sat-stat-icon {
   background: rgba(67, 56, 202, 0.1);
-  color: #4338ca;
+  color: #0369a1;
 }
 
 .sat-stat-soft .sat-stat-icon {
@@ -99,7 +99,7 @@
 }
 
 .sat-banner-icon {
-  color: #4338ca;
+  color: #0369a1;
   margin-top: 1px;
 }
 
@@ -220,8 +220,8 @@
 }
 
 .sat-badge.formative {
-  background: #eef2ff;
-  color: #4338ca;
+  background: #f0f9ff;
+  color: #0369a1;
   border: 1px solid rgba(67, 56, 202, 0.15);
 }
 
@@ -233,7 +233,7 @@
 
 .sat-badge.required {
   background: #f5f3ff;
-  color: #4338ca;
+  color: #0369a1;
   border: 1px solid rgba(67, 56, 202, 0.22);
 }
 
@@ -308,8 +308,8 @@
 }
 
 .sat-chip-attempts {
-  color: #4338ca;
-  background: #eef2ff;
+  color: #0369a1;
+  background: #f0f9ff;
   border-color: rgba(67, 56, 202, 0.2);
 }
 
@@ -377,7 +377,7 @@
 
 .sat-btn.primary {
   border: none;
-  background: linear-gradient(135deg, #3730a3 0%, #4f46e5 100%);
+  background: linear-gradient(135deg, #0284c7 0%, #0284c7 100%);
   color: #fff;
   box-shadow: 0 2px 8px rgba(67, 56, 202, 0.22);
 }

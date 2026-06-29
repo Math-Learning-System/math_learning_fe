@@ -304,9 +304,9 @@ export const SABlueprint = forwardRef<SABlueprintRef, SABlueprintProps>(
 
             <section
               className="data-card"
-              style={{ minHeight: 0, border: '1px solid #c7d2fe', background: '#eef2ff' }}
+              style={{ minHeight: 0, border: '1px solid #bae6fd', background: '#f0f9ff' }}
             >
-              <h3 style={{ color: '#3730a3', marginTop: 0 }}>Xem trước câu hỏi (giá trị mẫu)</h3>
+              <h3 style={{ color: '#0284c7', marginTop: 0 }}>Xem trước câu hỏi (giá trị mẫu)</h3>
               <p className="muted" style={{ fontSize: '0.8rem', marginBottom: 12 }}>
                 Đề bài và đáp án dưới đây được render với <em>giá trị mẫu</em> của các hệ số.
               </p>

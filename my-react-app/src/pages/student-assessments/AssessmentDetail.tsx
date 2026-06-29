@@ -64,7 +64,7 @@ const typeVisual: Record<
 > = {
   QUIZ: {
     Icon: ListChecks,
-    gradient: 'from-[#eef2ff] via-[#ffffff] to-[#ede9fe]',
+    gradient: 'from-[#f0f9ff] via-[#ffffff] to-[#ede9fe]',
     orb: 'bg-indigo-500/30',
     chip: 'text-indigo-800 bg-indigo-50/90 border-indigo-200/70',
   },

@@ -16,18 +16,18 @@
 }
 
 .rmc:hover {
-  border-color: #c7d2fe;
-  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.07);
+  border-color: #bae6fd;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.07);
 }
 
 .rmc--active {
-  border-color: #a5b4fc;
+  border-color: #38bdf8;
 }
 
 /* Progress bar at top edge */
 .rmc__accent {
   height: 3px;
-  background: #4f46e5;
+  background: #0284c7;
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -166,7 +166,7 @@
 
 .rmc__bar-fill {
   height: 100%;
-  background: #4f46e5;
+  background: #0284c7;
   border-radius: 999px;
   width: 100%;
   transform-origin: left;
@@ -202,21 +202,21 @@
 }
 
 .rmc__cta--start {
-  background: #4f46e5;
+  background: #0284c7;
   color: #ffffff;
 }
 
 .rmc__cta--start:hover {
-  background: #4338ca;
+  background: #0369a1;
   color: #ffffff;
 }
 
 .rmc__cta--continue {
   background: transparent;
-  color: #4f46e5;
+  color: #0284c7;
 }
 
 .rmc__cta--continue:hover {
-  background: #eef2ff;
-  color: #4338ca;
+  background: #f0f9ff;
+  color: #0369a1;
 }

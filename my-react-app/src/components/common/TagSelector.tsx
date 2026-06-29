@@ -57,7 +57,7 @@ export function TagSelector({
               alignItems: 'center',
               gap: '6px',
               padding: '4px 8px',
-              background: '#6366f1',
+              background: '#0ea5e9',
               color: 'white',
               borderRadius: '4px',
               fontSize: '13px',

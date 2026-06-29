@@ -221,7 +221,7 @@ export const UnifiedLessonItem: React.FC<UnifiedLessonItemProps> = ({
             <span
               style={{
                 fontSize: '0.75rem',
-                color: !canAccess ? '#cbd5e1' : '#6366f1',
+                color: !canAccess ? '#cbd5e1' : '#0ea5e9',
                 fontWeight: 600,
                 display: 'flex',
                 alignItems: 'center',

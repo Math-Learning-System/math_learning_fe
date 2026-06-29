@@ -846,8 +846,8 @@
   display: grid;
   place-items: center;
   border-radius: 8px;
-  background: #eef2ff;
-  color: #4f46e5;
+  background: #f0f9ff;
+  color: #0284c7;
 }
 
 .module-layout-container .modal-header .modal-subtitle {
@@ -1260,7 +1260,7 @@
 }
 
 .module-layout-container .add-question-panel[open] {
-  border-color: #c7d2fe;
+  border-color: #bae6fd;
   box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
 }
 
@@ -1367,8 +1367,8 @@
 }
 
 .module-layout-container .data-card--info {
-  border-color: #c7d2fe;
-  background: #eef2ff;
+  border-color: #bae6fd;
+  background: #f0f9ff;
 }
 
 .module-layout-container .data-card--success {
@@ -1387,7 +1387,7 @@
 }
 
 /* Section card title inherits a semantic color per variant */
-.module-layout-container .data-card--info .data-card__title { color: #3730a3; }
+.module-layout-container .data-card--info .data-card__title { color: #0284c7; }
 .module-layout-container .data-card--success .data-card__title { color: #166534; }
 .module-layout-container .data-card--warn .data-card__title { color: #92400e; }
 .module-layout-container .data-card--danger .data-card__title { color: #991b1b; }

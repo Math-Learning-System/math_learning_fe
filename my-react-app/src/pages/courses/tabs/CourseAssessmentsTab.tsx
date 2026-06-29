@@ -240,7 +240,7 @@ function AddAssessmentModal({
                         </span>
                       </div>
                       {isSelected && (
-                        <CheckCircle2 size={18} className="text-[#818cf8] flex-shrink-0" />
+                        <CheckCircle2 size={18} className="text-[#38bdf8] flex-shrink-0" />
                       )}
                     </div>
 

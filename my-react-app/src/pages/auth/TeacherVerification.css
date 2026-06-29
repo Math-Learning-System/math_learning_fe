@@ -77,10 +77,10 @@
 }
 
 .step-item.active {
-  background: #4f46e5;
-  border-color: #4f46e5;
+  background: #0284c7;
+  border-color: #0284c7;
   color: white;
-  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.2);
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.2);
 }
 
 .step-item.completed {
@@ -126,8 +126,8 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+  border-color: #0284c7;
+  box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1);
 }
 
 .form-group textarea {
@@ -151,7 +151,7 @@
 }
 
 .file-upload-zone:hover {
-  border-color: #4f46e5;
+  border-color: #0284c7;
   background: #f1f5f9;
 }
 
@@ -237,15 +237,15 @@
 }
 
 .btn-primary {
-  background: #4f46e5;
+  background: #0284c7;
   color: white;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: #4338ca;
+  background: #0369a1;
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 8px 15px rgba(2, 132, 199, 0.3);
 }
 
 .btn-secondary {

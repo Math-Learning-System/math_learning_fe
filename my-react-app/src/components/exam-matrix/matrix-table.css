@@ -48,8 +48,8 @@
     90deg,
     transparent,
     transparent 23px,
-    rgba(99, 102, 241, 0.035) 23px,
-    rgba(99, 102, 241, 0.035) 24px
+    rgba(14, 165, 233, 0.035) 23px,
+    rgba(14, 165, 233, 0.035) 24px
   );
   table-layout: fixed;
   font-variant-numeric: tabular-nums lining-nums;
@@ -75,8 +75,8 @@
 .matrix-row > :first-child,
 .matrix-row--even > :first-child,
 .matrix-row--odd > :first-child {
-  background: rgba(238, 242, 255, 0.45);
-  border-right: 1px solid #c7d2fe;
+  background: rgba(240, 249, 255, 0.45);
+  border-right: 1px solid #bae6fd;
 }
 
 /* ============================================
@@ -337,8 +337,8 @@
   font-size: 13px;
   text-align: left;
   padding: 12px 10px;
-  background: #e0e7ff;
-  border-right: 2px solid #4338ca;
+  background: #e0f2fe;
+  border-right: 2px solid #0369a1;
   color: #1e3a8a;
   text-transform: uppercase;
   letter-spacing: 0.3px;

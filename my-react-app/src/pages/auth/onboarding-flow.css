@@ -8,7 +8,7 @@
 /* ── Design tokens ─────────────────────────────────────────────── */
 :root {
   --ob-primary: #0ea5e9;
-  --ob-primary-hover: #4f46e5;
+  --ob-primary-hover: #0284c7;
   --ob-primary-glow: rgba(14, 165, 233, 0.28);
   --ob-teal: #14b8a6;
   --ob-teal-hover: #0d9488;

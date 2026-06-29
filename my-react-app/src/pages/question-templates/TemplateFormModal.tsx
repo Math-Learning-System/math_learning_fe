@@ -105,14 +105,14 @@ function FormStepper({
               flex: 1,
               padding: '8px 10px',
               borderRadius: 8,
-              border: isActive ? '2px solid #6366f1' : '1px solid #e5e7eb',
-              background: isActive ? '#eef2ff' : isPast ? '#f8fafc' : '#ffffff',
+              border: isActive ? '2px solid #0ea5e9' : '1px solid #e5e7eb',
+              background: isActive ? '#f0f9ff' : isPast ? '#f8fafc' : '#ffffff',
               cursor: clickable ? 'pointer' : 'default',
               textAlign: 'left',
               opacity: !isActive && !isPast ? 0.6 : 1,
             }}
           >
-            <div style={{ fontSize: 11, color: '#6366f1', fontWeight: 600 }}>
+            <div style={{ fontSize: 11, color: '#0ea5e9', fontWeight: 600 }}>
               Bước {stepNum}
             </div>
             <div style={{ fontSize: 13, fontWeight: 600, color: '#1e293b' }}>{label}</div>

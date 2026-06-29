@@ -17,8 +17,8 @@ const MathRose = () => (
   >
     <defs>
       <linearGradient id="roseGradCE" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#9896f5" />
-        <stop offset="100%" stopColor="#c084fc" />
+        <stop offset="0%" stopColor="#7dd3fc" />
+        <stop offset="100%" stopColor="#38bdf8" />
       </linearGradient>
     </defs>
     <circle cx="220" cy="130" r="42" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
@@ -35,34 +35,34 @@ const MathRose = () => (
       d="M 220,130 C 248,105 305,105 305,130 C 305,155 248,155 220,130"
       stroke="url(#roseGradCE)"
       strokeWidth="2.2"
-      fill="rgba(152,150,245,0.08)"
+      fill="rgba(14,165,233,0.08)"
       strokeLinecap="round"
     />
     <path
       d="M 220,130 C 192,105 135,105 135,130 C 135,155 192,155 220,130"
-      stroke="rgba(192,132,252,0.72)"
+      stroke="rgba(56,189,248,0.72)"
       strokeWidth="2.2"
-      fill="rgba(192,132,252,0.05)"
+      fill="rgba(56,189,248,0.05)"
       strokeLinecap="round"
     />
     <path
       d="M 220,130 C 195,158 195,215 220,215 C 245,215 245,158 220,130"
       stroke="url(#roseGradCE)"
       strokeWidth="2.2"
-      fill="rgba(152,150,245,0.08)"
+      fill="rgba(14,165,233,0.08)"
       strokeLinecap="round"
     />
     <path
       d="M 220,130 C 195,102 195,45 220,45 C 245,45 245,102 220,130"
-      stroke="rgba(192,132,252,0.72)"
+      stroke="rgba(56,189,248,0.72)"
       strokeWidth="2.2"
-      fill="rgba(192,132,252,0.05)"
+      fill="rgba(56,189,248,0.05)"
       strokeLinecap="round"
     />
-    <circle cx="305" cy="130" r="4.5" fill="#9896f5" />
-    <circle cx="135" cy="130" r="4.5" fill="#9896f5" />
-    <circle cx="220" cy="215" r="4.5" fill="#9896f5" />
-    <circle cx="220" cy="45" r="4.5" fill="#9896f5" />
+    <circle cx="305" cy="130" r="4.5" fill="#7dd3fc" />
+    <circle cx="135" cy="130" r="4.5" fill="#7dd3fc" />
+    <circle cx="220" cy="215" r="4.5" fill="#7dd3fc" />
+    <circle cx="220" cy="45" r="4.5" fill="#7dd3fc" />
     <circle
       cx="220"
       cy="130"
@@ -74,7 +74,7 @@ const MathRose = () => (
     <text
       x="322"
       y="115"
-      fill="rgba(152,150,245,0.88)"
+      fill="rgba(14,165,233,0.88)"
       fontSize="13"
       fontFamily="Georgia, serif"
       fontStyle="italic"
@@ -84,7 +84,7 @@ const MathRose = () => (
     <text
       x="322"
       y="132"
-      fill="rgba(192,132,252,0.45)"
+      fill="rgba(56,189,248,0.45)"
       fontSize="10"
       fontFamily="Georgia, serif"
       fontStyle="italic"

@@ -14,7 +14,7 @@
   --mod-text-secondary: #475569;
   --mod-ink: #0f172a;
   --mod-primary: #0ea5e9;
-  --mod-primary-700: #a8532e;
+  --mod-primary-700: #0284c7;
   --mod-danger: #b53333;
   --mod-warn: #a36a12;
   --mod-success: #475569;
@@ -303,7 +303,7 @@
 
 .module-layout-container .sps-slide-card__btn.primary:hover:not(:disabled) {
   filter: brightness(0.94);
-  box-shadow: 0px 0px 0px 1px #a8532e;
+  box-shadow: 0px 0px 0px 1px #0284c7;
 }
 
 .module-layout-container .sps-slide-card__btn.secondary {

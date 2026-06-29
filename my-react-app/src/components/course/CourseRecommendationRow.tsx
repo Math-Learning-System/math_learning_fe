@@ -88,7 +88,7 @@ const CourseRecommendationRow: React.FC<CourseRecommendationRowProps> = ({
         .btn-see-more {
           background: none;
           border: none;
-          color: #4f46e5;
+          color: #0284c7;
           font-weight: 700;
           font-size: 0.9rem;
           display: flex;

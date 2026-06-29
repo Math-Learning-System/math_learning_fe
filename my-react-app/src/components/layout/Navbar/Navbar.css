@@ -90,7 +90,7 @@
   position: absolute;
   top: -4px;
   right: -5px;
-  background: #b53333;
+  background: var(--error-color);
   color: #f8fafc;
   font-size: 0.62rem;
   font-weight: 600;
@@ -219,7 +219,7 @@
   font-size: 1rem;
   font-weight: 500;
   color: #0f172a;
-  font-family: var(--f-heading);
+  font-family: var(--font-heading);
 }
 
 .mark-all-read {

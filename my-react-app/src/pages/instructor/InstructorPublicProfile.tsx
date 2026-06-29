@@ -249,7 +249,7 @@ const InstructorPublicProfile: React.FC = () => {
         .avatar-placeholder-xl {
           width: 180px;
           height: 180px;
-          background: #4f46e5;
+          background: #0284c7;
           border-radius: 24px;
           display: flex;
           align-items: center;
@@ -262,7 +262,7 @@ const InstructorPublicProfile: React.FC = () => {
 
         .badge-instructor {
           display: inline-block;
-          background: #4f46e5;
+          background: #0284c7;
           color: white;
           padding: 0.25rem 0.75rem;
           border-radius: 6px;
@@ -304,7 +304,7 @@ const InstructorPublicProfile: React.FC = () => {
 
         .social-link:hover {
           color: white;
-          background: #4f46e5;
+          background: #0284c7;
           transform: translateY(-2px);
         }
 
@@ -326,7 +326,7 @@ const InstructorPublicProfile: React.FC = () => {
         }
 
         .stat-icon {
-          color: #6366f1;
+          color: #0ea5e9;
           width: 24px;
           height: 24px;
         }

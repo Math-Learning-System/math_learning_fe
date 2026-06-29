@@ -23,7 +23,7 @@
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background-color: #c51162;
+  background-color: #0d9488;
   color: var(--white);
   box-shadow: var(--shadow-md);
 }

@@ -115,7 +115,7 @@
   z-index: 120;
   box-shadow:
     0 0 0 1px var(--sb-primary-ring),
-    2px 0 8px rgba(20, 20, 19, 0.08);
+    2px 0 8px rgba(15, 23, 42, 0.08);
   transition:
     background 0.15s ease,
     color 0.15s ease,
@@ -321,7 +321,7 @@
 }
 
 .sb-item--logout:hover {
-  color: #8a1f1f;
+  color: var(--error-color);
   background: transparent;
 }
 

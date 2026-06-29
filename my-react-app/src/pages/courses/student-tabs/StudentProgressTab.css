@@ -57,7 +57,7 @@
   font-size: 2rem;
   font-weight: 800;
   line-height: 1;
-  color: #3730a3;
+  color: #0284c7;
   font-variant-numeric: tabular-nums;
 }
 
@@ -161,7 +161,7 @@
 }
 
 .spt-next-head svg {
-  color: #4338ca;
+  color: #0369a1;
   flex-shrink: 0;
 }
 
@@ -171,7 +171,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #4338ca;
+  color: #0369a1;
   font-family: var(--f-body, 'Be Vietnam Pro', system-ui, sans-serif);
 }
 
@@ -207,7 +207,7 @@
 }
 
 .spt-recent-title svg {
-  color: #4338ca;
+  color: #0369a1;
 }
 
 .spt-recent-list {

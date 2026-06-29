@@ -42,7 +42,7 @@
 }
 
 .wd-header__icon {
-  color: #6366f1;
+  color: #0ea5e9;
 }
 
 .wd-close {
@@ -96,7 +96,7 @@
 }
 
 .wd-step.active .wd-step__num {
-  background: #6366f1;
+  background: #0ea5e9;
   color: #fff;
 }
 
@@ -112,7 +112,7 @@
 }
 
 .wd-step.active .wd-step__label {
-  color: #6366f1;
+  color: #0ea5e9;
   font-weight: 600;
 }
 
@@ -137,8 +137,8 @@
 
 /* ── Balance chip ────────────────────────────────────────────────────────── */
 .wd-balance-chip {
-  background: linear-gradient(135deg, #eef2ff, #f0fdf4);
-  border: 1px solid #c7d2fe;
+  background: linear-gradient(135deg, #f0f9ff, #f0fdf4);
+  border: 1px solid #bae6fd;
   border-radius: 12px;
   padding: 0.875rem 1rem;
   display: flex;
@@ -154,7 +154,7 @@
 .wd-balance-chip__value {
   font-size: 1.0625rem;
   font-weight: 700;
-  color: #4f46e5;
+  color: #0284c7;
 }
 
 /* ── Field ───────────────────────────────────────────────────────────────── */
@@ -199,8 +199,8 @@
 }
 
 .wd-input:focus {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
 }
 
 .wd-input-suffix {
@@ -230,7 +230,7 @@
 }
 
 .wd-select:focus {
-  border-color: #6366f1;
+  border-color: #0ea5e9;
 }
 
 .wd-select-icon {
@@ -275,7 +275,7 @@
 .wd-btn-primary {
   width: 100%;
   padding: 0.75rem;
-  background: linear-gradient(135deg, #6366f1, #818cf8);
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
   color: #fff;
   border: none;
   border-radius: 12px;
@@ -312,8 +312,8 @@
 }
 
 .wd-btn-ghost:hover:not(:disabled) {
-  border-color: #6366f1;
-  color: #6366f1;
+  border-color: #0ea5e9;
+  color: #0ea5e9;
 }
 
 .wd-btn-ghost:disabled {
@@ -335,12 +335,12 @@
 .wd-otp-icon {
   width: 56px;
   height: 56px;
-  background: #eef2ff;
+  background: #f0f9ff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #6366f1;
+  color: #0ea5e9;
   margin-bottom: 0.25rem;
 }
 
@@ -353,7 +353,7 @@
 .wd-countdown {
   font-size: 1.5rem;
   font-weight: 800;
-  color: #6366f1;
+  color: #0ea5e9;
   font-variant-numeric: tabular-nums;
 }
 
@@ -383,8 +383,8 @@
 }
 
 .wd-otp-box:focus {
-  border-color: #6366f1;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
 }
 
 /* ── Success ─────────────────────────────────────────────────────────────── */

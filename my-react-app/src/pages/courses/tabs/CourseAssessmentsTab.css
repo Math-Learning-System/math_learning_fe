@@ -123,9 +123,9 @@
 }
 
 .cat-select-card.selected {
-  border-color: #818cf8;
+  border-color: #38bdf8;
   background: #fcfdff;
-  box-shadow: 0 4px 12px rgba(129, 140, 248, 0.15);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.15);
 }
 
 /* Teacher Assessment List */
@@ -391,7 +391,7 @@
 }
 
 .cat-toggle.active {
-  background: #818cf8;
+  background: #38bdf8;
 }
 
 .cat-toggle.active::after {

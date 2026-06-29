@@ -37,9 +37,9 @@ export function TypeSelector({ selectedType, onChange, disabled = false }: Reado
             style={{
               flex: 1,
               padding: '12px',
-              border: selectedType === type.value ? '2px solid #6366f1' : '1px solid #e5e7eb',
+              border: selectedType === type.value ? '2px solid #0ea5e9' : '1px solid #e5e7eb',
               borderRadius: 8,
-              background: selectedType === type.value ? '#eef2ff' : '#ffffff',
+              background: selectedType === type.value ? '#f0f9ff' : '#ffffff',
               cursor: disabled ? 'not-allowed' : 'pointer',
               opacity: disabled ? 0.6 : 1,
               textAlign: 'center',
