@@ -84,7 +84,7 @@
 }
 
 .user-management-page .btn-outline:hover {
-  background: #f2efe6;
+  background: #f1f5f9;
 }
 
 .user-management-page .btn:focus-visible,
@@ -138,28 +138,28 @@
 }
 
 .stat-icon.total {
-  background: #efece1;
-  color: #3d3d3a;
+  background: #f1f5f9;
+  color: #334155;
 }
 
 .stat-icon.admin {
-  background: #f7ecdf;
-  color: #8a482f;
+  background: #e0f2fe;
+  color: #0369a1;
 }
 
 .stat-icon.teacher {
-  background: #eceee1;
-  color: #4d5b3d;
+  background: #ecfdf5;
+  color: #047857;
 }
 
 .stat-icon.student {
-  background: #efece1;
+  background: #f1f5f9;
   color: #475569;
 }
 
 .stat-icon.active {
-  background: #eceee1;
-  color: #406d45;
+  background: #ecfdf5;
+  color: #047857;
 }
 
 .stat-content {
@@ -211,8 +211,8 @@
 }
 
 .filter-tab:hover {
-  background: #ece9df;
-  color: #3d3d3a;
+  background: #f1f5f9;
+  color: #334155;
 }
 
 .filter-tab.active {
@@ -314,7 +314,7 @@
 }
 
 .users-table thead {
-  background: #f7f5ee;
+  background: #f8fafc;
 }
 
 .users-table th {
@@ -330,13 +330,13 @@
 
 .users-table td {
   padding: 0.8rem 0.95rem;
-  border-bottom: 1px solid #f2f0e8;
+  border-bottom: 1px solid #f1f5f9;
   color: var(--text-secondary);
   font-size: 0.875rem;
 }
 
 .users-table tbody tr:hover {
-  background: #faf8f2;
+  background: #f8fafc;
 }
 
 .user-cell {
@@ -354,7 +354,7 @@
   justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
-  background: #efece1;
+  background: #f1f5f9;
   color: #334155;
   font-weight: 700;
 }
@@ -390,22 +390,22 @@
 }
 
 .role-badge.teacher {
-  background: #eceee1;
-  color: #4d5b3d;
+  background: #ecfdf5;
+  color: #047857;
 }
 
 .role-badge.student {
-  background: #efece1;
+  background: #f1f5f9;
   color: #334155;
 }
 
 .role-badge.admin {
-  background: #f7ecdf;
-  color: #8a482f;
+  background: #e0f2fe;
+  color: #0369a1;
 }
 
 .status-badge.active {
-  background: #eceee1;
+  background: #ecfdf5;
   color: #3f5f43;
 }
 
@@ -482,7 +482,7 @@
 
 .pagination-btn:hover,
 .pagination-page:hover {
-  background: #f2efe6;
+  background: #f1f5f9;
   color: #1e293b;
 }
 
@@ -659,7 +659,7 @@
   height: 32px;
   border-radius: 8px;
   border: 1px solid var(--border-strong);
-  background: #f2efe6;
+  background: #f1f5f9;
   color: #334155;
   display: inline-flex;
   align-items: center;
@@ -735,7 +735,7 @@
 
 /* Details */
 .user-detail-header {
-  background: #f7f5ee;
+  background: #f8fafc;
   border: 1px solid var(--border-soft);
   border-radius: 12px;
   padding: 1rem;
@@ -749,7 +749,7 @@
   width: 72px;
   height: 72px;
   border-radius: 999px;
-  background: #efece1;
+  background: #f1f5f9;
   color: #334155;
   display: flex;
   align-items: center;
@@ -786,7 +786,7 @@
 }
 
 .detail-stat {
-  background: #f7f5ee;
+  background: #f8fafc;
   border: 1px solid var(--border-soft);
   border-radius: 12px;
   padding: 0.75rem;
@@ -1187,7 +1187,7 @@
 }
 .ud-action-btn--default {
   background: #e2e8f0;
-  color: #3d3d3a;
+  color: #334155;
   border-color: #e2e8f0;
   box-shadow: 0 0 0 1px #e2e8f0;
 }

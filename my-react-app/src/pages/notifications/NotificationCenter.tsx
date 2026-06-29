@@ -149,7 +149,7 @@ const NotificationCenter: React.FC = () => {
             <div className="flex items-center gap-3">
               <Link
                 to="/notifications/preferences"
-                className="flex items-center gap-2 bg-[#e2e8f0] text-[#334155] rounded-xl px-4 py-2.5 font-['Be_Vietnam_Pro'] text-[14px] font-medium shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] hover:shadow-[#e2e8f0_0px_0px_0px_0px,#C2C0B6_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150"
+                className="flex items-center gap-2 bg-[#e2e8f0] text-[#334155] rounded-xl px-4 py-2.5 font-['Be_Vietnam_Pro'] text-[14px] font-medium shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] hover:shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150"
               >
                 <Settings className="w-3.5 h-3.5" />
                 Cài đặt
@@ -337,7 +337,7 @@ const NotificationCenter: React.FC = () => {
           {filteredNotifications.length > 0 && hasNextPage && (
             <div className="flex justify-center mt-6">
               <button
-                className="flex items-center gap-2 bg-[#e2e8f0] text-[#334155] rounded-xl px-6 py-2.5 font-['Be_Vietnam_Pro'] text-[14px] font-medium shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] hover:shadow-[#e2e8f0_0px_0px_0px_0px,#C2C0B6_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150 disabled:opacity-50"
+                className="flex items-center gap-2 bg-[#e2e8f0] text-[#334155] rounded-xl px-6 py-2.5 font-['Be_Vietnam_Pro'] text-[14px] font-medium shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] hover:shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150 disabled:opacity-50"
                 onClick={loadMore}
                 disabled={isFetchingNextPage}
               >
