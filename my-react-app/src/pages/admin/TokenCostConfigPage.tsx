@@ -125,8 +125,8 @@ const TokenConfigPage: React.FC = () => {
         user={{ name: mockAdmin.name, avatar: mockAdmin.avatar, role: 'admin' }}
       >
         <div className="flex flex-col items-center justify-center py-32 space-y-4">
-          <div className="w-10 h-10 border-4 border-[#E8E6DC] border-t-[#5E5D59] rounded-full animate-spin" />
-          <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F]">Đang tải cấu hình...</p>
+          <div className="w-10 h-10 border-4 border-[#e2e8f0] border-t-[#475569] rounded-full animate-spin" />
+          <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b]">Đang tải cấu hình...</p>
         </div>
       </DashboardLayout>
     );
@@ -165,21 +165,21 @@ const TokenConfigPage: React.FC = () => {
           {/* Page header */}
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                 <Coins className="w-5 h-5" />
               </div>
               <div>
-                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                   Cấu hình Chi phí Token
                 </h1>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                   Điều chỉnh số token tiêu tốn cho mỗi tính năng AI
                 </p>
               </div>
             </div>
             <button
               onClick={() => setShowHistory(true)}
-              className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-[#E8E6DC] bg-white text-[#5E5D59] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#F5F4ED] transition-colors flex-shrink-0"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-[#e2e8f0] bg-white text-[#475569] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#f8fafc] transition-colors flex-shrink-0"
             >
               <History className="w-3.5 h-3.5" />
               Lịch sử thay đổi
@@ -201,27 +201,27 @@ const TokenConfigPage: React.FC = () => {
                   key={config.id}
                   className={`bg-white rounded-2xl border transition-all duration-200 ${
                     isEditing
-                      ? 'border-[#C96442] shadow-sm'
-                      : 'border-[#E8E6DC] hover:border-[#D5D3C9]'
+                      ? 'border-[#0ea5e9] shadow-sm'
+                      : 'border-[#e2e8f0] hover:border-[#D5D3C9]'
                   }`}
                 >
                   <div className="p-5 space-y-5">
                     {/* Top row: icon + label + toggle */}
                     <div className="flex items-start justify-between gap-3">
                       <div className="flex items-start gap-3">
-                        <div className="w-9 h-9 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] flex-shrink-0">
+                        <div className="w-9 h-9 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] flex-shrink-0">
                           {meta.icon}
                         </div>
                         <div>
-                          <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#141413]">
+                          <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#0f172a]">
                             {config.featureLabel}
                           </h3>
-                          <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5 leading-relaxed line-clamp-2">
+                          <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5 leading-relaxed line-clamp-2">
                             {meta.description}
                           </p>
                         </div>
                       </div>
-                      <div className="flex rounded-md border border-[#E8E6DC] overflow-hidden flex-shrink-0 disabled:opacity-50">
+                      <div className="flex rounded-md border border-[#e2e8f0] overflow-hidden flex-shrink-0 disabled:opacity-50">
                         <button
                           onClick={() =>
                             !config.isActive &&
@@ -230,8 +230,8 @@ const TokenConfigPage: React.FC = () => {
                           disabled={updateMutation.isPending}
                           className={`px-2.5 py-1 font-[Be_Vietnam_Pro] text-[11px] font-bold tracking-widest transition-colors ${
                             config.isActive
-                              ? 'bg-[#141413] text-white'
-                              : 'bg-white text-[#C4C3BB] hover:bg-[#F5F4ED]'
+                              ? 'bg-[#0f172a] text-white'
+                              : 'bg-white text-[#C4C3BB] hover:bg-[#f8fafc]'
                           }`}
                         >
                           ON
@@ -244,8 +244,8 @@ const TokenConfigPage: React.FC = () => {
                           disabled={updateMutation.isPending}
                           className={`px-2.5 py-1 font-[Be_Vietnam_Pro] text-[11px] font-bold tracking-widest transition-colors ${
                             !config.isActive
-                              ? 'bg-[#141413] text-white'
-                              : 'bg-white text-[#C4C3BB] hover:bg-[#F5F4ED]'
+                              ? 'bg-[#0f172a] text-white'
+                              : 'bg-white text-[#C4C3BB] hover:bg-[#f8fafc]'
                           }`}
                         >
                           OFF
@@ -260,7 +260,7 @@ const TokenConfigPage: React.FC = () => {
                           config.isActive ? 'bg-green-500' : 'bg-[#C4C3BB]'
                         }`}
                       />
-                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                         {config.isActive ? 'Đang trừ token' : 'Miễn phí tạm thời'}
                       </span>
                     </div>
@@ -268,11 +268,11 @@ const TokenConfigPage: React.FC = () => {
                     {/* Cost area */}
                     <div
                       className={`rounded-xl p-4 transition-colors ${
-                        isEditing ? 'bg-amber-50 border border-amber-100' : 'bg-[#F5F4ED]'
+                        isEditing ? 'bg-amber-50 border border-amber-100' : 'bg-[#f8fafc]'
                       }`}
                     >
                       <div className="flex items-center justify-between mb-2">
-                        <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#87867F] uppercase tracking-wide">
+                        <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#64748b] uppercase tracking-wide">
                           Chi phí mỗi lần dùng
                         </span>
                         {!isEditing && (
@@ -284,7 +284,7 @@ const TokenConfigPage: React.FC = () => {
                                 [config.id]: config.costPerUse,
                               }));
                             }}
-                            className="p-1 rounded-md text-[#87867F] hover:text-[#141413] hover:bg-[#E8E6DC] transition-colors"
+                            className="p-1 rounded-md text-[#64748b] hover:text-[#0f172a] hover:bg-[#e2e8f0] transition-colors"
                           >
                             <Edit3 className="w-3.5 h-3.5" />
                           </button>
@@ -304,32 +304,32 @@ const TokenConfigPage: React.FC = () => {
                                   [config.id]: parseInt(e.target.value) || 0,
                                 }))
                               }
-                              className="w-full bg-white border border-[#E8E6DC] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[20px] font-bold text-[#141413] outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] transition-colors"
+                              className="w-full bg-white border border-[#e2e8f0] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[20px] font-bold text-[#0f172a] outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] transition-colors"
                             />
-                            <span className="absolute right-3 top-1/2 -translate-y-1/2 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                            <span className="absolute right-3 top-1/2 -translate-y-1/2 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                               tokens
                             </span>
                           </div>
                           <button
                             onClick={() => handleSaveCost(config.id)}
                             disabled={updateMutation.isPending}
-                            className="p-2 bg-[#141413] text-white rounded-lg hover:bg-[#30302E] transition-colors"
+                            className="p-2 bg-[#0f172a] text-white rounded-lg hover:bg-[#1e293b] transition-colors"
                           >
                             <Save className="w-4 h-4" />
                           </button>
                           <button
                             onClick={() => setEditingId(null)}
-                            className="p-2 border border-[#E8E6DC] text-[#87867F] rounded-lg hover:bg-[#F5F4ED] transition-colors"
+                            className="p-2 border border-[#e2e8f0] text-[#64748b] rounded-lg hover:bg-[#f8fafc] transition-colors"
                           >
                             <X className="w-4 h-4" />
                           </button>
                         </div>
                       ) : (
                         <div className="flex items-baseline gap-1.5 mt-1">
-                          <span className="font-[Be_Vietnam_Pro] text-[28px] font-bold text-[#141413]">
+                          <span className="font-[Be_Vietnam_Pro] text-[28px] font-bold text-[#0f172a]">
                             {config.costPerUse}
                           </span>
-                          <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                          <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                             tokens / lượt
                           </span>
                         </div>
@@ -351,16 +351,16 @@ const TokenConfigPage: React.FC = () => {
           </div>
 
           {/* Bottom note */}
-          <div className="bg-[#F5F4ED] rounded-2xl border border-[#E8E6DC] px-6 py-5">
+          <div className="bg-[#f8fafc] rounded-2xl border border-[#e2e8f0] px-6 py-5">
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-lg bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] flex-shrink-0 mt-0.5">
+              <div className="w-8 h-8 rounded-lg bg-[#e2e8f0] flex items-center justify-center text-[#475569] flex-shrink-0 mt-0.5">
                 <ShieldAlert className="w-4 h-4" />
               </div>
               <div>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] mb-1">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] mb-1">
                   Lưu ý bảo mật
                 </p>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] leading-relaxed">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569] leading-relaxed">
                   Mọi thay đổi về chi phí được ghi lại trong nhật ký hệ thống kèm định danh admin.
                   Vui lòng thông báo đến bộ phận CSKH trước khi có sự thay đổi lớn để tránh gây hiểu
                   lầm cho người dùng.
@@ -375,25 +375,25 @@ const TokenConfigPage: React.FC = () => {
       {showHistory && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center px-4">
           <div
-            className="absolute inset-0 bg-[#141413]/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-[#0f172a]/50 backdrop-blur-sm"
             onClick={() => setShowHistory(false)}
           />
           <div className="relative bg-white w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl">
             {/* Modal header */}
-            <div className="px-6 py-5 border-b border-[#E8E6DC] flex items-center justify-between bg-[#F5F4ED]">
+            <div className="px-6 py-5 border-b border-[#e2e8f0] flex items-center justify-between bg-[#f8fafc]">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 bg-[#E8E6DC] text-[#5E5D59] rounded-xl flex items-center justify-center">
+                <div className="w-9 h-9 bg-[#e2e8f0] text-[#475569] rounded-xl flex items-center justify-center">
                   <History className="w-4 h-4" />
                 </div>
-                <h3 className="font-[Playfair_Display] text-[18px] font-medium text-[#141413]">
+                <h3 className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a]">
                   Nhật ký thay đổi
                 </h3>
               </div>
               <button
                 onClick={() => setShowHistory(false)}
-                className="p-1.5 hover:bg-[#E8E6DC] rounded-lg transition-colors"
+                className="p-1.5 hover:bg-[#e2e8f0] rounded-lg transition-colors"
               >
-                <X className="w-4 h-4 text-[#87867F]" />
+                <X className="w-4 h-4 text-[#64748b]" />
               </button>
             </div>
 
@@ -401,8 +401,8 @@ const TokenConfigPage: React.FC = () => {
             <div className="max-h-[60vh] overflow-y-auto p-6">
               {isHistoryLoading ? (
                 <div className="flex flex-col items-center py-12 gap-3">
-                  <div className="w-8 h-8 border-4 border-[#E8E6DC] border-t-[#5E5D59] rounded-full animate-spin" />
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                  <div className="w-8 h-8 border-4 border-[#e2e8f0] border-t-[#475569] rounded-full animate-spin" />
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                     Đang tải dữ liệu...
                   </p>
                 </div>
@@ -418,7 +418,7 @@ const TokenConfigPage: React.FC = () => {
                         return (
                           <div className="flex items-center gap-1.5">
                             <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                            <span className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                            <span className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                               Hoạt động
                             </span>
                           </div>
@@ -427,15 +427,15 @@ const TokenConfigPage: React.FC = () => {
                         return (
                           <div className="flex items-center gap-1.5">
                             <span className="w-1.5 h-1.5 rounded-full bg-[#C4C3BB]" />
-                            <span className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#87867F]">
+                            <span className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#64748b]">
                               Tạm ngắt
                             </span>
                           </div>
                         );
                       return (
-                        <span className="font-[Be_Vietnam_Pro] text-[15px] font-bold text-[#141413]">
+                        <span className="font-[Be_Vietnam_Pro] text-[15px] font-bold text-[#0f172a]">
                           {val}{' '}
-                          <span className="text-[11px] font-normal text-[#87867F]">tokens</span>
+                          <span className="text-[11px] font-normal text-[#64748b]">tokens</span>
                         </span>
                       );
                     };
@@ -443,24 +443,24 @@ const TokenConfigPage: React.FC = () => {
                     return (
                       <div
                         key={log.id}
-                        className="bg-[#F5F4ED] border border-[#E8E6DC] rounded-xl p-4 space-y-3"
+                        className="bg-[#f8fafc] border border-[#e2e8f0] rounded-xl p-4 space-y-3"
                       >
                         <div className="flex items-center justify-between gap-2 flex-wrap">
                           <div className="flex items-center gap-2">
-                            <span className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                            <span className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                               {meta?.label || log.featureKey}
                             </span>
                             <span
                               className={`px-2 py-0.5 rounded-full font-[Be_Vietnam_Pro] text-[10px] font-semibold uppercase tracking-wide border ${
                                 isStatusChange
-                                  ? 'bg-white border-[#E8E6DC] text-[#5E5D59]'
-                                  : 'bg-white border-[#E8E6DC] text-[#5E5D59]'
+                                  ? 'bg-white border-[#e2e8f0] text-[#475569]'
+                                  : 'bg-white border-[#e2e8f0] text-[#475569]'
                               }`}
                             >
                               {isStatusChange ? 'Trạng thái' : 'Chi phí'}
                             </span>
                           </div>
-                          <time className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                          <time className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                             {new Date(log.createdAt).toLocaleString('vi-VN', {
                               hour: '2-digit',
                               minute: '2-digit',
@@ -471,7 +471,7 @@ const TokenConfigPage: React.FC = () => {
                           </time>
                         </div>
 
-                        <div className="flex items-center gap-4 bg-white border border-[#E8E6DC] rounded-lg px-4 py-3">
+                        <div className="flex items-center gap-4 bg-white border border-[#e2e8f0] rounded-lg px-4 py-3">
                           <div className="flex flex-col items-center gap-1 flex-1">
                             <span className="font-[Be_Vietnam_Pro] text-[10px] uppercase font-semibold text-[#A8A7A0] tracking-wide">
                               Trước
@@ -487,8 +487,8 @@ const TokenConfigPage: React.FC = () => {
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-2 text-[12px] text-[#87867F]">
-                          <div className="w-5 h-5 rounded-full bg-[#E8E6DC] flex items-center justify-center font-[Be_Vietnam_Pro] text-[10px] font-bold text-[#5E5D59]">
+                        <div className="flex items-center gap-2 text-[12px] text-[#64748b]">
+                          <div className="w-5 h-5 rounded-full bg-[#e2e8f0] flex items-center justify-center font-[Be_Vietnam_Pro] text-[10px] font-bold text-[#475569]">
                             {log.adminName ? log.adminName.charAt(0).toUpperCase() : 'A'}
                           </div>
                           <span className="font-[Be_Vietnam_Pro]">
@@ -501,8 +501,8 @@ const TokenConfigPage: React.FC = () => {
                 </div>
               ) : (
                 <div className="text-center py-12 space-y-2">
-                  <History className="w-10 h-10 text-[#E8E6DC] mx-auto" />
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                  <History className="w-10 h-10 text-[#e2e8f0] mx-auto" />
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                     Chưa có lịch sử thay đổi nào.
                   </p>
                 </div>
@@ -510,10 +510,10 @@ const TokenConfigPage: React.FC = () => {
             </div>
 
             {/* Modal footer */}
-            <div className="px-6 py-4 bg-[#F5F4ED] border-t border-[#E8E6DC] flex justify-end">
+            <div className="px-6 py-4 bg-[#f8fafc] border-t border-[#e2e8f0] flex justify-end">
               <button
                 onClick={() => setShowHistory(false)}
-                className="px-5 py-2.5 bg-[#141413] text-white rounded-xl font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] transition-colors"
+                className="px-5 py-2.5 bg-[#0f172a] text-white rounded-xl font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] transition-colors"
               >
                 Đóng
               </button>

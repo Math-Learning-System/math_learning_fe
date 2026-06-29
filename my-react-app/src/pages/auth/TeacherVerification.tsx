@@ -292,7 +292,7 @@ const TeacherVerification: React.FC = () => {
               background: 'none',
               border: 'none',
               padding: 0,
-              color: '#C96442',
+              color: '#0ea5e9',
               textDecoration: 'underline',
               textUnderlineOffset: '2px',
               cursor: 'pointer',

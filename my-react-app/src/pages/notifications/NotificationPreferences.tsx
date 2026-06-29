@@ -145,10 +145,10 @@ const NotificationPreferences: React.FC = () => {
   if (isLoading) {
     return (
       <DashboardLayout role={role} user={{ name: '', avatar: '', role }}>
-        <div className="flex-1 min-h-screen bg-[#F5F4ED] flex items-center justify-center">
+        <div className="flex-1 min-h-screen bg-[#f8fafc] flex items-center justify-center">
           <div className="flex flex-col items-center gap-3">
-            <Loader2 className="w-8 h-8 text-[#C96442] animate-spin" />
-            <p className="font-['Be_Vietnam_Pro'] text-[15px] text-[#87867F]">
+            <Loader2 className="w-8 h-8 text-[#0ea5e9] animate-spin" />
+            <p className="font-['Be_Vietnam_Pro'] text-[15px] text-[#64748b]">
               Đang tải cài đặt...
             </p>
           </div>
@@ -159,20 +159,20 @@ const NotificationPreferences: React.FC = () => {
 
   return (
     <DashboardLayout role={role} user={{ name: '', avatar: '', role }}>
-      <div className="flex-1 min-h-screen bg-[#F5F4ED]">
+      <div className="flex-1 min-h-screen bg-[#f8fafc]">
         <div className="p-6 lg:p-8">
           {/* Page Header */}
           <div className="flex items-start justify-between mb-8">
             <div>
-              <h1 className="font-['Be_Vietnam_Pro'] text-[36px] font-bold leading-[1.2] tracking-[-0.01em] text-[#141413]">
+              <h1 className="font-['Be_Vietnam_Pro'] text-[36px] font-bold leading-[1.2] tracking-[-0.01em] text-[#0f172a]">
                 Cài đặt Thông báo
               </h1>
-              <p className="font-['Be_Vietnam_Pro'] text-[15px] text-[#87867F] mt-1 leading-[1.6]">
+              <p className="font-['Be_Vietnam_Pro'] text-[15px] text-[#64748b] mt-1 leading-[1.6]">
                 Quản lý các loại thông báo bạn muốn nhận
               </p>
             </div>
             <button
-              className="flex items-center gap-2 bg-[#E8E6DC] text-[#4D4C48] rounded-xl px-4 py-2.5 font-['Be_Vietnam_Pro'] text-[14px] font-medium shadow-[#E8E6DC_0px_0px_0px_0px,#D1CFC5_0px_0px_0px_1px] hover:shadow-[#E8E6DC_0px_0px_0px_0px,#C2C0B6_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150 disabled:opacity-50"
+              className="flex items-center gap-2 bg-[#e2e8f0] text-[#334155] rounded-xl px-4 py-2.5 font-['Be_Vietnam_Pro'] text-[14px] font-medium shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] hover:shadow-[#e2e8f0_0px_0px_0px_0px,#C2C0B6_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150 disabled:opacity-50"
               onClick={handleResetToDefaults}
               disabled={isResetting || resetMutation.isPending}
             >
@@ -182,44 +182,44 @@ const NotificationPreferences: React.FC = () => {
           </div>
 
           {/* Preferences Table */}
-          <div className="bg-[#FAF9F5] border border-[#F0EEE6] rounded-2xl shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden mb-6">
+          <div className="bg-[#ffffff] border border-[#e2e8f0] rounded-2xl shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden mb-6">
             {/* Table Header */}
-            <div className="grid grid-cols-[1fr_80px_80px_80px] gap-4 px-6 py-4 bg-[#F5F4ED] border-b border-[#F0EEE6]">
-              <div className="font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#87867F] uppercase tracking-[0.5px]">
+            <div className="grid grid-cols-[1fr_80px_80px_80px] gap-4 px-6 py-4 bg-[#f8fafc] border-b border-[#e2e8f0]">
+              <div className="font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#64748b] uppercase tracking-[0.5px]">
                 Loại thông báo
               </div>
-              <div className="flex flex-col items-center gap-1 font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#87867F] uppercase tracking-[0.5px]">
+              <div className="flex flex-col items-center gap-1 font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#64748b] uppercase tracking-[0.5px]">
                 <Mail className="w-3.5 h-3.5" />
                 Email
               </div>
-              <div className="flex flex-col items-center gap-1 font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#87867F] uppercase tracking-[0.5px]">
+              <div className="flex flex-col items-center gap-1 font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#64748b] uppercase tracking-[0.5px]">
                 <Smartphone className="w-3.5 h-3.5" />
                 Push
               </div>
-              <div className="flex flex-col items-center gap-1 font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#87867F] uppercase tracking-[0.5px]">
+              <div className="flex flex-col items-center gap-1 font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#64748b] uppercase tracking-[0.5px]">
                 <Bell className="w-3.5 h-3.5" />
                 Trong app
               </div>
             </div>
 
             {/* Preference Rows */}
-            <div className="divide-y divide-[#F0EEE6]">
+            <div className="divide-y divide-[#e2e8f0]">
               {preferences.map((preference) => {
                 const Icon = getTypeIcon(preference.notificationType);
                 return (
                   <div
                     key={preference.id}
-                    className="grid grid-cols-[1fr_80px_80px_80px] gap-4 px-6 py-5 items-center hover:bg-[#F5F4ED] transition-colors duration-150"
+                    className="grid grid-cols-[1fr_80px_80px_80px] gap-4 px-6 py-5 items-center hover:bg-[#f8fafc] transition-colors duration-150"
                   >
                     <div className="flex items-start gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] flex-shrink-0 mt-0.5">
+                      <div className="w-9 h-9 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] flex-shrink-0 mt-0.5">
                         <Icon className="w-4 h-4" />
                       </div>
                       <div>
-                        <div className="font-['Be_Vietnam_Pro'] text-[15px] font-semibold text-[#141413] leading-[1.4]">
+                        <div className="font-['Be_Vietnam_Pro'] text-[15px] font-semibold text-[#0f172a] leading-[1.4]">
                           {getNotificationTypeLabel(preference.notificationType)}
                         </div>
-                        <div className="font-['Be_Vietnam_Pro'] text-[13px] text-[#87867F] leading-[1.6] mt-0.5">
+                        <div className="font-['Be_Vietnam_Pro'] text-[13px] text-[#64748b] leading-[1.6] mt-0.5">
                           {getNotificationTypeDescription(preference.notificationType)}
                         </div>
                       </div>
@@ -262,7 +262,7 @@ const NotificationPreferences: React.FC = () => {
                             }
                             disabled={updateMutation.isPending}
                           />
-                          <div className="w-11 h-6 bg-[#E8E6DC] rounded-full peer peer-checked:bg-[#C96442] peer-disabled:opacity-50 peer-disabled:cursor-not-allowed transition-colors duration-200 after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-5 after:w-5 after:shadow-sm after:transition-transform after:duration-200 peer-checked:after:translate-x-5" />
+                          <div className="w-11 h-6 bg-[#e2e8f0] rounded-full peer peer-checked:bg-[#0ea5e9] peer-disabled:opacity-50 peer-disabled:cursor-not-allowed transition-colors duration-200 after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:rounded-full after:h-5 after:w-5 after:shadow-sm after:transition-transform after:duration-200 peer-checked:after:translate-x-5" />
                         </label>
                       </div>
                     ))}
@@ -273,12 +273,12 @@ const NotificationPreferences: React.FC = () => {
           </div>
 
           {/* Info Card */}
-          <div className="bg-[#FAF9F5] border border-[#F0EEE6] rounded-2xl p-6 shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
+          <div className="bg-[#ffffff] border border-[#e2e8f0] rounded-2xl p-6 shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+              <div className="w-8 h-8 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                 <Info className="w-4 h-4" />
               </div>
-              <h3 className="font-['Playfair_Display'] text-[18px] font-medium text-[#141413]">
+              <h3 className="font-['Playfair_Display'] text-[18px] font-medium text-[#0f172a]">
                 Thông tin
               </h3>
             </div>
@@ -290,15 +290,15 @@ const NotificationPreferences: React.FC = () => {
               ].map(({ label, desc }) => (
                 <li
                   key={label}
-                  className="flex gap-2 font-['Be_Vietnam_Pro'] text-[14px] text-[#5E5D59] leading-[1.6]"
+                  className="flex gap-2 font-['Be_Vietnam_Pro'] text-[14px] text-[#475569] leading-[1.6]"
                 >
-                  <span className="font-semibold text-[#141413] flex-shrink-0">{label}:</span>
+                  <span className="font-semibold text-[#0f172a] flex-shrink-0">{label}:</span>
                   {desc}
                 </li>
               ))}
             </ul>
-            <p className="font-['Be_Vietnam_Pro'] text-[13px] text-[#87867F] leading-[1.6] border-t border-[#F0EEE6] pt-4">
-              <span className="font-semibold text-[#5E5D59]">Lưu ý:</span> Một số thông báo quan
+            <p className="font-['Be_Vietnam_Pro'] text-[13px] text-[#64748b] leading-[1.6] border-t border-[#e2e8f0] pt-4">
+              <span className="font-semibold text-[#475569]">Lưu ý:</span> Một số thông báo quan
               trọng về bảo mật và hệ thống sẽ luôn được gửi bất kể cài đặt của bạn.
             </p>
           </div>

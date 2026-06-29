@@ -74,7 +74,7 @@ const filterLabel: Record<'ALL' | MatrixStatus, string> = {
 function statusBadgeClasses(status: MatrixStatus): string {
   if (status === MatrixStatus.APPROVED)
     return 'inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-white/90 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-emerald-700';
-  return 'inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-white/90 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#87867F]';
+  return 'inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-white/90 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#64748b]';
 }
 
 function tableMatchesCurriculum(
@@ -250,36 +250,36 @@ export function ExamMatrixDashboard() {
     if (!hasShape) return null;
     return (
       <div
-        className="flex flex-wrap items-baseline gap-x-2 gap-y-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]"
+        className="flex flex-wrap items-baseline gap-x-2 gap-y-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]"
         aria-label="Kích thước ma trận"
       >
         {(matrix.parts?.length ?? 0) > 0 && (
           <span>
-            <strong className="text-[#141413] tabular-nums">{matrix.parts?.length}</strong> phần
+            <strong className="text-[#0f172a] tabular-nums">{matrix.parts?.length}</strong> phần
           </span>
         )}
         {(matrix.rowCount ?? 0) > 0 && (
           <>
-            <span className="text-[#E8E6DC]">×</span>
+            <span className="text-[#e2e8f0]">×</span>
             <span>
-              <strong className="text-[#141413] tabular-nums">{matrix.rowCount}</strong> dòng
+              <strong className="text-[#0f172a] tabular-nums">{matrix.rowCount}</strong> dòng
             </span>
           </>
         )}
         {(matrix.totalQuestionsTarget ?? 0) > 0 && (
           <>
-            <span className="text-[#E8E6DC]">·</span>
+            <span className="text-[#e2e8f0]">·</span>
             <span>
-              <strong className="text-[#141413] tabular-nums">{matrix.totalQuestionsTarget}</strong>{' '}
+              <strong className="text-[#0f172a] tabular-nums">{matrix.totalQuestionsTarget}</strong>{' '}
               câu
             </span>
           </>
         )}
         {(matrix.totalPointsTarget ?? 0) > 0 && (
           <>
-            <span className="text-[#E8E6DC]">·</span>
+            <span className="text-[#e2e8f0]">·</span>
             <span>
-              <strong className="text-[#141413] tabular-nums">{matrix.totalPointsTarget}</strong>{' '}
+              <strong className="text-[#0f172a] tabular-nums">{matrix.totalPointsTarget}</strong>{' '}
               điểm
             </span>
           </>
@@ -300,16 +300,16 @@ export function ExamMatrixDashboard() {
           {/* ── Page header (aligned with /teacher/mindmaps) ── */}
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                 <Ruler className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2.5">
-                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                     Ma trận đề
                   </h1>
                   {!isLoading && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                       {curriculumFilterActive ? filteredMatrices.length : effectiveTotalElements}
                     </span>
                   )}
@@ -324,7 +324,7 @@ export function ExamMatrixDashboard() {
                   setSelected(null);
                   setFormOpen(true);
                 }}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
               >
                 Tạo ma trận
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -361,7 +361,7 @@ export function ExamMatrixDashboard() {
             ).map(({ label, value, Icon, bg, color }) => (
               <div
                 key={label}
-                className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3"
+                className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3"
               >
                 <div
                   className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center flex-shrink-0`}
@@ -369,10 +369,10 @@ export function ExamMatrixDashboard() {
                   <Icon className={`w-4 h-4 ${color}`} />
                 </div>
                 <div>
-                  <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none">
+                  <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none">
                     {value}
                   </p>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">{label}</p>
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">{label}</p>
                 </div>
               </div>
             ))}
@@ -380,20 +380,20 @@ export function ExamMatrixDashboard() {
 
           {/* ── Workflow (mindmaps-style panel) ── */}
           <section
-            className="bg-white rounded-2xl border border-[#E8E6DC] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden"
+            className="bg-white rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden"
             aria-label="Luồng ma trận đề"
           >
-            <div className="px-6 py-5 border-b border-[#F0EEE6] bg-[#FAF9F5]">
-              <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#87867F] uppercase tracking-wide">
+            <div className="px-6 py-5 border-b border-[#e2e8f0] bg-[#ffffff]">
+              <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#64748b] uppercase tracking-wide">
                 Luồng làm việc
               </p>
-              <h2 className="font-[Playfair_Display] text-[17px] font-medium text-[#141413] mt-1">
+              <h2 className="font-[Playfair_Display] text-[17px] font-medium text-[#0f172a] mt-1">
                 Từ ma trận đến bài kiểm tra hoàn chỉnh
               </h2>
             </div>
             <div className="p-6 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] p-4 flex flex-col gap-2 hover:border-[#D1CFC5] transition-colors">
+                <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-4 flex flex-col gap-2 hover:border-[#cbd5e1] transition-colors">
                   <div className="flex items-center gap-2">
                     <span
                       className="w-6 h-6 rounded-full bg-[#eff6ff] text-[#1d4ed8] flex items-center justify-center font-[Be_Vietnam_Pro] text-[11px] font-bold"
@@ -401,15 +401,15 @@ export function ExamMatrixDashboard() {
                     >
                       1
                     </span>
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] m-0">
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] m-0">
                       Tạo nháp
                     </p>
                   </div>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] m-0 leading-relaxed">
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] m-0 leading-relaxed">
                     Đặt tên ma trận, mô tả và mục tiêu câu hỏi.
                   </p>
                 </div>
-                <div className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] p-4 flex flex-col gap-2 hover:border-[#D1CFC5] transition-colors">
+                <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-4 flex flex-col gap-2 hover:border-[#cbd5e1] transition-colors">
                   <div className="flex items-center gap-2">
                     <span
                       className="w-6 h-6 rounded-full bg-[#ecfdf5] text-[#047857] flex items-center justify-center font-[Be_Vietnam_Pro] text-[11px] font-bold"
@@ -417,15 +417,15 @@ export function ExamMatrixDashboard() {
                     >
                       2
                     </span>
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] m-0">
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] m-0">
                       Thêm cột phân bố
                     </p>
                   </div>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] m-0 leading-relaxed">
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] m-0 leading-relaxed">
                     Định nghĩa độ khó câu hỏi, chương, số câu và điểm.
                   </p>
                 </div>
-                <div className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] p-4 flex flex-col gap-2 hover:border-[#D1CFC5] transition-colors">
+                <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-4 flex flex-col gap-2 hover:border-[#cbd5e1] transition-colors">
                   <div className="flex items-center gap-2">
                     <span
                       className="w-6 h-6 rounded-full bg-[#f5f3ff] text-[#6d28d9] flex items-center justify-center font-[Be_Vietnam_Pro] text-[11px] font-bold"
@@ -433,11 +433,11 @@ export function ExamMatrixDashboard() {
                     >
                       3
                     </span>
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] m-0">
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] m-0">
                       Phê duyệt &amp; xuất
                     </p>
                   </div>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] m-0 leading-relaxed">
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] m-0 leading-relaxed">
                     Phê duyệt ma trận rồi dùng ở Tạo đề thi.
                   </p>
                 </div>
@@ -446,7 +446,7 @@ export function ExamMatrixDashboard() {
                 <button
                   type="button"
                   onClick={() => navigate('/teacher/question-banks')}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                 >
                   <Library className="w-3.5 h-3.5" />
                   Ngân hàng câu hỏi
@@ -454,7 +454,7 @@ export function ExamMatrixDashboard() {
                 <button
                   type="button"
                   onClick={() => navigate('/teacher/assessments')}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] transition-colors"
                 >
                   <BookOpen className="w-3.5 h-3.5" />
                   Tạo bài kiểm tra
@@ -467,7 +467,7 @@ export function ExamMatrixDashboard() {
           {/* ── Toolbar ── */}
           <div className="flex flex-col gap-3">
             {/* Row 1: filters */}
-            <div className="flex items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl self-start flex-wrap">
+            <div className="flex items-center gap-1 p-1 bg-[#f8fafc] rounded-xl self-start flex-wrap">
               {filters.map((filter) => {
                 let count = stats.total;
                 if (filter === MatrixStatus.DRAFT) count = stats.draft;
@@ -479,8 +479,8 @@ export function ExamMatrixDashboard() {
                     onClick={() => setStatusFilter(filter)}
                     className={`px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                       statusFilter === filter
-                        ? 'bg-white text-[#141413] shadow-sm'
-                        : 'text-[#87867F] hover:text-[#5E5D59]'
+                        ? 'bg-white text-[#0f172a] shadow-sm'
+                        : 'text-[#64748b] hover:text-[#475569]'
                     }`}
                   >
                     {filterLabel[filter]} ({count})
@@ -504,9 +504,9 @@ export function ExamMatrixDashboard() {
               onChapterChange={() => {}}
               onLessonChange={() => {}}
               footnote={
-                <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-2">
+                <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-2">
                   {tableQueriesLoading && (
-                    <span className="ml-2 text-[#C96442]">Đang tải dữ liệu hàng…</span>
+                    <span className="ml-2 text-[#0ea5e9]">Đang tải dữ liệu hàng…</span>
                   )}
                 </p>
               }
@@ -514,10 +514,10 @@ export function ExamMatrixDashboard() {
 
             {/* Row 3: search + view toggle + refresh */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-              <label className="flex-1 w-full flex items-center gap-3 bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150">
-                <Search className="text-[#87867F] w-4 h-4 flex-shrink-0" />
+              <label className="flex-1 w-full flex items-center gap-3 bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150">
+                <Search className="text-[#64748b] w-4 h-4 flex-shrink-0" />
                 <input
-                  className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] bg-transparent outline-none"
+                  className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] bg-transparent outline-none"
                   placeholder="Tìm ma trận..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
@@ -527,7 +527,7 @@ export function ExamMatrixDashboard() {
                     type="button"
                     aria-label="Xóa tìm kiếm"
                     onClick={() => setSearch('')}
-                    className="text-[#87867F] hover:text-[#141413] transition-colors"
+                    className="text-[#64748b] hover:text-[#0f172a] transition-colors"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -535,7 +535,7 @@ export function ExamMatrixDashboard() {
               </label>
 
               {effectiveTotalElements > 0 && (
-                <div className="flex items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl flex-shrink-0">
+                <div className="flex items-center gap-1 p-1 bg-[#f8fafc] rounded-xl flex-shrink-0">
                   <button
                     type="button"
                     onClick={() => setViewMode('grid')}
@@ -543,8 +543,8 @@ export function ExamMatrixDashboard() {
                     title="Lưới"
                     className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-150 ${
                       viewMode === 'grid'
-                        ? 'bg-white shadow-md text-[#141413]'
-                        : 'bg-[#E8E6DC] border-2 border-[#D1CFC5] text-[#141413] hover:bg-[#DDD9CC]'
+                        ? 'bg-white shadow-md text-[#0f172a]'
+                        : 'bg-[#e2e8f0] border-2 border-[#cbd5e1] text-[#0f172a] hover:bg-[#DDD9CC]'
                     }`}
                   >
                     <LayoutGrid className="w-4 h-4" />
@@ -556,8 +556,8 @@ export function ExamMatrixDashboard() {
                     title="Danh sách"
                     className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-150 ${
                       viewMode === 'list'
-                        ? 'bg-white shadow-md text-[#141413]'
-                        : 'bg-[#E8E6DC] border-2 border-[#D1CFC5] text-[#141413] hover:bg-[#DDD9CC]'
+                        ? 'bg-white shadow-md text-[#0f172a]'
+                        : 'bg-[#e2e8f0] border-2 border-[#cbd5e1] text-[#0f172a] hover:bg-[#DDD9CC]'
                     }`}
                   >
                     <List className="w-4 h-4" />
@@ -568,7 +568,7 @@ export function ExamMatrixDashboard() {
               <button
                 type="button"
                 onClick={() => void refetch()}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors flex-shrink-0"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors flex-shrink-0"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
                 Làm mới
@@ -577,25 +577,25 @@ export function ExamMatrixDashboard() {
           </div>
 
           {!isLoading && !isError && effectiveTotalElements > 0 && (
-            <div className="flex flex-wrap items-center gap-4 px-4 py-3 rounded-xl bg-[#FAF9F5] border border-[#E8E6DC]">
-              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] uppercase tracking-wide">
+            <div className="flex flex-wrap items-center gap-4 px-4 py-3 rounded-xl bg-[#ffffff] border border-[#e2e8f0]">
+              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] uppercase tracking-wide">
                 Hiển thị
               </span>
-              <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+              <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                 {displayStart}–{displayEnd} / {effectiveTotalElements}
               </strong>
-              <div className="hidden sm:block w-px h-4 bg-[#E8E6DC]" />
-              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+              <div className="hidden sm:block w-px h-4 bg-[#e2e8f0]" />
+              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
                 {' '}
                 Đã phê duyệt{' '}
-                <strong className="text-[#141413] font-semibold">{stats.approved}</strong>
+                <strong className="text-[#0f172a] font-semibold">{stats.approved}</strong>
               </span>
-              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
                 {' '}
                 Nháp{' '}
-                <strong className="text-[#141413] font-semibold">{stats.draft}</strong>
+                <strong className="text-[#0f172a] font-semibold">{stats.draft}</strong>
               </span>
             </div>
           )}
@@ -605,7 +605,7 @@ export function ExamMatrixDashboard() {
               {[1, 2, 3].map((i) => (
                 <div
                   key={i}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-52 animate-pulse"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-52 animate-pulse"
                 />
               ))}
             </div>
@@ -624,10 +624,10 @@ export function ExamMatrixDashboard() {
 
           {isCatalogEmpty && (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#B0AEA5]">
+              <div className="w-12 h-12 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#94a3b8]">
                 <Grid2x2 className="w-6 h-6" />
               </div>
-              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center px-4">
+              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center px-4">
                 Bạn chưa có ma trận đề nào. Tạo ma trận đầu tiên để bắt đầu.
               </p>
               <div className="flex flex-wrap justify-center gap-2 mt-1">
@@ -638,7 +638,7 @@ export function ExamMatrixDashboard() {
                     setSelected(null);
                     setFormOpen(true);
                   }}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] transition-colors"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] transition-colors"
                 >
                   Tạo ma trận <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -652,10 +652,10 @@ export function ExamMatrixDashboard() {
             totalElements === 0 &&
             !isCatalogEmpty && (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#B0AEA5]">
+              <div className="w-12 h-12 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#94a3b8]">
                 <Search className="w-6 h-6" />
               </div>
-              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center px-4">
+              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center px-4">
                 Không có ma trận phù hợp với bộ lọc hoặc từ khóa tìm kiếm.
               </p>
             </div>
@@ -663,10 +663,10 @@ export function ExamMatrixDashboard() {
 
           {!isLoading && !isError && matrices.length === 0 && totalElements > 0 && (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#B0AEA5]">
+              <div className="w-12 h-12 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#94a3b8]">
                 <Search className="w-6 h-6" />
               </div>
-              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F]">
+              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b]">
                 Không có ma trận trên trang này. Thử chọn trang khác.
               </p>
             </div>
@@ -674,7 +674,7 @@ export function ExamMatrixDashboard() {
 
           {!isLoading && !isError && matrices.length > 0 && filteredMatrices.length === 0 && curriculumFilterActive && !tableQueriesLoading && (
             <div className="flex flex-col items-center justify-center py-14 gap-2 px-4">
-              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center">
+              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center">
                 Không có ma trận nào có chương thuộc lớp/môn đã chọn trên trang này.
               </p>
             </div>
@@ -685,7 +685,7 @@ export function ExamMatrixDashboard() {
               {filteredMatrices.map((matrix, idx) => (
                 <article
                   key={matrix.id}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
                 >
                   <div
                     className="h-[132px] relative flex flex-col justify-end p-4 overflow-hidden"
@@ -706,22 +706,22 @@ export function ExamMatrixDashboard() {
                     </h3>
                   </div>
                   <div className="p-4 flex flex-col gap-2 flex-1">
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] leading-[1.5] line-clamp-2">
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] leading-[1.5] line-clamp-2">
                       {matrix.description?.trim() || 'Chưa có mô tả cho ma trận này.'}
                     </p>
                     {(matrix.gradeLevel || matrix.subjectName) && (
                       <div className="flex flex-wrap gap-1.5">
                         
                         {matrix.subjectName && (
-                          <span className="inline-flex px-2 py-0.5 rounded-full bg-white border border-[#E8E6DC] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#5E5D59]">
+                          <span className="inline-flex px-2 py-0.5 rounded-full bg-white border border-[#e2e8f0] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#475569]">
                             {matrix.subjectName}
                           </span>
                         )}
                       </div>
                     )}
                     {renderDimensionStrip(matrix)}
-                    <div className="flex items-center justify-between pt-2 border-t border-[#F0EEE6] mt-auto gap-2">
-                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#B0AEA5]">
+                    <div className="flex items-center justify-between pt-2 border-t border-[#e2e8f0] mt-auto gap-2">
+                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#94a3b8]">
                         {formatDate(matrix.createdAt)}
                       </span>
                     </div>
@@ -734,7 +734,7 @@ export function ExamMatrixDashboard() {
                           navigate(`/teacher/exam-matrices/${matrix.id}`);
                         });
                       }}
-                      className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:bg-[#30302E] disabled:opacity-60 transition-colors"
+                      className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:bg-[#1e293b] disabled:opacity-60 transition-colors"
                     >
                       {navToDetailPending && pendingDetailId === matrix.id ? (
                         <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -750,7 +750,7 @@ export function ExamMatrixDashboard() {
                         {matrix.status === MatrixStatus.DRAFT && (
                           <button
                             type="button"
-                            className="flex-1 min-w-[6rem] px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors inline-flex items-center justify-center gap-1"
+                            className="flex-1 min-w-[6rem] px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors inline-flex items-center justify-center gap-1"
                             onClick={() => {
                               setMode('edit');
                               setSelected(matrix);
@@ -791,7 +791,7 @@ export function ExamMatrixDashboard() {
                         {matrix.status === MatrixStatus.APPROVED && (
                           <button
                             type="button"
-                            className="flex-1 min-w-[6rem] px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors inline-flex items-center justify-center gap-1 disabled:opacity-50"
+                            className="flex-1 min-w-[6rem] px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors inline-flex items-center justify-center gap-1 disabled:opacity-50"
                             disabled={resetMutation.isPending}
                             onClick={() => {
                               if (!globalThis.confirm(`Đặt lại ma trận "${matrix.name}" về nháp?`))
@@ -859,7 +859,7 @@ export function ExamMatrixDashboard() {
               {filteredMatrices.map((matrix, idx) => (
                 <article
                   key={matrix.id}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] p-4 flex flex-col sm:flex-row sm:items-center gap-4 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] p-4 flex flex-col sm:flex-row sm:items-center gap-4 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150"
                 >
                   <div
                     className="w-11 h-11 rounded-xl flex-shrink-0 flex items-center justify-center"
@@ -872,14 +872,14 @@ export function ExamMatrixDashboard() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex flex-wrap items-center gap-2 mb-0.5">
-                      <h3 className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413] truncate max-w-full">
+                      <h3 className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a] truncate max-w-full">
                         {matrix.name}
                       </h3>
                       {renderStatusBadge(matrix.status)}
                     </div>
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
                       {renderDimensionStrip(matrix)}
-                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#B0AEA5]">
+                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#94a3b8]">
                         {formatDate(matrix.createdAt)}
                       </span>
                     </div>
@@ -894,7 +894,7 @@ export function ExamMatrixDashboard() {
                           navigate(`/teacher/exam-matrices/${matrix.id}`);
                         });
                       }}
-                      className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors inline-flex items-center gap-1 disabled:opacity-60"
+                      className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors inline-flex items-center gap-1 disabled:opacity-60"
                     >
                       {navToDetailPending && pendingDetailId === matrix.id ? (
                         <Loader2 className="w-3.5 h-3.5 animate-spin" />
@@ -907,7 +907,7 @@ export function ExamMatrixDashboard() {
                       <>
                         <button
                           type="button"
-                          className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors inline-flex items-center gap-1"
+                          className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors inline-flex items-center gap-1"
                           onClick={() => {
                             setMode('edit');
                             setSelected(matrix);
@@ -947,7 +947,7 @@ export function ExamMatrixDashboard() {
                     {matrix.status === MatrixStatus.APPROVED && (
                       <button
                         type="button"
-                        className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-50 inline-flex items-center gap-1"
+                        className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-50 inline-flex items-center gap-1"
                         disabled={resetMutation.isPending}
                         onClick={() => {
                           if (!globalThis.confirm(`Đặt lại ma trận "${matrix.name}" về nháp?`))

@@ -292,21 +292,21 @@ const UserManagement: React.FC = () => {
               {/* Header — TeacherMindmaps pattern */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] shrink-0">
                     <Users className="w-5 h-5" strokeWidth={2} aria-hidden />
                   </div>
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2.5">
-                      <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] m-0 leading-tight">
+                      <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] m-0 leading-tight">
                         Quản lý người dùng
                       </h1>
                       {!showSkeleton && !error && (
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                           {pagination.totalItems}
                         </span>
                       )}
                     </div>
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5 m-0">
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5 m-0">
                       {stats.active} đang hoạt động • {stats.teachers} giáo viên • {stats.students} học
                       sinh
                     </p>
@@ -315,7 +315,7 @@ const UserManagement: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setShowCreateModal(true)}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 shrink-0"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 shrink-0"
                 >
                   Thêm người dùng <ArrowRight className="w-3.5 h-3.5" aria-hidden />
                 </button>
@@ -357,23 +357,23 @@ const UserManagement: React.FC = () => {
                       label: 'Đang hoạt động',
                       value: showSkeleton ? '…' : stats.active,
                       Icon: CheckCircle2,
-                      bg: 'bg-[#F5F4ED]',
+                      bg: 'bg-[#f8fafc]',
                       color: 'text-[#8B7355]',
                     },
                   ] as const
                 ).map(({ label, value, Icon, bg, color }) => (
                   <div
                     key={label}
-                    className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3 shadow-[rgba(0,0,0,0.04)_0px_4px_24px] hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.06)_0px_8px_28px] hover:-translate-y-0.5 transition-all duration-200"
+                    className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3 shadow-[rgba(0,0,0,0.04)_0px_4px_24px] hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.06)_0px_8px_28px] hover:-translate-y-0.5 transition-all duration-200"
                   >
                     <div className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center shrink-0`}>
                       <Icon className={`w-4 h-4 ${color}`} strokeWidth={2} aria-hidden />
                     </div>
                     <div className="min-w-0">
-                      <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none truncate">
+                      <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none truncate">
                         {value}
                       </p>
-                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5 leading-snug">
+                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5 leading-snug">
                         {label}
                       </p>
                     </div>
@@ -384,7 +384,7 @@ const UserManagement: React.FC = () => {
               {/* Toolbar — segmented control + search (TeacherMindmaps) */}
               <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
                 <div className="flex flex-wrap items-center gap-2 order-2 xl:order-1">
-                  <div className="flex flex-wrap items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl">
+                  <div className="flex flex-wrap items-center gap-1 p-1 bg-[#f8fafc] rounded-xl">
                     {(
                       [
                         { id: 'all' as const, label: `Tất cả (${stats.total})` },
@@ -398,8 +398,8 @@ const UserManagement: React.FC = () => {
                         type="button"
                         className={`px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                           filterRole === id
-                            ? 'bg-white text-[#141413] shadow-sm'
-                            : 'text-[#87867F] hover:text-[#5E5D59]'
+                            ? 'bg-white text-[#0f172a] shadow-sm'
+                            : 'text-[#64748b] hover:text-[#475569]'
                         }`}
                         onClick={() => setFilterRole(id)}
                       >
@@ -410,22 +410,22 @@ const UserManagement: React.FC = () => {
                   <button
                     type="button"
                     onClick={handleExportExcel}
-                    className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59] hover:bg-[#FAF9F5] transition-colors shadow-[rgba(0,0,0,0.03)_0px_2px_8px]"
+                    className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569] hover:bg-[#ffffff] transition-colors shadow-[rgba(0,0,0,0.03)_0px_2px_8px]"
                   >
                     <Download className="w-4 h-4 shrink-0" strokeWidth={2} aria-hidden />
                     Xuất Excel
                   </button>
                 </div>
 
-                <label className="relative flex w-full xl:max-w-md items-center gap-3 bg-white border border-[#E8E6DC] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150 shadow-[rgba(0,0,0,0.03)_0px_2px_12px] order-1 xl:order-2">
+                <label className="relative flex w-full xl:max-w-md items-center gap-3 bg-white border border-[#e2e8f0] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150 shadow-[rgba(0,0,0,0.03)_0px_2px_12px] order-1 xl:order-2">
                   <Search
-                    className="text-[#87867F] w-4 h-4 shrink-0"
+                    className="text-[#64748b] w-4 h-4 shrink-0"
                     strokeWidth={2}
                     aria-hidden
                   />
                   <input
                     type="search"
-                    className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] bg-transparent outline-none min-w-0"
+                    className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] bg-transparent outline-none min-w-0"
                     placeholder="Tìm theo tên, email, username..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
@@ -436,14 +436,14 @@ const UserManagement: React.FC = () => {
                       type="button"
                       aria-label="Xóa tìm kiếm"
                       onClick={() => setSearchTerm('')}
-                      className="text-[#87867F] hover:text-[#141413] transition-colors shrink-0"
+                      className="text-[#64748b] hover:text-[#0f172a] transition-colors shrink-0"
                     >
                       <X className="w-4 h-4" strokeWidth={2} />
                     </button>
                   ) : null}
                   {isFetching ? (
                     <span
-                      className={`absolute top-1/2 -translate-y-1/2 text-[#87867F] pointer-events-none flex items-center ${searchTerm ? 'right-10' : 'right-3'}`}
+                      className={`absolute top-1/2 -translate-y-1/2 text-[#64748b] pointer-events-none flex items-center ${searchTerm ? 'right-10' : 'right-3'}`}
                       aria-hidden
                     >
                       <Loader2 className="w-4 h-4 animate-spin" />
@@ -454,18 +454,18 @@ const UserManagement: React.FC = () => {
 
               {/* Summary bar */}
               {!showSkeleton && !error && users.length > 0 && (
-                <div className="flex flex-wrap items-center gap-4 px-4 py-3 rounded-xl bg-[#FAF9F5] border border-[#E8E6DC]">
-                  <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] uppercase tracking-wide">
+                <div className="flex flex-wrap items-center gap-4 px-4 py-3 rounded-xl bg-[#ffffff] border border-[#e2e8f0]">
+                  <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] uppercase tracking-wide">
                     Hiển thị
                   </span>
-                  <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                  <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                     {users.length} / {pagination.totalItems}
                   </strong>
-                  <div className="w-px h-4 bg-[#E8E6DC] hidden sm:block" aria-hidden />
-                  <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                  <div className="w-px h-4 bg-[#e2e8f0] hidden sm:block" aria-hidden />
+                  <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#4F7EF7] inline-block" aria-hidden />
                     Trang{' '}
-                    <strong className="text-[#141413] font-semibold">
+                    <strong className="text-[#0f172a] font-semibold">
                       {pagination.page + 1} / {Math.max(1, pagination.totalPages)}
                     </strong>
                   </span>
@@ -477,14 +477,14 @@ const UserManagement: React.FC = () => {
                   {[1, 2, 3].map((i) => (
                     <div
                       key={i}
-                      className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-52 animate-pulse"
+                      className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-52 animate-pulse"
                     />
                   ))}
                 </div>
               )}
 
               {error && (
-                <div className="flex flex-col items-center justify-center py-14 px-4 rounded-2xl border border-[#F0EEE6] bg-[#FAF9F5]">
+                <div className="flex flex-col items-center justify-center py-14 px-4 rounded-2xl border border-[#e2e8f0] bg-[#ffffff]">
                   <div className="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center text-red-400 mb-3">
                     <AlertCircle className="w-6 h-6" strokeWidth={2} aria-hidden />
                   </div>
@@ -495,7 +495,7 @@ const UserManagement: React.FC = () => {
               )}
 
               {!showSkeleton && !error && (
-                <div className="rounded-2xl border border-[#E8E6DC] bg-white shadow-[rgba(0,0,0,0.04)_0px_4px_24px] overflow-hidden admin-mgmt-table-shell">
+                <div className="rounded-2xl border border-[#e2e8f0] bg-white shadow-[rgba(0,0,0,0.04)_0px_4px_24px] overflow-hidden admin-mgmt-table-shell">
                   <div className="overflow-x-auto">
                     <table className="users-table">
                       <thead>
@@ -595,7 +595,7 @@ const UserManagement: React.FC = () => {
                 <div className="flex flex-wrap items-center justify-center gap-2">
                   <button
                     type="button"
-                    className="min-h-9 px-3 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#5E5D59] hover:bg-[#FAF9F5] disabled:opacity-40 disabled:pointer-events-none transition-colors"
+                    className="min-h-9 px-3 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#475569] hover:bg-[#ffffff] disabled:opacity-40 disabled:pointer-events-none transition-colors"
                     disabled={pagination.page === 0}
                     onClick={() => handlePageChange(pagination.page - 1)}
                   >
@@ -608,8 +608,8 @@ const UserManagement: React.FC = () => {
                         type="button"
                         className={`min-w-9 min-h-9 rounded-xl border font-[Be_Vietnam_Pro] text-[13px] font-semibold transition-colors ${
                           pagination.page === i
-                            ? 'bg-[#141413] border-[#141413] text-[#FAF9F5]'
-                            : 'border-[#E8E6DC] bg-white text-[#5E5D59] hover:bg-[#FAF9F5]'
+                            ? 'bg-[#0f172a] border-[#0f172a] text-[#ffffff]'
+                            : 'border-[#e2e8f0] bg-white text-[#475569] hover:bg-[#ffffff]'
                         }`}
                         onClick={() => handlePageChange(i)}
                       >
@@ -617,14 +617,14 @@ const UserManagement: React.FC = () => {
                       </button>
                     ))}
                     {pagination.totalPages > 10 && (
-                      <span className="px-1 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                      <span className="px-1 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                         …
                       </span>
                     )}
                   </div>
                   <button
                     type="button"
-                    className="min-h-9 px-3 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#5E5D59] hover:bg-[#FAF9F5] disabled:opacity-40 disabled:pointer-events-none transition-colors"
+                    className="min-h-9 px-3 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#475569] hover:bg-[#ffffff] disabled:opacity-40 disabled:pointer-events-none transition-colors"
                     disabled={pagination.page >= pagination.totalPages - 1}
                     onClick={() => handlePageChange(pagination.page + 1)}
                   >

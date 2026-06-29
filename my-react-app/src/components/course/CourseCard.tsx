@@ -35,15 +35,15 @@ interface CourseCardProps {
 }
 
 const coverGradients = [
-  'linear-gradient(135deg, #f5f4ed 0%, #ede8dc 100%)',
-  'linear-gradient(135deg, #faf9f5 0%, #f0eee6 100%)',
-  'linear-gradient(135deg, #f3efe4 0%, #e8e6dc 100%)',
+  'linear-gradient(135deg, #f8fafc 0%, #ede8dc 100%)',
+  'linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%)',
+  'linear-gradient(135deg, #f3efe4 0%, #e2e8f0 100%)',
   'linear-gradient(135deg, #f7f3eb 0%, #ede3d4 100%)',
   'linear-gradient(135deg, #faf7f3 0%, #efe7dc 100%)',
   'linear-gradient(135deg, #f6f2ea 0%, #e7dfd2 100%)',
 ] as const;
 
-const coverAccents = ['#4d4c48', '#5e5d59', '#7a5a4d', '#81644c', '#6e5b7e', '#4a6a5a'] as const;
+const coverAccents = ['#334155', '#475569', '#7a5a4d', '#81644c', '#6e5b7e', '#4a6a5a'] as const;
 
 const levelMap: Record<CourseLevel | 'ALL_LEVELS', { label: string; bg: string; text: string }> = {
   BEGINNER: { label: 'Cơ bản', bg: '#dfe9e3', text: '#355345' },
@@ -325,10 +325,10 @@ export const CourseCard: React.FC<CourseCardProps> = ({
                 <button
                   className="action-secondary"
                   style={{
-                    background: '#E8E6DC',
-                    color: '#4D4C48',
+                    background: '#e2e8f0',
+                    color: '#334155',
                     flex: 1,
-                    border: '1px solid #D1CFC5',
+                    border: '1px solid #cbd5e1',
                     padding: '0.6rem',
                     borderRadius: '10px',
                     fontWeight: 600,
@@ -380,12 +380,12 @@ export const CourseCard: React.FC<CourseCardProps> = ({
           object-fit: cover;
         }
         .teacher-info-mini:hover .course-desc-teacher {
-          color: #c96442;
+          color: #0ea5e9;
           text-decoration: underline;
         }
         .course-desc-teacher {
           font-size: 0.85rem;
-          color: #5e5d59;
+          color: #475569;
           margin: 0;
           transition: color 0.15s;
         }
@@ -395,7 +395,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({
           justify-content: space-between;
           margin: 0.75rem 0;
           padding-top: 0.75rem;
-          border-top: 1px solid #e8e6dc;
+          border-top: 1px solid #e2e8f0;
           flex-wrap: wrap;
           gap: 0.4rem;
         }
@@ -407,11 +407,11 @@ export const CourseCard: React.FC<CourseCardProps> = ({
         .current-price {
           font-size: 1.15rem;
           font-weight: 700;
-          color: #141413;
+          color: #0f172a;
         }
         .original-price {
           font-size: 0.875rem;
-          color: #87867f;
+          color: #64748b;
           text-decoration: line-through;
         }
         .price-free {

@@ -434,28 +434,28 @@ const Pricing: React.FC = () => {
               {/* ── Page header ── */}
               <div className="flex items-center justify-between gap-4 flex-wrap">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+                  <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                     <Tag className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2.5">
-                      <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                      <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                         Bảng giá &amp; token
                       </h1>
                       {!loadingSubscriptionData && userPlans.length > 0 && (
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                           {userPlans.length}
                         </span>
                       )}
                     </div>
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                       Tham khảo các gói với giá vô cùng ưu đãi
                     </p>
                   </div>
                 </div>
                 <button
                   type="button"
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
                   onClick={() => navigate(`/${layoutRole}/wallet`)}
                 >
                   <Plus size={16} strokeWidth={2.5} />
@@ -503,7 +503,7 @@ const Pricing: React.FC = () => {
                 ).map(({ label, value, Icon, bg, color }) => (
                   <div
                     key={label}
-                    className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3"
+                    className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3"
                   >
                     <div
                       className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center flex-shrink-0`}
@@ -511,10 +511,10 @@ const Pricing: React.FC = () => {
                       <Icon className={`w-4 h-4 ${color}`} />
                     </div>
                     <div className="min-w-0">
-                      <p className="font-[Playfair_Display] text-[20px] font-medium text-[#141413] leading-none truncate">
+                      <p className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a] leading-none truncate">
                         {value}
                       </p>
-                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">
+                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">
                         {label}
                       </p>
                     </div>
@@ -524,18 +524,18 @@ const Pricing: React.FC = () => {
 
               {/* ── Token progress ── */}
               {activeSubscription && tokenPercent !== null && (
-                <div className="bg-white rounded-2xl border border-[#E8E6DC] p-4">
+                <div className="bg-white rounded-2xl border border-[#e2e8f0] p-4">
                   <div className="flex items-center justify-between mb-2.5">
-                    <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59]">
+                    <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569]">
                       Tiến độ token (kỳ hiện tại)
                     </span>
-                    <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                    <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                       {tokenPercent}%
                     </strong>
                   </div>
-                  <div className="h-2 rounded-full bg-[#F0EEE6] overflow-hidden" aria-hidden="true">
+                  <div className="h-2 rounded-full bg-[#e2e8f0] overflow-hidden" aria-hidden="true">
                     <div
-                      className="h-full rounded-full bg-[#C96442] transition-all duration-300"
+                      className="h-full rounded-full bg-[#0ea5e9] transition-all duration-300"
                       style={{ width: `${tokenPercent}%` }}
                     />
                   </div>
@@ -613,18 +613,18 @@ const Pricing: React.FC = () => {
                     {[1, 2, 3].map((i) => (
                       <div
                         key={i}
-                        className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-72 animate-pulse"
+                        className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-72 animate-pulse"
                       />
                     ))}
                   </>
                 ) : userPlans.length === 0 ? (
                   <div className="col-span-full flex flex-col items-center justify-center py-16 gap-3">
-                    <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F]">
+                    <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b]">
                       Chưa có gói để hiển thị.
                     </p>
                     <button
                       type="button"
-                      className="mt-1 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] transition-colors"
+                      className="mt-1 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] transition-colors"
                       onClick={() => {
                         void Promise.all([
                           userPlansQuery.refetch(),
@@ -647,8 +647,8 @@ const Pricing: React.FC = () => {
                       const spotlight = Boolean(plan.featured);
 
                       const btnCls = spotlight
-                        ? 'w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-white font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed'
-                        : 'w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] active:scale-[0.98] transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed';
+                        ? 'w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-white font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed'
+                        : 'w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] active:scale-[0.98] transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed';
 
                       const btn = (
                         <button
@@ -780,8 +780,8 @@ const Pricing: React.FC = () => {
                       to="/register"
                       className={
                         plan.highlighted
-                          ? 'w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-white font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150'
-                          : 'w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] active:scale-[0.98] transition-all duration-150'
+                          ? 'w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-white font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150'
+                          : 'w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] active:scale-[0.98] transition-all duration-150'
                       }
                     >
                       {plan.buttonText}

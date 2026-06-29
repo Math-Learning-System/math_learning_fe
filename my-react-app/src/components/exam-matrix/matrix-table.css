@@ -1055,14 +1055,14 @@
 }
 
 .matrix-toolbar-btn--primary {
-  background: #141413;
-  border-color: #141413;
+  background: #0f172a;
+  border-color: #0f172a;
   color: #fafaf9;
 }
 
 .matrix-toolbar-btn--primary:hover:not(:disabled) {
-  background: #30302e;
-  border-color: #30302e;
+  background: #1e293b;
+  border-color: #1e293b;
 }
 
 @keyframes matrix-toolbar-spin {

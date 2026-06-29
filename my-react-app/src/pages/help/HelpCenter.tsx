@@ -127,7 +127,7 @@ const HelpCenter: React.FC = () => {
       title: 'Hướng dẫn sử dụng nền tảng cho người mới',
       description: 'Tìm hiểu các tính năng cơ bản và cách bắt đầu học tập hiệu quả',
       category: 'account',
-      icon: <Zap className="w-5 h-5 text-[#C96442]" />,
+      icon: <Zap className="w-5 h-5 text-[#0ea5e9]" />,
       readTime: '5 phút',
     },
     {
@@ -135,7 +135,7 @@ const HelpCenter: React.FC = () => {
       title: 'Tối ưu hóa trải nghiệm học tập',
       description: 'Những mẹo và thủ thuật giúp bạn học tập hiệu quả hơn',
       category: 'courses',
-      icon: <BookOpen className="w-5 h-5 text-[#C96442]" />,
+      icon: <BookOpen className="w-5 h-5 text-[#0ea5e9]" />,
       readTime: '8 phút',
     },
     {
@@ -143,7 +143,7 @@ const HelpCenter: React.FC = () => {
       title: 'Bảo mật tài khoản của bạn',
       description: 'Cách bảo vệ tài khoản và dữ liệu cá nhân an toàn',
       category: 'account',
-      icon: <Lock className="w-5 h-5 text-[#C96442]" />,
+      icon: <Lock className="w-5 h-5 text-[#0ea5e9]" />,
       readTime: '6 phút',
     },
     {
@@ -151,7 +151,7 @@ const HelpCenter: React.FC = () => {
       title: 'Hướng dẫn thanh toán chi tiết',
       description: 'Các bước thanh toán và xử lý vấn đề phổ biến',
       category: 'payment',
-      icon: <CreditCard className="w-5 h-5 text-[#C96442]" />,
+      icon: <CreditCard className="w-5 h-5 text-[#0ea5e9]" />,
       readTime: '10 phút',
     },
     {
@@ -159,7 +159,7 @@ const HelpCenter: React.FC = () => {
       title: 'Xử lý sự cố kỹ thuật thường gặp',
       description: 'Giải pháp cho các lỗi phổ biến khi sử dụng nền tảng',
       category: 'technical',
-      icon: <Wrench className="w-5 h-5 text-[#C96442]" />,
+      icon: <Wrench className="w-5 h-5 text-[#0ea5e9]" />,
       readTime: '12 phút',
     },
     {
@@ -167,7 +167,7 @@ const HelpCenter: React.FC = () => {
       title: 'Sử dụng AI Assistant hiệu quả',
       description: 'Khai thác tối đa tính năng trợ lý AI trong học tập',
       category: 'courses',
-      icon: <Bot className="w-5 h-5 text-[#C96442]" />,
+      icon: <Bot className="w-5 h-5 text-[#0ea5e9]" />,
       readTime: '7 phút',
     },
   ];
@@ -202,30 +202,30 @@ const HelpCenter: React.FC = () => {
       <div className="p-6 lg:p-8 animate-[fadeInUp_0.4s_ease_both]">
         {/* Header */}
         <div className="mb-10 text-center">
-          <div className="inline-flex items-center justify-center p-3 bg-[#E8E6DC] rounded-2xl mb-4">
-            <HelpCircle className="w-8 h-8 text-[#C96442]" />
+          <div className="inline-flex items-center justify-center p-3 bg-[#e2e8f0] rounded-2xl mb-4">
+            <HelpCircle className="w-8 h-8 text-[#0ea5e9]" />
           </div>
-          <h1 className="font-[Be_Vietnam_Pro] text-[36px] font-bold tracking-[-0.01em] leading-[1.2] text-[#141413] mb-3">
+          <h1 className="font-[Be_Vietnam_Pro] text-[36px] font-bold tracking-[-0.01em] leading-[1.2] text-[#0f172a] mb-3">
             Trung Tâm Trợ Giúp
           </h1>
-          <p className="font-[Be_Vietnam_Pro] text-[15px] font-normal text-[#87867F] leading-[1.6]">
+          <p className="font-[Be_Vietnam_Pro] text-[15px] font-normal text-[#64748b] leading-[1.6]">
             Tìm câu trả lời cho mọi thắc mắc của bạn
           </p>
         </div>
 
         {/* Search */}
         <div className="max-w-2xl mx-auto mb-12">
-          <div className="bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl shadow-[0px_0px_0px_1px_#E8E6DC] px-5 py-3.5 flex items-center gap-3 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-200">
-            <Search className="w-4 h-4 text-[#87867F]" />
+          <div className="bg-[#ffffff] border border-[#e2e8f0] rounded-xl shadow-[0px_0px_0px_1px_#e2e8f0] px-5 py-3.5 flex items-center gap-3 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-200">
+            <Search className="w-4 h-4 text-[#64748b]" />
             <input
               type="text"
               placeholder="Tìm kiếm câu hỏi, hướng dẫn..."
-              className="flex-1 font-[Be_Vietnam_Pro] text-[14px] placeholder:text-[#87867F] bg-transparent outline-none text-[#141413]"
+              className="flex-1 font-[Be_Vietnam_Pro] text-[14px] placeholder:text-[#64748b] bg-transparent outline-none text-[#0f172a]"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
           </div>
-          <p className="text-center mt-3 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+          <p className="text-center mt-3 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
             Ví dụ: "đặt lại mật khẩu", "thanh toán", "chứng chỉ"...
           </p>
         </div>
@@ -237,8 +237,8 @@ const HelpCenter: React.FC = () => {
               key={cat.id}
               className={`flex items-center gap-2 px-3.5 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[13px] transition-all duration-150 active:scale-[0.98] ${
                 categoryFilter === cat.id
-                  ? 'bg-[#141413] text-[#FAF9F5] font-semibold'
-                  : 'bg-transparent text-[#5E5D59] font-medium hover:bg-[#E8E6DC] hover:text-[#141413]'
+                  ? 'bg-[#0f172a] text-[#ffffff] font-semibold'
+                  : 'bg-transparent text-[#475569] font-medium hover:bg-[#e2e8f0] hover:text-[#0f172a]'
               }`}
               onClick={() => setCategoryFilter(cat.id)}
             >
@@ -251,57 +251,57 @@ const HelpCenter: React.FC = () => {
         {/* Quick Actions */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
           <div
-            className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex flex-col gap-3 hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group"
+            className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex flex-col gap-3 hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group"
             onClick={() => setShowContactModal(true)}
           >
-            <div className="w-11 h-11 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] group-hover:scale-110 transition-transform duration-300">
+            <div className="w-11 h-11 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] group-hover:scale-110 transition-transform duration-300">
               <Mail className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#141413] mb-1">
+              <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#0f172a] mb-1">
                 Liên hệ hỗ trợ
               </h3>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                 Gửi yêu cầu hỗ trợ trực tiếp
               </p>
             </div>
           </div>
 
-          <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex flex-col gap-3 hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group">
-            <div className="w-11 h-11 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] group-hover:scale-110 transition-transform duration-300">
+          <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex flex-col gap-3 hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group">
+            <div className="w-11 h-11 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] group-hover:scale-110 transition-transform duration-300">
               <MessageCircle className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#141413] mb-1">
+              <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#0f172a] mb-1">
                 Chat với chúng tôi
               </h3>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                 Trò chuyện trực tiếp (8:00 - 22:00)
               </p>
             </div>
           </div>
 
-          <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex flex-col gap-3 hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group">
-            <div className="w-11 h-11 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] group-hover:scale-110 transition-transform duration-300">
+          <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex flex-col gap-3 hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group">
+            <div className="w-11 h-11 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] group-hover:scale-110 transition-transform duration-300">
               <Phone className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#141413] mb-1">
+              <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#0f172a] mb-1">
                 Hotline: 1900-xxxx
               </h3>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">Hỗ trợ 24/7</p>
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">Hỗ trợ 24/7</p>
             </div>
           </div>
 
-          <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex flex-col gap-3 hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group">
-            <div className="w-11 h-11 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] group-hover:scale-110 transition-transform duration-300">
+          <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex flex-col gap-3 hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group">
+            <div className="w-11 h-11 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] group-hover:scale-110 transition-transform duration-300">
               <FileText className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#141413] mb-1">
+              <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#0f172a] mb-1">
                 Tài liệu hướng dẫn
               </h3>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                 Tải PDF hướng dẫn sử dụng
               </p>
             </div>
@@ -312,30 +312,30 @@ const HelpCenter: React.FC = () => {
           {/* Main Content Area - Articles */}
           <div className="lg:col-span-2 space-y-8">
             <div>
-              <h2 className="font-[Playfair_Display] text-[18px] font-medium text-[#141413] mb-5 flex items-center gap-2">
-                <BookOpen className="w-5 h-5 text-[#C96442]" />
+              <h2 className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a] mb-5 flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-[#0ea5e9]" />
                 Bài viết hướng dẫn
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {filteredArticles.map((article) => (
                   <div
                     key={article.id}
-                    className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 group flex flex-col h-full cursor-pointer"
+                    className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 group flex flex-col h-full cursor-pointer"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                       {article.icon}
                     </div>
-                    <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#141413] mb-2">
+                    <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#0f172a] mb-2">
                       {article.title}
                     </h3>
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mb-4 flex-1 leading-[1.6]">
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mb-4 flex-1 leading-[1.6]">
                       {article.description}
                     </p>
-                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#F0EEE6]">
-                      <span className="font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#87867F] uppercase tracking-[0.5px]">
+                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#e2e8f0]">
+                      <span className="font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#64748b] uppercase tracking-[0.5px]">
                         {article.readTime}
                       </span>
-                      <button className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#C96442] flex items-center gap-1 group-hover:gap-2 transition-all duration-200 hover:text-[#A8532E]">
+                      <button className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0ea5e9] flex items-center gap-1 group-hover:gap-2 transition-all duration-200 hover:text-[#A8532E]">
                         Đọc ngay <ArrowRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
@@ -345,18 +345,18 @@ const HelpCenter: React.FC = () => {
             </div>
 
             {/* Need Help CTA below articles */}
-            <div className="bg-[#141413] rounded-2xl p-8 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#C96442] rounded-full filter blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/4"></div>
+            <div className="bg-[#0f172a] rounded-2xl p-8 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#0ea5e9] rounded-full filter blur-[100px] opacity-20 -translate-y-1/2 translate-x-1/4"></div>
               <div className="relative z-10">
-                <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#FAF9F5] mb-2">
+                <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#ffffff] mb-2">
                   Vẫn chưa tìm được câu trả lời?
                 </h2>
-                <p className="font-[Be_Vietnam_Pro] text-[15px] text-[#B0AEA5] mb-6 max-w-md leading-[1.6]">
+                <p className="font-[Be_Vietnam_Pro] text-[15px] text-[#94a3b8] mb-6 max-w-md leading-[1.6]">
                   Đừng lo lắng! Đội ngũ hỗ trợ của chúng tôi luôn sẵn sàng giúp đỡ bạn giải quyết
                   mọi vấn đề.
                 </p>
                 <button
-                  className="bg-[#C96442] text-[#FAF9F5] rounded-xl px-5 py-2.5 font-[Be_Vietnam_Pro] text-[14px] font-semibold shadow-[#C96442_0px_0px_0px_0px,#C96442_0px_0px_0px_1px] hover:brightness-95 active:scale-[0.98] transition-all duration-150 inline-flex items-center gap-2"
+                  className="bg-[#0ea5e9] text-[#ffffff] rounded-xl px-5 py-2.5 font-[Be_Vietnam_Pro] text-[14px] font-semibold shadow-[#0ea5e9_0px_0px_0px_0px,#0ea5e9_0px_0px_0px_1px] hover:brightness-95 active:scale-[0.98] transition-all duration-150 inline-flex items-center gap-2"
                   onClick={() => setShowContactModal(true)}
                 >
                   <Mail className="w-4 h-4" />
@@ -368,25 +368,25 @@ const HelpCenter: React.FC = () => {
 
           {/* Sidebar - FAQs */}
           <div className="lg:col-span-1">
-            <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-6 sticky top-6">
-              <h2 className="font-[Playfair_Display] text-[18px] font-medium text-[#141413] mb-5">
+            <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-6 sticky top-6">
+              <h2 className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a] mb-5">
                 Câu hỏi thường gặp
               </h2>
               <div className="space-y-3">
                 {filteredFAQs.map((faq) => (
                   <div
                     key={faq.id}
-                    className="border border-[#E8E6DC] rounded-xl overflow-hidden bg-[#F5F4ED] transition-colors duration-200"
+                    className="border border-[#e2e8f0] rounded-xl overflow-hidden bg-[#f8fafc] transition-colors duration-200"
                   >
                     <button
-                      className="w-full px-4 py-3.5 flex items-center justify-between text-left hover:bg-[#F0EEE6] transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-1"
+                      className="w-full px-4 py-3.5 flex items-center justify-between text-left hover:bg-[#e2e8f0] transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-1"
                       onClick={() => setExpandedFAQ(expandedFAQ === faq.id ? null : faq.id)}
                     >
-                      <span className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413] pr-4">
+                      <span className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a] pr-4">
                         {faq.question}
                       </span>
                       <div
-                        className={`text-[#87867F] flex-shrink-0 transition-transform duration-200 ${expandedFAQ === faq.id ? 'rotate-180' : ''}`}
+                        className={`text-[#64748b] flex-shrink-0 transition-transform duration-200 ${expandedFAQ === faq.id ? 'rotate-180' : ''}`}
                       >
                         <ChevronDown className="w-4 h-4" />
                       </div>
@@ -397,18 +397,18 @@ const HelpCenter: React.FC = () => {
                     >
                       <div className="overflow-hidden">
                         <div className="px-4 pb-4 pt-1">
-                          <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#5E5D59] mb-4 leading-[1.6]">
+                          <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#475569] mb-4 leading-[1.6]">
                             {faq.answer}
                           </p>
-                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-[#E8E6DC]">
-                            <span className="font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#87867F]">
+                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-[#e2e8f0]">
+                            <span className="font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#64748b]">
                               {faq.helpful} người thấy hữu ích
                             </span>
                             <div className="flex items-center gap-2">
-                              <button className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#FAF9F5] hover:text-[#C96442] hover:shadow-[0px_0px_0px_1px_#E8E6DC] transition-all duration-150">
+                              <button className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#ffffff] hover:text-[#0ea5e9] hover:shadow-[0px_0px_0px_1px_#e2e8f0] transition-all duration-150">
                                 <ThumbsUp className="w-3.5 h-3.5" /> Có
                               </button>
-                              <button className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#FAF9F5] hover:text-[#B53333] hover:shadow-[0px_0px_0px_1px_#E8E6DC] transition-all duration-150">
+                              <button className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#ffffff] hover:text-[#B53333] hover:shadow-[0px_0px_0px_1px_#e2e8f0] transition-all duration-150">
                                 <ThumbsDown className="w-3.5 h-3.5" /> Không
                               </button>
                             </div>
@@ -425,18 +425,18 @@ const HelpCenter: React.FC = () => {
 
         {/* Contact Modal */}
         {showContactModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#141413]/40 backdrop-blur-sm animate-[fadeIn_0.2s_ease_out]">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0f172a]/40 backdrop-blur-sm animate-[fadeIn_0.2s_ease_out]">
             <div
-              className="bg-[#FAF9F5] rounded-2xl shadow-[rgba(0,0,0,0.05)_0px_4px_24px,0px_0px_0px_1px_#E8E6DC] w-full max-w-2xl overflow-hidden flex flex-col max-h-[90vh] animate-[slideUp_0.3s_ease_out]"
+              className="bg-[#ffffff] rounded-2xl shadow-[rgba(0,0,0,0.05)_0px_4px_24px,0px_0px_0px_1px_#e2e8f0] w-full max-w-2xl overflow-hidden flex flex-col max-h-[90vh] animate-[slideUp_0.3s_ease_out]"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between p-5 border-b border-[#E8E6DC]">
-                <h2 className="font-[Playfair_Display] text-[18px] font-medium text-[#141413] flex items-center gap-2">
-                  <Mail className="w-5 h-5 text-[#C96442]" />
+              <div className="flex items-center justify-between p-5 border-b border-[#e2e8f0]">
+                <h2 className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a] flex items-center gap-2">
+                  <Mail className="w-5 h-5 text-[#0ea5e9]" />
                   Gửi yêu cầu hỗ trợ
                 </h2>
                 <button
-                  className="p-2 text-[#87867F] hover:bg-[#F0EEE6] rounded-xl transition-colors duration-150 active:scale-[0.98]"
+                  className="p-2 text-[#64748b] hover:bg-[#e2e8f0] rounded-xl transition-colors duration-150 active:scale-[0.98]"
                   onClick={() => setShowContactModal(false)}
                 >
                   <X className="w-5 h-5" />
@@ -446,10 +446,10 @@ const HelpCenter: React.FC = () => {
               <div className="p-6 overflow-y-auto flex-1 space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div className="space-y-1.5">
-                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                       Danh mục vấn đề <span className="text-[#B53333]">*</span>
                     </label>
-                    <select className="w-full bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-3.5 py-2.5 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 outline-none transition-all duration-150">
+                    <select className="w-full bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-3.5 py-2.5 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 outline-none transition-all duration-150">
                       <option value="">Chọn danh mục</option>
                       <option value="account">Tài khoản</option>
                       <option value="courses">{UI_TEXT.COURSE}</option>
@@ -459,45 +459,45 @@ const HelpCenter: React.FC = () => {
                     </select>
                   </div>
                   <div className="space-y-1.5">
-                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                       Email liên hệ <span className="text-[#B53333]">*</span>
                     </label>
                     <input
                       type="email"
                       defaultValue={mockStudent.email}
-                      className="w-full bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-3.5 py-2.5 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 outline-none transition-all duration-150"
+                      className="w-full bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-3.5 py-2.5 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 outline-none transition-all duration-150"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                     Tiêu đề <span className="text-[#B53333]">*</span>
                   </label>
                   <input
                     type="text"
                     placeholder="Mô tả ngắn gọn vấn đề của bạn"
-                    className="w-full bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-3.5 py-2.5 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 outline-none transition-all duration-150"
+                    className="w-full bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-3.5 py-2.5 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 outline-none transition-all duration-150"
                   />
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                     Nội dung chi tiết <span className="text-[#B53333]">*</span>
                   </label>
                   <textarea
                     rows={6}
                     placeholder="Mô tả chi tiết vấn đề bạn đang gặp phải...&#10;&#10;Vui lòng cung cấp:&#10;• Mô tả chi tiết vấn đề&#10;• Các bước đã thực hiện&#10;• Ảnh chụp màn hình (nếu có)&#10;• Thời gian xảy ra lỗi"
-                    className="w-full bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-3.5 py-2.5 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 outline-none transition-all duration-150 resize-none"
+                    className="w-full bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-3.5 py-2.5 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 outline-none transition-all duration-150 resize-none"
                   ></textarea>
                 </div>
 
                 <div className="space-y-3 pt-2">
-                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                     Độ ưu tiên
                   </label>
                   <div className="flex flex-wrap gap-3">
-                    <label className="relative flex items-center justify-center px-4 py-2 border border-[#E8E6DC] rounded-xl cursor-pointer hover:bg-[#F0EEE6] transition-colors duration-150 has-[:checked]:bg-[#E8E6DC] has-[:checked]:border-[#C96442] has-[:checked]:ring-1 has-[:checked]:ring-[#C96442]">
+                    <label className="relative flex items-center justify-center px-4 py-2 border border-[#e2e8f0] rounded-xl cursor-pointer hover:bg-[#e2e8f0] transition-colors duration-150 has-[:checked]:bg-[#e2e8f0] has-[:checked]:border-[#0ea5e9] has-[:checked]:ring-1 has-[:checked]:ring-[#0ea5e9]">
                       <input
                         type="radio"
                         name="priority"
@@ -505,19 +505,19 @@ const HelpCenter: React.FC = () => {
                         defaultChecked
                         className="sr-only"
                       />
-                      <div className="flex items-center gap-2 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#141413]">
-                        <Circle className="w-3.5 h-3.5 text-[#5E5D59] fill-current" /> Thấp
+                      <div className="flex items-center gap-2 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#0f172a]">
+                        <Circle className="w-3.5 h-3.5 text-[#475569] fill-current" /> Thấp
                       </div>
                     </label>
-                    <label className="relative flex items-center justify-center px-4 py-2 border border-[#E8E6DC] rounded-xl cursor-pointer hover:bg-[#F0EEE6] transition-colors duration-150 has-[:checked]:bg-[#E8E6DC] has-[:checked]:border-[#C96442] has-[:checked]:ring-1 has-[:checked]:ring-[#C96442]">
+                    <label className="relative flex items-center justify-center px-4 py-2 border border-[#e2e8f0] rounded-xl cursor-pointer hover:bg-[#e2e8f0] transition-colors duration-150 has-[:checked]:bg-[#e2e8f0] has-[:checked]:border-[#0ea5e9] has-[:checked]:ring-1 has-[:checked]:ring-[#0ea5e9]">
                       <input type="radio" name="priority" value="medium" className="sr-only" />
-                      <div className="flex items-center gap-2 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#141413]">
-                        <Circle className="w-3.5 h-3.5 text-[#D97757] fill-current" /> Trung bình
+                      <div className="flex items-center gap-2 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#0f172a]">
+                        <Circle className="w-3.5 h-3.5 text-[#14b8a6] fill-current" /> Trung bình
                       </div>
                     </label>
-                    <label className="relative flex items-center justify-center px-4 py-2 border border-[#E8E6DC] rounded-xl cursor-pointer hover:bg-[#F0EEE6] transition-colors duration-150 has-[:checked]:bg-[#E8E6DC] has-[:checked]:border-[#C96442] has-[:checked]:ring-1 has-[:checked]:ring-[#C96442]">
+                    <label className="relative flex items-center justify-center px-4 py-2 border border-[#e2e8f0] rounded-xl cursor-pointer hover:bg-[#e2e8f0] transition-colors duration-150 has-[:checked]:bg-[#e2e8f0] has-[:checked]:border-[#0ea5e9] has-[:checked]:ring-1 has-[:checked]:ring-[#0ea5e9]">
                       <input type="radio" name="priority" value="high" className="sr-only" />
-                      <div className="flex items-center gap-2 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#141413]">
+                      <div className="flex items-center gap-2 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#0f172a]">
                         <Circle className="w-3.5 h-3.5 text-[#B53333] fill-current" /> Cao
                       </div>
                     </label>
@@ -525,14 +525,14 @@ const HelpCenter: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-5 border-t border-[#E8E6DC] bg-[#F5F4ED] flex justify-end gap-3">
+              <div className="p-5 border-t border-[#e2e8f0] bg-[#f8fafc] flex justify-end gap-3">
                 <button
-                  className="px-5 py-2.5 rounded-xl font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#4D4C48] bg-[#E8E6DC] shadow-[#E8E6DC_0px_0px_0px_0px,#D1CFC5_0px_0px_0px_1px] hover:shadow-[#E8E6DC_0px_0px_0px_0px,#C2C0B6_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150"
+                  className="px-5 py-2.5 rounded-xl font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#334155] bg-[#e2e8f0] shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] hover:shadow-[#e2e8f0_0px_0px_0px_0px,#C2C0B6_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150"
                   onClick={() => setShowContactModal(false)}
                 >
                   Hủy
                 </button>
-                <button className="px-5 py-2.5 rounded-xl font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#FAF9F5] bg-[#C96442] shadow-[#C96442_0px_0px_0px_0px,#C96442_0px_0px_0px_1px] hover:shadow-[#C96442_0px_0px_0px_0px,#A8532E_0px_0px_0px_1px] hover:brightness-95 active:scale-[0.98] transition-all duration-150">
+                <button className="px-5 py-2.5 rounded-xl font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#ffffff] bg-[#0ea5e9] shadow-[#0ea5e9_0px_0px_0px_0px,#0ea5e9_0px_0px_0px_1px] hover:shadow-[#0ea5e9_0px_0px_0px_0px,#A8532E_0px_0px_0px_1px] hover:brightness-95 active:scale-[0.98] transition-all duration-150">
                   Gửi yêu cầu
                 </button>
               </div>

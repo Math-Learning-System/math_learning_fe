@@ -156,13 +156,13 @@ export function QuestionBankDashboard() {
     if (totalElements > 0) {
       return (
         <div className="flex flex-col items-center justify-center py-16 gap-3">
-          <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F]">
+          <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b]">
             Không có mục nào trên trang này.
           </p>
           <button
             type="button"
             onClick={() => setPage(0)}
-            className="px-4 py-2 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] transition-colors"
+            className="px-4 py-2 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] transition-colors"
           >
             Về trang đầu
           </button>
@@ -172,10 +172,10 @@ export function QuestionBankDashboard() {
     if (hasActiveFilters) {
       return (
         <div className="flex flex-col items-center justify-center py-16 gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#B0AEA5]">
+          <div className="w-12 h-12 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#94a3b8]">
             <Search className="w-6 h-6" />
           </div>
-          <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center">
+          <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center">
             Không có ngân hàng phù hợp. Thử đổi từ khóa hoặc bộ lọc.
           </p>
           <button
@@ -185,7 +185,7 @@ export function QuestionBankDashboard() {
               setFilterGradeId('');
               setFilterSubjectId('');
             }}
-            className="mt-1 px-4 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+            className="mt-1 px-4 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
           >
             Bỏ bộ lọc
           </button>
@@ -194,10 +194,10 @@ export function QuestionBankDashboard() {
     }
     return (
       <div className="flex flex-col items-center justify-center py-16 gap-3">
-        <div className="w-12 h-12 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#B0AEA5]">
+        <div className="w-12 h-12 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#94a3b8]">
           <Database className="w-6 h-6" />
         </div>
-        <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center max-w-md">
+        <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center max-w-md">
           Chưa có ngân hàng câu hỏi nào. Hãy tạo ngân hàng đầu tiên để quản lý câu hỏi.
         </p>
         <button
@@ -207,7 +207,7 @@ export function QuestionBankDashboard() {
             setSelected(null);
             setFormOpen(true);
           }}
-          className="mt-1 flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] active:scale-[0.98] transition-all duration-150"
+          className="mt-1 flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] active:scale-[0.98] transition-all duration-150"
         >
           <Plus className="w-3.5 h-3.5" />
           Tạo ngân hàng mới
@@ -229,21 +229,21 @@ export function QuestionBankDashboard() {
           {/* Header — aligned with /teacher/mindmaps */}
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                 <Database className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2.5 flex-wrap">
-                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                     Ngân hàng câu hỏi
                   </h1>
                   {!isLoading && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                       {effectiveTotalElements.toLocaleString('vi-VN')}
                     </span>
                   )}
                 </div>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5 max-w-xl">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5 max-w-xl">
                   Tổ chức câu hỏi theo ngân hàng để dùng cho ma trận đề và bài kiểm tra.
                 </p>
               </div>
@@ -255,7 +255,7 @@ export function QuestionBankDashboard() {
                 setSelected(null);
                 setFormOpen(true);
               }}
-              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
             >
               <Plus className="w-3.5 h-3.5" />
               Tạo ngân hàng mới
@@ -285,7 +285,7 @@ export function QuestionBankDashboard() {
             ).map(({ label, value, Icon, bg, color }) => (
               <div
                 key={label}
-                className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3"
+                className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3"
               >
                 <div
                   className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center flex-shrink-0`}
@@ -293,10 +293,10 @@ export function QuestionBankDashboard() {
                   <Icon className={`w-4 h-4 ${color}`} />
                 </div>
                 <div className="min-w-0">
-                  <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none tabular-nums">
+                  <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none tabular-nums">
                     {typeof value === 'number' ? value.toLocaleString('vi-VN') : value}
                   </p>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5 leading-tight">
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5 leading-tight">
                     {label}
                   </p>
                 </div>
@@ -324,10 +324,10 @@ export function QuestionBankDashboard() {
 
           {/* Toolbar */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-            <label className="flex-1 w-full flex items-center gap-3 bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-4 py-2.5 focus-within:border-[#C96442] focus-within:shadow-[0_0_0_3px_rgba(201,100,66,0.12)] transition-all duration-150">
-              <Search className="text-[#87867F] w-4 h-4 flex-shrink-0" />
+            <label className="flex-1 w-full flex items-center gap-3 bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-4 py-2.5 focus-within:border-[#0ea5e9] focus-within:shadow-[0_0_0_3px_rgba(14,165,233,0.12)] transition-all duration-150">
+              <Search className="text-[#64748b] w-4 h-4 flex-shrink-0" />
               <input
-                className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] bg-transparent outline-none min-w-0"
+                className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] bg-transparent outline-none min-w-0"
                 placeholder="Tìm ngân hàng câu hỏi..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -337,7 +337,7 @@ export function QuestionBankDashboard() {
                   type="button"
                   aria-label="Xóa tìm kiếm"
                   onClick={() => setSearch('')}
-                  className="text-[#87867F] hover:text-[#141413] transition-colors flex-shrink-0"
+                  className="text-[#64748b] hover:text-[#0f172a] transition-colors flex-shrink-0"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -349,14 +349,14 @@ export function QuestionBankDashboard() {
                 type="button"
                 onClick={() => void refetch()}
                 disabled={isLoading}
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-50"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-50"
               >
                 <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} />
                 <span className="hidden sm:inline">Làm mới</span>
               </button>
 
               {banks.length > 0 && (
-                <div className="flex items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl flex-shrink-0">
+                <div className="flex items-center gap-1 p-1 bg-[#f8fafc] rounded-xl flex-shrink-0">
                   <button
                     type="button"
                     onClick={() => setViewMode('grid')}
@@ -364,8 +364,8 @@ export function QuestionBankDashboard() {
                     title="Lưới"
                     className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-150 ${
                       viewMode === 'grid'
-                        ? 'bg-white shadow-md text-[#141413]'
-                        : 'bg-[#E8E6DC] border-2 border-[#D1CFC5] text-[#141413] hover:bg-[#DDD9CC]'
+                        ? 'bg-white shadow-md text-[#0f172a]'
+                        : 'bg-[#e2e8f0] border-2 border-[#cbd5e1] text-[#0f172a] hover:bg-[#DDD9CC]'
                     }`}
                   >
                     <Grid2x2 className="w-4 h-4" />
@@ -377,8 +377,8 @@ export function QuestionBankDashboard() {
                     title="Danh sách"
                     className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-150 ${
                       viewMode === 'list'
-                        ? 'bg-white shadow-md text-[#141413]'
-                        : 'bg-[#E8E6DC] border-2 border-[#D1CFC5] text-[#141413] hover:bg-[#DDD9CC]'
+                        ? 'bg-white shadow-md text-[#0f172a]'
+                        : 'bg-[#e2e8f0] border-2 border-[#cbd5e1] text-[#0f172a] hover:bg-[#DDD9CC]'
                     }`}
                   >
                     <List className="w-4 h-4" />
@@ -390,18 +390,18 @@ export function QuestionBankDashboard() {
 
           {/* Summary bar */}
           {!isLoading && !isError && banks.length > 0 && (
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 px-4 py-3 rounded-xl bg-[#FAF9F5] border border-[#E8E6DC]">
-              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] uppercase tracking-wide">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 px-4 py-3 rounded-xl bg-[#ffffff] border border-[#e2e8f0]">
+              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] uppercase tracking-wide">
                 Hiển thị
               </span>
-              <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] tabular-nums">
+              <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] tabular-nums">
                 {banks.length}
               </strong>
-              <div className="hidden sm:block w-px h-4 bg-[#E8E6DC]" />
-              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+              <div className="hidden sm:block w-px h-4 bg-[#e2e8f0]" />
+              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#9B6FE0] inline-block" />
                 Tổng câu hỏi{' '}
-                <strong className="text-[#141413] font-semibold tabular-nums">
+                <strong className="text-[#0f172a] font-semibold tabular-nums">
                   {pageStats.questionsOnPage}
                 </strong>
               </span>
@@ -414,7 +414,7 @@ export function QuestionBankDashboard() {
               {[1, 2, 3, 4, 5, 6].map((i) => (
                 <div
                   key={i}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-56 animate-pulse"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-56 animate-pulse"
                 />
               ))}
             </div>
@@ -432,7 +432,7 @@ export function QuestionBankDashboard() {
               <button
                 type="button"
                 onClick={() => void refetch()}
-                className="mt-1 px-4 py-2 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] transition-colors"
+                className="mt-1 px-4 py-2 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] transition-colors"
               >
                 Thử lại
               </button>
@@ -445,7 +445,7 @@ export function QuestionBankDashboard() {
               {banks.map((bank, idx) => (
                 <article
                   key={bank.id}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
                 >
                   <div
                     className="h-[124px] relative flex flex-col justify-end p-4 overflow-hidden shrink-0"
@@ -473,16 +473,16 @@ export function QuestionBankDashboard() {
                   </div>
 
                   <div className="p-4 flex flex-col gap-2 flex-1">
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] leading-[1.5] line-clamp-2 min-h-[2.6rem]">
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] leading-[1.5] line-clamp-2 min-h-[2.6rem]">
                       {bank.description?.trim() || 'Chưa có mô tả cho ngân hàng này.'}
                     </p>
 
-                    <div className="rounded-xl bg-white/80 border border-[#F0EEE6] px-2.5 py-2">
+                    <div className="rounded-xl bg-white/80 border border-[#e2e8f0] px-2.5 py-2">
                       <div className="flex justify-between items-baseline gap-2 mb-1.5">
-                        <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#5E5D59] uppercase tracking-wide">
+                        <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#475569] uppercase tracking-wide">
                           Tổng câu hỏi
                         </span>
-                        <strong className="font-[Be_Vietnam_Pro] text-[15px] font-bold text-[#141413] tabular-nums">
+                        <strong className="font-[Be_Vietnam_Pro] text-[15px] font-bold text-[#0f172a] tabular-nums">
                           {(bank.questionCount ?? 0).toLocaleString('vi-VN')}
                         </strong>
                       </div>
@@ -494,7 +494,7 @@ export function QuestionBankDashboard() {
 
                     <div className="flex items-center flex-wrap gap-2">
                       {(bank.schoolGradeName || bank.gradeLevel) && (
-                        <span className="flex items-center gap-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] max-w-full">
+                        <span className="flex items-center gap-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] max-w-full">
                           <BookOpen className="w-3.5 h-3.5 flex-shrink-0" />
                           <span className="truncate">
                             {bank.schoolGradeName ?? `Lớp ${bank.gradeLevel}`}
@@ -502,7 +502,7 @@ export function QuestionBankDashboard() {
                           </span>
                         </span>
                       )}
-                      <span className="flex items-center gap-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                      <span className="flex items-center gap-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                         <User className="w-3.5 h-3.5 flex-shrink-0" />
                         <span className="truncate max-w-[140px]">
                           {bank.teacherName || 'Không xác định'}
@@ -510,21 +510,21 @@ export function QuestionBankDashboard() {
                       </span>
                     </div>
 
-                    <div className="flex items-center justify-between pt-2 border-t border-[#F0EEE6] mt-auto gap-2 flex-wrap">
-                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#B0AEA5]">
+                    <div className="flex items-center justify-between pt-2 border-t border-[#e2e8f0] mt-auto gap-2 flex-wrap">
+                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#94a3b8]">
                         {formatDate(bank.createdAt)}
                       </span>
                       <div className="flex flex-wrap gap-2 justify-end">
                         <button
                           type="button"
-                          className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                          className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                           onClick={() => navigate(`/teacher/question-banks/${bank.id}`)}
                         >
                           Chi tiết
                         </button>
                         <button
                           type="button"
-                          className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                          className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                           onClick={() => {
                             setMode('edit');
                             setSelected(bank);
@@ -554,7 +554,7 @@ export function QuestionBankDashboard() {
               {banks.map((bank, idx) => (
                 <article
                   key={bank.id}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] p-4 flex flex-col sm:flex-row sm:items-center gap-4 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] p-4 flex flex-col sm:flex-row sm:items-center gap-4 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150"
                 >
                   <div
                     className="w-11 h-11 rounded-xl flex-shrink-0 flex items-center justify-center"
@@ -570,19 +570,19 @@ export function QuestionBankDashboard() {
                       <button
                         type="button"
                         onClick={() => navigate(`/teacher/question-banks/${bank.id}`)}
-                        className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413] truncate text-left hover:underline"
+                        className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a] truncate text-left hover:underline"
                       >
                         {bank.name}
                       </button>
                     </div>
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] line-clamp-1 mb-1">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] line-clamp-1 mb-1">
                       {bank.description?.trim() || 'Chưa có mô tả.'}
                     </p>
                     <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#141413] font-semibold tabular-nums">
+                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#0f172a] font-semibold tabular-nums">
                         {(bank.questionCount ?? 0).toLocaleString('vi-VN')} câu
                       </span>
-                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#B0AEA5]">
+                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#94a3b8]">
                         {formatDate(bank.createdAt)}
                       </span>
                     </div>
@@ -593,14 +593,14 @@ export function QuestionBankDashboard() {
                   <div className="flex flex-wrap gap-2 flex-shrink-0 sm:justify-end">
                     <button
                       type="button"
-                      className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                      className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                       onClick={() => navigate(`/teacher/question-banks/${bank.id}`)}
                     >
                       Chi tiết
                     </button>
                     <button
                       type="button"
-                      className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                      className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                       onClick={() => {
                         setMode('edit');
                         setSelected(bank);

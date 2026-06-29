@@ -3,15 +3,15 @@
 
 /* ── Design tokens ── */
 .rp {
-  --rp-primary: #c96442;
-  --rp-primary-soft: rgba(201, 100, 66, 0.12);
-  --rp-text-1: #141413;
-  --rp-text-2: #4d4c48;
-  --rp-text-3: #5e5d59;
-  --rp-text-4: #87867f;
-  --rp-border: #e8e6dc;
+  --rp-primary: #0ea5e9;
+  --rp-primary-soft: rgba(14, 165, 233, 0.12);
+  --rp-text-1: #0f172a;
+  --rp-text-2: #334155;
+  --rp-text-3: #475569;
+  --rp-text-4: #64748b;
+  --rp-border: #e2e8f0;
   --rp-surface: #ffffff;
-  --rp-bg: #faf9f5;
+  --rp-bg: #ffffff;
   --rp-radius: 12px;
   --rp-f-head: 'Be Vietnam Pro', -apple-system, sans-serif;
   --rp-f-body: 'Be Vietnam Pro', -apple-system, sans-serif;
@@ -208,12 +208,12 @@
 
 @keyframes rp-highlight-pulse {
   0% {
-    background: rgba(201, 100, 66, 0.12);
-    box-shadow: inset 3px 0 0 #c96442;
+    background: rgba(14, 165, 233, 0.12);
+    box-shadow: inset 3px 0 0 #0ea5e9;
   }
   60% {
-    background: rgba(201, 100, 66, 0.06);
-    box-shadow: inset 3px 0 0 #c96442;
+    background: rgba(14, 165, 233, 0.06);
+    box-shadow: inset 3px 0 0 #0ea5e9;
   }
   100% {
     background: transparent;
@@ -922,8 +922,8 @@
 .rp-lightbox-toolbar button,
 .rp-lightbox-nav {
   border: 1px solid rgba(255, 255, 255, 0.25);
-  background: rgba(20, 20, 19, 0.72);
-  color: #faf9f5;
+  background: rgba(15, 23, 42, 0.72);
+  color: #ffffff;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
@@ -970,12 +970,12 @@
   bottom: 22px;
   left: 50%;
   transform: translateX(-50%);
-  color: #faf9f5;
+  color: #ffffff;
   font-size: 0.8rem;
   font-weight: 600;
   padding: 0.3rem 0.65rem;
   border-radius: 999px;
-  background: rgba(20, 20, 19, 0.72);
+  background: rgba(15, 23, 42, 0.72);
 }
 
 /* ── Responsive ── */
@@ -1022,7 +1022,7 @@
   width: 100%;
   padding: 0.75rem 1rem;
   margin-top: 0.75rem;
-  background: #141413;
+  background: #0f172a;
   color: #fff;
   border: none;
   border-radius: var(--rp-radius);
@@ -1040,7 +1040,7 @@
 .rpd-ocr-btn:hover:not(:disabled) {
   background: #2a2a28;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(20, 20, 19, 0.2);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
 }
 
 .rpd-ocr-btn:disabled {
@@ -1063,7 +1063,7 @@
 
 .rpd-ocr-progress-fill {
   height: 100%;
-  background: #141413;
+  background: #0f172a;
   width: 100%;
   transform-origin: left;
   transform: scaleX(0);
@@ -1278,27 +1278,27 @@
 .module-layout-container.admin-review-profiles-page .courses-header-row {
   align-items: flex-start;
   padding-bottom: 1.2rem;
-  border-bottom: 1px solid #e8e6dc;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .module-layout-container.admin-review-profiles-page .header-kicker {
-  color: #c96442;
+  color: #0ea5e9;
 }
 
 .module-layout-container.admin-review-profiles-page .header-kicker::before {
-  background: #c96442;
+  background: #0ea5e9;
 }
 
 .module-layout-container.admin-review-profiles-page .courses-header-row h2 {
-  color: #141413;
+  color: #0f172a;
 }
 
 .module-layout-container.admin-review-profiles-page .header-sub {
-  color: #5e5d59;
+  color: #475569;
 }
 
 .module-layout-container.admin-review-profiles-page .header-sub::before {
-  background: #c96442;
+  background: #0ea5e9;
 }
 
 .module-layout-container.admin-review-profiles-page .rp-toolbar {
@@ -1306,39 +1306,39 @@
 }
 
 .module-layout-container.admin-review-profiles-page .toolbar {
-  background: #faf9f5;
-  border-color: #e8e6dc;
+  background: #ffffff;
+  border-color: #e2e8f0;
 }
 
 .module-layout-container.admin-review-profiles-page .pill-btn {
-  background: #f5f4ed;
-  border-color: #e8e6dc;
-  color: #5e5d59;
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #475569;
 }
 
 .module-layout-container.admin-review-profiles-page .pill-btn.active {
-  background: #30302e;
-  border-color: #30302e;
-  color: #faf9f5;
+  background: #1e293b;
+  border-color: #1e293b;
+  color: #ffffff;
 }
 
 .module-layout-container.admin-review-profiles-page .rp-search-wrap--module .search-box {
   background: #ffffff;
-  border-color: #e8e6dc;
+  border-color: #e2e8f0;
   box-shadow: none;
 }
 
 .module-layout-container.admin-review-profiles-page
   .rp-search-wrap--module
   .search-box:focus-within {
-  border-color: #c96442;
-  box-shadow: 0 0 0 3px rgba(201, 100, 66, 0.14);
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.14);
 }
 
 .module-layout-container.admin-review-profiles-page .rp-search-wrap--module .search-box__icon {
-  background: #f5f4ed;
-  border-color: #e8e6dc;
-  color: #4d4c48;
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  color: #334155;
 }
 
 .module-layout-container.admin-review-profiles-page .pill-btn .rp-tab-badge {
@@ -1351,8 +1351,8 @@
   grid-template-columns: 420px 1fr;
   gap: 0;
   border-radius: 14px;
-  border: 1px solid #e8e6dc;
-  box-shadow: 0 4px 16px rgba(20, 20, 19, 0.06);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
   overflow: hidden;
   background: #fff;
 }
@@ -1386,7 +1386,7 @@
   background: #fef9ec;
   border: 1px solid #fde68a;
   box-shadow: inset 2px 0 0 #f59e0b;
-  color: #4d4c48;
+  color: #334155;
 }
 
 @media (max-width: 900px) {

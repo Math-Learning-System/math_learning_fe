@@ -333,14 +333,14 @@ export function AssessmentPdfImportFlow() {
 
   return (
     <div className="assessment-pdf-import space-y-6">
-      <section className="rounded-2xl border border-[#E8E6DC] bg-[#FAF9F5] p-5 sm:p-6">
-        <span className="inline-flex items-center rounded-full bg-[#E8E6DC] px-2.5 py-0.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#5E5D59]">
+      <section className="rounded-2xl border border-[#e2e8f0] bg-[#ffffff] p-5 sm:p-6">
+        <span className="inline-flex items-center rounded-full bg-[#e2e8f0] px-2.5 py-0.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#475569]">
           Cách 2
         </span>
-        <h3 className="mt-2 font-[Playfair_Display] text-[19px] font-medium text-[#141413]">
+        <h3 className="mt-2 font-[Playfair_Display] text-[19px] font-medium text-[#0f172a]">
           Import đề từ PDF
         </h3>
-        <p className="mt-2 max-w-[62ch] font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#87867F]">
+        <p className="mt-2 max-w-[62ch] font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#64748b]">
           Bước 1: thông tin đề. Bước 2: tải PDF và OCR từng trang (Mathpix PDF).
           OCR lưu MongoDB (7 ngày); form lưu tạm trên trình duyệt. File PDF chọn lại sau F5.
         </p>
@@ -882,8 +882,8 @@ function PdfImportWizardSteps({
       ) : null}
 
       {step === 3 ? (
-        <div className="mt-1 space-y-3 rounded-xl border border-[#E8E6DC] bg-white p-4">
-          <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+        <div className="mt-1 space-y-3 rounded-xl border border-[#e2e8f0] bg-white p-4">
+          <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
             Tóm tắt trước khi tạo đề
           </p>
           <dl className="grid grid-cols-1 gap-2 sm:grid-cols-2">
@@ -898,7 +898,7 @@ function PdfImportWizardSteps({
             <SummaryRow label="Dạng PDF" value={layoutLabel} />
             <SummaryRow label="Xử lý nội dung" value={modeLabel} />
           </dl>
-          <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+          <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
             Mỗi trang PDF sẽ thành một khối text trong đề nháp. Bạn tách câu/ý trong Rà soát đề.
           </p>
         </div>
@@ -961,9 +961,9 @@ function PdfImportWizardSteps({
 
 function SummaryRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-lg bg-[#FAF9F5] px-3 py-2">
-      <dt className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]">{label}</dt>
-      <dd className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413]">{value}</dd>
+    <div className="rounded-lg bg-[#ffffff] px-3 py-2">
+      <dt className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b]">{label}</dt>
+      <dd className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a]">{value}</dd>
     </div>
   );
 }
@@ -1049,10 +1049,10 @@ function ImportResult({
           <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#B45309]" />
         )}
         <div>
-          <p className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413]">
+          <p className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a]">
             Đã tạo đề nháp: {result.assessment?.title}
           </p>
-          <p className="mt-1 font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59]">
+          <p className="mt-1 font-[Be_Vietnam_Pro] text-[13px] text-[#475569]">
             {result.questionsImported} câu đã import
             {result.questionsSkipped > 0 ? ` · ${result.questionsSkipped} câu bỏ qua` : ''}
             {result.confidenceScore != null
@@ -1060,7 +1060,7 @@ function ImportResult({
               : ''}
           </p>
           {result.warnings && result.warnings.length > 0 && (
-            <ul className="mt-3 list-disc space-y-1 pl-5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+            <ul className="mt-3 list-disc space-y-1 pl-5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
               {result.warnings.map((w) => (
                 <li key={w}>{w}</li>
               ))}
@@ -1114,11 +1114,11 @@ function ImportSourcePdfPanel({
     fileName ?? pdfUrlQuery.data?.result?.fileName ?? 'PDF gốc';
 
   return (
-    <div className="rounded-xl border border-[#E8E6DC] bg-white p-4">
-      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase tracking-wide text-[#87867F]">
+    <div className="rounded-xl border border-[#e2e8f0] bg-white p-4">
+      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase tracking-wide text-[#64748b]">
         File PDF nguồn (MinIO)
       </p>
-      <p className="mt-1 font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59]">{displayName}</p>
+      <p className="mt-1 font-[Be_Vietnam_Pro] text-[13px] text-[#475569]">{displayName}</p>
       <div className="mt-3 flex flex-wrap gap-2">
         <button
           type="button"
@@ -1187,15 +1187,15 @@ function ExamMetadataCard({ exam }: { exam: PdfImportedExam }) {
   ].filter((r) => r.value != null && String(r.value).trim() !== '');
 
   return (
-    <div className="rounded-xl border border-[#E8E6DC] bg-white p-4">
-      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase tracking-wide text-[#87867F]">
+    <div className="rounded-xl border border-[#e2e8f0] bg-white p-4">
+      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase tracking-wide text-[#64748b]">
         Thông tin đề (cấp đề thi)
       </p>
       <dl className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
         {rows.map((row) => (
-          <div key={row.label} className="rounded-lg bg-[#FAF9F5] px-3 py-2">
-            <dt className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]">{row.label}</dt>
-            <dd className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413]">
+          <div key={row.label} className="rounded-lg bg-[#ffffff] px-3 py-2">
+            <dt className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b]">{row.label}</dt>
+            <dd className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a]">
               {row.value}
             </dd>
           </div>
@@ -1203,10 +1203,10 @@ function ExamMetadataCard({ exam }: { exam: PdfImportedExam }) {
       </dl>
       {exam.rawHeaderText && (
         <details className="mt-3">
-          <summary className="cursor-pointer font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59]">
+          <summary className="cursor-pointer font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569]">
             Phần đầu đề (raw_header_text)
           </summary>
-          <pre className="mt-2 max-h-40 overflow-auto whitespace-pre-wrap rounded-lg border border-[#F0EEE6] bg-[#FAF9F5] p-3 font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59]">
+          <pre className="mt-2 max-h-40 overflow-auto whitespace-pre-wrap rounded-lg border border-[#e2e8f0] bg-[#ffffff] p-3 font-[Be_Vietnam_Pro] text-[12px] text-[#475569]">
             {exam.rawHeaderText}
           </pre>
         </details>
@@ -1221,22 +1221,22 @@ function ParsedQuestionsList({
   items: NonNullable<AssessmentImportResponse['parsedQuestions']>;
 }) {
   return (
-    <div className="rounded-xl border border-[#E8E6DC] bg-white p-4">
-      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase tracking-wide text-[#87867F]">
+    <div className="rounded-xl border border-[#e2e8f0] bg-white p-4">
+      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase tracking-wide text-[#64748b]">
         Nội dung theo trang (tự tách câu/ý khi rà soát)
       </p>
       <ol className="mt-3 max-h-80 list-none space-y-2 overflow-y-auto p-0">
         {items.map((q) => (
           <li
             key={`${q.orderIndex}-${q.displayLabel ?? ''}-${q.imported}`}
-            className="rounded-lg border border-[#F0EEE6] bg-[#FAF9F5] px-3 py-2.5 text-[13px]"
+            className="rounded-lg border border-[#e2e8f0] bg-[#ffffff] px-3 py-2.5 text-[13px]"
           >
             <div className="flex flex-wrap items-center gap-2">
-              <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#141413]">
+              <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#0f172a]">
                 {q.displayLabel ?? `Câu ${q.orderIndex}`}
               </span>
               {q.questionType && (
-                <span className="rounded-full bg-[#E8E6DC] px-2 py-0.5 text-[10px] font-medium uppercase text-[#5E5D59]">
+                <span className="rounded-full bg-[#e2e8f0] px-2 py-0.5 text-[10px] font-medium uppercase text-[#475569]">
                   {q.questionType}
                 </span>
               )}

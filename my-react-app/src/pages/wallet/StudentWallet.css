@@ -72,7 +72,7 @@
   margin: 0;
   width: 100%;
   max-width: none;
-  color: #141413;
+  color: #0f172a;
   padding: 0;
 }
 
@@ -90,20 +90,20 @@
   font-weight: 800;
   letter-spacing: -0.035em;
   line-height: 1.15;
-  color: #141413;
+  color: #0f172a;
 }
 .wallet-header p {
   margin: 0.3rem 0 0;
-  color: #87867f;
+  color: #64748b;
   font-size: 0.9rem;
 }
 .btn-report {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  border: 1.5px solid #e8e6dc;
+  border: 1.5px solid #e2e8f0;
   background: #fff;
-  color: #5e5d59;
+  color: #475569;
   border-radius: 12px;
   padding: 0.65rem 1.1rem;
   font-size: 0.86rem;
@@ -125,8 +125,8 @@
   display: flex;
   align-items: center;
   gap: 0.65rem;
-  background: #faf9f5;
-  border: 1px solid #e8e6dc;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   padding: 0.85rem 1rem;
   margin-bottom: 0;
@@ -282,9 +282,9 @@
   align-items: center;
   gap: 0.4rem;
   padding: 0.4rem 0.6rem;
-  background: #faf9f5;
+  background: #ffffff;
   backdrop-filter: blur(8px);
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   margin-bottom: 0.55rem;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 2px 12px;
@@ -305,9 +305,9 @@
   margin-left: auto;
   padding: 0.25rem 0.6rem;
   border-radius: 8px;
-  border: 1.5px solid #141413;
-  background: #141413;
-  color: #faf9f5;
+  border: 1.5px solid #0f172a;
+  background: #0f172a;
+  color: #ffffff;
   font-size: 0.7rem;
   font-weight: 700;
   cursor: pointer;
@@ -318,8 +318,8 @@
   flex-shrink: 0;
 }
 .bc-tpl-choose-btn:hover {
-  background: #30302e;
-  border-color: #30302e;
+  background: #1e293b;
+  border-color: #1e293b;
   transform: translateY(-1px);
 }
 
@@ -575,7 +575,7 @@
    ══════════════════════════════════════════════════════════ */
 .wallet-topup-card {
   background: #fff;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   padding: 1.6rem;
   display: flex;
@@ -595,7 +595,7 @@
   font-size: 1.05rem;
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #141413;
+  color: #0f172a;
   font-family: 'Playfair Display', Playfair_Display, Georgia, serif;
 }
 .topup-zap {
@@ -720,7 +720,7 @@
 .quick-pill.active {
   border-color: var(--wallet-accent);
   background: var(--wallet-accent);
-  color: #faf9f5;
+  color: #ffffff;
   box-shadow: 0 4px 12px rgba(91, 130, 145, 0.2);
 }
 
@@ -736,7 +736,7 @@
   font-size: 1rem;
   font-weight: 800;
   cursor: pointer;
-  color: #faf9f5;
+  color: #ffffff;
   background: linear-gradient(135deg, #4d7585 0%, var(--wallet-accent) 48%, #a8c0cb 100%);
   background-size: 200% 100%;
   transition: all 0.25s ease;
@@ -923,7 +923,7 @@
    ══════════════════════════════════════════════════════════ */
 .transactions-panel {
   background: #fff;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   overflow: hidden;
   box-shadow:
@@ -933,20 +933,20 @@
 
 .transactions-head {
   padding: 1rem 1.25rem;
-  border-bottom: 1px solid #f0eee6;
-  background: #faf9f5;
+  border-bottom: 1px solid #e2e8f0;
+  background: #ffffff;
 }
 .transactions-head h2 {
   margin: 0;
   font-size: 1.1rem;
   font-weight: 800;
-  color: #141413;
+  color: #0f172a;
   letter-spacing: -0.022em;
 }
 .transactions-head p {
   margin: 0.18rem 0 0;
   font-size: 0.82rem;
-  color: #87867f;
+  color: #64748b;
 }
 .transactions-head p strong {
   color: #2ead7a;
@@ -999,7 +999,7 @@
   margin-top: 0.6rem;
   border: none;
   background: linear-gradient(135deg, #547e91, var(--wallet-accent));
-  color: #faf9f5;
+  color: #ffffff;
   border-radius: 999px;
   padding: 0.65rem 1.5rem;
   font-size: 0.88rem;
@@ -1023,7 +1023,7 @@
   cursor: default;
 }
 .tx-row:hover {
-  background: #faf9f5;
+  background: #ffffff;
 }
 .tx-row:last-child {
   border-bottom: none;
@@ -1214,8 +1214,8 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  background: #faf9f5;
-  border-top: 1px solid #f0eee6;
+  background: #ffffff;
+  border-top: 1px solid #e2e8f0;
 }
 .transactions-footer span {
   font-size: 0.82rem;
@@ -1249,7 +1249,7 @@
 .pagination button.active {
   background: var(--wallet-accent);
   border-color: var(--wallet-accent);
-  color: #faf9f5;
+  color: #ffffff;
   box-shadow: 0 3px 10px rgba(91, 130, 145, 0.2);
 }
 .pagination button:disabled {
@@ -2524,7 +2524,7 @@
   padding: 0.5rem;
   border-radius: 10px;
   border: none;
-  background: linear-gradient(135deg, #6366f1, #d97757);
+  background: linear-gradient(135deg, #6366f1, #14b8a6);
   color: #fff;
   font-size: 0.78rem;
   font-weight: 700;
@@ -2591,7 +2591,7 @@
 
 /* ── Order Items ────────────────────────────────────────── */
 .order-row {
-  border-top: 1px solid #e8e6dc;
+  border-top: 1px solid #e2e8f0;
 }
 
 .tx-icon-wrap.payment {
@@ -2601,7 +2601,7 @@
 
 /* ── Withdrawal History Tab ───────────────────────────────── */
 .wd-row {
-  border-top: 1px solid #e8e6dc;
+  border-top: 1px solid #e2e8f0;
 }
 
 .wd-filter-bar {
@@ -2610,8 +2610,8 @@
   gap: 0.65rem;
   flex-wrap: wrap;
   padding: 0.75rem 1.25rem;
-  border-bottom: 1px solid #f0eee6;
-  background: #faf9f5;
+  border-bottom: 1px solid #e2e8f0;
+  background: #ffffff;
 }
 
 .wd-filter-label {
@@ -2621,7 +2621,7 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #87867f;
+  color: #64748b;
 }
 
 .wd-filter-segments {
@@ -2633,7 +2633,7 @@
   min-width: 0;
   padding: 0.25rem;
   border-radius: 12px;
-  background: #f5f4ed;
+  background: #f8fafc;
 }
 
 .wd-filter-chip {
@@ -2645,7 +2645,7 @@
   font-family: 'Be Vietnam Pro', Be_Vietnam_Pro, system-ui, sans-serif;
   font-size: 0.75rem;
   font-weight: 600;
-  color: #87867f;
+  color: #64748b;
   cursor: pointer;
   transition:
     background 0.15s ease,
@@ -2654,16 +2654,16 @@
 }
 
 .wd-filter-chip:hover {
-  color: #141413;
+  color: #0f172a;
   background: rgba(255, 255, 255, 0.55);
 }
 
 .wd-filter-chip.active {
   background: #fff;
-  color: #141413;
+  color: #0f172a;
   box-shadow:
-    0 1px 2px rgba(20, 20, 19, 0.06),
-    0 0 0 1px rgba(232, 230, 220, 0.9);
+    0 1px 2px rgba(15, 23, 42, 0.06),
+    0 0 0 1px rgba(226, 232, 240, 0.9);
 }
 
 .wd-filter-chip:focus-visible {

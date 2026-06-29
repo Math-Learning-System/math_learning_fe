@@ -116,7 +116,7 @@ export default function AdminRoadmapManagementPage() {
   const endItem = Math.min(page * PAGE_SIZE + filteredRoadmaps.length, totalElements);
 
   const createBtnCls =
-    'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#A3B6D4] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#96AAC8] active:scale-[0.98] transition-all duration-150 shadow-[rgba(110,130,165,0.22)_0px_8px_22px]';
+    'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#A3B6D4] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#96AAC8] active:scale-[0.98] transition-all duration-150 shadow-[rgba(110,130,165,0.22)_0px_8px_22px]';
 
   return (
     <DashboardLayout
@@ -132,23 +132,23 @@ export default function AdminRoadmapManagementPage() {
             {/* Header — TeacherMindmaps / CashFlow pattern */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+                <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                   <Workflow className="w-5 h-5" strokeWidth={2} />
                 </div>
                 <div>
                   <div className="flex flex-wrap items-center gap-2.5">
-                    <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] m-0 leading-tight">
+                    <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] m-0 leading-tight">
                       Lộ trình
                     </h1>
                     {!isLoading && !error && (
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                         {totalElements}
                       </span>
                     )}
                   </div>
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5 m-0">
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5 m-0">
                     Tìm kiếm, lọc và quản lý. Thống kê nhanh theo{' '}
-                    <strong className="font-semibold text-[#5E5D59]">trang hiện tại</strong>.
+                    <strong className="font-semibold text-[#475569]">trang hiện tại</strong>.
                   </p>
                 </div>
               </div>
@@ -194,16 +194,16 @@ export default function AdminRoadmapManagementPage() {
               ).map(({ label, value, Icon, bg, color }) => (
                 <div
                   key={label}
-                  className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3 shadow-[rgba(0,0,0,0.04)_0px_4px_24px] hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.06)_0px_8px_28px] hover:-translate-y-0.5 transition-all duration-200"
+                  className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3 shadow-[rgba(0,0,0,0.04)_0px_4px_24px] hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.06)_0px_8px_28px] hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <div className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center shrink-0`}>
                     <Icon className={`w-4 h-4 ${color}`} strokeWidth={2} />
                   </div>
                   <div className="min-w-0">
-                    <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none truncate">
+                    <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none truncate">
                       {value}
                     </p>
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5 leading-snug">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5 leading-snug">
                       {label}
                     </p>
                   </div>
@@ -229,11 +229,11 @@ export default function AdminRoadmapManagementPage() {
 
             {/* Toolbar */}
             <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-              <label className="relative flex w-full lg:max-w-xl items-center gap-3 bg-white border border-[#E8E6DC] rounded-xl px-4 py-2.5 focus-within:border-[#A3B6D4] focus-within:ring-1 focus-within:ring-[rgba(163,182,212,0.38)] transition-all duration-150 shadow-[rgba(0,0,0,0.03)_0px_2px_12px]">
-                <Search className="text-[#87867F] w-4 h-4 shrink-0" strokeWidth={2} aria-hidden />
+              <label className="relative flex w-full lg:max-w-xl items-center gap-3 bg-white border border-[#e2e8f0] rounded-xl px-4 py-2.5 focus-within:border-[#A3B6D4] focus-within:ring-1 focus-within:ring-[rgba(163,182,212,0.38)] transition-all duration-150 shadow-[rgba(0,0,0,0.03)_0px_2px_12px]">
+                <Search className="text-[#64748b] w-4 h-4 shrink-0" strokeWidth={2} aria-hidden />
                 <input
                   type="search"
-                  className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] bg-transparent outline-none min-w-0"
+                  className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] bg-transparent outline-none min-w-0"
                   placeholder="Tìm theo tên lộ trình..."
                   value={searchInput}
                   onChange={handleSearch}
@@ -247,21 +247,21 @@ export default function AdminRoadmapManagementPage() {
                       setSearchInput('');
                       setCurrentPage(0);
                     }}
-                    className="text-[#87867F] hover:text-[#141413] transition-colors shrink-0"
+                    className="text-[#64748b] hover:text-[#0f172a] transition-colors shrink-0"
                   >
                     <X className="w-4 h-4" strokeWidth={2} />
                   </button>
                 )}
                 {isFetching && (
                   <span
-                    className={`absolute top-1/2 -translate-y-1/2 text-[#87867F] pointer-events-none flex items-center ${searchInput ? 'right-10' : 'right-3'}`}
+                    className={`absolute top-1/2 -translate-y-1/2 text-[#64748b] pointer-events-none flex items-center ${searchInput ? 'right-10' : 'right-3'}`}
                   >
                     <Loader2 className="w-4 h-4 animate-spin" aria-hidden />
                   </span>
                 )}
               </label>
 
-              <div className="flex flex-wrap items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl self-start w-full lg:w-auto">
+              <div className="flex flex-wrap items-center gap-1 p-1 bg-[#f8fafc] rounded-xl self-start w-full lg:w-auto">
                 {(['', 'GENERATED', 'IN_PROGRESS', 'COMPLETED', 'ARCHIVED'] as const).map((id) => {
                   const key = id || 'all';
                   const n =
@@ -273,8 +273,8 @@ export default function AdminRoadmapManagementPage() {
                       type="button"
                       className={`px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                         statusFilter === id
-                          ? 'bg-white text-[#141413] shadow-sm'
-                          : 'text-[#87867F] hover:text-[#5E5D59]'
+                          ? 'bg-white text-[#0f172a] shadow-sm'
+                          : 'text-[#64748b] hover:text-[#475569]'
                       }`}
                       onClick={() => {
                         setStatusFilter(id);
@@ -289,18 +289,18 @@ export default function AdminRoadmapManagementPage() {
             </div>
 
             {!isLoading && !error && roadmaps.length > 0 && (
-              <div className="flex flex-wrap items-center gap-4 px-4 py-3 rounded-xl bg-[#FAF9F5] border border-[#E8E6DC]">
-                <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] uppercase tracking-wide">
+              <div className="flex flex-wrap items-center gap-4 px-4 py-3 rounded-xl bg-[#ffffff] border border-[#e2e8f0]">
+                <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] uppercase tracking-wide">
                   Hiển thị
                 </span>
-                <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                   {filteredRoadmaps.length} / {statusFilteredRoadmaps.length}
                 </strong>
-                <div className="w-px h-4 bg-[#E8E6DC] hidden sm:block" aria-hidden />
-                <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                <div className="w-px h-4 bg-[#e2e8f0] hidden sm:block" aria-hidden />
+                <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#4F7EF7] inline-block" aria-hidden />
                   Trang{' '}
-                  <strong className="text-[#141413] font-semibold">
+                  <strong className="text-[#0f172a] font-semibold">
                     {page + 1} / {Math.max(1, totalPages)}
                   </strong>
                 </span>
@@ -312,14 +312,14 @@ export default function AdminRoadmapManagementPage() {
                 {[1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-52 animate-pulse"
+                    className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-52 animate-pulse"
                   />
                 ))}
               </div>
             )}
 
             {error && (
-              <div className="flex flex-col items-center justify-center py-14 px-4 rounded-2xl border border-[#F0EEE6] bg-[#FAF9F5]">
+              <div className="flex flex-col items-center justify-center py-14 px-4 rounded-2xl border border-[#e2e8f0] bg-[#ffffff]">
                 <div className="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center text-red-400 mb-3">
                   <AlertCircle className="w-6 h-6" strokeWidth={2} aria-hidden />
                 </div>
@@ -330,12 +330,12 @@ export default function AdminRoadmapManagementPage() {
             )}
 
             {!isLoading && !error && (
-              <div className="rounded-2xl border border-[#E8E6DC] bg-white shadow-[rgba(0,0,0,0.04)_0px_4px_24px] overflow-hidden">
-                <div className="px-5 py-4 border-b border-[#F0EEE6] bg-[#FAF9F5]">
-                  <h2 className="font-[Playfair_Display] text-[16px] font-medium text-[#141413] m-0">
+              <div className="rounded-2xl border border-[#e2e8f0] bg-white shadow-[rgba(0,0,0,0.04)_0px_4px_24px] overflow-hidden">
+                <div className="px-5 py-4 border-b border-[#e2e8f0] bg-[#ffffff]">
+                  <h2 className="font-[Playfair_Display] text-[16px] font-medium text-[#0f172a] m-0">
                     Danh sách lộ trình
                   </h2>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] m-0 mt-0.5">
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] m-0 mt-0.5">
                     Chỉnh sửa hoặc lưu trữ từng lộ trình trên hệ thống
                   </p>
                 </div>
@@ -406,7 +406,7 @@ export default function AdminRoadmapManagementPage() {
                 </article>
 
                 {totalPages > 0 && (
-                  <div className="admin-roadmap-page__pagination admin-roadmap-mgmt-pagination bg-[#FAF9F5]/90 border-t border-[#F0EEE6]">
+                  <div className="admin-roadmap-page__pagination admin-roadmap-mgmt-pagination bg-[#ffffff]/90 border-t border-[#e2e8f0]">
                     <span className="admin-roadmap-page__pagination-info font-[Be_Vietnam_Pro]">
                       Hiển thị {endItem}/{totalElements} lộ trình
                     </span>

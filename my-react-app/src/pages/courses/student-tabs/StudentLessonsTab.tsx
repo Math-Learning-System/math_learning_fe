@@ -141,9 +141,9 @@ const InlinePlayer: React.FC<{
         )}
       </div>
       <div
-        style={{ padding: '1.25rem 1.5rem', background: '#fff', borderBottom: '1px solid #f0eee6' }}
+        style={{ padding: '1.25rem 1.5rem', background: '#fff', borderBottom: '1px solid #e2e8f0' }}
       >
-        <h3 style={{ margin: 0, fontSize: '1.35rem', fontWeight: 800, color: '#141413' }}>
+        <h3 style={{ margin: 0, fontSize: '1.35rem', fontWeight: 800, color: '#0f172a' }}>
           {title}
         </h3>
       </div>
@@ -463,7 +463,7 @@ const StudentLessonsTab: React.FC<StudentLessonsTabProps> = ({
   };
 
   return (
-    <div className="rounded-2xl border border-[#E8E6DC] bg-white shadow-[0_1px_3px_rgba(20,20,19,0.06)] p-4 md:p-6 space-y-5 min-w-0">
+    <div className="rounded-2xl border border-[#e2e8f0] bg-white shadow-[0_1px_3px_rgba(20,20,19,0.06)] p-4 md:p-6 space-y-5 min-w-0">
       <div className="slt-container">
       {playingLessonId && currentLesson ? (
         /* Integrated Player Layout */
@@ -530,7 +530,7 @@ const StudentLessonsTab: React.FC<StudentLessonsTabProps> = ({
                   alignItems: 'center',
                   gap: '0.5rem',
                   fontSize: '1.2rem',
-                  color: '#141413',
+                  color: '#0f172a',
                 }}
               >
                 <Paperclip size={20} color="#3b82f6" /> Tài liệu đính kèm
@@ -558,7 +558,7 @@ const StudentLessonsTab: React.FC<StudentLessonsTabProps> = ({
                 </div>
               ) : (
                 <p
-                  style={{ margin: 0, fontSize: '0.95rem', color: '#87867f', fontStyle: 'italic' }}
+                  style={{ margin: 0, fontSize: '0.95rem', color: '#64748b', fontStyle: 'italic' }}
                 >
                   Bài học này chưa có tài liệu đính kèm.
                 </p>
@@ -635,7 +635,7 @@ const StudentLessonsTab: React.FC<StudentLessonsTabProps> = ({
           ) : (
             <div className="slt-curriculum-card">
               <div className="slt-curriculum-header">
-                <h4 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 800, color: '#141413' }}>
+                <h4 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 800, color: '#0f172a' }}>
                   {UI_TEXT.COURSE_CONTENT}
                 </h4>
               </div>

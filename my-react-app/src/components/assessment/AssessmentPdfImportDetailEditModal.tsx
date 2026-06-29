@@ -151,15 +151,15 @@ export function AssessmentPdfImportDetailEditModal({
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-2xl border border-[#E8E6DC] shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col"
+        className="bg-white rounded-2xl border border-[#e2e8f0] shadow-xl w-full max-w-3xl max-h-[90vh] flex flex-col"
         role="dialog"
         aria-labelledby="pdf-import-detail-edit-title"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between gap-3 px-5 py-4 border-b border-[#F0EEE6] shrink-0">
+        <div className="flex items-center justify-between gap-3 px-5 py-4 border-b border-[#e2e8f0] shrink-0">
           <h2
             id="pdf-import-detail-edit-title"
-            className="font-[Playfair_Display] text-[18px] font-medium text-[#141413] m-0"
+            className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a] m-0"
           >
             Chỉnh sửa thông tin chi tiết
           </h2>
@@ -414,7 +414,7 @@ export function AssessmentPdfImportDetailEditModal({
             <p className="px-5 text-[13px] text-red-600 m-0">{error}</p>
           ) : null}
 
-          <div className="flex justify-end gap-2 px-5 py-4 border-t border-[#F0EEE6] shrink-0">
+          <div className="flex justify-end gap-2 px-5 py-4 border-t border-[#e2e8f0] shrink-0">
             <button type="button" className="btn secondary" onClick={onClose}>
               Hủy
             </button>

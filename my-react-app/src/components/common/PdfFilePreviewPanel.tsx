@@ -27,21 +27,21 @@ export function PdfFilePreviewPanel({
 }: PdfFilePreviewPanelProps) {
   const isWarm = variant === 'warm';
   const shell = isWarm
-    ? 'rounded-xl border border-[#E8E6DC] bg-white overflow-hidden'
+    ? 'rounded-xl border border-[#e2e8f0] bg-white overflow-hidden'
     : 'rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm';
   const head = isWarm
-    ? 'flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[#E8E6DC] bg-[#FAF9F5]'
+    ? 'flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-[#e2e8f0] bg-[#ffffff]'
     : 'flex flex-wrap items-center justify-between gap-2 px-3 py-2 border-b border-slate-200 bg-slate-50';
   const titleCls = isWarm
-    ? 'font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]'
+    ? 'font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]'
     : 'text-sm font-medium text-slate-800';
   const subCls = isWarm
-    ? 'font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]'
+    ? 'font-[Be_Vietnam_Pro] text-[11px] text-[#64748b]'
     : 'text-xs text-slate-500';
   const linkCls = isWarm
-    ? 'inline-flex shrink-0 items-center gap-1 font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#C96442] hover:text-[#A84F33]'
+    ? 'inline-flex shrink-0 items-center gap-1 font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#0ea5e9] hover:text-[#A84F33]'
     : 'inline-flex shrink-0 items-center gap-1 text-xs font-medium text-blue-600 hover:text-blue-800';
-  const bodyBg = isWarm ? 'bg-[#F5F4ED]' : 'bg-slate-100';
+  const bodyBg = isWarm ? 'bg-[#f8fafc]' : 'bg-slate-100';
 
   return (
     <div className={`${shell} ${className}`}>
@@ -68,7 +68,7 @@ export function PdfFilePreviewPanel({
           <div className="flex min-h-[280px] items-center justify-center py-12">
             <Loader2
               size={28}
-              className={`animate-spin ${isWarm ? 'text-[#87867F]' : 'text-slate-400'}`}
+              className={`animate-spin ${isWarm ? 'text-[#64748b]' : 'text-slate-400'}`}
               aria-hidden
             />
             <span className="sr-only">Đang tải PDF…</span>

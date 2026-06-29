@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   height: 100%;
-  background: #F5F4ED; /* Parchment */
+  background: #f8fafc; /* Parchment */
 }
 
 .ps-header {
@@ -13,14 +13,14 @@
   gap: 1.5rem;
   margin-bottom: 1.5rem;
   padding: 1.5rem 2rem 0;
-  background: #F5F4ED; /* Parchment */
+  background: #f8fafc; /* Parchment */
 }
 
 .ps-header__title {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.625rem;
   font-weight: 500;
-  color: #141413; /* Near Black */
+  color: #0f172a; /* Near Black */
   margin: 0 0 0.375rem;
   letter-spacing: -0.025em;
   line-height: 1.2;
@@ -28,7 +28,7 @@
 
 .ps-header__subtitle {
   font-size: 0.9375rem;
-  color: #5E5D59; /* Olive Gray */
+  color: #475569; /* Olive Gray */
   margin: 0;
   line-height: 1.5;
 }
@@ -46,7 +46,7 @@
   align-items: center;
   gap: 0.35rem;
   font-size: 0.8125rem;
-  color: #87867F; /* Stone Gray */
+  color: #64748b; /* Stone Gray */
 }
 
 .ps-layout {
@@ -58,8 +58,8 @@
 }
 
 .ps-nav {
-  background: #FAF9F5; /* Ivory */
-  border: 1px solid #F0EEE6; /* Border Cream */
+  background: #ffffff; /* Ivory */
+  border: 1px solid #e2e8f0; /* Border Cream */
   border-radius: 16px;
   padding: 0.5rem;
   box-shadow: rgba(0,0,0,0.05) 0px 4px 24px;

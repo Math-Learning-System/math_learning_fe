@@ -9,11 +9,11 @@ import './PublicMindmapViewer.css';
 
 const MINDMAP_THEME = {
   ...MindElixirLightTheme,
-  background: '#F0EEE6',
-  color: '#141413',
+  background: '#e2e8f0',
+  color: '#0f172a',
   cssVar: {
     ...((MindElixirLightTheme as { cssVar?: Record<string, string> }).cssVar ?? {}),
-    '--bgcolor': '#F0EEE6',
+    '--bgcolor': '#e2e8f0',
     '--main-bgcolor': '#ffffff',
     '--main-color': 'transparent', // removes grey border on L1 nodes
     '--color': '#444',
@@ -81,7 +81,7 @@ const getReadableTextColor = (backgroundHex: string): string => {
   const g = Number.parseInt(hex.slice(2, 4), 16);
   const b = Number.parseInt(hex.slice(4, 6), 16);
   const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
-  return luminance > 0.62 ? '#141413' : '#FAF9F5';
+  return luminance > 0.62 ? '#0f172a' : '#ffffff';
 };
 
 interface MindElixirNodeData {
@@ -360,7 +360,7 @@ export default function PublicMindmapViewer() {
       let branchColor: string | undefined;
 
       if (depth === 0) {
-        fallbackStyle = { color: '#FAF9F5', background: '#1C1C1A' };
+        fallbackStyle = { color: '#ffffff', background: '#1C1C1A' };
       } else if (depth === 1) {
         const i = branchIdx % BRANCH_COLORS.length;
         fallbackStyle = { color: '#ffffff', background: BRANCH_COLORS[i] };

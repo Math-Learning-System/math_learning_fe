@@ -6,7 +6,7 @@ import { formatSchoolGradeLabel } from '../../utils/schoolGradeLabel';
 export type CurriculumHierarchyDepth = 'subject' | 'chapter' | 'lesson';
 
 const selectCls =
-  'w-full border border-[#E8E6DC] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] bg-white transition-colors disabled:bg-[#F5F4ED] disabled:text-[#87867F]';
+  'w-full border border-[#e2e8f0] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] bg-white transition-colors disabled:bg-[#f8fafc] disabled:text-[#64748b]';
 
 export interface CurriculumHierarchyFilterProps {
   gradeId: string;
@@ -60,18 +60,18 @@ export function CurriculumHierarchyFilter({
         : 'sm:grid-cols-2 lg:grid-cols-4';
 
   return (
-    <div className={`bg-white rounded-2xl border border-[#E8E6DC] p-5 space-y-4 ${className}`}>
+    <div className={`bg-white rounded-2xl border border-[#e2e8f0] p-5 space-y-4 ${className}`}>
       {!hideTitle && (
         <div className="flex items-center gap-2">
-          <Filter className="w-4 h-4 text-[#87867F]" aria-hidden />
-          <h2 className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#5E5D59] uppercase tracking-wide">
+          <Filter className="w-4 h-4 text-[#64748b]" aria-hidden />
+          <h2 className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#475569] uppercase tracking-wide">
             Bộ lọc tìm kiếm
           </h2>
         </div>
       )}
       <div className={`grid grid-cols-1 gap-4 ${gridCols}`}>
         <div>
-          <label className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mb-1.5">
+          <label className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mb-1.5">
             <GraduationCap className="w-3.5 h-3.5" aria-hidden />
             Lớp
           </label>
@@ -92,7 +92,7 @@ export function CurriculumHierarchyFilter({
         </div>
 
         <div>
-          <label className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mb-1.5">
+          <label className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mb-1.5">
             <BookOpen className="w-3.5 h-3.5" aria-hidden />
             Môn học
           </label>
@@ -114,7 +114,7 @@ export function CurriculumHierarchyFilter({
 
         {showChapter && (
           <div>
-            <label className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mb-1.5">
+            <label className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mb-1.5">
               <BookMarked className="w-3.5 h-3.5" aria-hidden />
               Chương
             </label>
@@ -137,7 +137,7 @@ export function CurriculumHierarchyFilter({
 
         {showLesson && (
           <div>
-            <label className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mb-1.5">
+            <label className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mb-1.5">
               <FileText className="w-3.5 h-3.5" aria-hidden />
               Bài học
             </label>
@@ -159,7 +159,7 @@ export function CurriculumHierarchyFilter({
         )}
       </div>
       {footnote ? (
-        <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] leading-relaxed">
+        <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] leading-relaxed">
           {footnote}
         </p>
       ) : null}

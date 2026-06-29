@@ -75,7 +75,7 @@ const STUDENT_COURSE_TAB_IDS = [
 type TabType = (typeof STUDENT_COURSE_TAB_IDS)[number];
 
 const secondaryOutlineBtn =
-  'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors shadow-sm';
+  'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors shadow-sm';
 
 interface UnifiedCourseViewProps {
   courseId?: string;
@@ -246,14 +246,14 @@ const UnifiedCourseView: React.FC<UnifiedCourseViewProps> = ({
       <div className={MODULE_FULL_BLEED}>
         <div className={UNIFIED_COURSE_PAGE_WRAP}>
           <section className="w-full min-w-0 teacher-courses-page">
-            <div className="rounded-xl border border-[#E8E6DC] bg-[#F5F4ED] p-5">
-              <div className="mb-2 flex items-center justify-center gap-2 text-[14px] text-[#5E5D59]">
-                <LoaderCircle className="h-5 w-5 animate-spin text-[#C96442]" />
+            <div className="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-5">
+              <div className="mb-2 flex items-center justify-center gap-2 text-[14px] text-[#475569]">
+                <LoaderCircle className="h-5 w-5 animate-spin text-[#0ea5e9]" />
                 <p className="m-0">Đang tải {UI_TEXT.COURSE.toLowerCase()}...</p>
               </div>
-              <div className="mx-auto h-1.5 max-w-md overflow-hidden rounded-full bg-[#E8E6DC]">
+              <div className="mx-auto h-1.5 max-w-md overflow-hidden rounded-full bg-[#e2e8f0]">
                 <motion.div
-                  className="h-full rounded-full bg-[#C96442]"
+                  className="h-full rounded-full bg-[#0ea5e9]"
                   initial={{ width: '0%' }}
                   animate={{ width: '100%' }}
                   transition={{ duration: 1.2, ease: 'easeInOut' }}
@@ -524,22 +524,22 @@ const UnifiedCourseView: React.FC<UnifiedCourseViewProps> = ({
 
                     {/* Progress Bar - Only for enrolled users */}
                     {isEnrolled && progress && (
-                      <div className="mt-3 rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] px-4 py-3">
-                        <div className="flex justify-between font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] mb-2">
+                      <div className="mt-3 rounded-xl border border-[#e2e8f0] bg-[#ffffff] px-4 py-3">
+                        <div className="flex justify-between font-[Be_Vietnam_Pro] text-[13px] text-[#475569] mb-2">
                           <span>Tiến độ của bạn</span>
-                          <strong className="text-[#C96442] tabular-nums">
+                          <strong className="text-[#0ea5e9] tabular-nums">
                             {progress.completionRate.toFixed(1)}%
                           </strong>
                         </div>
-                        <div className="h-2 rounded-full bg-[#E8E6DC] overflow-hidden">
+                        <div className="h-2 rounded-full bg-[#e2e8f0] overflow-hidden">
                           <div
-                            className="h-full rounded-full bg-gradient-to-r from-[#C96442] to-[#E07B39] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] origin-left"
+                            className="h-full rounded-full bg-gradient-to-r from-[#0ea5e9] to-[#E07B39] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] origin-left"
                             style={{
                               transform: `scaleX(${Math.min(1, Math.max(0, progress.completionRate / 100))})`,
                             }}
                           />
                         </div>
-                        <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-2 m-0">
+                        <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-2 m-0">
                           {progress.completedLessons}/{progress.totalLessons} bài học hoàn thành
                         </p>
                       </div>
@@ -628,9 +628,9 @@ const UnifiedCourseView: React.FC<UnifiedCourseViewProps> = ({
                 </div>
               )}
 
-              <div className="rounded-2xl border border-[#E8E6DC] bg-white overflow-hidden shadow-[0_2px_24px_rgba(20,20,19,0.06)]">
+              <div className="rounded-2xl border border-[#e2e8f0] bg-white overflow-hidden shadow-[0_2px_24px_rgba(20,20,19,0.06)]">
                 <div
-                  className="flex flex-wrap gap-1 p-2 bg-[#F5F4ED] border-b border-[#E8E6DC]"
+                  className="flex flex-wrap gap-1 p-2 bg-[#f8fafc] border-b border-[#e2e8f0]"
                   role="tablist"
                   aria-label="Nội dung khóa học"
                 >
@@ -644,8 +644,8 @@ const UnifiedCourseView: React.FC<UnifiedCourseViewProps> = ({
                         aria-selected={active}
                         className={`inline-flex items-center gap-2 px-3 py-2 rounded-xl font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 ${
                           active
-                            ? 'bg-white text-[#141413] shadow-sm ring-1 ring-black/[0.04]'
-                            : 'text-[#87867F] hover:text-[#5E5D59] hover:bg-white/60'
+                            ? 'bg-white text-[#0f172a] shadow-sm ring-1 ring-black/[0.04]'
+                            : 'text-[#64748b] hover:text-[#475569] hover:bg-white/60'
                         } ${tab.locked && !active ? 'opacity-85' : ''}`}
                         onClick={() => handleTabChange(tab.id)}
                       >
@@ -654,7 +654,7 @@ const UnifiedCourseView: React.FC<UnifiedCourseViewProps> = ({
                         {tab.locked ? (
                           <span
                             className={`min-w-[1.25rem] h-5 px-1 inline-flex items-center justify-center rounded-full ${
-                              active ? 'bg-[#87867F]/25 text-[#141413]' : 'bg-[#E8E6DC] text-[#5E5D59]'
+                              active ? 'bg-[#64748b]/25 text-[#0f172a]' : 'bg-[#e2e8f0] text-[#475569]'
                             }`}
                             title="Cần đăng ký"
                           >
@@ -667,7 +667,7 @@ const UnifiedCourseView: React.FC<UnifiedCourseViewProps> = ({
                 </div>
 
                 <div
-                  className="p-5 md:p-7 bg-[#F5F4ED]/90 min-h-[200px] min-w-0"
+                  className="p-5 md:p-7 bg-[#f8fafc]/90 min-h-[200px] min-w-0"
                   data-student-course-tab-panel
                 >
                   <AnimatePresence mode="wait">
@@ -695,11 +695,11 @@ const UnifiedCourseView: React.FC<UnifiedCourseViewProps> = ({
                             targetAudience={course.targetAudience}
                           />
                           {course.description ? (
-                            <div className="rounded-2xl border border-[#E8E6DC] bg-white p-5 md:p-6 shadow-sm">
-                              <h3 className="font-[Playfair_Display] text-[17px] font-medium text-[#141413] m-0 mb-3">
+                            <div className="rounded-2xl border border-[#e2e8f0] bg-white p-5 md:p-6 shadow-sm">
+                              <h3 className="font-[Playfair_Display] text-[17px] font-medium text-[#0f172a] m-0 mb-3">
                                 Mô tả {UI_TEXT.COURSE.toLowerCase()}
                               </h3>
-                              <div className="font-[Be_Vietnam_Pro] text-[14px] whitespace-pre-wrap leading-relaxed text-[#5E5D59]">
+                              <div className="font-[Be_Vietnam_Pro] text-[14px] whitespace-pre-wrap leading-relaxed text-[#475569]">
                                 {course.description}
                               </div>
                             </div>
@@ -715,14 +715,14 @@ const UnifiedCourseView: React.FC<UnifiedCourseViewProps> = ({
                         (hasFullAccess && course ? (
                           <StudentAssessmentsTab courseId={courseId!} course={course} />
                         ) : (
-                          <div className="rounded-2xl border border-[#E8E6DC] bg-white p-8 md:p-10 text-center max-w-lg mx-auto shadow-sm">
-                            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F5F4ED] text-[#87867F] mb-4">
+                          <div className="rounded-2xl border border-[#e2e8f0] bg-white p-8 md:p-10 text-center max-w-lg mx-auto shadow-sm">
+                            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f8fafc] text-[#64748b] mb-4">
                               <Lock className="h-7 w-7" strokeWidth={2} />
                             </div>
-                            <h3 className="font-[Playfair_Display] text-lg font-medium text-[#141413] mb-2">
+                            <h3 className="font-[Playfair_Display] text-lg font-medium text-[#0f172a] mb-2">
                               Bài kiểm tra đã khóa
                             </h3>
-                            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mb-6 leading-relaxed">
+                            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mb-6 leading-relaxed">
                               Đăng ký khóa học để làm bài kiểm tra và nhận xét từ giảng viên.
                             </p>
                             <button type="button" className={secondaryOutlineBtn} onClick={handleEnroll}>
@@ -734,14 +734,14 @@ const UnifiedCourseView: React.FC<UnifiedCourseViewProps> = ({
                         (hasFullAccess && enrollmentId && enrollment ? (
                           <StudentProgressTab enrollmentId={enrollmentId} enrollment={enrollment} />
                         ) : (
-                          <div className="rounded-2xl border border-[#E8E6DC] bg-white p-8 md:p-10 text-center max-w-lg mx-auto shadow-sm">
-                            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F5F4ED] text-[#87867F] mb-4">
+                          <div className="rounded-2xl border border-[#e2e8f0] bg-white p-8 md:p-10 text-center max-w-lg mx-auto shadow-sm">
+                            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#f8fafc] text-[#64748b] mb-4">
                               <Lock className="h-7 w-7" strokeWidth={2} />
                             </div>
-                            <h3 className="font-[Playfair_Display] text-lg font-medium text-[#141413] mb-2">
+                            <h3 className="font-[Playfair_Display] text-lg font-medium text-[#0f172a] mb-2">
                               Theo dõi tiến độ
                             </h3>
-                            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mb-6 leading-relaxed">
+                            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mb-6 leading-relaxed">
                               Sau khi đăng ký, bạn xem được tiến độ từng bài và tỷ lệ hoàn thành khóa học.
                             </p>
                             <button type="button" className={secondaryOutlineBtn} onClick={handleEnroll}>

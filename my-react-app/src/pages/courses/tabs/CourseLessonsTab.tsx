@@ -162,7 +162,7 @@ const InlinePlayer: React.FC<{
           />
         )}
       </div>
-      <div style={{ padding: '1rem', background: '#faf9f5', borderBottom: '1px solid #f0eee6' }}>
+      <div style={{ padding: '1rem', background: '#ffffff', borderBottom: '1px solid #e2e8f0' }}>
         <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 800, color: 'var(--mod-ink)' }}>
           {title}
         </h3>
@@ -687,7 +687,7 @@ function UploadVideoModal({
             <div style={{ marginTop: '0.5rem' }}>
               <div className="row" style={{ justifyContent: 'space-between', marginBottom: 6 }}>
                 <span style={{ fontSize: '0.88rem', fontWeight: 600 }}>Đang tải lên...</span>
-                <span style={{ fontSize: '0.88rem', color: '#b45435', fontWeight: 600 }}>
+                <span style={{ fontSize: '0.88rem', color: '#0284c7', fontWeight: 600 }}>
                   {progress}%
                 </span>
               </div>
@@ -909,7 +909,7 @@ function SortableLessonItem({
                 background: isPlaying ? '#f1f5f9' : '#ffffff',
                 cursor: 'pointer',
                 borderLeft: isPlaying ? '3px solid #64748b' : '3px solid transparent',
-                borderBottom: '1px solid #f0eee6',
+                borderBottom: '1px solid #e2e8f0',
                 transition: 'all 0.2s ease',
               }
             : {
@@ -934,8 +934,8 @@ function SortableLessonItem({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              background: isPlaying ? '#64748b' : '#e8e6dc',
-              color: isPlaying ? '#fff' : '#5e5d59',
+              background: isPlaying ? '#64748b' : '#e2e8f0',
+              color: isPlaying ? '#fff' : '#475569',
             }}
           >
             <Play size={16} style={{ marginLeft: 2 }} />
@@ -945,7 +945,7 @@ function SortableLessonItem({
         <div className="clt-lesson-info">
           <div
             className="clt-lesson-title"
-            style={{ color: isPlaying ? '#475569' : isSidebar ? '#141413' : undefined }}
+            style={{ color: isPlaying ? '#475569' : isSidebar ? '#0f172a' : undefined }}
             title={lesson.lessonTitle ?? 'Bài học'}
           >
             {isReorderMode && (
@@ -1350,7 +1350,7 @@ const CourseLessonsTab: React.FC<CourseLessonsTabProps> = ({ courseId, course })
           <div
             className="section-header"
             onClick={() => toggleSection(group.id)}
-            style={isSidebar ? { padding: '0.65rem 1rem', background: '#f5f4ed' } : {}}
+            style={isSidebar ? { padding: '0.65rem 1rem', background: '#f8fafc' } : {}}
           >
             <div className="section-title-area clt-section-title-area">
               <ChevronDown
@@ -1552,7 +1552,7 @@ const CourseLessonsTab: React.FC<CourseLessonsTabProps> = ({ courseId, course })
     <div className="course-detail-tab lessons-tab">
       {playingLessonId && lessons.find((l) => l.id === playingLessonId) ? (
         /* Integrated Player Layout — white shell aligned with admin course review panels */
-        <div className="rounded-2xl border border-[#E8E6DC] bg-white shadow-[0_1px_3px_rgba(20,20,19,0.06)] p-3 md:p-5">
+        <div className="rounded-2xl border border-[#e2e8f0] bg-white shadow-[0_1px_3px_rgba(20,20,19,0.06)] p-3 md:p-5">
           <div className="player-container">
             {/* Main Player Area */}
             <div className="player-main">
@@ -1629,7 +1629,7 @@ const CourseLessonsTab: React.FC<CourseLessonsTabProps> = ({ courseId, course })
               <div
                 style={{
                   padding: '1.25rem 1.5rem',
-                  borderBottom: '1px solid #e8e6dc',
+                  borderBottom: '1px solid #e2e8f0',
                   background: 'linear-gradient(to right, #f8fafc, #ffffff)',
                   flexShrink: 0,
                 }}
@@ -1639,7 +1639,7 @@ const CourseLessonsTab: React.FC<CourseLessonsTabProps> = ({ courseId, course })
                     margin: 0,
                     fontSize: '1rem',
                     fontWeight: 800,
-                    color: '#141413',
+                    color: '#0f172a',
                     letterSpacing: '-0.01em',
                   }}
                 >
@@ -1654,7 +1654,7 @@ const CourseLessonsTab: React.FC<CourseLessonsTabProps> = ({ courseId, course })
         </div>
       ) : (
         /* Regular Dashboard List Layout */
-        <div className="rounded-2xl border border-[#E8E6DC] bg-white shadow-[0_1px_3px_rgba(20,20,19,0.06)] p-4 md:p-6 space-y-5">
+        <div className="rounded-2xl border border-[#e2e8f0] bg-white shadow-[0_1px_3px_rgba(20,20,19,0.06)] p-4 md:p-6 space-y-5">
           {!readOnly && (
             <div className="cdt-toolbar">
               {isReorderMode ? (

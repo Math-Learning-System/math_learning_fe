@@ -50,8 +50,8 @@ function getDaysRemaining(dueDate: string | null): number {
 
 function getUrgencyInfo(days: number): { color: string; label: string } {
   if (days <= 3) return { color: '#B53333', label: `${Math.max(days, 0)}d` };
-  if (days <= 7) return { color: '#C96442', label: `${days}d` };
-  return { color: '#5E5D59', label: `${days}d` };
+  if (days <= 7) return { color: '#0ea5e9', label: `${days}d` };
+  return { color: '#475569', label: `${days}d` };
 }
 
 const ROADMAP_PAGE_SIZE = 9;
@@ -130,32 +130,32 @@ const StudentDashboard: React.FC = () => {
     >
       <div className="sd-page">
 
-        <div className="mb-6 flex flex-col justify-between gap-4 rounded-2xl bg-[#FAF9F5] p-5 shadow-[0px_0px_0px_1px_#F0EEE6] md:flex-row md:items-center">
+        <div className="mb-6 flex flex-col justify-between gap-4 rounded-2xl bg-[#ffffff] p-5 shadow-[0px_0px_0px_1px_#e2e8f0] md:flex-row md:items-center">
           <div>
-            <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-[#E8E6DC] px-3 py-1 text-[12px] font-medium text-[#4D4C48]">
+            <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-[#e2e8f0] px-3 py-1 text-[12px] font-medium text-[#334155]">
               <Clock3 className="h-3.5 w-3.5" /> {greeting}
             </div>
             <h1
-              className="font-[Playfair_Display] text-[36px] font-medium leading-[1.2] text-[#141413]"
+              className="font-[Playfair_Display] text-[36px] font-medium leading-[1.2] text-[#0f172a]"
               style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 500 }}
             >
               {summary?.student.name ?? 'Học viên'}
             </h1>
-            <p className="mt-1 text-[16px] leading-[1.6] text-[#5E5D59]">
+            <p className="mt-1 text-[16px] leading-[1.6] text-[#475569]">
               Hôm nay bạn có <strong>{summary?.todayTaskCount ?? 0} bài tập</strong> cần hoàn thành.
               Hãy cùng chinh phục nào!
             </p>
           </div>
           <div className="flex items-center gap-2">
             <button
-              className="inline-flex items-center gap-2 rounded-xl bg-[#141413] px-4 py-2.5 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#B0AEA5] transition-colors duration-150 hover:bg-[#30302E] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#0f172a] px-4 py-2.5 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#94a3b8] transition-colors duration-150 hover:bg-[#1e293b] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
               onClick={() => navigate('/ai/chat')}
               aria-label="Chat với AI"
             >
               <Brain className="h-4 w-4" /> <span>Hỏi AI</span>
             </button>
             <button
-              className="inline-flex items-center gap-2 rounded-xl bg-[#E8E6DC] px-4 py-2.5 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#4D4C48] shadow-[0px_0px_0px_1px_#D1CFC5] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#e2e8f0] px-4 py-2.5 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
               onClick={() => navigate('/student/courses')}
               aria-label="Học bài mới"
             >
@@ -165,7 +165,7 @@ const StudentDashboard: React.FC = () => {
         </div>
 
         {dashboardError && (
-          <p className="mb-4 rounded-xl bg-[#FAF9F5] p-3 text-[14px] text-[#B53333] shadow-[0px_0px_0px_1px_#E8E6DC]">
+          <p className="mb-4 rounded-xl bg-[#ffffff] p-3 text-[14px] text-[#B53333] shadow-[0px_0px_0px_1px_#e2e8f0]">
             Không thể tải dữ liệu bảng tổng quan.
           </p>
         )}
@@ -178,7 +178,7 @@ const StudentDashboard: React.FC = () => {
             ? ['stat-a', 'stat-b', 'stat-c', 'stat-d'].map((s) => (
                 <li
                   key={s}
-                  className="h-[132px] animate-pulse rounded-2xl bg-[#FAF9F5] shadow-[0px_0px_0px_1px_#F0EEE6]"
+                  className="h-[132px] animate-pulse rounded-2xl bg-[#ffffff] shadow-[0px_0px_0px_1px_#e2e8f0]"
                 />
               ))
             : statsCards.map((item) => {
@@ -186,17 +186,17 @@ const StudentDashboard: React.FC = () => {
                 return (
                   <li
                     key={item.label}
-                    className="rounded-2xl bg-[#FAF9F5] p-5 shadow-[0px_0px_0px_1px_#F0EEE6] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0px_0px_0px_1px_#D1CFC5]"
+                    className="rounded-2xl bg-[#ffffff] p-5 shadow-[0px_0px_0px_1px_#e2e8f0] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0px_0px_0px_1px_#cbd5e1]"
                   >
                     <div className="mb-4 flex items-center justify-between">
-                      <span className="rounded-xl bg-[#E8E6DC] p-2 text-[#5E5D59]">
+                      <span className="rounded-xl bg-[#e2e8f0] p-2 text-[#475569]">
                         <Icon className="h-5 w-5" />
                       </span>
                     </div>
-                    <p className="text-[30px] font-bold tabular-nums text-[#141413]">
+                    <p className="text-[30px] font-bold tabular-nums text-[#0f172a]">
                       {item.label === 'Điểm trung bình' ? item.value.toFixed(1) : item.value}
                     </p>
-                    <p className="mt-1 text-[12px] uppercase tracking-[0.5px] text-[#87867F]">
+                    <p className="mt-1 text-[12px] uppercase tracking-[0.5px] text-[#64748b]">
                       {item.label}
                     </p>
                   </li>
@@ -206,17 +206,17 @@ const StudentDashboard: React.FC = () => {
 
         <div className="grid grid-cols-1 gap-4 xl:grid-cols-3">
           <div className="space-y-4 xl:col-span-2">
-            <div className="rounded-2xl bg-[#FAF9F5] p-5 shadow-[0px_0px_0px_1px_#F0EEE6]">
+            <div className="rounded-2xl bg-[#ffffff] p-5 shadow-[0px_0px_0px_1px_#e2e8f0]">
               <div className="mb-4 flex items-center justify-between gap-3">
                 <h2
                   className="flex items-center gap-2 font-[Playfair_Display] text-[25px] font-medium"
                   style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 500 }}
                 >
-                  <PencilLine className="h-5 w-5 text-[#5E5D59]" /> Bài tập sắp tới
+                  <PencilLine className="h-5 w-5 text-[#475569]" /> Bài tập sắp tới
                 </h2>
                 <Link
                   to="/student/assessments"
-                  className="inline-flex items-center gap-1 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#3D3D3A] transition-colors duration-150 hover:text-[#C96442] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
+                  className="inline-flex items-center gap-1 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#3D3D3A] transition-colors duration-150 hover:text-[#0ea5e9] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
                   aria-label={`Xem tất cả ${UI_TEXT.QUIZ.toLowerCase()}`}
                 >
                   Xem tất cả <ChevronRight className="h-4 w-4" />
@@ -229,13 +229,13 @@ const StudentDashboard: React.FC = () => {
                   return (
                     <div
                       key={task.id}
-                      className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] p-3 transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#D1CFC5]"
+                      className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-3 transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#cbd5e1]"
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div>
-                          <p className="font-medium text-[#141413]">{task.title}</p>
-                          <div className="mt-1 flex items-center gap-2 text-[13px] text-[#87867F]">
-                            <span className="rounded-full bg-[#F0EEE6] px-2 py-0.5 text-[#4D4C48]">
+                          <p className="font-medium text-[#0f172a]">{task.title}</p>
+                          <div className="mt-1 flex items-center gap-2 text-[13px] text-[#64748b]">
+                            <span className="rounded-full bg-[#e2e8f0] px-2 py-0.5 text-[#334155]">
                               {task.subject}
                             </span>
                             <span>
@@ -256,19 +256,19 @@ const StudentDashboard: React.FC = () => {
                       </div>
                       {task.progressPercent > 0 && (
                         <div className="mt-3 flex items-center gap-2">
-                          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#E8E6DC]">
+                          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-[#e2e8f0]">
                             <div
-                              className="h-full rounded-full bg-[#C96442] transition-all duration-500"
+                              className="h-full rounded-full bg-[#0ea5e9] transition-all duration-500"
                               style={{ width: `${task.progressPercent}%` }}
                             />
                           </div>
-                          <span className="text-[12px] font-semibold text-[#C96442]">
+                          <span className="text-[12px] font-semibold text-[#0ea5e9]">
                             {task.progressPercent}%
                           </span>
                         </div>
                       )}
                       <button
-                        className="mt-3 inline-flex items-center gap-1 rounded-xl bg-[#E8E6DC] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#4D4C48] shadow-[0px_0px_0px_1px_#D1CFC5] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
+                        className="mt-3 inline-flex items-center gap-1 rounded-xl bg-[#e2e8f0] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
                         onClick={() => {
                           setNavigatingTaskId(task.id);
                           navigate('/student/assessments');
@@ -288,76 +288,76 @@ const StudentDashboard: React.FC = () => {
                   );
                 })}
                 {upcomingTasks.length === 0 && (
-                  <p className="text-[14px] text-[#87867F]">
+                  <p className="text-[14px] text-[#64748b]">
                     Hiện chưa có bài tập nào đang chờ làm.
                   </p>
                 )}
               </div>
             </div>
 
-            <div className="rounded-2xl bg-[#FAF9F5] p-5 shadow-[0px_0px_0px_1px_#F0EEE6]">
+            <div className="rounded-2xl bg-[#ffffff] p-5 shadow-[0px_0px_0px_1px_#e2e8f0]">
               <h2
                 className="mb-4 flex items-center gap-2 font-[Playfair_Display] text-[25px] font-medium"
                 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 500 }}
               >
-                <ClipboardList className="h-5 w-5 text-[#5E5D59]" /> Tiến độ học tập
+                <ClipboardList className="h-5 w-5 text-[#475569]" /> Tiến độ học tập
               </h2>
               <div className="space-y-3">
                 {learningProgress.map((lp) => (
                   <div key={lp.subject}>
                     <div className="mb-1 flex items-center justify-between text-[14px]">
-                      <span className="font-medium text-[#141413]">{lp.subject}</span>
-                      <span className="text-[#87867F]">
+                      <span className="font-medium text-[#0f172a]">{lp.subject}</span>
+                      <span className="text-[#64748b]">
                         {lp.doneLessons}/{lp.totalLessons} bài · <strong>{lp.percent}%</strong>
                       </span>
                     </div>
-                    <div className="h-1.5 overflow-hidden rounded-full bg-[#E8E6DC]">
+                    <div className="h-1.5 overflow-hidden rounded-full bg-[#e2e8f0]">
                       <div
-                        className="h-full rounded-full bg-[#C96442] transition-all duration-500"
+                        className="h-full rounded-full bg-[#0ea5e9] transition-all duration-500"
                         style={{ width: `${lp.percent}%` }}
                       />
                     </div>
                   </div>
                 ))}
                 {learningProgress.length === 0 && (
-                  <p className="text-[14px] text-[#87867F]">Chưa có dữ liệu tiến độ học tập.</p>
+                  <p className="text-[14px] text-[#64748b]">Chưa có dữ liệu tiến độ học tập.</p>
                 )}
               </div>
             </div>
           </div>
 
           <div className="space-y-4">
-            <div className="rounded-2xl bg-[#FAF9F5] p-5 shadow-[0px_0px_0px_1px_#F0EEE6]">
-              <div className="mb-2 inline-flex rounded-xl bg-[#E8E6DC] p-2 text-[#5E5D59]">
+            <div className="rounded-2xl bg-[#ffffff] p-5 shadow-[0px_0px_0px_1px_#e2e8f0]">
+              <div className="mb-2 inline-flex rounded-xl bg-[#e2e8f0] p-2 text-[#475569]">
                 <Trophy className="h-5 w-5" />
               </div>
-              <p className="text-[16px] text-[#5E5D59]">
+              <p className="text-[16px] text-[#475569]">
                 Còn <strong>{summary?.motivation.remainingAssignments ?? 0} bài</strong> nữa là đạt
                 mục tiêu tháng!
               </p>
-              <div className="mt-3 h-2 overflow-hidden rounded-full bg-[#E8E6DC]">
+              <div className="mt-3 h-2 overflow-hidden rounded-full bg-[#e2e8f0]">
                 <div
-                  className="h-full rounded-full bg-[#C96442] transition-all duration-500"
+                  className="h-full rounded-full bg-[#0ea5e9] transition-all duration-500"
                   style={{ width: `${summary?.motivation.progressPercent ?? 0}%` }}
                 />
               </div>
-              <p className="mt-2 text-[13px] text-[#87867F]">
+              <p className="mt-2 text-[13px] text-[#64748b]">
                 Mục tiêu: {summary?.motivation.goalAssignments ?? 0} bài tập · Đã hoàn thành:{' '}
                 {summary?.motivation.completedAssignments ?? 0}
               </p>
             </div>
 
-            <div className="rounded-2xl bg-[#FAF9F5] p-5 shadow-[0px_0px_0px_1px_#F0EEE6]">
+            <div className="rounded-2xl bg-[#ffffff] p-5 shadow-[0px_0px_0px_1px_#e2e8f0]">
               <div className="mb-4 flex items-center justify-between gap-2">
                 <h2
                   className="flex items-center gap-2 font-[Playfair_Display] text-[25px] font-medium"
                   style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 500 }}
                 >
-                  <Star className="h-5 w-5 text-[#5E5D59]" /> Điểm số gần đây
+                  <Star className="h-5 w-5 text-[#475569]" /> Điểm số gần đây
                 </h2>
                 <Link
                   to="/student/assessments"
-                  className="inline-flex items-center gap-1 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#3D3D3A] transition-colors duration-150 hover:text-[#C96442] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
+                  className="inline-flex items-center gap-1 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#3D3D3A] transition-colors duration-150 hover:text-[#0ea5e9] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
                   aria-label="Xem tất cả điểm số"
                 >
                   Xem tất cả <ChevronRight className="h-4 w-4" />
@@ -367,34 +367,34 @@ const StudentDashboard: React.FC = () => {
                 {recentGrades.map((g) => (
                   <div
                     key={g.id}
-                    className="flex items-center justify-between rounded-xl border border-[#E8E6DC] p-3"
+                    className="flex items-center justify-between rounded-xl border border-[#e2e8f0] p-3"
                   >
                     <div>
-                      <p className="text-[14px] font-medium text-[#141413]">{g.title}</p>
-                      <p className="text-[12px] text-[#87867F]">
+                      <p className="text-[14px] font-medium text-[#0f172a]">{g.title}</p>
+                      <p className="text-[12px] text-[#64748b]">
                         {g.subject} · {new Date(g.gradedAt).toLocaleDateString('vi-VN')}
                       </p>
                     </div>
-                    <span className="rounded-full bg-[#F0EEE6] px-2.5 py-1 text-[12px] font-semibold text-[#4D4C48]">
+                    <span className="rounded-full bg-[#e2e8f0] px-2.5 py-1 text-[12px] font-semibold text-[#334155]">
                       {g.score.toFixed(1)}
                     </span>
                   </div>
                 ))}
                 {recentGrades.length === 0 && (
-                  <p className="text-[14px] text-[#87867F]">Chưa có điểm số nào gần đây.</p>
+                  <p className="text-[14px] text-[#64748b]">Chưa có điểm số nào gần đây.</p>
                 )}
               </div>
             </div>
 
-            <div className="rounded-2xl bg-[#FAF9F5] p-5 shadow-[0px_0px_0px_1px_#F0EEE6]">
+            <div className="rounded-2xl bg-[#ffffff] p-5 shadow-[0px_0px_0px_1px_#e2e8f0]">
               <div className="mb-3 flex items-center justify-between">
                 <h2
                   className="flex items-center gap-2 font-[Playfair_Display] text-[25px] font-medium"
                   style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 500 }}
                 >
-                  <Flame className="h-5 w-5 text-[#C96442]" /> Chuỗi học tập
+                  <Flame className="h-5 w-5 text-[#0ea5e9]" /> Chuỗi học tập
                 </h2>
-                <span className="text-[13px] font-medium text-[#4D4C48]">
+                <span className="text-[13px] font-medium text-[#334155]">
                   <strong>{streak?.currentStreakDays ?? 0}</strong> ngày
                 </span>
               </div>
@@ -404,22 +404,22 @@ const StudentDashboard: React.FC = () => {
                     <Circle
                       className={`h-3.5 w-3.5 ${
                         day.active
-                          ? 'fill-[#C96442] text-[#C96442]'
-                          : 'fill-[#E8E6DC] text-[#E8E6DC]'
+                          ? 'fill-[#0ea5e9] text-[#0ea5e9]'
+                          : 'fill-[#e2e8f0] text-[#e2e8f0]'
                       }`}
                     />
-                    <span className="text-[11px] text-[#87867F]">{day.dayLabel}</span>
+                    <span className="text-[11px] text-[#64748b]">{day.dayLabel}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-[13px] text-[#5E5D59]">
+              <p className="text-[13px] text-[#475569]">
                 {streak?.message ?? 'Hãy duy trì nhịp học đều mỗi ngày.'}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-4 rounded-2xl bg-[#FAF9F5] p-5 shadow-[0px_0px_0px_1px_#F0EEE6]">
+        <div className="mt-4 rounded-2xl bg-[#ffffff] p-5 shadow-[0px_0px_0px_1px_#e2e8f0]">
           <div className="mb-4 flex items-center justify-between gap-2">
             <h2
               className="font-[Playfair_Display] text-[25px] font-medium"
@@ -427,7 +427,7 @@ const StudentDashboard: React.FC = () => {
             >
               Hoạt động học tập tuần này
             </h2>
-            <span className="text-[12px] text-[#87867F]">
+            <span className="text-[12px] text-[#64748b]">
               {weeklyActivity
                 ? `${new Date(weeklyActivity.range.from).toLocaleDateString('vi-VN')} – ${new Date(weeklyActivity.range.to).toLocaleDateString('vi-VN')}`
                 : '—'}
@@ -439,24 +439,24 @@ const StudentDashboard: React.FC = () => {
               const h = (d.hours / max) * 100;
               return (
                 <div key={d.dayLabel} className="flex flex-1 flex-col items-center gap-1">
-                  <div className="h-28 w-full rounded-lg bg-[#E8E6DC] p-1">
+                  <div className="h-28 w-full rounded-lg bg-[#e2e8f0] p-1">
                     <div
-                      className="w-full rounded-md bg-[#C96442] transition-all duration-300"
+                      className="w-full rounded-md bg-[#0ea5e9] transition-all duration-300"
                       style={{ height: `${h}%`, marginTop: `${100 - h}%` }}
                     />
                   </div>
-                  <span className="text-[11px] text-[#87867F]">{d.dayLabel}</span>
+                  <span className="text-[11px] text-[#64748b]">{d.dayLabel}</span>
                 </div>
               );
             })}
           </div>
-          <p className="mt-3 text-[13px] text-[#5E5D59]">
+          <p className="mt-3 text-[13px] text-[#475569]">
             <strong>{weeklyActivity?.totalHours ?? 0}h</strong> tổng tuần này ·{' '}
             <strong>{weeklyActivity?.deltaPercentVsPreviousWeek ?? 0}%</strong> so tuần trước
           </p>
         </div>
 
-        <div className="mt-4 rounded-2xl bg-[#FAF9F5] p-5 shadow-[0px_0px_0px_1px_#F0EEE6]">
+        <div className="mt-4 rounded-2xl bg-[#ffffff] p-5 shadow-[0px_0px_0px_1px_#e2e8f0]">
           <h2
             className="mb-3 font-[Playfair_Display] text-[25px] font-medium"
             style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 500 }}
@@ -469,11 +469,11 @@ const StudentDashboard: React.FC = () => {
               return (
                 <li key={qa.label}>
                   <button
-                    className="flex w-full items-center gap-2 rounded-xl bg-[#E8E6DC] px-3 py-2.5 text-left font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#4D4C48] shadow-[0px_0px_0px_1px_#D1CFC5] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
+                    className="flex w-full items-center gap-2 rounded-xl bg-[#e2e8f0] px-3 py-2.5 text-left font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
                     onClick={() => navigate(qa.path)}
                     aria-label={qa.label}
                   >
-                    <Icon className="h-4 w-4 text-[#5E5D59]" />
+                    <Icon className="h-4 w-4 text-[#475569]" />
                     {qa.label}
                   </button>
                 </li>
@@ -482,17 +482,17 @@ const StudentDashboard: React.FC = () => {
           </ul>
         </div>
 
-        <div className="mt-4 rounded-2xl bg-[#FAF9F5] p-5 shadow-[0px_0px_0px_1px_#F0EEE6]">
+        <div className="mt-4 rounded-2xl bg-[#ffffff] p-5 shadow-[0px_0px_0px_1px_#e2e8f0]">
           <div className="mb-3 flex items-center justify-between gap-2">
             <h2
               className="flex items-center gap-2 font-[Playfair_Display] text-[25px] font-medium"
               style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 500 }}
             >
-              <Map className="h-5 w-5 text-[#5E5D59]" /> Lộ trình học tập
+              <Map className="h-5 w-5 text-[#475569]" /> Lộ trình học tập
             </h2>
             <Link
               to="/roadmaps"
-              className="inline-flex items-center gap-1 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#3D3D3A] transition-colors duration-150 hover:text-[#C96442] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
+              className="inline-flex items-center gap-1 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#3D3D3A] transition-colors duration-150 hover:text-[#0ea5e9] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
               aria-label="Xem tất cả lộ trình"
             >
               Xem tất cả <ChevronRight className="h-4 w-4" />
@@ -500,13 +500,13 @@ const StudentDashboard: React.FC = () => {
           </div>
 
           {roadmapsQuery.isLoading && (
-            <div className="rounded-xl border border-[#E8E6DC] bg-[#F5F4ED] p-4">
-              <div className="mb-2 flex items-center gap-2 text-[14px] text-[#5E5D59]">
-                <LoaderCircle className="h-4 w-4 animate-spin text-[#C96442]" />
+            <div className="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-4">
+              <div className="mb-2 flex items-center gap-2 text-[14px] text-[#475569]">
+                <LoaderCircle className="h-4 w-4 animate-spin text-[#0ea5e9]" />
                 Đang tải lộ trình học...
               </div>
-              <div className="h-1.5 overflow-hidden rounded-full bg-[#E8E6DC]">
-                <div className="h-full w-1/3 animate-pulse rounded-full bg-[#C96442]" />
+              <div className="h-1.5 overflow-hidden rounded-full bg-[#e2e8f0]">
+                <div className="h-full w-1/3 animate-pulse rounded-full bg-[#0ea5e9]" />
               </div>
             </div>
           )}
@@ -519,32 +519,32 @@ const StudentDashboard: React.FC = () => {
                 <Link
                   key={rm.id}
                   to={`/roadmaps/${rm.id}`}
-                  className="flex items-center justify-between rounded-xl border border-[#E8E6DC] p-3 transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#D1CFC5] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
+                  className="flex items-center justify-between rounded-xl border border-[#e2e8f0] p-3 transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#cbd5e1] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
                   aria-label={rm.name}
                 >
                   <div>
-                    <strong className="text-[14px] text-[#141413]">{rm.name}</strong>
-                    <p className="text-[12px] text-[#87867F]">{rm.subject}</p>
+                    <strong className="text-[14px] text-[#0f172a]">{rm.name}</strong>
+                    <p className="text-[12px] text-[#64748b]">{rm.subject}</p>
                   </div>
-                  <span className="text-[12px] text-[#5E5D59]">{rm.totalTopicsCount} chủ đề</span>
+                  <span className="text-[12px] text-[#475569]">{rm.totalTopicsCount} chủ đề</span>
                 </Link>
               ))}
               {roadmapList.length > ROADMAP_PAGE_SIZE && (
                 <div className="mt-2 flex items-center justify-end gap-2">
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 rounded-xl bg-[#E8E6DC] px-3 py-2 text-[13px] font-medium text-[#4D4C48] shadow-[0px_0px_0px_1px_#D1CFC5] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98] disabled:opacity-50"
+                    className="inline-flex items-center gap-1 rounded-xl bg-[#e2e8f0] px-3 py-2 text-[13px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98] disabled:opacity-50"
                     onClick={() => setRoadmapPage((p) => Math.max(1, p - 1))}
                     disabled={safeRoadmapPage === 1}
                   >
                     <ArrowLeft className="h-3.5 w-3.5" /> Trước
                   </button>
-                  <span className="text-[13px] text-[#5E5D59]">
+                  <span className="text-[13px] text-[#475569]">
                     Trang <strong>{safeRoadmapPage}</strong> / {roadmapTotalPages}
                   </span>
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 rounded-xl bg-[#E8E6DC] px-3 py-2 text-[13px] font-medium text-[#4D4C48] shadow-[0px_0px_0px_1px_#D1CFC5] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98] disabled:opacity-50"
+                    className="inline-flex items-center gap-1 rounded-xl bg-[#e2e8f0] px-3 py-2 text-[13px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98] disabled:opacity-50"
                     onClick={() => setRoadmapPage((p) => Math.min(roadmapTotalPages, p + 1))}
                     disabled={safeRoadmapPage === roadmapTotalPages}
                   >
@@ -553,7 +553,7 @@ const StudentDashboard: React.FC = () => {
                 </div>
               )}
               {roadmapList.length === 0 && (
-                <p className="text-[14px] text-[#87867F]">Chưa có lộ trình nào.</p>
+                <p className="text-[14px] text-[#64748b]">Chưa có lộ trình nào.</p>
               )}
             </div>
           )}

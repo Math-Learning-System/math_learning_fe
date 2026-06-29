@@ -95,7 +95,7 @@ const CourseReviewsTab: React.FC<CourseReviewsTabProps> = ({ courseId }) => {
         </div>
 
         <div className="cdt-reviews__stat">
-          <div className="cdt-reviews__value" style={{ color: '#141413' }}>
+          <div className="cdt-reviews__value" style={{ color: '#0f172a' }}>
             {summary?.totalReviews || 0}
           </div>
           <div className="cdt-reviews__label">Tổng đánh giá</div>
@@ -142,7 +142,7 @@ const CourseReviewsTab: React.FC<CourseReviewsTabProps> = ({ courseId }) => {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#87867f',
+                  color: '#64748b',
                   cursor: 'pointer',
                   display: 'flex',
                   alignItems: 'center',
@@ -183,8 +183,8 @@ const CourseReviewsTab: React.FC<CourseReviewsTabProps> = ({ courseId }) => {
                             <Star
                               key={s}
                               size={14}
-                              fill={s <= review.rating ? '#FBBF24' : '#e8e6dc'}
-                              color={s <= review.rating ? '#FBBF24' : '#e8e6dc'}
+                              fill={s <= review.rating ? '#FBBF24' : '#e2e8f0'}
+                              color={s <= review.rating ? '#FBBF24' : '#e2e8f0'}
                             />
                           ))}
                         </span>
@@ -245,7 +245,7 @@ const CourseReviewsTab: React.FC<CourseReviewsTabProps> = ({ courseId }) => {
                         }}
                       >
                         <span className="cdt-reviews__reply-badge">Bạn đã phản hồi</span>
-                        <span style={{ fontSize: '0.8rem', color: '#87867f', fontWeight: 500 }}>
+                        <span style={{ fontSize: '0.8rem', color: '#64748b', fontWeight: 500 }}>
                           {formatDate(review.repliedAt)}
                         </span>
                       </div>

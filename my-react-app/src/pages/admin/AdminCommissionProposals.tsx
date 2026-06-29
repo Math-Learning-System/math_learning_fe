@@ -43,7 +43,7 @@ const STATUS_LABELS: Record<CommissionProposalStatus, string> = {
   REJECTED: 'Từ chối',
 };
 const STATUS_COLORS: Record<CommissionProposalStatus, string> = {
-  PENDING:  '#D97757',
+  PENDING:  '#14b8a6',
   APPROVED: '#2D8A6A',
   REJECTED: '#B53333',
 };
@@ -272,21 +272,21 @@ const AdminCommissionProposals: React.FC = () => {
           {/* Header — aligned with teacher mindmaps / commission */}
           <header className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
             <div className="flex items-start gap-3 min-w-0">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] shrink-0">
                 <Percent className="w-5 h-5" aria-hidden />
               </div>
               <div>
-                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] m-0">
+                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] m-0">
                   Quản lý Hoa hồng
                 </h1>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5 mb-0">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5 mb-0">
                   Xét duyệt đề xuất tỷ lệ chia doanh thu của giáo viên
                 </p>
               </div>
             </div>
             <button
               type="button"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-50 shrink-0 self-start sm:self-auto"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-50 shrink-0 self-start sm:self-auto"
               onClick={load}
               disabled={isLoading}
               title="Làm mới"
@@ -305,15 +305,15 @@ const AdminCommissionProposals: React.FC = () => {
 
           {/* Filters — segmented control like /teacher/mindmaps */}
           <div className="flex flex-wrap items-center gap-2">
-            <div className="flex items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl flex-wrap">
+            <div className="flex items-center gap-1 p-1 bg-[#f8fafc] rounded-xl flex-wrap">
               {FILTER_OPTIONS.map((opt) => (
                 <button
                   key={opt.value}
                   type="button"
                   className={`px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                     filter === opt.value
-                      ? 'bg-white text-[#141413] shadow-sm'
-                      : 'text-[#87867F] hover:text-[#5E5D59]'
+                      ? 'bg-white text-[#0f172a] shadow-sm'
+                      : 'text-[#64748b] hover:text-[#475569]'
                   }`}
                   onClick={() => {
                     setFilter(opt.value);
@@ -339,7 +339,7 @@ const AdminCommissionProposals: React.FC = () => {
                 <p>{error}</p>
                 <button
                   type="button"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors mt-1"
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors mt-1"
                   onClick={load}
                 >
                   Thử lại

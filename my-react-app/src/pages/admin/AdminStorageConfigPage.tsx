@@ -187,8 +187,8 @@ export default function AdminStorageConfigPage() {
       >
         <motion.div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-[#141413] font-[Be_Vietnam_Pro] flex items-center gap-2">
-              <HardDrive className="w-7 h-7 text-[#D97757]" />
+            <h1 className="text-2xl font-bold text-[#0f172a] font-[Be_Vietnam_Pro] flex items-center gap-2">
+              <HardDrive className="w-7 h-7 text-[#14b8a6]" />
               Lưu trữ & cấu hình
             </h1>
             <p className="text-sm text-[#6B6B6B] mt-1">
@@ -197,14 +197,14 @@ export default function AdminStorageConfigPage() {
           </div>
         </motion.div>
 
-        <div className="flex gap-2 border-b border-[#E8E6DC]">
+        <div className="flex gap-2 border-b border-[#e2e8f0]">
           <button
             type="button"
             onClick={() => setTab('db')}
             className={`px-4 py-2 text-sm font-medium rounded-t-lg flex items-center gap-2 ${
               tab === 'db'
-                ? 'bg-white border border-b-white border-[#E8E6DC] text-[#141413]'
-                : 'text-[#6B6B6B] hover:text-[#141413]'
+                ? 'bg-white border border-b-white border-[#e2e8f0] text-[#0f172a]'
+                : 'text-[#6B6B6B] hover:text-[#0f172a]'
             }`}
           >
             <Database className="w-4 h-4" />
@@ -218,8 +218,8 @@ export default function AdminStorageConfigPage() {
             }}
             className={`px-4 py-2 text-sm font-medium rounded-t-lg flex items-center gap-2 ${
               tab === 'minio'
-                ? 'bg-white border border-b-white border-[#E8E6DC] text-[#141413]'
-                : 'text-[#6B6B6B] hover:text-[#141413]'
+                ? 'bg-white border border-b-white border-[#e2e8f0] text-[#0f172a]'
+                : 'text-[#6B6B6B] hover:text-[#0f172a]'
             }`}
           >
             <FolderOpen className="w-4 h-4" />
@@ -228,22 +228,22 @@ export default function AdminStorageConfigPage() {
         </div>
 
         {tab === 'db' && (
-          <div className="bg-white rounded-xl border border-[#E8E6DC] shadow-sm overflow-hidden">
+          <div className="bg-white rounded-xl border border-[#e2e8f0] shadow-sm overflow-hidden">
             {configsQuery.isLoading && (
               <motion.div className="p-8 flex justify-center">
-                <Loader2 className="w-6 h-6 animate-spin text-[#D97757]" />
+                <Loader2 className="w-6 h-6 animate-spin text-[#14b8a6]" />
               </motion.div>
             )}
             {configsQuery.isError && (
               <p className="p-6 text-red-600 text-sm">Không tải được danh sách cấu hình.</p>
             )}
             {configsQuery.data && (
-              <div className="divide-y divide-[#E8E6DC]">
+              <div className="divide-y divide-[#e2e8f0]">
                 {configsQuery.data.map((row) => (
                   <motion.div key={row.configKey} className="p-4 sm:p-5">
                     <div className="flex flex-wrap items-start justify-between gap-2">
                       <div>
-                        <code className="text-sm font-semibold text-[#141413]">{row.configKey}</code>
+                        <code className="text-sm font-semibold text-[#0f172a]">{row.configKey}</code>
                         {row.description && (
                           <p className="text-xs text-[#6B6B6B] mt-1">{row.description}</p>
                         )}
@@ -255,7 +255,7 @@ export default function AdminStorageConfigPage() {
                         {CONFIG_HINTS[row.configKey]?.link && (
                           <Link
                             to={CONFIG_HINTS[row.configKey].link!}
-                            className="text-xs px-3 py-1.5 rounded-lg border border-[#E8E6DC] hover:bg-[#FAF9F5] flex items-center gap-1"
+                            className="text-xs px-3 py-1.5 rounded-lg border border-[#e2e8f0] hover:bg-[#ffffff] flex items-center gap-1"
                           >
                             <ExternalLink className="w-3 h-3" />
                             {CONFIG_HINTS[row.configKey].label}
@@ -265,7 +265,7 @@ export default function AdminStorageConfigPage() {
                           <button
                             type="button"
                             onClick={() => startEdit(row)}
-                            className="text-xs px-3 py-1.5 rounded-lg bg-[#141413] text-white hover:bg-[#30302E]"
+                            className="text-xs px-3 py-1.5 rounded-lg bg-[#0f172a] text-white hover:bg-[#1e293b]"
                           >
                             Sửa JSON / text
                           </button>
@@ -278,14 +278,14 @@ export default function AdminStorageConfigPage() {
                           value={draftValue}
                           onChange={(e) => setDraftValue(e.target.value)}
                           rows={12}
-                          className="w-full font-mono text-xs border border-[#E8E6DC] rounded-lg p-3"
+                          className="w-full font-mono text-xs border border-[#e2e8f0] rounded-lg p-3"
                           spellCheck={false}
                         />
                         <motion.div className="flex flex-wrap gap-2">
                           <button
                             type="button"
                             onClick={tryFormatJson}
-                            className="text-xs px-3 py-1.5 rounded-lg border border-[#E8E6DC]"
+                            className="text-xs px-3 py-1.5 rounded-lg border border-[#e2e8f0]"
                           >
                             Format JSON
                           </button>
@@ -298,7 +298,7 @@ export default function AdminStorageConfigPage() {
                                 value: draftValue,
                               })
                             }
-                            className="text-xs px-3 py-1.5 rounded-lg bg-[#D97757] text-white flex items-center gap-1 disabled:opacity-50"
+                            className="text-xs px-3 py-1.5 rounded-lg bg-[#14b8a6] text-white flex items-center gap-1 disabled:opacity-50"
                           >
                             {updateConfigMutation.isPending ? (
                               <Loader2 className="w-3 h-3 animate-spin" />
@@ -310,7 +310,7 @@ export default function AdminStorageConfigPage() {
                           <button
                             type="button"
                             onClick={() => setEditingKey(null)}
-                            className="text-xs px-3 py-1.5 rounded-lg border border-[#E8E6DC]"
+                            className="text-xs px-3 py-1.5 rounded-lg border border-[#e2e8f0]"
                           >
                             Hủy
                           </button>
@@ -318,7 +318,7 @@ export default function AdminStorageConfigPage() {
                       </div>
                     )}
                     {editingKey !== row.configKey && (
-                      <pre className="mt-3 text-xs bg-[#FAF9F5] border border-[#E8E6DC] rounded-lg p-3 max-h-32 overflow-auto whitespace-pre-wrap break-all">
+                      <pre className="mt-3 text-xs bg-[#ffffff] border border-[#e2e8f0] rounded-lg p-3 max-h-32 overflow-auto whitespace-pre-wrap break-all">
                         {row.configValue.length > 400
                           ? `${row.configValue.slice(0, 400)}…`
                           : row.configValue}
@@ -333,7 +333,7 @@ export default function AdminStorageConfigPage() {
 
         {tab === 'minio' && (
           <div className="space-y-4">
-            <div className="bg-white rounded-xl border border-[#E8E6DC] p-4 flex flex-wrap gap-3 items-end">
+            <div className="bg-white rounded-xl border border-[#e2e8f0] p-4 flex flex-wrap gap-3 items-end">
               <label className="flex flex-col gap-1 text-xs text-[#6B6B6B]">
                 Bucket
                 <select
@@ -343,7 +343,7 @@ export default function AdminStorageConfigPage() {
                     setPrefix('');
                     setObjects([]);
                   }}
-                  className="border border-[#E8E6DC] rounded-lg px-3 py-2 text-sm min-w-[200px]"
+                  className="border border-[#e2e8f0] rounded-lg px-3 py-2 text-sm min-w-[200px]"
                 >
                   {buckets.map((b) => (
                     <option key={b.name} value={b.name}>
@@ -363,14 +363,14 @@ export default function AdminStorageConfigPage() {
                   value={prefix}
                   onChange={(e) => setPrefix(e.target.value)}
                   placeholder="vd. assessments/pdf-imports/"
-                  className="border border-[#E8E6DC] rounded-lg px-3 py-2 text-sm font-mono"
+                  className="border border-[#e2e8f0] rounded-lg px-3 py-2 text-sm font-mono"
                 />
               </label>
               <button
                 type="button"
                 disabled={!bucket || loadingObjects}
                 onClick={() => void loadObjects(false)}
-                className="px-4 py-2 rounded-lg bg-[#141413] text-white text-sm flex items-center gap-2 disabled:opacity-50"
+                className="px-4 py-2 rounded-lg bg-[#0f172a] text-white text-sm flex items-center gap-2 disabled:opacity-50"
               >
                 {loadingObjects ? (
                   <Loader2 className="w-4 h-4 animate-spin" />
@@ -379,7 +379,7 @@ export default function AdminStorageConfigPage() {
                 )}
                 Tải danh sách
               </button>
-              <label className="px-4 py-2 rounded-lg border border-[#E8E6DC] text-sm flex items-center gap-2 cursor-pointer hover:bg-[#FAF9F5]">
+              <label className="px-4 py-2 rounded-lg border border-[#e2e8f0] text-sm flex items-center gap-2 cursor-pointer hover:bg-[#ffffff]">
                 <Upload className="w-4 h-4" />
                 Tải file lên
                 <input
@@ -395,22 +395,22 @@ export default function AdminStorageConfigPage() {
             </div>
 
             <div className="flex flex-wrap items-center gap-1 text-sm text-[#6B6B6B]">
-              <button type="button" onClick={() => navigatePrefix(-1)} className="hover:text-[#141413]">
+              <button type="button" onClick={() => navigatePrefix(-1)} className="hover:text-[#0f172a]">
                 {bucket || '…'}
               </button>
               {prefixParts.map((part, i) => (
                 <span key={i} className="flex items-center gap-1">
                   <ChevronRight className="w-3 h-3" />
-                  <button type="button" onClick={() => navigatePrefix(i)} className="hover:text-[#141413]">
+                  <button type="button" onClick={() => navigatePrefix(i)} className="hover:text-[#0f172a]">
                     {part}
                   </button>
                 </span>
               ))}
             </div>
 
-            <div className="bg-white rounded-xl border border-[#E8E6DC] overflow-hidden">
+            <div className="bg-white rounded-xl border border-[#e2e8f0] overflow-hidden">
               <table className="w-full text-sm">
-                <thead className="bg-[#FAF9F5] text-left text-xs text-[#6B6B6B]">
+                <thead className="bg-[#ffffff] text-left text-xs text-[#6B6B6B]">
                   <tr>
                     <th className="px-4 py-3">Tên</th>
                     <th className="px-4 py-3 w-24">Kích thước</th>
@@ -418,7 +418,7 @@ export default function AdminStorageConfigPage() {
                     <th className="px-4 py-3 w-36">Thao tác</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#E8E6DC]">
+                <tbody className="divide-y divide-[#e2e8f0]">
                   {objects.length === 0 && !loadingObjects && (
                     <tr>
                       <td colSpan={4} className="px-4 py-8 text-center text-[#9B9B9B]">
@@ -430,13 +430,13 @@ export default function AdminStorageConfigPage() {
                   {objects.map((obj) => {
                     const name = obj.key.replace(prefix, '') || obj.key;
                     return (
-                      <tr key={obj.key} className="hover:bg-[#FAF9F5]/50">
+                      <tr key={obj.key} className="hover:bg-[#ffffff]/50">
                         <td className="px-4 py-2 font-mono text-xs break-all">
                           {obj.directory ? (
                             <button
                               type="button"
                               onClick={() => openFolder(obj.key)}
-                              className="text-[#D97757] hover:underline flex items-center gap-1"
+                              className="text-[#14b8a6] hover:underline flex items-center gap-1"
                             >
                               <FolderOpen className="w-3.5 h-3.5 shrink-0" />
                               {name}
@@ -490,12 +490,12 @@ export default function AdminStorageConfigPage() {
                 </tbody>
               </table>
               {truncated && (
-                <div className="p-3 border-t border-[#E8E6DC] text-center">
+                <div className="p-3 border-t border-[#e2e8f0] text-center">
                   <button
                     type="button"
                     disabled={loadingObjects || !nextToken}
                     onClick={() => void loadObjects(true, nextToken)}
-                    className="text-sm text-[#D97757] hover:underline disabled:opacity-50"
+                    className="text-sm text-[#14b8a6] hover:underline disabled:opacity-50"
                   >
                     Tải thêm…
                   </button>

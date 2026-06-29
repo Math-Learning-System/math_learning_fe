@@ -182,14 +182,14 @@ const StudentAssessmentsTab: React.FC<StudentAssessmentsTabProps> = ({ courseId,
         <div className="flex items-center gap-2">
           <button
             type="button"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
             onClick={clearFilters}
           >
             <X size={13} />
             Xóa bộ lọc
           </button>
           {filterLessonId && filteredAssessments.length < assessments.length && (
-            <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+            <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
               {filteredAssessments.length}/{assessments.length} bài kiểm tra
             </span>
           )}

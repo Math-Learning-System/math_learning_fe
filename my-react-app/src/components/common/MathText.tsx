@@ -94,7 +94,7 @@ function MarkdownOcrImage({
 
   if (failed) {
     return (
-      <span className="inline-block rounded border border-dashed border-[#D1CFC5] bg-[#FAF9F5] px-2 py-1 text-[12px] text-[#87867F]">
+      <span className="inline-block rounded border border-dashed border-[#cbd5e1] bg-[#ffffff] px-2 py-1 text-[12px] text-[#64748b]">
         [{alt || 'Hình minh họa — không tải được từ Mathpix CDN'}]
       </span>
     );

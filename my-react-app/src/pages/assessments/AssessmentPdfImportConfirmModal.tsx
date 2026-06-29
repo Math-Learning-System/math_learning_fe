@@ -36,7 +36,7 @@ export function AssessmentPdfImportConfirmModal({
   return (
     <Overlay onClose={onClose}>
       <div
-        className="relative z-[60] w-full max-w-lg rounded-2xl border border-[#E8E6DC] bg-white shadow-xl"
+        className="relative z-[60] w-full max-w-lg rounded-2xl border border-[#e2e8f0] bg-white shadow-xl"
         role="dialog"
         aria-modal="true"
         aria-labelledby="pdf-import-confirm-title"
@@ -84,15 +84,15 @@ export function AssessmentPdfImportConfirmModal({
 
 function ModalHeader({ onClose }: { onClose: () => void }) {
   return (
-    <div className="flex items-start justify-between gap-3 border-b border-[#E8E6DC] px-5 py-4">
+    <div className="flex items-start justify-between gap-3 border-b border-[#e2e8f0] px-5 py-4">
       <div>
         <h4
           id="pdf-import-confirm-title"
-          className="font-[Playfair_Display] text-[18px] font-medium text-[#141413]"
+          className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a]"
         >
           Xác nhận trước khi tạo đề
         </h4>
-        <p className="mt-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+        <p className="mt-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
           Chọn dạng PDF và cách xử lý nội dung. Danh mục do admin cấu hình.
         </p>
       </div>
@@ -121,10 +121,10 @@ function OptionGroup({
   return (
     <div>
       <div className="flex items-center gap-2">
-        <Icon className="h-4 w-4 text-[#87867F]" aria-hidden />
-        <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">{title}</p>
+        <Icon className="h-4 w-4 text-[#64748b]" aria-hidden />
+        <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">{title}</p>
       </div>
-      <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]">{hint}</p>
+      <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[11px] text-[#64748b]">{hint}</p>
       <div className="mt-2 space-y-2">
         {options.map((opt) => {
           const disabled = disabledOption?.(opt) ?? false;
@@ -134,10 +134,10 @@ function OptionGroup({
               key={opt.id}
               className={`flex cursor-pointer gap-3 rounded-xl border px-3 py-2.5 transition-colors ${
                 disabled
-                  ? 'cursor-not-allowed border-[#F0EEE6] bg-[#FAF9F5] opacity-60'
+                  ? 'cursor-not-allowed border-[#e2e8f0] bg-[#ffffff] opacity-60'
                   : selected
-                    ? 'border-[#C96442] bg-[#FFFBF8]'
-                    : 'border-[#E8E6DC] bg-white hover:border-[#D1CFC5]'
+                    ? 'border-[#0ea5e9] bg-[#FFFBF8]'
+                    : 'border-[#e2e8f0] bg-white hover:border-[#cbd5e1]'
               }`}
             >
               <input
@@ -149,16 +149,16 @@ function OptionGroup({
                 onChange={() => onChange(opt.id)}
               />
               <span>
-                <span className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413]">
+                <span className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a]">
                   {opt.label}
                   {disabled ? (
-                    <span className="ml-2 rounded-full bg-[#E8E6DC] px-1.5 py-0.5 text-[10px] font-semibold uppercase text-[#5E5D59]">
+                    <span className="ml-2 rounded-full bg-[#e2e8f0] px-1.5 py-0.5 text-[10px] font-semibold uppercase text-[#475569]">
                       Sắp có
                     </span>
                   ) : null}
                 </span>
                 {opt.description ? (
-                  <span className="mt-0.5 block font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]">
+                  <span className="mt-0.5 block font-[Be_Vietnam_Pro] text-[11px] text-[#64748b]">
                     {opt.description}
                   </span>
                 ) : null}
@@ -195,7 +195,7 @@ function Footer({
   confirmDisabled: boolean;
 }) {
   return (
-    <div className="flex flex-wrap items-center justify-end gap-2 border-t border-[#E8E6DC] px-5 py-4">
+    <div className="flex flex-wrap items-center justify-end gap-2 border-t border-[#e2e8f0] px-5 py-4">
       <button type="button" className="btn secondary" onClick={onClose} disabled={confirming}>
         Hủy
       </button>

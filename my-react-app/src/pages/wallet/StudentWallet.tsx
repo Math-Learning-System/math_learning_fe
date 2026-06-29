@@ -4056,21 +4056,21 @@ const StudentWallet: React.FC = () => {
           {/* Header — aligned with TeacherMindmaps */}
           <header className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] flex-shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] flex-shrink-0">
                 <Wallet className="w-5 h-5" aria-hidden />
               </div>
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2.5">
-                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                     Ví của tôi
                   </h1>
                   {!walletLoading && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                       {wallet?.transactionCount ?? transactions.length} giao dịch
                     </span>
                   )}
                 </div>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                   Quản lý số dư và theo dõi lịch sử giao dịch
                 </p>
               </div>
@@ -4078,7 +4078,7 @@ const StudentWallet: React.FC = () => {
             <div className="flex flex-wrap items-center gap-2">
               <button
                 type="button"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#6B8E9E] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#547E91] active:scale-[0.98] transition-colors duration-150 shadow-sm"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#6B8E9E] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#547E91] active:scale-[0.98] transition-colors duration-150 shadow-sm"
                 onClick={() => setShowWithdrawModal(true)}
               >
                 <FileText className="w-3.5 h-3.5" aria-hidden />
@@ -4086,7 +4086,7 @@ const StudentWallet: React.FC = () => {
               </button>
               <button
                 type="button"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                 onClick={exportCsv}
               >
                 <Download className="w-3.5 h-3.5" aria-hidden />
@@ -4137,7 +4137,7 @@ const StudentWallet: React.FC = () => {
             ).map(({ label, value, Icon, bg, color }) => (
               <div
                 key={label}
-                className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3 min-w-0"
+                className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3 min-w-0"
               >
                 <div
                   className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center flex-shrink-0`}
@@ -4145,10 +4145,10 @@ const StudentWallet: React.FC = () => {
                   <Icon className={`w-4 h-4 ${color}`} aria-hidden />
                 </div>
                 <div className="min-w-0">
-                  <p className="font-[Playfair_Display] text-[20px] sm:text-[22px] font-medium text-[#141413] leading-none truncate">
+                  <p className="font-[Playfair_Display] text-[20px] sm:text-[22px] font-medium text-[#0f172a] leading-none truncate">
                     {value}
                   </p>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">{label}</p>
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">{label}</p>
                 </div>
               </div>
             ))}
@@ -4686,13 +4686,13 @@ const StudentWallet: React.FC = () => {
             <div className="transactions-head">
               <div className="flex w-full min-w-0 flex-col gap-3">
                 <div className="flex w-full min-w-0 flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:gap-4">
-                  <div className="flex w-fit max-w-full flex-shrink-0 flex-wrap items-center gap-1 rounded-xl bg-[#F5F4ED] p-1">
+                  <div className="flex w-fit max-w-full flex-shrink-0 flex-wrap items-center gap-1 rounded-xl bg-[#f8fafc] p-1">
                     <button
                       type="button"
                       className={`rounded-lg px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                         activeTab === 'transactions'
-                          ? 'bg-white text-[#141413] shadow-sm'
-                          : 'text-[#87867F] hover:text-[#5E5D59]'
+                          ? 'bg-white text-[#0f172a] shadow-sm'
+                          : 'text-[#64748b] hover:text-[#475569]'
                       }`}
                       onClick={() => setActiveTab('transactions')}
                     >
@@ -4702,8 +4702,8 @@ const StudentWallet: React.FC = () => {
                       type="button"
                       className={`rounded-lg px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                         activeTab === 'orders'
-                          ? 'bg-white text-[#141413] shadow-sm'
-                          : 'text-[#87867F] hover:text-[#5E5D59]'
+                          ? 'bg-white text-[#0f172a] shadow-sm'
+                          : 'text-[#64748b] hover:text-[#475569]'
                       }`}
                       onClick={() => setActiveTab('orders')}
                     >
@@ -4713,8 +4713,8 @@ const StudentWallet: React.FC = () => {
                       type="button"
                       className={`rounded-lg px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                         activeTab === 'withdrawals'
-                          ? 'bg-white text-[#141413] shadow-sm'
-                          : 'text-[#87867F] hover:text-[#5E5D59]'
+                          ? 'bg-white text-[#0f172a] shadow-sm'
+                          : 'text-[#64748b] hover:text-[#475569]'
                       }`}
                       onClick={() => setActiveTab('withdrawals')}
                     >
@@ -4724,9 +4724,9 @@ const StudentWallet: React.FC = () => {
 
                   {activeTab === 'transactions' && (
                     <div className="flex w-full min-w-0 flex-col gap-2 sm:flex-row sm:items-stretch lg:flex-1 lg:justify-end lg:min-w-0">
-                      <label className="flex h-10 min-h-[40px] w-full min-w-0 flex-1 items-center gap-2.5 rounded-xl border border-[#E8E6DC] bg-white px-3.5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-[box-shadow,border-color] duration-150 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] sm:flex-1 lg:max-w-[17.5rem] lg:flex-initial">
+                      <label className="flex h-10 min-h-[40px] w-full min-w-0 flex-1 items-center gap-2.5 rounded-xl border border-[#e2e8f0] bg-white px-3.5 shadow-[0_1px_2px_rgba(0,0,0,0.04)] transition-[box-shadow,border-color] duration-150 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] sm:flex-1 lg:max-w-[17.5rem] lg:flex-initial">
                         <Search
-                          className="h-4 w-4 shrink-0 text-[#87867F]"
+                          className="h-4 w-4 shrink-0 text-[#64748b]"
                           aria-hidden
                         />
                         <input
@@ -4734,7 +4734,7 @@ const StudentWallet: React.FC = () => {
                           autoComplete="off"
                           placeholder="Tìm theo mã giao dịch..."
                           value={searchTerm}
-                          className="min-h-0 min-w-0 flex-1 bg-transparent font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none placeholder:text-[#B0AEA5]"
+                          className="min-h-0 min-w-0 flex-1 bg-transparent font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none placeholder:text-[#94a3b8]"
                           onChange={(e) => {
                             setSearchTerm(e.target.value);
                             setPage(1);
@@ -4743,13 +4743,13 @@ const StudentWallet: React.FC = () => {
                       </label>
                       <div className="relative flex h-10 min-h-[40px] w-full shrink-0 items-center sm:w-[min(100%,11.25rem)] lg:w-44">
                         <ListFilter
-                          className="pointer-events-none absolute left-3 z-[1] h-4 w-4 text-[#87867F]"
+                          className="pointer-events-none absolute left-3 z-[1] h-4 w-4 text-[#64748b]"
                           aria-hidden
                         />
                         <select
                           value={statusFilter}
                           aria-label="Lọc theo trạng thái giao dịch"
-                          className="h-full w-full cursor-pointer appearance-none rounded-xl border border-[#E8E6DC] bg-white py-2 pr-9 pl-9 font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] shadow-[0_1px_2px_rgba(0,0,0,0.04)] outline-none transition-[box-shadow,border-color] duration-150 focus:border-[#6B8E9E] focus:shadow-[0_0_0_3px_rgba(91,130,145,0.14)]"
+                          className="h-full w-full cursor-pointer appearance-none rounded-xl border border-[#e2e8f0] bg-white py-2 pr-9 pl-9 font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] shadow-[0_1px_2px_rgba(0,0,0,0.04)] outline-none transition-[box-shadow,border-color] duration-150 focus:border-[#6B8E9E] focus:shadow-[0_0_0_3px_rgba(91,130,145,0.14)]"
                           onChange={(e) =>
                             setStatusFilter(e.target.value as TransactionStatusFilter)
                           }
@@ -4761,7 +4761,7 @@ const StudentWallet: React.FC = () => {
                           <option value="cancelled">Đã hủy</option>
                         </select>
                         <ChevronDown
-                          className="pointer-events-none absolute right-2.5 top-1/2 z-[1] h-4 w-4 -translate-y-1/2 text-[#87867F]"
+                          className="pointer-events-none absolute right-2.5 top-1/2 z-[1] h-4 w-4 -translate-y-1/2 text-[#64748b]"
                           aria-hidden
                         />
                       </div>
@@ -4770,8 +4770,8 @@ const StudentWallet: React.FC = () => {
                 </div>
 
                 {activeTab === 'transactions' && (
-                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl border border-[#F0EEE6] bg-white px-3 py-2 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
-                    <p className="m-0 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                  <div className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl border border-[#e2e8f0] bg-white px-3 py-2 shadow-[0_1px_2px_rgba(0,0,0,0.03)]">
+                    <p className="m-0 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                       Tổng nạp thành công:{' '}
                       <strong className="font-semibold text-[#2EAD7A]">
                         {formatCurrency(totalDeposit)} VND

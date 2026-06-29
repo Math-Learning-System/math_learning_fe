@@ -72,7 +72,7 @@ const QUESTION_TYPE_LABEL: Record<string, string> = {
 const PAGE_SIZE_OPTIONS = [10, 20, 30, 50];
 
 const selectCls =
-  'w-full lg:w-auto lg:min-w-[168px] border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none bg-white transition-colors focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] disabled:bg-[#F5F4ED] disabled:text-[#87867F]';
+  'w-full lg:w-auto lg:min-w-[168px] border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none bg-white transition-colors focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] disabled:bg-[#f8fafc] disabled:text-[#64748b]';
 
 export function QuestionBankDetailPage() {
   const { bankId } = useParams<{ bankId: string }>();
@@ -274,37 +274,37 @@ export function QuestionBankDetailPage() {
             <button
               type="button"
               onClick={() => navigate('/teacher/question-banks')}
-              className="inline-flex items-center gap-1 font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#87867F] hover:text-[#141413] transition-colors -mt-1 mb-1"
+              className="inline-flex items-center gap-1 font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#64748b] hover:text-[#0f172a] transition-colors -mt-1 mb-1"
             >
               <ChevronLeft className="w-4 h-4" aria-hidden />
               Tất cả ngân hàng
             </button>
 
-            <div className="rounded-2xl border border-[#E8E6DC] bg-white shadow-[rgba(0,0,0,0.04)_0px_4px_24px] overflow-hidden">
+            <div className="rounded-2xl border border-[#e2e8f0] bg-white shadow-[rgba(0,0,0,0.04)_0px_4px_24px] overflow-hidden">
               <div className="p-5 lg:p-6 flex flex-col gap-5">
                 <div className="flex flex-col xl:flex-row xl:items-start gap-5 xl:justify-between">
                   <div className="flex gap-3 min-w-0">
-                    <div className="w-11 h-11 lg:w-12 lg:h-12 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] flex-shrink-0">
+                    <div className="w-11 h-11 lg:w-12 lg:h-12 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] flex-shrink-0">
                       <Database className="w-5 h-5 lg:w-6 lg:h-6" aria-hidden />
                     </div>
                     <div className="min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-2">
-                        <h1 className="font-[Playfair_Display] text-xl sm:text-[22px] font-medium text-[#141413] leading-tight">
+                        <h1 className="font-[Playfair_Display] text-xl sm:text-[22px] font-medium text-[#0f172a] leading-tight">
                           {bank.name}
                         </h1>
                       </div>
                       <div className="mt-1.5 space-y-1.5 max-w-3xl">
                         {bank.description?.trim() ? (
                           <>
-                            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] leading-relaxed">
+                            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569] leading-relaxed">
                               {bank.description.trim()}
                             </p>
-                            <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#B0AEA5]">
+                            <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#94a3b8]">
                               {(bank.questionCount ?? 0).toLocaleString('vi-VN')} câu hỏi trong ngân hàng
                             </p>
                           </>
                         ) : (
-                          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] leading-relaxed">
+                          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] leading-relaxed">
                             Ngân hàng có {(bank.questionCount ?? 0).toLocaleString('vi-VN')} câu hỏi.
                           </p>
                         )}
@@ -315,7 +315,7 @@ export function QuestionBankDetailPage() {
                   <div className="flex flex-wrap gap-2 xl:justify-end xl:flex-shrink-0">
                     <button
                       type="button"
-                      className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                      className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                       onClick={() => {
                         void refetch();
                         void refetchQuestions();
@@ -326,7 +326,7 @@ export function QuestionBankDetailPage() {
                     </button>
                     <button
                       type="button"
-                      className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                      className="inline-flex items-center justify-center gap-2 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                       onClick={() => setFormOpen(true)}
                     >
                       <Pencil className="w-3.5 h-3.5" aria-hidden />
@@ -343,21 +343,21 @@ export function QuestionBankDetailPage() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-4 border-t border-[#F0EEE6]">
-                  <div className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] p-3 flex items-center gap-3">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-4 border-t border-[#e2e8f0]">
+                  <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-3 flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-[#EEF2FF] flex items-center justify-center flex-shrink-0">
                       <ListChecks className="w-4 h-4 text-[#4F7EF7]" aria-hidden />
                     </div>
                     <div className="min-w-0">
-                      <p className="font-[Playfair_Display] text-lg font-medium text-[#141413] leading-none tabular-nums">
+                      <p className="font-[Playfair_Display] text-lg font-medium text-[#0f172a] leading-none tabular-nums">
                         {(bank.questionCount ?? 0).toLocaleString('vi-VN')}
                       </p>
-                      <p className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] mt-1">
+                      <p className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] mt-1">
                         Câu hỏi
                       </p>
                     </div>
                   </div>
-                  <div className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] p-3 flex items-center gap-3">
+                  <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-3 flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-[#ECFDF5] flex items-center justify-center flex-shrink-0">
                       <GraduationCap className="w-4 h-4 text-[#2EAD7A]" aria-hidden />
                     </div>
@@ -365,42 +365,42 @@ export function QuestionBankDetailPage() {
                       <p
                         className={`font-[Be_Vietnam_Pro] text-[13px] font-semibold leading-tight truncate ${
                           bank.schoolGradeName || bank.gradeLevel != null
-                            ? 'text-[#141413]'
-                            : 'text-[#B0AEA5]'
+                            ? 'text-[#0f172a]'
+                            : 'text-[#94a3b8]'
                         }`}
                       >
                         {bank.schoolGradeName ??
                           (bank.gradeLevel != null ? `Lớp ${bank.gradeLevel}` : 'Chưa gắn lớp')}
                       </p>
-                      <p className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] mt-1">Lớp</p>
+                      <p className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] mt-1">Lớp</p>
                     </div>
                   </div>
-                  <div className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] p-3 flex items-center gap-3">
+                  <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-3 flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-[#FFF7ED] flex items-center justify-center flex-shrink-0">
                       <BookOpen className="w-4 h-4 text-[#E07B39]" aria-hidden />
                     </div>
                     <div className="min-w-0">
                       <p
                         className={`font-[Be_Vietnam_Pro] text-[13px] font-semibold leading-tight truncate ${
-                          bank.subjectName ? 'text-[#141413]' : 'text-[#B0AEA5]'
+                          bank.subjectName ? 'text-[#0f172a]' : 'text-[#94a3b8]'
                         }`}
                       >
                         {bank.subjectName ?? 'Chưa gắn môn'}
                       </p>
-                      <p className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] mt-1">
+                      <p className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] mt-1">
                         Môn học
                       </p>
                     </div>
                   </div>
-                  <div className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] p-3 flex items-center gap-3">
+                  <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-3 flex items-center gap-3">
                     <div className="w-9 h-9 rounded-xl bg-[#F5F3FF] flex items-center justify-center flex-shrink-0">
                       <User className="w-4 h-4 text-[#9B6FE0]" aria-hidden />
                     </div>
                     <div className="min-w-0">
-                      <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] leading-tight truncate">
+                      <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] leading-tight truncate">
                         {bank.teacherName || 'Không xác định'}
                       </p>
-                      <p className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] mt-1">
+                      <p className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] mt-1">
                         Giáo viên
                       </p>
                     </div>
@@ -410,7 +410,7 @@ export function QuestionBankDetailPage() {
             </div>
 
             <div
-              className="inline-flex p-1 bg-[#F5F4ED] rounded-xl gap-0.5 flex-wrap"
+              className="inline-flex p-1 bg-[#f8fafc] rounded-xl gap-0.5 flex-wrap"
               role="tablist"
               aria-label="Chế độ xem"
             >
@@ -420,8 +420,8 @@ export function QuestionBankDetailPage() {
                 aria-selected={activeTab === 'matrix'}
                 className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg font-[Be_Vietnam_Pro] text-[13px] font-medium transition-all duration-150 ${
                   activeTab === 'matrix'
-                    ? 'bg-white text-[#141413] shadow-sm'
-                    : 'text-[#87867F] hover:text-[#5E5D59]'
+                    ? 'bg-white text-[#0f172a] shadow-sm'
+                    : 'text-[#64748b] hover:text-[#475569]'
                 }`}
                 onClick={() => setActiveTab('matrix')}
               >
@@ -434,8 +434,8 @@ export function QuestionBankDetailPage() {
                 aria-selected={activeTab === 'all'}
                 className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg font-[Be_Vietnam_Pro] text-[13px] font-medium transition-all duration-150 ${
                   activeTab === 'all'
-                    ? 'bg-white text-[#141413] shadow-sm'
-                    : 'text-[#87867F] hover:text-[#5E5D59]'
+                    ? 'bg-white text-[#0f172a] shadow-sm'
+                    : 'text-[#64748b] hover:text-[#475569]'
                 }`}
                 onClick={() => setActiveTab('all')}
               >
@@ -445,7 +445,7 @@ export function QuestionBankDetailPage() {
                   className={`tabular-nums text-[11px] font-bold px-1.5 py-0.5 rounded-full ${
                     activeTab === 'all'
                       ? 'bg-[#EEF2FF] text-[#4F7EF7]'
-                      : 'bg-[#E8E6DC] text-[#5E5D59]'
+                      : 'bg-[#e2e8f0] text-[#475569]'
                   }`}
                 >
                   {(bank.questionCount ?? 0).toLocaleString('vi-VN')}
@@ -488,10 +488,10 @@ export function QuestionBankDetailPage() {
               <>
                 <div className="flex flex-col gap-3">
                   <div className="flex flex-col lg:flex-row lg:items-center gap-3">
-                    <label className="flex-1 w-full flex items-center gap-3 bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-4 py-2.5 focus-within:border-[#C96442] focus-within:shadow-[0_0_0_3px_rgba(201,100,66,0.12)] transition-all duration-150">
-                      <Search className="text-[#87867F] w-4 h-4 flex-shrink-0" aria-hidden />
+                    <label className="flex-1 w-full flex items-center gap-3 bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-4 py-2.5 focus-within:border-[#0ea5e9] focus-within:shadow-[0_0_0_3px_rgba(14,165,233,0.12)] transition-all duration-150">
+                      <Search className="text-[#64748b] w-4 h-4 flex-shrink-0" aria-hidden />
                       <input
-                        className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] bg-transparent outline-none min-w-0"
+                        className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] bg-transparent outline-none min-w-0"
                         placeholder="Tìm trong trang hiện tại..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
@@ -502,7 +502,7 @@ export function QuestionBankDetailPage() {
                           type="button"
                           aria-label="Xóa tìm kiếm"
                           onClick={() => setSearch('')}
-                          className="text-[#87867F] hover:text-[#141413] transition-colors flex-shrink-0"
+                          className="text-[#64748b] hover:text-[#0f172a] transition-colors flex-shrink-0"
                         >
                           <X className="w-4 h-4" />
                         </button>
@@ -510,7 +510,7 @@ export function QuestionBankDetailPage() {
                     </label>
                     <button
                       type="button"
-                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 whitespace-nowrap lg:flex-shrink-0"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 whitespace-nowrap lg:flex-shrink-0"
                       onClick={() => {
                         setBucketContext(null);
                         setAddModalOpen(true);
@@ -563,7 +563,7 @@ export function QuestionBankDetailPage() {
                     {hasFilters && (
                       <button
                         type="button"
-                        className="inline-flex items-center justify-center px-3 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors sm:ml-auto"
+                        className="inline-flex items-center justify-center px-3 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors sm:ml-auto"
                         onClick={() => {
                           setSearch('');
                           setStatusFilter('ALL');

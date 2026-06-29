@@ -280,16 +280,16 @@ export default function TeacherQuestionManagementPage() {
           {/* ── Page header (TeacherMindmaps pattern) ── */}
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                 <ClipboardList className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2.5">
-                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                     Câu hỏi của tôi
                   </h1>
                   {!isLoading && !isError && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                       {totalElements}
                     </span>
                   )}
@@ -300,7 +300,7 @@ export default function TeacherQuestionManagementPage() {
               <button
                 type="button"
                 onClick={openingCreateModal}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
               >
                 <Plus className="w-3.5 h-3.5" />
                 Tạo câu hỏi
@@ -344,16 +344,16 @@ export default function TeacherQuestionManagementPage() {
             ).map(({ label, value, Icon, bg, color }) => (
               <div
                 key={label}
-                className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3"
+                className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3"
               >
                 <div className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center flex-shrink-0`}>
                   <Icon className={`w-4 h-4 ${color}`} />
                 </div>
                 <div>
-                  <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none">
+                  <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none">
                     {isLoading ? '…' : value}
                   </p>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">{label}</p>
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">{label}</p>
                 </div>
               </div>
             ))}
@@ -366,7 +366,7 @@ export default function TeacherQuestionManagementPage() {
                 key={key}
                 type="button"
                 onClick={onClick}
-                className="group flex items-center gap-3 w-full text-left p-4 rounded-2xl bg-white border border-[#E8E6DC] hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] hover:-translate-y-0.5 transition-all duration-200"
+                className="group flex items-center gap-3 w-full text-left p-4 rounded-2xl bg-white border border-[#e2e8f0] hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] hover:-translate-y-0.5 transition-all duration-200"
               >
                 <div
                   className={`w-9 h-9 rounded-xl ${iconBg} flex items-center justify-center flex-shrink-0`}
@@ -374,14 +374,14 @@ export default function TeacherQuestionManagementPage() {
                   <Icon className={`w-4 h-4 ${iconColor}`} />
                 </div>
                 <span className="flex-1 min-w-0">
-                  <span className="block font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413]">
+                  <span className="block font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a]">
                     {title}
                   </span>
-                  <span className="block font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5 leading-snug">
+                  <span className="block font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5 leading-snug">
                     {desc}
                   </span>
                 </span>
-                <ArrowRight className="w-4 h-4 text-[#B0AEA5] flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:text-[#C96442]" />
+                <ArrowRight className="w-4 h-4 text-[#94a3b8] flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:text-[#0ea5e9]" />
               </button>
             ))}
           </div>
@@ -408,10 +408,10 @@ export default function TeacherQuestionManagementPage() {
 
           {/* ── Toolbar ── */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-            <label className="flex-1 w-full flex items-center gap-3 bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150">
-              <Search className="text-[#87867F] w-4 h-4 flex-shrink-0" />
+            <label className="flex-1 w-full flex items-center gap-3 bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150">
+              <Search className="text-[#64748b] w-4 h-4 flex-shrink-0" />
               <input
-                className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] bg-transparent outline-none"
+                className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] bg-transparent outline-none"
                 placeholder="Tìm theo nội dung câu hỏi..."
                 value={searchName}
                 onChange={(e) => setSearchName(e.target.value)}
@@ -421,7 +421,7 @@ export default function TeacherQuestionManagementPage() {
                   type="button"
                   aria-label="Xóa tìm kiếm"
                   onClick={() => setSearchName('')}
-                  className="text-[#87867F] hover:text-[#141413] transition-colors"
+                  className="text-[#64748b] hover:text-[#0f172a] transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -431,7 +431,7 @@ export default function TeacherQuestionManagementPage() {
               aria-label="Lọc theo trạng thái"
               value={filterStatus}
               onChange={(e) => setFilterStatus(e.target.value as StatusFilter)}
-              className="px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] focus:border-[#3898EC] focus:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] outline-none transition-all duration-150 flex-shrink-0"
+              className="px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] focus:border-[#3898EC] focus:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] outline-none transition-all duration-150 flex-shrink-0"
             >
               <option value="ALL">Tất cả trạng thái</option>
               <option value="UNDER_REVIEW">Chờ duyệt</option>
@@ -441,7 +441,7 @@ export default function TeacherQuestionManagementPage() {
               type="button"
               onClick={() => void refetch()}
               disabled={isLoading}
-              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
+              className="flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
             >
               <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin' : ''}`} />
               Làm mới
@@ -450,17 +450,17 @@ export default function TeacherQuestionManagementPage() {
 
           {/* ── Summary bar ── */}
           {!isLoading && !isError && displayedQuestions.length > 0 && (
-            <div className="flex flex-wrap items-center gap-4 px-4 py-3 rounded-xl bg-[#FAF9F5] border border-[#E8E6DC]">
-              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] uppercase tracking-wide">
+            <div className="flex flex-wrap items-center gap-4 px-4 py-3 rounded-xl bg-[#ffffff] border border-[#e2e8f0]">
+              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] uppercase tracking-wide">
                 Hiển thị
               </span>
-              <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+              <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                 {displayedQuestions.length} / {totalElements}
               </strong>
-              <div className="w-px h-4 bg-[#E8E6DC] hidden sm:block" />
-              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+              <div className="w-px h-4 bg-[#e2e8f0] hidden sm:block" />
+              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                 Trang{' '}
-                <strong className="text-[#141413] font-semibold">
+                <strong className="text-[#0f172a] font-semibold">
                   {page + 1} / {Math.max(totalPages, 1)}
                 </strong>
               </span>
@@ -473,7 +473,7 @@ export default function TeacherQuestionManagementPage() {
               {[1, 2, 3, 4, 5].map((i) => (
                 <div
                   key={i}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-[88px] animate-pulse"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-[88px] animate-pulse"
                 />
               ))}
             </div>
@@ -491,7 +491,7 @@ export default function TeacherQuestionManagementPage() {
               <button
                 type="button"
                 onClick={() => void refetch()}
-                className="mt-1 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] active:scale-[0.98] transition-all duration-150"
+                className="mt-1 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] active:scale-[0.98] transition-all duration-150"
               >
                 Thử lại
               </button>
@@ -501,10 +501,10 @@ export default function TeacherQuestionManagementPage() {
           {/* ── Empty ── */}
           {!isLoading && !isError && displayedQuestions.length === 0 && (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#B0AEA5]">
+              <div className="w-12 h-12 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#94a3b8]">
                 {hasFilter ? <Search className="w-6 h-6" /> : <FileQuestion className="w-6 h-6" />}
               </div>
-              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center">
+              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center">
                 {hasFilter
                   ? 'Không có câu hỏi phù hợp với bộ lọc hoặc từ khóa.'
                   : 'Chưa có câu hỏi nào. Hãy tạo câu hỏi hoặc nhập từ Excel.'}
@@ -518,7 +518,7 @@ export default function TeacherQuestionManagementPage() {
                     setFilterSubjectId('');
                     setFilterChapterId('');
                   }}
-                  className="mt-1 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                  className="mt-1 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                 >
                   Xóa bộ lọc
                 </button>
@@ -526,7 +526,7 @@ export default function TeacherQuestionManagementPage() {
                 <button
                   type="button"
                   onClick={openingCreateModal}
-                  className="mt-1 flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] active:scale-[0.98] transition-all duration-150"
+                  className="mt-1 flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] active:scale-[0.98] transition-all duration-150"
                 >
                   Tạo câu hỏi <ArrowRight className="w-3.5 h-3.5" />
                 </button>
@@ -540,23 +540,23 @@ export default function TeacherQuestionManagementPage() {
               {displayedQuestions.map((question) => (
                 <article
                   key={question.id}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] p-4 flex flex-col lg:flex-row lg:items-center gap-4 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] p-4 flex flex-col lg:flex-row lg:items-center gap-4 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150"
                 >
                   <div className="flex items-start gap-3 flex-1 min-w-0">
                     <div className="w-11 h-11 rounded-xl bg-[#EEF2FF] flex items-center justify-center flex-shrink-0 text-[#4F7EF7]">
                       <FileQuestion className="w-5 h-5" />
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col gap-2">
-                      <div className="font-[Be_Vietnam_Pro] text-[14px] text-[#141413] leading-snug line-clamp-2 [&_.katex]:text-[13px]">
+                      <div className="font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] leading-snug line-clamp-2 [&_.katex]:text-[13px]">
                         <MathText text={question.questionText} />
                       </div>
                       <div className="flex flex-wrap gap-2 items-center">
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-white border border-[#E8E6DC] font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#5E5D59]">
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-white border border-[#e2e8f0] font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#475569]">
                           {QUESTION_TYPE_LABEL[question.questionType] ?? question.questionType}
                         </span>
                         <QbCognitiveBadge level={question.cognitiveLevel} variant="long" />
                         <QbQuestionStatusBadge status={question.questionStatus} />
-                        <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#B0AEA5]">
+                        <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#94a3b8]">
                           Cập nhật {formatDate(question.updatedAt)}
                         </span>
                       </div>
@@ -576,7 +576,7 @@ export default function TeacherQuestionManagementPage() {
                     )}
                     <button
                       type="button"
-                      className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors inline-flex items-center gap-1.5"
+                      className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors inline-flex items-center gap-1.5"
                       onClick={() => openingEditModal(question)}
                     >
                       <Edit3 className="w-3.5 h-3.5" />

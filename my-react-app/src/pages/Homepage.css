@@ -8,20 +8,20 @@
 
 /* ── Design Tokens ── */
 :root {
-  --c-primary: #c96442;
-  --c-primary-soft: rgba(201, 100, 66, 0.12);
-  --c-primary-glow: rgba(201, 100, 66, 0.2);
-  --c-dark: #0e0c15;
-  --c-dark-alt: #1a1725;
-  --c-bg: #fafaff;
+  --c-primary: #0ea5e9;
+  --c-primary-soft: rgba(14, 165, 233, 0.12);
+  --c-primary-glow: rgba(14, 165, 233, 0.2);
+  --c-dark: #0f172a;
+  --c-dark-alt: #1e293b;
+  --c-bg: #f8fafc;
   --c-surface: #ffffff;
-  --c-text-1: #0e0c15;
-  --c-text-2: #3f3a52;
-  --c-text-3: #756b85;
-  --c-border: #e8e5f0;
-  --c-border-soft: #f0edf8;
-  --c-accent-pink: #ff98e2;
-  --c-accent-gold: #ffc876;
+  --c-text-1: #0f172a;
+  --c-text-2: #334155;
+  --c-text-3: #64748b;
+  --c-border: #e2e8f0;
+  --c-border-soft: #cbd5e1;
+  --c-accent-pink: #38bdf8;
+  --c-accent-gold: #fbbf24;
   --f-heading: 'Be Vietnam Pro', -apple-system, sans-serif;
   --f-body: 'Be Vietnam Pro', -apple-system, sans-serif;
   --r-sm: 12px;
@@ -186,7 +186,7 @@
   font-size: 3rem;
   font-weight: 600;
   line-height: 60px;
-  color: #0e0c15;
+  color: #0f172a;
   margin-bottom: 2.5rem;
   text-align: left;
   width: 100%;
@@ -209,7 +209,7 @@
 }
 
 .unique-approach__title .text-accent {
-  color: #c96442;
+  color: #0ea5e9;
   position: relative;
 }
 
@@ -259,7 +259,7 @@
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #0e0c15;
+  color: #0f172a;
   margin-bottom: 0.5rem;
 }
 
@@ -271,8 +271,8 @@
 }
 
 .step-badge--1 {
-  background-color: #c96442;
-  color: #141413;
+  background-color: #0ea5e9;
+  color: #0f172a;
 }
 
 .step-badge--2 {
@@ -287,7 +287,7 @@
   font-family: 'Be Vietnam Pro', 'Sora', sans-serif;
   font-size: 32px;
   line-height: 40px;
-  color: #0e0c15;
+  color: #0f172a;
   margin: 0;
 }
 
@@ -443,7 +443,7 @@
 }
 
 .intro-title-accent {
-  color: #c96442;
+  color: #0ea5e9;
 }
 
 .intro-description {
@@ -526,7 +526,7 @@
   position: absolute;
   font-family: 'Be Vietnam Pro', system-ui, sans-serif;
   font-weight: 700;
-  color: #c96442;
+  color: #0ea5e9;
   pointer-events: none;
   will-change: transform;
   z-index: 1;
@@ -631,7 +631,7 @@
   left: 28%;
   width: 100px;
   height: 100px;
-  color: #c96442;
+  color: #0ea5e9;
   opacity: 0.55;
   animation: mathFloat 14s ease-in-out infinite;
 }
@@ -664,7 +664,7 @@
   right: 8%;
   width: 130px;
   height: 130px;
-  color: #c96442;
+  color: #0ea5e9;
   opacity: 0.5;
   animation: mathFloat 10s ease-in-out infinite 4s;
 }
@@ -1106,7 +1106,7 @@
 .ft-card:hover {
   transform: translateY(-8px);
   box-shadow:
-    0 4px 16px rgba(201, 100, 66, 0.12),
+    0 4px 16px rgba(14, 165, 233, 0.12),
     0 12px 40px rgba(94, 92, 230, 0.1);
   border-color: rgba(94, 92, 230, 0.12);
 }
@@ -1154,28 +1154,28 @@
 }
 
 .ft-badge--purple {
-  background: #141413;
-  color: #faf9f5;
+  background: #0f172a;
+  color: #ffffff;
 }
 .ft-badge--blue {
   background: rgba(59, 130, 246, 0.1);
-  color: #141413;
+  color: #0f172a;
 }
 .ft-badge--green {
   background: rgba(16, 185, 129, 0.1);
-  color: #141413;
+  color: #0f172a;
 }
 .ft-badge--orange {
   background: rgba(245, 158, 11, 0.1);
-  color: #141413;
+  color: #0f172a;
 }
 .ft-badge--pink {
   background: rgba(236, 72, 153, 0.1);
-  color: #141413;
+  color: #0f172a;
 }
 .ft-badge--teal {
   background: rgba(20, 184, 166, 0.1);
-  color: #141413;
+  color: #0f172a;
 }
 
 /* ── Icon ── */
@@ -1203,27 +1203,27 @@
 
 .ft-icon--purple {
   background: linear-gradient(135deg, rgba(94, 92, 230, 0.12), rgba(133, 141, 255, 0.18));
-  color: #141413;
+  color: #0f172a;
 }
 .ft-icon--blue {
   background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(96, 165, 250, 0.18));
-  color: #141413;
+  color: #0f172a;
 }
 .ft-icon--green {
   background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(52, 211, 153, 0.18));
-  color: #141413;
+  color: #0f172a;
 }
 .ft-icon--orange {
   background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(251, 191, 36, 0.18));
-  color: #141413;
+  color: #0f172a;
 }
 .ft-icon--pink {
   background: linear-gradient(135deg, rgba(236, 72, 153, 0.12), rgba(244, 114, 182, 0.18));
-  color: #141413;
+  color: #0f172a;
 }
 .ft-icon--teal {
   background: linear-gradient(135deg, rgba(20, 184, 166, 0.12), rgba(45, 212, 191, 0.18));
-  color: #141413;
+  color: #0f172a;
 }
 
 /* ── Title ── */

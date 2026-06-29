@@ -97,16 +97,16 @@ export function AssessmentPdfReviewWorkspace({
     documentQuery.isLoading && !resolved.latex && pageCount === 0;
 
   return (
-    <article className="bg-white rounded-2xl border border-[#E8E6DC] overflow-hidden">
-      <header className="px-4 py-4 lg:px-6 lg:py-5 border-b border-[#F0EEE6] bg-[#FAF9F5]">
+    <article className="bg-white rounded-2xl border border-[#e2e8f0] overflow-hidden">
+      <header className="px-4 py-4 lg:px-6 lg:py-5 border-b border-[#e2e8f0] bg-[#ffffff]">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#141413] m-0 flex items-center gap-2">
-              <FileText className="h-4 w-4 text-[#C96442]" aria-hidden />
+            <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#0f172a] m-0 flex items-center gap-2">
+              <FileText className="h-4 w-4 text-[#0ea5e9]" aria-hidden />
               Rà soát nội dung PDF
               {pageCount > 0 ? ` (${pageCount} trang OCR)` : ''}
             </h3>
-            <p className="mt-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] m-0 max-w-[70ch]">
+            <p className="mt-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] m-0 max-w-[70ch]">
               Toàn bộ đề gộp thành một khối LaTeX — chỉnh bên trái, xem trước bên phải.
             </p>
           </div>
@@ -145,12 +145,12 @@ export function AssessmentPdfReviewWorkspace({
 
       <div className="p-4 lg:p-6 grid gap-4 lg:grid-cols-2 lg:gap-6 min-h-[320px]">
         <div className="flex flex-col min-h-[280px]">
-          <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59] m-0 mb-2">
+          <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569] m-0 mb-2">
             LaTeX / Markdown
             {pageCount > 0 ? ` (đã gộp ${pageCount} trang)` : ''}
           </p>
           {loadingOcr ? (
-            <div className="flex flex-1 items-center justify-center gap-2 text-[#87867F] text-[13px]">
+            <div className="flex flex-1 items-center justify-center gap-2 text-[#64748b] text-[13px]">
               <Loader2 className="h-5 w-5 animate-spin" aria-hidden />
               Đang tải nội dung OCR…
             </div>
@@ -173,17 +173,17 @@ export function AssessmentPdfReviewWorkspace({
           )}
         </div>
 
-        <div className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] p-4 flex flex-col min-h-[280px]">
-          <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59] m-0 mb-3 shrink-0">
+        <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-4 flex flex-col min-h-[280px]">
+          <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569] m-0 mb-3 shrink-0">
             Xem trước
           </p>
           <div className="flex-1 overflow-y-auto pr-1 min-h-0">
             {loadingOcr ? (
-              <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] m-0">Đang tải…</p>
+              <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] m-0">Đang tải…</p>
             ) : latex.trim() ? (
               <MathText text={latex} />
             ) : (
-              <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] m-0">
+              <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] m-0">
                 Chưa có nội dung OCR để xem trước.
               </p>
             )}

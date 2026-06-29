@@ -104,16 +104,16 @@ const FeedbackSubmitPage: React.FC = () => {
 
   return (
     <DashboardLayout role={role} user={{ name: '', avatar: '', role }} notificationCount={0}>
-      <div className="p-6 lg:p-8 bg-[#F5F4ED] min-h-screen">
+      <div className="p-6 lg:p-8 bg-[#f8fafc] min-h-screen">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <section className="lg:col-span-7 bg-[#FAF9F5] border border-[#F0EEE6] rounded-2xl p-6 shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
+          <section className="lg:col-span-7 bg-[#ffffff] border border-[#e2e8f0] rounded-2xl p-6 shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] text-[#5E5D59] flex items-center justify-center">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] text-[#475569] flex items-center justify-center">
                 <MessageSquareWarning className="w-5 h-5" />
               </div>
               <div>
-                <h1 className="text-[24px] font-semibold text-[#141413]">Góp ý</h1>
-                <p className="text-[14px] text-[#87867F]">
+                <h1 className="text-[24px] font-semibold text-[#0f172a]">Góp ý</h1>
+                <p className="text-[14px] text-[#64748b]">
                   Gửi phản hồi về tính năng, lỗi hoặc trải nghiệm sử dụng.
                 </p>
               </div>
@@ -121,7 +121,7 @@ const FeedbackSubmitPage: React.FC = () => {
 
             <form onSubmit={onSubmit} className="space-y-4">
               <div>
-                <label htmlFor="feedback-title" className="block text-[13px] font-medium text-[#5E5D59] mb-1.5">
+                <label htmlFor="feedback-title" className="block text-[13px] font-medium text-[#475569] mb-1.5">
                   Tiêu đề
                 </label>
                 <input
@@ -129,18 +129,18 @@ const FeedbackSubmitPage: React.FC = () => {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="Ví dụ: Khó theo dõi tiến độ bài tập"
-                  className="w-full rounded-xl border border-[#E8E6DC] bg-white px-3.5 py-2.5 text-[14px] outline-none focus:border-[#3898EC]"
+                  className="w-full rounded-xl border border-[#e2e8f0] bg-white px-3.5 py-2.5 text-[14px] outline-none focus:border-[#3898EC]"
                 />
               </div>
               <div>
-                <label htmlFor="feedback-category" className="block text-[13px] font-medium text-[#5E5D59] mb-1.5">
+                <label htmlFor="feedback-category" className="block text-[13px] font-medium text-[#475569] mb-1.5">
                   Loại góp ý
                 </label>
                 <select
                   id="feedback-category"
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
-                  className="w-full rounded-xl border border-[#E8E6DC] bg-white px-3.5 py-2.5 text-[14px] outline-none focus:border-[#3898EC]"
+                  className="w-full rounded-xl border border-[#e2e8f0] bg-white px-3.5 py-2.5 text-[14px] outline-none focus:border-[#3898EC]"
                 >
                   <option>Góp ý tính năng</option>
                   <option>Báo lỗi</option>
@@ -149,7 +149,7 @@ const FeedbackSubmitPage: React.FC = () => {
                 </select>
               </div>
               <div>
-                <label htmlFor="feedback-related-url" className="block text-[13px] font-medium text-[#5E5D59] mb-1.5">
+                <label htmlFor="feedback-related-url" className="block text-[13px] font-medium text-[#475569] mb-1.5">
                   Link liên quan (tuỳ chọn)
                 </label>
                 <input
@@ -157,11 +157,11 @@ const FeedbackSubmitPage: React.FC = () => {
                   value={relatedUrl}
                   onChange={(e) => setRelatedUrl(e.target.value)}
                   placeholder="Ví dụ: /student/courses/123"
-                  className="w-full rounded-xl border border-[#E8E6DC] bg-white px-3.5 py-2.5 text-[14px] outline-none focus:border-[#3898EC]"
+                  className="w-full rounded-xl border border-[#e2e8f0] bg-white px-3.5 py-2.5 text-[14px] outline-none focus:border-[#3898EC]"
                 />
               </div>
               <div>
-                <label htmlFor="feedback-description" className="block text-[13px] font-medium text-[#5E5D59] mb-1.5">
+                <label htmlFor="feedback-description" className="block text-[13px] font-medium text-[#475569] mb-1.5">
                   Nội dung
                 </label>
                 <textarea
@@ -170,14 +170,14 @@ const FeedbackSubmitPage: React.FC = () => {
                   onChange={(e) => setDescription(e.target.value)}
                   rows={6}
                   placeholder="Mô tả chi tiết tình huống, mong muốn, hoặc các bước tái hiện lỗi..."
-                  className="w-full rounded-xl border border-[#E8E6DC] bg-white px-3.5 py-2.5 text-[14px] outline-none focus:border-[#3898EC]"
+                  className="w-full rounded-xl border border-[#e2e8f0] bg-white px-3.5 py-2.5 text-[14px] outline-none focus:border-[#3898EC]"
                 />
               </div>
               <div>
-                <label htmlFor="feedback-files" className="block text-[13px] font-medium text-[#5E5D59] mb-1.5">
+                <label htmlFor="feedback-files" className="block text-[13px] font-medium text-[#475569] mb-1.5">
                   Tài liệu/ảnh liên quan (nhiều file)
                 </label>
-                <div className="rounded-xl border border-dashed border-[#D1CFC5] bg-white p-3">
+                <div className="rounded-xl border border-dashed border-[#cbd5e1] bg-white p-3">
                   <input
                     id="feedback-files"
                     type="file"
@@ -208,9 +208,9 @@ const FeedbackSubmitPage: React.FC = () => {
                       });
                       e.currentTarget.value = '';
                     }}
-                    className="block w-full text-[13px] text-[#5E5D59]"
+                    className="block w-full text-[13px] text-[#475569]"
                   />
-                  <p className="mt-2 text-[12px] text-[#87867F]">
+                  <p className="mt-2 text-[12px] text-[#64748b]">
                     Tối đa {MAX_FILES} file, tối đa {formatBytes(MAX_EACH_FILE_BYTES)}/file, tổng không quá{' '}
                     {formatBytes(MAX_TOTAL_SIZE_BYTES)}. Hiện tại: {files.length}/{MAX_FILES} file (
                     {formatBytes(totalFileBytes)}).
@@ -220,13 +220,13 @@ const FeedbackSubmitPage: React.FC = () => {
                       {files.map((file, idx) => (
                         <span
                           key={`${file.name}-${idx}`}
-                          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#F5F4ED] text-[#4D4C48] text-[12px]"
+                          className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#f8fafc] text-[#334155] text-[12px]"
                         >
                           <Paperclip className="w-3.5 h-3.5" />
                           {file.name}
                           <button
                             type="button"
-                            className="text-[#87867F] hover:text-[#141413]"
+                            className="text-[#64748b] hover:text-[#0f172a]"
                             onClick={() => removeFileAt(idx)}
                           >
                             <X className="w-3 h-3" />
@@ -249,7 +249,7 @@ const FeedbackSubmitPage: React.FC = () => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] text-[14px] font-medium disabled:opacity-60"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] text-[14px] font-medium disabled:opacity-60"
               >
                 {submitting ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
                 Gửi góp ý
@@ -258,21 +258,21 @@ const FeedbackSubmitPage: React.FC = () => {
           </section>
 
           <aside className="lg:col-span-5 space-y-5">
-            <div className="bg-[#FAF9F5] border border-[#F0EEE6] rounded-2xl p-5 shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
-              <h2 className="text-[16px] font-semibold text-[#141413] mb-2">Hướng dẫn nhanh</h2>
-              <ul className="text-[13px] text-[#5E5D59] space-y-1.5">
+            <div className="bg-[#ffffff] border border-[#e2e8f0] rounded-2xl p-5 shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
+              <h2 className="text-[16px] font-semibold text-[#0f172a] mb-2">Hướng dẫn nhanh</h2>
+              <ul className="text-[13px] text-[#475569] space-y-1.5">
                 <li>- `Tiêu đề` và `Nội dung` là bắt buộc.</li>
                 <li>- Có thể đính kèm nhiều ảnh/tài liệu liên quan.</li>
                 <li>- Admin có thể vào trực tiếp từ notification để xử lý.</li>
               </ul>
             </div>
-            <div className="bg-[#FAF9F5] border border-[#F0EEE6] rounded-2xl p-5 shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
-              <h2 className="text-[16px] font-semibold text-[#141413] mb-3">Góp ý gần đây</h2>
-              <div className="rounded-xl border border-[#F0EEE6] bg-white overflow-hidden">
+            <div className="bg-[#ffffff] border border-[#e2e8f0] rounded-2xl p-5 shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
+              <h2 className="text-[16px] font-semibold text-[#0f172a] mb-3">Góp ý gần đây</h2>
+              <div className="rounded-xl border border-[#e2e8f0] bg-white overflow-hidden">
                 {recentSorted.length === 0 ? (
-                  <p className="text-[13px] text-[#87867F]">Bạn chưa gửi góp ý nào.</p>
+                  <p className="text-[13px] text-[#64748b]">Bạn chưa gửi góp ý nào.</p>
                 ) : (
-                  <div className="max-h-[280px] overflow-y-auto divide-y divide-[#F0EEE6]">
+                  <div className="max-h-[280px] overflow-y-auto divide-y divide-[#e2e8f0]">
                     {recentSorted.map((item) => (
                     <button
                       key={item.id}
@@ -281,16 +281,16 @@ const FeedbackSubmitPage: React.FC = () => {
                         void openFeedbackDetail(item);
                       }}
                       className={`w-full text-left px-3 py-2.5 transition-colors ${
-                        item.readByCurrentUser ? 'bg-white hover:bg-[#FAF9F5]' : 'bg-[#FDFCF8] hover:bg-[#F5F4ED]'
+                        item.readByCurrentUser ? 'bg-white hover:bg-[#ffffff]' : 'bg-[#FDFCF8] hover:bg-[#f8fafc]'
                       }`}
                     >
                       <div className="flex items-center justify-between gap-2">
-                        <p className="text-[13px] text-[#141413] font-medium truncate">{item.title}</p>
-                        <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-[#F0EEE6] text-[#5E5D59] whitespace-nowrap">
+                        <p className="text-[13px] text-[#0f172a] font-medium truncate">{item.title}</p>
+                        <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-[#e2e8f0] text-[#475569] whitespace-nowrap">
                           {item.readByCurrentUser ? 'Đã đọc' : 'Chưa đọc'}
                         </span>
                       </div>
-                      <p className="text-[11px] text-[#87867F] mt-1">
+                      <p className="text-[11px] text-[#64748b] mt-1">
                         {new Date(item.createdAt).toLocaleString('vi-VN')}
                       </p>
                     </button>
@@ -309,34 +309,34 @@ const FeedbackSubmitPage: React.FC = () => {
             if (e.target === e.currentTarget) setDetailItem(null);
           }}
         >
-          <div className="w-full max-w-2xl rounded-2xl border border-[#E8E6DC] bg-[#FAF9F5] shadow-xl p-5">
+          <div className="w-full max-w-2xl rounded-2xl border border-[#e2e8f0] bg-[#ffffff] shadow-xl p-5">
             <div className="flex items-start justify-between gap-3 mb-3">
               <div>
-                <h3 className="text-[18px] font-semibold text-[#141413]">{detailItem.title}</h3>
-                <p className="text-[12px] text-[#87867F] mt-1">
+                <h3 className="text-[18px] font-semibold text-[#0f172a]">{detailItem.title}</h3>
+                <p className="text-[12px] text-[#64748b] mt-1">
                   {new Date(detailItem.createdAt).toLocaleString('vi-VN')}
                 </p>
               </div>
               <button
                 type="button"
-                className="text-[#87867F] hover:text-[#141413]"
+                className="text-[#64748b] hover:text-[#0f172a]"
                 onClick={() => setDetailItem(null)}
               >
                 <X className="w-4 h-4" />
               </button>
             </div>
-            <div className="rounded-xl border border-[#F0EEE6] bg-white p-3 text-[13px] text-[#4D4C48] whitespace-pre-wrap">
+            <div className="rounded-xl border border-[#e2e8f0] bg-white p-3 text-[13px] text-[#334155] whitespace-pre-wrap">
               {detailItem.description}
             </div>
             {detailItem.responseMessage ? (
-              <div className="mt-3 rounded-xl border border-[#E8E6DC] bg-[#F5F4ED] p-3">
-                <p className="text-[12px] text-[#87867F] mb-1">
+              <div className="mt-3 rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-3">
+                <p className="text-[12px] text-[#64748b] mb-1">
                   Admin phản hồi {detailItem.respondedByName ? `(${detailItem.respondedByName})` : ''}
                 </p>
-                <p className="text-[13px] text-[#4D4C48] whitespace-pre-wrap">{detailItem.responseMessage}</p>
+                <p className="text-[13px] text-[#334155] whitespace-pre-wrap">{detailItem.responseMessage}</p>
               </div>
             ) : (
-              <p className="mt-3 text-[13px] text-[#87867F]">Admin chưa phản hồi góp ý này.</p>
+              <p className="mt-3 text-[13px] text-[#64748b]">Admin chưa phản hồi góp ý này.</p>
             )}
           </div>
         </div>

@@ -240,7 +240,7 @@ export default function TeacherAssessments() {
     <div className={`flex ${compact ? 'flex-wrap justify-end' : 'flex-wrap'} gap-2`}>
       <button
         type="button"
-        className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors inline-flex items-center gap-1.5"
+        className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors inline-flex items-center gap-1.5"
         onClick={() => navigate(`/teacher/assessments/${assessment.id}`)}
       >
         <BookOpen className="w-3.5 h-3.5 flex-shrink-0" />
@@ -249,7 +249,7 @@ export default function TeacherAssessments() {
       {assessment.status === 'DRAFT' && (
         <button
           type="button"
-          className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+          className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
           onClick={() => navigate(`/teacher/assessments/${assessment.id}/preview`)}
           title="Làm thử ở giao diện học sinh — không tính lượt và không lưu kết quả"
         >
@@ -259,7 +259,7 @@ export default function TeacherAssessments() {
       {assessment.status === 'PUBLISHED' && (
         <button
           type="button"
-          className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+          className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
           onClick={() =>
             unpublishMutation.mutate(assessment.id, {
               onSuccess: () =>
@@ -409,21 +409,21 @@ export default function TeacherAssessments() {
           {/* ── Page header (TeacherMindmaps pattern) ── */}
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] flex-shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] flex-shrink-0">
                 <Sparkles className="w-5 h-5" />
               </div>
               <div className="min-w-0">
                 <div className="flex items-center gap-2.5 flex-wrap">
-                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                     {view === 'create' ? 'Tạo đề thi' : 'Đề thi'}
                   </h1>
                   {view === 'manage' && !isLoading && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                       {totalElements}
                     </span>
                   )}
                 </div>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                   {view === 'create'
                     ? createMethod === 'pdf'
                       ? 'Upload file PDF đề có sẵn — AI trích xuất câu hỏi và tạo đề nháp.'
@@ -434,14 +434,14 @@ export default function TeacherAssessments() {
             </div>
 
             <div className="flex items-center gap-2 flex-wrap justify-end">
-              <div className="flex items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl flex-shrink-0">
+              <div className="flex items-center gap-1 p-1 bg-[#f8fafc] rounded-xl flex-shrink-0">
                 <button
                   type="button"
                   onClick={() => setView('create')}
                   className={`px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                     view === 'create'
-                      ? 'bg-white text-[#141413] shadow-sm'
-                      : 'text-[#87867F] hover:text-[#5E5D59]'
+                      ? 'bg-white text-[#0f172a] shadow-sm'
+                      : 'text-[#64748b] hover:text-[#475569]'
                   }`}
                 >
                   Tạo đề
@@ -451,8 +451,8 @@ export default function TeacherAssessments() {
                   onClick={() => setView('manage')}
                   className={`px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                     view === 'manage'
-                      ? 'bg-white text-[#141413] shadow-sm'
-                      : 'text-[#87867F] hover:text-[#5E5D59]'
+                      ? 'bg-white text-[#0f172a] shadow-sm'
+                      : 'text-[#64748b] hover:text-[#475569]'
                   }`}
                 >
                   Quản lí đề
@@ -466,7 +466,7 @@ export default function TeacherAssessments() {
           {view === 'create' && (
             <div className="space-y-4">
               <CreateMethodTabs createMethod={createMethod} setCreateMethod={setCreateMethod} />
-              <div className="bg-white rounded-2xl border border-[#E8E6DC] shadow-[rgba(0,0,0,0.04)_0px_4px_24px]">
+              <div className="bg-white rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.04)_0px_4px_24px]">
               {/* assessment-builder-flow.css chỉ áp dụng trong .module-layout-container */}
               <div className="module-layout-container p-4 sm:p-6 lg:p-8">
                 {createMethod === 'matrix' ? (
@@ -486,7 +486,7 @@ export default function TeacherAssessments() {
                 {statTiles.map(({ label, value, Icon, bg, color }) => (
                   <div
                     key={label}
-                    className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3"
+                    className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3"
                   >
                     <div
                       className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center flex-shrink-0`}
@@ -494,10 +494,10 @@ export default function TeacherAssessments() {
                       <Icon className={`w-4 h-4 ${color}`} />
                     </div>
                     <div className="min-w-0">
-                      <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none truncate">
+                      <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none truncate">
                         {value}
                       </p>
-                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5 truncate">
+                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5 truncate">
                         {label}
                       </p>
                     </div>
@@ -530,10 +530,10 @@ export default function TeacherAssessments() {
               />
 
               <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-3">
-                <label className="flex-1 w-full flex items-center gap-3 bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150">
-                  <Search className="text-[#87867F] w-4 h-4 flex-shrink-0" />
+                <label className="flex-1 w-full flex items-center gap-3 bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150">
+                  <Search className="text-[#64748b] w-4 h-4 flex-shrink-0" />
                   <input
-                    className="flex-1 min-w-0 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] bg-transparent outline-none"
+                    className="flex-1 min-w-0 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] bg-transparent outline-none"
                     placeholder={`Tìm ${UI_TEXT.QUIZ.toLowerCase()}...`}
                     value={search}
                     onChange={(event) => setSearch(event.target.value)}
@@ -543,7 +543,7 @@ export default function TeacherAssessments() {
                       type="button"
                       aria-label="Xóa tìm kiếm"
                       onClick={() => setSearch('')}
-                      className="text-[#87867F] hover:text-[#141413] transition-colors flex-shrink-0"
+                      className="text-[#64748b] hover:text-[#0f172a] transition-colors flex-shrink-0"
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -551,7 +551,7 @@ export default function TeacherAssessments() {
                 </label>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 flex-shrink-0">
-                  <div className="flex items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl overflow-x-auto">
+                  <div className="flex items-center gap-1 p-1 bg-[#f8fafc] rounded-xl overflow-x-auto">
                     {statusFilters.map((item) => (
                       <button
                         key={item}
@@ -562,8 +562,8 @@ export default function TeacherAssessments() {
                         }}
                         className={`px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                           statusFilter === item
-                            ? 'bg-white text-[#141413] shadow-sm'
-                            : 'text-[#87867F] hover:text-[#5E5D59]'
+                            ? 'bg-white text-[#0f172a] shadow-sm'
+                            : 'text-[#64748b] hover:text-[#475569]'
                         }`}
                       >
                         {statusLabel[item]}
@@ -573,7 +573,7 @@ export default function TeacherAssessments() {
 
                   <div className="flex items-center gap-2">
                     {filteredAssessments.length > 0 && (
-                      <div className="flex items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl flex-shrink-0">
+                      <div className="flex items-center gap-1 p-1 bg-[#f8fafc] rounded-xl flex-shrink-0">
                         <button
                           type="button"
                           onClick={() => setCardLayout('grid')}
@@ -581,8 +581,8 @@ export default function TeacherAssessments() {
                           title="Lưới"
                           className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-150 ${
                             cardLayout === 'grid'
-                              ? 'bg-white shadow-md text-[#141413]'
-                              : 'bg-[#E8E6DC] border-2 border-[#D1CFC5] text-[#141413] hover:bg-[#DDD9CC]'
+                              ? 'bg-white shadow-md text-[#0f172a]'
+                              : 'bg-[#e2e8f0] border-2 border-[#cbd5e1] text-[#0f172a] hover:bg-[#DDD9CC]'
                           }`}
                         >
                           <LayoutGrid className="w-4 h-4" />
@@ -594,8 +594,8 @@ export default function TeacherAssessments() {
                           title="Danh sách"
                           className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-150 ${
                             cardLayout === 'list'
-                              ? 'bg-white shadow-md text-[#141413]'
-                              : 'bg-[#E8E6DC] border-2 border-[#D1CFC5] text-[#141413] hover:bg-[#DDD9CC]'
+                              ? 'bg-white shadow-md text-[#0f172a]'
+                              : 'bg-[#e2e8f0] border-2 border-[#cbd5e1] text-[#0f172a] hover:bg-[#DDD9CC]'
                           }`}
                         >
                           <List className="w-4 h-4" />
@@ -606,7 +606,7 @@ export default function TeacherAssessments() {
                     <button
                       type="button"
                       onClick={() => void refetch()}
-                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                     >
                       <RefreshCw className="w-4 h-4" />
                       Làm mới
@@ -616,22 +616,22 @@ export default function TeacherAssessments() {
               </div>
 
               {!isLoading && !isError && filteredAssessments.length > 0 && (
-                <div className="flex flex-wrap items-center gap-4 px-4 py-3 rounded-xl bg-[#FAF9F5] border border-[#E8E6DC]">
-                  <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] uppercase tracking-wide">
+                <div className="flex flex-wrap items-center gap-4 px-4 py-3 rounded-xl bg-[#ffffff] border border-[#e2e8f0]">
+                  <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] uppercase tracking-wide">
                     Trang {page + 1}/{Math.max(effectiveTotalPages, 1)}
                   </span>
-                  <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                  <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                     {filteredAssessments.length} / {effectiveTotalElements} {UI_TEXT.QUIZ.toLowerCase()}
                   </strong>
-                  <div className="w-px h-4 bg-[#E8E6DC] hidden sm:block" />
-                  <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                  <div className="w-px h-4 bg-[#e2e8f0] hidden sm:block" />
+                  <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
                     Công khai{' '}
-                    <strong className="text-[#141413] font-semibold">{stats.published}</strong>
+                    <strong className="text-[#0f172a] font-semibold">{stats.published}</strong>
                   </span>
-                  <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                  <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                     <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
-                    Nháp <strong className="text-[#141413] font-semibold">{stats.draft}</strong>
+                    Nháp <strong className="text-[#0f172a] font-semibold">{stats.draft}</strong>
                   </span>
                 </div>
               )}
@@ -641,7 +641,7 @@ export default function TeacherAssessments() {
                   {[1, 2, 3].map((i) => (
                     <div
                       key={i}
-                      className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-52 animate-pulse"
+                      className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-52 animate-pulse"
                     />
                   ))}
                 </div>
@@ -662,10 +662,10 @@ export default function TeacherAssessments() {
 
               {!isLoading && !isError && filteredAssessments.length === 0 && (
                 <div className="flex flex-col items-center justify-center py-16 gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#B0AEA5]">
+                  <div className="w-12 h-12 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#94a3b8]">
                     <ClipboardList className="w-6 h-6" />
                   </div>
-                  <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center px-4">
+                  <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center px-4">
                     Chưa có {UI_TEXT.QUIZ.toLowerCase()} nào phù hợp bộ lọc.
                   </p>
                 </div>
@@ -681,7 +681,7 @@ export default function TeacherAssessments() {
                     return (
                       <article
                         key={assessment.id}
-                        className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
+                        className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
                       >
                         <div
                           className="h-[120px] relative flex flex-col justify-between p-4 overflow-hidden flex-shrink-0"
@@ -704,7 +704,7 @@ export default function TeacherAssessments() {
                                     ? 'text-emerald-700'
                                     : assessment.status === 'CLOSED'
                                       ? 'text-red-700'
-                                      : 'text-[#87867F]'
+                                      : 'text-[#64748b]'
                                 }`}
                               >
                                 {cardStatusLabel[assessment.status]}
@@ -720,26 +720,26 @@ export default function TeacherAssessments() {
                         </div>
 
                         <div className="p-4 flex flex-col gap-2 flex-1 min-h-0">
-                          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] leading-[1.5] line-clamp-2">
+                          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] leading-[1.5] line-clamp-2">
                             {assessment.description ||
                               (assessment.assessmentMode === 'MATRIX_BASED'
                                 ? 'Tự sinh từ ma trận đề.'
                                 : 'Chưa có mô tả.')}
                           </p>
 
-                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                             <span>{assessment.totalQuestions} câu</span>
-                            <span className="text-[#E8E6DC]">·</span>
+                            <span className="text-[#e2e8f0]">·</span>
                             <span>{assessment.totalPoints} điểm</span>
                             {assessment.timeLimitMinutes != null && (
                               <>
-                                <span className="text-[#E8E6DC]">·</span>
+                                <span className="text-[#e2e8f0]">·</span>
                                 <span>{assessment.timeLimitMinutes} phút</span>
                               </>
                             )}
                             {assessment.submissionCount > 0 && (
                               <>
-                                <span className="text-[#E8E6DC]">·</span>
+                                <span className="text-[#e2e8f0]">·</span>
                                 <span>{assessment.submissionCount} lượt nộp</span>
                               </>
                             )}
@@ -754,7 +754,7 @@ export default function TeacherAssessments() {
                               )}
                               {assessment.examMatrixName && (
                                 <span
-                                  className="px-2 py-0.5 rounded-full bg-[#F5F4ED] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#5E5D59] border border-[#E8E6DC] max-w-full truncate"
+                                  className="px-2 py-0.5 rounded-full bg-[#f8fafc] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#475569] border border-[#e2e8f0] max-w-full truncate"
                                   title={assessment.examMatrixName}
                                 >
                                   {assessment.examMatrixName}
@@ -763,8 +763,8 @@ export default function TeacherAssessments() {
                             </div>
                           )}
 
-                          <div className="flex flex-col gap-2 pt-2 border-t border-[#F0EEE6] mt-auto">
-                            <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#B0AEA5]">
+                          <div className="flex flex-col gap-2 pt-2 border-t border-[#e2e8f0] mt-auto">
+                            <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#94a3b8]">
                               {formatDate(assessment.createdAt)}
                             </span>
                             {renderAssessmentActions(assessment)}
@@ -786,7 +786,7 @@ export default function TeacherAssessments() {
                     return (
                       <article
                         key={assessment.id}
-                        className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] p-4 flex flex-col sm:flex-row sm:items-center gap-4 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150"
+                        className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] p-4 flex flex-col sm:flex-row sm:items-center gap-4 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150"
                       >
                         <div
                           className="w-11 h-11 rounded-xl flex-shrink-0 flex items-center justify-center"
@@ -799,7 +799,7 @@ export default function TeacherAssessments() {
                         </div>
                         <div className="flex-1 min-w-0">
                           <div className="flex flex-wrap items-center gap-2 mb-1">
-                            <h3 className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413] truncate max-w-[min(100%,420px)]">
+                            <h3 className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a] truncate max-w-[min(100%,420px)]">
                               {assessment.title}
                             </h3>
                             <span
@@ -808,25 +808,25 @@ export default function TeacherAssessments() {
                                   ? 'bg-emerald-50 text-emerald-700'
                                   : assessment.status === 'CLOSED'
                                     ? 'bg-red-50 text-red-700'
-                                    : 'bg-[#F5F4ED] text-[#87867F]'
+                                    : 'bg-[#f8fafc] text-[#64748b]'
                               }`}
                             >
                               {cardStatusLabel[assessment.status]}
                             </span>
                             {renderPrimaryStatusAction(assessment)}
                           </div>
-                          <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] line-clamp-1 mb-1">
+                          <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] line-clamp-1 mb-1">
                             {assessment.description ||
                               (assessment.assessmentMode === 'MATRIX_BASED'
                                 ? 'Tự sinh từ ma trận đề.'
                                 : 'Chưa có mô tả.')}
                           </p>
-                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                             <span>{assessment.totalQuestions} câu</span>
                             <span>·</span>
                             <span>{assessment.totalPoints} điểm</span>
                             <span>·</span>
-                            <span className="text-[#B0AEA5]">{formatDate(assessment.createdAt)}</span>
+                            <span className="text-[#94a3b8]">{formatDate(assessment.createdAt)}</span>
                           </div>
                           {showTags && (
                             <div className="flex flex-wrap gap-1.5 mt-2">
@@ -880,14 +880,14 @@ function CreateMethodTabs({
   setCreateMethod: (m: CreateMethod) => void;
 }) {
   return (
-    <div className="flex flex-wrap items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl w-fit">
+    <div className="flex flex-wrap items-center gap-1 p-1 bg-[#f8fafc] rounded-xl w-fit">
       <button
         type="button"
         onClick={() => setCreateMethod('matrix')}
         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
           createMethod === 'matrix'
-            ? 'bg-white text-[#141413] shadow-sm'
-            : 'text-[#87867F] hover:text-[#5E5D59]'
+            ? 'bg-white text-[#0f172a] shadow-sm'
+            : 'text-[#64748b] hover:text-[#475569]'
         }`}
       >
         <TableProperties className="w-3.5 h-3.5" aria-hidden />
@@ -898,8 +898,8 @@ function CreateMethodTabs({
         onClick={() => setCreateMethod('pdf')}
         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
           createMethod === 'pdf'
-            ? 'bg-white text-[#141413] shadow-sm'
-            : 'text-[#87867F] hover:text-[#5E5D59]'
+            ? 'bg-white text-[#0f172a] shadow-sm'
+            : 'text-[#64748b] hover:text-[#475569]'
         }`}
       >
         <FileUp className="w-3.5 h-3.5" aria-hidden />

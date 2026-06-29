@@ -231,7 +231,7 @@ function ConfirmModal({
 }: Readonly<{ config: ConfirmConfig; onClose: () => void }>) {
   return (
     <div
-      className="fixed inset-0 z-50 bg-[#141413]/50 backdrop-blur-sm flex items-center justify-center p-4"
+      className="fixed inset-0 z-50 bg-[#0f172a]/50 backdrop-blur-sm flex items-center justify-center p-4"
       onClick={onClose}
     >
       <div
@@ -244,14 +244,14 @@ function ConfirmModal({
           <AlertCircle className="w-7 h-7" />
         </div>
         <div className="text-center">
-          <h3 className="font-[Playfair_Display] text-[18px] font-medium text-[#141413]">
+          <h3 className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a]">
             {config.title}
           </h3>
-          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-2">{config.message}</p>
+          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-2">{config.message}</p>
         </div>
         <div className="flex gap-2">
           <button
-            className="flex-1 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+            className="flex-1 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
             onClick={onClose}
           >
             Hủy
@@ -505,16 +505,16 @@ const AIAssistant: React.FC = () => {
         {/* ── Page header ── */}
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] flex-shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] flex-shrink-0">
               <Bot className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2.5">
-                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                   Trợ lý AI Toán học
                 </h1>
               </div>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                 Trợ lý AI của bạn
               </p>
             </div>
@@ -523,7 +523,7 @@ const AIAssistant: React.FC = () => {
             type="button"
             onClick={() => void handleNewChat()}
             disabled={createSessionMutation.isPending}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-50"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-50"
           >
             <Plus className="w-3.5 h-3.5" />
             Chat mới

@@ -163,12 +163,12 @@ const SectionEditor: React.FC<SectionEditorProps> = ({
   };
 
   return (
-    <div className="border border-[#E8E6DC] rounded-xl overflow-hidden">
+    <div className="border border-[#e2e8f0] rounded-xl overflow-hidden">
       {/* Section header */}
-      <div className="flex items-center gap-2 px-4 py-3 bg-[#F5F4ED] border-b border-[#E8E6DC]">
-        <span className="text-[#87867F] text-[12px] font-mono w-5 text-center">{index + 1}</span>
+      <div className="flex items-center gap-2 px-4 py-3 bg-[#f8fafc] border-b border-[#e2e8f0]">
+        <span className="text-[#64748b] text-[12px] font-mono w-5 text-center">{index + 1}</span>
         <input
-          className="flex-1 bg-transparent border-none outline-none font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413] placeholder:text-[#C4C3BB]"
+          className="flex-1 bg-transparent border-none outline-none font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a] placeholder:text-[#C4C3BB]"
           placeholder="Tiêu đề phần..."
           value={section.title}
           onChange={(e) => set({ title: e.target.value })}
@@ -177,7 +177,7 @@ const SectionEditor: React.FC<SectionEditorProps> = ({
           <button
             onClick={() => onMoveUp(index)}
             disabled={isFirst}
-            className="p-1 rounded text-[#87867F] hover:text-[#141413] hover:bg-[#E8E6DC] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            className="p-1 rounded text-[#64748b] hover:text-[#0f172a] hover:bg-[#e2e8f0] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
             title="Di chuyển lên"
           >
             <ChevronUp className="w-4 h-4" />
@@ -185,21 +185,21 @@ const SectionEditor: React.FC<SectionEditorProps> = ({
           <button
             onClick={() => onMoveDown(index)}
             disabled={isLast}
-            className="p-1 rounded text-[#87867F] hover:text-[#141413] hover:bg-[#E8E6DC] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+            className="p-1 rounded text-[#64748b] hover:text-[#0f172a] hover:bg-[#e2e8f0] disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
             title="Di chuyển xuống"
           >
             <ChevronDown className="w-4 h-4" />
           </button>
           <button
             onClick={() => onRemove(index)}
-            className="p-1 rounded text-[#87867F] hover:text-red-600 hover:bg-red-50 transition-colors"
+            className="p-1 rounded text-[#64748b] hover:text-red-600 hover:bg-red-50 transition-colors"
             title="Xoá phần"
           >
             <Trash2 className="w-4 h-4" />
           </button>
           <button
             onClick={() => setExpanded((e) => !e)}
-            className="p-1 rounded text-[#87867F] hover:text-[#141413] hover:bg-[#E8E6DC] transition-colors"
+            className="p-1 rounded text-[#64748b] hover:text-[#0f172a] hover:bg-[#e2e8f0] transition-colors"
           >
             {expanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
           </button>
@@ -211,12 +211,12 @@ const SectionEditor: React.FC<SectionEditorProps> = ({
           {/* Paragraphs */}
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59] uppercase tracking-wide">
+              <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569] uppercase tracking-wide">
                 Đoạn văn
               </span>
               <button
                 onClick={() => set({ paragraphs: [...(section.paragraphs ?? []), ''] })}
-                className="flex items-center gap-1 text-[12px] text-[#C96442] hover:text-[#A8532E] font-medium transition-colors"
+                className="flex items-center gap-1 text-[12px] text-[#0ea5e9] hover:text-[#A8532E] font-medium transition-colors"
               >
                 <Plus className="w-3.5 h-3.5" />
                 Thêm đoạn
@@ -227,14 +227,14 @@ const SectionEditor: React.FC<SectionEditorProps> = ({
                 <div key={pi} className="flex items-start gap-2">
                   <textarea
                     rows={2}
-                    className="flex-1 border border-[#E8E6DC] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] resize-y outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] transition-colors"
+                    className="flex-1 border border-[#e2e8f0] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] resize-y outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] transition-colors"
                     placeholder={`Đoạn ${pi + 1}...`}
                     value={p}
                     onChange={(e) => updateParagraph(pi, e.target.value)}
                   />
                   <button
                     onClick={() => removeParagraph(pi)}
-                    className="mt-2 p-1.5 rounded text-[#87867F] hover:text-red-600 hover:bg-red-50 transition-colors flex-shrink-0"
+                    className="mt-2 p-1.5 rounded text-[#64748b] hover:text-red-600 hover:bg-red-50 transition-colors flex-shrink-0"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>
@@ -249,12 +249,12 @@ const SectionEditor: React.FC<SectionEditorProps> = ({
           {/* Bullet points */}
           <div>
             <div className="flex items-center justify-between mb-2">
-              <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59] uppercase tracking-wide">
+              <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569] uppercase tracking-wide">
                 Danh sách gạch đầu dòng
               </span>
               <button
                 onClick={() => set({ bulletPoints: [...(section.bulletPoints ?? []), ''] })}
-                className="flex items-center gap-1 text-[12px] text-[#C96442] hover:text-[#A8532E] font-medium transition-colors"
+                className="flex items-center gap-1 text-[12px] text-[#0ea5e9] hover:text-[#A8532E] font-medium transition-colors"
               >
                 <Plus className="w-3.5 h-3.5" />
                 Thêm mục
@@ -263,16 +263,16 @@ const SectionEditor: React.FC<SectionEditorProps> = ({
             <div className="space-y-2">
               {(section.bulletPoints ?? []).map((b, bi) => (
                 <div key={bi} className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#C96442] flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#0ea5e9] flex-shrink-0" />
                   <input
-                    className="flex-1 border border-[#E8E6DC] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] transition-colors"
+                    className="flex-1 border border-[#e2e8f0] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] transition-colors"
                     placeholder={`Mục ${bi + 1}...`}
                     value={b}
                     onChange={(e) => updateBullet(bi, e.target.value)}
                   />
                   <button
                     onClick={() => removeBullet(bi)}
-                    className="p-1.5 rounded text-[#87867F] hover:text-red-600 hover:bg-red-50 transition-colors flex-shrink-0"
+                    className="p-1.5 rounded text-[#64748b] hover:text-red-600 hover:bg-red-50 transition-colors flex-shrink-0"
                   >
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>
@@ -286,12 +286,12 @@ const SectionEditor: React.FC<SectionEditorProps> = ({
 
           {/* Optional footer */}
           <div>
-            <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59] uppercase tracking-wide block mb-2">
+            <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569] uppercase tracking-wide block mb-2">
               Footer (tuỳ chọn)
             </span>
             <textarea
               rows={2}
-              className="w-full border border-[#E8E6DC] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] resize-y outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] transition-colors"
+              className="w-full border border-[#e2e8f0] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] resize-y outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] transition-colors"
               placeholder="Văn bản footer phần này (có thể để trống)..."
               value={section.footer ?? ''}
               onChange={(e) => set({ footer: e.target.value || undefined })}
@@ -318,7 +318,7 @@ const DiffModal: React.FC<{
 
   return (
     <div
-      className="fixed inset-0 bg-[#141413]/50 flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-[#0f172a]/50 flex items-center justify-center z-50 p-4"
       onClick={onClose}
       onKeyDown={(e) => e.key === 'Escape' && onClose()}
       tabIndex={-1}
@@ -332,14 +332,14 @@ const DiffModal: React.FC<{
         onKeyDown={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center gap-3 px-6 py-5 border-b border-[#E8E6DC] bg-white">
-          <ArrowLeftRight className="w-5 h-5 text-[#C96442] flex-shrink-0" />
-          <h3 className="font-[Be_Vietnam_Pro] text-[16px] font-semibold text-[#141413] flex-1">
+        <div className="flex items-center gap-3 px-6 py-5 border-b border-[#e2e8f0] bg-white">
+          <ArrowLeftRight className="w-5 h-5 text-[#0ea5e9] flex-shrink-0" />
+          <h3 className="font-[Be_Vietnam_Pro] text-[16px] font-semibold text-[#0f172a] flex-1">
             So sánh phiên bản
           </h3>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg text-[#87867F] hover:text-[#141413] hover:bg-[#F5F4ED] transition-colors"
+            className="p-1.5 rounded-lg text-[#64748b] hover:text-[#0f172a] hover:bg-[#f8fafc] transition-colors"
             aria-label="Close"
           >
             <X className="w-4 h-4" />
@@ -347,24 +347,24 @@ const DiffModal: React.FC<{
         </div>
 
         {/* Version tags */}
-        <div className="grid grid-cols-2 divide-x divide-[#E8E6DC] border-b border-[#E8E6DC] bg-[#F9F8F6]">
+        <div className="grid grid-cols-2 divide-x divide-[#e2e8f0] border-b border-[#e2e8f0] bg-[#F9F8F6]">
           <div className="px-6 py-5">
-            <div className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] uppercase tracking-widest mb-2.5">
+            <div className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] uppercase tracking-widest mb-2.5">
               Phiên bản cũ hơn
             </div>
-            <div className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413] mb-1.5">
+            <div className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a] mb-1.5">
               {older.editor}
             </div>
-            <div className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">{older.label}</div>
+            <div className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">{older.label}</div>
           </div>
           <div className="px-6 py-5">
-            <div className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] uppercase tracking-widest mb-2.5">
+            <div className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] uppercase tracking-widest mb-2.5">
               Phiên bản mới hơn
             </div>
-            <div className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413] mb-1.5">
+            <div className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a] mb-1.5">
               {newer.editor}
             </div>
-            <div className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">{newer.label}</div>
+            <div className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">{newer.label}</div>
           </div>
         </div>
 
@@ -376,7 +376,7 @@ const DiffModal: React.FC<{
             </p>
           ) : (
             <>
-              <div className="font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] mb-4 inline-block px-2.5 py-1 bg-amber-50 border border-amber-100 rounded-lg">
+              <div className="font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] mb-4 inline-block px-2.5 py-1 bg-amber-50 border border-amber-100 rounded-lg">
                 Phát hiện {changes.length} thay đổi
               </div>
               {changes.map((change, i) => (
@@ -385,7 +385,7 @@ const DiffModal: React.FC<{
                   className="flex items-start gap-3 px-4 py-3.5 rounded-xl bg-amber-50/60 border border-amber-100/80 hover:bg-amber-100/50 transition-colors"
                 >
                   <span className="w-2 h-2 rounded-full bg-amber-500 flex-shrink-0 mt-1.5" />
-                  <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] leading-relaxed">
+                  <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] leading-relaxed">
                     {change}
                   </span>
                 </div>
@@ -395,10 +395,10 @@ const DiffModal: React.FC<{
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-[#E8E6DC] bg-[#F9F8F6] flex justify-end">
+        <div className="px-6 py-4 border-t border-[#e2e8f0] bg-[#F9F8F6] flex justify-end">
           <button
             onClick={onClose}
-            className="px-5 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] active:scale-[0.98] transition-all"
+            className="px-5 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] active:scale-[0.98] transition-all"
           >
             Đóng
           </button>
@@ -538,7 +538,7 @@ const AdminSystemConfigPage: React.FC = () => {
         user={{ name: mockAdmin.name, avatar: mockAdmin.avatar, role: 'admin' }}
       >
         <div className="flex items-center justify-center py-32">
-          <div className="text-[#87867F] font-[Be_Vietnam_Pro] text-[14px] animate-pulse">
+          <div className="text-[#64748b] font-[Be_Vietnam_Pro] text-[14px] animate-pulse">
             Đang tải cấu hình...
           </div>
         </div>
@@ -572,14 +572,14 @@ const AdminSystemConfigPage: React.FC = () => {
           {/* Page header */}
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                 <Settings className="w-5 h-5" />
               </div>
               <div>
-                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                   Chính sách
                 </h1>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                   Chính sách bảo mật — hiển thị khi giáo viên đăng ký
                 </p>
               </div>
@@ -590,7 +590,7 @@ const AdminSystemConfigPage: React.FC = () => {
                 <button
                   onClick={handleReset}
                   disabled={mutation.isPending}
-                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-[#E8E6DC] bg-white text-[#5E5D59] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#F5F4ED] disabled:opacity-50 transition-colors"
+                  className="flex items-center gap-1.5 px-4 py-2 rounded-xl border border-[#e2e8f0] bg-white text-[#475569] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#f8fafc] disabled:opacity-50 transition-colors"
                 >
                   <RotateCcw className="w-3.5 h-3.5" />
                   Huỷ
@@ -599,7 +599,7 @@ const AdminSystemConfigPage: React.FC = () => {
               <button
                 onClick={handleSave}
                 disabled={!isDirty || mutation.isPending}
-                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-150"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-150"
               >
                 <Save className="w-3.5 h-3.5" />
                 {mutation.isPending ? 'Đang lưu...' : 'Lưu thay đổi'}
@@ -614,36 +614,36 @@ const AdminSystemConfigPage: React.FC = () => {
           )}
 
           {/* Meta fields */}
-          <div className="bg-white rounded-2xl border border-[#E8E6DC] p-5 space-y-4">
-            <h2 className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#5E5D59] uppercase tracking-wide">
+          <div className="bg-white rounded-2xl border border-[#e2e8f0] p-5 space-y-4">
+            <h2 className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#475569] uppercase tracking-wide">
               Thông tin chung
             </h2>
 
             <div>
-              <span className="block font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mb-1.5">
+              <span className="block font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mb-1.5">
                 Ngày cập nhật cuối
               </span>
-              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#F5F4ED] border border-[#E8E6DC]">
-                <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] flex-1">
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#f8fafc] border border-[#e2e8f0]">
+                <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569] flex-1">
                   {draft.lastUpdated ? (
                     draft.lastUpdated
                   ) : (
                     <span className="text-[#C4C3BB] italic">Tự động điền khi lưu</span>
                   )}
                 </span>
-                <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#B0AEA5] flex-shrink-0">
+                <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#94a3b8] flex-shrink-0">
                   Tự động
                 </span>
               </div>
             </div>
 
             <div>
-              <label className="block font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mb-1.5">
+              <label className="block font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mb-1.5">
                 Banner giới thiệu
               </label>
               <textarea
                 rows={3}
-                className="w-full border border-[#E8E6DC] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] resize-y outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] transition-colors"
+                className="w-full border border-[#e2e8f0] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] resize-y outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] transition-colors"
                 placeholder="Mô tả ngắn về cam kết bảo mật..."
                 value={draft.introBanner ?? ''}
                 onChange={(e) => patchDraft({ introBanner: e.target.value })}
@@ -652,22 +652,22 @@ const AdminSystemConfigPage: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mb-1.5">
+                <label className="block font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mb-1.5">
                   Email liên hệ
                 </label>
                 <input
-                  className="w-full border border-[#E8E6DC] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] transition-colors"
+                  className="w-full border border-[#e2e8f0] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] transition-colors"
                   placeholder="privacy@mathmaster.vn"
                   value={draft.contactEmail ?? ''}
                   onChange={(e) => patchDraft({ contactEmail: e.target.value })}
                 />
               </div>
               <div>
-                <label className="block font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mb-1.5">
+                <label className="block font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mb-1.5">
                   Website liên hệ
                 </label>
                 <input
-                  className="w-full border border-[#E8E6DC] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] transition-colors"
+                  className="w-full border border-[#e2e8f0] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] transition-colors"
                   placeholder="mathmaster.vn"
                   value={draft.contactWebsite ?? ''}
                   onChange={(e) => patchDraft({ contactWebsite: e.target.value })}
@@ -676,11 +676,11 @@ const AdminSystemConfigPage: React.FC = () => {
             </div>
 
             <div>
-              <label className="block font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mb-1.5">
+              <label className="block font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mb-1.5">
                 Thời gian phản hồi
               </label>
               <input
-                className="w-full border border-[#E8E6DC] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] transition-colors"
+                className="w-full border border-[#e2e8f0] rounded-lg px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] transition-colors"
                 placeholder="5 ngày làm việc"
                 value={draft.responseTime ?? ''}
                 onChange={(e) => patchDraft({ responseTime: e.target.value })}
@@ -689,14 +689,14 @@ const AdminSystemConfigPage: React.FC = () => {
           </div>
 
           {/* Sections editor */}
-          <div className="bg-white rounded-2xl border border-[#E8E6DC] p-5 space-y-4">
+          <div className="bg-white rounded-2xl border border-[#e2e8f0] p-5 space-y-4">
             <div className="flex items-center justify-between">
-              <h2 className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#5E5D59] uppercase tracking-wide">
+              <h2 className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#475569] uppercase tracking-wide">
                 Các phần nội dung ({draft.sections.length})
               </h2>
               <button
                 onClick={handleAddSection}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E6DC] text-[12px] text-[#C96442] hover:bg-[#F5F4ED] font-medium transition-colors"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#e2e8f0] text-[12px] text-[#0ea5e9] hover:bg-[#f8fafc] font-medium transition-colors"
               >
                 <Plus className="w-3.5 h-3.5" />
                 Thêm phần
@@ -727,27 +727,27 @@ const AdminSystemConfigPage: React.FC = () => {
           </div>
 
           {/* Edit history */}
-          <div className="bg-white rounded-2xl border border-[#E8E6DC] p-5 space-y-4">
+          <div className="bg-white rounded-2xl border border-[#e2e8f0] p-5 space-y-4">
             <div className="flex items-center gap-2 flex-wrap">
-              <Clock className="w-4 h-4 text-[#87867F]" />
-              <h2 className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#5E5D59] uppercase tracking-wide">
+              <Clock className="w-4 h-4 text-[#64748b]" />
+              <h2 className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#475569] uppercase tracking-wide">
                 Lịch sử chỉnh sửa
               </h2>
               {editHistory.length > 0 && (
-                <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#B0AEA5]">
+                <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#94a3b8]">
                   {editHistory.length} lần lưu
                 </span>
               )}
               <div className="ml-auto flex items-center gap-2">
                 {selectedForCompare.length === 1 && (
-                  <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]">
+                  <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b]">
                     Chọn thêm 1 phiên bản nữa để so sánh
                   </span>
                 )}
                 {selectedForCompare.length === 2 && (
                   <button
                     onClick={handleOpenDiff}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#C96442] text-[12px] text-[#C96442] hover:bg-orange-50 font-medium transition-colors"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#0ea5e9] text-[12px] text-[#0ea5e9] hover:bg-orange-50 font-medium transition-colors"
                   >
                     <ArrowLeftRight className="w-3.5 h-3.5" />
                     So sánh 2 phiên bản
@@ -756,7 +756,7 @@ const AdminSystemConfigPage: React.FC = () => {
                 {selectedForCompare.length > 0 && (
                   <button
                     onClick={() => setSelectedForCompare([])}
-                    className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] hover:text-[#141413] transition-colors"
+                    className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] hover:text-[#0f172a] transition-colors"
                   >
                     Bỏ chọn
                   </button>
@@ -780,8 +780,8 @@ const AdminSystemConfigPage: React.FC = () => {
                       key={entry.timestamp}
                       className={`flex items-center gap-3 px-3 py-2.5 rounded-lg border transition-colors ${
                         isSelected
-                          ? 'bg-orange-50 border-[#C96442]'
-                          : 'bg-[#F5F4ED] border-[#F0EEE6]'
+                          ? 'bg-orange-50 border-[#0ea5e9]'
+                          : 'bg-[#f8fafc] border-[#e2e8f0]'
                       }`}
                     >
                       <input
@@ -789,19 +789,19 @@ const AdminSystemConfigPage: React.FC = () => {
                         checked={isSelected}
                         disabled={isDisabled}
                         onChange={() => toggleCompareSelect(entry.timestamp)}
-                        className="w-3.5 h-3.5 rounded accent-[#C96442] cursor-pointer disabled:cursor-not-allowed flex-shrink-0"
+                        className="w-3.5 h-3.5 rounded accent-[#0ea5e9] cursor-pointer disabled:cursor-not-allowed flex-shrink-0"
                         title={hasSnapshot ? '' : 'Phiên bản cũ không có dữ liệu so sánh'}
                       />
                       <div className="flex-1 min-w-0">
-                        <span className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413]">
+                        <span className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a]">
                           {entry.editor}
                         </span>
-                        <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] ml-2">
+                        <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] ml-2">
                           đã lưu lúc {entry.label}
                         </span>
                       </div>
                       {i === 0 && (
-                        <span className="flex-shrink-0 font-[Be_Vietnam_Pro] text-[10px] font-semibold text-[#C96442] bg-[#FAF9F5] border border-[#E8E6DC] px-2 py-0.5 rounded-full uppercase tracking-wide">
+                        <span className="flex-shrink-0 font-[Be_Vietnam_Pro] text-[10px] font-semibold text-[#0ea5e9] bg-[#ffffff] border border-[#e2e8f0] px-2 py-0.5 rounded-full uppercase tracking-wide">
                           Mới nhất
                         </span>
                       )}
@@ -818,7 +818,7 @@ const AdminSystemConfigPage: React.FC = () => {
               <button
                 onClick={handleReset}
                 disabled={mutation.isPending}
-                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white text-[#5E5D59] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#F5F4ED] disabled:opacity-50 transition-colors"
+                className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white text-[#475569] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#f8fafc] disabled:opacity-50 transition-colors"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 Huỷ thay đổi
@@ -827,7 +827,7 @@ const AdminSystemConfigPage: React.FC = () => {
             <button
               onClick={handleSave}
               disabled={!isDirty || mutation.isPending}
-              className="flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-150"
+              className="flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-150"
             >
               <Save className="w-4 h-4" />
               {mutation.isPending ? 'Đang lưu...' : 'Lưu thay đổi'}

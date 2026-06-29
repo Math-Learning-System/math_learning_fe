@@ -38,7 +38,7 @@ import CourseStudentsTab from '../courses/tabs/CourseStudentsTab.tsx';
 type TabType = 'overview' | 'lessons' | 'assessments' | 'students' | 'reviews';
 
 const secondaryBtn =
-  'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors shadow-sm';
+  'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors shadow-sm';
 
 const primaryApproveBtn =
   'inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-emerald-700 transition-colors shadow-sm disabled:opacity-45 disabled:pointer-events-none';
@@ -98,7 +98,7 @@ function StatusBadge({ course }: Readonly<{ course: CourseResponse }>) {
           Nháp
         </>
       ),
-      className: 'bg-[#F5F4ED] text-[#5E5D59] border-[#E8E6DC]',
+      className: 'bg-[#f8fafc] text-[#475569] border-[#e2e8f0]',
     };
   } else if (course.published) {
     cfg = {
@@ -118,7 +118,7 @@ function StatusBadge({ course }: Readonly<{ course: CourseResponse }>) {
           Nháp
         </>
       ),
-      className: 'bg-[#F5F4ED] text-[#5E5D59] border-[#E8E6DC]',
+      className: 'bg-[#f8fafc] text-[#475569] border-[#e2e8f0]',
     };
   }
 
@@ -134,19 +134,19 @@ function StatusBadge({ course }: Readonly<{ course: CourseResponse }>) {
 /** Loading overlay — Tailwind (aligned with admin review list / mindmaps) */
 const CourseDetailLoadingOverlay: React.FC<{ message: string }> = ({ message }) => (
   <div
-    className="fixed inset-0 z-[100] flex items-center justify-center bg-[#141413]/40 backdrop-blur-sm p-4"
+    className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0f172a]/40 backdrop-blur-sm p-4"
     aria-busy="true"
   >
     <div
-      className="rounded-2xl bg-white border border-[#E8E6DC] shadow-[0_20px_60px_rgba(20,20,19,0.12)] px-8 py-8 flex flex-col items-center gap-5 max-w-sm w-full"
+      className="rounded-2xl bg-white border border-[#e2e8f0] shadow-[0_20px_60px_rgba(20,20,19,0.12)] px-8 py-8 flex flex-col items-center gap-5 max-w-sm w-full"
       role="status"
       aria-live="polite"
     >
       <div
-        className="w-11 h-11 rounded-full border-2 border-[#E8E6DC] border-t-[#C96442] animate-spin"
+        className="w-11 h-11 rounded-full border-2 border-[#e2e8f0] border-t-[#0ea5e9] animate-spin"
         aria-hidden="true"
       />
-      <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#5E5D59] text-center leading-relaxed">
+      <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#475569] text-center leading-relaxed">
         {message}
       </p>
     </div>
@@ -248,14 +248,14 @@ const AdminCourseReviewDetail: React.FC = () => {
         contentClassName="dashboard-content--flush-bleed"
       >
         <div className="px-6 py-16 lg:px-8 flex justify-center">
-          <div className="max-w-md w-full rounded-2xl border border-[#E8E6DC] bg-white p-10 text-center shadow-sm">
+          <div className="max-w-md w-full rounded-2xl border border-[#e2e8f0] bg-white p-10 text-center shadow-sm">
             <div className="w-14 h-14 rounded-2xl bg-rose-50 text-rose-400 flex items-center justify-center mx-auto mb-4">
               <AlertCircle className="w-7 h-7" />
             </div>
-            <h2 className="font-[Playfair_Display] text-xl font-medium text-[#141413] mb-2">
+            <h2 className="font-[Playfair_Display] text-xl font-medium text-[#0f172a] mb-2">
               Không tìm thấy khóa học
             </h2>
-            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mb-6">
+            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mb-6">
               Khóa học có thể đã bị xóa hoặc bạn không có quyền xem.
             </p>
             <button
@@ -290,7 +290,7 @@ const AdminCourseReviewDetail: React.FC = () => {
     >
       <div className="w-full min-w-0 px-4 py-8 sm:px-6 lg:px-8 pb-12">
         <div className="w-full min-w-0 max-w-none space-y-6">
-          <div className="rounded-xl bg-[#FAF9F5]/80 border border-[#E8E6DC]/80 px-4 py-3">
+          <div className="rounded-xl bg-[#ffffff]/80 border border-[#e2e8f0]/80 px-4 py-3">
             <CourseBreadcrumb
               homePath="/admin/courses/review"
               items={[
@@ -305,7 +305,7 @@ const AdminCourseReviewDetail: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-2xl border border-[#E8E6DC] bg-white shadow-[0_2px_24px_rgba(20,20,19,0.06)] overflow-hidden"
+            className="rounded-2xl border border-[#e2e8f0] bg-white shadow-[0_2px_24px_rgba(20,20,19,0.06)] overflow-hidden"
           >
 
             <div className="p-6 md:p-8">
@@ -324,33 +324,33 @@ const AdminCourseReviewDetail: React.FC = () => {
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <div className="w-11 h-11 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] shrink-0 mt-0.5">
+                    <div className="w-11 h-11 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] shrink-0 mt-0.5">
                       <ClipboardCheck className="w-5 h-5" />
                     </div>
                     <div className="min-w-0">
                       <h1
-                        className="font-[Playfair_Display] text-[clamp(1.35rem,3vw,1.85rem)] font-medium text-[#141413] leading-snug tracking-tight"
+                        className="font-[Playfair_Display] text-[clamp(1.35rem,3vw,1.85rem)] font-medium text-[#0f172a] leading-snug tracking-tight"
                         lang="vi"
                       >
                         {course.title}
                       </h1>
-                      <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-1">
+                      <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-1">
                         Xem xét nội dung và thông tin khóa học trước khi phê duyệt.
                       </p>
                     </div>
                   </div>
 
                   <div className="flex flex-wrap gap-2">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF9F5] border border-[#E8E6DC] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59]">
-                      <GraduationCap size={14} className="text-[#87867F]" />
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] border border-[#e2e8f0] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#475569]">
+                      <GraduationCap size={14} className="text-[#64748b]" />
                       {course.subjectName} · Lớp {course.gradeLevel}
                     </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF9F5] border border-[#E8E6DC] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59]">
-                      <BookOpen size={14} className="text-[#87867F]" />
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] border border-[#e2e8f0] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#475569]">
+                      <BookOpen size={14} className="text-[#64748b]" />
                       {course.lessonsCount} bài học
                     </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF9F5] border border-[#E8E6DC] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59]">
-                      <Users size={14} className="text-[#87867F]" />
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] border border-[#e2e8f0] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#475569]">
+                      <Users size={14} className="text-[#64748b]" />
                       {course.studentsCount} học viên
                     </span>
                     <span className="inline-flex items-center gap-1.5 rounded-full bg-[#EEF2FF] border border-[#C7D2FE] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#4338CA]">
@@ -359,7 +359,7 @@ const AdminCourseReviewDetail: React.FC = () => {
                   </div>
 
                   {course.description && (
-                    <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#5E5D59] leading-relaxed border-l-2 border-[#C96442]/40 pl-4">
+                    <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#475569] leading-relaxed border-l-2 border-[#0ea5e9]/40 pl-4">
                       {course.description}
                     </p>
                   )}
@@ -429,9 +429,9 @@ const AdminCourseReviewDetail: React.FC = () => {
             </div>
           </motion.article>
 
-          <div className="rounded-2xl border border-[#E8E6DC] bg-white overflow-hidden shadow-sm">
+          <div className="rounded-2xl border border-[#e2e8f0] bg-white overflow-hidden shadow-sm">
             <div
-              className="flex flex-wrap gap-1 p-2 bg-[#F5F4ED] border-b border-[#E8E6DC]"
+              className="flex flex-wrap gap-1 p-2 bg-[#f8fafc] border-b border-[#e2e8f0]"
               role="tablist"
               aria-label="Nội dung khóa học"
             >
@@ -445,8 +445,8 @@ const AdminCourseReviewDetail: React.FC = () => {
                     aria-selected={active}
                     className={`inline-flex items-center gap-2 px-3 py-2 rounded-xl font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 ${
                       active
-                        ? 'bg-white text-[#141413] shadow-sm ring-1 ring-black/[0.04]'
-                        : 'text-[#87867F] hover:text-[#5E5D59] hover:bg-white/60'
+                        ? 'bg-white text-[#0f172a] shadow-sm ring-1 ring-black/[0.04]'
+                        : 'text-[#64748b] hover:text-[#475569] hover:bg-white/60'
                     }`}
                     onClick={() => handleTabChange(tab.id)}
                   >
@@ -458,7 +458,7 @@ const AdminCourseReviewDetail: React.FC = () => {
               })}
             </div>
 
-            <div className="p-5 md:p-7 bg-[#F5F4ED]/90 min-h-[200px]">
+            <div className="p-5 md:p-7 bg-[#f8fafc]/90 min-h-[200px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
@@ -488,7 +488,7 @@ const AdminCourseReviewDetail: React.FC = () => {
       <AnimatePresence>
         {showRejectModal && (
           <motion.div
-            className="fixed inset-0 z-[110] bg-[#141413]/50 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 z-[110] bg-[#0f172a]/50 backdrop-blur-sm flex items-center justify-center p-4"
             role="presentation"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -509,7 +509,7 @@ const AdminCourseReviewDetail: React.FC = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 8 }}
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="relative z-10 w-full max-w-lg rounded-2xl border border-[#E8E6DC] bg-[#FAF9F5] shadow-[rgba(20,20,19,0.12)_0_22px_50px] p-6"
+              className="relative z-10 w-full max-w-lg rounded-2xl border border-[#e2e8f0] bg-[#ffffff] shadow-[rgba(20,20,19,0.12)_0_22px_50px] p-6"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center mx-auto mb-4">
@@ -517,15 +517,15 @@ const AdminCourseReviewDetail: React.FC = () => {
               </div>
               <h2
                 id="admin-course-reject-title"
-                className="font-[Playfair_Display] text-[18px] font-medium text-[#141413] text-center"
+                className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a] text-center"
               >
                 Từ chối khóa học
               </h2>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-2 text-center">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-2 text-center">
                 Nhập lý do để giáo viên chỉnh sửa và gửi lại.
               </p>
               <textarea
-                className="mt-4 w-full rounded-xl border border-[#DDD6C8] bg-[#FFFEFB] px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] resize-none"
+                className="mt-4 w-full rounded-xl border border-[#DDD6C8] bg-[#FFFEFB] px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] resize-none"
                 rows={5}
                 value={rejectReason}
                 onChange={(e) => setRejectReason(e.target.value)}

@@ -55,7 +55,7 @@ import './admin-finance-studio.css';
 // ─── DetailModal ──────────────────────────────────────────────────────────
 const DetailModal = ({ entry, onClose }: { entry: CashFlowEntry; onClose: () => void }) => (
   <div
-    className="fixed inset-0 z-50 flex items-center justify-center bg-[#141413]/50 backdrop-blur-sm p-4"
+    className="fixed inset-0 z-50 flex items-center justify-center bg-[#0f172a]/50 backdrop-blur-sm p-4"
     role="presentation"
     onClick={onClose}
     onKeyDown={(e) => e.key === 'Escape' && onClose()}
@@ -71,14 +71,14 @@ const DetailModal = ({ entry, onClose }: { entry: CashFlowEntry; onClose: () => 
       <div className="flex justify-between items-center mb-5">
         <h4
           id="cashflow-detail-title"
-          className="font-[Playfair_Display] text-[18px] font-medium text-[#141413]"
+          className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a]"
         >
           Chi tiết giao dịch
         </h4>
         <button
           type="button"
           onClick={onClose}
-          className="text-[#87867F] hover:text-[#141413] transition-colors rounded-lg p-1"
+          className="text-[#64748b] hover:text-[#0f172a] transition-colors rounded-lg p-1"
           aria-label="Đóng"
         >
           <X size={18} />
@@ -86,11 +86,11 @@ const DetailModal = ({ entry, onClose }: { entry: CashFlowEntry; onClose: () => 
       </div>
       <dl className="space-y-3 font-[Be_Vietnam_Pro] text-[13px]">
         <div className="flex justify-between gap-4">
-          <dt className="text-[#87867F] font-medium shrink-0">Thời gian</dt>
-          <dd className="text-[#141413] text-right">{formatDate(entry.transactionDate)}</dd>
+          <dt className="text-[#64748b] font-medium shrink-0">Thời gian</dt>
+          <dd className="text-[#0f172a] text-right">{formatDate(entry.transactionDate)}</dd>
         </div>
         <div className="flex justify-between gap-4">
-          <dt className="text-[#87867F] font-medium shrink-0">Danh mục</dt>
+          <dt className="text-[#64748b] font-medium shrink-0">Danh mục</dt>
           <dd>
             <span
               className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border"
@@ -105,7 +105,7 @@ const DetailModal = ({ entry, onClose }: { entry: CashFlowEntry; onClose: () => 
           </dd>
         </div>
         <div className="flex justify-between gap-4">
-          <dt className="text-[#87867F] font-medium shrink-0">Loại</dt>
+          <dt className="text-[#64748b] font-medium shrink-0">Loại</dt>
           <dd
             className={`font-semibold ${entry.direction === 'INFLOW' ? 'text-[#2EAD7A]' : 'text-red-600'}`}
           >
@@ -113,7 +113,7 @@ const DetailModal = ({ entry, onClose }: { entry: CashFlowEntry; onClose: () => 
           </dd>
         </div>
         <div className="flex justify-between gap-4">
-          <dt className="text-[#87867F] font-medium shrink-0">Số tiền</dt>
+          <dt className="text-[#64748b] font-medium shrink-0">Số tiền</dt>
           <dd
             className={`font-bold tabular-nums ${entry.direction === 'INFLOW' ? 'text-[#2EAD7A]' : 'text-red-600'}`}
           >
@@ -123,26 +123,26 @@ const DetailModal = ({ entry, onClose }: { entry: CashFlowEntry; onClose: () => 
         </div>
         {entry.orderCode && (
           <div className="flex justify-between gap-4">
-            <dt className="text-[#87867F] font-medium shrink-0">Mã đơn hàng</dt>
-            <dd className="text-[#141413] font-mono">#{entry.orderCode}</dd>
+            <dt className="text-[#64748b] font-medium shrink-0">Mã đơn hàng</dt>
+            <dd className="text-[#0f172a] font-mono">#{entry.orderCode}</dd>
           </div>
         )}
         {entry.userName && (
           <div className="flex justify-between gap-4">
-            <dt className="text-[#87867F] font-medium shrink-0">Người dùng</dt>
-            <dd className="text-[#141413] text-right">{entry.userName}</dd>
+            <dt className="text-[#64748b] font-medium shrink-0">Người dùng</dt>
+            <dd className="text-[#0f172a] text-right">{entry.userName}</dd>
           </div>
         )}
         {entry.userEmail && (
           <div className="flex justify-between gap-4">
-            <dt className="text-[#87867F] font-medium shrink-0">Email</dt>
-            <dd className="text-[#141413] text-right break-all">{entry.userEmail}</dd>
+            <dt className="text-[#64748b] font-medium shrink-0">Email</dt>
+            <dd className="text-[#0f172a] text-right break-all">{entry.userEmail}</dd>
           </div>
         )}
         {entry.description && (
-          <div className="pt-2 border-t border-[#F0EEE6]">
-            <dt className="text-[#87867F] font-medium mb-1">Mô tả</dt>
-            <dd className="text-[#141413] leading-relaxed">{entry.description}</dd>
+          <div className="pt-2 border-t border-[#e2e8f0]">
+            <dt className="text-[#64748b] font-medium mb-1">Mô tả</dt>
+            <dd className="text-[#0f172a] leading-relaxed">{entry.description}</dd>
           </div>
         )}
       </dl>
@@ -267,10 +267,10 @@ const SummaryCard = ({
       ? 'text-[#2EAD7A]'
       : cColor === 'negative'
         ? 'text-red-600'
-        : 'text-[#87867F]';
+        : 'text-[#64748b]';
 
   return (
-    <div className="bg-white rounded-2xl border border-[#E8E6DC] p-4 sm:p-5 flex flex-col gap-3 shadow-[rgba(0,0,0,0.04)_0px_4px_24px] hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.06)_0px_8px_28px] hover:-translate-y-0.5 transition-all duration-200">
+    <div className="bg-white rounded-2xl border border-[#e2e8f0] p-4 sm:p-5 flex flex-col gap-3 shadow-[rgba(0,0,0,0.04)_0px_4px_24px] hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.06)_0px_8px_28px] hover:-translate-y-0.5 transition-all duration-200">
       <div className="flex items-start gap-3">
         <div
           className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${iconBg}`}
@@ -278,8 +278,8 @@ const SummaryCard = ({
           <Icon className={`w-5 h-5 ${iconColor}`} strokeWidth={2} />
         </div>
         <div className="min-w-0 flex-1">
-          <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">{title}</p>
-          <p className="font-[Be_Vietnam_Pro] text-[clamp(1.125rem,2.5vw,1.5rem)] font-bold tabular-nums text-[#141413] leading-tight mt-1 break-words">
+          <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">{title}</p>
+          <p className="font-[Be_Vietnam_Pro] text-[clamp(1.125rem,2.5vw,1.5rem)] font-bold tabular-nums text-[#0f172a] leading-tight mt-1 break-words">
             {formatVND(amount)}
           </p>
           <p className={`font-[Be_Vietnam_Pro] text-[11px] font-medium tabular-nums mt-1 ${trendTextCls}`}>
@@ -369,7 +369,7 @@ const CashFlowDashboard: React.FC = () => {
       <div
         style={{
           background: '#fff',
-          border: '1px solid #F0EEE6',
+          border: '1px solid #e2e8f0',
           borderRadius: 12,
           boxShadow: '0 10px 25px -10px rgba(0,0,0,0.15)',
           padding: '10px 14px',
@@ -508,21 +508,21 @@ const CashFlowDashboard: React.FC = () => {
             {/* ─── Page header (TeacherMindmaps pattern) ─── */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+                <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                   <Wallet className="w-5 h-5" strokeWidth={2} />
                 </div>
                 <div>
                   <div className="flex flex-wrap items-center gap-2.5">
-                    <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                    <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                       Dòng tiền
                     </h1>
                     {/* {summary && (
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                         {summary.period}
                       </span>
                     )} */}
                   </div>
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                     Theo dõi nạp — rút và cơ cấu danh mục trên nền tảng
                   </p>
                 </div>
@@ -530,7 +530,7 @@ const CashFlowDashboard: React.FC = () => {
               <button
                 type="button"
                 onClick={handleExport}
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#A3B6D4] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#96AAC8] active:scale-[0.98] transition-all duration-150 shadow-[rgba(110,130,165,0.22)_0px_8px_22px]"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#A3B6D4] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#96AAC8] active:scale-[0.98] transition-all duration-150 shadow-[rgba(110,130,165,0.22)_0px_8px_22px]"
               >
                 <Download className="w-4 h-4" strokeWidth={2} />
                 Xuất báo cáo
@@ -540,11 +540,11 @@ const CashFlowDashboard: React.FC = () => {
             {/* ─── Date range & quick presets ─── */}
             <div className="flex flex-col xl:flex-row xl:items-center gap-3">
               <div className="flex flex-wrap items-center gap-2">
-                <div className="flex items-center gap-2 bg-white border border-[#E8E6DC] rounded-xl px-3 py-2 shadow-[rgba(0,0,0,0.03)_0px_2px_12px]">
-                  <Calendar className="w-4 h-4 text-[#87867F] shrink-0" strokeWidth={2} />
+                <div className="flex items-center gap-2 bg-white border border-[#e2e8f0] rounded-xl px-3 py-2 shadow-[rgba(0,0,0,0.03)_0px_2px_12px]">
+                  <Calendar className="w-4 h-4 text-[#64748b] shrink-0" strokeWidth={2} />
                   <input
                     type="date"
-                    className="border-0 bg-transparent font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none"
+                    className="border-0 bg-transparent font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none"
                     value={dateRange.from}
                     onChange={(e) => {
                       setDateRange((p) => ({ ...p, from: e.target.value }));
@@ -552,10 +552,10 @@ const CashFlowDashboard: React.FC = () => {
                       setPage(0);
                     }}
                   />
-                  <span className="text-[#B0AEA5] text-xs font-[Be_Vietnam_Pro]">→</span>
+                  <span className="text-[#94a3b8] text-xs font-[Be_Vietnam_Pro]">→</span>
                   <input
                     type="date"
-                    className="border-0 bg-transparent font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none"
+                    className="border-0 bg-transparent font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none"
                     value={dateRange.to}
                     onChange={(e) => {
                       setDateRange((p) => ({ ...p, to: e.target.value }));
@@ -564,7 +564,7 @@ const CashFlowDashboard: React.FC = () => {
                     }}
                   />
                 </div>
-                <div className="flex items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl flex-wrap">
+                <div className="flex items-center gap-1 p-1 bg-[#f8fafc] rounded-xl flex-wrap">
                   {(
                     [
                       { id: '1d', label: '1 ngày' },
@@ -578,8 +578,8 @@ const CashFlowDashboard: React.FC = () => {
                       type="button"
                       onClick={() => setQuickDateRange(item.id)}
                       className={`px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${quickRange === item.id
-                        ? 'bg-white text-[#141413] shadow-sm'
-                        : 'text-[#87867F] hover:text-[#5E5D59]'
+                        ? 'bg-white text-[#0f172a] shadow-sm'
+                        : 'text-[#64748b] hover:text-[#475569]'
                         }`}
                     >
                       {item.label}
@@ -623,12 +623,12 @@ const CashFlowDashboard: React.FC = () => {
             {/* ─── Charts ─── */}
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
               {/* Trend Area Chart */}
-              <div className="lg:col-span-2 bg-white rounded-2xl border border-[#E8E6DC] shadow-[rgba(0,0,0,0.04)_0px_4px_24px] overflow-hidden">
-                <div className="px-5 py-4 border-b border-[#F0EEE6] bg-[#FAF9F5]">
-                  <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#141413]">
+              <div className="lg:col-span-2 bg-white rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.04)_0px_4px_24px] overflow-hidden">
+                <div className="px-5 py-4 border-b border-[#e2e8f0] bg-[#ffffff]">
+                  <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#0f172a]">
                     Biến động dòng tiền
                   </h3>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">
                     Nạp vào và rút ra theo khoảng thời gian đã chọn
                   </p>
                 </div>
@@ -675,12 +675,12 @@ const CashFlowDashboard: React.FC = () => {
               </div>
 
               {/* Category breakdown */}
-              <div className="bg-white rounded-2xl border border-[#E8E6DC] shadow-[rgba(0,0,0,0.04)_0px_4px_24px] overflow-hidden flex flex-col">
-                <div className="px-5 py-4 border-b border-[#F0EEE6] bg-[#FAF9F5] shrink-0">
-                  <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#141413]">
+              <div className="bg-white rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.04)_0px_4px_24px] overflow-hidden flex flex-col">
+                <div className="px-5 py-4 border-b border-[#e2e8f0] bg-[#ffffff] shrink-0">
+                  <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#0f172a]">
                     Cơ cấu danh mục
                   </h3>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">
                     Phân bổ theo danh mục giao dịch
                   </p>
                 </div>
@@ -713,7 +713,7 @@ const CashFlowDashboard: React.FC = () => {
                               formatter={(val) => formatVND(Math.abs(Number(val ?? 0)))}
                               contentStyle={{
                                 borderRadius: 12,
-                                border: '1px solid #F0EEE6',
+                                border: '1px solid #e2e8f0',
                                 boxShadow: '0 10px 25px -10px rgba(0,0,0,0.15)',
                               }}
                             />
@@ -729,7 +729,7 @@ const CashFlowDashboard: React.FC = () => {
                         {summary.categoryBreakdown.map((cat, i) => (
                           <div
                             key={i}
-                            className="flex justify-between items-center gap-3 py-2 px-2 rounded-xl hover:bg-[#FAF9F5] transition-colors"
+                            className="flex justify-between items-center gap-3 py-2 px-2 rounded-xl hover:bg-[#ffffff] transition-colors"
                           >
                             <div className="flex items-center gap-2 min-w-0">
                               <div
@@ -737,17 +737,17 @@ const CashFlowDashboard: React.FC = () => {
                                 style={{ backgroundColor: cat.color }}
                               />
                               <span
-                                className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] truncate"
+                                className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569] truncate"
                                 title={cat.categoryName}
                               >
                                 {cat.categoryName}
                               </span>
                             </div>
                             <div className="text-right shrink-0">
-                              <div className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] tabular-nums">
+                              <div className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] tabular-nums">
                                 {formatVND(Math.abs(cat.total))}
                               </div>
-                              <div className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] tabular-nums">
+                              <div className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] tabular-nums">
                                 {cat.percentage}%
                               </div>
                             </div>
@@ -756,7 +756,7 @@ const CashFlowDashboard: React.FC = () => {
                       </div>
                     </div>
                   ) : (
-                    <div className="min-h-[16rem] flex items-center justify-center font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                    <div className="min-h-[16rem] flex items-center justify-center font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                       Không có dữ liệu
                     </div>
                   )}
@@ -765,24 +765,24 @@ const CashFlowDashboard: React.FC = () => {
             </div>
 
             {/* ─── Transactions Table ─── */}
-            <div className="bg-white rounded-2xl border border-[#E8E6DC] shadow-[rgba(0,0,0,0.04)_0px_4px_24px] overflow-hidden">
-              <div className="px-5 py-4 border-b border-[#F0EEE6] bg-[#FAF9F5] flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+            <div className="bg-white rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.04)_0px_4px_24px] overflow-hidden">
+              <div className="px-5 py-4 border-b border-[#e2e8f0] bg-[#ffffff] flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div>
-                  <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#141413]">
+                  <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#0f172a]">
                     Chi tiết giao dịch
                   </h3>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">
                     Lọc theo thời gian, loại và danh mục
                   </p>
                 </div>
 
                 <div className="flex flex-col gap-3 w-full lg:max-w-3xl">
-                  <label className="flex w-full items-center gap-3 bg-white border border-[#E8E6DC] rounded-xl px-4 py-2.5 focus-within:border-[#A3B6D4] focus-within:ring-1 focus-within:ring-[rgba(163,182,212,0.38)] transition-all duration-150">
-                    <Search className="text-[#87867F] w-4 h-4 shrink-0" strokeWidth={2} />
+                  <label className="flex w-full items-center gap-3 bg-white border border-[#e2e8f0] rounded-xl px-4 py-2.5 focus-within:border-[#A3B6D4] focus-within:ring-1 focus-within:ring-[rgba(163,182,212,0.38)] transition-all duration-150">
+                    <Search className="text-[#64748b] w-4 h-4 shrink-0" strokeWidth={2} />
                     <input
                       type="text"
                       placeholder="Tìm giao dịch, người dùng..."
-                      className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] bg-transparent outline-none min-w-0"
+                      className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] bg-transparent outline-none min-w-0"
                       value={search}
                       onChange={(e) => setSearch(e.target.value)}
                     />
@@ -791,7 +791,7 @@ const CashFlowDashboard: React.FC = () => {
                         type="button"
                         aria-label="Xóa tìm kiếm"
                         onClick={() => setSearch('')}
-                        className="text-[#87867F] hover:text-[#141413] transition-colors shrink-0"
+                        className="text-[#64748b] hover:text-[#0f172a] transition-colors shrink-0"
                       >
                         <X className="w-4 h-4" />
                       </button>
@@ -799,11 +799,11 @@ const CashFlowDashboard: React.FC = () => {
                   </label>
 
                   <div className="flex flex-wrap items-center gap-2">
-                    <div className="flex items-center gap-2 bg-white border border-[#E8E6DC] rounded-xl px-3 py-2">
-                      <Calendar className="w-3.5 h-3.5 text-[#87867F] shrink-0" strokeWidth={2} />
+                    <div className="flex items-center gap-2 bg-white border border-[#e2e8f0] rounded-xl px-3 py-2">
+                      <Calendar className="w-3.5 h-3.5 text-[#64748b] shrink-0" strokeWidth={2} />
                       <input
                         type="date"
-                        className="border-0 font-[Be_Vietnam_Pro] text-[12px] text-[#141413] outline-none bg-transparent"
+                        className="border-0 font-[Be_Vietnam_Pro] text-[12px] text-[#0f172a] outline-none bg-transparent"
                         value={dateRange.from}
                         onChange={(e) => {
                           setDateRange((p) => ({ ...p, from: e.target.value }));
@@ -811,10 +811,10 @@ const CashFlowDashboard: React.FC = () => {
                           setPage(0);
                         }}
                       />
-                      <span className="text-[#B0AEA5] text-[11px]">→</span>
+                      <span className="text-[#94a3b8] text-[11px]">→</span>
                       <input
                         type="date"
-                        className="border-0 font-[Be_Vietnam_Pro] text-[12px] text-[#141413] outline-none bg-transparent"
+                        className="border-0 font-[Be_Vietnam_Pro] text-[12px] text-[#0f172a] outline-none bg-transparent"
                         value={dateRange.to}
                         onChange={(e) => {
                           setDateRange((p) => ({ ...p, to: e.target.value }));
@@ -824,10 +824,10 @@ const CashFlowDashboard: React.FC = () => {
                       />
                     </div>
 
-                    <div className="flex items-center gap-2 rounded-xl border border-[#E8E6DC] bg-white px-2 py-1.5">
-                      <Filter className="w-4 h-4 text-[#87867F] shrink-0" strokeWidth={2} />
+                    <div className="flex items-center gap-2 rounded-xl border border-[#e2e8f0] bg-white px-2 py-1.5">
+                      <Filter className="w-4 h-4 text-[#64748b] shrink-0" strokeWidth={2} />
                       <select
-                        className="border-0 bg-transparent font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] py-1 outline-none cursor-pointer min-w-[8rem]"
+                        className="border-0 bg-transparent font-[Be_Vietnam_Pro] text-[13px] text-[#475569] py-1 outline-none cursor-pointer min-w-[8rem]"
                         value={filterType}
                         onChange={(e) => setFilterType(e.target.value as CashFlowType | '')}
                       >
@@ -844,17 +844,17 @@ const CashFlowDashboard: React.FC = () => {
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse min-w-[640px]">
                   <thead>
-                    <tr className="bg-[#FAF9F5] border-b border-[#F0EEE6]">
-                      <th className="px-4 py-3.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wider text-[#87867F]">
+                    <tr className="bg-[#ffffff] border-b border-[#e2e8f0]">
+                      <th className="px-4 py-3.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wider text-[#64748b]">
                         Thời gian
                       </th>
-                      <th className="px-4 py-3.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wider text-[#87867F]">
+                      <th className="px-4 py-3.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wider text-[#64748b]">
                         Danh mục
                       </th>
-                      <th className="px-4 py-3.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wider text-[#87867F] text-right">
+                      <th className="px-4 py-3.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wider text-[#64748b] text-right">
                         Số tiền
                       </th>
-                      <th className="px-4 py-3.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wider text-[#87867F]">
+                      <th className="px-4 py-3.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wider text-[#64748b]">
                         Người dùng
                       </th>
                       <th className="px-4 py-3.5 w-36 text-right">
@@ -862,13 +862,13 @@ const CashFlowDashboard: React.FC = () => {
                       </th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#F0EEE6] font-[Be_Vietnam_Pro] text-[13px]">
+                  <tbody className="divide-y divide-[#e2e8f0] font-[Be_Vietnam_Pro] text-[13px]">
                     {loading ? (
                       <tr>
                         <td colSpan={5} className="px-6 py-14 text-center">
-                          <span className="inline-flex flex-col items-center gap-3 text-[#87867F]">
+                          <span className="inline-flex flex-col items-center gap-3 text-[#64748b]">
                             <span
-                              className="w-8 h-8 rounded-full border-2 border-[#E8E6DC] border-t-[#A3B6D4] animate-spin"
+                              className="w-8 h-8 rounded-full border-2 border-[#e2e8f0] border-t-[#A3B6D4] animate-spin"
                               aria-hidden
                             />
                             <span>Đang tải dữ liệu...</span>
@@ -879,15 +879,15 @@ const CashFlowDashboard: React.FC = () => {
                       <tr>
                         <td
                           colSpan={5}
-                          className="px-6 py-14 text-center font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]"
+                          className="px-6 py-14 text-center font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]"
                         >
                           Không tìm thấy giao dịch nào.
                         </td>
                       </tr>
                     ) : (
                       transactions.map((t) => (
-                        <tr key={t.id} className="hover:bg-[#FAF9F5]/80 transition-colors group">
-                          <td className="px-4 py-3.5 text-[#5E5D59] whitespace-nowrap tabular-nums">
+                        <tr key={t.id} className="hover:bg-[#ffffff]/80 transition-colors group">
+                          <td className="px-4 py-3.5 text-[#475569] whitespace-nowrap tabular-nums">
                             {formatDate(t.transactionDate)}
                           </td>
                           <td className="px-4 py-3.5">
@@ -895,7 +895,7 @@ const CashFlowDashboard: React.FC = () => {
                               className="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold border font-[Be_Vietnam_Pro]"
                               style={{
                                 backgroundColor: `${t.category?.color}12`,
-                                color: t.category?.color ?? '#5E5D59',
+                                color: t.category?.color ?? '#475569',
                                 borderColor: `${t.category?.color}35`,
                               }}
                             >
@@ -911,20 +911,20 @@ const CashFlowDashboard: React.FC = () => {
                               {formatVND(t.amount)}
                             </span>
                           </td>
-                          <td className="px-4 py-3.5 text-[#141413]">
+                          <td className="px-4 py-3.5 text-[#0f172a]">
                             {t.userName ? (
                               <div className="truncate max-w-[160px]" title={t.userEmail ?? ''}>
                                 {t.userName}
                               </div>
                             ) : (
-                              <span className="text-[#B0AEA5]">—</span>
+                              <span className="text-[#94a3b8]">—</span>
                             )}
                           </td>
                           <td className="px-4 py-3.5 text-right">
                             <button
                               type="button"
                               onClick={() => setSelectedEntry(t)}
-                              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-[#141413] text-[#FAF9F5] text-[12px] font-semibold hover:bg-[#30302E] opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity duration-150 sm:opacity-100"
+                              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-[#0f172a] text-[#ffffff] text-[12px] font-semibold hover:bg-[#1e293b] opacity-0 group-hover:opacity-100 focus:opacity-100 transition-opacity duration-150 sm:opacity-100"
                             >
                               Chi tiết
                               <ChevronRight className="w-3.5 h-3.5" strokeWidth={2} />
@@ -939,7 +939,7 @@ const CashFlowDashboard: React.FC = () => {
 
               {/* Pagination */}
               {(totalElements > 0 || totalPages > 0) && (
-                <div className="p-4 border-t border-[#F0EEE6] flex flex-col md:flex-row md:items-center md:justify-between gap-3 bg-[#FAF9F5]/80">
+                <div className="p-4 border-t border-[#e2e8f0] flex flex-col md:flex-row md:items-center md:justify-between gap-3 bg-[#ffffff]/80">
                   <div className="text-sm text-gray-500">
                     Showing {totalElements === 0 ? 0 : page * pageSize + 1}-
                     {Math.min((page + 1) * pageSize, totalElements)} of {totalElements} records
@@ -965,7 +965,7 @@ const CashFlowDashboard: React.FC = () => {
                             right: 0,
                             top: 'calc(100% + 6px)',
                             background: '#ffffff',
-                            border: '1px solid #e8e6dc',
+                            border: '1px solid #e2e8f0',
                             borderRadius: '12px',
                             boxShadow: '0 10px 25px -10px rgba(0,0,0,0.2)',
                             overflow: 'hidden',
@@ -988,7 +988,7 @@ const CashFlowDashboard: React.FC = () => {
                                 alignItems: 'center',
                                 justifyContent: 'space-between',
                                 padding: '0.55rem 0.85rem',
-                                background: size === pageSize ? '#f5f4ed' : '#ffffff',
+                                background: size === pageSize ? '#f8fafc' : '#ffffff',
                                 color: '#4b4942',
                                 fontSize: '0.85rem',
                                 border: 'none',

@@ -1,13 +1,13 @@
 /* ── Revenue breakdown — modern finance studio (warm editorial + clarity) ── */
 
 .revenue-breakdown-page {
-  --rb-ink: #141413;
-  --rb-muted: #87867f;
-  --rb-subtle: #5e5d59;
-  --rb-border: #e8e6dc;
+  --rb-ink: #0f172a;
+  --rb-muted: #64748b;
+  --rb-subtle: #475569;
+  --rb-border: #e2e8f0;
   --rb-surface: #ffffff;
   --rb-canvas: transparent;
-  --rb-accent: #c96442;
+  --rb-accent: #0ea5e9;
   --rb-violet: #9b6fe0;
   --rb-green: #2ead7a;
 
@@ -39,7 +39,7 @@
 
 .rb-skeleton {
   border-radius: 16px;
-  background: linear-gradient(90deg, #edeae4 0%, #f5f4ed 50%, #edeae4 100%);
+  background: linear-gradient(90deg, #edeae4 0%, #f8fafc 50%, #edeae4 100%);
   background-size: 200% 100%;
   animation: rb-shimmer 1.2s ease-in-out infinite;
 }
@@ -89,7 +89,7 @@
   flex-direction: column;
   gap: 1.35rem;
   padding: 1.35rem 1.5rem;
-  background: #faf9f5;
+  background: #ffffff;
   border: 1px solid var(--rb-border);
   border-radius: 18px;
   box-shadow:
@@ -117,8 +117,8 @@
   width: 44px;
   height: 44px;
   border-radius: 14px;
-  background: #e8e6dc;
-  color: #5e5d59;
+  background: #e2e8f0;
+  color: #475569;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -202,7 +202,7 @@
   margin: 0;
   border: none;
   min-width: 0;
-  background: #f5f4ed;
+  background: #f8fafc;
   border-radius: 12px;
   flex-wrap: wrap;
 }
@@ -275,15 +275,15 @@
 }
 
 .rb-btn--outline:hover:not(:disabled) {
-  background: #faf9f5;
-  border-color: #d1cfc5;
+  background: #ffffff;
+  border-color: #cbd5e1;
   color: var(--rb-ink);
 }
 
 .rb-btn--primary {
   background: var(--rb-accent);
   border: 1px solid var(--rb-accent);
-  color: #faf9f5;
+  color: #ffffff;
 }
 
 .rb-btn--primary:hover:not(:disabled) {
@@ -303,7 +303,7 @@
   padding: 2rem 2.25rem;
   border-radius: 18px;
   border: 1px solid var(--rb-border);
-  background: linear-gradient(155deg, #ffffff 0%, #faf9f5 42%, #f4f3f0 100%);
+  background: linear-gradient(155deg, #ffffff 0%, #ffffff 42%, #f4f3f0 100%);
   box-shadow: rgba(0, 0, 0, 0.05) 0px 8px 32px;
   overflow: hidden;
   display: flex;
@@ -366,9 +366,9 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  background: rgba(201, 100, 66, 0.1);
+  background: rgba(14, 165, 233, 0.1);
   color: #a54b2f;
-  border: 1px solid rgba(201, 100, 66, 0.2);
+  border: 1px solid rgba(14, 165, 233, 0.2);
 }
 
 .card-meta-muted {
@@ -402,7 +402,7 @@
 
 .source-mini-card:hover {
   transform: translateY(-2px);
-  border-color: #d1cfc5;
+  border-color: #cbd5e1;
   box-shadow: rgba(0, 0, 0, 0.06) 0 12px 28px;
 }
 
@@ -422,7 +422,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #faf9f5;
+  background: #ffffff;
   border-radius: 14px;
   color: var(--rb-muted);
   flex-shrink: 0;
@@ -518,7 +518,7 @@
   width: 100%;
   max-width: 380px;
   padding: 0.55rem 1rem;
-  background: #faf9f5;
+  background: #ffffff;
   border: 1px solid var(--rb-border);
   border-radius: 14px;
   transition:
@@ -567,7 +567,7 @@
 
 .data-table th {
   padding: 0.95rem 1.25rem;
-  background: #faf9f5;
+  background: #ffffff;
   border-bottom: 1px solid var(--rb-border);
   text-align: left;
   font-size: 0.6875rem;
@@ -579,7 +579,7 @@
 
 .data-table td {
   padding: 0.95rem 1.25rem;
-  border-bottom: 1px solid #f0eee6;
+  border-bottom: 1px solid #e2e8f0;
   font-size: 0.8125rem;
   color: var(--rb-ink);
 }
@@ -627,7 +627,7 @@
 .empty-revenue-state__icon {
   width: 48px;
   height: 48px;
-  background: #faf9f5;
+  background: #ffffff;
   color: var(--rb-muted);
   border-radius: 50%;
   display: flex;
@@ -650,7 +650,7 @@
 }
 
 .table-footer-row {
-  background: #faf9f5;
+  background: #ffffff;
 }
 
 .table-footer-row td {
@@ -728,7 +728,7 @@
 }
 
 .rb-page-size-select:hover {
-  border-color: #d1cfc5;
+  border-color: #cbd5e1;
 }
 
 .rb-page-size-select:focus {
@@ -777,7 +777,7 @@
   padding: 1.5rem 1.5rem;
   border-radius: 16px;
   border: 1px solid var(--rb-border);
-  background: linear-gradient(180deg, #faf9f5 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 100%);
   box-shadow: rgba(0, 0, 0, 0.03) 0 6px 24px;
 }
 

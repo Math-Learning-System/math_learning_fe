@@ -44,13 +44,13 @@ const matrixStatusLabel: Record<string, string> = {
 function matrixStatusPillClass(status: MatrixStatus): string {
   switch (status) {
     case MatrixStatus.DRAFT:
-      return 'inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]';
+      return 'inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]';
     case MatrixStatus.APPROVED:
       return 'inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-50 font-[Be_Vietnam_Pro] text-[12px] font-semibold text-emerald-800 border border-emerald-200';
     case MatrixStatus.LOCKED:
       return 'inline-flex items-center px-2 py-0.5 rounded-full bg-slate-100 font-[Be_Vietnam_Pro] text-[12px] font-semibold text-slate-600 border border-slate-200';
     default:
-      return 'inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]';
+      return 'inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]';
   }
 }
 
@@ -249,7 +249,7 @@ export default function ExamMatrixDetailPageRefactored() {
           <section className="module-page teacher-courses-page exam-matrix-dashboard-page exam-matrix-detail-page">
             <button
               type="button"
-              className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors mb-5"
+              className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors mb-5"
               onClick={() => navigate('/teacher/exam-matrices')}
             >
               <ArrowLeft size={15} aria-hidden />
@@ -257,14 +257,14 @@ export default function ExamMatrixDetailPageRefactored() {
             </button>
 
             {/* Header — aligned with /teacher/mindmaps */}
-            <header className="flex flex-col gap-2 pb-5 mb-2 border-b border-[#E8E6DC]">
+            <header className="flex flex-col gap-2 pb-5 mb-2 border-b border-[#e2e8f0]">
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] shrink-0">
                   <Ruler className="w-5 h-5" aria-hidden />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-center gap-2.5">
-                    <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] m-0 leading-snug">
+                    <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] m-0 leading-snug">
                       {isPageLoading
                         ? 'Đang tải…'
                         : matrix?.name?.trim() || 'Chi tiết ma trận đề'}
@@ -275,7 +275,7 @@ export default function ExamMatrixDetailPageRefactored() {
                       </span>
                     )}
                   </div>
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-1 m-0 leading-relaxed">
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-1 m-0 leading-relaxed">
                     {matrixDetailShortSubtitle(matrix ?? null, isPageLoading)}
                   </p>
                 </div>

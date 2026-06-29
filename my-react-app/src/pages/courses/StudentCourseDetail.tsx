@@ -69,7 +69,7 @@ const levelMap: Record<string, { label: string; color: string }> = {
 };
 
 const secondaryBtn =
-  'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors shadow-sm';
+  'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors shadow-sm';
 
 const StudentCourseDetail: React.FC = () => {
   const { enrollmentId } = useParams<{ enrollmentId: string }>();
@@ -151,14 +151,14 @@ const StudentCourseDetail: React.FC = () => {
         contentClassName="dashboard-content--flush-bleed"
       >
         <div className="px-6 py-16 lg:px-8 flex justify-center">
-          <div className="max-w-md w-full rounded-2xl border border-[#E8E6DC] bg-white p-10 text-center shadow-sm">
-            <div className="w-14 h-14 rounded-2xl bg-[#F5F4ED] text-[#87867F] flex items-center justify-center mx-auto mb-4">
+          <div className="max-w-md w-full rounded-2xl border border-[#e2e8f0] bg-white p-10 text-center shadow-sm">
+            <div className="w-14 h-14 rounded-2xl bg-[#f8fafc] text-[#64748b] flex items-center justify-center mx-auto mb-4">
               <FileText className="w-7 h-7" />
             </div>
-            <h2 className="font-[Playfair_Display] text-xl font-medium text-[#141413] mb-2">
+            <h2 className="font-[Playfair_Display] text-xl font-medium text-[#0f172a] mb-2">
               Không tìm thấy thông tin đăng ký
             </h2>
-            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mb-6">
+            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mb-6">
               Khóa học có thể đã bị gỡ hoặc liên kết không hợp lệ.
             </p>
             <button type="button" className={secondaryBtn} onClick={() => navigate('/student/courses')}>
@@ -181,7 +181,7 @@ const StudentCourseDetail: React.FC = () => {
     >
       <div className="w-full min-w-0 max-w-none px-4 sm:px-6 lg:px-8 py-8 pb-12 box-border">
         <div className="w-full min-w-0 max-w-none space-y-6">
-          <div className="w-full border-b border-[#E8E6DC]/80 bg-[#FAF9F5]/80 px-4 py-3">
+          <div className="w-full border-b border-[#e2e8f0]/80 bg-[#ffffff]/80 px-4 py-3">
             <CourseBreadcrumb
               homePath="/student/courses"
               items={[{ label: enrollment.courseTitle ?? UI_TEXT.COURSE }]}
@@ -193,10 +193,10 @@ const StudentCourseDetail: React.FC = () => {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-2xl border border-[#E8E6DC] bg-white shadow-[0_2px_24px_rgba(20,20,19,0.06)] overflow-hidden"
+            className="rounded-2xl border border-[#e2e8f0] bg-white shadow-[0_2px_24px_rgba(20,20,19,0.06)] overflow-hidden"
           >
             <div
-              className="h-1 w-full bg-gradient-to-r from-[#C96442] via-[#E07B39] to-[#6366F1]"
+              className="h-1 w-full bg-gradient-to-r from-[#0ea5e9] via-[#E07B39] to-[#6366F1]"
               aria-hidden
             />
             <div className="p-6 md:p-8 space-y-6">
@@ -212,7 +212,7 @@ const StudentCourseDetail: React.FC = () => {
               <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
                 <div className="w-full max-w-[260px] mx-auto lg:mx-0 flex-shrink-0">
                   <div
-                    className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#E8E6DC] shadow-sm"
+                    className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[#e2e8f0] shadow-sm"
                     style={{ background: coverGradients[coverIdx % coverGradients.length] }}
                   >
                     {course?.thumbnailUrl ? (
@@ -233,16 +233,16 @@ const StudentCourseDetail: React.FC = () => {
                 </div>
 
                 <div className="flex-1 min-w-0 space-y-4">
-                  <h1 className="font-[Playfair_Display] text-[clamp(1.35rem,3vw,1.85rem)] font-medium text-[#141413] leading-snug tracking-tight">
+                  <h1 className="font-[Playfair_Display] text-[clamp(1.35rem,3vw,1.85rem)] font-medium text-[#0f172a] leading-snug tracking-tight">
                     {enrollment.courseTitle}
                   </h1>
                   {course?.subtitle ? (
-                    <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#5E5D59] leading-relaxed">
+                    <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#475569] leading-relaxed">
                       {course.subtitle}
                     </p>
                   ) : null}
                   {teacherProfile ? (
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                       Giảng viên:{' '}
                       <Link
                         to={`/student/instructors/${teacherProfile.userId}`}
@@ -268,13 +268,13 @@ const StudentCourseDetail: React.FC = () => {
                         className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide ${
                           enrollment.status === 'ACTIVE'
                             ? 'bg-emerald-50 text-emerald-950 border-emerald-200'
-                            : 'bg-[#F5F4ED] text-[#5E5D59] border-[#E8E6DC]'
+                            : 'bg-[#f8fafc] text-[#475569] border-[#e2e8f0]'
                         }`}
                       >
                         {enrollment.status === 'ACTIVE' ? 'Đang học' : 'Đã hủy'}
                       </span>
                       {course.level ? (
-                        <span className="inline-flex items-center rounded-full border border-[#E8E6DC] bg-[#FAF9F5] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#5E5D59]">
+                        <span className="inline-flex items-center rounded-full border border-[#e2e8f0] bg-[#ffffff] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#475569]">
                           {levelMap[course.level]?.label ?? 'Mọi cấp độ'}
                         </span>
                       ) : null}
@@ -284,29 +284,29 @@ const StudentCourseDetail: React.FC = () => {
                   {course ? (
                     <div className="flex flex-wrap gap-2">
                       {course.provider === 'MINISTRY' ? (
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF9F5] border border-[#E8E6DC] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59]">
-                          <BookOpen size={14} className="text-[#87867F]" />
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] border border-[#e2e8f0] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#475569]">
+                          <BookOpen size={14} className="text-[#64748b]" />
                           {course.subjectName} · Lớp {course.gradeLevel}
                         </span>
                       ) : null}
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF9F5] border border-[#E8E6DC] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59]">
-                        <Users size={14} className="text-[#87867F]" />
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] border border-[#e2e8f0] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#475569]">
+                        <Users size={14} className="text-[#64748b]" />
                         {course.studentsCount} học viên
                       </span>
                       {course.language ? (
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF9F5] border border-[#E8E6DC] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59]">
-                          <Globe size={14} className="text-[#87867F]" />
+                        <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] border border-[#e2e8f0] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#475569]">
+                          <Globe size={14} className="text-[#64748b]" />
                           {course.language}
                         </span>
                       ) : null}
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF9F5] border border-[#E8E6DC] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59]">
-                        <FileText size={14} className="text-[#87867F]" />
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-[#ffffff] border border-[#e2e8f0] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#475569]">
+                        <FileText size={14} className="text-[#64748b]" />
                         {course.lessonsCount} bài học
                       </span>
                       <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FFF7ED] border border-[#FDE68A] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#92400E]">
                         <Star size={14} className="text-amber-500" fill="#FBBF24" color="#FBBF24" />
                         <strong>{course.rating || 0}</strong>
-                        <span className="text-[#87867F] font-normal">
+                        <span className="text-[#64748b] font-normal">
                           ({course.ratingCount || 0} đánh giá)
                         </span>
                       </span>
@@ -314,22 +314,22 @@ const StudentCourseDetail: React.FC = () => {
                   ) : null}
 
                   {progress ? (
-                    <div className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] px-4 py-3">
-                      <div className="flex justify-between font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] mb-2">
+                    <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] px-4 py-3">
+                      <div className="flex justify-between font-[Be_Vietnam_Pro] text-[13px] text-[#475569] mb-2">
                         <span>Tiến độ của bạn</span>
-                        <strong className="text-[#C96442] tabular-nums">
+                        <strong className="text-[#0ea5e9] tabular-nums">
                           {progress.completionRate.toFixed(1)}%
                         </strong>
                       </div>
-                      <div className="h-2 rounded-full bg-[#E8E6DC] overflow-hidden">
+                      <div className="h-2 rounded-full bg-[#e2e8f0] overflow-hidden">
                         <div
-                          className="h-full rounded-full bg-gradient-to-r from-[#C96442] to-[#E07B39] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                          className="h-full rounded-full bg-gradient-to-r from-[#0ea5e9] to-[#E07B39] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                           style={{
                             width: `${Math.min(100, Math.max(0, progress.completionRate))}%`,
                           }}
                         />
                       </div>
-                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-2">
+                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-2">
                         {progress.completedLessons}/{progress.totalLessons} bài học hoàn thành
                       </p>
                     </div>
@@ -339,9 +339,9 @@ const StudentCourseDetail: React.FC = () => {
             </div>
           </motion.article>
 
-          <div className="rounded-2xl border border-[#E8E6DC] bg-white overflow-hidden shadow-sm">
+          <div className="rounded-2xl border border-[#e2e8f0] bg-white overflow-hidden shadow-sm">
             <div
-              className="flex flex-wrap gap-1 p-2 bg-[#F5F4ED] border-b border-[#E8E6DC]"
+              className="flex flex-wrap gap-1 p-2 bg-[#f8fafc] border-b border-[#e2e8f0]"
               role="tablist"
               aria-label="Nội dung khóa học"
             >
@@ -355,8 +355,8 @@ const StudentCourseDetail: React.FC = () => {
                     aria-selected={active}
                     className={`inline-flex items-center gap-2 px-3 py-2 rounded-xl font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 ${
                       active
-                        ? 'bg-white text-[#141413] shadow-sm ring-1 ring-black/[0.04]'
-                        : 'text-[#87867F] hover:text-[#5E5D59] hover:bg-white/60'
+                        ? 'bg-white text-[#0f172a] shadow-sm ring-1 ring-black/[0.04]'
+                        : 'text-[#64748b] hover:text-[#475569] hover:bg-white/60'
                     }`}
                     onClick={() => handleTabChange(tab.id)}
                   >
@@ -368,7 +368,7 @@ const StudentCourseDetail: React.FC = () => {
               })}
             </div>
 
-            <div className="p-5 md:p-7 bg-[#F5F4ED]/90 min-h-[200px]">
+            <div className="p-5 md:p-7 bg-[#f8fafc]/90 min-h-[200px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}
@@ -383,7 +383,7 @@ const StudentCourseDetail: React.FC = () => {
                   {activeTab === 'overview' && (
                     <div className="space-y-5 min-w-0">
                       {!course ? (
-                        <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] py-6 text-center rounded-xl border border-dashed border-[#E8E6DC] bg-white/60">
+                        <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] py-6 text-center rounded-xl border border-dashed border-[#e2e8f0] bg-white/60">
                           Đang tải thông tin khóa học...
                         </p>
                       ) : (

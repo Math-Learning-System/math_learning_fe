@@ -59,7 +59,7 @@ export function PdfPreviewWithToggle({
   const toggleBtn =
     'inline-flex items-center gap-2 px-3 py-2 rounded-lg border font-[Be_Vietnam_Pro] text-[12px] font-medium transition-colors';
   const toggleWarm =
-    `${toggleBtn} border-[#E8E6DC] bg-white text-[#5E5D59] hover:bg-[#FAF9F5]`;
+    `${toggleBtn} border-[#e2e8f0] bg-white text-[#475569] hover:bg-[#ffffff]`;
   const toggleSlate =
     `${toggleBtn} border-slate-300 bg-white text-slate-700 hover:bg-slate-50`;
   const toggleCls = toggleClassName ?? (variant === 'slate' ? toggleSlate : toggleWarm);

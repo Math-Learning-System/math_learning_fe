@@ -163,17 +163,17 @@ export function AssessmentImportOptionsPanel() {
 
   if (loading) {
     return (
-      <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">Đang tải cấu hình import đề…</p>
+      <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">Đang tải cấu hình import đề…</p>
     );
   }
 
   return (
-    <div className="rounded-2xl border border-[#E8E6DC] bg-white p-5 space-y-5">
+    <div className="rounded-2xl border border-[#e2e8f0] bg-white p-5 space-y-5">
       <div>
-        <h3 className="font-[Playfair_Display] text-[17px] font-medium text-[#141413]">
+        <h3 className="font-[Playfair_Display] text-[17px] font-medium text-[#0f172a]">
           Cấu hình import đề PDF
         </h3>
-        <p className="mt-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+        <p className="mt-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
           Năm học, loại đề, preset đơn vị ra đề và danh mục tỉnh/thành ({provinceCities.length}{' '}
           đơn vị). Phiên bản: {adminVersion || '—'}.
         </p>
@@ -200,7 +200,7 @@ export function AssessmentImportOptionsPanel() {
         </label>
       </div>
 
-      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
         Dạng PDF và chế độ nội dung khi giáo viên bấm &quot;Tạo đề từ PDF&quot;.
       </p>
 
@@ -334,18 +334,18 @@ export function AssessmentImportOptionsPanel() {
       </div>
 
       <div>
-        <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase text-[#87867F]">
+        <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase text-[#64748b]">
           Tỉnh / Thành phố ({country})
         </p>
         <ul className="mt-2 max-h-64 space-y-1 overflow-y-auto">
           {provinceCities.map((p) => (
             <li
               key={p.name}
-              className="flex items-center justify-between rounded-lg bg-[#FAF9F5] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px]"
+              className="flex items-center justify-between rounded-lg bg-[#ffffff] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px]"
             >
               <span>
                 {p.name}
-                <span className="ml-2 text-[11px] text-[#87867F]">
+                <span className="ml-2 text-[11px] text-[#64748b]">
                   {p.type === 'municipality' ? 'TP TW' : 'Tỉnh'}
                 </span>
               </span>
@@ -414,14 +414,14 @@ function ListColumn({
 }) {
   return (
     <div>
-      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase text-[#87867F]">
+      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase text-[#64748b]">
         {title}
       </p>
       <ul className="mt-2 space-y-1">
         {items.map((item) => (
           <li
             key={item}
-            className="flex items-center justify-between rounded-lg bg-[#FAF9F5] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px]"
+            className="flex items-center justify-between rounded-lg bg-[#ffffff] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px]"
           >
             {item}
             <button
@@ -453,23 +453,23 @@ function CatalogOptionColumn({
 }) {
   return (
     <div>
-      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase text-[#87867F]">
+      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase text-[#64748b]">
         {title}
       </p>
       <ul className="mt-2 max-h-40 space-y-1 overflow-y-auto">
         {items.map((item) => (
           <li
             key={item.id}
-            className="flex items-start justify-between gap-2 rounded-lg bg-[#FAF9F5] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px]"
+            className="flex items-start justify-between gap-2 rounded-lg bg-[#ffffff] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px]"
           >
             <span>
               <span className="font-medium">{item.label}</span>
-              <span className="ml-2 text-[11px] text-[#87867F]">({item.id})</span>
+              <span className="ml-2 text-[11px] text-[#64748b]">({item.id})</span>
               {item.description ? (
-                <span className="mt-0.5 block text-[11px] text-[#87867F]">{item.description}</span>
+                <span className="mt-0.5 block text-[11px] text-[#64748b]">{item.description}</span>
               ) : null}
               {showEnabled ? (
-                <span className="mt-0.5 block text-[11px] text-[#87867F]">
+                <span className="mt-0.5 block text-[11px] text-[#64748b]">
                   enabled: {item.enabled === false ? 'false' : 'true'}
                 </span>
               ) : null}
@@ -485,7 +485,7 @@ function CatalogOptionColumn({
           </li>
         ))}
       </ul>
-      <p className="mt-2 font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]">
+      <p className="mt-2 font-[Be_Vietnam_Pro] text-[11px] text-[#64748b]">
         Thêm/sửa chi tiết qua JSON nâng cao hoặc migration V29.
       </p>
     </div>
@@ -507,23 +507,23 @@ function CodeLabelColumn({
 }) {
   return (
     <div>
-      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase text-[#87867F]">
+      <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold uppercase text-[#64748b]">
         {title}
       </p>
       {hint ? (
-        <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]">{hint}</p>
+        <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[11px] text-[#64748b]">{hint}</p>
       ) : null}
       <ul className="mt-2 max-h-48 space-y-1 overflow-y-auto">
         {items.map((item) => (
           <li
             key={item.id}
-            className="flex items-start justify-between gap-2 rounded-lg bg-[#FAF9F5] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px]"
+            className="flex items-start justify-between gap-2 rounded-lg bg-[#ffffff] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px]"
           >
             <span>
               <span className="font-medium">{item.label}</span>
-              <span className="ml-2 text-[11px] text-[#87867F]">({item.id})</span>
+              <span className="ml-2 text-[11px] text-[#64748b]">({item.id})</span>
               {item.fields && item.fields.length > 0 ? (
-                <span className="mt-0.5 block text-[11px] text-[#87867F]">
+                <span className="mt-0.5 block text-[11px] text-[#64748b]">
                   fields: {item.fields.join(', ')}
                 </span>
               ) : null}

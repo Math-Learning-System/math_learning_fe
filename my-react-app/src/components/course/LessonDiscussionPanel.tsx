@@ -71,7 +71,7 @@ function RepliesBlock({
           {repliesQuery.hasNextPage && (
             <button
               type="button"
-              className="text-xs text-[#C96442] hover:underline"
+              className="text-xs text-[#0ea5e9] hover:underline"
               onClick={() => void repliesQuery.fetchNextPage()}
             >
               Tải thêm phản hồi
@@ -139,7 +139,7 @@ function CommentItem({
   };
 
   return (
-    <div className="rounded-xl border border-[#E8E6DC] bg-white p-3">
+    <div className="rounded-xl border border-[#e2e8f0] bg-white p-3">
       <div className="flex items-start gap-3">
         <img
           src={comment.authorAvatar || 'https://placehold.co/40x40?text=U'}
@@ -208,7 +208,7 @@ function CommentItem({
               />
               <button
                 type="button"
-                className="rounded-lg bg-[#C96442] px-3 py-2 text-white"
+                className="rounded-lg bg-[#0ea5e9] px-3 py-2 text-white"
                 onClick={submitReply}
               >
                 <Send size={14} />
@@ -225,7 +225,7 @@ function CommentItem({
               />
               <button
                 type="button"
-                className="rounded-lg bg-[#C96442] px-3 py-2 text-white"
+                className="rounded-lg bg-[#0ea5e9] px-3 py-2 text-white"
                 onClick={submitEdit}
               >
                 Lưu
@@ -275,7 +275,7 @@ export default function LessonDiscussionPanel({
   };
 
   return (
-    <div className="mt-5 rounded-2xl border border-[#E8E6DC] bg-white p-4">
+    <div className="mt-5 rounded-2xl border border-[#e2e8f0] bg-white p-4">
       <h4 className="mb-3 font-semibold text-slate-800">Thảo luận bài học</h4>
 
       <div className="mb-4 flex gap-2">
@@ -287,7 +287,7 @@ export default function LessonDiscussionPanel({
         />
         <button
           type="button"
-          className="rounded-xl bg-[#C96442] px-4 py-2 text-sm font-semibold text-white disabled:opacity-60"
+          className="rounded-xl bg-[#0ea5e9] px-4 py-2 text-sm font-semibold text-white disabled:opacity-60"
           onClick={submitComment}
           disabled={createComment.isPending || !content.trim()}
         >
@@ -310,7 +310,7 @@ export default function LessonDiscussionPanel({
       {commentsQuery.hasNextPage && (
         <button
           type="button"
-          className="mt-3 text-sm text-[#C96442] hover:underline"
+          className="mt-3 text-sm text-[#0ea5e9] hover:underline"
           onClick={() => void commentsQuery.fetchNextPage()}
         >
           Tải thêm bình luận

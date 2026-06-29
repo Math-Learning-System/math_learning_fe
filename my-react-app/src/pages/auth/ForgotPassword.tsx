@@ -10,7 +10,7 @@ const MathLemniscateWarm = () => (
     <ellipse cx="260" cy="130" rx="86" ry="44" stroke="rgba(250,249,245,0.12)" strokeWidth="1" />
     <path
       d="M 260,130 C 298,94 368,94 368,130 C 368,166 298,166 260,130"
-      stroke="#C96442"
+      stroke="#0ea5e9"
       strokeWidth="2.7"
       fill="rgba(201,100,66,0.1)"
     />
@@ -22,8 +22,8 @@ const MathLemniscateWarm = () => (
       fill="rgba(250,249,245,0.08)"
     />
     <circle cx="260" cy="130" r="3.8" fill="rgba(250,249,245,0.75)" />
-    <circle cx="368" cy="130" r="4.2" fill="#C96442" />
-    <circle cx="152" cy="130" r="4.2" fill="#C96442" />
+    <circle cx="368" cy="130" r="4.2" fill="#0ea5e9" />
+    <circle cx="152" cy="130" r="4.2" fill="#0ea5e9" />
     <text x="64" y="74" fill="rgba(250,249,245,0.82)" fontSize="13" fontFamily="Georgia, serif" fontStyle="italic">
       (x² + y²)² = a²(x² − y²)
     </text>
@@ -67,7 +67,7 @@ const ForgotPassword: React.FC = () => {
   };
 
   return (
-    <div className="auth-container bg-[#F5F4ED] font-[Be_Vietnam_Pro]">
+    <div className="auth-container bg-[#f8fafc] font-[Be_Vietnam_Pro]">
       {/* ── Left panel ── */}
       <div className="auth-left">
         <div className="auth-brand">
@@ -75,7 +75,7 @@ const ForgotPassword: React.FC = () => {
             <span className="auth-logo-text-icon">∑π</span>
             <div>
               <h1
-                className="font-medium text-[#141413]"
+                className="font-medium text-[#0f172a]"
                 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 500 }}
               >
                 MathMaster
@@ -109,24 +109,24 @@ const ForgotPassword: React.FC = () => {
       </div>
 
       {/* ── Right panel ── */}
-      <div className="auth-right flex-1 bg-[#F5F4ED]">
+      <div className="auth-right flex-1 bg-[#f8fafc]">
         <Link
           to="/login"
-          className="auth-nav-link auth-nav inline-flex items-center gap-2 rounded-xl px-3 py-2 font-[Be_Vietnam_Pro] text-[#5E5D59] shadow-[0px_0px_0px_1px_#D1CFC5] transition-all duration-150 hover:text-[#141413] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2"
+          className="auth-nav-link auth-nav inline-flex items-center gap-2 rounded-xl px-3 py-2 font-[Be_Vietnam_Pro] text-[#475569] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:text-[#0f172a] active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2"
           aria-label="Quay lại đăng nhập"
         >
           <ArrowLeft className="h-4 w-4" />
           Quay lại đăng nhập
         </Link>
 
-        <div className="auth-card bg-[#FAF9F5] shadow-[0px_0px_0px_1px_#D1CFC5]">
+        <div className="auth-card bg-[#ffffff] shadow-[0px_0px_0px_1px_#cbd5e1]">
           <div className="auth-card-inner">
             {isSuccess ? (
               /* ── Success state ── */
               <div className="reg-success">
                 <div className="reg-success__icon-wrap">
                   <div className="reg-success__icon">
-                    <Mail className="h-12 w-12 text-[#5E5D59]" />
+                    <Mail className="h-12 w-12 text-[#475569]" />
                   </div>
                 </div>
                 <h2
@@ -144,7 +144,7 @@ const ForgotPassword: React.FC = () => {
                 </span>
                 <button
                   type="button"
-                  className="btn btn-primary btn-block reg-success__btn bg-[#C96442] font-[Be_Vietnam_Pro] shadow-[0px_0px_0px_1px_#D1CFC5] transition-all duration-150 hover:brightness-95 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2"
+                  className="btn btn-primary btn-block reg-success__btn bg-[#0ea5e9] font-[Be_Vietnam_Pro] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:brightness-95 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2"
                   onClick={() => {
                     setIsSuccess(false);
                     setEmail('');
@@ -168,7 +168,7 @@ const ForgotPassword: React.FC = () => {
               <>
                 <div className="auth-header">
                   <h2
-                    className="font-medium text-[#141413]"
+                    className="font-medium text-[#0f172a]"
                     style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 500 }}
                   >
                     Quên mật khẩu
@@ -191,7 +191,7 @@ const ForgotPassword: React.FC = () => {
                         type="email"
                         id="email"
                         name="email"
-                        className="form-control with-icon font-[Be_Vietnam_Pro] shadow-[0px_0px_0px_1px_#D1CFC5] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2"
+                        className="form-control with-icon font-[Be_Vietnam_Pro] shadow-[0px_0px_0px_1px_#cbd5e1] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2"
                         placeholder="your.email@example.com"
                         value={email}
                         onChange={handleChange}
@@ -205,7 +205,7 @@ const ForgotPassword: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="btn btn-primary btn-block bg-[#C96442] font-[Be_Vietnam_Pro] shadow-[0px_0px_0px_1px_#D1CFC5] transition-all duration-150 hover:brightness-95 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2"
+                    className="btn btn-primary btn-block bg-[#0ea5e9] font-[Be_Vietnam_Pro] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:brightness-95 active:scale-[0.98] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2"
                     disabled={isLoading}
                     style={{ marginTop: '0.5rem' }}
                   >

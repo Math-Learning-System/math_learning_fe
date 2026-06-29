@@ -115,19 +115,19 @@ function AddAssessmentModal({
         {/* Header */}
         <div className="cat-modal-header">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-9 h-9 rounded-xl bg-[#FEF0EA] flex items-center justify-center text-[#C96442] flex-shrink-0">
+            <div className="w-9 h-9 rounded-xl bg-[#FEF0EA] flex items-center justify-center text-[#0ea5e9] flex-shrink-0">
               <FileText size={17} />
             </div>
             <div className="min-w-0">
               <h3 className="!mb-0">Thêm bài kiểm tra</h3>
-              <p className="font-[Be_Vietnam_Pro] text-[0.8rem] text-[#87867F] font-normal mt-0.5">
+              <p className="font-[Be_Vietnam_Pro] text-[0.8rem] text-[#64748b] font-normal mt-0.5">
                 Chọn bài kiểm tra đã công khai để gắn vào {UI_TEXT.COURSE.toLowerCase()}
               </p>
             </div>
           </div>
           <button
             type="button"
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-[#87867F] hover:bg-[#F5F4ED] hover:text-[#141413] transition-colors flex-shrink-0"
+            className="w-8 h-8 rounded-lg flex items-center justify-center text-[#64748b] hover:bg-[#f8fafc] hover:text-[#0f172a] transition-colors flex-shrink-0"
             onClick={onClose}
             disabled={addMutation.isPending}
             aria-label="Đóng"
@@ -150,7 +150,7 @@ function AddAssessmentModal({
             {search && (
               <button
                 type="button"
-                className="absolute right-4 text-[#87867F] hover:text-[#141413] transition-colors"
+                className="absolute right-4 text-[#64748b] hover:text-[#0f172a] transition-colors"
                 onClick={() => setSearch('')}
                 aria-label="Xóa tìm kiếm"
               >
@@ -165,12 +165,12 @@ function AddAssessmentModal({
             onClick={() => provider !== 'CUSTOM' && setAllowOutOfCourseLessons(!allowOutOfCourseLessons)}
           >
             <div className="flex-1 min-w-0">
-              <span className="font-[Be_Vietnam_Pro] text-[0.9rem] font-semibold text-[#141413]">
+              <span className="font-[Be_Vietnam_Pro] text-[0.9rem] font-semibold text-[#0f172a]">
                 {provider === 'CUSTOM'
                   ? 'Cho phép chọn tất cả bài kiểm tra (Mặc định cho khóa Custom)'
                   : 'Hiển thị thêm bài kiểm tra cuối kỳ và bài thi tổng hợp'}
               </span>
-              <p className="font-[Be_Vietnam_Pro] text-[0.8rem] text-[#87867F] mt-1 mb-0">
+              <p className="font-[Be_Vietnam_Pro] text-[0.8rem] text-[#64748b] mt-1 mb-0">
                 {provider === 'CUSTOM'
                   ? 'Vì đây là khóa học tự do, bạn có thể chọn bất kỳ bài kiểm tra PUBLISHED nào của mình.'
                   : 'Bao gồm bài kiểm tra không thuộc bài học nào trong khóa học'}
@@ -200,7 +200,7 @@ function AddAssessmentModal({
           {isLoading && (
             <div className="flex flex-col gap-3 mt-4">
               {[1, 2, 3].map((i) => (
-                <div key={i} className="h-20 rounded-xl bg-[#F5F4ED] animate-pulse" />
+                <div key={i} className="h-20 rounded-xl bg-[#f8fafc] animate-pulse" />
               ))}
             </div>
           )}
@@ -208,10 +208,10 @@ function AddAssessmentModal({
           {/* Empty */}
           {!isLoading && filtered.length === 0 && (
             <div className="flex flex-col items-center justify-center py-12 gap-2 mt-2">
-              <div className="w-12 h-12 rounded-2xl bg-[#F5F4ED] flex items-center justify-center text-[#87867F]">
+              <div className="w-12 h-12 rounded-2xl bg-[#f8fafc] flex items-center justify-center text-[#64748b]">
                 <FileText className="w-6 h-6 opacity-60" />
               </div>
-              <p className="font-[Be_Vietnam_Pro] text-[0.875rem] text-[#87867F] text-center">
+              <p className="font-[Be_Vietnam_Pro] text-[0.875rem] text-[#64748b] text-center">
                 {available.length === 0
                   ? 'Bạn chưa có bài kiểm tra đã công khai nào phù hợp.'
                   : 'Không tìm thấy bài kiểm tra phù hợp với từ khóa.'}
@@ -244,23 +244,23 @@ function AddAssessmentModal({
                       )}
                     </div>
 
-                    <h4 className="font-[Playfair_Display] text-[1rem] font-medium text-[#141413] mt-1.5 mb-1">
+                    <h4 className="font-[Playfair_Display] text-[1rem] font-medium text-[#0f172a] mt-1.5 mb-1">
                       {assessment.title}
                     </h4>
 
                     {assessment.description && (
-                      <p className="font-[Be_Vietnam_Pro] text-[0.875rem] text-[#87867F] line-clamp-2 mb-2">
+                      <p className="font-[Be_Vietnam_Pro] text-[0.875rem] text-[#64748b] line-clamp-2 mb-2">
                         {assessment.description}
                       </p>
                     )}
 
-                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-[Be_Vietnam_Pro] text-[0.8rem] text-[#87867F]">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1 font-[Be_Vietnam_Pro] text-[0.8rem] text-[#64748b]">
                       <span>{assessment.totalQuestions} câu</span>
-                      <span className="text-[#E8E6DC]">·</span>
+                      <span className="text-[#e2e8f0]">·</span>
                       <span>{assessment.totalPoints} điểm</span>
                       {assessment.timeLimitMinutes && (
                         <>
-                          <span className="text-[#E8E6DC]">·</span>
+                          <span className="text-[#e2e8f0]">·</span>
                           <span>{assessment.timeLimitMinutes} phút</span>
                         </>
                       )}
@@ -411,7 +411,7 @@ const CourseAssessmentsTab: React.FC<CourseAssessmentsTabProps> = ({ courseId, c
           {hasActiveFilters && (
             <button
               type="button"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
               onClick={clearFilters}
             >
               <X size={13} />
@@ -419,7 +419,7 @@ const CourseAssessmentsTab: React.FC<CourseAssessmentsTabProps> = ({ courseId, c
             </button>
           )}
           {filterLessonId && filteredAssessments.length < assessments.length && (
-            <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+            <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
               {filteredAssessments.length}/{assessments.length} bài kiểm tra
             </span>
           )}
@@ -428,7 +428,7 @@ const CourseAssessmentsTab: React.FC<CourseAssessmentsTabProps> = ({ courseId, c
         {!readOnly && (
           <button
             type="button"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 flex-shrink-0"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 flex-shrink-0"
             onClick={() => setShowAddModal(true)}
           >
             <Plus size={15} />
@@ -443,7 +443,7 @@ const CourseAssessmentsTab: React.FC<CourseAssessmentsTabProps> = ({ courseId, c
           {[1, 2, 3].map((i) => (
             <div
               key={i}
-              className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-32 animate-pulse"
+              className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-32 animate-pulse"
             />
           ))}
         </div>
@@ -452,10 +452,10 @@ const CourseAssessmentsTab: React.FC<CourseAssessmentsTabProps> = ({ courseId, c
       {/* ── Empty state ── */}
       {!isLoading && filteredAssessments.length === 0 && (
         <div className="flex flex-col items-center justify-center py-16 gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-[#F5F4ED] flex items-center justify-center text-[#87867F]">
+          <div className="w-12 h-12 rounded-2xl bg-[#f8fafc] flex items-center justify-center text-[#64748b]">
             <FileText className="w-6 h-6 opacity-60" aria-hidden />
           </div>
-          <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center max-w-md px-4">
+          <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center max-w-md px-4">
             {hasActiveFilters
               ? 'Không có bài kiểm tra nào khớp với bài học đã chọn.'
               : `Chưa có bài kiểm tra nào trong ${UI_TEXT.COURSE.toLowerCase()} này.`}
@@ -472,7 +472,7 @@ const CourseAssessmentsTab: React.FC<CourseAssessmentsTabProps> = ({ courseId, c
               return (
                 <article
                   key={assessment.id}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] p-5 flex gap-3 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150 group"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] p-5 flex gap-3 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150 group"
                 >
                   {/* Drag handle */}
                   <div className="text-[#D4C9BC] pt-0.5 cursor-grab active:cursor-grabbing flex-shrink-0">
@@ -503,13 +503,13 @@ const CourseAssessmentsTab: React.FC<CourseAssessmentsTabProps> = ({ courseId, c
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-[Playfair_Display] text-[1.25rem] font-bold text-[#141413] leading-tight mb-2">
+                    <h3 className="font-[Playfair_Display] text-[1.25rem] font-bold text-[#0f172a] leading-tight mb-2">
                       {assessment.assessmentTitle ?? 'Không có tiêu đề'}
                     </h3>
 
                     {/* Description */}
                     {assessment.assessmentDescription && (
-                      <p className="font-[Be_Vietnam_Pro] text-[0.875rem] text-[#5e5d59] leading-relaxed line-clamp-2 max-w-2xl mb-4">
+                      <p className="font-[Be_Vietnam_Pro] text-[0.875rem] text-[#475569] leading-relaxed line-clamp-2 max-w-2xl mb-4">
                         {assessment.assessmentDescription}
                       </p>
                     )}
@@ -533,11 +533,11 @@ const CourseAssessmentsTab: React.FC<CourseAssessmentsTabProps> = ({ courseId, c
 
 
                     {/* Actions — revealed on card hover */}
-                    <div className="flex flex-wrap items-center gap-2 pt-3 border-t border-[#F0EEE6] opacity-0 group-hover:opacity-100 transition-opacity duration-150">
+                    <div className="flex flex-wrap items-center gap-2 pt-3 border-t border-[#e2e8f0] opacity-0 group-hover:opacity-100 transition-opacity duration-150">
                       {readOnly ? (
                         <button
                           type="button"
-                          className="px-3 py-1.5 rounded-lg border border-[#C96442] bg-[#FEF0EA] font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#C96442] hover:bg-[#FDDECE] transition-colors inline-flex items-center gap-1.5"
+                          className="px-3 py-1.5 rounded-lg border border-[#0ea5e9] bg-[#FEF0EA] font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#0ea5e9] hover:bg-[#FDDECE] transition-colors inline-flex items-center gap-1.5"
                           onClick={() => navigate(`/teacher/assessments/${assessment.assessmentId}/preview?role=admin`)}
                         >
                           <Star className="w-3.5 h-3.5 flex-shrink-0" />
@@ -547,7 +547,7 @@ const CourseAssessmentsTab: React.FC<CourseAssessmentsTabProps> = ({ courseId, c
                         <>
                           <button
                             type="button"
-                            className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                            className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                             onClick={() => navigate(`/teacher/assessments/${assessment.assessmentId}`)}
                           >
                             Xem chi tiết

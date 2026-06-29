@@ -36,8 +36,8 @@
   padding: 1rem 1.1rem;
   border-radius: 14px;
   background: #ffffff;
-  border: 1px solid #e8e6dc;
-  box-shadow: 0 1px 2px rgba(20, 20, 19, 0.04);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
   min-width: 0;
   transition:
     border-color 0.18s ease,
@@ -46,7 +46,7 @@
 
 .course-overview-tab .stat-card:hover {
   border-color: #ddd9cc;
-  box-shadow: 0 4px 14px rgba(20, 20, 19, 0.06);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
 }
 
 .course-overview-tab .stat-card__text {
@@ -61,7 +61,7 @@
   line-height: 1.15;
   margin: 0;
   letter-spacing: -0.02em;
-  color: #141413;
+  color: #0f172a;
 }
 
 .course-overview-tab .stat-card p {
@@ -70,7 +70,7 @@
   font-weight: 600;
   letter-spacing: 0;
   text-transform: none;
-  color: #5e5d59;
+  color: #475569;
   font-family: var(--f-body, 'Be Vietnam Pro', system-ui, sans-serif);
 }
 
@@ -80,7 +80,7 @@
   font-size: 0.75rem;
   font-weight: 500;
   line-height: 1.4;
-  color: #87867f;
+  color: #64748b;
 }
 
 .course-overview-tab .stat-icon-wrap {

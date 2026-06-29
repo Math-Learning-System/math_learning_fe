@@ -491,14 +491,14 @@ const ReviewProfiles: React.FC = () => {
             {/* ── Header ── */}
             <header className="courses-header-row rp-page-header">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] flex-shrink-0">
                   <UserCheck size={20} />
                 </div>
                 <div>
-                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] m-0 leading-tight">
+                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] m-0 leading-tight">
                     Duyệt hồ sơ giáo viên
                   </h1>
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5 mb-0">
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5 mb-0">
                     {pendingCount > 0
                       ? `${pendingCount} hồ sơ đang chờ xem xét`
                       : 'Không có hồ sơ nào đang chờ'}

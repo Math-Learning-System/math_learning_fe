@@ -128,15 +128,15 @@ export function AssessmentPdfPageWorkspace({ assessment, questions, isDraft, onR
   }
 
   return (
-    <article className="bg-white rounded-2xl border border-[#E8E6DC] overflow-hidden">
-      <div className="px-4 py-4 lg:px-6 lg:py-5 border-b border-[#F0EEE6] bg-[#FAF9F5]">
+    <article className="bg-white rounded-2xl border border-[#e2e8f0] overflow-hidden">
+      <div className="px-4 py-4 lg:px-6 lg:py-5 border-b border-[#e2e8f0] bg-[#ffffff]">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#141413] m-0 flex items-center gap-2">
-              <FileText className="h-4 w-4 text-[#C96442]" aria-hidden />
+            <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#0f172a] m-0 flex items-center gap-2">
+              <FileText className="h-4 w-4 text-[#0ea5e9]" aria-hidden />
               Rà soát theo trang PDF ({pages.length} trang)
             </h3>
-            <p className="mt-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] m-0 max-w-[62ch]">
+            <p className="mt-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] m-0 max-w-[62ch]">
               Mỗi tab là một trang OCR. Tạo và sửa từng câu hỏi từ LaTeX — không gộp cả trang thành một câu.
             </p>
           </div>
@@ -163,8 +163,8 @@ export function AssessmentPdfPageWorkspace({ assessment, questions, isDraft, onR
                 type="button"
                 className={`rounded-full px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] font-semibold border transition-colors ${
                   selected
-                    ? 'bg-[#C96442] text-[#FAF9F5] border-[#C96442]'
-                    : 'bg-white text-[#5E5D59] border-[#E8E6DC] hover:border-[#C96442]/40'
+                    ? 'bg-[#0ea5e9] text-[#ffffff] border-[#0ea5e9]'
+                    : 'bg-white text-[#475569] border-[#e2e8f0] hover:border-[#0ea5e9]/40'
                 }`}
                 onClick={() => setActivePage(p.pageNumber)}
               >
@@ -177,8 +177,8 @@ export function AssessmentPdfPageWorkspace({ assessment, questions, isDraft, onR
       </div>
 
       <div className="p-4 lg:p-6 grid gap-6 lg:grid-cols-2">
-        <div className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] p-4 min-h-[200px]">
-          <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59] m-0 mb-2">
+        <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-4 min-h-[200px]">
+          <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569] m-0 mb-2">
             Nội dung OCR — {activePageMeta?.sectionLabel ?? `Trang ${activePage}`}
           </p>
           <div className="max-h-[min(70vh,520px)] overflow-y-auto pr-1">
@@ -187,7 +187,7 @@ export function AssessmentPdfPageWorkspace({ assessment, questions, isDraft, onR
         </div>
 
         <div className="space-y-3">
-            <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] m-0">
+            <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] m-0">
               Câu hỏi trên trang này ({pageQuestions.length})
             </p>
             {isDraft ? (
@@ -197,13 +197,13 @@ export function AssessmentPdfPageWorkspace({ assessment, questions, isDraft, onR
               </button>
             ) : null}
           {pageQuestions.length === 0 ? (
-            <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] m-0">Chưa có câu.</p>
+            <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] m-0">Chưa có câu.</p>
           ) : (
             <ul className="m-0 p-0 space-y-2">
               {pageQuestions.map((q) => (
-                <li key={getQuestionId(q)} className="rounded-lg border border-[#E8E6DC] bg-white p-3">
+                <li key={getQuestionId(q)} className="rounded-lg border border-[#e2e8f0] bg-white p-3">
                   <div className="flex items-start justify-between gap-2 mb-1">
-                    <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#87867F]">Câu {q.orderIndex}</span>
+                    <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#64748b]">Câu {q.orderIndex}</span>
                     {isDraft ? (
                       <button type="button" className="inline-flex items-center gap-1 text-[11px] text-indigo-700 hover:underline" onClick={() => openEdit(q)}>
                         <Pencil className="h-3.5 w-3.5" /> Sửa

@@ -49,7 +49,7 @@ const STATUS_BADGE_TW: Record<string, string> = {
   PENDING_REVIEW: 'bg-amber-50 text-amber-900 border-amber-200',
   PUBLISHED: 'bg-emerald-50 text-emerald-900 border-emerald-200',
   REJECTED: 'bg-rose-50 text-rose-900 border-rose-200',
-  DRAFT: 'bg-[#F5F4ED] text-[#5E5D59] border-[#E8E6DC]',
+  DRAFT: 'bg-[#f8fafc] text-[#475569] border-[#e2e8f0]',
 };
 
 function pickTotalElements(data: { result?: { totalElements?: number } } | undefined): number {
@@ -57,7 +57,7 @@ function pickTotalElements(data: { result?: { totalElements?: number } } | undef
 }
 
 const secondaryBtn =
-  'inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-45 disabled:pointer-events-none';
+  'inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-45 disabled:pointer-events-none';
 
 const primaryApproveBtn =
   'inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-600 text-white font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:bg-emerald-700 transition-colors disabled:opacity-45 disabled:pointer-events-none';
@@ -144,7 +144,7 @@ function PendingTab({
         <div className="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center text-red-400">
           <AlertCircle className="w-6 h-6" />
         </div>
-        <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#5E5D59] text-center max-w-sm">
+        <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#475569] text-center max-w-sm">
           Không thể tải danh sách chờ duyệt. Vui lòng thử lại.
         </p>
         <button type="button" className={secondaryBtn} onClick={() => refetch()}>
@@ -173,10 +173,10 @@ function PendingTab({
   if (courses.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-16 gap-2 px-4">
-        <div className="w-12 h-12 rounded-2xl bg-[#F5F4ED] flex items-center justify-center text-[#87867F]">
+        <div className="w-12 h-12 rounded-2xl bg-[#f8fafc] flex items-center justify-center text-[#64748b]">
           <Clock3 className="w-6 h-6 opacity-60" />
         </div>
-        <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F]">
+        <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b]">
           Không có khóa học nào đang chờ duyệt.
         </p>
       </div>
@@ -188,25 +188,25 @@ function PendingTab({
       <div className="overflow-x-auto">
         <table className="w-full min-w-[720px] text-left font-[Be_Vietnam_Pro] text-[13px]">
           <thead>
-            <tr className="border-b border-[#F0EEE6] bg-[#FAF9F5]">
-              <th className="px-4 py-3 font-semibold text-[#5E5D59] text-[11px] uppercase tracking-wide">
+            <tr className="border-b border-[#e2e8f0] bg-[#ffffff]">
+              <th className="px-4 py-3 font-semibold text-[#475569] text-[11px] uppercase tracking-wide">
                 Tên khóa học
               </th>
-              <th className="px-4 py-3 font-semibold text-[#5E5D59] text-[11px] uppercase tracking-wide whitespace-nowrap">
+              <th className="px-4 py-3 font-semibold text-[#475569] text-[11px] uppercase tracking-wide whitespace-nowrap">
                 Giảng viên
               </th>
-              <th className="px-4 py-3 font-semibold text-[#5E5D59] text-[11px] uppercase tracking-wide whitespace-nowrap">
+              <th className="px-4 py-3 font-semibold text-[#475569] text-[11px] uppercase tracking-wide whitespace-nowrap">
                 Loại
               </th>
-              <th className="px-4 py-3 font-semibold text-[#5E5D59] text-[11px] uppercase tracking-wide whitespace-nowrap">
+              <th className="px-4 py-3 font-semibold text-[#475569] text-[11px] uppercase tracking-wide whitespace-nowrap">
                 Ngày tạo
               </th>
-              <th className="px-4 py-3 font-semibold text-[#5E5D59] text-[11px] uppercase tracking-wide text-right">
+              <th className="px-4 py-3 font-semibold text-[#475569] text-[11px] uppercase tracking-wide text-right">
                 Thao tác
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#F0EEE6]">
+          <tbody className="divide-y divide-[#e2e8f0]">
             {courses.map((course) => (
               <CourseRow
                 key={course.id}
@@ -253,7 +253,7 @@ function PendingTab({
       <AnimatePresence>
         {rejectCourseId && (
           <motion.div
-            className="fixed inset-0 z-50 bg-[#141413]/50 backdrop-blur-sm flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 bg-[#0f172a]/50 backdrop-blur-sm flex items-center justify-center p-4"
             role="presentation"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -274,7 +274,7 @@ function PendingTab({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: 8 }}
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="relative z-10 w-full max-w-lg rounded-2xl border border-[#E8E6DC] bg-[#FAF9F5] shadow-[rgba(20,20,19,0.12)_0_22px_50px] p-6"
+              className="relative z-10 w-full max-w-lg rounded-2xl border border-[#e2e8f0] bg-[#ffffff] shadow-[rgba(20,20,19,0.12)_0_22px_50px] p-6"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center mx-auto mb-4">
@@ -282,15 +282,15 @@ function PendingTab({
               </div>
               <h2
                 id="course-review-reject-title"
-                className="font-[Playfair_Display] text-[18px] font-medium text-[#141413] text-center"
+                className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a] text-center"
               >
                 Từ chối khóa học
               </h2>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-2 text-center">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-2 text-center">
                 Nhập lý do để giáo viên chỉnh sửa và gửi lại.
               </p>
               <textarea
-                className="mt-4 w-full rounded-xl border border-[#DDD6C8] bg-[#FFFEFB] px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] resize-none"
+                className="mt-4 w-full rounded-xl border border-[#DDD6C8] bg-[#FFFEFB] px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] resize-none"
                 rows={5}
                 value={rejectReason}
                 onChange={(e) => setRejectReason(e.target.value)}
@@ -357,10 +357,10 @@ function HistoryTabBody({
   if (courses.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-16 gap-2 px-4">
-        <div className="w-12 h-12 rounded-2xl bg-[#F5F4ED] flex items-center justify-center text-[#87867F]">
+        <div className="w-12 h-12 rounded-2xl bg-[#f8fafc] flex items-center justify-center text-[#64748b]">
           <History className="w-6 h-6 opacity-60" />
         </div>
-        <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F]">
+        <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b]">
           Không có khóa học nào khớp bộ lọc.
         </p>
       </div>
@@ -372,28 +372,28 @@ function HistoryTabBody({
       <div className="overflow-x-auto">
         <table className="w-full min-w-[800px] text-left font-[Be_Vietnam_Pro] text-[13px]">
           <thead>
-            <tr className="border-b border-[#F0EEE6] bg-[#FAF9F5]">
-              <th className="px-4 py-3 font-semibold text-[#5E5D59] text-[11px] uppercase tracking-wide">
+            <tr className="border-b border-[#e2e8f0] bg-[#ffffff]">
+              <th className="px-4 py-3 font-semibold text-[#475569] text-[11px] uppercase tracking-wide">
                 Tên khóa học
               </th>
-              <th className="px-4 py-3 font-semibold text-[#5E5D59] text-[11px] uppercase tracking-wide whitespace-nowrap">
+              <th className="px-4 py-3 font-semibold text-[#475569] text-[11px] uppercase tracking-wide whitespace-nowrap">
                 Giảng viên
               </th>
-              <th className="px-4 py-3 font-semibold text-[#5E5D59] text-[11px] uppercase tracking-wide whitespace-nowrap">
+              <th className="px-4 py-3 font-semibold text-[#475569] text-[11px] uppercase tracking-wide whitespace-nowrap">
                 Loại
               </th>
-              <th className="px-4 py-3 font-semibold text-[#5E5D59] text-[11px] uppercase tracking-wide whitespace-nowrap">
+              <th className="px-4 py-3 font-semibold text-[#475569] text-[11px] uppercase tracking-wide whitespace-nowrap">
                 Trạng thái
               </th>
-              <th className="px-4 py-3 font-semibold text-[#5E5D59] text-[11px] uppercase tracking-wide whitespace-nowrap">
+              <th className="px-4 py-3 font-semibold text-[#475569] text-[11px] uppercase tracking-wide whitespace-nowrap">
                 Cập nhật
               </th>
-              <th className="px-4 py-3 font-semibold text-[#5E5D59] text-[11px] uppercase tracking-wide text-right">
+              <th className="px-4 py-3 font-semibold text-[#475569] text-[11px] uppercase tracking-wide text-right">
                 Thao tác
               </th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-[#F0EEE6]">
+          <tbody className="divide-y divide-[#e2e8f0]">
             {courses.map((course) => (
               <CourseRow
                 key={course.id}
@@ -448,7 +448,7 @@ function HistoryTab({
         <div className="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center text-red-400">
           <AlertCircle className="w-6 h-6" />
         </div>
-        <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#5E5D59] text-center max-w-sm">
+        <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#475569] text-center max-w-sm">
           Không thể tải lịch sử duyệt. Vui lòng thử lại.
         </p>
         <button type="button" className={secondaryBtn} onClick={() => refetch()}>
@@ -460,11 +460,11 @@ function HistoryTab({
 
   return (
     <>
-      <div className="flex flex-col gap-2 px-4 pt-4 pb-2 sm:flex-row sm:items-center sm:gap-3 border-b border-[#F0EEE6] bg-[#FAF9F5]/80">
-        <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#87867F] uppercase tracking-wide shrink-0">
+      <div className="flex flex-col gap-2 px-4 pt-4 pb-2 sm:flex-row sm:items-center sm:gap-3 border-b border-[#e2e8f0] bg-[#ffffff]/80">
+        <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#64748b] uppercase tracking-wide shrink-0">
           Trạng thái
         </span>
-        <div className="flex flex-wrap items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl w-fit max-w-full">
+        <div className="flex flex-wrap items-center gap-1 p-1 bg-[#f8fafc] rounded-xl w-fit max-w-full">
           {Object.entries(STATUS_LABELS).map(([key, label]) => (
             <button
               key={key}
@@ -473,8 +473,8 @@ function HistoryTab({
               aria-selected={status === key}
               className={`px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                 status === key
-                  ? 'bg-white text-[#141413] shadow-sm'
-                  : 'text-[#87867F] hover:text-[#5E5D59]'
+                  ? 'bg-white text-[#0f172a] shadow-sm'
+                  : 'text-[#64748b] hover:text-[#475569]'
               }`}
               onClick={() => onStatusChange(key)}
             >
@@ -506,13 +506,13 @@ function CourseRow({
   showStatus?: boolean;
 }>) {
   const badge =
-    STATUS_BADGE_TW[course.status ?? ''] ?? 'bg-[#F5F4ED] text-[#5E5D59] border-[#E8E6DC]';
+    STATUS_BADGE_TW[course.status ?? ''] ?? 'bg-[#f8fafc] text-[#475569] border-[#e2e8f0]';
 
   return (
-    <tr className="hover:bg-[#FAF9F5]/60 transition-colors">
+    <tr className="hover:bg-[#ffffff]/60 transition-colors">
       <td className="px-4 py-3 align-top">
         <div className="grid gap-1">
-          <span className="font-semibold text-[#141413] leading-snug">{course.title}</span>
+          <span className="font-semibold text-[#0f172a] leading-snug">{course.title}</span>
           {course.rejectionReason && (
             <span
               className="text-[12px] text-rose-700 truncate max-w-[min(320px,42vw)]"
@@ -523,8 +523,8 @@ function CourseRow({
           )}
         </div>
       </td>
-      <td className="px-4 py-3 text-[#5E5D59] whitespace-nowrap">{course.teacherName ?? '—'}</td>
-      <td className="px-4 py-3 text-[#5E5D59] whitespace-nowrap">
+      <td className="px-4 py-3 text-[#475569] whitespace-nowrap">{course.teacherName ?? '—'}</td>
+      <td className="px-4 py-3 text-[#475569] whitespace-nowrap">
         {PROVIDER_LABELS[course.provider] ?? course.provider}
       </td>
       {showStatus && (
@@ -536,7 +536,7 @@ function CourseRow({
           </span>
         </td>
       )}
-      <td className="px-4 py-3 text-[#87867F] text-[12px] whitespace-nowrap tabular-nums">
+      <td className="px-4 py-3 text-[#64748b] text-[12px] whitespace-nowrap tabular-nums">
         {new Date(course.updatedAt ?? course.createdAt).toLocaleDateString('vi-VN')}
       </td>
       <td className="px-4 py-3 align-middle">{actions}</td>
@@ -555,22 +555,22 @@ function Pagination({
 }>) {
   const safeTotal = Math.max(totalPages, 1);
   return (
-    <div className="flex flex-wrap items-center justify-center gap-3 px-4 py-4 border-t border-[#F0EEE6] bg-[#FAF9F5]/50">
+    <div className="flex flex-wrap items-center justify-center gap-3 px-4 py-4 border-t border-[#e2e8f0] bg-[#ffffff]/50">
       <button
         type="button"
-        className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-35 disabled:pointer-events-none`}
+        className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-35 disabled:pointer-events-none`}
         onClick={() => onPageChange(Math.max(0, page - 1))}
         disabled={page === 0}
       >
         <ArrowLeft size={14} strokeWidth={2.25} />
         Trước
       </button>
-      <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
-        Trang <strong className="text-[#141413]">{page + 1}</strong> / {safeTotal}
+      <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
+        Trang <strong className="text-[#0f172a]">{page + 1}</strong> / {safeTotal}
       </span>
       <button
         type="button"
-        className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-35 disabled:pointer-events-none`}
+        className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-35 disabled:pointer-events-none`}
         onClick={() => onPageChange(Math.min(safeTotal - 1, page + 1))}
         disabled={page + 1 >= safeTotal}
       >
@@ -714,7 +714,7 @@ const AdminCourseReviewsPage: React.FC = () => {
       display:
         statDraft.isPending && !statDraft.data ? '…' : String(pickTotalElements(statDraft.data)),
       Icon: FileText,
-      bg: 'bg-[#F5F4ED]',
+      bg: 'bg-[#f8fafc]',
       color: 'text-[#9B6FE0]',
     },
     {
@@ -737,21 +737,21 @@ const AdminCourseReviewsPage: React.FC = () => {
           {/* Header — aligned with /teacher/mindmaps */}
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div className="flex items-start gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] shrink-0">
                 <ClipboardCheck className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2.5 flex-wrap">
-                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                     Duyệt khóa học
                   </h1>
                   {!pendingQuery.isPending && !historyQuery.isPending && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                       {chipCount}
                     </span>
                   )}
                 </div>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                   {pendingTotal} chờ xử lý • {pickTotalElements(statAll.data)} trong lịch sử
                 </p>
               </div>
@@ -763,7 +763,7 @@ const AdminCourseReviewsPage: React.FC = () => {
             {statCards.map(({ label, display, Icon, bg, color }) => (
               <div
                 key={label}
-                className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3"
+                className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3"
               >
                 <div
                   className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center shrink-0`}
@@ -771,10 +771,10 @@ const AdminCourseReviewsPage: React.FC = () => {
                   <Icon className={`w-4 h-4 ${color}`} />
                 </div>
                 <div className="min-w-0">
-                  <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none truncate">
+                  <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none truncate">
                     {display}
                   </p>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">{label}</p>
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">{label}</p>
                 </div>
               </div>
             ))}
@@ -809,15 +809,15 @@ const AdminCourseReviewsPage: React.FC = () => {
           {/* Mode tabs — segmented control like mindmaps */}
           <div className="flex flex-col gap-3">
             <div className="flex flex-wrap items-center gap-3">
-              <div className="flex items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl w-fit max-w-full">
+              <div className="flex items-center gap-1 p-1 bg-[#f8fafc] rounded-xl w-fit max-w-full">
                 <button
                   type="button"
                   role="tab"
                   aria-selected={activeTab === 'pending'}
                   className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 ${
                     activeTab === 'pending'
-                      ? 'bg-white text-[#141413] shadow-sm'
-                      : 'text-[#87867F] hover:text-[#5E5D59]'
+                      ? 'bg-white text-[#0f172a] shadow-sm'
+                      : 'text-[#64748b] hover:text-[#475569]'
                   }`}
                   onClick={() => handleTab('pending')}
                 >
@@ -830,8 +830,8 @@ const AdminCourseReviewsPage: React.FC = () => {
                   aria-selected={activeTab === 'history'}
                   className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 ${
                     activeTab === 'history'
-                      ? 'bg-white text-[#141413] shadow-sm'
-                      : 'text-[#87867F] hover:text-[#5E5D59]'
+                      ? 'bg-white text-[#0f172a] shadow-sm'
+                      : 'text-[#64748b] hover:text-[#475569]'
                   }`}
                   onClick={() => handleTab('history')}
                 >
@@ -841,10 +841,10 @@ const AdminCourseReviewsPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-start gap-2 px-4 py-3 rounded-xl bg-[#FAF9F5] border border-[#E8E6DC]">
-              <BookOpen size={16} className="text-[#87867F] shrink-0 mt-0.5" aria-hidden />
-              <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59] leading-relaxed">
-                <span className="text-[#87867F] uppercase tracking-wide font-semibold text-[11px] block mb-0.5">
+            <div className="flex items-start gap-2 px-4 py-3 rounded-xl bg-[#ffffff] border border-[#e2e8f0]">
+              <BookOpen size={16} className="text-[#64748b] shrink-0 mt-0.5" aria-hidden />
+              <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#475569] leading-relaxed">
+                <span className="text-[#64748b] uppercase tracking-wide font-semibold text-[11px] block mb-0.5">
                   Gợi ý
                 </span>{' '}
                 Xem nội dung để điều hướng trực tiếp sang trang duyệt khóa học.
@@ -854,24 +854,24 @@ const AdminCourseReviewsPage: React.FC = () => {
 
           {/* Summary bar — mindmaps-style */}
           {!pendingQuery.isPending && !historyQuery.isPending && (
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 rounded-xl bg-[#FAF9F5] border border-[#E8E6DC]">
-              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] uppercase tracking-wide">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 rounded-xl bg-[#ffffff] border border-[#e2e8f0]">
+              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] uppercase tracking-wide">
                 Hiển thị
               </span>
-              <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+              <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                 {activeTab === 'pending' ? coursesPending.length : coursesHistory.length} /{' '}
                 {activeTab === 'pending' ? pendingTotal : historyListTotal}
               </strong>
-              <div className="hidden sm:block w-px h-4 bg-[#E8E6DC]" />
-              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+              <div className="hidden sm:block w-px h-4 bg-[#e2e8f0]" />
+              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
-                Chờ duyệt <strong className="text-[#141413] font-semibold">{pendingTotal}</strong>
+                Chờ duyệt <strong className="text-[#0f172a] font-semibold">{pendingTotal}</strong>
               </span>
-              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                 <span className="w-1.5 h-1.5 rounded-full bg-violet-400 inline-block" />
                 <span>
                   Bản nháp (lịch sử){' '}
-                  <strong className="text-[#141413] font-semibold">
+                  <strong className="text-[#0f172a] font-semibold">
                     {pickTotalElements(statDraft.data)}
                   </strong>
                 </span>
@@ -880,7 +880,7 @@ const AdminCourseReviewsPage: React.FC = () => {
           )}
 
           {/* Table shell */}
-          <div className="rounded-2xl border border-[#E8E6DC] bg-white overflow-hidden shadow-sm">
+          <div className="rounded-2xl border border-[#e2e8f0] bg-white overflow-hidden shadow-sm">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeTab}

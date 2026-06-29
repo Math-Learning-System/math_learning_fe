@@ -106,8 +106,8 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({ active }) =>
         borderRadius: 999,
         fontSize: 12,
         fontWeight: 600,
-        background: '#f0eee6',
-        color: '#4d4c48',
+        background: '#e2e8f0',
+        color: '#334155',
       }}
     >
       <CheckCircle2 size={12} /> Đang hoạt động
@@ -122,9 +122,9 @@ const StatusBadge: React.FC<StatusBadgeProps> = ({ active }) =>
         borderRadius: 999,
         fontSize: 12,
         fontWeight: 600,
-        background: '#faf9f5',
-        color: '#87867f',
-        border: '1px solid #e8e6dc',
+        background: '#ffffff',
+        color: '#64748b',
+        border: '1px solid #e2e8f0',
       }}
     >
       <EyeOff size={12} /> Vô hiệu
@@ -213,13 +213,13 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ mode, initial, onClose, o
     >
       <div
         style={{
-          background: '#faf9f5',
+          background: '#ffffff',
           borderRadius: 16,
           padding: 28,
           width: '100%',
           maxWidth: 520,
-          boxShadow: '0px 0px 0px 1px #d1cfc5, rgba(0,0,0,0.12) 0px 20px 48px',
-          border: '1px solid #e8e6dc',
+          boxShadow: '0px 0px 0px 1px #cbd5e1, rgba(0,0,0,0.12) 0px 20px 48px',
+          border: '1px solid #e2e8f0',
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -236,7 +236,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ mode, initial, onClose, o
               margin: 0,
               fontSize: 18,
               fontWeight: 700,
-              color: '#141413',
+              color: '#0f172a',
               fontFamily: "'Be Vietnam Pro', system-ui, sans-serif",
             }}
           >
@@ -249,7 +249,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ mode, initial, onClose, o
               border: 'none',
               cursor: 'pointer',
               padding: 4,
-              color: '#87867f',
+              color: '#64748b',
             }}
           >
             <X size={20} />
@@ -284,7 +284,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ mode, initial, onClose, o
                 fontSize: 13,
                 fontWeight: 600,
                 marginBottom: 6,
-                color: '#4d4c48',
+                color: '#334155',
               }}
             >
               Tên template <span style={{ color: '#b53333' }}>*</span>
@@ -297,13 +297,13 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ mode, initial, onClose, o
               style={{
                 width: '100%',
                 padding: '8px 12px',
-                border: '1px solid #e8e6dc',
+                border: '1px solid #e2e8f0',
                 borderRadius: 8,
                 fontSize: 14,
                 outline: 'none',
                 boxSizing: 'border-box',
                 background: '#ffffff',
-                color: '#141413',
+                color: '#0f172a',
                 fontFamily: "'Be Vietnam Pro', system-ui, sans-serif",
               }}
             />
@@ -317,7 +317,7 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ mode, initial, onClose, o
                 fontSize: 13,
                 fontWeight: 600,
                 marginBottom: 6,
-                color: '#4d4c48',
+                color: '#334155',
               }}
             >
               Mô tả
@@ -330,14 +330,14 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ mode, initial, onClose, o
               style={{
                 width: '100%',
                 padding: '8px 12px',
-                border: '1px solid #e8e6dc',
+                border: '1px solid #e2e8f0',
                 borderRadius: 8,
                 fontSize: 14,
                 resize: 'vertical',
                 outline: 'none',
                 boxSizing: 'border-box',
                 background: '#ffffff',
-                color: '#141413',
+                color: '#0f172a',
                 fontFamily: "'Be Vietnam Pro', system-ui, sans-serif",
               }}
             />
@@ -351,34 +351,34 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ mode, initial, onClose, o
                 fontSize: 13,
                 fontWeight: 600,
                 marginBottom: 6,
-                color: '#4d4c48',
+                color: '#334155',
               }}
             >
               File PPTX {isCreate && <span style={{ color: '#b53333' }}>*</span>}
               {!isCreate && (
-                <span style={{ color: '#87867f', fontWeight: 400 }}> (để trống nếu không đổi)</span>
+                <span style={{ color: '#64748b', fontWeight: 400 }}> (để trống nếu không đổi)</span>
               )}
             </label>
             <div
               onClick={() => pptxRef.current?.click()}
               style={{
-                border: '1.5px dashed #e8e6dc',
+                border: '1.5px dashed #e2e8f0',
                 borderRadius: 8,
                 padding: '14px 16px',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 10,
-                background: '#f5f4ed',
+                background: '#f8fafc',
                 transition: 'border-color 0.15s',
               }}
             >
-              <Upload size={18} color="#87867f" />
-              <span style={{ fontSize: 13, color: pptxFile ? '#141413' : '#87867f' }}>
+              <Upload size={18} color="#64748b" />
+              <span style={{ fontSize: 13, color: pptxFile ? '#0f172a' : '#64748b' }}>
                 {pptxFile ? pptxFile.name : (initial?.originalFileName ?? 'Chọn file .pptx')}
               </span>
               {pptxFile && (
-                <span style={{ fontSize: 12, color: '#87867f', marginLeft: 'auto' }}>
+                <span style={{ fontSize: 12, color: '#64748b', marginLeft: 'auto' }}>
                   {formatFileSize(pptxFile.size)}
                 </span>
               )}
@@ -403,27 +403,27 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ mode, initial, onClose, o
                 fontSize: 13,
                 fontWeight: 600,
                 marginBottom: 6,
-                color: '#4d4c48',
+                color: '#334155',
               }}
             >
               Ảnh preview{' '}
-              <span style={{ color: '#87867f', fontWeight: 400 }}>(để trống nếu không đổi)</span>
+              <span style={{ color: '#64748b', fontWeight: 400 }}>(để trống nếu không đổi)</span>
             </label>
             <div
               onClick={() => previewRef.current?.click()}
               style={{
-                border: '1.5px dashed #e8e6dc',
+                border: '1.5px dashed #e2e8f0',
                 borderRadius: 8,
                 padding: '14px 16px',
                 cursor: 'pointer',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 10,
-                background: '#f5f4ed',
+                background: '#f8fafc',
               }}
             >
-              <Upload size={18} color="#87867f" />
-              <span style={{ fontSize: 13, color: previewFile ? '#141413' : '#87867f' }}>
+              <Upload size={18} color="#64748b" />
+              <span style={{ fontSize: 13, color: previewFile ? '#0f172a' : '#64748b' }}>
                 {previewFile ? previewFile.name : 'Chọn file ảnh (.png, .jpg, .webp)'}
               </span>
             </div>
@@ -447,12 +447,12 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ mode, initial, onClose, o
               style={{
                 padding: '8px 20px',
                 borderRadius: 8,
-                border: '1px solid #e8e6dc',
-                background: '#e8e6dc',
+                border: '1px solid #e2e8f0',
+                background: '#e2e8f0',
                 cursor: 'pointer',
                 fontSize: 14,
                 fontWeight: 500,
-                color: '#4d4c48',
+                color: '#334155',
                 fontFamily: "'Be Vietnam Pro', system-ui, sans-serif",
               }}
             >
@@ -465,8 +465,8 @@ const TemplateModal: React.FC<TemplateModalProps> = ({ mode, initial, onClose, o
                 padding: '8px 22px',
                 borderRadius: 8,
                 border: 'none',
-                background: saving ? '#d97757' : '#c96442',
-                color: '#faf9f5',
+                background: saving ? '#14b8a6' : '#0ea5e9',
+                color: '#ffffff',
                 cursor: saving ? 'not-allowed' : 'pointer',
                 fontSize: 14,
                 fontWeight: 600,
@@ -533,11 +533,11 @@ const TemplateThumbnail: React.FC<TemplateThumbnailProps> = ({ template, onClick
         width: 52,
         height: 38,
         borderRadius: 6,
-        background: '#f0eee6',
+        background: '#e2e8f0',
         flexShrink: 0,
         cursor: 'pointer',
         overflow: 'hidden',
-        border: '1px solid #e8e6dc',
+        border: '1px solid #e2e8f0',
       }}
     >
       {blobUrl ? (
@@ -556,7 +556,7 @@ const TemplateThumbnail: React.FC<TemplateThumbnailProps> = ({ template, onClick
             justifyContent: 'center',
           }}
         >
-          <FileSliders size={16} color="#87867f" />
+          <FileSliders size={16} color="#64748b" />
         </div>
       )}
     </div>
@@ -606,13 +606,13 @@ const PreviewModal: React.FC<PreviewModalProps> = ({ template, onClose }) => {
     >
       <div
         style={{
-          background: '#faf9f5',
+          background: '#ffffff',
           borderRadius: 16,
           padding: 16,
           maxWidth: 700,
           width: '100%',
-          boxShadow: '0px 0px 0px 1px #d1cfc5, rgba(0,0,0,0.15) 0px 20px 48px',
-          border: '1px solid #e8e6dc',
+          boxShadow: '0px 0px 0px 1px #cbd5e1, rgba(0,0,0,0.15) 0px 20px 48px',
+          border: '1px solid #e2e8f0',
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -628,7 +628,7 @@ const PreviewModal: React.FC<PreviewModalProps> = ({ template, onClose }) => {
             style={{
               fontSize: 15,
               fontWeight: 600,
-              color: '#141413',
+              color: '#0f172a',
               fontFamily: "'Be Vietnam Pro', system-ui, sans-serif",
             }}
           >
@@ -641,7 +641,7 @@ const PreviewModal: React.FC<PreviewModalProps> = ({ template, onClose }) => {
               border: 'none',
               cursor: 'pointer',
               padding: 4,
-              color: '#87867f',
+              color: '#64748b',
             }}
           >
             <X size={20} />
@@ -656,9 +656,9 @@ const PreviewModal: React.FC<PreviewModalProps> = ({ template, onClose }) => {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              background: '#f5f4ed',
+              background: '#f8fafc',
               borderRadius: 8,
-              color: '#87867f',
+              color: '#64748b',
               gap: 8,
             }}
           >
@@ -673,7 +673,7 @@ const PreviewModal: React.FC<PreviewModalProps> = ({ template, onClose }) => {
               alignItems: 'center',
               justifyContent: 'center',
               gap: 8,
-              color: '#87867f',
+              color: '#64748b',
             }}
           >
             <Loader2 size={20} className="ast-spin" /> Đang tải ảnh...
@@ -705,7 +705,7 @@ const PreviewModal: React.FC<PreviewModalProps> = ({ template, onClose }) => {
               borderRadius: 8,
               objectFit: 'contain',
               maxHeight: 500,
-              background: '#f0eee6',
+              background: '#e2e8f0',
             }}
           />
         ) : null}
@@ -885,7 +885,7 @@ export default function AdminSlideTemplates() {
             top: 20,
             right: 20,
             zIndex: 2000,
-            background: toast.type === 'success' ? '#30302e' : '#b53333',
+            background: toast.type === 'success' ? '#1e293b' : '#b53333',
             color: '#fff',
             padding: '12px 20px',
             borderRadius: 10,
@@ -933,11 +933,11 @@ export default function AdminSlideTemplates() {
           padding: 6px; border-radius: 6px;
           display: flex; align-items: center;
           transition: background 0.15s;
-          color: #87867f;
+          color: #64748b;
         }
-        .ast-btn-icon:hover { background: #f0eee6; color: #141413; }
+        .ast-btn-icon:hover { background: #e2e8f0; color: #0f172a; }
         .ast-btn-icon:disabled { opacity: 0.4; cursor: not-allowed; }
-        .ast-row:hover { background: #faf9f5; }
+        .ast-row:hover { background: #ffffff; }
       `}</style>
 
       <div
@@ -951,7 +951,7 @@ export default function AdminSlideTemplates() {
             justifyContent: 'space-between',
             marginBottom: 24,
             paddingBottom: 20,
-            borderBottom: '1px solid #f0eee6',
+            borderBottom: '1px solid #e2e8f0',
             flexWrap: 'wrap',
             gap: 12,
           }}
@@ -962,20 +962,20 @@ export default function AdminSlideTemplates() {
                 width: 44,
                 height: 44,
                 borderRadius: 12,
-                background: '#e8e6dc',
+                background: '#e2e8f0',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                border: '1px solid #d1cfc5',
+                border: '1px solid #cbd5e1',
               }}
             >
-              <FileSliders size={20} color="#5e5d59" />
+              <FileSliders size={20} color="#475569" />
             </div>
             <div>
-              <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: '#141413' }}>
+              <h1 style={{ margin: 0, fontSize: 22, fontWeight: 700, color: '#0f172a' }}>
                 Quản lý Slide Template
               </h1>
-              <p style={{ margin: 0, fontSize: 13, color: '#87867f', marginTop: 2 }}>
+              <p style={{ margin: 0, fontSize: 13, color: '#64748b', marginTop: 2 }}>
                 {templates.length} template • {templates.filter((t) => t.active).length} đang hoạt
                 động
               </p>
@@ -989,8 +989,8 @@ export default function AdminSlideTemplates() {
               alignItems: 'center',
               gap: 6,
               padding: '9px 18px',
-              background: '#c96442',
-              color: '#faf9f5',
+              background: '#0ea5e9',
+              color: '#ffffff',
               border: 'none',
               borderRadius: 10,
               fontWeight: 600,
@@ -1022,7 +1022,7 @@ export default function AdminSlideTemplates() {
                 left: 10,
                 top: '50%',
                 transform: 'translateY(-50%)',
-                color: '#87867f',
+                color: '#64748b',
               }}
             />
             <input
@@ -1033,13 +1033,13 @@ export default function AdminSlideTemplates() {
               style={{
                 width: '100%',
                 padding: '8px 10px 8px 32px',
-                border: '1px solid #e8e6dc',
+                border: '1px solid #e2e8f0',
                 borderRadius: 10,
                 fontSize: 14,
                 outline: 'none',
                 boxSizing: 'border-box',
-                background: '#faf9f5',
-                color: '#141413',
+                background: '#ffffff',
+                color: '#0f172a',
                 fontFamily: "'Be Vietnam Pro', system-ui, sans-serif",
               }}
             />
@@ -1054,9 +1054,9 @@ export default function AdminSlideTemplates() {
                 padding: '7px 14px',
                 borderRadius: 8,
                 border: '1px solid',
-                borderColor: filterActive === v ? '#141413' : '#e8e6dc',
-                background: filterActive === v ? '#141413' : '#faf9f5',
-                color: filterActive === v ? '#faf9f5' : '#5e5d59',
+                borderColor: filterActive === v ? '#0f172a' : '#e2e8f0',
+                background: filterActive === v ? '#0f172a' : '#ffffff',
+                color: filterActive === v ? '#ffffff' : '#475569',
                 fontWeight: filterActive === v ? 600 : 400,
                 fontSize: 13,
                 cursor: 'pointer',
@@ -1076,7 +1076,7 @@ export default function AdminSlideTemplates() {
               alignItems: 'center',
               justifyContent: 'center',
               height: 200,
-              color: '#87867f',
+              color: '#64748b',
               gap: 10,
             }}
           >
@@ -1104,7 +1104,7 @@ export default function AdminSlideTemplates() {
                 padding: '4px 12px',
                 borderRadius: 6,
                 border: '1px solid rgba(181,51,51,0.25)',
-                background: '#faf9f5',
+                background: '#ffffff',
                 color: '#b53333',
                 cursor: 'pointer',
                 fontSize: 13,
@@ -1118,7 +1118,7 @@ export default function AdminSlideTemplates() {
             style={{
               textAlign: 'center',
               padding: '48px 0',
-              color: '#87867f',
+              color: '#64748b',
             }}
           >
             <FileSliders size={40} style={{ opacity: 0.3, marginBottom: 12 }} />
@@ -1128,8 +1128,8 @@ export default function AdminSlideTemplates() {
               style={{
                 marginTop: 16,
                 padding: '8px 18px',
-                background: '#c96442',
-                color: '#faf9f5',
+                background: '#0ea5e9',
+                color: '#ffffff',
                 border: 'none',
                 borderRadius: 10,
                 cursor: 'pointer',
@@ -1144,22 +1144,22 @@ export default function AdminSlideTemplates() {
         ) : (
           <div
             style={{
-              background: '#faf9f5',
-              border: '1px solid #e8e6dc',
+              background: '#ffffff',
+              border: '1px solid #e2e8f0',
               borderRadius: 12,
               overflow: 'hidden',
             }}
           >
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
               <thead>
-                <tr style={{ background: '#f5f4ed', borderBottom: '1px solid #e8e6dc' }}>
+                <tr style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
                   <th
                     style={{
                       padding: '12px 16px',
                       textAlign: 'left',
                       fontSize: 12,
                       fontWeight: 600,
-                      color: '#87867f',
+                      color: '#64748b',
                       cursor: 'pointer',
                       userSelect: 'none',
                       textTransform: 'uppercase' as const,
@@ -1177,7 +1177,7 @@ export default function AdminSlideTemplates() {
                       textAlign: 'left',
                       fontSize: 12,
                       fontWeight: 600,
-                      color: '#87867f',
+                      color: '#64748b',
                       textTransform: 'uppercase' as const,
                       letterSpacing: '0.05em',
                     }}
@@ -1190,7 +1190,7 @@ export default function AdminSlideTemplates() {
                       textAlign: 'left',
                       fontSize: 12,
                       fontWeight: 600,
-                      color: '#87867f',
+                      color: '#64748b',
                       textTransform: 'uppercase' as const,
                       letterSpacing: '0.05em',
                     }}
@@ -1203,7 +1203,7 @@ export default function AdminSlideTemplates() {
                       textAlign: 'left',
                       fontSize: 12,
                       fontWeight: 600,
-                      color: '#87867f',
+                      color: '#64748b',
                       cursor: 'pointer',
                       userSelect: 'none',
                       textTransform: 'uppercase' as const,
@@ -1221,7 +1221,7 @@ export default function AdminSlideTemplates() {
                       textAlign: 'right',
                       fontSize: 12,
                       fontWeight: 600,
-                      color: '#87867f',
+                      color: '#64748b',
                       textTransform: 'uppercase' as const,
                       letterSpacing: '0.05em',
                     }}
@@ -1240,7 +1240,7 @@ export default function AdminSlideTemplates() {
                       key={t.id}
                       className="ast-row"
                       style={{
-                        borderBottom: idx < filtered.length - 1 ? '1px solid #f0eee6' : 'none',
+                        borderBottom: idx < filtered.length - 1 ? '1px solid #e2e8f0' : 'none',
                         transition: 'background 0.1s',
                       }}
                     >
@@ -1251,14 +1251,14 @@ export default function AdminSlideTemplates() {
                           <TemplateThumbnail template={t} onClick={() => setPreviewTarget(t)} />
 
                           <div>
-                            <div style={{ fontWeight: 600, fontSize: 14, color: '#141413' }}>
+                            <div style={{ fontWeight: 600, fontSize: 14, color: '#0f172a' }}>
                               {t.name}
                             </div>
                             {t.description && (
                               <div
                                 style={{
                                   fontSize: 12,
-                                  color: '#87867f',
+                                  color: '#64748b',
                                   marginTop: 2,
                                   maxWidth: 260,
                                   overflow: 'hidden',
@@ -1278,9 +1278,9 @@ export default function AdminSlideTemplates() {
                         <span
                           style={{
                             fontSize: 12,
-                            color: '#4d4c48',
+                            color: '#334155',
                             fontFamily: "'Courier New', Courier, monospace",
-                            background: '#f0eee6',
+                            background: '#e2e8f0',
                             padding: '2px 6px',
                             borderRadius: 4,
                           }}
@@ -1295,7 +1295,7 @@ export default function AdminSlideTemplates() {
                       </td>
 
                       {/* Created at */}
-                      <td style={{ padding: '14px 16px', fontSize: 13, color: '#87867f' }}>
+                      <td style={{ padding: '14px 16px', fontSize: 13, color: '#64748b' }}>
                         {formatDate(t.createdAt)}
                       </td>
 
@@ -1339,7 +1339,7 @@ export default function AdminSlideTemplates() {
                               title="Tạo lại preview từ PPTX"
                               disabled={isRegenerating}
                               onClick={() => void handleRegeneratePreview(t)}
-                              style={{ color: '#c96442' }}
+                              style={{ color: '#0ea5e9' }}
                             >
                               {isRegenerating ? (
                                 <Loader2 size={16} className="ast-spin" />
@@ -1367,7 +1367,7 @@ export default function AdminSlideTemplates() {
                             title={t.active ? 'Vô hiệu hóa' : 'Kích hoạt'}
                             disabled={isActionLoading}
                             onClick={() => void handleToggleActive(t)}
-                            style={{ color: t.active ? '#87867f' : '#5e5d59' }}
+                            style={{ color: t.active ? '#64748b' : '#475569' }}
                           >
                             {isActionLoading ? (
                               <Loader2 size={16} className="ast-spin" />

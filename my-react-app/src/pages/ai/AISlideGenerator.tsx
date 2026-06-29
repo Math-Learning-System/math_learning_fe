@@ -48,12 +48,12 @@ import './AISlideGenerator.css';
 
 const LoadingSpinner: React.FC<{ label: string }> = ({ label }) => (
   <span
-    className="inline-flex items-center gap-2 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]"
+    className="inline-flex items-center gap-2 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]"
     role="status"
     aria-live="polite"
   >
     <span
-      className="w-3.5 h-3.5 rounded-full border-2 border-[#E8E6DC] border-t-[#7C6FAB] animate-spin flex-shrink-0"
+      className="w-3.5 h-3.5 rounded-full border-2 border-[#e2e8f0] border-t-[#7C6FAB] animate-spin flex-shrink-0"
       aria-hidden="true"
     />
     {label}
@@ -69,7 +69,7 @@ const SlideThumbnailPreview: React.FC<{
 }> = ({
   src,
   alt,
-  frameClassName = 'relative mx-auto w-full max-w-[300px] aspect-[3/4] overflow-hidden bg-[#E8E6DC]',
+  frameClassName = 'relative mx-auto w-full max-w-[300px] aspect-[3/4] overflow-hidden bg-[#e2e8f0]',
 }) => (
   <div className={frameClassName}>
     <img
@@ -1522,14 +1522,14 @@ const AISlideGenerator: React.FC = () => {
           {/* â”€â”€ Page header â”€â”€ */}
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                 <Layers className="w-5 h-5" />
               </div>
               <div>
-                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                   Slide
                 </h1>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                   {generatedFiles.length > 0
                     ? `${generatedFiles.length} file đã tạo`
                     : 'Tạo bài giảng với AI hỗ trợ'}
@@ -1540,7 +1540,7 @@ const AISlideGenerator: React.FC = () => {
 
           {/* â”€â”€ Main tabs â”€â”€ */}
           <div
-            className="flex items-center gap-1 p-1 bg-[#F0EEE6] rounded-xl w-fit"
+            className="flex items-center gap-1 p-1 bg-[#e2e8f0] rounded-xl w-fit"
             role="tablist"
             aria-label="Chế độ AI Slide"
           >
@@ -1550,8 +1550,8 @@ const AISlideGenerator: React.FC = () => {
               aria-selected={activeMainTab === 'GENERATE'}
               className={
                 activeMainTab === 'GENERATE'
-                  ? 'bg-[#141413] text-[#FAF9F5] rounded-lg px-3.5 py-1.5 font-[Be_Vietnam_Pro] text-[13px] font-semibold'
-                  : 'bg-transparent text-[#5E5D59] rounded-lg px-3.5 py-1.5 font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#E8E6DC] hover:text-[#141413] transition-colors duration-150'
+                  ? 'bg-[#0f172a] text-[#ffffff] rounded-lg px-3.5 py-1.5 font-[Be_Vietnam_Pro] text-[13px] font-semibold'
+                  : 'bg-transparent text-[#475569] rounded-lg px-3.5 py-1.5 font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#e2e8f0] hover:text-[#0f172a] transition-colors duration-150'
               }
               onClick={() => setActiveMainTab('GENERATE')}
             >
@@ -1563,8 +1563,8 @@ const AISlideGenerator: React.FC = () => {
               aria-selected={activeMainTab === 'MANAGE'}
               className={
                 activeMainTab === 'MANAGE'
-                  ? 'bg-[#141413] text-[#FAF9F5] rounded-lg px-3.5 py-1.5 font-[Be_Vietnam_Pro] text-[13px] font-semibold'
-                  : 'bg-transparent text-[#5E5D59] rounded-lg px-3.5 py-1.5 font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#E8E6DC] hover:text-[#141413] transition-colors duration-150'
+                  ? 'bg-[#0f172a] text-[#ffffff] rounded-lg px-3.5 py-1.5 font-[Be_Vietnam_Pro] text-[13px] font-semibold'
+                  : 'bg-transparent text-[#475569] rounded-lg px-3.5 py-1.5 font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#e2e8f0] hover:text-[#0f172a] transition-colors duration-150'
               }
               onClick={() => setActiveMainTab('MANAGE')}
             >
@@ -1590,10 +1590,10 @@ const AISlideGenerator: React.FC = () => {
                         <div
                           className={`w-6 h-6 rounded-full flex items-center justify-center font-[Be_Vietnam_Pro] text-[11px] font-bold flex-shrink-0 ${
                             isDone
-                              ? 'bg-[#5E5D59] text-[#FAF9F5]'
+                              ? 'bg-[#475569] text-[#ffffff]'
                               : isActive
-                                ? 'bg-[#7C6FAB] text-[#FAF9F5]'
-                                : 'bg-[#E8E6DC] text-[#87867F]'
+                                ? 'bg-[#7C6FAB] text-[#ffffff]'
+                                : 'bg-[#e2e8f0] text-[#64748b]'
                           }`}
                         >
                           {isDone ? <CheckCircle2 className="w-3.5 h-3.5" /> : stepNumber}
@@ -1601,10 +1601,10 @@ const AISlideGenerator: React.FC = () => {
                         <span
                           className={`font-[Be_Vietnam_Pro] text-[12px] hidden sm:block ${
                             isActive
-                              ? 'text-[#141413] font-semibold'
+                              ? 'text-[#0f172a] font-semibold'
                               : isDone
-                                ? 'text-[#5E5D59]'
-                                : 'text-[#87867F]'
+                                ? 'text-[#475569]'
+                                : 'text-[#64748b]'
                           }`}
                         >
                           {stepLabel}
@@ -1612,7 +1612,7 @@ const AISlideGenerator: React.FC = () => {
                       </li>
                       {index < wizardSteps.length - 1 && (
                         <div
-                          className="flex-1 h-px bg-[#E8E6DC] mx-2 min-w-[12px]"
+                          className="flex-1 h-px bg-[#e2e8f0] mx-2 min-w-[12px]"
                           aria-hidden="true"
                         />
                       )}
@@ -1641,16 +1641,16 @@ const AISlideGenerator: React.FC = () => {
               STEP 1 â€” Chọn bài dạy
           â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
           {activeMainTab === 'GENERATE' && activeWizardStep === 1 && (
-            <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden">
-              <div className="px-6 py-4 border-b border-[#F0EEE6] flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+            <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden">
+              <div className="px-6 py-4 border-b border-[#e2e8f0] flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                   <BookOpen className="w-4 h-4" />
                 </div>
                 <div>
-                  <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#141413]">
+                  <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a]">
                     Chọn bài dạy
                   </h2>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                     Chọn lớp, môn, chương và bài học
                   </p>
                 </div>
@@ -1658,14 +1658,14 @@ const AISlideGenerator: React.FC = () => {
               <div className="p-6 space-y-4">
                 {/* Grade */}
                 <div>
-                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
+                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
                     Lớp
                   </label>
                   <select
                     value={schoolGradeId}
                     onChange={(e) => void handleSchoolGradeChange(e.target.value)}
                     disabled={loadingGrades}
-                    className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 disabled:bg-[#F5F4ED] disabled:text-[#87867F]"
+                    className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 disabled:bg-[#f8fafc] disabled:text-[#64748b]"
                   >
                     <option value="">-- Chọn lớp --</option>
                     {schoolGrades.map((grade) => (
@@ -1684,14 +1684,14 @@ const AISlideGenerator: React.FC = () => {
                 {/* Subject */}
                 {showSubjectStep && (
                   <div>
-                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
+                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
                       Môn học
                     </label>
                     <select
                       value={subjectId}
                       onChange={(e) => void handleSubjectChange(e.target.value)}
                       disabled={loadingSubjects}
-                      className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 disabled:bg-[#F5F4ED] disabled:text-[#87867F]"
+                      className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 disabled:bg-[#f8fafc] disabled:text-[#64748b]"
                     >
                       <option value="">-- Chọn môn học --</option>
                       {subjects.map((subject) => (
@@ -1706,7 +1706,7 @@ const AISlideGenerator: React.FC = () => {
                       </div>
                     )}
                     {!loadingSubjects && subjects.length === 0 && (
-                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-1.5">
+                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-1.5">
                         Lớp này chưa có môn học.
                       </p>
                     )}
@@ -1716,14 +1716,14 @@ const AISlideGenerator: React.FC = () => {
                 {/* Chapter */}
                 {showChapterStep && (
                   <div>
-                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
+                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
                       Chương
                     </label>
                     <select
                       value={chapterId}
                       onChange={(e) => void handleChapterChange(e.target.value)}
                       disabled={loadingChapters}
-                      className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 disabled:bg-[#F5F4ED] disabled:text-[#87867F]"
+                      className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 disabled:bg-[#f8fafc] disabled:text-[#64748b]"
                     >
                       <option value="">-- Chọn chương --</option>
                       {chapters.map((chapter) => (
@@ -1738,7 +1738,7 @@ const AISlideGenerator: React.FC = () => {
                       </div>
                     )}
                     {!loadingChapters && chapters.length === 0 && (
-                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-1.5">
+                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-1.5">
                         Môn học này chưa có chương.
                       </p>
                     )}
@@ -1748,7 +1748,7 @@ const AISlideGenerator: React.FC = () => {
                 {/* Lesson */}
                 {showLessonStep && (
                   <div>
-                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
+                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
                       Bài học
                     </label>
                     <select
@@ -1767,7 +1767,7 @@ const AISlideGenerator: React.FC = () => {
                         }
                       }}
                       disabled={loadingLessons}
-                      className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 disabled:bg-[#F5F4ED] disabled:text-[#87867F]"
+                      className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 disabled:bg-[#f8fafc] disabled:text-[#64748b]"
                     >
                       <option value="">-- Chọn bài học --</option>
                       {lessons.map((lesson) => (
@@ -1782,7 +1782,7 @@ const AISlideGenerator: React.FC = () => {
                       </div>
                     )}
                     {!loadingLessons && lessons.length === 0 && (
-                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-1.5">
+                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-1.5">
                         Chương này chưa có bài học.
                       </p>
                     )}
@@ -1791,11 +1791,11 @@ const AISlideGenerator: React.FC = () => {
 
                 {/* Selected summary */}
                 {selectedLesson && (
-                  <div className="flex items-center gap-2 px-3 py-2 bg-[#F0EEE6] rounded-xl">
+                  <div className="flex items-center gap-2 px-3 py-2 bg-[#e2e8f0] rounded-xl">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#7C6FAB] flex-shrink-0" />
-                    <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59]">
+                    <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569]">
                       Bài học đã chọn:{' '}
-                      <strong className="text-[#141413]">{selectedLesson.title}</strong>
+                      <strong className="text-[#0f172a]">{selectedLesson.title}</strong>
                     </span>
                   </div>
                 )}
@@ -1804,7 +1804,7 @@ const AISlideGenerator: React.FC = () => {
                   <button
                     disabled={!canConfigureAi}
                     onClick={() => setActiveWizardStep(2)}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     Tiếp tục: Chọn template <ChevronRight className="w-3.5 h-3.5" />
                   </button>
@@ -1817,17 +1817,17 @@ const AISlideGenerator: React.FC = () => {
               STEP 2 â€” Chọn template
           â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
           {activeMainTab === 'GENERATE' && activeWizardStep === 2 && (
-            <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden">
-              <div className="px-6 py-4 border-b border-[#F0EEE6] flex items-center justify-between">
+            <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden">
+              <div className="px-6 py-4 border-b border-[#e2e8f0] flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+                  <div className="w-8 h-8 rounded-lg bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                     <Layers className="w-4 h-4" />
                   </div>
                   <div>
-                    <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#141413]">
+                    <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a]">
                       Chọn template
                     </h2>
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                       Chọn bố cục slide cho bài giảng
                     </p>
                   </div>
@@ -1835,7 +1835,7 @@ const AISlideGenerator: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setActiveWizardStep(1)}
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150"
                 >
                   <ChevronLeft className="w-3.5 h-3.5" /> Quay lại
                 </button>
@@ -1844,14 +1844,14 @@ const AISlideGenerator: React.FC = () => {
               <fieldset className="p-6 space-y-5" disabled={!canChooseTemplate}>
                 {/* Template select */}
                 <div>
-                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
+                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
                     Template slide
                   </label>
                   <select
                     value={templateId}
                     onChange={(e) => setTemplateId(e.target.value)}
                     disabled={loadingTemplates || templates.length === 0}
-                    className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 disabled:bg-[#F5F4ED] disabled:text-[#87867F]"
+                    className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 disabled:bg-[#f8fafc] disabled:text-[#64748b]"
                   >
                     <option value="">
                       {loadingTemplates ? 'Đang tải template...' : '-- Chọn template --'}
@@ -1868,7 +1868,7 @@ const AISlideGenerator: React.FC = () => {
                     </div>
                   )}
                   {!loadingTemplates && templates.length === 0 && (
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-1.5">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-1.5">
                       Chưa có template nào.
                     </p>
                   )}
@@ -1892,34 +1892,34 @@ const AISlideGenerator: React.FC = () => {
                           className={`group rounded-xl border-2 overflow-hidden text-left transition-all duration-200 ${
                             selected
                               ? 'border-[#7C6FAB] shadow-[0px_0px_0px_1px_#7C6FAB]'
-                              : 'border-[#E8E6DC] hover:border-[#D1CFC5] hover:shadow-[rgba(0,0,0,0.05)_0px_4px_16px]'
+                              : 'border-[#e2e8f0] hover:border-[#cbd5e1] hover:shadow-[rgba(0,0,0,0.05)_0px_4px_16px]'
                           }`}
                           onClick={() => setTemplateId(template.id)}
                           aria-selected={selected}
                         >
-                          <div className="relative w-full overflow-hidden bg-[#E8E6DC]">
+                          <div className="relative w-full overflow-hidden bg-[#e2e8f0]">
                             {previewUrl ? (
                               <SlideThumbnailPreview
                                 src={previewUrl}
                                 alt={`Template: ${template.name}`}
-                                frameClassName="relative w-full aspect-[3/4] overflow-hidden bg-[#E8E6DC]"
+                                frameClassName="relative w-full aspect-[3/4] overflow-hidden bg-[#e2e8f0]"
                               />
                             ) : (
-                              <div className="flex aspect-[3/4] w-full items-center justify-center bg-[#E8E6DC]">
+                              <div className="flex aspect-[3/4] w-full items-center justify-center bg-[#e2e8f0]">
                                 {loadingTemplatePreviews ? (
                                   <LoadingSpinner label="" />
                                 ) : (
-                                  <Layers className="w-6 h-6 text-[#87867F]" />
+                                  <Layers className="w-6 h-6 text-[#64748b]" />
                                 )}
                               </div>
                             )}
                           </div>
                           <div className="px-3 py-2 bg-white">
-                            <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#141413] truncate">
+                            <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#0f172a] truncate">
                               {template.name}
                             </p>
                             {template.description && (
-                              <p className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] truncate mt-0.5">
+                              <p className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] truncate mt-0.5">
                                 {template.description}
                               </p>
                             )}
@@ -1939,12 +1939,12 @@ const AISlideGenerator: React.FC = () => {
                 )}
 
                 {selectedLesson && selectedTemplate && (
-                  <div className="flex items-center gap-2 px-3 py-2 bg-[#F0EEE6] rounded-xl">
+                  <div className="flex items-center gap-2 px-3 py-2 bg-[#e2e8f0] rounded-xl">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#7C6FAB] flex-shrink-0" />
-                    <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59]">
-                      <strong className="text-[#141413]">{selectedLesson.title}</strong>{' '}
+                    <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569]">
+                      <strong className="text-[#0f172a]">{selectedLesson.title}</strong>{' '}
                       &nbsp;·&nbsp;{' '}
-                      <strong className="text-[#141413]">{selectedTemplate.name}</strong>
+                      <strong className="text-[#0f172a]">{selectedTemplate.name}</strong>
                     </span>
                   </div>
                 )}
@@ -1953,7 +1953,7 @@ const AISlideGenerator: React.FC = () => {
                   <button
                     onClick={() => setActiveWizardStep(3)}
                     disabled={!templateId}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     Tiếp tục: Tạo nội dung <ChevronRight className="w-3.5 h-3.5" />
                   </button>
@@ -1966,17 +1966,17 @@ const AISlideGenerator: React.FC = () => {
               STEP 3 â€” Tạo nội dung AI
           â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
           {activeMainTab === 'GENERATE' && activeWizardStep === 3 && (
-            <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden">
-              <div className="px-6 py-4 border-b border-[#F0EEE6] flex items-center justify-between">
+            <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden">
+              <div className="px-6 py-4 border-b border-[#e2e8f0] flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+                  <div className="w-8 h-8 rounded-lg bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                     <Sparkles className="w-4 h-4" />
                   </div>
                   <div>
-                    <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#141413]">
+                    <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a]">
                       Tạo nội dung
                     </h2>
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                       Cấu hình AI để tạo nội dung slide
                     </p>
                   </div>
@@ -1984,7 +1984,7 @@ const AISlideGenerator: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setActiveWizardStep(2)}
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150"
                 >
                   <ChevronLeft className="w-3.5 h-3.5" /> Quay lại
                 </button>
@@ -1994,8 +1994,8 @@ const AISlideGenerator: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Slide count */}
                   <div>
-                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
-                      Số lượng slide <span className="text-[#87867F] font-normal">(5–15)</span>
+                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
+                      Số lượng slide <span className="text-[#64748b] font-normal">(5–15)</span>
                     </label>
                     <input
                       type="number"
@@ -2007,19 +2007,19 @@ const AISlideGenerator: React.FC = () => {
                         const clamped = Math.max(5, Math.min(15, nextValue));
                         setSlideCount(clamped);
                       }}
-                      className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
+                      className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
                     />
                   </div>
 
                   {/* Output format */}
                   <div>
-                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
+                    <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
                       Định dạng đầu ra
                     </label>
                     <select
                       value={outputFormat}
                       onChange={(e) => setOutputFormat(e.target.value as LessonSlideOutputFormat)}
-                      className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
+                      className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
                     >
                       <option value="PLAIN_TEXT">Text</option>
                       <option value="LATEX">Latex</option>
@@ -2029,7 +2029,7 @@ const AISlideGenerator: React.FC = () => {
 
                 {/* Slide name */}
                 <div>
-                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
+                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
                     Tên slide
                   </label>
                   <input
@@ -2037,18 +2037,18 @@ const AISlideGenerator: React.FC = () => {
                     placeholder="VD: Cấp Số Cộng - Lớp 11"
                     value={newSlideName}
                     onChange={(e) => setNewSlideName(e.target.value)}
-                    className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] placeholder:text-[#87867F] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
+                    className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] placeholder:text-[#64748b] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
                   />
                 </div>
 
                 {/* Thumbnail upload */}
                 <div>
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] mb-1.5">
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] mb-1.5">
                     Ảnh thumbnail
                   </p>
                   <label className="mx-auto block w-full max-w-[300px] cursor-pointer">
                     <div
-                      className={`border-2 border-dashed rounded-xl overflow-hidden transition-colors ${newSlideThumbnailPreview ? 'border-[#E8E6DC]' : 'border-[#E8E6DC] hover:border-[#7C6FAB]/50'}`}
+                      className={`border-2 border-dashed rounded-xl overflow-hidden transition-colors ${newSlideThumbnailPreview ? 'border-[#e2e8f0]' : 'border-[#e2e8f0] hover:border-[#7C6FAB]/50'}`}
                     >
                       {newSlideThumbnailPreview ? (
                         <SlideThumbnailPreview
@@ -2056,12 +2056,12 @@ const AISlideGenerator: React.FC = () => {
                           alt="Thumbnail preview"
                         />
                       ) : (
-                        <div className="flex flex-col items-center justify-center gap-2 py-8 bg-[#F5F4ED]">
-                          <Upload className="w-5 h-5 text-[#87867F]" />
-                          <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                        <div className="flex flex-col items-center justify-center gap-2 py-8 bg-[#f8fafc]">
+                          <Upload className="w-5 h-5 text-[#64748b]" />
+                          <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                             Chọn ảnh thumbnail
                           </span>
-                          <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#B0AEA5]">
+                          <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#94a3b8]">
                             PNG, JPG, WEBP
                           </span>
                         </div>
@@ -2089,7 +2089,7 @@ const AISlideGenerator: React.FC = () => {
                           window.URL.revokeObjectURL(newSlideThumbnailPreview);
                         setNewSlideThumbnailPreview(null);
                       }}
-                      className="mt-1.5 flex items-center gap-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] hover:text-[#B53333] transition-colors"
+                      className="mt-1.5 flex items-center gap-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] hover:text-[#B53333] transition-colors"
                     >
                       <X className="w-3 h-3" /> Xóa ảnh
                     </button>
@@ -2098,7 +2098,7 @@ const AISlideGenerator: React.FC = () => {
 
                 {/* Prompt */}
                 <div>
-                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
+                  <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
                     Mô tả yêu cầu AI <span className="text-[#B53333]">*</span>
                   </label>
                   <textarea
@@ -2107,17 +2107,17 @@ const AISlideGenerator: React.FC = () => {
                     value={additionalPrompt}
                     onChange={(e) => setAdditionalPrompt(e.target.value)}
                     required
-                    className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] placeholder:text-[#87867F] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 resize-none"
+                    className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] placeholder:text-[#64748b] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 resize-none"
                   />
                 </div>
 
                 {selectedLesson && selectedTemplate && (
-                  <div className="flex items-center gap-2 px-3 py-2 bg-[#F0EEE6] rounded-xl">
+                  <div className="flex items-center gap-2 px-3 py-2 bg-[#e2e8f0] rounded-xl">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#7C6FAB] flex-shrink-0" />
-                    <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59]">
-                      <strong className="text-[#141413]">{selectedLesson.title}</strong>{' '}
+                    <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569]">
+                      <strong className="text-[#0f172a]">{selectedLesson.title}</strong>{' '}
                       &nbsp;·&nbsp;{' '}
-                      <strong className="text-[#141413]">{selectedTemplate.name}</strong>
+                      <strong className="text-[#0f172a]">{selectedTemplate.name}</strong>
                     </span>
                   </div>
                 )}
@@ -2126,7 +2126,7 @@ const AISlideGenerator: React.FC = () => {
                   <button
                     onClick={() => void handleGenerateContent()}
                     disabled={generatingContent || !templateId}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     {generatingContent ? (
                       <LoadingSpinner label="Đang tạo nội dung..." />
@@ -2145,17 +2145,17 @@ const AISlideGenerator: React.FC = () => {
               STEP 4 — Confirm & chỉnh sửa
           â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
           {activeMainTab === 'GENERATE' && activeWizardStep === 4 && generated && (
-            <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden">
-              <div className="px-6 py-4 border-b border-[#F0EEE6] flex items-center justify-between flex-wrap gap-3">
+            <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden">
+              <div className="px-6 py-4 border-b border-[#e2e8f0] flex items-center justify-between flex-wrap gap-3">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+                  <div className="w-8 h-8 rounded-lg bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                     <CheckCircle2 className="w-4 h-4" />
                   </div>
                   <div>
-                    <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#141413]">
+                    <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a]">
                       Kiểm tra nội dung
                     </h2>
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                       {generated.lessonTitle} &nbsp;·&nbsp; {generated.slideCount} slide
                       &nbsp;·&nbsp; {getOutputFormatLabel(resolvedOutputFormat)}
                     </p>
@@ -2164,7 +2164,7 @@ const AISlideGenerator: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setActiveWizardStep(3)}
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150"
                 >
                   <ChevronLeft className="w-3.5 h-3.5" /> Quay lại
                 </button>
@@ -2176,18 +2176,18 @@ const AISlideGenerator: React.FC = () => {
                     {/* Slide navigation */}
                     <div className="flex items-center justify-between gap-3">
                       <button
-                        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                         onClick={() => setActivePreviewIndex((prev) => Math.max(0, prev - 1))}
                         disabled={activePreviewIndex === 0}
                       >
                         <ChevronLeft className="w-3.5 h-3.5" /> Trước
                       </button>
-                      <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59]">
-                        Slide <strong className="text-[#141413]">{activePreviewIndex + 1}</strong> /{' '}
+                      <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569]">
+                        Slide <strong className="text-[#0f172a]">{activePreviewIndex + 1}</strong> /{' '}
                         {editableSlides.length}
                       </span>
                       <button
-                        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                         onClick={() =>
                           setActivePreviewIndex((prev) =>
                             Math.min(editableSlides.length - 1, prev + 1)
@@ -2200,9 +2200,9 @@ const AISlideGenerator: React.FC = () => {
                     </div>
 
                     {/* Preview canvas */}
-                    <article className="relative bg-white border border-[#E8E6DC] rounded-2xl p-6 min-h-[180px] shadow-[rgba(0,0,0,0.03)_0px_2px_12px]">
+                    <article className="relative bg-white border border-[#e2e8f0] rounded-2xl p-6 min-h-[180px] shadow-[rgba(0,0,0,0.03)_0px_2px_12px]">
                       <div
-                        className="font-[Playfair_Display] text-[20px] font-medium text-[#141413] leading-[1.3] mb-3"
+                        className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a] leading-[1.3] mb-3"
                         role="heading"
                         aria-level={3}
                       >
@@ -2212,7 +2212,7 @@ const AISlideGenerator: React.FC = () => {
                           `heading-${currentPreviewSlide.slideNumber}`
                         )}
                       </div>
-                      <div className="font-[Be_Vietnam_Pro] text-[14px] text-[#5E5D59] leading-[1.6] whitespace-pre-wrap">
+                      <div className="font-[Be_Vietnam_Pro] text-[14px] text-[#475569] leading-[1.6] whitespace-pre-wrap">
                         {renderSlideText(
                           currentPreviewSlide.content || 'Chưa có nội dung',
                           resolvedOutputFormat,
@@ -2225,24 +2225,24 @@ const AISlideGenerator: React.FC = () => {
                         </div>
                       )}
                       <div className="absolute top-3 right-3">
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#F0EEE6] font-[Be_Vietnam_Pro] text-[10px] font-semibold text-[#87867F] uppercase tracking-[0.5px]">
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[10px] font-semibold text-[#64748b] uppercase tracking-[0.5px]">
                           {currentPreviewSlide.slideType}
                         </span>
                       </div>
                     </article>
 
                     {/* Edit panel */}
-                    <div className="bg-white border border-[#E8E6DC] rounded-2xl p-5 space-y-4">
+                    <div className="bg-white border border-[#e2e8f0] rounded-2xl p-5 space-y-4">
                       <div className="flex items-center justify-between">
-                        <h3 className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                        <h3 className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                           Chỉnh sửa slide {currentPreviewSlide.slideNumber}
                         </h3>
-                        <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] uppercase tracking-[0.5px]">
+                        <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] uppercase tracking-[0.5px]">
                           {currentPreviewSlide.slideType}
                         </span>
                       </div>
                       <div>
-                        <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
+                        <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
                           Tiêu đề
                         </label>
                         <input
@@ -2251,11 +2251,11 @@ const AISlideGenerator: React.FC = () => {
                           onChange={(e) =>
                             handleSlideChange(activePreviewIndex, 'heading', e.target.value)
                           }
-                          className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
+                          className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
                         />
                       </div>
                       <div>
-                        <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
+                        <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
                           Nội dung
                         </label>
                         <textarea
@@ -2264,7 +2264,7 @@ const AISlideGenerator: React.FC = () => {
                           onChange={(e) =>
                             handleSlideChange(activePreviewIndex, 'content', e.target.value)
                           }
-                          className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 resize-none"
+                          className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150 resize-none"
                         />
                       </div>
                     </div>
@@ -2275,7 +2275,7 @@ const AISlideGenerator: React.FC = () => {
                   <button
                     onClick={() => void handlePreparePptx()}
                     disabled={generatingPptx || !editableSlides.length}
-                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     {generatingPptx ? (
                       <LoadingSpinner label="Đang tạo Slide..." />
@@ -2294,17 +2294,17 @@ const AISlideGenerator: React.FC = () => {
               STEP 5 — Tải PPTX
           â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
           {activeMainTab === 'GENERATE' && activeWizardStep === 5 && (
-            <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden">
-              <div className="px-6 py-4 border-b border-[#F0EEE6] flex items-center justify-between">
+            <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden">
+              <div className="px-6 py-4 border-b border-[#e2e8f0] flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+                  <div className="w-8 h-8 rounded-lg bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                     <Download className="w-4 h-4" />
                   </div>
                   <div>
-                    <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#141413]">
+                    <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a]">
                       Tải Slide
                     </h2>
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                       Slide đã sẵn sàng để tải về
                     </p>
                   </div>
@@ -2312,22 +2312,22 @@ const AISlideGenerator: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setActiveWizardStep(4)}
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150"
                 >
                   <ChevronLeft className="w-3.5 h-3.5" /> Quay lại
                 </button>
               </div>
 
               <div className="p-6">
-                <div className="flex items-center gap-4 p-5 bg-[#F0EEE6] rounded-xl mb-5">
-                  <div className="w-12 h-12 rounded-xl bg-[#E8E6DC] flex items-center justify-center flex-shrink-0">
-                    <FileStack className="w-5 h-5 text-[#5E5D59]" />
+                <div className="flex items-center gap-4 p-5 bg-[#e2e8f0] rounded-xl mb-5">
+                  <div className="w-12 h-12 rounded-xl bg-[#e2e8f0] flex items-center justify-center flex-shrink-0">
+                    <FileStack className="w-5 h-5 text-[#475569]" />
                   </div>
                   <div className="min-w-0">
-                    <p className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413] truncate">
+                    <p className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a] truncate">
                       {preparedPptxFilename}
                     </p>
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">
                       Đã sẵn sàng tải về
                     </p>
                   </div>
@@ -2335,7 +2335,7 @@ const AISlideGenerator: React.FC = () => {
                 <button
                   onClick={handleDownloadPreparedPptx}
                   disabled={!preparedPptxBlob}
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   <Download className="w-3.5 h-3.5" /> Tải Slide
                 </button>
@@ -2370,7 +2370,7 @@ const AISlideGenerator: React.FC = () => {
                 }}
                 onLessonChange={setLibLessonId}
                 footnote={
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-2">
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-2">
                     Chọn chương hoặc bài để lọc thư viện slide đã tạo (theo bài học của file).
                   </p>
                 }
@@ -2378,14 +2378,14 @@ const AISlideGenerator: React.FC = () => {
               {/* Toolbar */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
                 {/* Search */}
-                <div className="flex-1 flex items-center gap-2 bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150 min-w-0">
-                  <Search className="w-4 h-4 text-[#87867F] flex-shrink-0" />
+                <div className="flex-1 flex items-center gap-2 bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150 min-w-0">
+                  <Search className="w-4 h-4 text-[#64748b] flex-shrink-0" />
                   <input
                     type="text"
                     value={generatedSearch}
                     placeholder="Tìm kiếm slide..."
                     onChange={(e) => setGeneratedSearch(e.target.value)}
-                    className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] bg-transparent outline-none min-w-0"
+                    className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] bg-transparent outline-none min-w-0"
                   />
                 </div>
 
@@ -2393,7 +2393,7 @@ const AISlideGenerator: React.FC = () => {
                 <select
                   value={generatedSort}
                   onChange={(e) => setGeneratedSort(e.target.value as typeof generatedSort)}
-                  className="border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
+                  className="border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
                 >
                   <option value="NEWEST">Mới nhất</option>
                   <option value="OLDEST">Cũ nhất</option>
@@ -2408,7 +2408,7 @@ const AISlideGenerator: React.FC = () => {
                 <select
                   value={generatedPageSize}
                   onChange={(e) => setGeneratedPageSize(Number(e.target.value))}
-                  className="border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
+                  className="border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
                 >
                   <option value={12}>12 / trang</option>
                   <option value={24}>24 / trang</option>
@@ -2418,7 +2418,7 @@ const AISlideGenerator: React.FC = () => {
 
               {/* Visibility filter tabs */}
               <div
-                className="flex items-center gap-1 p-1 bg-[#F0EEE6] rounded-xl w-fit"
+                className="flex items-center gap-1 p-1 bg-[#e2e8f0] rounded-xl w-fit"
                 role="group"
                 aria-label="Lọc file"
               >
@@ -2434,8 +2434,8 @@ const AISlideGenerator: React.FC = () => {
                     onClick={() => setGeneratedVisibilityFilter(key)}
                     className={
                       generatedVisibilityFilter === key
-                        ? 'bg-[#141413] text-[#FAF9F5] rounded-lg px-3.5 py-1.5 font-[Be_Vietnam_Pro] text-[13px] font-semibold'
-                        : 'bg-transparent text-[#5E5D59] rounded-lg px-3.5 py-1.5 font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#E8E6DC] hover:text-[#141413] transition-colors duration-150 disabled:opacity-50'
+                        ? 'bg-[#0f172a] text-[#ffffff] rounded-lg px-3.5 py-1.5 font-[Be_Vietnam_Pro] text-[13px] font-semibold'
+                        : 'bg-transparent text-[#475569] rounded-lg px-3.5 py-1.5 font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#e2e8f0] hover:text-[#0f172a] transition-colors duration-150 disabled:opacity-50'
                     }
                   >
                     {label}
@@ -2449,7 +2449,7 @@ const AISlideGenerator: React.FC = () => {
                   {[1, 2, 3].map((i) => (
                     <div
                       key={i}
-                      className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-52 animate-pulse"
+                      className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-52 animate-pulse"
                     />
                   ))}
                 </div>
@@ -2458,13 +2458,13 @@ const AISlideGenerator: React.FC = () => {
               {/* Empty state */}
               {!loadingGeneratedFiles && managedGeneratedFiles.length === 0 && (
                 <div className="flex flex-col items-center justify-center py-16 gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-[#E8E6DC] flex items-center justify-center">
-                    <FileStack className="w-5 h-5 text-[#87867F]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#e2e8f0] flex items-center justify-center">
+                    <FileStack className="w-5 h-5 text-[#64748b]" />
                   </div>
-                  <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F]">
+                  <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b]">
                     Không có file nào phù hợp
                   </p>
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#B0AEA5]">
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#94a3b8]">
                     Thử đổi từ khóa tìm kiếm hoặc tạo file mới
                   </p>
                 </div>
@@ -2476,10 +2476,10 @@ const AISlideGenerator: React.FC = () => {
                   {pagedManagedGeneratedFiles.map((file) => (
                     <div
                       key={file.id}
-                      className={`bg-[#FAF9F5] rounded-2xl border overflow-hidden group cursor-pointer transition-all duration-200 ${
+                      className={`bg-[#ffffff] rounded-2xl border overflow-hidden group cursor-pointer transition-all duration-200 ${
                         selectedGeneratedFileId === file.id
                           ? 'border-[#7C6FAB] shadow-[0px_0px_0px_1px_#7C6FAB]'
-                          : 'border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5'
+                          : 'border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5'
                       }`}
                       onClick={() => {
                         setSelectedGeneratedFileId(file.id);
@@ -2488,16 +2488,16 @@ const AISlideGenerator: React.FC = () => {
                       }}
                     >
                       {/* Thumbnail */}
-                      <div className="relative w-full overflow-hidden bg-[#E8E6DC]">
+                      <div className="relative w-full overflow-hidden bg-[#e2e8f0]">
                         {generatedThumbnailUrls[file.id] ? (
                           <SlideThumbnailPreview
                             src={generatedThumbnailUrls[file.id]}
                             alt={getGeneratedDisplayName(file)}
-                            frameClassName="relative w-full aspect-[3/4] overflow-hidden bg-[#E8E6DC]"
+                            frameClassName="relative w-full aspect-[3/4] overflow-hidden bg-[#e2e8f0]"
                           />
                         ) : (
-                          <div className="flex aspect-[3/4] w-full items-center justify-center bg-[#E8E6DC]">
-                            <span className="font-[Playfair_Display] text-[32px] font-medium text-[#B0AEA5]">
+                          <div className="flex aspect-[3/4] w-full items-center justify-center bg-[#e2e8f0]">
+                            <span className="font-[Playfair_Display] text-[32px] font-medium text-[#94a3b8]">
                               {getGeneratedDisplayName(file).slice(0, 1).toUpperCase()}
                             </span>
                           </div>
@@ -2507,7 +2507,7 @@ const AISlideGenerator: React.FC = () => {
                             className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full font-[Be_Vietnam_Pro] text-[10px] font-semibold ${
                               file.isPublic
                                 ? 'bg-[#ECFDF5] text-[#2EAD7A]'
-                                : 'bg-[#FAF9F5]/90 text-[#87867F]'
+                                : 'bg-[#ffffff]/90 text-[#64748b]'
                             }`}
                           >
                             {file.isPublic ? (
@@ -2523,33 +2523,33 @@ const AISlideGenerator: React.FC = () => {
                       {/* Body */}
                       <div className="p-4">
                         <p
-                          className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413] truncate mb-2"
+                          className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a] truncate mb-2"
                           title={getGeneratedDisplayName(file)}
                         >
                           {getGeneratedDisplayName(file)}
                         </p>
                         <dl className="space-y-1">
                           <div className="flex items-center justify-between">
-                            <dt className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] uppercase tracking-[0.5px]">
+                            <dt className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] uppercase tracking-[0.5px]">
                               Bài dạy
                             </dt>
-                            <dd className="font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59] truncate max-w-[60%] text-right">
+                            <dd className="font-[Be_Vietnam_Pro] text-[12px] text-[#475569] truncate max-w-[60%] text-right">
                               {lessonTitleById[file.lessonId] || '...'}
                             </dd>
                           </div>
                           <div className="flex items-center justify-between">
-                            <dt className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] uppercase tracking-[0.5px]">
+                            <dt className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] uppercase tracking-[0.5px]">
                               Ngày tạo
                             </dt>
-                            <dd className="font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59]">
+                            <dd className="font-[Be_Vietnam_Pro] text-[12px] text-[#475569]">
                               {formatDateTime(file.createdAt)}
                             </dd>
                           </div>
                           <div className="flex items-center justify-between">
-                            <dt className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F] uppercase tracking-[0.5px]">
+                            <dt className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b] uppercase tracking-[0.5px]">
                               Dung lượng
                             </dt>
-                            <dd className="font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59]">
+                            <dd className="font-[Be_Vietnam_Pro] text-[12px] text-[#475569]">
                               {formatFileSize(file.fileSizeBytes)}
                             </dd>
                           </div>
@@ -2564,9 +2564,9 @@ const AISlideGenerator: React.FC = () => {
                             e.stopPropagation();
                             handleOpenGeneratedPreview(file.id);
                           }}
-                          className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:bg-[#30302E] active:scale-[0.98] transition-all duration-150"
+                          className="flex-1 flex items-center justify-center gap-1.5 py-2 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:bg-[#1e293b] active:scale-[0.98] transition-all duration-150"
                         >
-                          <Eye className="w-4 h-4 text-[#FAF9F5]" strokeWidth={2.25} /> Xem
+                          <Eye className="w-4 h-4 text-[#ffffff]" strokeWidth={2.25} /> Xem
                         </button>
                         <button
                           type="button"
@@ -2576,15 +2576,15 @@ const AISlideGenerator: React.FC = () => {
                             void handleDownloadGeneratedFile(file.id);
                           }}
                           disabled={downloadingGeneratedFileId === file.id}
-                          className="w-9 h-9 p-0 rounded-xl bg-[#E8E6DC] text-[#5E5D59] flex items-center justify-center hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150 disabled:opacity-50"
+                          className="w-9 h-9 p-0 rounded-xl bg-[#e2e8f0] text-[#475569] flex items-center justify-center hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150 disabled:opacity-50"
                         >
                           {downloadingGeneratedFileId === file.id ? (
                             <RefreshCw
-                              className="w-4 h-4 animate-spin text-[#5E5D59]"
+                              className="w-4 h-4 animate-spin text-[#475569]"
                               strokeWidth={2.25}
                             />
                           ) : (
-                            <Download className="w-4 h-4 text-[#5E5D59]" strokeWidth={2.25} />
+                            <Download className="w-4 h-4 text-[#475569]" strokeWidth={2.25} />
                           )}
                         </button>
                         <button
@@ -2594,9 +2594,9 @@ const AISlideGenerator: React.FC = () => {
                             e.stopPropagation();
                             openMetadataModal(file);
                           }}
-                          className="w-9 h-9 p-0 rounded-xl bg-[#E8E6DC] text-[#5E5D59] flex items-center justify-center hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150"
+                          className="w-9 h-9 p-0 rounded-xl bg-[#e2e8f0] text-[#475569] flex items-center justify-center hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150"
                         >
-                          <Pencil className="w-4 h-4 text-[#5E5D59]" strokeWidth={2.25} />
+                          <Pencil className="w-4 h-4 text-[#475569]" strokeWidth={2.25} />
                         </button>
                         <button
                           type="button"
@@ -2625,19 +2625,19 @@ const AISlideGenerator: React.FC = () => {
                 >
                   <button
                     type="button"
-                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                     onClick={() => setGeneratedPage((prev) => Math.max(1, prev - 1))}
                     disabled={generatedPage <= 1}
                   >
                     <ChevronLeft className="w-3.5 h-3.5" /> Trước
                   </button>
-                  <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59]">
-                    Trang <strong className="text-[#141413]">{generatedPage}</strong> /{' '}
+                  <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569]">
+                    Trang <strong className="text-[#0f172a]">{generatedPage}</strong> /{' '}
                     {totalManagedGeneratedPages} &nbsp;·&nbsp; {managedGeneratedFiles.length} file
                   </span>
                   <button
                     type="button"
-                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                     onClick={() =>
                       setGeneratedPage((prev) => Math.min(totalManagedGeneratedPages, prev + 1))
                     }
@@ -2657,24 +2657,24 @@ const AISlideGenerator: React.FC = () => {
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       {generatingContent && (
         <div
-          className="fixed inset-0 z-[9999] bg-[#141413]/60 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-[9999] bg-[#0f172a]/60 backdrop-blur-sm flex items-center justify-center p-4"
           role="dialog"
           aria-modal="true"
           aria-label="Đang tạo nội dung AI"
         >
-          <div className="bg-[#FAF9F5] rounded-2xl shadow-[rgba(0,0,0,0.25)_0px_24px_80px] w-full max-w-sm p-8 flex flex-col items-center gap-5">
-            <div className="w-14 h-14 rounded-2xl bg-[#E8E6DC] flex items-center justify-center animate-[ai-icon-pulse_2s_ease-in-out_infinite]">
+          <div className="bg-[#ffffff] rounded-2xl shadow-[rgba(0,0,0,0.25)_0px_24px_80px] w-full max-w-sm p-8 flex flex-col items-center gap-5">
+            <div className="w-14 h-14 rounded-2xl bg-[#e2e8f0] flex items-center justify-center animate-[ai-icon-pulse_2s_ease-in-out_infinite]">
               <Sparkles className="w-6 h-6 text-[#7C6FAB]" />
             </div>
             <div className="text-center">
-              <h3 className="font-[Playfair_Display] text-[20px] font-medium text-[#141413]">
+              <h3 className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a]">
                 AI đang tạo nội dung
               </h3>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-2">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-2">
                 Vui lòng đợi trong giây lát...
               </p>
             </div>
-            <div className="w-full h-1.5 bg-[#E8E6DC] rounded-full overflow-hidden">
+            <div className="w-full h-1.5 bg-[#e2e8f0] rounded-full overflow-hidden">
               <div className="h-full bg-[#7C6FAB] rounded-full animate-[ai-progress_2s_ease-in-out_infinite]" />
             </div>
             <div className="flex flex-col items-center gap-1.5 w-full" aria-hidden="true">
@@ -2686,7 +2686,7 @@ const AISlideGenerator: React.FC = () => {
               ].map((step, i) => (
                 <span
                   key={step}
-                  className="font-[Be_Vietnam_Pro] text-[12px] text-[#B0AEA5] animate-[ai-step-pulse_2.4s_ease-in-out_infinite]"
+                  className="font-[Be_Vietnam_Pro] text-[12px] text-[#94a3b8] animate-[ai-step-pulse_2.4s_ease-in-out_infinite]"
                   style={{ animationDelay: `${i * 0.5}s` }}
                 >
                   {step}
@@ -2702,26 +2702,26 @@ const AISlideGenerator: React.FC = () => {
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       {isGeneratedPreviewOpen && (
         <div
-          className="fixed inset-0 z-[9999] bg-[#141413]/60 backdrop-blur-sm flex items-center justify-center p-6"
+          className="fixed inset-0 z-[9999] bg-[#0f172a]/60 backdrop-blur-sm flex items-center justify-center p-6"
           onClick={() => setIsGeneratedPreviewOpen(false)}
         >
           <div
-            className="bg-[#FAF9F5] rounded-2xl shadow-[rgba(0,0,0,0.30)_0px_24px_80px] w-full max-w-5xl flex flex-col max-h-[96vh]"
+            className="bg-[#ffffff] rounded-2xl shadow-[rgba(0,0,0,0.30)_0px_24px_80px] w-full max-w-5xl flex flex-col max-h-[96vh]"
             role="dialog"
             aria-modal="true"
             aria-label="Xem trước slide"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal header */}
-            <div className="flex items-center justify-between px-6 py-4 border-b border-[#F0EEE6] flex-shrink-0">
-              <h3 className="font-[Playfair_Display] text-[20px] font-medium text-[#141413]">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-[#e2e8f0] flex-shrink-0">
+              <h3 className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a]">
                 Xem trước slide
               </h3>
               <button
                 type="button"
                 onClick={() => setIsGeneratedPreviewOpen(false)}
                 aria-label="Đóng xem trước"
-                className="w-8 h-8 p-0 rounded-lg bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] hover:bg-[#D1CFC5] transition-colors"
+                className="w-8 h-8 p-0 rounded-lg bg-[#e2e8f0] flex items-center justify-center text-[#475569] hover:bg-[#cbd5e1] transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -2731,8 +2731,8 @@ const AISlideGenerator: React.FC = () => {
             <div className="flex-1 overflow-y-auto p-6 min-h-0">
               {(loadingSelectedGeneratedLesson || loadingGeneratedPreviewPdf) && (
                 <div className="flex flex-col items-center justify-center py-12 gap-4">
-                  <div className="w-10 h-10 rounded-full border-2 border-[#E8E6DC] border-t-[#7C6FAB] animate-spin" />
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                  <div className="w-10 h-10 rounded-full border-2 border-[#e2e8f0] border-t-[#7C6FAB] animate-spin" />
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                     Đang tải slide...
                   </p>
                 </div>
@@ -2740,12 +2740,12 @@ const AISlideGenerator: React.FC = () => {
 
               {!loadingGeneratedPreviewPdf && generatedPreviewPdfUrl && (
                 <div
-                  className="relative rounded-xl overflow-hidden bg-[#E8E6DC]"
+                  className="relative rounded-xl overflow-hidden bg-[#e2e8f0]"
                   style={{ minHeight: 400 }}
                 >
                   {!previewIframeLoaded && (
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-8 h-8 rounded-full border-2 border-[#E8E6DC] border-t-[#7C6FAB] animate-spin" />
+                      <div className="w-8 h-8 rounded-full border-2 border-[#e2e8f0] border-t-[#7C6FAB] animate-spin" />
                     </div>
                   )}
                   <iframe
@@ -2765,19 +2765,19 @@ const AISlideGenerator: React.FC = () => {
                   <div className="space-y-4">
                     <div className="flex items-center justify-between gap-3">
                       <button
-                        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                         onClick={() => setGeneratedPreviewIndex((prev) => Math.max(0, prev - 1))}
                         disabled={generatedPreviewIndex === 0}
                       >
                         <ChevronLeft className="w-3.5 h-3.5" /> Trước
                       </button>
-                      <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59]">
+                      <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569]">
                         Slide{' '}
-                        <strong className="text-[#141413]">{generatedPreviewIndex + 1}</strong> /{' '}
+                        <strong className="text-[#0f172a]">{generatedPreviewIndex + 1}</strong> /{' '}
                         {generatedPreviewSlides.length}
                       </span>
                       <button
-                        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                        className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                         onClick={() =>
                           setGeneratedPreviewIndex((prev) =>
                             Math.min(generatedPreviewSlides.length - 1, prev + 1)
@@ -2788,9 +2788,9 @@ const AISlideGenerator: React.FC = () => {
                         Sau <ChevronRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
-                    <article className="bg-white border border-[#E8E6DC] rounded-2xl p-6 min-h-[160px]">
+                    <article className="bg-white border border-[#e2e8f0] rounded-2xl p-6 min-h-[160px]">
                       <div
-                        className="font-[Playfair_Display] text-[20px] font-medium text-[#141413] mb-3"
+                        className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a] mb-3"
                         role="heading"
                         aria-level={4}
                       >
@@ -2800,15 +2800,15 @@ const AISlideGenerator: React.FC = () => {
                           `manage-heading-${currentGeneratedPreviewSlide.slideNumber}`
                         )}
                       </div>
-                      <div className="font-[Be_Vietnam_Pro] text-[14px] text-[#5E5D59] leading-[1.6] whitespace-pre-wrap">
+                      <div className="font-[Be_Vietnam_Pro] text-[14px] text-[#475569] leading-[1.6] whitespace-pre-wrap">
                         {renderSlideText(
                           currentGeneratedPreviewSlide.content || 'Chưa có nội dung',
                           resolvedOutputFormat,
                           `manage-content-${currentGeneratedPreviewSlide.slideNumber}`
                         )}
                       </div>
-                      <div className="mt-3 pt-3 border-t border-[#F0EEE6]">
-                        <span className="font-[Be_Vietnam_Pro] text-[10px] font-semibold text-[#87867F] uppercase tracking-[0.5px]">
+                      <div className="mt-3 pt-3 border-t border-[#e2e8f0]">
+                        <span className="font-[Be_Vietnam_Pro] text-[10px] font-semibold text-[#64748b] uppercase tracking-[0.5px]">
                           {currentGeneratedPreviewSlide.slideType}
                         </span>
                       </div>
@@ -2818,10 +2818,10 @@ const AISlideGenerator: React.FC = () => {
             </div>
 
             {/* Modal footer */}
-            <div className="flex items-center justify-between gap-2 px-6 py-4 border-t border-[#F0EEE6] flex-shrink-0 flex-wrap">
+            <div className="flex items-center justify-between gap-2 px-6 py-4 border-t border-[#e2e8f0] flex-shrink-0 flex-wrap">
               <button
                 type="button"
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150"
                 onClick={() => setIsGeneratedPreviewOpen(false)}
               >
                 Đóng
@@ -2829,7 +2829,7 @@ const AISlideGenerator: React.FC = () => {
               <div className="flex items-center gap-2">
                 <button
                   type="button"
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                   disabled={
                     !selectedGeneratedFile ||
                     loadingGeneratedPreviewPdf ||
@@ -2841,7 +2841,7 @@ const AISlideGenerator: React.FC = () => {
                 </button>
                 <button
                   type="button"
-                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
                   disabled={
                     !selectedGeneratedFile ||
                     downloadingGeneratedFileId === selectedGeneratedFile?.id
@@ -2867,25 +2867,25 @@ const AISlideGenerator: React.FC = () => {
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       {isMetadataModalOpen && editingMetadataFile && (
         <div
-          className="fixed inset-0 z-[200] bg-[#141413]/50 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-[200] bg-[#0f172a]/50 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={closeMetadataModal}
         >
           <div
-            className="bg-[#FAF9F5] rounded-2xl shadow-[rgba(0,0,0,0.20)_0px_20px_60px] w-full max-w-md flex flex-col max-h-[90vh]"
+            className="bg-[#ffffff] rounded-2xl shadow-[rgba(0,0,0,0.20)_0px_20px_60px] w-full max-w-md flex flex-col max-h-[90vh]"
             role="dialog"
             aria-modal="true"
             aria-label="Chỉnh sửa slide"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center justify-between px-6 py-4 border-b border-[#F0EEE6] flex-shrink-0">
-              <h3 className="font-[Playfair_Display] text-[20px] font-medium text-[#141413]">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-[#e2e8f0] flex-shrink-0">
+              <h3 className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a]">
                 Chỉnh sửa slide
               </h3>
               <button
                 type="button"
                 onClick={closeMetadataModal}
                 aria-label="Đóng"
-                className="w-8 h-8 p-0 rounded-lg bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] hover:bg-[#D1CFC5] transition-colors"
+                className="w-8 h-8 p-0 rounded-lg bg-[#e2e8f0] flex items-center justify-center text-[#475569] hover:bg-[#cbd5e1] transition-colors"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -2902,11 +2902,11 @@ const AISlideGenerator: React.FC = () => {
                   <SlideThumbnailPreview
                     src={generatedThumbnailUrls[editingMetadataFile.id]}
                     alt={getGeneratedDisplayName(editingMetadataFile)}
-                    frameClassName="relative mx-auto w-full max-w-[240px] aspect-[3/4] overflow-hidden bg-[#E8E6DC]"
+                    frameClassName="relative mx-auto w-full max-w-[240px] aspect-[3/4] overflow-hidden bg-[#e2e8f0]"
                   />
                 ) : (
-                  <div className="flex h-[120px] w-full items-center justify-center bg-[#E8E6DC]">
-                    <span className="font-[Playfair_Display] text-[32px] font-medium text-[#B0AEA5]">
+                  <div className="flex h-[120px] w-full items-center justify-center bg-[#e2e8f0]">
+                    <span className="font-[Playfair_Display] text-[32px] font-medium text-[#94a3b8]">
                       {getGeneratedDisplayName(editingMetadataFile).slice(0, 1).toUpperCase()}
                     </span>
                   </div>
@@ -2915,7 +2915,7 @@ const AISlideGenerator: React.FC = () => {
 
               {/* Name */}
               <div>
-                <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
+                <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
                   Tên hiển thị
                 </label>
                 <input
@@ -2923,19 +2923,19 @@ const AISlideGenerator: React.FC = () => {
                   value={metadataName}
                   onChange={(e) => setMetadataName(e.target.value)}
                   placeholder="Nhập tên hiển thị mới"
-                  className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] placeholder:text-[#87867F] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
+                  className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] placeholder:text-[#64748b] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
                 />
               </div>
 
               {/* Status */}
               <div>
-                <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] block mb-1.5">
+                <label className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] block mb-1.5">
                   Trạng thái
                 </label>
                 <select
                   value={metadataIsPublic ? 'public' : 'draft'}
                   onChange={(e) => setMetadataIsPublic(e.target.value === 'public')}
-                  className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
+                  className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 bg-white transition-all duration-150"
                 >
                   <option value="draft">Chỉ mình tôi</option>
                   <option value="public">Công khai</option>
@@ -2944,26 +2944,26 @@ const AISlideGenerator: React.FC = () => {
 
               {/* Thumbnail upload */}
               <div>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#141413] mb-1.5">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#0f172a] mb-1.5">
                   Ảnh thumbnail mới
                 </p>
                 <label className="mx-auto block w-full max-w-[240px] cursor-pointer">
                   <div
-                    className={`border-2 border-dashed rounded-xl overflow-hidden transition-colors ${metadataThumbnailFile ? 'border-[#E8E6DC]' : 'border-[#E8E6DC] hover:border-[#7C6FAB]/50'}`}
+                    className={`border-2 border-dashed rounded-xl overflow-hidden transition-colors ${metadataThumbnailFile ? 'border-[#e2e8f0]' : 'border-[#e2e8f0] hover:border-[#7C6FAB]/50'}`}
                   >
                     {metadataThumbnailFile && metadataThumbnailPreviewUrl ? (
                       <SlideThumbnailPreview
                         src={metadataThumbnailPreviewUrl}
                         alt="Ảnh thumbnail mới"
-                        frameClassName="relative mx-auto w-full max-w-[240px] aspect-[3/4] overflow-hidden bg-[#E8E6DC]"
+                        frameClassName="relative mx-auto w-full max-w-[240px] aspect-[3/4] overflow-hidden bg-[#e2e8f0]"
                       />
                     ) : (
-                      <div className="flex flex-col items-center justify-center gap-2 py-5 bg-[#F5F4ED]">
-                        <Upload className="w-4 h-4 text-[#87867F]" />
-                        <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                      <div className="flex flex-col items-center justify-center gap-2 py-5 bg-[#f8fafc]">
+                        <Upload className="w-4 h-4 text-[#64748b]" />
+                        <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                           Chọn ảnh mới
                         </span>
-                        <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#B0AEA5]">
+                        <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#94a3b8]">
                           PNG, JPG, WEBP
                         </span>
                       </div>
@@ -2980,7 +2980,7 @@ const AISlideGenerator: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setMetadataThumbnailFile(null)}
-                    className="mt-1 flex items-center gap-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] hover:text-[#B53333] transition-colors"
+                    className="mt-1 flex items-center gap-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] hover:text-[#B53333] transition-colors"
                   >
                     <X className="w-3 h-3" /> Xóa ảnh mới
                   </button>
@@ -2988,11 +2988,11 @@ const AISlideGenerator: React.FC = () => {
               </div>
             </form>
 
-            <div className="flex items-center justify-end gap-2 px-6 py-4 border-t border-[#F0EEE6] flex-shrink-0">
+            <div className="flex items-center justify-end gap-2 px-6 py-4 border-t border-[#e2e8f0] flex-shrink-0">
               <button
                 type="button"
                 onClick={closeMetadataModal}
-                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#E8E6DC] text-[#4D4C48] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#D1CFC5] active:scale-[0.98] transition-all duration-150"
+                className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-[#e2e8f0] text-[#334155] font-[Be_Vietnam_Pro] text-[13px] font-medium hover:bg-[#cbd5e1] active:scale-[0.98] transition-all duration-150"
               >
                 Hủy
               </button>
@@ -3000,7 +3000,7 @@ const AISlideGenerator: React.FC = () => {
                 type="submit"
                 form="slide-edit-form"
                 disabled={updatingMetadata}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7C6FAB] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 {updatingMetadata ? <LoadingSpinner label="Đang lưu..." /> : 'Lưu thay đổi'}
               </button>
@@ -3014,11 +3014,11 @@ const AISlideGenerator: React.FC = () => {
       â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       {deletingGeneratedFile && (
         <div
-          className="fixed inset-0 z-[200] bg-[#141413]/50 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-[200] bg-[#0f172a]/50 backdrop-blur-sm flex items-center justify-center p-4"
           onClick={closeDeleteGeneratedModal}
         >
           <div
-            className="bg-[#FAF9F5] rounded-2xl shadow-[rgba(0,0,0,0.20)_0px_20px_60px] w-full max-w-sm p-6 flex flex-col gap-4"
+            className="bg-[#ffffff] rounded-2xl shadow-[rgba(0,0,0,0.20)_0px_20px_60px] w-full max-w-sm p-6 flex flex-col gap-4"
             role="dialog"
             aria-modal="true"
             aria-label="Xác nhận xóa slide"
@@ -3028,7 +3028,7 @@ const AISlideGenerator: React.FC = () => {
               <AlertCircle className="w-7 h-7" />
             </div>
             <div className="text-center">
-              <h3 className="font-[Playfair_Display] text-[18px] font-medium text-[#141413]">
+              <h3 className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a]">
                 Xóa slide
               </h3>
               {deletingGeneratedFileId ? (
@@ -3036,9 +3036,9 @@ const AISlideGenerator: React.FC = () => {
                   <LoadingSpinner label="Đang xóa..." />
                 </div>
               ) : (
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-2">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-2">
                   Bạn có chắc muốn xóa{' '}
-                  <strong className="text-[#141413]">
+                  <strong className="text-[#0f172a]">
                     {getGeneratedDisplayName(deletingGeneratedFile)}
                   </strong>
                   ?
@@ -3050,7 +3050,7 @@ const AISlideGenerator: React.FC = () => {
             <div className="flex gap-2">
               <button
                 type="button"
-                className="flex-1 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors active:scale-[0.98]"
+                className="flex-1 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors active:scale-[0.98]"
                 onClick={closeDeleteGeneratedModal}
                 disabled={Boolean(deletingGeneratedFileId)}
               >

@@ -28,10 +28,10 @@ function DetailRowItem({
     <div
       className={`flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 py-3${isFirst ? ' first:pt-0' : ''}`}
     >
-      <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0 shrink-0 sm:w-40">
+      <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] font-semibold m-0 shrink-0 sm:w-40">
         {label}
       </dt>
-      <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0 sm:flex-1 break-words min-h-[1.25em]">
+      <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] font-semibold m-0 sm:flex-1 break-words min-h-[1.25em]">
         {value}
       </dd>
     </div>
@@ -61,15 +61,15 @@ export function AssessmentPdfImportDetailSection({
 
   return (
     <>
-      <article className="bg-white rounded-2xl border border-[#E8E6DC] p-4 lg:p-5">
+      <article className="bg-white rounded-2xl border border-[#e2e8f0] p-4 lg:p-5">
         <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-          <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#141413] m-0">
+          <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#0f172a] m-0">
             Thông tin chi tiết
           </h3>
           {canEdit ? (
             <button
               type="button"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
               onClick={handleEditClick}
             >
               <Pencil size={14} aria-hidden />
@@ -77,12 +77,12 @@ export function AssessmentPdfImportDetailSection({
             </button>
           ) : null}
         </div>
-        <dl className="m-0 flex flex-col divide-y divide-[#F0EEE6]">
+        <dl className="m-0 flex flex-col divide-y divide-[#e2e8f0]">
           {pdfImported ? (
             <>
               {!hasPdfImportMetadata(assessment) ? (
                 <div className="py-3 first:pt-0">
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] m-0">
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] m-0">
                     Chưa lưu metadata bước 1 — bấm «Chỉnh sửa» để điền hoặc import lại PDF.
                   </p>
                 </div>

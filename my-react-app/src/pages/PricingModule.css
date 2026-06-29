@@ -2,8 +2,8 @@
 
 .module-layout-container.pricing-module-page-wrap {
   /* Warm mesh — aligns with #f9f8f3 / terracotta accent like Khóa học */
-  --pricing-m-accent: #c96442;
-  --pricing-m-mesh-1: rgba(201, 100, 66, 0.07);
+  --pricing-m-accent: #0ea5e9;
+  --pricing-m-mesh-1: rgba(14, 165, 233, 0.07);
   --pricing-m-mesh-2: rgba(30, 64, 175, 0.05);
 }
 
@@ -89,7 +89,7 @@
   background:
     radial-gradient(ellipse 90% 50% at 8% 0%, var(--pricing-m-mesh-1), transparent 55%),
     radial-gradient(ellipse 60% 40% at 92% 12%, var(--pricing-m-mesh-2), transparent 50%),
-    linear-gradient(180deg, #f9f8f3 0%, #f5f2eb 40%, #f7f5f0 100%);
+    linear-gradient(180deg, #f8fafc 0%, #e2e8f0 40%, #f8fafc 100%);
 }
 
 /* Public marketing: cards band */
@@ -142,10 +142,10 @@
 
 /* Gói cơ bản / nổi bật — viền terracotta, bóng sâu, hơi “nhô” */
 .module-layout-container .data-card.pricing-m-plan-card--featured {
-  border-color: rgba(201, 100, 66, 0.45);
+  border-color: rgba(14, 165, 233, 0.45);
   box-shadow:
-    0 20px 48px -10px rgba(201, 100, 66, 0.28),
-    0 0 0 1px rgba(201, 100, 66, 0.22);
+    0 20px 48px -10px rgba(14, 165, 233, 0.28),
+    0 0 0 1px rgba(14, 165, 233, 0.22);
   z-index: 1;
 }
 
@@ -157,8 +157,8 @@
 
 .module-layout-container .data-card.pricing-m-plan-card--featured:hover {
   box-shadow:
-    0 24px 56px -12px rgba(201, 100, 66, 0.35),
-    0 0 0 1px rgba(201, 100, 66, 0.28);
+    0 24px 56px -12px rgba(14, 165, 233, 0.35),
+    0 0 0 1px rgba(14, 165, 233, 0.28);
   transform: translateY(-8px) scale(1.03);
 }
 
@@ -208,7 +208,7 @@
 .module-layout-container .course-badge.badge-pricing-popular {
   background: rgba(255, 251, 235, 0.95);
   color: #9a3412;
-  border: 1px solid rgba(201, 100, 66, 0.28);
+  border: 1px solid rgba(14, 165, 233, 0.28);
   font-size: 0.66rem;
 }
 
@@ -276,12 +276,12 @@
 /* Thân thẻ: tách nền nhẹ, typography rõ */
 .module-layout-container .pricing-m-plan-card .course-body {
   padding: 1.1rem 1.2rem 1.2rem;
-  background: linear-gradient(180deg, #ffffff 0%, #fbf9f6 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
   border-top: 1px solid rgba(20, 34, 53, 0.05);
 }
 
 .module-layout-container .pricing-m-plan-card--featured .course-body {
-  background: linear-gradient(180deg, #ffffff 0%, #fffaf6 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
 }
 
 .module-layout-container .pricing-m-plan-card .metric {
@@ -292,23 +292,23 @@
 
 .module-layout-container .pricing-m-plan-card--featured .metric {
   background: linear-gradient(135deg, #fff7ed, #ffedd5);
-  border-color: rgba(201, 100, 66, 0.22);
+  border-color: rgba(14, 165, 233, 0.22);
   color: #5c2e18;
   font-weight: 700;
 }
 
 /* CTA mua: terracotta như "Tạo khóa học" (không dùng xanh navy) */
 .module-layout-container .pricing-m-plan-card .action-primary {
-  background: var(--pricing-m-accent, #c96442) !important;
-  border: 1px solid var(--pricing-m-accent, #c96442) !important;
-  color: #141413 !important;
-  box-shadow: 0 0 0 1px rgba(201, 100, 66, 0.12);
+  background: var(--pricing-m-accent, #0ea5e9) !important;
+  border: 1px solid var(--pricing-m-accent, #0ea5e9) !important;
+  color: #0f172a !important;
+  box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.12);
 }
 
 .module-layout-container .pricing-m-plan-card .action-primary:hover:not(:disabled) {
-  background: #b85839 !important;
-  border-color: #b85839 !important;
-  color: #141413 !important;
+  background: #0284c7 !important;
+  border-color: #0284c7 !important;
+  color: #0f172a !important;
 }
 
 /* Marketing: feature list in card */
@@ -370,7 +370,7 @@
 .module-layout-container .pricing-m-token-bar__fill {
   height: 100%;
   border-radius: 99px;
-  background: linear-gradient(90deg, #c96442, #e8a077);
+  background: linear-gradient(90deg, #0ea5e9, #14b8a6);
   transition: opacity 0.4s ease;
 }
 

@@ -109,12 +109,12 @@ const coverAccents = ['#1d4ed8', '#047857', '#6d28d9', '#c2410c', '#be185d', '#0
 
 const LoadingSpinner = ({ label }: { label: string }) => (
   <span
-    className="inline-flex items-center gap-2 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]"
+    className="inline-flex items-center gap-2 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]"
     role="status"
     aria-live="polite"
   >
     <span
-      className="w-3.5 h-3.5 rounded-full border-2 border-[#E8E6DC] border-t-[#C96442] animate-spin flex-shrink-0"
+      className="w-3.5 h-3.5 rounded-full border-2 border-[#e2e8f0] border-t-[#0ea5e9] animate-spin flex-shrink-0"
       aria-hidden="true"
     />
     {label}
@@ -433,16 +433,16 @@ export function TemplateDashboard() {
           {/* ── Page header (aligned with /teacher/mindmaps) ── */}
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                 <FileQuestion className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2.5">
-                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                     Mẫu câu hỏi
                   </h1>
                   {!isLoading && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                       {effectiveTotalElements}
                     </span>
                   )}
@@ -453,7 +453,7 @@ export function TemplateDashboard() {
               <button
                 type="button"
                 onClick={() => setBulkImportOpen(true)}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
               >
                 <Upload className="w-3.5 h-3.5" />
                 Nhập từ Excel
@@ -461,7 +461,7 @@ export function TemplateDashboard() {
               <button
                 type="button"
                 onClick={() => setMethodPickerOpen(true)}
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
               >
                 <Plus className="w-3.5 h-3.5" />
                 Tạo mẫu mới
@@ -498,7 +498,7 @@ export function TemplateDashboard() {
             ).map(({ label, value, Icon, bg, color }) => (
               <div
                 key={label}
-                className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3"
+                className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3"
               >
                 <div
                   className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center flex-shrink-0`}
@@ -506,10 +506,10 @@ export function TemplateDashboard() {
                   <Icon className={`w-4 h-4 ${color}`} />
                 </div>
                 <div>
-                  <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none">
+                  <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none">
                     {value}
                   </p>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">{label}</p>
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">{label}</p>
                 </div>
               </div>
             ))}
@@ -543,7 +543,7 @@ export function TemplateDashboard() {
                   setFilterSubjectId('');
                   setFilterChapterId('');
                 }}
-                className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] hover:text-[#141413] underline underline-offset-2 transition-colors"
+                className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] hover:text-[#0f172a] underline underline-offset-2 transition-colors"
               >
                 Xoá lọc
               </button>
@@ -552,10 +552,10 @@ export function TemplateDashboard() {
 
           {/* ── Toolbar ── */}
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-3">
-            <label className="flex-1 w-full flex items-center gap-3 bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150">
-              <Search className="text-[#87867F] w-4 h-4 flex-shrink-0" />
+            <label className="flex-1 w-full flex items-center gap-3 bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150">
+              <Search className="text-[#64748b] w-4 h-4 flex-shrink-0" />
               <input
-                className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] bg-transparent outline-none"
+                className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] bg-transparent outline-none"
                 placeholder="Tìm mẫu câu hỏi..."
                 value={search}
                 onChange={(event) => setSearch(event.target.value)}
@@ -565,14 +565,14 @@ export function TemplateDashboard() {
                   type="button"
                   aria-label="Xóa tìm kiếm"
                   onClick={() => setSearch('')}
-                  className="text-[#87867F] hover:text-[#141413] transition-colors"
+                  className="text-[#64748b] hover:text-[#0f172a] transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
               )}
             </label>
 
-            <div className="flex items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl flex-shrink-0 flex-wrap">
+            <div className="flex items-center gap-1 p-1 bg-[#f8fafc] rounded-xl flex-shrink-0 flex-wrap">
               {filterTabs.map((tab) => (
                 <button
                   key={tab.id}
@@ -580,8 +580,8 @@ export function TemplateDashboard() {
                   onClick={() => setStatus(tab.id)}
                   className={`px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                     status === tab.id
-                      ? 'bg-white text-[#141413] shadow-sm'
-                      : 'text-[#87867F] hover:text-[#5E5D59]'
+                      ? 'bg-white text-[#0f172a] shadow-sm'
+                      : 'text-[#64748b] hover:text-[#475569]'
                   }`}
                 >
                   {tab.label}
@@ -591,15 +591,15 @@ export function TemplateDashboard() {
 
             <div className="flex items-center gap-2 flex-shrink-0 w-full lg:w-auto lg:ml-auto justify-between lg:justify-end">
               {totalElements > 0 && (
-                <div className="flex items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl">
+                <div className="flex items-center gap-1 p-1 bg-[#f8fafc] rounded-xl">
                   <button
                     type="button"
                     onClick={() => setViewMode('grid')}
                     aria-label="Hiển thị lưới"
                     className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-150 ${
                       viewMode === 'grid'
-                        ? 'bg-white shadow-md text-[#141413]'
-                        : 'bg-[#E8E6DC] border-2 border-[#D1CFC5] text-[#141413] hover:bg-[#DDD9CC]'
+                        ? 'bg-white shadow-md text-[#0f172a]'
+                        : 'bg-[#e2e8f0] border-2 border-[#cbd5e1] text-[#0f172a] hover:bg-[#DDD9CC]'
                     }`}
                     title="Lưới"
                   >
@@ -611,8 +611,8 @@ export function TemplateDashboard() {
                     aria-label="Hiển thị danh sách"
                     className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-150 ${
                       viewMode === 'list'
-                        ? 'bg-white shadow-md text-[#141413]'
-                        : 'bg-[#E8E6DC] border-2 border-[#D1CFC5] text-[#141413] hover:bg-[#DDD9CC]'
+                        ? 'bg-white shadow-md text-[#0f172a]'
+                        : 'bg-[#e2e8f0] border-2 border-[#cbd5e1] text-[#0f172a] hover:bg-[#DDD9CC]'
                     }`}
                     title="Danh sách"
                   >
@@ -623,7 +623,7 @@ export function TemplateDashboard() {
               <button
                 type="button"
                 onClick={() => void refetch()}
-                className="flex items-center gap-2 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                className="flex items-center gap-2 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
               >
                 <RefreshCw className="w-3.5 h-3.5" />
                 Làm mới
@@ -633,23 +633,23 @@ export function TemplateDashboard() {
 
           {/* ── Summary bar ── */}
           {!isLoading && !isError && totalElements > 0 && (
-            <div className="flex flex-wrap items-center gap-4 px-4 py-3 rounded-xl bg-[#FAF9F5] border border-[#E8E6DC]">
-              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] uppercase tracking-wide">
+            <div className="flex flex-wrap items-center gap-4 px-4 py-3 rounded-xl bg-[#ffffff] border border-[#e2e8f0]">
+              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] uppercase tracking-wide">
                 Hiển thị
               </span>
-              <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+              <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                 {rangeStart === 0 ? '0' : `${rangeStart}–${rangeEnd}`} / {totalElements}
               </strong>
-              <div className="w-px h-4 bg-[#E8E6DC] hidden sm:block" />
-              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+              <div className="w-px h-4 bg-[#e2e8f0] hidden sm:block" />
+              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
-                Sẵn sàng <strong className="text-[#141413] font-semibold">{stats.published}</strong>
-                <span className="text-[#B0AEA5]">trên trang</span>
+                Sẵn sàng <strong className="text-[#0f172a] font-semibold">{stats.published}</strong>
+                <span className="text-[#94a3b8]">trên trang</span>
               </span>
-              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
-                Nháp <strong className="text-[#141413] font-semibold">{stats.draft}</strong>
-                <span className="text-[#B0AEA5]">trên trang</span>
+                Nháp <strong className="text-[#0f172a] font-semibold">{stats.draft}</strong>
+                <span className="text-[#94a3b8]">trên trang</span>
               </span>
             </div>
           )}
@@ -660,7 +660,7 @@ export function TemplateDashboard() {
               {[1, 2, 3, 4, 5, 6].map((i) => (
                 <div
                   key={i}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-52 animate-pulse"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-52 animate-pulse"
                 />
               ))}
             </div>
@@ -681,10 +681,10 @@ export function TemplateDashboard() {
           {/* ── Empty: filter / search ── */}
           {showFilteredEmpty && (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#B0AEA5]">
+              <div className="w-12 h-12 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#94a3b8]">
                 <Search className="w-6 h-6" />
               </div>
-              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F]">
+              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b]">
                 Không tìm thấy mẫu phù hợp với bộ lọc.
               </p>
             </div>
@@ -699,7 +699,7 @@ export function TemplateDashboard() {
                 return (
                   <article
                     key={template.id}
-                    className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
+                    className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200 flex flex-col"
                   >
                     <div
                       className="h-[130px] relative flex flex-col justify-end p-4 overflow-hidden flex-shrink-0"
@@ -717,7 +717,7 @@ export function TemplateDashboard() {
                             <Eye className="w-3 h-3" /> Sẵn sàng
                           </span>
                         ) : (
-                          <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-white/90 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#87867F]">
+                          <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-white/90 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#64748b]">
                             <EyeOff className="w-3 h-3" /> Nháp
                           </span>
                         )}
@@ -732,23 +732,23 @@ export function TemplateDashboard() {
 
                     <div className="p-4 flex flex-col gap-2 flex-1">
                       <div className="flex items-center flex-wrap gap-2">
-                        <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white border border-[#F0EEE6] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#5E5D59]">
+                        <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white border border-[#e2e8f0] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#475569]">
                           <FileText className="w-3 h-3 flex-shrink-0" />
                           {templateTypeLabel[template.templateType] || template.templateType}
                         </span>
-                        <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white border border-[#F0EEE6] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#5E5D59]">
+                        <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white border border-[#e2e8f0] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#475569]">
                           <Network className="w-3 h-3 flex-shrink-0" />
                           {cognitiveLevelLabel[template.cognitiveLevel] || template.cognitiveLevel}
                         </span>
                         {template.gradeLevel && (
-                          <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white border border-[#F0EEE6] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#5E5D59]">
+                          <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white border border-[#e2e8f0] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#475569]">
                             <GraduationCap className="w-3 h-3 flex-shrink-0" />
                             Lớp {template.gradeLevel}
                           </span>
                         )}
                         {template.chapterName && (
                           <span
-                            className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white border border-[#F0EEE6] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#5E5D59] max-w-full min-w-0"
+                            className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-white border border-[#e2e8f0] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#475569] max-w-full min-w-0"
                             title={template.chapterName}
                           >
                             <BookOpen className="w-3 h-3 flex-shrink-0" />
@@ -757,11 +757,11 @@ export function TemplateDashboard() {
                         )}
                       </div>
 
-                      <div className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] leading-[1.5] line-clamp-2">
+                      <div className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] leading-[1.5] line-clamp-2">
                         <MathText text={template.description || 'Chưa có mô tả cho mẫu này.'} />
                       </div>
 
-                      <div className="flex flex-col gap-2 pt-3 mt-auto border-t border-[#F0EEE6]">
+                      <div className="flex flex-col gap-2 pt-3 mt-auto border-t border-[#e2e8f0]">
                         <div className="flex flex-wrap gap-2">
                           {template.status === TemplateStatus.DRAFT ? (
                             <button
@@ -800,7 +800,7 @@ export function TemplateDashboard() {
                           ) : (
                             <button
                               type="button"
-                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:bg-[#30302E] transition-colors"
+                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:bg-[#1e293b] transition-colors"
                               onClick={() => {
                                 setSelected(template);
                                 setGenerateOpen(true);
@@ -812,7 +812,7 @@ export function TemplateDashboard() {
                           )}
                           <button
                             type="button"
-                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                             onClick={() =>
                               navigate(
                                 `/teacher/question-review?templateId=${encodeURIComponent(template.id)}`
@@ -825,7 +825,7 @@ export function TemplateDashboard() {
                           </button>
                           <button
                             type="button"
-                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-50"
+                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-50"
                             onClick={() => void openEditTemplate(template.id)}
                             disabled={editingTemplateId === template.id}
                             title="Chỉnh sửa mẫu"
@@ -836,7 +836,7 @@ export function TemplateDashboard() {
                           {template.status === TemplateStatus.PUBLISHED && (
                             <button
                               type="button"
-                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-50"
+                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-50"
                               disabled={
                                 unpublishMutation.isPending &&
                                 unpublishMutation.variables === template.id
@@ -890,7 +890,7 @@ export function TemplateDashboard() {
                 return (
                   <article
                     key={template.id}
-                    className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] p-4 flex flex-col sm:flex-row sm:items-center gap-4 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150"
+                    className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] p-4 flex flex-col sm:flex-row sm:items-center gap-4 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150"
                   >
                     <div
                       className="w-11 h-11 rounded-xl flex-shrink-0 flex items-center justify-center"
@@ -903,7 +903,7 @@ export function TemplateDashboard() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-center gap-2 mb-0.5">
-                        <div className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413] line-clamp-2 min-w-0 flex-1">
+                        <div className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a] line-clamp-2 min-w-0 flex-1">
                           <MathText text={template.name} />
                         </div>
                         {template.status === TemplateStatus.PUBLISHED ? (
@@ -911,16 +911,16 @@ export function TemplateDashboard() {
                             <Eye className="w-3 h-3" /> Sẵn sàng
                           </span>
                         ) : (
-                          <span className="flex-shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#F5F4ED] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#87867F]">
+                          <span className="flex-shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#f8fafc] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#64748b]">
                             <EyeOff className="w-3 h-3" /> Nháp
                           </span>
                         )}
                       </div>
-                      <div className="flex flex-wrap items-center gap-2 text-[12px] text-[#87867F] font-[Be_Vietnam_Pro]">
+                      <div className="flex flex-wrap items-center gap-2 text-[12px] text-[#64748b] font-[Be_Vietnam_Pro]">
                         <span>
                           {templateTypeLabel[template.templateType] || template.templateType}
                         </span>
-                        <span className="text-[#E8E6DC]">·</span>
+                        <span className="text-[#e2e8f0]">·</span>
                         <span>
                           {cognitiveLevelLabel[template.cognitiveLevel] || template.cognitiveLevel}
                         </span>
@@ -953,7 +953,7 @@ export function TemplateDashboard() {
                       ) : (
                         <button
                           type="button"
-                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:bg-[#30302E] transition-colors"
+                          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:bg-[#1e293b] transition-colors"
                           onClick={() => {
                             setSelected(template);
                             setGenerateOpen(true);
@@ -965,7 +965,7 @@ export function TemplateDashboard() {
                       )}
                       <button
                         type="button"
-                        className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                        className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                         onClick={() =>
                           navigate(
                             `/teacher/question-review?templateId=${encodeURIComponent(template.id)}`
@@ -976,7 +976,7 @@ export function TemplateDashboard() {
                       </button>
                       <button
                         type="button"
-                        className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-50"
+                        className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-50"
                         onClick={() => void openEditTemplate(template.id)}
                         disabled={editingTemplateId === template.id}
                       >
@@ -985,7 +985,7 @@ export function TemplateDashboard() {
                       {template.status === TemplateStatus.PUBLISHED && (
                         <button
                           type="button"
-                          className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-50"
+                          className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-50"
                           disabled={
                             unpublishMutation.isPending &&
                             unpublishMutation.variables === template.id
@@ -1129,7 +1129,7 @@ export function TemplateDashboard() {
           {/* Canonical/Review Modals hidden per ISSUE-11 */}
 
           {activeDiagram != null && (
-            <div className="fixed inset-0 z-50 bg-[#141413]/50 backdrop-blur-sm flex items-center justify-center p-4">
+            <div className="fixed inset-0 z-50 bg-[#0f172a]/50 backdrop-blur-sm flex items-center justify-center p-4">
               <button
                 type="button"
                 aria-label="Đóng preview"
@@ -1137,19 +1137,19 @@ export function TemplateDashboard() {
                 className="absolute inset-0 w-full h-full bg-transparent border-none cursor-default"
               />
               <div className="relative z-[1] bg-white rounded-2xl shadow-[rgba(0,0,0,0.20)_0px_20px_60px] w-full max-w-[1100px] max-h-[90vh] overflow-hidden flex flex-col">
-                <div className="px-6 py-4 border-b border-[#F0EEE6] flex items-start justify-between gap-3 bg-[#FAF9F5]">
+                <div className="px-6 py-4 border-b border-[#e2e8f0] flex items-start justify-between gap-3 bg-[#ffffff]">
                   <div>
-                    <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#141413]">
+                    <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#0f172a]">
                       Diagram Preview
                     </h3>
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">
                       Bấm ra ngoài hoặc nút X để đóng.
                     </p>
                   </div>
                   <button
                     type="button"
                     onClick={() => setActiveDiagram(null)}
-                    className="p-2 rounded-xl border border-[#E8E6DC] bg-white text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                    className="p-2 rounded-xl border border-[#e2e8f0] bg-white text-[#475569] hover:bg-[#f8fafc] transition-colors"
                   >
                     <X className="w-4 h-4" />
                   </button>
@@ -1161,7 +1161,7 @@ export function TemplateDashboard() {
                       {activeDiagramLatexValues.map((latexValue) => (
                         <div
                           key={`diagram-modal-latex-${latexValue}`}
-                          className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] p-4"
+                          className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-4"
                         >
                           <LatexRenderer latex={latexValue} />
                         </div>
@@ -1169,7 +1169,7 @@ export function TemplateDashboard() {
                     </div>
                   )}
                   {!activeDiagramLatexCode && activeDiagramLatexValues.length === 0 && (
-                    <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center py-8">
+                    <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center py-8">
                       Không có dữ liệu preview để hiển thị.
                     </p>
                   )}

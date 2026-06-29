@@ -247,9 +247,9 @@
 .module-layout-container .art.art--in-module .art-canvas-wrap,
 .art-canvas-wrap {
   position: relative;
-  background: linear-gradient(180deg, #faf9f5 0%, #f5f4ed 55%, #f0eee6 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 55%, #e2e8f0 100%);
   border-radius: 16px;
-  border: 1px solid #f0eee6;
+  border: 1px solid #e2e8f0;
   box-shadow: rgba(0, 0, 0, 0.05) 0 4px 24px;
   margin-bottom: 20px;
   overflow: hidden;
@@ -264,7 +264,7 @@
 /* Road layers */
 .art-road__shadow {
   fill: none;
-  stroke: rgba(48, 48, 46, 0.14);
+  stroke: rgba(30, 41, 59, 0.14);
   stroke-width: 36;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -274,7 +274,7 @@
 
 .art-road__surface {
   fill: none;
-  stroke: #30302e;
+  stroke: #1e293b;
   stroke-width: 28;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -282,7 +282,7 @@
 
 .art-road__dash {
   fill: none;
-  stroke: #faf9f5;
+  stroke: #ffffff;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -316,7 +316,7 @@
 
 .art-pin:hover .art-pin__circle {
   box-shadow:
-    0 6px 18px rgba(20, 20, 19, 0.18),
+    0 6px 18px rgba(15, 23, 42, 0.18),
     0 0 0 3px #fff;
 }
 
@@ -342,7 +342,7 @@
 
 .art-pin--active .art-pin__circle {
   box-shadow:
-    0 6px 22px rgba(20, 20, 19, 0.28),
+    0 6px 22px rgba(15, 23, 42, 0.28),
     0 0 0 3px #fff,
     0 0 0 5px rgba(48, 48, 46, 0.1);
 }
@@ -379,13 +379,13 @@
 /* Pin label (shown below) */
 .art-pin__label {
   background: #fffefd;
-  border: 1px solid #f0eee6;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 7px 12px;
   margin-top: 6px;
   text-align: center;
   box-shadow:
-    0 1px 0 #e8e6dc inset,
+    0 1px 0 #e2e8f0 inset,
     0 4px 20px rgba(0, 0, 0, 0.05);
   min-width: 110px;
   max-width: 168px;
@@ -395,7 +395,7 @@
   display: block;
   font-size: 0.78rem;
   font-weight: 600;
-  color: #141413;
+  color: #0f172a;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -428,13 +428,13 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #87867f;
+  color: #64748b;
   pointer-events: none;
   font-size: 0.95rem;
   line-height: 1.7;
 }
 .art-empty-road strong {
-  color: #4d4c48;
+  color: #334155;
 }
 
 /* ── Entry Test ── */

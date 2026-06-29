@@ -123,7 +123,7 @@ const StudentRoadmap: React.FC = () => {
                 !error &&
                 roadmaps.length > 0 &&
                 filteredRoadmaps.length === 0 && (
-                  <p className="srp__error-text font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] py-8 text-center">
+                  <p className="srp__error-text font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] py-8 text-center">
                     Không có lộ trình nào khớp với lớp/môn đã chọn.
                   </p>
                 )}

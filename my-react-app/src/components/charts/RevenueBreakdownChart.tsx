@@ -81,26 +81,26 @@ const RevenueBreakdownChart: React.FC<RevenueBreakdownChartProps> = ({ data, gro
 
       return (
         <div style={{
-          backgroundColor: '#faf9f5',
+          backgroundColor: '#ffffff',
           padding: '1.25rem',
           borderRadius: '16px',
-          border: '1px solid #e8e6dc',
+          border: '1px solid #e2e8f0',
           boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.05)',
           minWidth: '200px'
         }}>
-          <p style={{ margin: '0 0 1rem 0', fontWeight: 700, color: '#141413', fontSize: '0.9rem' }}>
+          <p style={{ margin: '0 0 1rem 0', fontWeight: 700, color: '#0f172a', fontSize: '0.9rem' }}>
             {formattedDate}
           </p>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {payload.map((entry: TooltipPayloadEntry, index: number) => (
               <div key={index} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem' }}>
-                <span style={{ color: '#5e5d59', fontSize: '0.85rem', fontWeight: 500 }}>{entry.name}:</span>
+                <span style={{ color: '#475569', fontSize: '0.85rem', fontWeight: 500 }}>{entry.name}:</span>
                 <span style={{ color: entry.color, fontWeight: 700, fontSize: '0.9rem' }}>{formatCurrency(entry.value ?? 0)}</span>
               </div>
             ))}
-            <div style={{ marginTop: '0.5rem', paddingTop: '0.75rem', borderTop: '1px solid #e8e6dc', display: 'flex', justifyContent: 'space-between' }}>
-              <span style={{ color: '#141413', fontWeight: 700, fontSize: '0.9rem' }}>Tổng:</span>
-              <span style={{ color: '#c96442', fontWeight: 800, fontSize: '0.95rem' }}>
+            <div style={{ marginTop: '0.5rem', paddingTop: '0.75rem', borderTop: '1px solid #e2e8f0', display: 'flex', justifyContent: 'space-between' }}>
+              <span style={{ color: '#0f172a', fontWeight: 700, fontSize: '0.9rem' }}>Tổng:</span>
+              <span style={{ color: '#0ea5e9', fontWeight: 800, fontSize: '0.95rem' }}>
                 {formatCurrency(payload.reduce((sum: number, entry: TooltipPayloadEntry) => sum + (entry.value ?? 0), 0))}
               </span>
             </div>
@@ -126,24 +126,24 @@ const RevenueBreakdownChart: React.FC<RevenueBreakdownChartProps> = ({ data, gro
           margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
           barSize={24}
         >
-          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e8e6dc" />
+          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
           <XAxis
             dataKey="label"
             axisLine={false}
             tickLine={false}
-            tick={{ fill: '#87867f', fontSize: 12 }}
+            tick={{ fill: '#64748b', fontSize: 12 }}
             dy={10}
           />
           <YAxis
             tickFormatter={(value) => formatCurrency(value)}
             axisLine={false}
             tickLine={false}
-            tick={{ fill: '#87867f', fontSize: 12 }}
+            tick={{ fill: '#64748b', fontSize: 12 }}
             dx={-10}
           />
           <Tooltip 
             content={<CustomTooltip />} 
-            cursor={{ fill: 'rgba(201, 100, 66, 0.05)' }} 
+            cursor={{ fill: 'rgba(14, 165, 233, 0.05)' }} 
           />
           <Legend
             verticalAlign="top"
@@ -153,7 +153,7 @@ const RevenueBreakdownChart: React.FC<RevenueBreakdownChartProps> = ({ data, gro
               paddingBottom: '28px',
               fontSize: '12px',
               fontWeight: 600,
-              color: '#5e5d59',
+              color: '#475569',
               fontFamily: "'Be Vietnam Pro', system-ui, sans-serif",
             }}
           />

@@ -17,8 +17,8 @@
    Revenue breakdown header is styled in RevenueBreakdown.css */
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .overview-header,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .analytics-header {
-  background: #faf9f5;
-  border: 1px solid #e8e6dc;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   box-shadow: 0 0 0 1px rgba(209, 207, 197, 0.35), rgba(0, 0, 0, 0.04) 0 6px 20px;
   padding: 1.1rem 1.25rem;
@@ -29,12 +29,12 @@
   font-size: 1.65rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #141413;
+  color: #0f172a;
   margin: 0 0 0.35rem;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .header-content .subtitle {
-  color: #5e5d59;
+  color: #475569;
   font-size: 0.9rem;
   line-height: 1.55;
   margin: 0;
@@ -43,19 +43,19 @@
 /* Primary actions — terracotta (DESIGN brand), not purple */
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .refresh-button,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .export-button {
-  background: #c96442;
-  border: 1px solid #c96442;
-  color: #faf9f5;
+  background: #0ea5e9;
+  border: 1px solid #0ea5e9;
+  color: #ffffff;
   border-radius: 11px;
   font-weight: 600;
-  box-shadow: 0 0 0 1px rgba(201, 100, 66, 0.2);
+  box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.2);
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .refresh-button:hover,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .export-button:hover {
   background: #b85535;
   border-color: #b85535;
-  color: #faf9f5;
+  color: #ffffff;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .refresh-button,
@@ -79,24 +79,24 @@
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .marketplace-analytics .overview-stats .stat-card,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .marketplace-analytics .section-container {
   background: #fffefb;
-  border: 1px solid #e8e6dc;
-  box-shadow: 0 0 0 1px rgba(240, 238, 230, 0.55), rgba(20, 20, 19, 0.04) 0 8px 22px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 0 0 1px rgba(240, 238, 230, 0.55), rgba(15, 23, 42, 0.04) 0 8px 22px;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .marketplace-analytics .section-header {
-  border-bottom-color: #e8e6dc;
+  border-bottom-color: #e2e8f0;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .marketplace-analytics .limit-select {
   border-color: #ddd6c8;
   border-radius: 12px;
   background: #fffefb;
-  color: #141413;
+  color: #0f172a;
 }
 
 /* Transactions — replace cold inline accent colors */
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-transactions-page .txn-stats-grid .txn-stat-card:nth-child(1) {
-  border-top-color: #c96442 !important;
+  border-top-color: #0ea5e9 !important;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-transactions-page .txn-stats-grid .txn-stat-card:nth-child(2) {
@@ -116,7 +116,7 @@
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-transactions-page .txn-stats-grid .txn-stat-card:nth-child(1) .txn-stat-icon {
-  background: rgba(201, 100, 66, 0.12) !important;
+  background: rgba(14, 165, 233, 0.12) !important;
   color: #9a4a32 !important;
 }
 
@@ -148,12 +148,12 @@
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-transactions-page header.page-header .btn-outline {
   border-color: #ddd6c8;
-  color: #4d4c48;
+  color: #334155;
   background: #fffefb;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-transactions-page header.page-header .btn-outline:hover:not(:disabled) {
-  border-color: #c96442;
+  border-color: #0ea5e9;
   color: #9a4a32;
   background: #fdf8f3;
 }
@@ -169,13 +169,13 @@
   border-color: #ddd6c8;
   border-radius: 12px;
   background: #fffefb;
-  color: #141413;
+  color: #0f172a;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .month-input:focus,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .period-select:focus {
   outline: none;
-  border-color: #c96442;
+  border-color: #0ea5e9;
   box-shadow: 0 0 0 3px rgba(56, 152, 236, 0.22);
 }
 
@@ -185,12 +185,12 @@
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .course-card-analytics,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .instructor-card-analytics {
   background: #fffefb;
-  border: 1px solid #e8e6dc;
-  box-shadow: 0 0 0 1px rgba(240, 238, 230, 0.6), rgba(20, 20, 19, 0.04) 0 8px 22px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 0 0 1px rgba(240, 238, 230, 0.6), rgba(15, 23, 42, 0.04) 0 8px 22px;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .metric-card::before {
-  background: linear-gradient(90deg, #c96442 0%, #d97757 100%) !important;
+  background: linear-gradient(90deg, #0ea5e9 0%, #14b8a6 100%) !important;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .metric-card.revenue::before {
@@ -198,7 +198,7 @@
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .metric-card.commission::before {
-  background: linear-gradient(90deg, #b45309 0%, #c96442 100%) !important;
+  background: linear-gradient(90deg, #b45309 0%, #0ea5e9 100%) !important;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .metric-card.subscriptions::before {
@@ -211,12 +211,12 @@
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .metric-label,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .metric-header h4 {
-  color: #5e5d59;
+  color: #475569;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .metric-value,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .metric-value-small {
-  color: #141413;
+  color: #0f172a;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .metric-trend.positive {
@@ -229,12 +229,12 @@
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .quick-actions h2,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .section-title {
-  color: #141413;
+  color: #0f172a;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .action-card {
-  background: #faf9f5;
-  border: 1px solid #e8e6dc;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
 }
 
@@ -245,9 +245,9 @@
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .info-banner {
   background: #fdf8f3;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
-  color: #4d4c48;
+  color: #334155;
 }
 
 /* Loading / error / empty — solid ivory card, terracotta spinner (overrides page .css) */
@@ -266,12 +266,12 @@
   max-width: 420px;
   width: 100%;
   background: #fffefb;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   border-radius: 18px;
   box-shadow:
     0 0 0 1px rgba(240, 238, 230, 0.75),
     0 12px 36px rgba(45, 35, 25, 0.06);
-  color: #5e5d59;
+  color: #475569;
   box-sizing: border-box;
 }
 
@@ -281,7 +281,7 @@
   width: 46px;
   height: 46px;
   border: 3px solid #ede8dc;
-  border-top-color: #c96442;
+  border-top-color: #0ea5e9;
   border-radius: 50%;
   animation: admin-finance-spin 0.88s linear infinite;
   flex-shrink: 0;
@@ -294,7 +294,7 @@
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: #4d4c48;
+  color: #334155;
   text-align: center;
   line-height: 1.45;
 }
@@ -302,7 +302,7 @@
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-financial-overview .error-container h3,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .revenue-breakdown-page .error-container h3,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .marketplace-analytics .error-container h3 {
-  color: #141413;
+  color: #0f172a;
   font-size: 1.1rem;
   font-weight: 700;
   margin: 0.5rem 0 0.35rem;
@@ -312,7 +312,7 @@
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .revenue-breakdown-page .error-container p,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .marketplace-analytics .error-container p {
   font-size: 0.9rem;
-  color: #5e5d59;
+  color: #475569;
   text-align: center;
   margin: 0 0 1rem;
   line-height: 1.5;
@@ -328,9 +328,9 @@
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .retry-button {
-  background: #c96442;
-  color: #faf9f5;
-  border: 1px solid #c96442;
+  background: #0ea5e9;
+  color: #ffffff;
+  border: 1px solid #0ea5e9;
   border-radius: 10px;
   padding: 0.5rem 1rem;
   font-weight: 600;
@@ -342,13 +342,13 @@
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .subscription-management-page .page-header {
   padding-bottom: 1.1rem;
   margin-bottom: 1.25rem;
-  border-bottom: 1px solid #e8e6dc;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-transactions-page header.page-header.courses-header-row,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .subscription-management-page header.page-header.courses-header-row {
-  background: #faf9f5;
-  border: 1px solid #e8e6dc;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   box-shadow: 0 0 0 1px rgba(209, 207, 197, 0.35), rgba(0, 0, 0, 0.04) 0 6px 20px;
   padding: 1.1rem 1.25rem;
@@ -358,38 +358,38 @@
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-transactions-page .page-title,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .subscription-management-page .page-title {
-  color: #141413;
+  color: #0f172a;
   font-size: 1.65rem;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-transactions-page .page-subtitle,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .subscription-management-page .page-subtitle {
-  color: #5e5d59;
+  color: #475569;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-transactions-page .btn-primary,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .subscription-management-page .btn-primary {
-  background: #c96442;
-  border-color: #c96442;
-  color: #faf9f5;
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  color: #ffffff;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-transactions-page .btn-primary:hover:not(:disabled),
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .subscription-management-page .btn-primary:hover:not(:disabled) {
   background: #b85535;
   border-color: #b85535;
-  color: #faf9f5;
+  color: #ffffff;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .txn-table-card,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .txn-filters {
   background: #fffefb;
-  border-color: #e8e6dc;
+  border-color: #e2e8f0;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .subscription-management-page .revenue-stats .stat-card {
   background: #fffefb;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   box-shadow: 0 0 0 1px rgba(240, 238, 230, 0.55);
 }

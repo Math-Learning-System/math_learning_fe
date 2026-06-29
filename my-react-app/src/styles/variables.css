@@ -1,36 +1,36 @@
 /* Global CSS Variables — MathMaster Design System */
 :root {
   /* Primary Colors */
-  --primary-color: #c96442;
-  --primary-dark: #b45435;
-  --secondary-color: #d97757;
+  --primary-color: #0ea5e9;
+  --primary-dark: #0284c7;
+  --secondary-color: #14b8a6;
   --success-color: #16a34a;
   --warning-color: #d97706;
   --error-color: #b53333;
   --info-color: #3898ec;
 
   /* Accent Colors */
-  --accent-pink: #d97757;
-  --accent-orange: #c96442;
-  --accent-teal: #6f8a66;
+  --accent-pink: #38bdf8;
+  --accent-orange: #0ea5e9;
+  --accent-teal: #06b6d4;
 
   /* Neutral Colors */
   --white: #ffffff;
-  --black: #141413;
-  --gray-50: #faf9f5;
-  --gray-100: #f5f4ed;
-  --gray-200: #f0eee6;
-  --gray-300: #e8e6dc;
-  --gray-400: #b0aea5;
-  --gray-500: #87867f;
-  --gray-600: #5e5d59;
-  --gray-700: #4d4c48;
-  --gray-800: #30302e;
-  --gray-900: #141413;
+  --black: #0f172a;
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
 
   /* Background */
-  --bg-primary: #f5f4ed;
-  --bg-dark: #141413;
+  --bg-primary: #f8fafc;
+  --bg-dark: #0f172a;
 
   /* Typography — Be Vietnam Pro for full Vietnamese combining marks (dấu); avoid Georgia/Times */
   --font-family: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -61,10 +61,10 @@
   --radius-full: 9999px;
 
   /* Shadows */
-  --shadow-sm: 0 0 0 1px #f0eee6;
-  --shadow-md: 0 0 0 1px #e8e6dc;
-  --shadow-lg: rgba(0, 0, 0, 0.05) 0 4px 24px;
-  --shadow-xl: rgba(0, 0, 0, 0.08) 0 10px 36px;
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 4px 6px rgba(15, 23, 42, 0.05), 0 10px 15px rgba(15, 23, 42, 0.08);
+  --shadow-xl: 0 10px 25px rgba(15, 23, 42, 0.08), 0 20px 48px rgba(15, 23, 42, 0.1);
 
   /* Transitions */
   --transition-fast: 150ms ease-in-out;
@@ -81,32 +81,32 @@
   --z-tooltip: 1070;
 
   /* Semantic tokens — used across roadmap & dashboard pages */
-  --bg-body: #f5f4ed;
-  --bg-card: #faf9f5;
-  --text-primary: #141413;
-  --text-secondary: #5e5d59;
-  --border-color: #f0eee6;
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --border-color: #e2e8f0;
   --danger-color: #b53333;
 
   /* RGB channels for rgba() compositing */
-  --primary-rgb: 201, 100, 66;
-  --secondary-rgb: 217, 119, 87;
+  --primary-rgb: 14, 165, 233;
+  --secondary-rgb: 20, 184, 166;
   --success-rgb: 16, 185, 129;
   --warning-rgb: 217, 119, 6;
   --danger-rgb: 181, 51, 51;
-  --text-secondary-rgb: 94, 93, 89;
+  --text-secondary-rgb: 71, 85, 105;
 
   /* Legacy bridge tokens for older page-level CSS variables */
-  --c-primary: #c96442;
-  --c-primary-soft: rgba(201, 100, 66, 0.12);
-  --c-primary-glow: rgba(201, 100, 66, 0.2);
-  --c-bg: #f5f4ed;
-  --c-surface: #faf9f5;
-  --c-text-1: #141413;
-  --c-text-2: #4d4c48;
-  --c-text-3: #87867f;
-  --c-border: #f0eee6;
-  --c-border-soft: #e8e6dc;
+  --c-primary: #0ea5e9;
+  --c-primary-soft: rgba(14, 165, 233, 0.12);
+  --c-primary-glow: rgba(14, 165, 233, 0.2);
+  --c-bg: #f8fafc;
+  --c-surface: #ffffff;
+  --c-text-1: #0f172a;
+  --c-text-2: #334155;
+  --c-text-3: #64748b;
+  --c-border: #e2e8f0;
+  --c-border-soft: #cbd5e1;
   --f-body: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --f-heading: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }

@@ -14,7 +14,7 @@
 .acp-table-wrap {
   background: #fff;
   border-radius: 16px;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 24px;
 }
@@ -25,14 +25,14 @@
   font-size: 13px;
 }
 .acp-table thead tr {
-  background: #faf9f5;
-  border-bottom: 1px solid #e8e6dc;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
 }
 .acp-table th {
   padding: 0.85rem 1rem;
   text-align: left;
   font-weight: 600;
-  color: #5e5d59;
+  color: #475569;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -40,15 +40,15 @@
 }
 .acp-table td {
   padding: 0.85rem 1rem;
-  border-bottom: 1px solid #f0eee6;
-  color: #141413;
+  border-bottom: 1px solid #e2e8f0;
+  color: #0f172a;
   vertical-align: middle;
 }
 .acp-table tbody tr:last-child td {
   border-bottom: none;
 }
 .acp-table tbody tr:hover td {
-  background: #faf9f5;
+  background: #ffffff;
 }
 
 /* ── Split display ────────────────────────────────────────────────────── */
@@ -56,17 +56,17 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: #faf9f5;
-  border: 1px solid #e8e6dc;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 999px;
   padding: 0.3rem 0.75rem;
   font-size: 12px;
   font-weight: 600;
-  color: #c96442;
+  color: #0ea5e9;
   white-space: nowrap;
 }
 .acp-split-pill span {
-  color: #87867f;
+  color: #64748b;
   font-weight: 500;
 }
 
@@ -93,11 +93,11 @@
 }
 .acp-user-name {
   font-weight: 600;
-  color: #141413;
+  color: #0f172a;
 }
 .acp-user-email {
   font-size: 12px;
-  color: #87867f;
+  color: #64748b;
 }
 
 /* ── Actions cell ─────────────────────────────────────────────────────── */
@@ -112,9 +112,9 @@
   width: 34px;
   height: 34px;
   border-radius: 10px;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   background: #fff;
-  color: #5e5d59;
+  color: #475569;
   cursor: pointer;
   transition:
     border-color 0.15s ease,
@@ -122,9 +122,9 @@
     color 0.15s ease;
 }
 .acp-action-btn:hover {
-  border-color: #c96442;
-  color: #c96442;
-  background: #faf9f5;
+  border-color: #0ea5e9;
+  color: #0ea5e9;
+  background: #ffffff;
 }
 .acp-action-btn--approve:hover {
   border-color: #16a34a;
@@ -142,7 +142,7 @@
   gap: 0.75rem;
   padding: 3.5rem 2rem;
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
-  color: #87867f;
+  color: #64748b;
   font-size: 14px;
 }
 .acp-spin {
@@ -163,11 +163,11 @@
   gap: 0.75rem;
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
-  color: #5e5d59;
+  color: #475569;
 }
 .acp-pagination__info {
   font-size: 12px;
-  color: #87867f;
+  color: #64748b;
 }
 .acp-pagination__nav {
   display: flex;
@@ -181,9 +181,9 @@
   width: 32px;
   height: 32px;
   border-radius: 10px;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   background: #fff;
-  color: #141413;
+  color: #0f172a;
   cursor: pointer;
   transition: all 0.15s ease;
 }
@@ -192,13 +192,13 @@
   cursor: not-allowed;
 }
 .acp-page-btn:not(:disabled):hover {
-  border-color: #c96442;
-  color: #c96442;
-  background: #faf9f5;
+  border-color: #0ea5e9;
+  color: #0ea5e9;
+  background: #ffffff;
 }
 .acp-pagination__pages {
   font-weight: 600;
-  color: #141413;
+  color: #0f172a;
 }
 
 /* ── Success toast ────────────────────────────────────────────────────── */
@@ -241,7 +241,7 @@
   background: #fff;
   border-radius: 16px;
   width: min(520px, 95vw);
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 60px;
   overflow: hidden;
   animation: acp-slide-up 0.2s ease;
@@ -265,8 +265,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 1.25rem;
-  border-bottom: 1px solid #f0eee6;
-  background: #faf9f5;
+  border-bottom: 1px solid #e2e8f0;
+  background: #ffffff;
 }
 .acp-modal__title {
   display: flex;
@@ -275,7 +275,7 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 600;
   font-size: 16px;
-  color: #141413;
+  color: #0f172a;
 }
 .acp-modal__close {
   display: flex;
@@ -287,14 +287,14 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  color: #87867f;
+  color: #64748b;
   transition:
     background 0.15s ease,
     color 0.15s ease;
 }
 .acp-modal__close:hover {
-  background: #e8e6dc;
-  color: #141413;
+  background: #e2e8f0;
+  color: #0f172a;
 }
 .acp-modal__body {
   padding: 1.25rem;
@@ -304,8 +304,8 @@
 }
 
 .acp-info-box {
-  background: #faf9f5;
-  border: 1px solid #e8e6dc;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
   padding: 1rem;
   display: flex;
@@ -321,12 +321,12 @@
   font-size: 13px;
 }
 .acp-info-row > span:first-child {
-  color: #87867f;
+  color: #64748b;
 }
 .acp-info-split {
   font-size: 14px;
   font-weight: 600;
-  color: #141413;
+  color: #0f172a;
 }
 
 .acp-field {
@@ -338,10 +338,10 @@
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 12px;
   font-weight: 600;
-  color: #5e5d59;
+  color: #475569;
 }
 .acp-textarea {
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 0.65rem 0.85rem;
   font-size: 13px;
@@ -353,11 +353,11 @@
     border-color 0.15s ease,
     box-shadow 0.15s ease;
   background: #fff;
-  color: #141413;
+  color: #0f172a;
 }
 .acp-textarea:focus {
-  border-color: #c96442;
-  box-shadow: 0 0 0 3px rgba(201, 100, 66, 0.12);
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12);
 }
 
 .acp-error {
@@ -383,17 +383,17 @@
 .acp-btn-ghost {
   padding: 0.55rem 1.15rem;
   border-radius: 12px;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   background: #fff;
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: #5e5d59;
+  color: #475569;
   cursor: pointer;
   transition: background 0.15s ease;
 }
 .acp-btn-ghost:hover {
-  background: #f5f4ed;
+  background: #f8fafc;
 }
 
 .acp-btn-approve {

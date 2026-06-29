@@ -79,7 +79,7 @@ function assessmentStatusPillClass(status: string): string {
     case 'CLOSED':
       return 'inline-flex items-center px-2 py-0.5 rounded-full bg-slate-100 font-[Be_Vietnam_Pro] text-[12px] font-semibold text-slate-600 border border-slate-200';
     default:
-      return 'inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]';
+      return 'inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]';
   }
 }
 
@@ -348,17 +348,17 @@ export default function AssessmentDetail() {
     if (isLoading) {
       return (
         <div className="space-y-6" aria-busy="true" aria-label="Đang tải">
-          <div className="h-10 w-56 rounded-xl bg-[#FAF9F5] border border-[#F0EEE6] animate-pulse" />
+          <div className="h-10 w-56 rounded-xl bg-[#ffffff] border border-[#e2e8f0] animate-pulse" />
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className="h-[88px] rounded-2xl bg-[#FAF9F5] border border-[#F0EEE6] animate-pulse"
+                className="h-[88px] rounded-2xl bg-[#ffffff] border border-[#e2e8f0] animate-pulse"
               />
             ))}
           </div>
-          <div className="h-40 rounded-2xl bg-[#FAF9F5] border border-[#F0EEE6] animate-pulse" />
-          <div className="h-64 rounded-2xl bg-[#FAF9F5] border border-[#F0EEE6] animate-pulse" />
+          <div className="h-40 rounded-2xl bg-[#ffffff] border border-[#e2e8f0] animate-pulse" />
+          <div className="h-64 rounded-2xl bg-[#ffffff] border border-[#e2e8f0] animate-pulse" />
         </div>
       );
     }
@@ -369,14 +369,14 @@ export default function AssessmentDetail() {
           <div className="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center text-red-400">
             <AlertCircle className="w-6 h-6" aria-hidden />
           </div>
-          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] text-center max-w-md m-0">
+          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] text-center max-w-md m-0">
             {error instanceof Error
               ? error.message
               : `Không thể tải chi tiết ${UI_TEXT.QUIZ.toLowerCase()}`}
           </p>
           <button
             type="button"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
             onClick={() => void refetch()}
           >
             Thử lại
@@ -388,10 +388,10 @@ export default function AssessmentDetail() {
     if (!assessment) {
       return (
         <div className="flex flex-col items-center justify-center py-16 gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-[#FAF9F5] border border-[#E8E6DC] flex items-center justify-center text-[#87867F]">
+          <div className="w-12 h-12 rounded-2xl bg-[#ffffff] border border-[#e2e8f0] flex items-center justify-center text-[#64748b]">
             <AlertCircle className="w-6 h-6" aria-hidden />
           </div>
-          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] m-0">
+          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] m-0">
             Không tìm thấy {UI_TEXT.QUIZ.toLowerCase()}.
           </p>
         </div>
@@ -412,7 +412,7 @@ export default function AssessmentDetail() {
       <div className="space-y-6">
         <button
           type="button"
-          className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+          className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
           onClick={() => navigate('/teacher/assessments')}
         >
           <ArrowLeft size={15} aria-hidden />
@@ -422,24 +422,24 @@ export default function AssessmentDetail() {
         {/* Page header — same structure & title styles as /teacher/mindmaps */}
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <div className="flex items-center gap-3 min-w-0 flex-1">
-            <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] shrink-0">
               <Sparkles className="w-5 h-5" aria-hidden />
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2.5 flex-wrap">
-                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] break-words">
+                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] break-words">
                   {assessment.title}
                 </h1>
                 <span className={assessmentStatusPillClass(assessment.status)}>
                   {assessmentStatusLabel[assessment.status] || assessment.status}
                 </span>
               </div>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                 {typeLabel} · {modeLabel}
                 {assessment.examMatrixName ? ` · Ma trận: ${assessment.examMatrixName}` : ''}
               </p>
               {assessment.description ? (
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] mt-1.5 leading-relaxed m-0">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569] mt-1.5 leading-relaxed m-0">
                   {assessment.description}
                 </p>
               ) : null}
@@ -448,7 +448,7 @@ export default function AssessmentDetail() {
           <div className="flex flex-wrap items-center gap-2 shrink-0">
             <button
               type="button"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors active:scale-[0.98]"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors active:scale-[0.98]"
               onClick={() => setOpenEdit(true)}
             >
               <Pencil size={15} aria-hidden />
@@ -457,7 +457,7 @@ export default function AssessmentDetail() {
             {id ? (
               <button
                 type="button"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
                 onClick={() => navigate(`/teacher/assessments/${id}/preview`)}
               >
                 Xem trước
@@ -504,7 +504,7 @@ export default function AssessmentDetail() {
           ).map(({ label, value, Icon, bg, color }) => (
             <div
               key={label}
-              className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3"
+              className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3"
             >
               <div
                 className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center shrink-0`}
@@ -512,40 +512,40 @@ export default function AssessmentDetail() {
                 <Icon className={`w-4 h-4 ${color}`} aria-hidden />
               </div>
               <div className="min-w-0">
-                <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none truncate">
+                <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none truncate">
                   {value}
                 </p>
-                <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">{label}</p>
+                <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">{label}</p>
               </div>
             </div>
           ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-          <article className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex flex-col gap-3">
-            <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#141413] m-0">
+          <article className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex flex-col gap-3">
+            <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#0f172a] m-0">
               Thời gian
             </h3>
-            <dl className="m-0 flex flex-col divide-y divide-[#F0EEE6]">
+            <dl className="m-0 flex flex-col divide-y divide-[#e2e8f0]">
               <div className="flex items-baseline justify-between gap-3 py-3 first:pt-0">
-                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0">
+                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] font-semibold m-0">
                   Thời gian làm bài
                 </dt>
-                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0 text-right">
+                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] font-semibold m-0 text-right">
                   {assessment.timeLimitMinutes != null
                     ? `${assessment.timeLimitMinutes} phút`
                     : 'Không giới hạn'}
                 </dd>
               </div>
               <div className="flex items-baseline justify-between gap-3 py-3">
-                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0">
+                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] font-semibold m-0">
                   Số lần làm tối đa
                 </dt>
-                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0 text-right">
+                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] font-semibold m-0 text-right">
                   {Boolean(assessment.allowMultipleAttempts) ? (
                     <>
                       {assessment.maxAttempts ?? '∞'} lần
-                      <span className="font-medium text-[#87867F] text-[11px]">
+                      <span className="font-medium text-[#64748b] text-[11px]">
                         {' '}
                         · cho phép nhiều lần
                       </span>
@@ -556,10 +556,10 @@ export default function AssessmentDetail() {
                 </dd>
               </div>
               <div className="flex items-baseline justify-between gap-3 py-3">
-                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0">
+                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] font-semibold m-0">
                   Cách chấm khi nhiều lần
                 </dt>
-                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0 text-right">
+                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] font-semibold m-0 text-right">
                   {scoringPolicyLabel[assessment.attemptScoringPolicy || 'BEST'] ||
                     assessment.attemptScoringPolicy ||
                     'BEST'}
@@ -568,45 +568,45 @@ export default function AssessmentDetail() {
             </dl>
           </article>
 
-          <article className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex flex-col gap-3">
-            <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#141413] m-0">
+          <article className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex flex-col gap-3">
+            <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#0f172a] m-0">
               Hiển thị cho học sinh
             </h3>
-            <dl className="m-0 flex flex-col divide-y divide-[#F0EEE6]">
+            <dl className="m-0 flex flex-col divide-y divide-[#e2e8f0]">
               <div className="flex items-baseline justify-between gap-3 py-3 first:pt-0">
-                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0">
+                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] font-semibold m-0">
                   Trộn câu hỏi
                 </dt>
-                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0">
+                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] font-semibold m-0">
                   {assessment.randomizeQuestions ? 'Có' : 'Không'}
                 </dd>
               </div>
               <div className="flex items-baseline justify-between gap-3 py-3">
-                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0">
+                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] font-semibold m-0">
                   Hiện đáp án sau khi nộp
                 </dt>
-                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0">
+                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] font-semibold m-0">
                   {assessment.showCorrectAnswers ? 'Có' : 'Không'}
                 </dd>
               </div>
               <div className="flex items-baseline justify-between gap-3 py-3">
-                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0">
+                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] font-semibold m-0">
                   Hiện điểm ngay sau khi nộp
                 </dt>
-                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0">
+                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] font-semibold m-0">
                   {assessment.showScoreImmediately ? 'Có' : 'Không'}
                 </dd>
               </div>
             </dl>
           </article>
 
-          <article className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex flex-col gap-3 md:col-span-2 xl:col-span-1">
-            <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#141413] m-0">
+          <article className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex flex-col gap-3 md:col-span-2 xl:col-span-1">
+            <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#0f172a] m-0">
               Trạng thái & ma trận
             </h3>
-            <dl className="m-0 flex flex-col divide-y divide-[#F0EEE6]">
+            <dl className="m-0 flex flex-col divide-y divide-[#e2e8f0]">
               <div className="flex items-baseline justify-between gap-3 py-3 first:pt-0">
-                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0">
+                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] font-semibold m-0">
                   Trạng thái
                 </dt>
                 <dd className="m-0">
@@ -616,28 +616,28 @@ export default function AssessmentDetail() {
                 </dd>
               </div>
               <div className="flex items-baseline justify-between gap-3 py-3">
-                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0">
+                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] font-semibold m-0">
                   Chế độ tạo đề
                 </dt>
-                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0 text-right">
+                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] font-semibold m-0 text-right">
                   {assessmentModeLabel[assessment.assessmentMode || 'DIRECT'] ||
                     assessment.assessmentMode ||
                     'DIRECT'}
                 </dd>
               </div>
               <div className="flex items-baseline justify-between gap-3 py-3">
-                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0">
+                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] font-semibold m-0">
                   Ma trận đề
                 </dt>
-                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0 text-right break-words max-w-[55%]">
+                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] font-semibold m-0 text-right break-words max-w-[55%]">
                   {assessment.examMatrixName ?? assessment.examMatrixId ?? 'Không liên kết'}
                 </dd>
               </div>
               <div className="flex items-baseline justify-between gap-3 py-3">
-                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] font-semibold m-0 shrink-0">
+                <dt className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] font-semibold m-0 shrink-0">
                   Bài học liên quan
                 </dt>
-                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#141413] font-semibold m-0 text-right">
+                <dd className="font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] font-semibold m-0 text-right">
                   {assessment.lessonTitles && assessment.lessonTitles.length > 0
                     ? assessment.lessonTitles.join(', ')
                     : 'Không có'}
@@ -648,9 +648,9 @@ export default function AssessmentDetail() {
         </div>
 
         {/* ── Question management ── */}
-        <article className="bg-white rounded-2xl border border-[#E8E6DC] overflow-hidden">
-          <div className="px-4 py-4 lg:px-6 lg:py-5 border-b border-[#F0EEE6] bg-[#FAF9F5] flex flex-wrap items-center justify-between gap-3">
-            <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#141413] m-0">
+        <article className="bg-white rounded-2xl border border-[#e2e8f0] overflow-hidden">
+          <div className="px-4 py-4 lg:px-6 lg:py-5 border-b border-[#e2e8f0] bg-[#ffffff] flex flex-wrap items-center justify-between gap-3">
+            <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#0f172a] m-0">
               Câu hỏi trong {UI_TEXT.QUIZ.toLowerCase()}
             </h3>
             <div className="flex flex-wrap gap-2">
@@ -659,7 +659,7 @@ export default function AssessmentDetail() {
                 assessment.examMatrixId && (
                   <button
                     type="button"
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-150"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-150"
                     onClick={() => void generateFromMatrix()}
                     disabled={generateMutation.isPending}
                   >
@@ -841,10 +841,10 @@ export default function AssessmentDetail() {
                           const partQuestions = grouped[partNum];
                           return (
                             <Fragment key={partNum}>
-                              <tr className="bg-[#FAF9F5] border-t border-[#E8E6DC]">
+                              <tr className="bg-[#ffffff] border-t border-[#e2e8f0]">
                                 <td
                                   colSpan={isDraft ? 6 : 5}
-                                  className="font-[Be_Vietnam_Pro] font-semibold text-[#5E5D59] py-2.5 px-3 text-[13px]"
+                                  className="font-[Be_Vietnam_Pro] font-semibold text-[#475569] py-2.5 px-3 text-[13px]"
                                 >
                                   {partLabels[partNum] || `Phần ${partNum}`} ({partQuestions.length}{' '}
                                   câu)
@@ -982,7 +982,7 @@ export default function AssessmentDetail() {
                 <div>
                   <button
                     type="button"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-150"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-150"
                     onClick={() => void handleBatchUpdatePoints()}
                     disabled={batchUpdatePointsMutation.isPending}
                   >
@@ -993,11 +993,11 @@ export default function AssessmentDetail() {
                 </div>
 
                 {/* Auto distribute */}
-                <div className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] p-4">
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#5E5D59] m-0 mb-2">
+                <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-4">
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#475569] m-0 mb-2">
                     Tự động phân điểm theo độ khó câu hỏi
                   </p>
-                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] m-0 mb-3 leading-relaxed">
+                  <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] m-0 mb-3 leading-relaxed">
                     💡 Câu hỏi Đúng/Sai (TF): mỗi mệnh đề đúng = tổng điểm câu ÷ số mệnh đề.
                     Tổng điểm = số mệnh đề đúng × điểm/mệnh đề.
                   </p>

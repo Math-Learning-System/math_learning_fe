@@ -291,10 +291,10 @@ export default function TakeAssessment() {
       >
         <div className="px-6 py-8 lg:px-8 flex flex-col items-center justify-center min-h-[50vh] gap-4">
           <span
-            className="w-10 h-10 rounded-full border-2 border-[#E8E6DC] border-t-[#C96442] animate-spin"
+            className="w-10 h-10 rounded-full border-2 border-[#e2e8f0] border-t-[#0ea5e9] animate-spin"
             aria-hidden
           />
-          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]" role="status">
+          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]" role="status">
             Đang khởi tạo {UI_TEXT.QUIZ.toLowerCase()}...
           </p>
         </div>
@@ -311,16 +311,16 @@ export default function TakeAssessment() {
         contentClassName="dashboard-content--flush-bleed"
       >
         <div className="px-6 py-8 lg:px-8 flex flex-col items-center justify-center min-h-[40vh] gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#B0AEA5]">
+          <div className="w-12 h-12 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#94a3b8]">
             <AlertCircle className="w-6 h-6" aria-hidden />
           </div>
-          <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center">
+          <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center">
             Không thể tải {UI_TEXT.QUIZ.toLowerCase()}
           </p>
           <button
             type="button"
             onClick={() => navigate('/student/assessments')}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
           >
             <ArrowLeft className="w-3.5 h-3.5" aria-hidden />
             Quay lại
@@ -339,12 +339,12 @@ export default function TakeAssessment() {
     >
       <div className="px-6 py-8 lg:px-8">
         <div className="space-y-6 max-w-[1280px] mx-auto">
-          <header className="rounded-2xl border border-[#E8E6DC] bg-white px-5 py-4 shadow-[rgba(0,0,0,0.04)_0px_2px_12px] flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          <header className="rounded-2xl border border-[#e2e8f0] bg-white px-5 py-4 shadow-[rgba(0,0,0,0.04)_0px_2px_12px] flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div className="min-w-0">
-              <h1 className="font-[Playfair_Display] text-[20px] sm:text-[22px] font-medium text-[#141413] leading-tight">
+              <h1 className="font-[Playfair_Display] text-[20px] sm:text-[22px] font-medium text-[#0f172a] leading-tight">
                 {attemptData.instructions || UI_TEXT.QUIZ}
               </h1>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-1">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-1">
                 Câu {currentIndex + 1} / {totalQuestions} • Đã trả lời: {answeredCount}
               </p>
             </div>
@@ -356,7 +356,7 @@ export default function TakeAssessment() {
                 </span>
               ) : null}
               {!isSaving && lastSaved ? (
-                <span className="inline-flex items-center gap-2 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                <span className="inline-flex items-center gap-2 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                   <Save className="w-4 h-4" aria-hidden />
                   Đã lưu {lastSaved.toLocaleTimeString('vi-VN')}
                 </span>
@@ -392,7 +392,7 @@ export default function TakeAssessment() {
                 </div>
               ) : null}
 
-              <div className="rounded-2xl border border-[#F0EEE6] bg-[#FAF9F5] p-4 sm:p-6 shadow-[rgba(0,0,0,0.04)_0px_2px_12px]">
+              <div className="rounded-2xl border border-[#e2e8f0] bg-[#ffffff] p-4 sm:p-6 shadow-[rgba(0,0,0,0.04)_0px_2px_12px]">
                 <QuestionRenderer
                   question={currentQuestion}
                   studentAnswer={answers[currentQuestion.questionId]}
@@ -405,7 +405,7 @@ export default function TakeAssessment() {
                   type="button"
                   disabled={currentIndex === 0}
                   onClick={() => setCurrentIndex((prev) => prev - 1)}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-40 disabled:cursor-not-allowed sm:order-1"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-40 disabled:cursor-not-allowed sm:order-1"
                 >
                   <ChevronLeft className="w-4 h-4" aria-hidden />
                   Câu trước
@@ -417,7 +417,7 @@ export default function TakeAssessment() {
                   className={`inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border font-[Be_Vietnam_Pro] text-[13px] font-medium transition-colors sm:order-2 ${
                     flags[currentQuestion.questionId]
                       ? 'border-amber-300 bg-amber-500 text-white hover:bg-amber-600'
-                      : 'border-[#E8E6DC] bg-white text-[#5E5D59] hover:bg-[#F5F4ED]'
+                      : 'border-[#e2e8f0] bg-white text-[#475569] hover:bg-[#f8fafc]'
                   }`}
                 >
                   <Flag className="w-4 h-4" aria-hidden />
@@ -428,7 +428,7 @@ export default function TakeAssessment() {
                   type="button"
                   disabled={currentIndex === totalQuestions - 1}
                   onClick={() => setCurrentIndex((prev) => prev + 1)}
-                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-40 disabled:cursor-not-allowed sm:order-3 sm:ml-auto"
+                  className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-40 disabled:cursor-not-allowed sm:order-3 sm:ml-auto"
                 >
                   Câu sau
                   <ChevronRight className="w-4 h-4" aria-hidden />
@@ -437,7 +437,7 @@ export default function TakeAssessment() {
             </div>
 
             <aside className="lg:w-[280px] shrink-0 space-y-4">
-              <div className="rounded-2xl border border-[#E8E6DC] bg-white p-4 shadow-[rgba(0,0,0,0.04)_0px_2px_12px]">
+              <div className="rounded-2xl border border-[#e2e8f0] bg-white p-4 shadow-[rgba(0,0,0,0.04)_0px_2px_12px]">
                 <QuestionNavigator
                   questions={attemptData.questions}
                   currentIndex={currentIndex}
@@ -452,7 +452,7 @@ export default function TakeAssessment() {
                   type="button"
                   onClick={handleSaveAndExit}
                   disabled={saveAndExitMutation.isPending}
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   <Save className="w-4 h-4" aria-hidden />
                   Lưu và thoát
@@ -461,7 +461,7 @@ export default function TakeAssessment() {
                 <button
                   type="button"
                   onClick={() => setShowSubmitConfirm(true)}
-                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] active:scale-[0.98] transition-all duration-150"
+                  className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] active:scale-[0.98] transition-all duration-150"
                 >
                   Nộp bài
                 </button>
@@ -470,7 +470,7 @@ export default function TakeAssessment() {
           </div>
 
           {showSubmitConfirm ? (
-            <div className="fixed inset-0 z-50 bg-[#141413]/50 backdrop-blur-sm flex items-center justify-center p-4">
+            <div className="fixed inset-0 z-50 bg-[#0f172a]/50 backdrop-blur-sm flex items-center justify-center p-4">
               <div
                 className="bg-white rounded-2xl shadow-[rgba(0,0,0,0.20)_0px_20px_60px] w-full max-w-md flex flex-col"
                 role="dialog"
@@ -480,11 +480,11 @@ export default function TakeAssessment() {
                 <div className="px-6 pt-6 pb-2">
                   <h3
                     id="submit-confirm-title"
-                    className="font-[Playfair_Display] text-[18px] font-medium text-[#141413]"
+                    className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a]"
                   >
                     Xác nhận nộp bài
                   </h3>
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-2">
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-2">
                     Bạn có chắc chắn muốn nộp bài không?
                   </p>
                 </div>
@@ -505,17 +505,17 @@ export default function TakeAssessment() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap justify-end gap-2 px-6 pb-6 pt-2 border-t border-[#F0EEE6]">
+                <div className="flex flex-wrap justify-end gap-2 px-6 pb-6 pt-2 border-t border-[#e2e8f0]">
                   <button
                     type="button"
-                    className="px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                    className="px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                     onClick={() => setShowSubmitConfirm(false)}
                   >
                     Hủy
                   </button>
                   <button
                     type="button"
-                    className="px-5 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    className="px-5 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                     onClick={handleSubmit}
                     disabled={submitMutation.isPending}
                   >

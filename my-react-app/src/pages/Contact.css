@@ -102,7 +102,7 @@
   padding: 1.75rem 1.5rem;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-sm, 0 2px 4px rgba(14, 12, 21, 0.03), 0 4px 12px rgba(14, 12, 21, 0.04));
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(15, 23, 42, 0.03), 0 4px 12px rgba(15, 23, 42, 0.04));
   transition: all 0.3s ease;
   display: flex;
   align-items: flex-start;
@@ -133,7 +133,7 @@
 .contact-info-card:hover {
   transform: translateY(-6px);
   box-shadow:
-    0 4px 16px rgba(201, 100, 66, 0.12),
+    0 4px 16px rgba(14, 165, 233, 0.12),
     0 12px 36px rgba(94, 92, 230, 0.1);
   border-color: rgba(94, 92, 230, 0.12);
 }
@@ -148,7 +148,7 @@
   min-width: 48px;
   border-radius: 14px;
   background: linear-gradient(135deg, rgba(94, 92, 230, 0.1), rgba(133, 141, 255, 0.15));
-  color: var(--c-primary, #c96442);
+  color: var(--c-primary, #0ea5e9);
   font-size: 1.25rem;
   position: relative;
   z-index: 1;
@@ -211,7 +211,7 @@
   min-width: 28px;
   border-radius: 8px;
   background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(52, 211, 153, 0.2));
-  color: #141413;
+  color: #0f172a;
   font-size: 0.78rem;
 }
 
@@ -226,8 +226,8 @@
   border-radius: var(--r-xl, 24px);
   padding: 2.5rem 2rem;
   box-shadow:
-    0 2px 4px rgba(14, 12, 21, 0.03),
-    0 8px 24px rgba(14, 12, 21, 0.06);
+    0 2px 4px rgba(15, 23, 42, 0.03),
+    0 8px 24px rgba(15, 23, 42, 0.06);
   position: relative;
   overflow: hidden;
 }
@@ -241,7 +241,7 @@
   border-radius: 50%;
   top: -80px;
   right: -60px;
-  background: radial-gradient(circle, rgba(201, 100, 66, 0.12), transparent 70%);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.12), transparent 70%);
   filter: blur(35px);
   pointer-events: none;
   z-index: 0;
@@ -297,7 +297,7 @@
 }
 
 .contact-form-label span {
-  color: var(--c-primary, #c96442);
+  color: var(--c-primary, #0ea5e9);
   margin-left: 2px;
 }
 
@@ -327,7 +327,7 @@
 .contact-form-input:focus,
 .contact-form-select:focus,
 .contact-form-textarea:focus {
-  border-color: var(--c-primary, #c96442);
+  border-color: var(--c-primary, #0ea5e9);
   box-shadow: 0 0 0 4px rgba(94, 92, 230, 0.1);
   background: #fff;
 }
@@ -354,8 +354,8 @@
   gap: 0.5rem;
   width: 100%;
   padding: 0.95rem 1.5rem;
-  background: var(--c-primary, #c96442);
-  color: #141413;
+  background: var(--c-primary, #0ea5e9);
+  color: #0f172a;
   border: none;
   border-radius: var(--r-md, 16px);
   font-family: var(--f-heading, 'Be Vietnam Pro', sans-serif);

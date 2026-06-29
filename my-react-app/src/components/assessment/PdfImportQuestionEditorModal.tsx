@@ -84,50 +84,50 @@ export function PdfImportQuestionEditorModal({
       onMouseDown={(e) => e.target === e.currentTarget && !saving && onClose()}
     >
       <div
-        className="w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col rounded-2xl border border-[#E8E6DC] bg-[#FAF9F5] shadow-xl"
+        className="w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col rounded-2xl border border-[#e2e8f0] bg-[#ffffff] shadow-xl"
         onMouseDown={(e) => e.stopPropagation()}
       >
-        <div className="flex items-start justify-between gap-3 border-b border-[#E8E6DC] px-5 py-4">
+        <div className="flex items-start justify-between gap-3 border-b border-[#e2e8f0] px-5 py-4">
           <div>
-            <h2 id="pdf-import-question-editor-title" className="font-[Playfair_Display] text-[18px] font-medium text-[#141413] m-0">
+            <h2 id="pdf-import-question-editor-title" className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a] m-0">
               {editing ? 'Sửa câu hỏi' : 'Tạo câu hỏi'} · {pageLabel}
             </h2>
-            <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] m-0">
+            <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] m-0">
               Trang {pageNumber} — soạn LaTeX/Markdown.
             </p>
           </div>
-          <button type="button" className="rounded-lg p-1.5 text-[#87867F] hover:bg-[#E8E6DC]" disabled={saving} onClick={onClose} aria-label="Đóng">
+          <button type="button" className="rounded-lg p-1.5 text-[#64748b] hover:bg-[#e2e8f0]" disabled={saving} onClick={onClose} aria-label="Đóng">
             <X className="h-5 w-5" />
           </button>
         </div>
         <form onSubmit={(e) => void handleSubmit(e)} className="flex flex-col min-h-0 flex-1">
           <div className="overflow-y-auto px-5 py-4 space-y-4">
             <label className="block">
-              <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">Nội dung câu (LaTeX)</span>
+              <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">Nội dung câu (LaTeX)</span>
               <textarea className="input mt-1 w-full font-mono text-[13px] min-h-[200px]" value={questionText} onChange={(e) => setQuestionText(e.target.value)} disabled={!isDraft || saving} />
             </label>
             <div className="grid gap-3 sm:grid-cols-3">
               <label className="block">
-                <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">Loại</span>
+                <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">Loại</span>
                 <select className="input mt-1 w-full" value={questionType} onChange={(e) => setQuestionType(e.target.value as QuestionType)} disabled={!isDraft || saving}>
                   {QUESTION_TYPES.map((t) => (<option key={t.value} value={t.value}>{t.label}</option>))}
                 </select>
               </label>
               <label className="block">
-                <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">Đáp án</span>
+                <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">Đáp án</span>
                 <input className="input mt-1 w-full" value={correctAnswer} onChange={(e) => setCorrectAnswer(e.target.value)} disabled={!isDraft || saving} />
               </label>
               <label className="block">
-                <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">Điểm</span>
+                <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">Điểm</span>
                 <input className="input mt-1 w-full" type="number" min={0} step={0.25} value={points} onChange={(e) => setPoints(e.target.value)} disabled={!isDraft || saving} />
               </label>
             </div>
-            <div className="rounded-xl border border-[#E8E6DC] bg-white p-4">
-              <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase text-[#87867F] m-0 mb-2">Preview</p>
+            <div className="rounded-xl border border-[#e2e8f0] bg-white p-4">
+              <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase text-[#64748b] m-0 mb-2">Preview</p>
               <MathText text={questionText || '—'} />
             </div>
           </div>
-          <div className="flex justify-end gap-2 border-t border-[#E8E6DC] px-5 py-4">
+          <div className="flex justify-end gap-2 border-t border-[#e2e8f0] px-5 py-4">
             <button type="button" className="btn secondary" disabled={saving} onClick={onClose}>Hủy</button>
             <button type="submit" className="btn inline-flex items-center gap-2" disabled={!isDraft || saving || !questionText.trim()}>
               {saving ? (<><Loader2 className="h-4 w-4 animate-spin" />Đang lưu…</>) : editing ? 'Lưu câu hỏi' : 'Tạo và thêm vào đề'}

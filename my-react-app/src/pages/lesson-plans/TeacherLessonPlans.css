@@ -296,10 +296,10 @@
   gap: 0.5rem;
   margin-top: 0.5rem;
   padding: 0.75rem 0.9rem;
-  background: #f5f4ed;
-  border: 1px solid #e8e6dc;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
-  color: #4d4c48;
+  color: #334155;
   font-size: 0.88rem;
   line-height: 1.45;
   box-shadow: 0 0 0 1px rgba(240, 238, 230, 0.8);
@@ -307,7 +307,7 @@
 
 .module-layout-container .create-course-modal .lp-create-selected svg {
   flex-shrink: 0;
-  color: #c96442;
+  color: #0ea5e9;
   margin-top: 0.1rem;
 }
 
@@ -335,7 +335,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  color: #5e5d59;
+  color: #475569;
   font-size: 0.85rem;
   line-height: 1.4;
   font-family: var(--font-family);
@@ -353,13 +353,13 @@
   box-shadow: none;
   border-left-width: 1px;
   background: #ffffff;
-  border-color: #e8e6dc;
+  border-color: #e2e8f0;
 }
 
 .module-layout-container .create-course-modal .lesson-plan-view-wizard .lp-ds--blue {
   background: #faf7f3;
-  border-color: #e8e6dc;
-  border-left-color: #c96442;
+  border-color: #e2e8f0;
+  border-left-color: #0ea5e9;
 }
 .module-layout-container .create-course-modal .lesson-plan-view-wizard .lp-di--blue {
   background: #ede8dc;
@@ -423,7 +423,7 @@
 }
 
 .module-layout-container .create-course-modal .lesson-plan-view-wizard .lp-detail-section-title {
-  color: #141413;
+  color: #0f172a;
   font-weight: 600;
 }
 
@@ -438,7 +438,7 @@
   .lp-ds--blue
   .lp-detail-list
   li::before {
-  background: #c96442;
+  background: #0ea5e9;
 }
 .module-layout-container
   .create-course-modal
@@ -451,13 +451,13 @@
 
 .module-layout-container .create-course-modal .lesson-plan-view-wizard .lp-view-empty,
 .module-layout-container .create-course-modal .lesson-plan-view-wizard .lp-detail-empty {
-  color: #87867f;
+  color: #64748b;
   font-family: var(--font-family);
 }
 
 .module-layout-container .create-course-modal .lesson-plan-view-wizard .lp-view-empty svg,
 .module-layout-container .create-course-modal .lesson-plan-view-wizard .lp-detail-empty svg {
-  color: #c96442;
+  color: #0ea5e9;
   opacity: 0.65;
 }
 
@@ -694,7 +694,7 @@
 .lp-eg--violet {
   background: #faf8ff;
   border-color: #ddd6fe;
-  border-left-color: #d97757;
+  border-left-color: #14b8a6;
 }
 .lp-eg--orange {
   background: #fffaf5;
@@ -900,7 +900,7 @@
 .lp-ds--violet {
   background: #f5f3ff;
   border-color: #ddd6fe;
-  border-left-color: #d97757;
+  border-left-color: #14b8a6;
 }
 .lp-ds--orange {
   background: #fff7ed;

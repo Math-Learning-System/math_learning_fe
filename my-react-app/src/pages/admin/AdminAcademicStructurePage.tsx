@@ -1180,21 +1180,21 @@ export default function AdminAcademicStructurePage() {
         <section className="module-page aas-page__content">
           <div className="flex items-center justify-between gap-4 flex-wrap pb-6">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#E8E6DC] text-[#5E5D59]">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#e2e8f0] text-[#475569]">
                 <FolderTree className="h-5 w-5" aria-hidden />
               </div>
               <div>
                 <div className="flex flex-wrap items-center gap-2.5">
-                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                     Quản lý chương trình
                   </h1>
                   {!gradesQuery.isLoading && (
-                    <span className="inline-flex items-center rounded-full bg-[#E8E6DC] px-2 py-0.5 font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                    <span className="inline-flex items-center rounded-full bg-[#e2e8f0] px-2 py-0.5 font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                       {grades.length}
                     </span>
                   )}
                 </div>
-                <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                   Cấu trúc phân cấp Chương trình • Môn học • Chương • Bài học
                 </p>
               </div>

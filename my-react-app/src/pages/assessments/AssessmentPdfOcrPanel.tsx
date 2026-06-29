@@ -347,7 +347,7 @@ export function AssessmentPdfOcrPanel({
     <div className="space-y-5">
       <button
         type="button"
-        className="flex w-full flex-col items-center gap-2 rounded-2xl border-2 border-dashed border-[#D1CFC5] bg-white px-6 py-8 text-center transition-colors hover:border-[#C96442]/50 hover:bg-[#FFFBF8]"
+        className="flex w-full flex-col items-center gap-2 rounded-2xl border-2 border-dashed border-[#cbd5e1] bg-white px-6 py-8 text-center transition-colors hover:border-[#0ea5e9]/50 hover:bg-[#FFFBF8]"
         onClick={() => inputRef.current?.click()}
         onDrop={(event) => {
           event.preventDefault();
@@ -361,10 +361,10 @@ export function AssessmentPdfOcrPanel({
         }}
         onDragOver={(event) => event.preventDefault()}
       >
-        <span className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413]">
+        <span className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a]">
           {file ? file.name : fileName || 'Kéo thả hoặc chọn file PDF'}
         </span>
-        <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+        <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
           Chỉ .pdf — tối đa 10MB
           {totalPages > 0 ? ` · ${totalPages} trang` : ''}
         </span>
@@ -403,13 +403,13 @@ export function AssessmentPdfOcrPanel({
         onImportContentModeChange={setImportContentMode}
       />
 
-      <div className="rounded-xl border border-[#E8E6DC] bg-white p-4">
+      <div className="rounded-xl border border-[#e2e8f0] bg-white p-4">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+            <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
               Trích text từng trang (Mathpix PDF)
             </p>
-            <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+            <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
               {file
                 ? isCountingPages
                   ? 'Đang đếm số trang PDF…'
@@ -461,7 +461,7 @@ export function AssessmentPdfOcrPanel({
         </div>
 
         {!canStartOcr && startDisabledReason ? (
-          <p className="mt-3 rounded-lg bg-[#FAF9F5] px-3 py-2 font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59]">
+          <p className="mt-3 rounded-lg bg-[#ffffff] px-3 py-2 font-[Be_Vietnam_Pro] text-[12px] text-[#475569]">
             {startDisabledReason}
           </p>
         ) : null}
@@ -475,9 +475,9 @@ export function AssessmentPdfOcrPanel({
             {pages.map((p) => (
               <li
                 key={p.pageNumber}
-                className="flex flex-wrap items-start gap-2 rounded-lg border border-[#F0EEE6] bg-[#FAF9F5] px-3 py-2"
+                className="flex flex-wrap items-start gap-2 rounded-lg border border-[#e2e8f0] bg-[#ffffff] px-3 py-2"
               >
-                <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#141413]">
+                <span className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#0f172a]">
                   Trang {p.pageNumber}
                 </span>
                 {p.status === 'running' ? (
@@ -487,7 +487,7 @@ export function AssessmentPdfOcrPanel({
                 ) : p.status === 'error' ? (
                   <AlertCircle className="h-4 w-4 text-red-600" />
                 ) : null}
-                <span className="min-w-0 flex-1 font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]">
+                <span className="min-w-0 flex-1 font-[Be_Vietnam_Pro] text-[11px] text-[#64748b]">
                   {p.status === 'done'
                     ? `${p.text.slice(0, 120)}${p.text.length > 120 ? '…' : ''}`
                     : p.error ?? (p.status === 'pending' ? 'Chờ OCR' : '')}
@@ -509,7 +509,7 @@ export function AssessmentPdfOcrPanel({
                 {p.status === 'done' || p.status === 'error' ? (
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 text-[11px] text-[#87867F] hover:underline"
+                    className="inline-flex items-center gap-1 text-[11px] text-[#64748b] hover:underline"
                     disabled={ocrRunning}
                     onClick={() => void ocrOnePage(p.pageNumber)}
                   >
@@ -523,7 +523,7 @@ export function AssessmentPdfOcrPanel({
         ) : null}
 
         {doneCount > 0 ? (
-          <p className="mt-3 font-[Be_Vietnam_Pro] text-[12px] text-[#5E5D59]">
+          <p className="mt-3 font-[Be_Vietnam_Pro] text-[12px] text-[#475569]">
             {doneCount === totalPages && totalPages > 0
               ? 'OCR xong — bấm «Xem preview» từng trang để kiểm tra nội dung trước bước 3.'
               : 'Trang đã OCR — bấm «Xem preview» để xem full text (công thức hiển thị khi có $…$).'}
@@ -531,13 +531,13 @@ export function AssessmentPdfOcrPanel({
         ) : null}
 
         {previewPage ? (
-          <div className="mt-4 rounded-xl border border-[#E8E6DC] bg-white p-4 shadow-sm">
+          <div className="mt-4 rounded-xl border border-[#e2e8f0] bg-white p-4 shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                 Preview OCR — Trang {previewPage.pageNumber}
               </p>
               <div className="flex flex-wrap items-center gap-2">
-                <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]">
+                <span className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b]">
                   {previewPage.text.length.toLocaleString('vi-VN')} ký tự
                   {previewPage.confidence > 0
                     ? ` · tin cậy ${Math.round(previewPage.confidence * 100)}%`
@@ -545,7 +545,7 @@ export function AssessmentPdfOcrPanel({
                 </span>
                 <button
                   type="button"
-                  className="inline-flex items-center gap-1 rounded-md px-2 py-1 font-[Be_Vietnam_Pro] text-[11px] text-[#5E5D59] hover:bg-[#FAF9F5]"
+                  className="inline-flex items-center gap-1 rounded-md px-2 py-1 font-[Be_Vietnam_Pro] text-[11px] text-[#475569] hover:bg-[#ffffff]"
                   aria-label="Đóng preview"
                   onClick={() => setPreviewPageNumber(null)}
                 >
@@ -569,8 +569,8 @@ export function AssessmentPdfOcrPanel({
                     aria-selected={previewPageNumber === p.pageNumber}
                     className={`rounded-lg px-2.5 py-1 font-[Be_Vietnam_Pro] text-[11px] font-medium transition-colors ${
                       previewPageNumber === p.pageNumber
-                        ? 'bg-[#C96442] text-white'
-                        : 'bg-[#FAF9F5] text-[#5E5D59] hover:bg-[#F0EEE6]'
+                        ? 'bg-[#0ea5e9] text-white'
+                        : 'bg-[#ffffff] text-[#475569] hover:bg-[#e2e8f0]'
                     }`}
                     onClick={() => setPreviewPageNumber(p.pageNumber)}
                   >
@@ -580,7 +580,7 @@ export function AssessmentPdfOcrPanel({
               </div>
             ) : null}
 
-            <div className="mt-3 max-h-[min(420px,50vh)] overflow-y-auto rounded-lg border border-[#F0EEE6] bg-[#FAF9F5] px-4 py-3 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#141413]">
+            <div className="mt-3 max-h-[min(420px,50vh)] overflow-y-auto rounded-lg border border-[#e2e8f0] bg-[#ffffff] px-4 py-3 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#0f172a]">
               <MathText text={previewPage.text} />
             </div>
           </div>

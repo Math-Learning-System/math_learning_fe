@@ -31,19 +31,19 @@ import './TeacherCourses.css';
 
 // ─── Cover design tokens (shared with TeacherCourses) ────────────────────────
 const coverGradients = [
-  'linear-gradient(135deg, #f5f4ed 0%, #ede8dc 100%)',
-  'linear-gradient(135deg, #faf9f5 0%, #f0eee6 100%)',
-  'linear-gradient(135deg, #f3efe4 0%, #e8e6dc 100%)',
+  'linear-gradient(135deg, #f8fafc 0%, #ede8dc 100%)',
+  'linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%)',
+  'linear-gradient(135deg, #f3efe4 0%, #e2e8f0 100%)',
   'linear-gradient(135deg, #f7f3eb 0%, #ede3d4 100%)',
   'linear-gradient(135deg, #faf7f3 0%, #efe7dc 100%)',
   'linear-gradient(135deg, #f6f2ea 0%, #e7dfd2 100%)',
 ] as const;
 
-const coverAccents = ['#4d4c48', '#5e5d59', '#7a5a4d', '#81644c', '#6e5b7e', '#4a6a5a'] as const;
+const coverAccents = ['#334155', '#475569', '#7a5a4d', '#81644c', '#6e5b7e', '#4a6a5a'] as const;
 const PAGE_SIZE = 9;
 
 const scSecondaryBtn =
-  'inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-45 disabled:pointer-events-none';
+  'inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-45 disabled:pointer-events-none';
 
 // ─── Animated progress bar ────────────────────────────────────────────────────
 const AnimatedProgressBar: React.FC<{ value: number }> = ({ value }) => {
@@ -53,14 +53,14 @@ const AnimatedProgressBar: React.FC<{ value: number }> = ({ value }) => {
     return () => clearTimeout(t);
   }, [value]);
   return (
-    <div style={{ height: 6, background: '#e8e6dc', borderRadius: 999, overflow: 'hidden' }}>
+    <div style={{ height: 6, background: '#e2e8f0', borderRadius: 999, overflow: 'hidden' }}>
       <div
         style={{
           transform: `scaleX(${width / 100})`,
           transformOrigin: 'left',
           width: '100%',
           height: '100%',
-          background: 'linear-gradient(90deg, #c96442, #d97757)',
+          background: 'linear-gradient(90deg, #0ea5e9, #14b8a6)',
           borderRadius: 999,
           transition: 'transform 0.7s cubic-bezier(0.22, 1, 0.36, 1)',
         }}
@@ -166,16 +166,16 @@ const EnrollmentCard: React.FC<{
               display: 'flex',
               justifyContent: 'space-between',
               fontSize: '0.81rem',
-              color: '#5e5d59',
+              color: '#475569',
               marginBottom: '0.4rem',
               fontWeight: 600,
             }}
           >
             <span>Tiến độ học</span>
-            <strong style={{ color: '#c96442' }}>{completionRate.toFixed(0)}%</strong>
+            <strong style={{ color: '#0ea5e9' }}>{completionRate.toFixed(0)}%</strong>
           </div>
           <AnimatedProgressBar value={completionRate} />
-          <p style={{ margin: '0.3rem 0 0', fontSize: '0.75rem', color: '#87867f' }}>
+          <p style={{ margin: '0.3rem 0 0', fontSize: '0.75rem', color: '#64748b' }}>
             {enrollment.completedLessons ?? 0}/{enrollment.totalLessons ?? 0} bài hoàn thành
           </p>
         </div>
@@ -509,21 +509,21 @@ const StudentCourses: React.FC = () => {
               {/* ── Header ── */}
               <div className="flex items-center justify-between gap-4 flex-wrap">
                 <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] flex-shrink-0">
                     <BookOpen className="w-5 h-5" aria-hidden />
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2.5 flex-wrap">
-                      <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                      <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                         {UI_TEXT.MY_COURSES}
                       </h1>
                       {!loadingEnrollments && (
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                           {enrollments.length}
                         </span>
                       )}
                     </div>
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                       Nơi hiển thị danh sách khóa học
                     </p>
                   </div>
@@ -559,7 +559,7 @@ const StudentCourses: React.FC = () => {
                 ).map(({ label, value, Icon, bg, color }) => (
                   <div
                     key={label}
-                    className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3"
+                    className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3"
                   >
                     <div
                       className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center flex-shrink-0`}
@@ -567,10 +567,10 @@ const StudentCourses: React.FC = () => {
                       <Icon className={`w-4 h-4 ${color}`} aria-hidden />
                     </div>
                     <div className="min-w-0">
-                      <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none tabular-nums">
+                      <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none tabular-nums">
                         {value}
                       </p>
-                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5 truncate">
+                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5 truncate">
                         {label}
                       </p>
                     </div>
@@ -581,7 +581,7 @@ const StudentCourses: React.FC = () => {
               {/* ── Toolbar ── */}
               <div className="flex flex-col gap-3">
                 <div className="flex flex-wrap items-center gap-3">
-                  <div className="flex flex-wrap items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl flex-shrink-0">
+                  <div className="flex flex-wrap items-center gap-1 p-1 bg-[#f8fafc] rounded-xl flex-shrink-0">
                     <button
                       type="button"
                       onClick={() => {
@@ -590,8 +590,8 @@ const StudentCourses: React.FC = () => {
                       }}
                       className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                         activeTab === 'enrolled'
-                          ? 'bg-white text-[#141413] shadow-sm'
-                          : 'text-[#87867F] hover:text-[#5E5D59]'
+                          ? 'bg-white text-[#0f172a] shadow-sm'
+                          : 'text-[#64748b] hover:text-[#475569]'
                       }`}
                     >
                       <BookOpen className="w-3.5 h-3.5" strokeWidth={2} aria-hidden />
@@ -605,8 +605,8 @@ const StudentCourses: React.FC = () => {
                       }}
                       className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${
                         activeTab === 'browse'
-                          ? 'bg-white text-[#141413] shadow-sm'
-                          : 'text-[#87867F] hover:text-[#5E5D59]'
+                          ? 'bg-white text-[#0f172a] shadow-sm'
+                          : 'text-[#64748b] hover:text-[#475569]'
                       }`}
                     >
                       <Search className="w-3.5 h-3.5" strokeWidth={2} aria-hidden />
@@ -643,18 +643,18 @@ const StudentCourses: React.FC = () => {
 
               {/* ── Summary bar ── */}
               {activeTab === 'enrolled' && !loadingEnrollments && enrollments.length > 0 && (
-                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 rounded-xl bg-[#FAF9F5] border border-[#E8E6DC]">
-                  <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] uppercase tracking-wide">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 rounded-xl bg-[#ffffff] border border-[#e2e8f0]">
+                  <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] uppercase tracking-wide">
                     Hiển thị
                   </span>
-                  <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] tabular-nums">
+                  <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] tabular-nums">
                     {paginatedEnrollments.length} / {filteredEnrollments.length}
                   </strong>
-                  <div className="w-px h-4 bg-[#E8E6DC] hidden sm:block" aria-hidden />
-                  <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                  <div className="w-px h-4 bg-[#e2e8f0] hidden sm:block" aria-hidden />
+                  <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
                     Đang học{' '}
-                    <strong className="text-[#141413] font-semibold tabular-nums">
+                    <strong className="text-[#0f172a] font-semibold tabular-nums">
                       {stats.active}
                     </strong>
                   </span>
@@ -670,7 +670,7 @@ const StudentCourses: React.FC = () => {
                   {[1, 2, 3, 4, 5, 6].map((i) => (
                     <div
                       key={i}
-                      className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-52 animate-pulse"
+                      className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-52 animate-pulse"
                     />
                   ))}
                 </div>
@@ -697,10 +697,10 @@ const StudentCourses: React.FC = () => {
                     </div>
                   ) : (
                     <div className="flex flex-col items-center justify-center py-16 gap-2 px-4">
-                      <div className="w-12 h-12 rounded-2xl bg-[#F5F4ED] flex items-center justify-center text-[#87867F]">
+                      <div className="w-12 h-12 rounded-2xl bg-[#f8fafc] flex items-center justify-center text-[#64748b]">
                         <BookOpen className="w-6 h-6 opacity-60" aria-hidden />
                       </div>
-                      <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center max-w-md">
+                      <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center max-w-md">
                         {filterGradeId || filterSubjectId
                           ? 'Không có khóa đã đăng ký nào khớp với lớp/môn đã chọn.'
                           : 'Bạn chưa đăng ký khóa học nào'}
@@ -721,8 +721,8 @@ const StudentCourses: React.FC = () => {
                     >
                       <ArrowLeft className="w-3.5 h-3.5" /> Trước
                     </button>
-                    <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] tabular-nums">
-                      Trang <strong className="text-[#141413]">{safeEnrolledPage}</strong> /{' '}
+                    <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569] tabular-nums">
+                      Trang <strong className="text-[#0f172a]">{safeEnrolledPage}</strong> /{' '}
                       {enrolledTotalPages}
                     </span>
                     <button
@@ -756,10 +756,10 @@ const StudentCourses: React.FC = () => {
                     </div>
                   ) : (
                     <div className="flex flex-col items-center justify-center py-16 gap-2 px-4">
-                      <div className="w-12 h-12 rounded-2xl bg-[#F5F4ED] flex items-center justify-center text-[#87867F]">
+                      <div className="w-12 h-12 rounded-2xl bg-[#f8fafc] flex items-center justify-center text-[#64748b]">
                         <Search className="w-6 h-6 opacity-60" aria-hidden />
                       </div>
-                      <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center max-w-md">
+                      <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center max-w-md">
                         {curriculumFilterActive
                           ? 'Không có khóa học nào khớp với bộ lọc đã chọn.'
                           : 'Không tìm thấy khóa học nào'}
@@ -778,8 +778,8 @@ const StudentCourses: React.FC = () => {
                   >
                     <ArrowLeft className="w-3.5 h-3.5" /> Trước
                   </button>
-                  <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] tabular-nums">
-                    Trang <strong className="text-[#141413]">{safeBrowsePage}</strong> /{' '}
+                  <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569] tabular-nums">
+                    Trang <strong className="text-[#0f172a]">{safeBrowsePage}</strong> /{' '}
                     {browseTotalPages}
                   </span>
                   <button

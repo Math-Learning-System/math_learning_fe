@@ -34,7 +34,7 @@
 /* ── Card ─────────────────────────────────────────────────────────────── */
 .tcp-card {
   background: #fff;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   border-radius: 16px;
   padding: 1.25rem 1.5rem;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 4px 24px;
@@ -43,8 +43,8 @@
   gap: 1rem;
 }
 .tcp-card--active {
-  background: #faf9f5;
-  border-color: #f0eee6;
+  background: #ffffff;
+  border-color: #e2e8f0;
 }
 .tcp-card--full { flex: 1; }
 .tcp-card__label {
@@ -53,7 +53,7 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #5e5d59;
+  color: #475569;
 }
 
 /* ── Active rate display ──────────────────────────────────────────────── */
@@ -69,41 +69,41 @@
   flex-direction: column;
   align-items: center;
   gap: 0.2rem;
-  background: #faf9f5;
+  background: #ffffff;
   border-radius: 14px;
   padding: 1rem 1.5rem;
   border: 2px solid transparent;
 }
 .tcp-rate-ring--teacher {
-  border-color: #c96442;
+  border-color: #0ea5e9;
   background:
-    linear-gradient(#faf9f5, #faf9f5) padding-box,
-    linear-gradient(135deg, #c96442, #e8834e) border-box;
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, #0ea5e9, #e8834e) border-box;
 }
 .tcp-rate-ring--platform {
-  border-color: #87867f;
+  border-color: #64748b;
   background:
-    linear-gradient(#faf9f5, #faf9f5) padding-box,
-    linear-gradient(135deg, #87867f, #b0aea5) border-box;
+    linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(135deg, #64748b, #94a3b8) border-box;
 }
 .tcp-rate-ring__value {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.75rem;
   font-weight: 600;
-  color: #141413;
+  color: #0f172a;
   line-height: 1;
 }
 .tcp-rate-ring__label {
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 12px;
-  color: #87867f;
+  color: #64748b;
   font-weight: 500;
 }
 .tcp-rate-divider {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.35rem;
   font-weight: 600;
-  color: #b0aea5;
+  color: #94a3b8;
 }
 .tcp-rate-note {
   display: flex;
@@ -111,7 +111,7 @@
   gap: 0.35rem;
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
-  color: #87867f;
+  color: #64748b;
   margin: 0;
   text-align: center;
   justify-content: center;
@@ -143,14 +143,14 @@
   justify-content: space-between;
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
-  color: #5e5d59;
+  color: #475569;
 }
 .tcp-slider-labels strong {
-  color: #141413;
+  color: #0f172a;
 }
 .tcp-slider {
   width: 100%;
-  accent-color: #c96442;
+  accent-color: #0ea5e9;
   cursor: pointer;
   height: 6px;
 }
@@ -160,7 +160,7 @@
   justify-content: space-between;
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 11px;
-  color: #b0aea5;
+  color: #94a3b8;
 }
 
 /* ── Preview pill ────────────────────────────────────────────────────── */
@@ -169,8 +169,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background: #faf9f5;
-  border: 1px solid #e8e6dc;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 999px;
   padding: 0.55rem 1.15rem;
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
@@ -178,15 +178,15 @@
   font-weight: 600;
 }
 .tcp-preview-pill__teacher {
-  color: #c96442;
+  color: #0ea5e9;
 }
 .tcp-preview-pill__divider {
-  color: #87867f;
+  color: #64748b;
   font-weight: 500;
   font-size: 12px;
 }
 .tcp-preview-pill__platform {
-  color: #5e5d59;
+  color: #475569;
 }
 
 /* ── Feedback ─────────────────────────────────────────────────────────── */
@@ -211,10 +211,10 @@
   gap: 0.5rem;
   width: 100%;
   padding: 0.625rem 1rem;
-  background: #c96442;
+  background: #0ea5e9;
   border: none;
   border-radius: 12px;
-  color: #faf9f5;
+  color: #ffffff;
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
   font-weight: 600;
@@ -236,7 +236,7 @@
 .tcp-disclaimer {
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 12px;
-  color: #87867f;
+  color: #64748b;
   margin: 0;
   line-height: 1.55;
   text-align: center;
@@ -250,8 +250,8 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 1rem;
-  background: #faf9f5;
-  border: 1px solid #f0eee6;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
   transition:
     background 0.15s ease,
@@ -270,12 +270,12 @@
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
   font-weight: 600;
-  color: #141413;
+  color: #0f172a;
 }
 .tcp-history-date {
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 12px;
-  color: #b0aea5;
+  color: #94a3b8;
 }
 .tcp-history-item__right { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem; }
 
@@ -296,7 +296,7 @@
 .tcp-admin-note {
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 11px;
-  color: #87867f;
+  color: #64748b;
   font-style: italic;
   max-width: min(200px, 40vw);
   text-align: right;
@@ -308,7 +308,7 @@
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  color: #b0aea5;
+  color: #94a3b8;
 }
 .tcp-spin { animation: tcp-spin 0.9s linear infinite; }
 @keyframes tcp-spin { to { transform: rotate(360deg); } }
@@ -320,7 +320,7 @@
   gap: 0.65rem;
   padding: 2.5rem 1rem;
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
-  color: #87867f;
+  color: #64748b;
   font-size: 14px;
 }
 
@@ -332,7 +332,7 @@
   gap: 0.65rem;
   font-family: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
-  color: #5e5d59;
+  color: #475569;
   padding-top: 0.5rem;
 }
 .tcp-page-btn {
@@ -342,9 +342,9 @@
   width: 32px;
   height: 32px;
   border-radius: 10px;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   background: #fff;
-  color: #141413;
+  color: #0f172a;
   cursor: pointer;
   transition: all 0.15s ease;
 }
@@ -353,7 +353,7 @@
   cursor: not-allowed;
 }
 .tcp-page-btn:not(:disabled):hover {
-  border-color: #c96442;
-  color: #c96442;
-  background: #faf9f5;
+  border-color: #0ea5e9;
+  color: #0ea5e9;
+  background: #ffffff;
 }

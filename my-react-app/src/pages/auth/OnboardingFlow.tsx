@@ -423,7 +423,7 @@ const OnboardingFlow: React.FC = () => {
                 e.preventDefault();
                 setShowPrivacyModal(true);
               }}
-              className="text-[#C96442] underline underline-offset-2 hover:text-[#A8532E] transition-colors duration-150 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:rounded-sm"
+              className="text-[#0ea5e9] underline underline-offset-2 hover:text-[#A8532E] transition-colors duration-150 font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:rounded-sm"
             >
               chính sách bảo mật
             </button>{' '}

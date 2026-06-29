@@ -64,25 +64,25 @@ const typeVisual: Record<
 > = {
   QUIZ: {
     Icon: ListChecks,
-    gradient: 'from-[#eef2ff] via-[#faf9f5] to-[#ede9fe]',
+    gradient: 'from-[#eef2ff] via-[#ffffff] to-[#ede9fe]',
     orb: 'bg-indigo-500/30',
     chip: 'text-indigo-800 bg-indigo-50/90 border-indigo-200/70',
   },
   TEST: {
     Icon: ClipboardList,
-    gradient: 'from-[#eff6ff] via-[#faf9f5] to-[#e0f2fe]',
+    gradient: 'from-[#eff6ff] via-[#ffffff] to-[#e0f2fe]',
     orb: 'bg-sky-500/30',
     chip: 'text-sky-900 bg-sky-50/90 border-sky-200/70',
   },
   EXAM: {
     Icon: GraduationCap,
-    gradient: 'from-[#fff1f2] via-[#faf9f5] to-[#ffedd5]',
+    gradient: 'from-[#fff1f2] via-[#ffffff] to-[#ffedd5]',
     orb: 'bg-rose-500/25',
     chip: 'text-rose-900 bg-rose-50/90 border-rose-200/70',
   },
   HOMEWORK: {
     Icon: BookMarked,
-    gradient: 'from-[#ecfdf5] via-[#faf9f5] to-[#d1fae5]',
+    gradient: 'from-[#ecfdf5] via-[#ffffff] to-[#d1fae5]',
     orb: 'bg-emerald-500/25',
     chip: 'text-emerald-900 bg-emerald-50/90 border-emerald-200/70',
   },
@@ -118,10 +118,10 @@ function StatBentoCard({
 }) {
   return (
     <div
-      className={`group relative overflow-hidden rounded-2xl border border-[#F0EEE6] bg-white p-5 shadow-[0_2px_20px_rgba(20,20,19,0.04)] transition-all duration-300 hover:border-[#E0DDD4] hover:shadow-[0_12px_40px_rgba(20,20,19,0.08)] ${className}`}
+      className={`group relative overflow-hidden rounded-2xl border border-[#e2e8f0] bg-white p-5 shadow-[0_2px_20px_rgba(20,20,19,0.04)] transition-all duration-300 hover:border-[#E0DDD4] hover:shadow-[0_12px_40px_rgba(20,20,19,0.08)] ${className}`}
     >
       <div
-        className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100 bg-[#C96442]/10"
+        className="pointer-events-none absolute -right-6 -top-6 h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100 bg-[#0ea5e9]/10"
         aria-hidden
       />
       <div className="relative flex flex-col gap-3">
@@ -131,11 +131,11 @@ function StatBentoCard({
           >
             <Icon className="h-5 w-5" aria-hidden />
           </div>
-          <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-[0.12em] text-[#87867F]">
+          <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-[0.12em] text-[#64748b]">
             {label}
           </span>
         </div>
-        <div className="font-[Be_Vietnam_Pro] text-[15px] font-semibold leading-snug text-[#141413]">
+        <div className="font-[Be_Vietnam_Pro] text-[15px] font-semibold leading-snug text-[#0f172a]">
           {children}
         </div>
       </div>
@@ -152,14 +152,14 @@ function DetailHero({
 }) {
   const tv = typeVisual[assessment.assessmentType] ?? typeVisual.QUIZ;
   const sm = statusMeta[assessment.studentStatus] ?? {
-    pill: 'bg-white/70 text-[#5E5D59] border-[#E8E6DC] backdrop-blur-sm',
-    glow: 'bg-[#87867F]/20',
+    pill: 'bg-white/70 text-[#475569] border-[#e2e8f0] backdrop-blur-sm',
+    glow: 'bg-[#64748b]/20',
     labelVi: '',
   };
   const TypeIcon = tv.Icon;
 
   return (
-    <section className="relative overflow-hidden rounded-3xl border border-[#E8E6DC] shadow-[0_24px_80px_-16px_rgba(20,20,19,0.14)]">
+    <section className="relative overflow-hidden rounded-3xl border border-[#e2e8f0] shadow-[0_24px_80px_-16px_rgba(20,20,19,0.14)]">
       <div
         className={`absolute inset-0 bg-gradient-to-br ${tv.gradient}`}
         aria-hidden
@@ -177,7 +177,7 @@ function DetailHero({
           <button
             type="button"
             onClick={onBack}
-            className="inline-flex w-fit items-center gap-2 rounded-xl border border-[#E8E6DC]/90 bg-white/90 px-3.5 py-2 text-[13px] font-medium text-[#5E5D59] shadow-sm backdrop-blur-md transition-all hover:border-[#d1cfc5] hover:bg-white hover:text-[#141413] active:scale-[0.98] font-[Be_Vietnam_Pro]"
+            className="inline-flex w-fit items-center gap-2 rounded-xl border border-[#e2e8f0]/90 bg-white/90 px-3.5 py-2 text-[13px] font-medium text-[#475569] shadow-sm backdrop-blur-md transition-all hover:border-[#cbd5e1] hover:bg-white hover:text-[#0f172a] active:scale-[0.98] font-[Be_Vietnam_Pro]"
           >
             <ArrowLeft className="h-3.5 w-3.5" aria-hidden />
             Danh sách {UI_TEXT.QUIZ.toLowerCase()}
@@ -200,34 +200,34 @@ function DetailHero({
       </div>
 
       <div className="relative px-6 pb-8 pt-6 sm:px-10 sm:pb-10 sm:pt-8">
-        <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#87867F]">
+        <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#64748b]">
           Chi tiết {UI_TEXT.QUIZ.toLowerCase()}
         </p>
         <div className="mt-3 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="min-w-0 flex-1">
-            <h1 className="font-[Playfair_Display] text-[clamp(1.75rem,4vw,2.375rem)] font-medium leading-[1.15] tracking-[-0.02em] text-[#141413]">
+            <h1 className="font-[Playfair_Display] text-[clamp(1.75rem,4vw,2.375rem)] font-medium leading-[1.15] tracking-[-0.02em] text-[#0f172a]">
               {assessment.title}
             </h1>
             {sm.labelVi ? (
-              <p className="mt-3 max-w-2xl font-[Be_Vietnam_Pro] text-[14px] leading-relaxed text-[#5E5D59]">
+              <p className="mt-3 max-w-2xl font-[Be_Vietnam_Pro] text-[14px] leading-relaxed text-[#475569]">
                 {sm.labelVi}. Đọc kỹ thông tin dưới đây trước khi{' '}
                 {assessment.studentStatus === 'COMPLETED' ? 'xem lại hoặc làm lại' : 'bắt đầu'}.
               </p>
             ) : (
-              <p className="mt-3 max-w-2xl font-[Be_Vietnam_Pro] text-[14px] leading-relaxed text-[#5E5D59]">
+              <p className="mt-3 max-w-2xl font-[Be_Vietnam_Pro] text-[14px] leading-relaxed text-[#475569]">
                 Chuẩn bị tốt giúp bạn làm bài tự tin và chính xác hơn.
               </p>
             )}
           </div>
           <div className="flex shrink-0 items-center gap-4 rounded-2xl border border-white/60 bg-white/50 px-5 py-4 shadow-inner backdrop-blur-md">
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#141413] text-[#FAF9F5] shadow-lg shadow-black/15">
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0f172a] text-[#ffffff] shadow-lg shadow-black/15">
               <TypeIcon className="h-7 w-7" strokeWidth={1.25} aria-hidden />
             </div>
             <div>
-              <p className="font-[Playfair_Display] text-[28px] font-medium leading-none tabular-nums text-[#141413]">
+              <p className="font-[Playfair_Display] text-[28px] font-medium leading-none tabular-nums text-[#0f172a]">
                 {assessment.totalQuestions}
               </p>
-              <p className="mt-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">câu hỏi</p>
+              <p className="mt-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">câu hỏi</p>
             </div>
           </div>
         </div>
@@ -250,23 +250,23 @@ export default function AssessmentDetail() {
     return (
       <Shell>
         <div className="space-y-8">
-          <div className="relative h-[280px] overflow-hidden rounded-3xl border border-[#F0EEE6] bg-[#FAF9F5]">
-            <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-[#f5f4ed] to-[#ebe8e0]" />
+          <div className="relative h-[280px] overflow-hidden rounded-3xl border border-[#e2e8f0] bg-[#ffffff]">
+            <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-[#f8fafc] to-[#ebe8e0]" />
             <div className="relative space-y-6 p-8">
-              <div className="h-9 w-52 rounded-xl bg-[#E8E6DC]/80" />
-              <div className="h-4 w-36 rounded-lg bg-[#E8E6DC]/60" />
-              <div className="h-12 max-w-xl rounded-xl bg-[#E8E6DC]/70" />
+              <div className="h-9 w-52 rounded-xl bg-[#e2e8f0]/80" />
+              <div className="h-4 w-36 rounded-lg bg-[#e2e8f0]/60" />
+              <div className="h-12 max-w-xl rounded-xl bg-[#e2e8f0]/70" />
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {[1, 2, 3, 4, 5].map((k) => (
               <div
                 key={k}
-                className="h-[112px] animate-pulse rounded-2xl border border-[#F0EEE6] bg-white"
+                className="h-[112px] animate-pulse rounded-2xl border border-[#e2e8f0] bg-white"
               />
             ))}
           </div>
-          <div className="h-28 animate-pulse rounded-3xl bg-[#F5F4ED]" />
+          <div className="h-28 animate-pulse rounded-3xl bg-[#f8fafc]" />
         </div>
       </Shell>
     );
@@ -275,20 +275,20 @@ export default function AssessmentDetail() {
   if (isError || !assessment) {
     return (
       <Shell>
-        <div className="flex flex-col items-center justify-center rounded-3xl border border-[#F0EEE6] bg-[#FAF9F5] px-6 py-20 text-center shadow-inner">
+        <div className="flex flex-col items-center justify-center rounded-3xl border border-[#e2e8f0] bg-[#ffffff] px-6 py-20 text-center shadow-inner">
           <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-[0_8px_30px_rgba(181,51,51,0.12)] ring-1 ring-red-100">
             <AlertCircle className="h-8 w-8 text-red-500" aria-hidden />
           </div>
-          <p className="mt-6 max-w-md font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+          <p className="mt-6 max-w-md font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
             Không tải được {UI_TEXT.QUIZ.toLowerCase()}
           </p>
-          <p className="mt-2 font-[Be_Vietnam_Pro] text-[14px] text-[#87867F]">
+          <p className="mt-2 font-[Be_Vietnam_Pro] text-[14px] text-[#64748b]">
             Vui lòng thử lại hoặc quay về danh sách.
           </p>
           <button
             type="button"
             onClick={goList}
-            className="mt-8 inline-flex items-center gap-2 rounded-xl border border-[#E8E6DC] bg-white px-5 py-3 text-[13px] font-semibold text-[#141413] shadow-sm transition-all hover:bg-[#F5F4ED] active:scale-[0.98] font-[Be_Vietnam_Pro]"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl border border-[#e2e8f0] bg-white px-5 py-3 text-[13px] font-semibold text-[#0f172a] shadow-sm transition-all hover:bg-[#f8fafc] active:scale-[0.98] font-[Be_Vietnam_Pro]"
           >
             <ArrowLeft className="h-3.5 w-3.5" aria-hidden />
             Quay lại danh sách
@@ -312,17 +312,17 @@ export default function AssessmentDetail() {
           <div>
             <h2
               id="detail-metrics-heading"
-              className="font-[Playfair_Display] text-[20px] font-medium text-[#141413]"
+              className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a]"
             >
               Thông tin làm bài
             </h2>
-            <p className="mt-1 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+            <p className="mt-1 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
               Thời lượng, điểm số và điều kiện nộp bài
             </p>
           </div>
-          <div className="hidden items-center gap-2 rounded-full border border-[#E8E6DC] bg-[#FAF9F5] px-3 py-1.5 sm:flex">
-            <Sparkles className="h-3.5 w-3.5 text-[#C96442]" aria-hidden />
-            <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#5E5D59]">
+          <div className="hidden items-center gap-2 rounded-full border border-[#e2e8f0] bg-[#ffffff] px-3 py-1.5 sm:flex">
+            <Sparkles className="h-3.5 w-3.5 text-[#0ea5e9]" aria-hidden />
+            <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#475569]">
               Math Master
             </span>
           </div>
@@ -338,7 +338,7 @@ export default function AssessmentDetail() {
             <span className="font-[Playfair_Display] text-[26px] font-medium tabular-nums">
               {assessment.totalQuestions}
             </span>{' '}
-            <span className="font-normal text-[#87867F]">câu</span>
+            <span className="font-normal text-[#64748b]">câu</span>
           </StatBentoCard>
 
           {assessment.timeLimitMinutes ? (
@@ -351,16 +351,16 @@ export default function AssessmentDetail() {
               <span className="font-[Playfair_Display] text-[26px] font-medium tabular-nums">
                 {assessment.timeLimitMinutes}
               </span>{' '}
-              <span className="font-normal text-[#87867F]">phút</span>
+              <span className="font-normal text-[#64748b]">phút</span>
             </StatBentoCard>
           ) : (
             <StatBentoCard
               icon={Clock}
-              iconBg="bg-[#F5F4ED] text-[#87867F]"
+              iconBg="bg-[#f8fafc] text-[#64748b]"
               label="Thời gian"
               className="lg:col-span-2"
             >
-              <span className="text-[#87867F]">Không giới hạn</span>
+              <span className="text-[#64748b]">Không giới hạn</span>
             </StatBentoCard>
           )}
 
@@ -385,7 +385,7 @@ export default function AssessmentDetail() {
               <span className="font-[Playfair_Display] text-[26px] font-medium text-emerald-800 tabular-nums">
                 ≥ {assessment.passingScore}
               </span>{' '}
-              <span className="text-[13px] font-medium text-[#87867F]">điểm</span>
+              <span className="text-[13px] font-medium text-[#64748b]">điểm</span>
             </StatBentoCard>
           ) : null}
 
@@ -422,7 +422,7 @@ export default function AssessmentDetail() {
               <span className="font-[Playfair_Display] text-[32px] font-bold text-emerald-900">
                 {assessment.lastScore}
               </span>
-              <span className="text-[#87867F]"> / {assessment.totalPoints} điểm</span>
+              <span className="text-[#64748b]"> / {assessment.totalPoints} điểm</span>
             </StatBentoCard>
           )}
 
@@ -434,7 +434,7 @@ export default function AssessmentDetail() {
               className="lg:col-span-6"
             >
               Đã dùng{' '}
-              <span className="tabular-nums font-semibold text-[#141413]">{attemptCount}</span>
+              <span className="tabular-nums font-semibold text-[#0f172a]">{attemptCount}</span>
               {assessment.maxAttempts != null
                 ? ` / ${assessment.maxAttempts} lượt tối đa`
                 : ' lượt'}
@@ -446,17 +446,17 @@ export default function AssessmentDetail() {
       {/* Instructions */}
       {assessment.description ? (
         <section
-          className="relative overflow-hidden rounded-3xl border border-[#E8E6DC] bg-white shadow-[0_16px_48px_-12px_rgba(20,20,19,0.08)]"
+          className="relative overflow-hidden rounded-3xl border border-[#e2e8f0] bg-white shadow-[0_16px_48px_-12px_rgba(20,20,19,0.08)]"
           aria-labelledby="instructions-heading"
         >
           <div
-            className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[#C96442] to-[#141413]"
+            className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-[#0ea5e9] to-[#0f172a]"
             aria-hidden
           />
           <div className="px-6 py-7 sm:px-10 sm:py-9 pl-7 sm:pl-11">
             <h2
               id="instructions-heading"
-              className="font-[Playfair_Display] text-[18px] font-medium text-[#141413]"
+              className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a]"
             >
               Hướng dẫn & lưu ý
             </h2>
@@ -487,9 +487,9 @@ export default function AssessmentDetail() {
       ) : null}
 
       {/* CTA */}
-      <section className="relative overflow-hidden rounded-3xl border border-[#E8E6DC] bg-[#141413] text-[#FAF9F5] shadow-[0_24px_80px_-20px_rgba(20,20,19,0.45)]">
+      <section className="relative overflow-hidden rounded-3xl border border-[#e2e8f0] bg-[#0f172a] text-[#ffffff] shadow-[0_24px_80px_-20px_rgba(20,20,19,0.45)]">
         <div
-          className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-[#C96442]/35 blur-3xl"
+          className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-[#0ea5e9]/35 blur-3xl"
           aria-hidden
         />
         <div
@@ -498,21 +498,21 @@ export default function AssessmentDetail() {
         />
         <div className="relative flex flex-col gap-8 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-10">
           <div className="max-w-lg">
-            <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#B0AEA5]">
+            <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#94a3b8]">
               Sẵn sàng?
             </p>
-            <p className="mt-3 font-[Playfair_Display] text-[clamp(1.375rem,3vw,1.75rem)] font-medium leading-tight text-[#FAF9F5]">
+            <p className="mt-3 font-[Playfair_Display] text-[clamp(1.375rem,3vw,1.75rem)] font-medium leading-tight text-[#ffffff]">
               {assessment.canStart
                 ? 'Bắt đầu làm bài khi bạn đã đọc kỹ hướng dẫn.'
                 : 'Kiểm tra lại điều kiện để được phép làm bài.'}
             </p>
             <ul className="mt-5 space-y-2 font-[Be_Vietnam_Pro] text-[13px] text-[#D4D2CC]">
               <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#C96442]" aria-hidden />
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0ea5e9]" aria-hidden />
                 Kết nối mạng ổn định; tránh thoát giữa chừng khi đang làm.
               </li>
               <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#C96442]" aria-hidden />
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#0ea5e9]" aria-hidden />
                 Bạn có thể lưu nháp và tiếp tục nếu giáo viên cho phép.
               </li>
             </ul>
@@ -522,7 +522,7 @@ export default function AssessmentDetail() {
               type="button"
               disabled={!assessment.canStart}
               onClick={() => navigate(`/student/assessments/${assessmentId}/take`)}
-              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#C96442] px-8 py-4 text-[14px] font-semibold text-[#FAF9F5] shadow-[0_12px_36px_-8px_rgba(201,100,66,0.55)] transition-all hover:brightness-110 active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-[#3f3f3c] disabled:text-[#9c9a94] disabled:shadow-none font-[Be_Vietnam_Pro]"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-[#0ea5e9] px-8 py-4 text-[14px] font-semibold text-[#ffffff] shadow-[0_12px_36px_-8px_rgba(14,165,233,0.55)] transition-all hover:brightness-110 active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-[#3f3f3c] disabled:text-[#9c9a94] disabled:shadow-none font-[Be_Vietnam_Pro]"
             >
               <Play className="h-5 w-5 opacity-95" aria-hidden />
               {attemptCount > 0 ? 'Làm lại bài' : 'Bắt đầu làm bài'}

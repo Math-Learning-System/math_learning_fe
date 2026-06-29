@@ -153,7 +153,7 @@ const CourseStudentsTab: React.FC<CourseStudentsTabProps> = ({ courseId }) => {
                               style={{
                                 flex: 1,
                                 height: 6,
-                                background: '#e8e6dc',
+                                background: '#e2e8f0',
                                 borderRadius: 999,
                                 overflow: 'hidden',
                                 minWidth: 80,
@@ -167,7 +167,7 @@ const CourseStudentsTab: React.FC<CourseStudentsTabProps> = ({ courseId }) => {
                                 height: '100%',
                                 background: isCompleted
                                   ? '#059669'
-                                  : 'linear-gradient(90deg, #c96442, #d97706)',
+                                  : 'linear-gradient(90deg, #0ea5e9, #d97706)',
                                 borderRadius: 999,
                                 transition: 'transform 0.3s ease',
                               }}
@@ -177,7 +177,7 @@ const CourseStudentsTab: React.FC<CourseStudentsTabProps> = ({ courseId }) => {
                             style={{
                               fontSize: '0.82rem',
                               fontWeight: 600,
-                              color: isCompleted ? '#059669' : '#b45435',
+                              color: isCompleted ? '#059669' : '#0284c7',
                               minWidth: 45,
                             }}
                           >

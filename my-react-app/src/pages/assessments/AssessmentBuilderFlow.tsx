@@ -245,7 +245,7 @@ export function AssessmentBuilderFlowBody() {
       subtitle: 'Khung chương · mức độ · số câu',
       Icon: TableProperties,
       iconClass:
-        'bg-[#E8E6DC] text-[#5E5D59] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] ring-1 ring-[#D1CFC5]/70',
+        'bg-[#e2e8f0] text-[#475569] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] ring-1 ring-[#cbd5e1]/70',
     },
     {
       path: '/teacher/question-templates',
@@ -300,7 +300,7 @@ export function AssessmentBuilderFlowBody() {
             key={path}
             type="button"
             onClick={() => navigate(path)}
-            className="group flex w-full items-center gap-4 rounded-2xl border border-[#E8E6DC] bg-[#FAF9F5] p-4 text-left shadow-[rgba(0,0,0,0.03)_0px_2px_12px] transition-all duration-200 hover:border-[#D1CFC5] hover:bg-white hover:shadow-[0px_8px_28px_rgba(0,0,0,0.07)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C96442]/35 focus-visible:ring-offset-2"
+            className="group flex w-full items-center gap-4 rounded-2xl border border-[#e2e8f0] bg-[#ffffff] p-4 text-left shadow-[rgba(0,0,0,0.03)_0px_2px_12px] transition-all duration-200 hover:border-[#cbd5e1] hover:bg-white hover:shadow-[0px_8px_28px_rgba(0,0,0,0.07)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9]/35 focus-visible:ring-offset-2"
           >
             <span
               className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl transition-transform duration-200 group-hover:scale-[1.04] ${iconClass}`}
@@ -308,15 +308,15 @@ export function AssessmentBuilderFlowBody() {
               <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
             </span>
             <span className="min-w-0 flex-1">
-              <span className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413]">
+              <span className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a]">
                 {title}
               </span>
-              <span className="mt-0.5 block font-[Be_Vietnam_Pro] text-[12px] leading-snug text-[#87867F]">
+              <span className="mt-0.5 block font-[Be_Vietnam_Pro] text-[12px] leading-snug text-[#64748b]">
                 {subtitle}
               </span>
             </span>
             <ChevronRight
-              className="h-5 w-5 shrink-0 text-[#B0AEA5] transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-[#5E5D59]"
+              className="h-5 w-5 shrink-0 text-[#94a3b8] transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-[#475569]"
               strokeWidth={2}
               aria-hidden
             />
@@ -324,15 +324,15 @@ export function AssessmentBuilderFlowBody() {
         ))}
       </nav>
 
-      <section className="mb-6 rounded-2xl border border-[#E8E6DC] bg-[#FAF9F5] p-5 shadow-[rgba(0,0,0,0.04)_0px_4px_24px] sm:p-6">
-        <div className="border-b border-[#F0EEE6] pb-4">
-          <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-[0.12em] text-[#87867F]">
+      <section className="mb-6 rounded-2xl border border-[#e2e8f0] bg-[#ffffff] p-5 shadow-[rgba(0,0,0,0.04)_0px_4px_24px] sm:p-6">
+        <div className="border-b border-[#e2e8f0] pb-4">
+          <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-[0.12em] text-[#64748b]">
             Luồng chuẩn
           </p>
-          <h3 className="mt-1 font-[Playfair_Display] text-[19px] font-medium leading-snug text-[#141413]">
+          <h3 className="mt-1 font-[Playfair_Display] text-[19px] font-medium leading-snug text-[#0f172a]">
             Quy trình tạo đề 4 bước
           </h3>
-          <p className="mt-2 max-w-[62ch] font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#87867F]">
+          <p className="mt-2 max-w-[62ch] font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#64748b]">
             Làm lần lượt để dữ liệu khớp ma trận — tránh thiếu câu hoặc sai cấu trúc khi sinh đề.
           </p>
         </div>
@@ -340,16 +340,16 @@ export function AssessmentBuilderFlowBody() {
           {pipelineSteps.map((step) => (
             <li
               key={step.n}
-              className="flex flex-wrap items-center gap-3 rounded-xl border border-[#F0EEE6] bg-white p-3.5 shadow-sm sm:flex-nowrap sm:gap-4"
+              className="flex flex-wrap items-center gap-3 rounded-xl border border-[#e2e8f0] bg-white p-3.5 shadow-sm sm:flex-nowrap sm:gap-4"
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-[#E8E6DC] bg-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-bold text-[#5E5D59]">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-[#e2e8f0] bg-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-bold text-[#475569]">
                 {step.n}
               </span>
               <div className="min-w-0 flex-1">
-                <strong className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413]">
+                <strong className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a]">
                   {step.title}
                 </strong>
-                <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[12px] leading-snug text-[#87867F]">
+                <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[12px] leading-snug text-[#64748b]">
                   {step.hint}
                 </p>
               </div>
@@ -363,19 +363,19 @@ export function AssessmentBuilderFlowBody() {
               </button>
             </li>
           ))}
-          <li className="flex flex-wrap items-center gap-3 rounded-xl border border-[#C96442]/30 bg-gradient-to-br from-[#fffdfb] to-[#FAF9F5] p-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] ring-1 ring-[#C96442]/15 sm:flex-nowrap sm:gap-4">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#141413] font-[Be_Vietnam_Pro] text-[13px] font-bold text-[#FAF9F5] shadow-sm">
+          <li className="flex flex-wrap items-center gap-3 rounded-xl border border-[#0ea5e9]/30 bg-gradient-to-br from-[#fffdfb] to-[#ffffff] p-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9)] ring-1 ring-[#0ea5e9]/15 sm:flex-nowrap sm:gap-4">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#0f172a] font-[Be_Vietnam_Pro] text-[13px] font-bold text-[#ffffff] shadow-sm">
               4
             </span>
             <div className="min-w-0 flex-1">
-              <strong className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413]">
+              <strong className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a]">
                 {UI_TEXT.QUIZ}
               </strong>
-              <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+              <p className="mt-0.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                 Ghép ma trận + ngân hàng và sinh đề nháp ngay bên dưới.
               </p>
             </div>
-            <span className="inline-flex shrink-0 items-center rounded-full bg-[#E8E6DC] px-3 py-1 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#5E5D59]">
+            <span className="inline-flex shrink-0 items-center rounded-full bg-[#e2e8f0] px-3 py-1 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#475569]">
               Bạn đang ở đây
             </span>
           </li>
@@ -384,14 +384,14 @@ export function AssessmentBuilderFlowBody() {
 
       <section className="assessment-builder-flow__orchestration-grid">
         <article className="data-card abf-orchestration-card-modern">
-          <div className="mb-4 border-b border-[#F0EEE6] pb-4">
-            <span className="inline-flex items-center rounded-full bg-[#E8E6DC] px-2.5 py-0.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#5E5D59]">
+          <div className="mb-4 border-b border-[#e2e8f0] pb-4">
+            <span className="inline-flex items-center rounded-full bg-[#e2e8f0] px-2.5 py-0.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#475569]">
               Bước 1
             </span>
-            <h3 className="mt-2 font-[Playfair_Display] text-[17px] font-medium leading-snug text-[#141413]">
+            <h3 className="mt-2 font-[Playfair_Display] text-[17px] font-medium leading-snug text-[#0f172a]">
               Tạo đề thi từ ma trận + ngân hàng
             </h3>
-            <p className="mt-2 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#87867F]">
+            <p className="mt-2 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#64748b]">
               Ma trận quyết định cấu trúc (chương, mức độ, số câu). Chọn một hoặc nhiều ngân hàng để
               hệ thống random câu từ pool gộp theo tiêu chí ma trận.
             </p>
@@ -545,7 +545,7 @@ export function AssessmentBuilderFlowBody() {
             </div>
           )}
 
-          <div className="mt-4 flex flex-wrap items-center gap-3 border-t border-[#F0EEE6] pt-4">
+          <div className="mt-4 flex flex-wrap items-center gap-3 border-t border-[#e2e8f0] pt-4">
             <button
               type="button"
               className="btn btn--feat-indigo inline-flex items-center gap-2"
@@ -581,22 +581,22 @@ export function AssessmentBuilderFlowBody() {
         </article>
 
         <article className="data-card abf-orchestration-card-modern">
-          <div className="mb-4 border-b border-[#F0EEE6] pb-4">
-            <span className="inline-flex items-center rounded-full bg-[#E8E6DC] px-2.5 py-0.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#5E5D59]">
+          <div className="mb-4 border-b border-[#e2e8f0] pb-4">
+            <span className="inline-flex items-center rounded-full bg-[#e2e8f0] px-2.5 py-0.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#475569]">
               Bước 2
             </span>
-            <h3 className="mt-2 font-[Playfair_Display] text-[17px] font-medium leading-snug text-[#141413]">
+            <h3 className="mt-2 font-[Playfair_Display] text-[17px] font-medium leading-snug text-[#0f172a]">
               Rà soát cuối và công khai
             </h3>
-            <p className="mt-2 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#87867F]">
+            <p className="mt-2 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#64748b]">
               Sau khi sinh đề nháp, kiểm tra số câu và điều kiện công khai trước khi học sinh làm
               bài.
             </p>
           </div>
           {!generatedAssessmentId && (
-            <div className="rounded-xl border border-dashed border-[#E8E6DC] bg-[#FAF9F5]/80 px-4 py-8 text-center">
-              <p className="m-0 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#87867F]">
-                Hoàn tất <strong className="text-[#141413]">Bước 1</strong> để mở khối rà soát và
+            <div className="rounded-xl border border-dashed border-[#e2e8f0] bg-[#ffffff]/80 px-4 py-8 text-center">
+              <p className="m-0 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#64748b]">
+                Hoàn tất <strong className="text-[#0f172a]">Bước 1</strong> để mở khối rà soát và
                 công khai.
               </p>
             </div>
@@ -604,41 +604,41 @@ export function AssessmentBuilderFlowBody() {
 
           {generatedAssessmentId && (
             <>
-              <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[#F0EEE6] bg-[#FAF9F5] px-3 py-2.5">
+              <div className="flex flex-wrap items-center gap-2 rounded-xl border border-[#e2e8f0] bg-[#ffffff] px-3 py-2.5">
                 <span
                   className={`badge ${generatedAssessment?.status === 'PUBLISHED' ? 'published' : 'draft'}`}
                 >
                   {generatedAssessment?.status || 'DRAFT'}
                 </span>
-                <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                   Mã đề:{' '}
-                  <code className="rounded-md bg-white px-1.5 py-0.5 font-mono text-[11px] text-[#141413] ring-1 ring-[#E8E6DC]">
+                  <code className="rounded-md bg-white px-1.5 py-0.5 font-mono text-[11px] text-[#0f172a] ring-1 ring-[#e2e8f0]">
                     {generatedAssessmentId}
                   </code>
                 </span>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                <div className="flex flex-col gap-1 rounded-xl border border-[#E8E6DC] bg-white p-4 shadow-[rgba(0,0,0,0.03)_0px_2px_10px]">
-                  <p className="m-0 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F]">
+                <div className="flex flex-col gap-1 rounded-xl border border-[#e2e8f0] bg-white p-4 shadow-[rgba(0,0,0,0.03)_0px_2px_10px]">
+                  <p className="m-0 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                     Tổng câu
                   </p>
-                  <p className="m-0 font-[Playfair_Display] text-[26px] font-medium leading-none text-[#141413]">
+                  <p className="m-0 font-[Playfair_Display] text-[26px] font-medium leading-none text-[#0f172a]">
                     {generatedQuestions.length}
                   </p>
                 </div>
-                <div className="flex flex-col gap-1 rounded-xl border border-[#E8E6DC] bg-white p-4 shadow-[rgba(0,0,0,0.03)_0px_2px_10px]">
-                  <p className="m-0 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F]">
+                <div className="flex flex-col gap-1 rounded-xl border border-[#e2e8f0] bg-white p-4 shadow-[rgba(0,0,0,0.03)_0px_2px_10px]">
+                  <p className="m-0 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                     Tổng điểm
                   </p>
-                  <p className="m-0 font-[Playfair_Display] text-[26px] font-medium leading-none text-[#141413]">
+                  <p className="m-0 font-[Playfair_Display] text-[26px] font-medium leading-none text-[#0f172a]">
                     {generatedAssessment?.totalPoints ?? 0}
                   </p>
                 </div>
               </div>
 
               {generatedAssessment?.generationSummary && (
-                <div className="data-card abf-nested-card min-h-0 rounded-xl border-[#E8E6DC]">
+                <div className="data-card abf-nested-card min-h-0 rounded-xl border-[#e2e8f0]">
                   <h3>Tạo đề thi từ ma trận đã chọn</h3>
                   <p className="muted">
                     totalQuestionsGenerated:{' '}
@@ -655,7 +655,7 @@ export function AssessmentBuilderFlowBody() {
               )}
 
               {generatedAssessment?.lessons && generatedAssessment.lessons.length > 0 && (
-                <div className="data-card abf-nested-card min-h-0 rounded-xl border-[#E8E6DC]">
+                <div className="data-card abf-nested-card min-h-0 rounded-xl border-[#e2e8f0]">
                   <h3>Phạm vi bài học</h3>
                   <p className="muted" style={{ marginBottom: 12 }}>
                     Đề này bao gồm {generatedAssessment.lessons.length} bài học (tự động lấy từ ma

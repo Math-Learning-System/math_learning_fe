@@ -73,8 +73,8 @@ interface Toast {
 
 /** Warm, legible accents (terracotta first per DESIGN.md brand) */
 const PIN_COLORS = [
-  '#c96442',
-  '#d97757',
+  '#0ea5e9',
+  '#14b8a6',
   '#b45309',
   '#0d845d',
   '#1d6fa8',

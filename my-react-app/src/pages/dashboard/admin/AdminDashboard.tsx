@@ -131,7 +131,7 @@ const AdminDashboard: React.FC = () => {
   const getUserStatusClass = (status: RecentUser['status']) => {
     if (status === 'ACTIVE') return 'bg-emerald-50 text-emerald-700';
     if (status === 'BANNED') return 'bg-red-50 text-red-700';
-    return 'bg-[#F5F4ED] text-[#87867F]';
+    return 'bg-[#f8fafc] text-[#64748b]';
   };
 
   const getServiceClass = (status: SystemService['status']) => {
@@ -149,13 +149,13 @@ const AdminDashboard: React.FC = () => {
   const renderUsersTable = () => {
     if (loading)
       return (
-        <div className="flex items-center justify-center py-12 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+        <div className="flex items-center justify-center py-12 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
           Đang tải...
         </div>
       );
     if (recentUsers.length === 0)
       return (
-        <div className="flex items-center justify-center py-12 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+        <div className="flex items-center justify-center py-12 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
           Chưa có người dùng nào.
         </div>
       );
@@ -163,17 +163,17 @@ const AdminDashboard: React.FC = () => {
       <div className="overflow-x-auto">
         <table className="w-full border-collapse">
           <thead>
-            <tr className="border-b border-[#F0EEE6] bg-[#FAF9F5]">
-              <th className="text-left px-5 py-3 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F]">
+            <tr className="border-b border-[#e2e8f0] bg-[#ffffff]">
+              <th className="text-left px-5 py-3 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                 Tên
               </th>
-              <th className="text-left px-5 py-3 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F]">
+              <th className="text-left px-5 py-3 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                 Vai trò
               </th>
-              <th className="text-left px-5 py-3 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F]">
+              <th className="text-left px-5 py-3 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                 Ngày tham gia
               </th>
-              <th className="text-left px-5 py-3 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F]">
+              <th className="text-left px-5 py-3 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                 Trạng thái
               </th>
             </tr>
@@ -182,18 +182,18 @@ const AdminDashboard: React.FC = () => {
             {recentUsers.map((user) => (
               <tr
                 key={user.id}
-                className="border-b border-[#F0EEE6] hover:bg-[#FAF9F5]/80 transition-colors duration-150"
+                className="border-b border-[#e2e8f0] hover:bg-[#ffffff]/80 transition-colors duration-150"
               >
                 <td className="px-5 py-3.5">
                   <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full bg-[#FFF7ED] text-[#C96442] flex items-center justify-center font-[Playfair_Display] font-semibold text-[14px] shrink-0">
+                    <div className="w-9 h-9 rounded-full bg-[#FFF7ED] text-[#0ea5e9] flex items-center justify-center font-[Playfair_Display] font-semibold text-[14px] shrink-0">
                       {(user.fullName ?? user.email).charAt(0).toUpperCase()}
                     </div>
                     <div>
-                      <div className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413]">
+                      <div className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a]">
                         {user.fullName ?? '—'}
                       </div>
-                      <div className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">{user.email}</div>
+                      <div className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">{user.email}</div>
                     </div>
                   </div>
                 </td>
@@ -201,7 +201,7 @@ const AdminDashboard: React.FC = () => {
                   <span
                     className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-[Be_Vietnam_Pro] text-[11px] font-semibold ${
                       (user.roles[0] ?? '').toUpperCase() === 'TEACHER'
-                        ? 'bg-[#FFF7ED] text-[#C96442]'
+                        ? 'bg-[#FFF7ED] text-[#0ea5e9]'
                         : 'bg-emerald-50 text-emerald-700'
                     }`}
                   >
@@ -209,7 +209,7 @@ const AdminDashboard: React.FC = () => {
                     {(user.roles[0] ?? '').toUpperCase() === 'TEACHER' ? 'Giáo viên' : 'Học sinh'}
                   </span>
                 </td>
-                <td className="px-5 py-3.5 font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59]">
+                <td className="px-5 py-3.5 font-[Be_Vietnam_Pro] text-[13px] text-[#475569]">
                   {formatInBusinessTz(user.createdDate, { day: '2-digit', month: '2-digit', year: 'numeric' })}
                 </td>
                 <td className="px-5 py-3.5">
@@ -231,28 +231,28 @@ const AdminDashboard: React.FC = () => {
   const renderSystemStatus = () => {
     if (loading)
       return (
-        <div className="flex items-center justify-center py-12 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+        <div className="flex items-center justify-center py-12 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
           Đang tải...
         </div>
       );
     if (systemServices.length === 0)
       return (
-        <div className="flex items-center justify-center py-12 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+        <div className="flex items-center justify-center py-12 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
           Không có dữ liệu trạng thái.
         </div>
       );
     return (
-      <div className="divide-y divide-[#F0EEE6]">
+      <div className="divide-y divide-[#e2e8f0]">
         {systemServices.map((service) => (
           <div key={service.name} className="flex items-center gap-4 px-5 py-3.5">
             <div
               className={`w-2.5 h-2.5 rounded-full shrink-0 ${getServiceClass(service.status).dot}`}
             />
             <div className="flex-1 min-w-0">
-              <div className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413]">
+              <div className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a]">
                 {service.name}
               </div>
-              <div className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+              <div className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                 {service.description}
               </div>
             </div>
@@ -290,28 +290,28 @@ const AdminDashboard: React.FC = () => {
           {/* Header — aligned with /teacher/mindmaps */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] shrink-0">
                 <LayoutDashboard className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2.5 flex-wrap">
-                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                     Tổng quan hệ thống
                   </h1>
                   {!loading && dashboardStats && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                       {dashboardStats.totalUsers.toLocaleString('vi-VN')} người dùng
                     </span>
                   )}
                 </div>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                   Tổng quan quản trị hệ thống MathMaster
                 </p>
               </div>
             </div>
             <button
               type="button"
-              className="inline-flex shrink-0 items-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C96442] focus-visible:ring-offset-2"
+              className="inline-flex shrink-0 items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9] focus-visible:ring-offset-2"
             >
               <Download className="w-3.5 h-3.5" />
               Xuất báo cáo
@@ -324,19 +324,19 @@ const AdminDashboard: React.FC = () => {
               ? [0, 1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] p-4 flex items-center gap-3 animate-pulse"
+                    className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3 animate-pulse"
                   >
-                    <div className="w-9 h-9 rounded-xl bg-[#E8E6DC]" />
+                    <div className="w-9 h-9 rounded-xl bg-[#e2e8f0]" />
                     <div className="flex-1 space-y-2">
-                      <div className="h-5 w-16 bg-[#E8E6DC] rounded" />
-                      <div className="h-3 w-24 bg-[#F0EEE6] rounded" />
+                      <div className="h-5 w-16 bg-[#e2e8f0] rounded" />
+                      <div className="h-3 w-24 bg-[#e2e8f0] rounded" />
                     </div>
                   </div>
                 ))
               : statsCards.map((stat) => (
                   <div
                     key={stat.label}
-                    className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3 hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-shadow duration-200"
+                    className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3 hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-shadow duration-200"
                   >
                     <div
                       className={`w-9 h-9 rounded-xl ${stat.bg} flex items-center justify-center shrink-0`}
@@ -344,10 +344,10 @@ const AdminDashboard: React.FC = () => {
                       <stat.Icon className={`w-4 h-4 ${stat.color}`} />
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none tabular-nums truncate">
+                      <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none tabular-nums truncate">
                         {stat.value}
                       </p>
-                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5 truncate">
+                      <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5 truncate">
                         {stat.label}
                       </p>
                     </div>
@@ -356,14 +356,14 @@ const AdminDashboard: React.FC = () => {
           </div>
 
           {/* Recent users */}
-          <div className="bg-white rounded-2xl border border-[#E8E6DC] overflow-hidden shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
-            <div className="flex items-center justify-between px-5 py-4 border-b border-[#F0EEE6] bg-[#FAF9F5]">
-              <h2 className="font-[Playfair_Display] text-[16px] font-medium text-[#141413]">
+          <div className="bg-white rounded-2xl border border-[#e2e8f0] overflow-hidden shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-[#e2e8f0] bg-[#ffffff]">
+              <h2 className="font-[Playfair_Display] text-[16px] font-medium text-[#0f172a]">
                 Người dùng mới
               </h2>
               <Link
                 to="/admin/users"
-                className="inline-flex items-center gap-1 font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#C96442] hover:text-[#A95536] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C96442] rounded"
+                className="inline-flex items-center gap-1 font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0ea5e9] hover:text-[#A95536] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9] rounded"
               >
                 Xem tất cả <ChevronRight className="w-3.5 h-3.5" />
               </Link>
@@ -372,18 +372,18 @@ const AdminDashboard: React.FC = () => {
           </div>
 
           {/* Teacher profile review */}
-          <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
+          <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
             <div className="flex items-center gap-4 min-w-0">
-              <div className="w-11 h-11 rounded-xl bg-[#FFF7ED] text-[#C96442] flex items-center justify-center shrink-0">
+              <div className="w-11 h-11 rounded-xl bg-[#FFF7ED] text-[#0ea5e9] flex items-center justify-center shrink-0">
                 <GraduationCap className="w-5 h-5" />
               </div>
               <div>
-                <h2 className="font-[Playfair_Display] text-[16px] font-medium text-[#141413]">
+                <h2 className="font-[Playfair_Display] text-[16px] font-medium text-[#0f172a]">
                   Duyệt Profile Giáo Viên
                 </h2>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                   Có{' '}
-                  <span className="font-semibold text-[#141413]">{pendingProfiles}</span> giáo viên
+                  <span className="font-semibold text-[#0f172a]">{pendingProfiles}</span> giáo viên
                   đang chờ xác minh danh tính và bằng cấp.
                 </p>
               </div>
@@ -397,7 +397,7 @@ const AdminDashboard: React.FC = () => {
               )}
               <Link
                 to="/admin/review-profiles"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] active:scale-[0.98] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C96442] focus-visible:ring-offset-2"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] active:scale-[0.98] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9] focus-visible:ring-offset-2"
               >
                 Duyệt ngay <ArrowRight className="w-3.5 h-3.5" />
               </Link>
@@ -405,9 +405,9 @@ const AdminDashboard: React.FC = () => {
           </div>
 
           {/* System status */}
-          <div className="bg-white rounded-2xl border border-[#E8E6DC] overflow-hidden shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
-            <div className="px-5 py-4 border-b border-[#F0EEE6] bg-[#FAF9F5]">
-              <h2 className="font-[Playfair_Display] text-[16px] font-medium text-[#141413]">
+          <div className="bg-white rounded-2xl border border-[#e2e8f0] overflow-hidden shadow-[rgba(0,0,0,0.05)_0px_4px_24px]">
+            <div className="px-5 py-4 border-b border-[#e2e8f0] bg-[#ffffff]">
+              <h2 className="font-[Playfair_Display] text-[16px] font-medium text-[#0f172a]">
                 Trạng thái hệ thống
               </h2>
             </div>

@@ -365,21 +365,21 @@ const MaterialsGenerator: React.FC = () => {
           {/* ── Page header ── */}
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+              <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                 <Presentation className="w-5 h-5" />
               </div>
               <div>
                 <div className="flex items-center gap-2.5">
-                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                  <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                     Tài liệu
                   </h1>
                   {!loading && (
-                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                    <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                       {stats.total}
                     </span>
                   )}
                 </div>
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                   {stats.slides} slide • {stats.mindmaps} mindmap
                 </p>
               </div>
@@ -423,7 +423,7 @@ const MaterialsGenerator: React.FC = () => {
               ).map(({ label, value, Icon, bg, color }) => (
                 <div
                   key={label}
-                  className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3"
+                  className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3"
                 >
                   <div
                     className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center flex-shrink-0`}
@@ -431,10 +431,10 @@ const MaterialsGenerator: React.FC = () => {
                     <Icon className={color} size={20} />
                   </div>
                   <div className="min-w-0">
-                    <div className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                    <div className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                       {value}
                     </div>
-                    <div className="font-[Be_Vietnam_Pro] text-[11px] text-[#87867F]">{label}</div>
+                    <div className="font-[Be_Vietnam_Pro] text-[11px] text-[#64748b]">{label}</div>
                   </div>
                 </div>
               ))}
@@ -448,26 +448,26 @@ const MaterialsGenerator: React.FC = () => {
               return (
                 <article
                   key={card.title}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <div className="p-6 flex flex-col h-full">
                     <div className="flex items-start justify-between mb-4">
-                      <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+                      <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
                         <Icon size={20} />
                       </div>
                       <span className="inline-flex items-center px-2 py-1 rounded-lg bg-emerald-50 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-emerald-700">
                         Khả dụng
                       </span>
                     </div>
-                    <h3 className="font-[Playfair_Display] text-[18px] font-medium text-[#141413] mb-1">
+                    <h3 className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a] mb-1">
                       {card.title}
                     </h3>
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mb-auto">
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mb-auto">
                       {card.desc}
                     </p>
                     <button
                       type="button"
-                      className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] active:scale-[0.98] transition-all duration-150"
+                      className="mt-4 w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] active:scale-[0.98] transition-all duration-150"
                       onClick={() => navigate(card.route!)}
                     >
                       Bắt đầu <ArrowRight className="w-3.5 h-3.5" />
@@ -500,7 +500,7 @@ const MaterialsGenerator: React.FC = () => {
             }}
             onLessonChange={setListLessonId}
             footnote={
-              <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-2">
+              <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-2">
                 Chọn chương hoặc bài để lọc slide và mindmap theo bài học đã gắn.
               </p>
             }
@@ -508,10 +508,10 @@ const MaterialsGenerator: React.FC = () => {
 
           {/* ── Toolbar ── */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
-            <label className="flex-1 w-full flex items-center gap-3 bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150">
-              <Search className="text-[#87867F] w-4 h-4 flex-shrink-0" />
+            <label className="flex-1 w-full flex items-center gap-3 bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-4 py-2.5 focus-within:border-[#3898EC] focus-within:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] transition-all duration-150">
+              <Search className="text-[#64748b] w-4 h-4 flex-shrink-0" />
               <input
-                className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] bg-transparent outline-none"
+                className="flex-1 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] bg-transparent outline-none"
                 placeholder="Tìm kiếm tài liệu..."
                 value={searchValue}
                 onChange={(e) => setSearchValue(e.target.value)}
@@ -521,7 +521,7 @@ const MaterialsGenerator: React.FC = () => {
                   type="button"
                   aria-label="Xóa tìm kiếm"
                   onClick={() => setSearchValue('')}
-                  className="text-[#87867F] hover:text-[#141413] transition-colors"
+                  className="text-[#64748b] hover:text-[#0f172a] transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -531,21 +531,21 @@ const MaterialsGenerator: React.FC = () => {
 
           {/* ── Summary bar ── */}
           {!loading && !error && curriculumRows.length > 0 && (
-            <div className="flex items-center gap-4 px-4 py-3 rounded-xl bg-[#FAF9F5] border border-[#E8E6DC]">
-              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] uppercase tracking-wide">
+            <div className="flex items-center gap-4 px-4 py-3 rounded-xl bg-[#ffffff] border border-[#e2e8f0]">
+              <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] uppercase tracking-wide">
                 Hiển thị
               </span>
-              <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+              <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                 {rows.length} / {curriculumRows.length}
               </strong>
-              <div className="w-px h-4 bg-[#E8E6DC]" />
-              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+              <div className="w-px h-4 bg-[#e2e8f0]" />
+              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                 <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
-                Slide <strong className="text-[#141413] font-semibold">{slides.length}</strong>
+                Slide <strong className="text-[#0f172a] font-semibold">{slides.length}</strong>
               </span>
-              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+              <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                 <span className="w-1.5 h-1.5 rounded-full bg-violet-400 inline-block" />
-                Mindmap <strong className="text-[#141413] font-semibold">{mindmaps.length}</strong>
+                Mindmap <strong className="text-[#0f172a] font-semibold">{mindmaps.length}</strong>
               </span>
             </div>
           )}
@@ -556,7 +556,7 @@ const MaterialsGenerator: React.FC = () => {
               {[1, 2, 3].map((i) => (
                 <div
                   key={i}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-52 animate-pulse"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-52 animate-pulse"
                 />
               ))}
             </div>
@@ -578,7 +578,7 @@ const MaterialsGenerator: React.FC = () => {
               {rows.map((row, idx) => (
                 <article
                   key={`${row.kind}-${row.id}`}
-                  className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200"
+                  className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200"
                 >
                   <div className="h-[120px] relative flex items-end p-4 overflow-hidden bg-gradient-to-br from-[#FFF7ED] to-[#FFE8D6]">
                     <span className="absolute top-3 left-3 font-[Playfair_Display] text-[12px] font-medium opacity-40 text-[#E07B39]">
@@ -592,7 +592,7 @@ const MaterialsGenerator: React.FC = () => {
                               <Eye className="w-3 h-3" /> Công khai
                             </span>
                           ) : (
-                            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-white/90 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#87867F]">
+                            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-white/90 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#64748b]">
                               <EyeOff className="w-3 h-3" /> Nháp
                             </span>
                           )}
@@ -604,7 +604,7 @@ const MaterialsGenerator: React.FC = () => {
                               <Eye className="w-3 h-3" /> Công khai
                             </span>
                           ) : (
-                            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-white/90 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#87867F]">
+                            <span className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-white/90 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#64748b]">
                               <EyeOff className="w-3 h-3" /> Nháp
                             </span>
                           )}
@@ -618,7 +618,7 @@ const MaterialsGenerator: React.FC = () => {
 
                   <div className="p-4 flex flex-col gap-2">
                     <div className="flex items-center flex-wrap gap-2">
-                      <span className="flex items-center gap-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                      <span className="flex items-center gap-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                         {row.kind === 'slide' ? (
                           <>
                             <Presentation className="w-3.5 h-3.5" /> SLIDE
@@ -630,8 +630,8 @@ const MaterialsGenerator: React.FC = () => {
                         )}
                       </span>
                     </div>
-                    <div className="flex items-center justify-between pt-2 border-t border-[#F0EEE6] mt-1">
-                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#B0AEA5]">
+                    <div className="flex items-center justify-between pt-2 border-t border-[#e2e8f0] mt-1">
+                      <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#94a3b8]">
                         {new Date(row.createdAt).toLocaleDateString('vi-VN', {
                           year: 'numeric',
                           month: 'long',
@@ -642,14 +642,14 @@ const MaterialsGenerator: React.FC = () => {
                         {row.kind === 'slide' ? (
                           <>
                             <button
-                              className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                              className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                               onClick={() => handlePreviewSlide(row.id)}
                               disabled={loadingPreviewSlideId === row.id}
                             >
                               {loadingPreviewSlideId === row.id ? 'Tải...' : 'Xem'}
                             </button>
                             <button
-                              className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                              className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                               onClick={() => handleDownloadSlide(row.id)}
                               disabled={downloadingSlideId === row.id}
                             >
@@ -659,13 +659,13 @@ const MaterialsGenerator: React.FC = () => {
                         ) : (
                           <>
                             <button
-                              className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                              className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                               onClick={() => handlePreviewMindmap(row.id)}
                             >
                               Xem
                             </button>
                             <button
-                              className="px-3 py-1.5 rounded-lg border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                              className="px-3 py-1.5 rounded-lg border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                               onClick={() => handleDownloadMindmap(row.id, row.title)}
                               disabled={downloadingMindmapId === row.id}
                             >
@@ -684,10 +684,10 @@ const MaterialsGenerator: React.FC = () => {
           {/* ── Empty: filtered ── */}
           {!loading && !error && curriculumRows.length > 0 && rows.length === 0 && (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#B0AEA5]">
+              <div className="w-12 h-12 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#94a3b8]">
                 <Search className="w-6 h-6" />
               </div>
-              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F]">
+              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b]">
                 Không tìm thấy tài liệu nào phù hợp.
               </p>
             </div>
@@ -695,10 +695,10 @@ const MaterialsGenerator: React.FC = () => {
 
           {!loading && !error && curriculumRows.length === 0 && allRows.length > 0 && (
             <div className="flex flex-col items-center justify-center py-16 gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#B0AEA5]">
+              <div className="w-12 h-12 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#94a3b8]">
                 <Search className="w-6 h-6" />
               </div>
-              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center px-4">
+              <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center px-4">
                 Không có tài liệu khớp chương/bài đã chọn.
               </p>
             </div>
@@ -707,11 +707,11 @@ const MaterialsGenerator: React.FC = () => {
           {/* ── Empty: no materials ── */}
           {!loading && !error && allRows.length === 0 && (
             <div className="flex flex-col items-center justify-center py-16 gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#B0AEA5]">
+              <div className="w-12 h-12 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#94a3b8]">
                 <Presentation className="w-6 h-6" />
               </div>
               <div className="text-center">
-                <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] mb-2">
+                <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] mb-2">
                   Bạn chưa tạo tài liệu nào. Hãy bắt đầu từ các công cụ AI ở trên.
                 </p>
               </div>
@@ -722,18 +722,18 @@ const MaterialsGenerator: React.FC = () => {
 
       {/* ── Modals ── */}
       {previewSlideId && (
-        <div className="fixed inset-0 z-50 bg-[#141413]/60 backdrop-blur-sm flex items-center justify-center p-3">
+        <div className="fixed inset-0 z-50 bg-[#0f172a]/60 backdrop-blur-sm flex items-center justify-center p-3">
           <div
             className="bg-white rounded-2xl shadow-[rgba(0,0,0,0.25)_0px_24px_80px] w-full max-w-6xl h-[86vh] flex flex-col"
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex items-center justify-between px-6 py-4 border-b border-[#E8E6DC] flex-shrink-0">
-              <h3 className="font-[Playfair_Display] text-[18px] font-medium text-[#141413]">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-[#e2e8f0] flex-shrink-0">
+              <h3 className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a]">
                 Xem thử slide
               </h3>
               <button
-                className="px-4 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                className="px-4 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                 onClick={closePreviewSlide}
               >
                 Đóng
@@ -743,8 +743,8 @@ const MaterialsGenerator: React.FC = () => {
               {loadingPreviewSlideId === previewSlideId ? (
                 <div className="flex items-center justify-center h-full">
                   <div className="text-center">
-                    <div className="w-12 h-12 rounded-full border-2 border-[#E8E6DC] border-t-[#C96442] animate-spin mx-auto mb-3" />
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                    <div className="w-12 h-12 rounded-full border-2 border-[#e2e8f0] border-t-[#0ea5e9] animate-spin mx-auto mb-3" />
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                       Đang tải slide...
                     </p>
                   </div>
@@ -753,7 +753,7 @@ const MaterialsGenerator: React.FC = () => {
                 <iframe src={previewSlidePdfUrl} title="Slide preview" className="w-full h-full" />
               ) : (
                 <div className="flex items-center justify-center h-full">
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                     Không có dữ liệu xem thử.
                   </p>
                 </div>
@@ -764,18 +764,18 @@ const MaterialsGenerator: React.FC = () => {
       )}
 
       {previewMindmapId && (
-        <div className="fixed inset-0 z-50 bg-[#141413]/60 backdrop-blur-sm flex items-center justify-center p-3">
+        <div className="fixed inset-0 z-50 bg-[#0f172a]/60 backdrop-blur-sm flex items-center justify-center p-3">
           <div
             className="bg-white rounded-2xl shadow-[rgba(0,0,0,0.25)_0px_24px_80px] w-full max-w-5xl h-[86vh] flex flex-col"
             role="dialog"
             aria-modal="true"
           >
-            <div className="flex items-center justify-between px-6 py-4 border-b border-[#E8E6DC] flex-shrink-0">
-              <h3 className="font-[Playfair_Display] text-[18px] font-medium text-[#141413]">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-[#e2e8f0] flex-shrink-0">
+              <h3 className="font-[Playfair_Display] text-[18px] font-medium text-[#0f172a]">
                 Xem thử mindmap
               </h3>
               <button
-                className="px-4 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                className="px-4 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                 onClick={closePreviewMindmap}
               >
                 Đóng
@@ -783,10 +783,10 @@ const MaterialsGenerator: React.FC = () => {
             </div>
             <div className="flex-1 min-h-0 overflow-hidden relative">
               {previewMindmapFrameLoading && (
-                <div className="absolute inset-0 flex items-center justify-center bg-[#FAF9F5] z-10">
+                <div className="absolute inset-0 flex items-center justify-center bg-[#ffffff] z-10">
                   <div className="text-center">
-                    <div className="w-12 h-12 rounded-full border-2 border-[#E8E6DC] border-t-[#C96442] animate-spin mx-auto mb-3" />
-                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+                    <div className="w-12 h-12 rounded-full border-2 border-[#e2e8f0] border-t-[#0ea5e9] animate-spin mx-auto mb-3" />
+                    <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
                       Đang tải mindmap...
                     </p>
                   </div>
@@ -804,14 +804,14 @@ const MaterialsGenerator: React.FC = () => {
       )}
 
       {isDownloadingAny && (
-        <div className="fixed inset-0 z-50 bg-[#141413]/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-[#0f172a]/50 backdrop-blur-sm flex items-center justify-center p-4">
           <div
             className="bg-white rounded-2xl shadow-[rgba(0,0,0,0.20)_0px_20px_60px] p-8 flex flex-col items-center gap-4 w-full max-w-sm"
             role="status"
             aria-live="polite"
           >
-            <div className="w-12 h-12 rounded-full border-2 border-[#E8E6DC] border-t-[#C96442] animate-spin" />
-            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+            <div className="w-12 h-12 rounded-full border-2 border-[#e2e8f0] border-t-[#0ea5e9] animate-spin" />
+            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
               {downloadingSlideId ? 'Đang tải slide xuống...' : 'Đang tải mindmap xuống...'}
             </p>
           </div>

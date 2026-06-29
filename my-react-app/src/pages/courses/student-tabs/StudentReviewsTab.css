@@ -10,23 +10,23 @@
 
 .srt-card {
   background: #ffffff;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   border-radius: 14px;
   padding: 1rem 1.1rem;
-  box-shadow: 0 1px 3px rgba(20, 20, 19, 0.06);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
 }
 
 /* ── Loading ── */
 .srt-loading-container {
   padding: 2.5rem 1rem;
   text-align: center;
-  color: #87867f;
+  color: #64748b;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
   border-radius: 14px;
-  border: 1px dashed #e8e6dc;
+  border: 1px dashed #e2e8f0;
   background: #fffefb;
   font-size: 0.875rem;
 }
@@ -34,7 +34,7 @@
 .srt-loading-spinner {
   width: 32px;
   height: 32px;
-  border: 3px solid #f5f4ed;
+  border: 3px solid #f8fafc;
   border-radius: 50%;
   border-top-color: #4338ca;
   animation: srt-spin 0.85s linear infinite;
@@ -89,7 +89,7 @@
 
 .srt-total-label {
   font-weight: 500;
-  color: #87867f;
+  color: #64748b;
   font-size: 0.8125rem;
   line-height: 1.4;
 }
@@ -115,7 +115,7 @@
 }
 
 .srt-stat-row:hover {
-  background: #faf9f5;
+  background: #ffffff;
 }
 
 .srt-stat-row:focus-visible {
@@ -131,7 +131,7 @@
 .srt-progress-bar-wrap {
   flex: 1;
   height: 8px;
-  background: #f5f4ed;
+  background: #f8fafc;
   border-radius: 999px;
   overflow: hidden;
   border: 1px solid #ede9df;
@@ -162,7 +162,7 @@
 .srt-percent-label {
   font-size: 0.75rem;
   font-weight: 700;
-  color: #5e5d59;
+  color: #475569;
   width: 36px;
   text-align: right;
   font-variant-numeric: tabular-nums;
@@ -188,7 +188,7 @@
   margin: 0;
   font-size: 0.9375rem;
   font-weight: 700;
-  color: #141413;
+  color: #0f172a;
 }
 
 .srt-icon-accent {
@@ -221,7 +221,7 @@
 
 .srt-rating-selector > p {
   font-weight: 600;
-  color: #5e5d59;
+  color: #475569;
   margin: 0 0 0.5rem;
   font-size: 0.8125rem;
 }
@@ -238,7 +238,7 @@
   border: none;
   padding: 4px;
   cursor: pointer;
-  color: #e8e6dc;
+  color: #e2e8f0;
   border-radius: 8px;
   transition:
     color 0.15s ease,
@@ -251,7 +251,7 @@
 }
 
 .srt-star-btn:hover {
-  background: #faf9f5;
+  background: #ffffff;
 }
 
 .srt-star-btn.active {
@@ -272,7 +272,7 @@
 .srt-comment-input textarea {
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 0.75rem 0.85rem;
   font-size: 0.875rem;
@@ -280,7 +280,7 @@
   min-height: 100px;
   resize: vertical;
   background: #fffefb;
-  color: #141413;
+  color: #0f172a;
   transition:
     border-color 0.15s ease,
     box-shadow 0.15s ease;
@@ -309,7 +309,7 @@
 .srt-btn-text {
   background: none;
   border: none;
-  color: #87867f;
+  color: #64748b;
   font-weight: 600;
   cursor: pointer;
   padding: 0.45rem 0.75rem;
@@ -319,8 +319,8 @@
 }
 
 .srt-btn-text:hover {
-  background: #f5f4ed;
-  color: #141413;
+  background: #f8fafc;
+  color: #0f172a;
 }
 
 .srt-btn-premium {
@@ -381,7 +381,7 @@
 
 .srt-date-sub {
   font-size: 0.6875rem;
-  color: #87867f;
+  color: #64748b;
   font-weight: 500;
 }
 
@@ -392,8 +392,8 @@
 
 .srt-action-btn {
   background: #fffefb;
-  border: 1px solid #e8e6dc;
-  color: #5e5d59;
+  border: 1px solid #e2e8f0;
+  color: #475569;
   width: 34px;
   height: 34px;
   border-radius: 10px;
@@ -408,9 +408,9 @@
 }
 
 .srt-action-btn:hover {
-  background: #faf9f5;
+  background: #ffffff;
   border-color: #ddd9cc;
-  color: #141413;
+  color: #0f172a;
 }
 
 .srt-action-btn.danger:hover {
@@ -432,7 +432,7 @@
 }
 
 .srt-comment-text {
-  color: #5e5d59;
+  color: #475569;
   line-height: 1.55;
   font-size: 0.875rem;
   margin: 0;
@@ -477,7 +477,7 @@
   margin: 0;
   font-size: 0.9375rem;
   font-weight: 700;
-  color: #141413;
+  color: #0f172a;
 }
 
 .srt-active-filter-badge {
@@ -518,15 +518,15 @@
   background: #fffefb;
   padding: 0.35rem 0.55rem;
   border-radius: 10px;
-  border: 1px solid #e8e6dc;
-  color: #87867f;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
 }
 
 .srt-filter-controls select {
   background: none;
   border: none;
   font-weight: 600;
-  color: #141413;
+  color: #0f172a;
   outline: none;
   font-size: 0.8125rem;
   cursor: pointer;
@@ -540,14 +540,14 @@
   padding: 2rem 1.25rem;
   background: #fffefb;
   border-radius: 14px;
-  border: 1px dashed #e8e6dc;
+  border: 1px dashed #e2e8f0;
 }
 
 .srt-empty-icon-wrap {
   width: 52px;
   height: 52px;
   border-radius: 14px;
-  background: #f5f4ed;
+  background: #f8fafc;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -557,7 +557,7 @@
 
 .srt-empty-reviews p {
   margin: 0;
-  color: #87867f;
+  color: #64748b;
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -588,14 +588,14 @@
   height: 40px;
   border-radius: 10px;
   object-fit: cover;
-  background: #f5f4ed;
+  background: #f8fafc;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
   color: #4338ca;
   font-size: 0.9375rem;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
 }
 
 .srt-user-text-meta {
@@ -607,7 +607,7 @@
   margin: 0 0 4px;
   font-size: 0.875rem;
   font-weight: 700;
-  color: #141413;
+  color: #0f172a;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -615,7 +615,7 @@
 
 .srt-review-date-mini {
   font-size: 0.6875rem;
-  color: #87867f;
+  color: #64748b;
   margin-left: 0.45rem;
   font-weight: 500;
 }
@@ -631,7 +631,7 @@
 }
 
 .srt-review-body-text {
-  color: #5e5d59;
+  color: #475569;
   line-height: 1.55;
   font-size: 0.8125rem;
   margin: 0;
@@ -642,9 +642,9 @@
 .srt-instructor-reply-box {
   margin-top: 0.65rem;
   padding: 0.65rem 0.75rem;
-  background: #faf9f5;
+  background: #ffffff;
   border-radius: 12px;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
 }
 
 .srt-reply-header {
@@ -667,13 +667,13 @@
 
 .srt-reply-date {
   font-size: 0.6875rem;
-  color: #87867f;
+  color: #64748b;
   font-weight: 500;
 }
 
 .srt-reply-text {
   margin: 0;
-  color: #5e5d59;
+  color: #475569;
   line-height: 1.5;
   font-size: 0.8125rem;
 }

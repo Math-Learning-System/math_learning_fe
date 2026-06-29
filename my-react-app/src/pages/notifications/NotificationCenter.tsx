@@ -110,21 +110,21 @@ const NotificationCenter: React.FC = () => {
   const getTypeBadgeClass = (type: string) => {
     switch (normalizeType(type)) {
       case 'assignment':
-        return 'bg-[#F0EEE6] text-[#4D4C48]';
+        return 'bg-[#e2e8f0] text-[#334155]';
       case 'grade':
-        return 'bg-[#E8E6DC] text-[#3D3D3A]';
+        return 'bg-[#e2e8f0] text-[#3D3D3A]';
       case 'course':
-        return 'bg-[#F0EEE6] text-[#4D4C48]';
+        return 'bg-[#e2e8f0] text-[#334155]';
       case 'payment':
-        return 'bg-[#E8E6DC] text-[#3D3D3A]';
+        return 'bg-[#e2e8f0] text-[#3D3D3A]';
       case 'message':
-        return 'bg-[#F0EEE6] text-[#4D4C48]';
+        return 'bg-[#e2e8f0] text-[#334155]';
       case 'profile_verification':
-        return 'bg-[#FAF9F5] text-[#5E5D59] border border-[#E8E6DC]';
+        return 'bg-[#ffffff] text-[#475569] border border-[#e2e8f0]';
       case 'feedback':
-        return 'bg-[#F0EEE6] text-[#4D4C48]';
+        return 'bg-[#e2e8f0] text-[#334155]';
       default:
-        return 'bg-[#FAF9F5] text-[#87867F] border border-[#E8E6DC]';
+        return 'bg-[#ffffff] text-[#64748b] border border-[#e2e8f0]';
     }
   };
 
@@ -134,28 +134,28 @@ const NotificationCenter: React.FC = () => {
       user={{ name: '', avatar: '', role }}
       notificationCount={stats.unread}
     >
-      <div className="flex-1 min-h-screen bg-[#F5F4ED]">
+      <div className="flex-1 min-h-screen bg-[#f8fafc]">
         <div className="p-6 lg:p-8">
           {/* Page Header */}
           <div className="flex items-start justify-between mb-8">
             <div>
-              <h1 className="font-['Be_Vietnam_Pro'] text-[36px] font-bold leading-[1.2] tracking-[-0.01em] text-[#141413]">
+              <h1 className="font-['Be_Vietnam_Pro'] text-[36px] font-bold leading-[1.2] tracking-[-0.01em] text-[#0f172a]">
                 Trung Tâm Thông Báo
               </h1>
-              <p className="font-['Be_Vietnam_Pro'] text-[15px] text-[#87867F] mt-1 leading-[1.6]">
+              <p className="font-['Be_Vietnam_Pro'] text-[15px] text-[#64748b] mt-1 leading-[1.6]">
                 Quản lý tất cả thông báo của bạn
               </p>
             </div>
             <div className="flex items-center gap-3">
               <Link
                 to="/notifications/preferences"
-                className="flex items-center gap-2 bg-[#E8E6DC] text-[#4D4C48] rounded-xl px-4 py-2.5 font-['Be_Vietnam_Pro'] text-[14px] font-medium shadow-[#E8E6DC_0px_0px_0px_0px,#D1CFC5_0px_0px_0px_1px] hover:shadow-[#E8E6DC_0px_0px_0px_0px,#C2C0B6_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150"
+                className="flex items-center gap-2 bg-[#e2e8f0] text-[#334155] rounded-xl px-4 py-2.5 font-['Be_Vietnam_Pro'] text-[14px] font-medium shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] hover:shadow-[#e2e8f0_0px_0px_0px_0px,#C2C0B6_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150"
               >
                 <Settings className="w-3.5 h-3.5" />
                 Cài đặt
               </Link>
               <button
-                className="flex items-center gap-2 bg-[#141413] text-[#B0AEA5] rounded-xl px-4 py-2.5 border border-[#30302E] font-['Be_Vietnam_Pro'] text-[14px] font-medium hover:bg-[#30302E] active:scale-[0.98] transition-all duration-150"
+                className="flex items-center gap-2 bg-[#0f172a] text-[#94a3b8] rounded-xl px-4 py-2.5 border border-[#1e293b] font-['Be_Vietnam_Pro'] text-[14px] font-medium hover:bg-[#1e293b] active:scale-[0.98] transition-all duration-150"
                 onClick={markAllAsRead}
               >
                 <CheckCheck className="w-3.5 h-3.5" />
@@ -166,43 +166,43 @@ const NotificationCenter: React.FC = () => {
 
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
-            <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex items-start gap-4 hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.05)_0px_4px_24px] transition-shadow duration-200">
-              <div className="w-11 h-11 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] flex-shrink-0">
+            <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex items-start gap-4 hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.05)_0px_4px_24px] transition-shadow duration-200">
+              <div className="w-11 h-11 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] flex-shrink-0">
                 <Bell className="w-5 h-5" />
               </div>
               <div>
-                <div className="font-['Be_Vietnam_Pro'] text-[32px] font-bold tabular-nums text-[#141413] leading-[1.1]">
+                <div className="font-['Be_Vietnam_Pro'] text-[32px] font-bold tabular-nums text-[#0f172a] leading-[1.1]">
                   {stats.total}
                 </div>
-                <div className="font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#87867F] uppercase tracking-[0.5px] mt-1">
+                <div className="font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#64748b] uppercase tracking-[0.5px] mt-1">
                   Tổng thông báo
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex items-start gap-4 hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.05)_0px_4px_24px] transition-shadow duration-200">
-              <div className="w-11 h-11 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#C96442] flex-shrink-0">
+            <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex items-start gap-4 hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.05)_0px_4px_24px] transition-shadow duration-200">
+              <div className="w-11 h-11 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#0ea5e9] flex-shrink-0">
                 <Mail className="w-5 h-5" />
               </div>
               <div>
-                <div className="font-['Be_Vietnam_Pro'] text-[32px] font-bold tabular-nums text-[#141413] leading-[1.1]">
+                <div className="font-['Be_Vietnam_Pro'] text-[32px] font-bold tabular-nums text-[#0f172a] leading-[1.1]">
                   {stats.unread}
                 </div>
-                <div className="font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#87867F] uppercase tracking-[0.5px] mt-1">
+                <div className="font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#64748b] uppercase tracking-[0.5px] mt-1">
                   Chưa đọc
                 </div>
               </div>
             </div>
 
-            <div className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex items-start gap-4 hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.05)_0px_4px_24px] transition-shadow duration-200">
-              <div className="w-11 h-11 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#B53333] flex-shrink-0">
+            <div className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-5 flex items-start gap-4 hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.05)_0px_4px_24px] transition-shadow duration-200">
+              <div className="w-11 h-11 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#B53333] flex-shrink-0">
                 <AlertTriangle className="w-5 h-5" />
               </div>
               <div>
-                <div className="font-['Be_Vietnam_Pro'] text-[32px] font-bold tabular-nums text-[#141413] leading-[1.1]">
+                <div className="font-['Be_Vietnam_Pro'] text-[32px] font-bold tabular-nums text-[#0f172a] leading-[1.1]">
                   {stats.high}
                 </div>
-                <div className="font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#87867F] uppercase tracking-[0.5px] mt-1">
+                <div className="font-['Be_Vietnam_Pro'] text-[12px] font-medium text-[#64748b] uppercase tracking-[0.5px] mt-1">
                   Ưu tiên cao
                 </div>
               </div>
@@ -210,7 +210,7 @@ const NotificationCenter: React.FC = () => {
           </div>
 
           {/* Filters */}
-          <div className="bg-[#FAF9F5] border border-[#F0EEE6] rounded-2xl shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-4 flex flex-wrap items-center justify-between gap-3 mb-6">
+          <div className="bg-[#ffffff] border border-[#e2e8f0] rounded-2xl shadow-[rgba(0,0,0,0.05)_0px_4px_24px] p-4 flex flex-wrap items-center justify-between gap-3 mb-6">
             <div className="flex items-center gap-1.5">
               {(
                 [
@@ -223,8 +223,8 @@ const NotificationCenter: React.FC = () => {
                   key={key}
                   className={`rounded-lg px-3.5 py-1.5 font-['Be_Vietnam_Pro'] text-[13px] transition-colors duration-150 ${
                     filter === key
-                      ? 'bg-[#141413] text-[#FAF9F5] font-semibold'
-                      : 'bg-transparent text-[#5E5D59] font-medium hover:bg-[#E8E6DC] hover:text-[#141413]'
+                      ? 'bg-[#0f172a] text-[#ffffff] font-semibold'
+                      : 'bg-transparent text-[#475569] font-medium hover:bg-[#e2e8f0] hover:text-[#0f172a]'
                   }`}
                   onClick={() => setFilter(key)}
                 >
@@ -234,7 +234,7 @@ const NotificationCenter: React.FC = () => {
             </div>
 
             <select
-              className="bg-[#FAF9F5] border border-[#E8E6DC] rounded-xl px-3 py-2 font-['Be_Vietnam_Pro'] text-[13px] text-[#141413] shadow-[0px_0px_0px_1px_#E8E6DC] focus:border-[#3898EC] focus:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] outline-none transition-all duration-150 min-w-[180px]"
+              className="bg-[#ffffff] border border-[#e2e8f0] rounded-xl px-3 py-2 font-['Be_Vietnam_Pro'] text-[13px] text-[#0f172a] shadow-[0px_0px_0px_1px_#e2e8f0] focus:border-[#3898EC] focus:shadow-[0_0_0_3px_rgba(56,152,236,0.12)] outline-none transition-all duration-150 min-w-[180px]"
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
             >
@@ -251,21 +251,21 @@ const NotificationCenter: React.FC = () => {
           </div>
 
           {/* Notifications List */}
-          <div className="bg-[#FAF9F5] border border-[#F0EEE6] rounded-2xl shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden">
+          <div className="bg-[#ffffff] border border-[#e2e8f0] rounded-2xl shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden">
             {filteredNotifications.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-16 px-8">
-                <div className="w-14 h-14 rounded-2xl bg-[#E8E6DC] flex items-center justify-center text-[#87867F] mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-[#e2e8f0] flex items-center justify-center text-[#64748b] mb-4">
                   <Inbox className="w-7 h-7" />
                 </div>
-                <h3 className="font-['Playfair_Display'] text-[20px] font-medium text-[#141413] mb-2">
+                <h3 className="font-['Playfair_Display'] text-[20px] font-medium text-[#0f172a] mb-2">
                   Không có thông báo
                 </h3>
-                <p className="font-['Be_Vietnam_Pro'] text-[15px] text-[#87867F] leading-[1.6]">
+                <p className="font-['Be_Vietnam_Pro'] text-[15px] text-[#64748b] leading-[1.6]">
                   Bạn đã xem hết tất cả thông báo
                 </p>
               </div>
             ) : (
-              <div className="divide-y divide-[#F0EEE6]">
+              <div className="divide-y divide-[#e2e8f0]">
                 {filteredNotifications.map((notif) => {
                   const Icon = getNotificationIcon(notif.type);
                   const isPriorityHigh = notif.metadata?.priority === 'high';
@@ -275,7 +275,7 @@ const NotificationCenter: React.FC = () => {
                       key={notif.id}
                       type="button"
                       className={`relative w-full text-left flex items-start gap-4 px-6 py-5 cursor-pointer transition-colors duration-150 ${
-                        notif.read ? 'hover:bg-[#F5F4ED]' : 'bg-[#FDFCF8] hover:bg-[#F5F4ED]'
+                        notif.read ? 'hover:bg-[#f8fafc]' : 'bg-[#FDFCF8] hover:bg-[#f8fafc]'
                       } ${isPriorityHigh ? 'border-l-2 border-[#B53333]' : ''}`}
                       onClick={() => {
                         markAsRead(notif.id);
@@ -283,12 +283,12 @@ const NotificationCenter: React.FC = () => {
                       }}
                     >
                       {!notif.read && (
-                        <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-[#C96442] rounded-r-full" />
+                        <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-[#0ea5e9] rounded-r-full" />
                       )}
 
                       <div
                         className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 ${
-                          notif.read ? 'bg-[#F0EEE6] text-[#87867F]' : 'bg-[#E8E6DC] text-[#5E5D59]'
+                          notif.read ? 'bg-[#e2e8f0] text-[#64748b]' : 'bg-[#e2e8f0] text-[#475569]'
                         }`}
                       >
                         <Icon className="w-5 h-5" />
@@ -299,23 +299,23 @@ const NotificationCenter: React.FC = () => {
                           <h4
                             className={`font-['Be_Vietnam_Pro'] text-[15px] leading-[1.4] ${
                               notif.read
-                                ? 'font-normal text-[#5E5D59]'
-                                : 'font-semibold text-[#141413]'
+                                ? 'font-normal text-[#475569]'
+                                : 'font-semibold text-[#0f172a]'
                             }`}
                           >
                             {notif.title}
                           </h4>
                           {isPriorityHigh && (
-                            <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#FAF9F5] border border-[#E8E6DC] font-['Be_Vietnam_Pro'] text-[11px] font-semibold text-[#B53333]">
+                            <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#ffffff] border border-[#e2e8f0] font-['Be_Vietnam_Pro'] text-[11px] font-semibold text-[#B53333]">
                               Ưu tiên cao
                             </span>
                           )}
                         </div>
-                        <p className="font-['Be_Vietnam_Pro'] text-[14px] text-[#5E5D59] leading-[1.6] mb-2.5 line-clamp-2">
+                        <p className="font-['Be_Vietnam_Pro'] text-[14px] text-[#475569] leading-[1.6] mb-2.5 line-clamp-2">
                           {notif.content}
                         </p>
                         <div className="flex items-center gap-3 flex-wrap">
-                          <span className="flex items-center gap-1.5 font-['Be_Vietnam_Pro'] text-[12px] text-[#87867F]">
+                          <span className="flex items-center gap-1.5 font-['Be_Vietnam_Pro'] text-[12px] text-[#64748b]">
                             <Clock className="w-3.5 h-3.5" />
                             {new Date(notif.createdAt).toLocaleString('vi-VN')}
                           </span>
@@ -337,7 +337,7 @@ const NotificationCenter: React.FC = () => {
           {filteredNotifications.length > 0 && hasNextPage && (
             <div className="flex justify-center mt-6">
               <button
-                className="flex items-center gap-2 bg-[#E8E6DC] text-[#4D4C48] rounded-xl px-6 py-2.5 font-['Be_Vietnam_Pro'] text-[14px] font-medium shadow-[#E8E6DC_0px_0px_0px_0px,#D1CFC5_0px_0px_0px_1px] hover:shadow-[#E8E6DC_0px_0px_0px_0px,#C2C0B6_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150 disabled:opacity-50"
+                className="flex items-center gap-2 bg-[#e2e8f0] text-[#334155] rounded-xl px-6 py-2.5 font-['Be_Vietnam_Pro'] text-[14px] font-medium shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] hover:shadow-[#e2e8f0_0px_0px_0px_0px,#C2C0B6_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150 disabled:opacity-50"
                 onClick={loadMore}
                 disabled={isFetchingNextPage}
               >

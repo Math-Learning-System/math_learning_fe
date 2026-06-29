@@ -231,7 +231,7 @@
 }
 
 .clt-muted {
-  color: #87867f;
+  color: #64748b;
   font-size: 0.85rem;
 }
 
@@ -266,7 +266,7 @@
 
 .clt-list-card {
   background: #ffffff;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   border-radius: 12px;
   padding: 0.75rem 1rem;
   display: flex;
@@ -287,8 +287,8 @@
 }
 
 .clt-list-card:hover {
-  border-color: #d1cfc5;
-  box-shadow: 0 0 0 1px #d1cfc5;
+  border-color: #cbd5e1;
+  box-shadow: 0 0 0 1px #cbd5e1;
 }
 
 /* Udemy-style adjacent flat rows inside curriculum groups */
@@ -300,8 +300,8 @@
   border-left: none;
   border-right: none;
   border-top: none;
-  border-bottom: 1px solid #f0eee6;
-  background: #faf9f5;
+  border-bottom: 1px solid #e2e8f0;
+  background: #ffffff;
   box-shadow: none;
   align-items: flex-start;
 }
@@ -318,8 +318,8 @@
   border-bottom: none;
 }
 .curriculum-group .lessons-group .clt-list-card:hover {
-  background: #f5f4ed;
-  border-color: #f0eee6;
+  background: #f8fafc;
+  border-color: #e2e8f0;
   box-shadow: none;
 }
 
@@ -370,7 +370,7 @@
 
 .clt-lesson-subtitle {
   font-size: 0.8rem;
-  color: #87867f;
+  color: #64748b;
   line-height: 1.45;
   overflow-wrap: anywhere;
   word-break: break-word;
@@ -396,7 +396,7 @@
   justify-content: center;
   gap: 0.35rem;
   border-radius: 8px;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   background: #ffffff;
   color: #475569;
   font-family: var(--f-body, 'Be Vietnam Pro', system-ui, sans-serif);
@@ -409,7 +409,7 @@
     border-color 0.15s ease,
     color 0.15s ease,
     box-shadow 0.15s ease;
-  box-shadow: 0 1px 2px rgba(20, 20, 19, 0.05);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
 }
 
 .clt-action-btn svg {
@@ -421,14 +421,14 @@
 }
 
 .clt-action-btn:hover {
-  background: #f5f4ed;
-  border-color: #d1cfc5;
-  color: #141413;
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #0f172a;
 }
 
 .clt-action-btn:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px #faf9f5, 0 0 0 4px #64748b;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #64748b;
 }
 
 .clt-action-btn.danger {
@@ -444,7 +444,7 @@
 }
 
 .clt-action-btn.danger:focus-visible {
-  box-shadow: 0 0 0 2px #faf9f5, 0 0 0 4px #ef4444;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #ef4444;
 }
 
 /* Section Title & Description — curriculum (badge + title one baseline row) */
@@ -458,7 +458,7 @@
 
 .clt-section-chevron {
   flex-shrink: 0;
-  color: #87867f;
+  color: #64748b;
   margin-top: 0.28rem;
 }
 
@@ -503,7 +503,7 @@
 .clt-chapter-title-text.section-title {
   font-size: 1.05rem;
   font-weight: 800;
-  color: #141413;
+  color: #0f172a;
   line-height: 1.4;
   min-width: 0;
   overflow-wrap: anywhere;
@@ -512,7 +512,7 @@
 
 .clt-section-description.section-description {
   font-size: 0.88rem;
-  color: #87867f;
+  color: #64748b;
   margin: 0;
   font-weight: 500;
   line-height: 1.45;
@@ -563,7 +563,7 @@
 
 .clt-course-content-head {
   padding: 1rem 1.2rem;
-  border-bottom: 1px solid #e8e6dc;
+  border-bottom: 1px solid #e2e8f0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -575,7 +575,7 @@
   margin: 0;
   font-size: 0.95rem;
   font-weight: 800;
-  color: #141413;
+  color: #0f172a;
   line-height: 1.35;
   min-width: 0;
   flex: 1 1 12rem;

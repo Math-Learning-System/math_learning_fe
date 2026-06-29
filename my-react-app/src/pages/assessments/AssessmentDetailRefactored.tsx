@@ -90,7 +90,7 @@ function assessmentStatusPillClass(status: string): string {
     case 'CLOSED':
       return 'inline-flex items-center px-2 py-0.5 rounded-full bg-slate-100 font-[Be_Vietnam_Pro] text-[12px] font-semibold text-slate-600 border border-slate-200';
     default:
-      return 'inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]';
+      return 'inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]';
   }
 }
 
@@ -128,10 +128,10 @@ function SortableQuestionRow({ questionId, canDrag, children }: SortableQuestion
           style={{
             cursor: 'grab',
             background: 'transparent',
-            border: '1px solid #E8E6DC',
+            border: '1px solid #e2e8f0',
             borderRadius: 6,
             padding: '0 6px',
-            color: '#87867F',
+            color: '#64748b',
             display: 'flex',
             alignItems: 'center',
             touchAction: 'none',
@@ -478,17 +478,17 @@ export default function AssessmentDetailRefactored() {
     if (isLoading) {
       return (
         <div className="space-y-6" aria-busy="true" aria-label="Đang tải">
-          <div className="h-10 w-56 rounded-xl bg-[#FAF9F5] border border-[#F0EEE6] animate-pulse" />
+          <div className="h-10 w-56 rounded-xl bg-[#ffffff] border border-[#e2e8f0] animate-pulse" />
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
             {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className="h-[88px] rounded-2xl bg-[#FAF9F5] border border-[#F0EEE6] animate-pulse"
+                className="h-[88px] rounded-2xl bg-[#ffffff] border border-[#e2e8f0] animate-pulse"
               />
             ))}
           </div>
-          <div className="h-32 rounded-2xl bg-[#FAF9F5] border border-[#F0EEE6] animate-pulse" />
-          <div className="h-64 rounded-2xl bg-[#FAF9F5] border border-[#F0EEE6] animate-pulse" />
+          <div className="h-32 rounded-2xl bg-[#ffffff] border border-[#e2e8f0] animate-pulse" />
+          <div className="h-64 rounded-2xl bg-[#ffffff] border border-[#e2e8f0] animate-pulse" />
         </div>
       );
     }
@@ -499,14 +499,14 @@ export default function AssessmentDetailRefactored() {
           <div className="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center text-red-400">
             <AlertCircle className="w-6 h-6" aria-hidden />
           </div>
-          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] text-center max-w-md m-0">
+          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] text-center max-w-md m-0">
             {error instanceof Error
               ? error.message
               : `Không thể tải chi tiết ${UI_TEXT.QUIZ.toLowerCase()}`}
           </p>
           <button
             type="button"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
             onClick={() => void refetch()}
           >
             Thử lại
@@ -518,10 +518,10 @@ export default function AssessmentDetailRefactored() {
     if (!assessment) {
       return (
         <div className="flex flex-col items-center justify-center py-16 gap-3">
-          <div className="w-12 h-12 rounded-2xl bg-[#FAF9F5] border border-[#E8E6DC] flex items-center justify-center text-[#87867F]">
+          <div className="w-12 h-12 rounded-2xl bg-[#ffffff] border border-[#e2e8f0] flex items-center justify-center text-[#64748b]">
             <AlertCircle className="w-6 h-6" aria-hidden />
           </div>
-          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] m-0">
+          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] m-0">
             Không tìm thấy {UI_TEXT.QUIZ.toLowerCase()}.
           </p>
         </div>
@@ -543,7 +543,7 @@ export default function AssessmentDetailRefactored() {
       <div className="space-y-6">
         <button
           type="button"
-          className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+          className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
           onClick={() => navigate('/teacher/assessments')}
         >
           <ArrowLeft size={15} aria-hidden />
@@ -553,24 +553,24 @@ export default function AssessmentDetailRefactored() {
         {/* Page header — same structure as /teacher/mindmaps */}
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <div className="flex items-center gap-3 min-w-0 flex-1">
-            <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] shrink-0">
               <Sparkles className="w-5 h-5" aria-hidden />
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2.5 flex-wrap">
-                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] break-words">
+                <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] break-words">
                   {assessment.title}
                 </h1>
                 <span className={assessmentStatusPillClass(assessment.status)}>
                   {assessmentStatusLabel[assessment.status] || assessment.status}
                 </span>
               </div>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                 {typeLabel} · {modeLabel}
                 {assessment.examMatrixName ? ` · Ma trận: ${assessment.examMatrixName}` : ''}
               </p>
               {shouldShowAssessmentDescription(assessment.description, assessment) ? (
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] mt-1.5 leading-relaxed m-0">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569] mt-1.5 leading-relaxed m-0">
                   {assessment.description?.trim()}
                 </p>
               ) : null}
@@ -580,7 +580,7 @@ export default function AssessmentDetailRefactored() {
             {assessment.status === 'DRAFT' && (
               <button
                 type="button"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors active:scale-[0.98]"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors active:scale-[0.98]"
                 onClick={() => setOpenEdit(true)}
               >
                 <Pencil size={15} aria-hidden />
@@ -590,7 +590,7 @@ export default function AssessmentDetailRefactored() {
             {id ? (
               <button
                 type="button"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150"
                 onClick={() => navigate(`/teacher/assessments/${id}/preview`)}
               >
                 Xem trước
@@ -644,7 +644,7 @@ export default function AssessmentDetailRefactored() {
           ).map(({ label, value, sub, Icon, bg, color }) => (
             <div
               key={label}
-              className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3"
+              className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3"
             >
               <div
                 className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center shrink-0`}
@@ -652,11 +652,11 @@ export default function AssessmentDetailRefactored() {
                 <Icon className={`w-4 h-4 ${color}`} aria-hidden />
               </div>
               <div className="min-w-0">
-                <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none truncate">
+                <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none truncate">
                   {value}
                 </p>
-                <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5">{label}</p>
-                <p className="font-[Be_Vietnam_Pro] text-[11px] text-[#5E5D59] mt-0.5 truncate">
+                <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5">{label}</p>
+                <p className="font-[Be_Vietnam_Pro] text-[11px] text-[#475569] mt-0.5 truncate">
                   {sub}
                 </p>
               </div>
@@ -682,9 +682,9 @@ export default function AssessmentDetailRefactored() {
           />
         ) : null}
 
-        <article className="bg-white rounded-2xl border border-[#E8E6DC] overflow-hidden">
-          <div className="px-4 py-4 lg:px-6 lg:py-5 border-b border-[#F0EEE6] bg-[#FAF9F5] flex flex-wrap items-center justify-between gap-3">
-            <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#141413] m-0">
+        <article className="bg-white rounded-2xl border border-[#e2e8f0] overflow-hidden">
+          <div className="px-4 py-4 lg:px-6 lg:py-5 border-b border-[#e2e8f0] bg-[#ffffff] flex flex-wrap items-center justify-between gap-3">
+            <h3 className="font-[Playfair_Display] text-[16px] font-medium text-[#0f172a] m-0">
               Câu hỏi trong {UI_TEXT.QUIZ.toLowerCase()}
             </h3>
             <div className="flex flex-wrap items-center gap-2">
@@ -913,12 +913,12 @@ export default function AssessmentDetailRefactored() {
                     gap: 12,
                     padding: '8px 12px',
                     marginBottom: 8,
-                    background: isOrderDirty ? '#FEF3C7' : '#F5F4ED',
-                    border: `1px solid ${isOrderDirty ? '#FCD34D' : '#E8E6DC'}`,
+                    background: isOrderDirty ? '#FEF3C7' : '#f8fafc',
+                    border: `1px solid ${isOrderDirty ? '#FCD34D' : '#e2e8f0'}`,
                     borderRadius: 8,
                   }}
                 >
-                  <span style={{ fontSize: 13, color: '#5E5D59' }}>
+                  <span style={{ fontSize: 13, color: '#475569' }}>
                     {isOrderDirty
                       ? 'Có thay đổi thứ tự chưa lưu'
                       : 'Kéo biểu tượng ⋮⋮ để sắp xếp lại câu hỏi.'}

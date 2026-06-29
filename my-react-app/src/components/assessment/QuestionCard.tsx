@@ -143,14 +143,14 @@ export function QuestionCard({
           style={{
             marginLeft: 'auto',
             background: 'transparent',
-            border: '1px solid #E8E6DC',
+            border: '1px solid #e2e8f0',
             borderRadius: 6,
             padding: '2px 8px',
             cursor: 'pointer',
             display: 'inline-flex',
             alignItems: 'center',
             gap: 4,
-            color: '#5E5D59',
+            color: '#475569',
             fontSize: 12,
           }}
         >
@@ -203,12 +203,12 @@ export function QuestionCard({
             gap: 8,
             padding: '6px 0',
             fontSize: 12,
-            color: '#5E5D59',
+            color: '#475569',
           }}
         >
           <span>
             Điểm:{' '}
-            <strong style={{ color: '#141413' }}>
+            <strong style={{ color: '#0f172a' }}>
               {question.pointsOverride ?? question.points ?? 0}
             </strong>
           </span>

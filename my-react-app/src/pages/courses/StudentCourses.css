@@ -1026,8 +1026,8 @@
 /* ─── Curriculum Hierarchy ───────────────────────────────────────────────── */
 .section-header {
   padding: 0.6rem 1.25rem;
-  background: #faf9f5;
-  border-bottom: 1px solid #f0eee6;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1037,7 +1037,7 @@
 }
 
 .section-header:hover {
-  background: #f5f4ed;
+  background: #f8fafc;
 }
 
 .section-title-area {
@@ -1049,10 +1049,10 @@
 .section-label {
   font-size: 0.72rem;
   font-weight: 800;
-  color: #5e5d59;
+  color: #475569;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  background: #e8e6dc;
+  background: #e2e8f0;
   padding: 2px 8px;
   border-radius: 4px;
   display: inline-flex;
@@ -1067,7 +1067,7 @@
 
 .section-meta {
   font-size: 0.75rem;
-  color: #87867f;
+  color: #64748b;
   display: flex;
   gap: 12px;
   align-items: center;
@@ -1102,8 +1102,8 @@
 }
 
 .player-sidebar .section-header {
-  background: #f5f4ed;
-  border-bottom-color: #e8e6dc;
+  background: #f8fafc;
+  border-bottom-color: #e2e8f0;
 }
 
 .player-sidebar .section-header:hover {
@@ -1117,13 +1117,13 @@
 }
 
 .player-sidebar .section-title-area .section-label {
-  background: #e8e6dc;
-  color: #5e5d59;
+  background: #e2e8f0;
+  color: #475569;
   flex-shrink: 0;
 }
 
 .player-sidebar .section-title-area .section-title {
-  color: #141413;
+  color: #0f172a;
   font-size: 0.85rem;
   min-width: 0;
   line-height: 1.4;
@@ -1132,17 +1132,17 @@
 }
 
 .player-sidebar .section-header svg {
-  color: #87867f;
+  color: #64748b;
   flex-shrink: 0;
 }
 
 .player-sidebar .section-meta {
-  color: #87867f;
+  color: #64748b;
   flex-shrink: 0;
 }
 
 .player-sidebar .clt-lesson-subtitle {
-  color: #87867f;
+  color: #64748b;
 }
 
 .player-sidebar .clt-lesson-title {

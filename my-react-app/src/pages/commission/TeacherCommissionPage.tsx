@@ -35,7 +35,7 @@ const STATUS_LABELS: Record<CommissionProposalStatus, string> = {
   REJECTED: 'Từ chối',
 };
 const STATUS_COLORS: Record<CommissionProposalStatus, string> = {
-  PENDING:  '#D97757',
+  PENDING:  '#14b8a6',
   APPROVED: '#2D8A6A',
   REJECTED: '#B53333',
 };
@@ -131,14 +131,14 @@ const TeacherCommissionPage: React.FC = () => {
         <div className="tcp-page">
           {/* Page header — aligned with /teacher/mindmaps */}
           <header className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] shrink-0">
               <Percent className="w-5 h-5" aria-hidden />
             </div>
             <div>
-              <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] m-0">
+              <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] m-0">
                 Hoa hồng & Doanh thu
               </h1>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5 mb-0">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5 mb-0">
                 Đề xuất tỷ lệ chia doanh thu từ khóa học của bạn
               </p>
             </div>

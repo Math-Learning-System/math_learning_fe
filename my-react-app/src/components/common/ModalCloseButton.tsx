@@ -11,7 +11,7 @@ export default function ModalCloseButton({ onClick, ariaLabel = 'Đóng' }: Read
       type="button"
       aria-label={ariaLabel}
       onClick={onClick}
-      className="w-8 h-8 p-0 rounded-lg bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] hover:bg-[#D1CFC5] transition-colors"
+      className="w-8 h-8 p-0 rounded-lg bg-[#e2e8f0] flex items-center justify-center text-[#475569] hover:bg-[#cbd5e1] transition-colors"
     >
       <X className="w-4 h-4" />
     </button>

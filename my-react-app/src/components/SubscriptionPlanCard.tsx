@@ -68,8 +68,8 @@ export const SubscriptionPlanCard: React.FC<SubscriptionPlanCardProps> = ({
       className={[
         'relative flex flex-col rounded-2xl overflow-hidden bg-white transition-all duration-200',
         featured
-          ? 'border-2 border-[#C96442] shadow-[rgba(201,100,66,0.22)_0px_8px_36px] hover:shadow-[rgba(201,100,66,0.34)_0px_16px_56px]'
-          : 'border border-[#E8E6DC] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] hover:shadow-[0px_0px_0px_1px_#D1CFC5,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5',
+          ? 'border-2 border-[#0ea5e9] shadow-[rgba(201,100,66,0.22)_0px_8px_36px] hover:shadow-[rgba(201,100,66,0.34)_0px_16px_56px]'
+          : 'border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5',
       ].join(' ')}
     >
       {/* Cover */}
@@ -86,7 +86,7 @@ export const SubscriptionPlanCard: React.FC<SubscriptionPlanCardProps> = ({
         </span>
 
         {featured && !isCurrent && (
-          <span className="absolute top-3.5 right-4 inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#C96442] font-[Be_Vietnam_Pro] text-[11px] font-bold text-white shadow-sm">
+          <span className="absolute top-3.5 right-4 inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#0ea5e9] font-[Be_Vietnam_Pro] text-[11px] font-bold text-white shadow-sm">
             <Sparkles className="w-3 h-3" />
             Nổi bật
           </span>
@@ -108,7 +108,7 @@ export const SubscriptionPlanCard: React.FC<SubscriptionPlanCardProps> = ({
 
       {/* Body */}
       <div className="flex flex-col flex-1 p-5 gap-3">
-        <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] leading-[1.5] line-clamp-2 min-h-[40px]">
+        <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] leading-[1.5] line-clamp-2 min-h-[40px]">
           {plan.description || 'Gói đăng ký dịch vụ'}
         </p>
 
@@ -117,18 +117,18 @@ export const SubscriptionPlanCard: React.FC<SubscriptionPlanCardProps> = ({
           <span
             className={[
               'font-[Playfair_Display] font-bold leading-none',
-              featured ? 'text-[30px] text-[#C96442]' : 'text-[24px] text-[#141413]',
+              featured ? 'text-[30px] text-[#0ea5e9]' : 'text-[24px] text-[#0f172a]',
             ].join(' ')}
           >
             {priceDisplay}
           </span>
           {period && (
-            <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">{period}</span>
+            <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">{period}</span>
           )}
         </div>
 
         {/* Token */}
-        <div className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+        <div className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
           <svg
             width="12"
             height="12"
@@ -154,7 +154,7 @@ export const SubscriptionPlanCard: React.FC<SubscriptionPlanCardProps> = ({
                 <span
                   className={[
                     'mt-0.5 flex-shrink-0 w-[18px] h-[18px] rounded-full flex items-center justify-center',
-                    featured ? 'bg-[#C96442]' : 'bg-[#E8E6DC]',
+                    featured ? 'bg-[#0ea5e9]' : 'bg-[#e2e8f0]',
                   ].join(' ')}
                   aria-hidden="true"
                 >
@@ -163,7 +163,7 @@ export const SubscriptionPlanCard: React.FC<SubscriptionPlanCardProps> = ({
                     height="9"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke={featured ? 'white' : '#5E5D59'}
+                    stroke={featured ? 'white' : '#475569'}
                     strokeWidth="3.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -171,13 +171,13 @@ export const SubscriptionPlanCard: React.FC<SubscriptionPlanCardProps> = ({
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </span>
-                <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] leading-[1.4]">
+                <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569] leading-[1.4]">
                   {feature}
                 </span>
               </li>
             ))}
             {plan.features.length > 5 && (
-              <li className="font-[Be_Vietnam_Pro] text-[12px] text-[#B0AEA5] pl-[26px]">
+              <li className="font-[Be_Vietnam_Pro] text-[12px] text-[#94a3b8] pl-[26px]">
                 +{plan.features.length - 5} tính năng khác
               </li>
             )}
@@ -186,7 +186,7 @@ export const SubscriptionPlanCard: React.FC<SubscriptionPlanCardProps> = ({
 
         {meta && <div className="pt-1">{meta}</div>}
 
-        <div className="mt-auto pt-3 border-t border-[#F0EEE6]">{actions}</div>
+        <div className="mt-auto pt-3 border-t border-[#e2e8f0]">{actions}</div>
       </div>
     </article>
   );

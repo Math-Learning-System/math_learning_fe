@@ -221,11 +221,11 @@ export default function AssessmentPreview() {
   if (loading) {
     return layoutShell(
       <div className="space-y-6" aria-busy="true">
-        <div className="h-10 w-48 rounded-xl bg-[#FAF9F5] border border-[#F0EEE6] animate-pulse" />
-        <div className="h-24 rounded-2xl bg-[#FAF9F5] border border-[#F0EEE6] animate-pulse" />
+        <div className="h-10 w-48 rounded-xl bg-[#ffffff] border border-[#e2e8f0] animate-pulse" />
+        <div className="h-24 rounded-2xl bg-[#ffffff] border border-[#e2e8f0] animate-pulse" />
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-6">
-          <div className="h-[420px] rounded-2xl bg-[#FAF9F5] border border-[#F0EEE6] animate-pulse" />
-          <div className="h-[320px] rounded-2xl bg-[#FAF9F5] border border-[#F0EEE6] animate-pulse hidden lg:block" />
+          <div className="h-[420px] rounded-2xl bg-[#ffffff] border border-[#e2e8f0] animate-pulse" />
+          <div className="h-[320px] rounded-2xl bg-[#ffffff] border border-[#e2e8f0] animate-pulse hidden lg:block" />
         </div>
       </div>
     );
@@ -237,13 +237,13 @@ export default function AssessmentPreview() {
         <div className="w-12 h-12 rounded-2xl bg-red-50 flex items-center justify-center text-red-400">
           <AlertCircle className="w-6 h-6" aria-hidden />
         </div>
-        <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] text-center max-w-md m-0">
+        <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] text-center max-w-md m-0">
           {loadError || `Không thể tải ${UI_TEXT.QUIZ.toLowerCase()}`}
         </p>
         {id ? (
           <button
             type="button"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
             onClick={handleBack}
           >
             <ArrowLeft className="w-4 h-4" aria-hidden />
@@ -259,7 +259,7 @@ export default function AssessmentPreview() {
       <div className="space-y-6">
         <button
           type="button"
-          className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+          className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
           onClick={handleBack}
         >
           <ArrowLeft size={15} aria-hidden />
@@ -279,7 +279,7 @@ export default function AssessmentPreview() {
   if (!currentQuestion) {
     return layoutShell(
       <div className="flex flex-col items-center justify-center py-16 gap-3">
-        <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] m-0">
+        <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] m-0">
           Không có câu hỏi hợp lệ để hiển thị.
         </p>
       </div>
@@ -291,7 +291,7 @@ export default function AssessmentPreview() {
     <div className="space-y-6">
       <button
         type="button"
-        className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+        className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
         onClick={handleBack}
       >
         <ArrowLeft size={15} aria-hidden />
@@ -312,14 +312,14 @@ export default function AssessmentPreview() {
       {!result ? (
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] shrink-0">
               <Sparkles className="w-5 h-5" aria-hidden />
             </div>
             <div className="min-w-0">
-              <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] break-words">
+              <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] break-words">
                 {assessment.title || UI_TEXT.QUIZ}
               </h1>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5 m-0">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5 m-0">
                 Làm thử · Câu {currentIndex + 1} / {totalQuestions} · Đã trả lời: {answeredCount}
               </p>
             </div>
@@ -328,14 +328,14 @@ export default function AssessmentPreview() {
       ) : (
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] shrink-0">
               <Sparkles className="w-5 h-5" aria-hidden />
             </div>
             <div className="min-w-0">
-              <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] break-words">
+              <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] break-words">
                 Kết quả thử
               </h1>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5 m-0 truncate">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5 m-0 truncate">
                 {assessment.title}
               </p>
             </div>
@@ -343,7 +343,7 @@ export default function AssessmentPreview() {
           <div className="flex flex-wrap gap-2 shrink-0">
             <button
               type="button"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#30302E] active:scale-[0.98] transition-all duration-150"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:bg-[#1e293b] active:scale-[0.98] transition-all duration-150"
               onClick={handleReset}
             >
               <RefreshCw size={15} aria-hidden />
@@ -351,7 +351,7 @@ export default function AssessmentPreview() {
             </button>
             <button
               type="button"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors active:scale-[0.98]"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors active:scale-[0.98]"
               onClick={handleBack}
             >
               Đóng xem trước
@@ -364,39 +364,39 @@ export default function AssessmentPreview() {
 
       {/* Submit confirmation modal */}
       {showSubmitConfirm && !result && (
-        <div className="fixed inset-0 z-50 bg-[#141413]/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-[#0f172a]/50 backdrop-blur-sm flex items-center justify-center p-4">
           <div
             className="bg-white rounded-2xl shadow-[rgba(0,0,0,0.18)_0px_20px_48px] w-full max-w-md overflow-hidden flex flex-col"
             role="dialog"
             aria-modal="true"
             aria-labelledby="preview-submit-title"
           >
-            <div className="px-6 pt-6 pb-4 border-b border-[#F0EEE6] bg-[#FAF9F5]">
+            <div className="px-6 pt-6 pb-4 border-b border-[#e2e8f0] bg-[#ffffff]">
               <h3
                 id="preview-submit-title"
-                className="font-[Playfair_Display] text-[17px] font-medium text-[#141413] m-0"
+                className="font-[Playfair_Display] text-[17px] font-medium text-[#0f172a] m-0"
               >
                 Xác nhận nộp bài (thử)
               </h3>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-2 m-0 leading-relaxed">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-2 m-0 leading-relaxed">
                 Chấm thử trên máy chủ — kết quả chỉ hiển thị trong phiên này, không lưu vào hệ
                 thống.
               </p>
             </div>
             <div className="px-6 py-5">
-              <div className="rounded-xl border border-[#E8E6DC] bg-[#FAF9F5] px-4 py-3 flex gap-3">
+              <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] px-4 py-3 flex gap-3">
                 <AlertCircle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" aria-hidden />
                 <div>
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] m-0">
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] m-0">
                     Đã trả lời: {answeredCount} / {totalQuestions} câu
                   </p>
                   {answeredCount < totalQuestions ? (
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-1.5 m-0">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-1.5 m-0">
                       Bạn còn {totalQuestions - answeredCount} câu chưa trả lời — vẫn có thể nộp để
                       xem điểm các câu đã làm.
                     </p>
                   ) : (
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-1.5 m-0">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-1.5 m-0">
                       Bạn đã trả lời đủ {totalQuestions} câu.
                     </p>
                   )}
@@ -406,14 +406,14 @@ export default function AssessmentPreview() {
             <div className="flex gap-2 px-6 pb-6 pt-0">
               <button
                 type="button"
-                className="flex-1 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                className="flex-1 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                 onClick={() => setShowSubmitConfirm(false)}
               >
                 Hủy
               </button>
               <button
                 type="button"
-                className="flex-1 px-4 py-2.5 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="flex-1 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 onClick={() => void handleSubmit()}
                 disabled={submitting}
               >
@@ -434,18 +434,18 @@ export default function AssessmentPreview() {
       <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_280px] gap-6 lg:gap-8">
         <div className="min-w-0">
           {currentPartInfo ? (
-            <div className="rounded-2xl border border-[#E8E6DC] bg-[#FAF9F5] px-4 py-3 mb-5">
-              <p className="font-[Playfair_Display] text-[15px] font-medium text-[#141413] m-0">
+            <div className="rounded-2xl border border-[#e2e8f0] bg-[#ffffff] px-4 py-3 mb-5">
+              <p className="font-[Playfair_Display] text-[15px] font-medium text-[#0f172a] m-0">
                 {currentPartInfo.partLabel}
               </p>
-              <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-1 m-0">
+              <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-1 m-0">
                 Câu {currentPartInfo.questionIndexInPart} / {currentPartInfo.totalInPart} trong phần
                 này
               </p>
             </div>
           ) : null}
 
-          <div className="rounded-2xl border border-[#E8E6DC] bg-white p-4 sm:p-6 shadow-sm">
+          <div className="rounded-2xl border border-[#e2e8f0] bg-white p-4 sm:p-6 shadow-sm">
             <QuestionRenderer
               question={currentQuestion}
               studentAnswer={answers[currentQuestion.questionId] as string | undefined}
@@ -456,7 +456,7 @@ export default function AssessmentPreview() {
           <div className="flex flex-wrap items-center justify-between gap-2 mt-6">
             <button
               type="button"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               disabled={currentIndex === 0}
               onClick={() => setCurrentIndex((prev) => prev - 1)}
             >
@@ -469,7 +469,7 @@ export default function AssessmentPreview() {
               className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl font-[Be_Vietnam_Pro] text-[13px] font-semibold transition-colors ${
                 flagged
                   ? 'bg-amber-500 text-white hover:bg-amber-600'
-                  : 'border border-[#E8E6DC] bg-white text-[#5E5D59] hover:bg-[#F5F4ED]'
+                  : 'border border-[#e2e8f0] bg-white text-[#475569] hover:bg-[#f8fafc]'
               }`}
               onClick={() => handleFlagToggle(currentQuestion.questionId)}
             >
@@ -479,7 +479,7 @@ export default function AssessmentPreview() {
 
             <button
               type="button"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
               disabled={currentIndex === totalQuestions - 1}
               onClick={() => setCurrentIndex((prev) => prev + 1)}
             >
@@ -490,7 +490,7 @@ export default function AssessmentPreview() {
         </div>
 
         <div className="lg:sticky lg:top-24 space-y-4 h-fit">
-          <div className="rounded-2xl border border-[#E8E6DC] bg-white p-3 shadow-sm overflow-hidden">
+          <div className="rounded-2xl border border-[#e2e8f0] bg-white p-3 shadow-sm overflow-hidden">
             <QuestionNavigator
               questions={attemptQuestions}
               currentIndex={currentIndex}
@@ -501,7 +501,7 @@ export default function AssessmentPreview() {
           </div>
           <button
             type="button"
-            className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.99] transition-all duration-150"
+            className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.99] transition-all duration-150"
             onClick={() => setShowSubmitConfirm(true)}
             disabled={submitting}
           >
@@ -529,27 +529,27 @@ export default function AssessmentPreview() {
         : 0;
     return (
       <div className="space-y-6">
-        <div className="rounded-2xl border border-[#E8E6DC] bg-[#141413] text-[#FAF9F5] p-6 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.12)] relative overflow-hidden">
+        <div className="rounded-2xl border border-[#e2e8f0] bg-[#0f172a] text-[#ffffff] p-6 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.12)] relative overflow-hidden">
           <div
-            className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#C96442]/25 blur-3xl pointer-events-none"
+            className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#0ea5e9]/25 blur-3xl pointer-events-none"
             aria-hidden
           />
-          <p className="font-[Be_Vietnam_Pro] text-[12px] uppercase tracking-wide text-[#FAF9F5]/70 m-0">
+          <p className="font-[Be_Vietnam_Pro] text-[12px] uppercase tracking-wide text-[#ffffff]/70 m-0">
             Điểm chấm thử
           </p>
-          <p className="font-[Playfair_Display] text-[clamp(2rem,5vw,2.75rem)] font-medium text-[#FAF9F5] mt-2 mb-0 tabular-nums">
+          <p className="font-[Playfair_Display] text-[clamp(2rem,5vw,2.75rem)] font-medium text-[#ffffff] mt-2 mb-0 tabular-nums">
             {Number(result.totalScore).toFixed(2)}{' '}
-            <span className="text-[#FAF9F5]/50 font-normal">/</span>{' '}
+            <span className="text-[#ffffff]/50 font-normal">/</span>{' '}
             {Number(result.maxScore).toFixed(2)}
           </p>
-          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#FAF9F5]/85 mt-3 m-0">
+          <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#ffffff]/85 mt-3 m-0">
             {percent}% · Đúng {result.correctCount}/{result.totalQuestions} câu ·{' '}
-            <span className="text-[#FAF9F5]/60">Chưa lưu vào hệ thống</span>
+            <span className="text-[#ffffff]/60">Chưa lưu vào hệ thống</span>
           </p>
         </div>
 
         <div>
-          <h2 className="font-[Playfair_Display] text-[17px] font-medium text-[#141413] m-0 mb-4">
+          <h2 className="font-[Playfair_Display] text-[17px] font-medium text-[#0f172a] m-0 mb-4">
             Chi tiết câu trả lời
           </h2>
           <div className="flex flex-col gap-4">
@@ -564,10 +564,10 @@ export default function AssessmentPreview() {
               return (
                 <div
                   key={p.questionId}
-                  className="rounded-2xl border border-[#E8E6DC] bg-white p-5 sm:p-6 shadow-sm"
+                  className="rounded-2xl border border-[#e2e8f0] bg-white p-5 sm:p-6 shadow-sm"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
-                    <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#141413] m-0">
+                    <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#0f172a] m-0">
                       Câu {index + 1}
                     </h3>
                     <span
@@ -577,7 +577,7 @@ export default function AssessmentPreview() {
                     </span>
                   </div>
 
-                  <div className="font-[Be_Vietnam_Pro] text-[14px] text-[#141413] mb-4">
+                  <div className="font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] mb-4">
                     <MathText text={grade.questionText} />
                   </div>
 

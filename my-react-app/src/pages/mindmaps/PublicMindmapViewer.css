@@ -6,14 +6,14 @@
 .public-mindmap-page {
   min-height: 100vh;
   padding: 24px;
-  background: #f0eee6;
+  background: #e2e8f0;
 }
 
 .public-mindmap-page.embed-preview {
   min-height: 100vh;
   height: 100vh;
   padding: 0;
-  background: #f0eee6;
+  background: #e2e8f0;
 }
 
 /* ────────────────────────────────────────────────
@@ -38,13 +38,13 @@
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: #c96442;
+  color: #0ea5e9;
   font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 .public-mindmap-header h1 {
   margin: 0;
-  color: #141413;
+  color: #0f172a;
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 22px;
   font-weight: 500;
@@ -80,7 +80,7 @@
   border: 0;
   border-radius: 0;
   box-shadow: none;
-  background: #f0eee6;
+  background: #e2e8f0;
 }
 
 .public-mindmap-canvas {
@@ -103,7 +103,7 @@
   border-radius: 12px;
   background: #fafaf7;
   border: 1px solid #e2dfd5;
-  color: #141413;
+  color: #0f172a;
   font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 14px;
 }
@@ -121,7 +121,7 @@
 
 /* ── Canvas ──────────────────────────────────── */
 .public-mindmap-canvas .map-container {
-  background: #f0eee6 !important;
+  background: #e2e8f0 !important;
   font-family:
     'Be Vietnam Pro',
     -apple-system,

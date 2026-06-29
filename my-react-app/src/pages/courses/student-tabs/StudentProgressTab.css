@@ -21,10 +21,10 @@
 
 .spt-card {
   border-radius: 14px;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   background: #ffffff;
   padding: 1rem 1.1rem;
-  box-shadow: 0 1px 3px rgba(20, 20, 19, 0.06);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
 }
 
 .spt-card-title {
@@ -32,7 +32,7 @@
   font-family: var(--f-body, 'Be Vietnam Pro', system-ui, sans-serif);
   font-size: 0.9375rem;
   font-weight: 700;
-  color: #141413;
+  color: #0f172a;
   letter-spacing: -0.02em;
 }
 
@@ -64,20 +64,20 @@
 .spt-pct-label {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #87867f;
+  color: #64748b;
 }
 
 .spt-fraction {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #5e5d59;
+  color: #475569;
   font-variant-numeric: tabular-nums;
 }
 
 .spt-bar-track {
   height: 10px;
   border-radius: 999px;
-  background: #f5f4ed;
+  background: #f8fafc;
   overflow: hidden;
   border: 1px solid #ede9df;
 }
@@ -85,7 +85,7 @@
 .spt-bar-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #c96442 0%, #d97757 100%);
+  background: linear-gradient(90deg, #0ea5e9 0%, #14b8a6 100%);
   width: 100%;
   transform-origin: left;
   transform: scaleX(0);
@@ -96,7 +96,7 @@
 .spt-rows {
   margin-top: 0.75rem;
   padding-top: 0.75rem;
-  border-top: 1px solid #f0eee6;
+  border-top: 1px solid #e2e8f0;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -108,7 +108,7 @@
   align-items: center;
   gap: 0.75rem;
   padding: 0.55rem 0;
-  border-bottom: 1px solid #f5f4ed;
+  border-bottom: 1px solid #f8fafc;
   font-family: var(--f-body, 'Be Vietnam Pro', system-ui, sans-serif);
 }
 
@@ -123,13 +123,13 @@
   gap: 0.4rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: #87867f;
+  color: #64748b;
 }
 
 .spt-row-value {
   font-size: 0.8125rem;
   font-weight: 700;
-  color: #141413;
+  color: #0f172a;
   text-align: right;
 }
 
@@ -147,10 +147,10 @@
 /* ── Next lesson ── */
 .spt-next {
   border-radius: 14px;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   background: linear-gradient(165deg, #faf9ff 0%, #ffffff 45%);
   padding: 0.85rem 1rem;
-  box-shadow: 0 1px 3px rgba(20, 20, 19, 0.05);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
 }
 
 .spt-next-head {
@@ -179,7 +179,7 @@
   margin: 0 0 0.35rem;
   font-size: 0.9375rem;
   font-weight: 700;
-  color: #141413;
+  color: #0f172a;
   line-height: 1.35;
   font-family: var(--f-body, 'Be Vietnam Pro', system-ui, sans-serif);
 }
@@ -188,7 +188,7 @@
   margin: 0;
   font-size: 0.75rem;
   font-weight: 500;
-  color: #87867f;
+  color: #64748b;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -202,7 +202,7 @@
   margin: 0 0 0.65rem;
   font-size: 0.9375rem;
   font-weight: 700;
-  color: #141413;
+  color: #0f172a;
   font-family: var(--f-body, 'Be Vietnam Pro', system-ui, sans-serif);
 }
 
@@ -222,7 +222,7 @@
   gap: 0.55rem;
   padding: 0.55rem 0.65rem;
   border-radius: 10px;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   background: #fffefb;
 }
 
@@ -246,7 +246,7 @@
 .spt-recent-name {
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #141413;
+  color: #0f172a;
   line-height: 1.35;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -266,7 +266,7 @@
 .spt-recent-date {
   font-size: 0.6875rem;
   font-weight: 500;
-  color: #87867f;
+  color: #64748b;
   margin-top: 0.15rem;
 }
 
@@ -313,9 +313,9 @@
   text-align: center;
   padding: 2rem 1rem;
   border-radius: 14px;
-  border: 1px dashed #e8e6dc;
+  border: 1px dashed #e2e8f0;
   background: #fffefb;
-  color: #87867f;
+  color: #64748b;
   font-size: 0.875rem;
   font-family: var(--f-body, 'Be Vietnam Pro', system-ui, sans-serif);
 }

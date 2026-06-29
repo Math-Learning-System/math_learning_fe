@@ -13,9 +13,9 @@
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 82% 52% at 8% 0%, rgba(201, 100, 66, 0.09), transparent 46%),
+    radial-gradient(ellipse 82% 52% at 8% 0%, rgba(14, 165, 233, 0.09), transparent 46%),
     radial-gradient(ellipse 68% 42% at 94% 10%, rgba(31, 94, 255, 0.06), transparent 44%),
-    linear-gradient(180deg, #f5f4ed 0%, #faf9f5 45%, #f4f7fe 100%);
+    linear-gradient(180deg, #f8fafc 0%, #ffffff 45%, #f4f7fe 100%);
 }
 
 .module-layout-container .admin-mgmt-shell__content {

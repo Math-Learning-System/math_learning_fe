@@ -64,9 +64,9 @@ type CourseFilterStatus =
 const languageOptions = ['Tiếng Việt', 'English'] as const;
 
 const tcSecondaryBtn =
-  'inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors disabled:opacity-45 disabled:pointer-events-none';
+  'inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors disabled:opacity-45 disabled:pointer-events-none';
 const tcPrimaryBtn =
-  'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150';
+  'inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[13px] font-semibold hover:brightness-95 active:scale-[0.98] transition-all duration-150';
 
 // ─── Create Course Modal ───────────────────────────────────────────────────────
 interface CreateModalProps {
@@ -878,21 +878,21 @@ const TeacherCourses: React.FC = () => {
             {/* ── Header ── */}
             <div className="flex items-center justify-between gap-4 flex-wrap">
               <div className="flex items-center gap-3 min-w-0">
-                <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59] flex-shrink-0">
+                <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569] flex-shrink-0">
                   <BookOpen className="w-5 h-5" aria-hidden />
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-2.5 flex-wrap">
-                    <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+                    <h1 className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
                       {UI_TEXT.COURSE}
                     </h1>
                     {!isLoading && (
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#E8E6DC] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59]">
+                      <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#e2e8f0] font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569]">
                         {courses.length}
                       </span>
                     )}
                   </div>
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                     {stats.active} đang hoạt động • {stats.students} học viên
                   </p>
                 </div>
@@ -943,7 +943,7 @@ const TeacherCourses: React.FC = () => {
               ).map(({ label, value, Icon, bg, color }) => (
                 <div
                   key={label}
-                  className="bg-white rounded-2xl border border-[#E8E6DC] p-4 flex items-center gap-3"
+                  className="bg-white rounded-2xl border border-[#e2e8f0] p-4 flex items-center gap-3"
                 >
                   <div
                     className={`w-9 h-9 rounded-xl ${bg} flex items-center justify-center flex-shrink-0`}
@@ -951,10 +951,10 @@ const TeacherCourses: React.FC = () => {
                     <Icon className={`w-4 h-4 ${color}`} aria-hidden />
                   </div>
                   <div className="min-w-0">
-                    <p className="font-[Playfair_Display] text-[22px] font-medium text-[#141413] leading-none tabular-nums">
+                    <p className="font-[Playfair_Display] text-[22px] font-medium text-[#0f172a] leading-none tabular-nums">
                       {value}
                     </p>
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5 truncate">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5 truncate">
                       {label}
                     </p>
                   </div>
@@ -964,11 +964,11 @@ const TeacherCourses: React.FC = () => {
 
             {/* ── Toolbar ── */}
             <div className="flex flex-col gap-3">
-              <div className="bg-white rounded-2xl border border-[#E8E6DC] overflow-hidden">
-                <label className="flex items-center gap-3 px-4 py-3 border-b border-[#E8E6DC] focus-within:bg-[#FAF9F5] transition-colors duration-150">
-                  <Search className="text-[#87867F] w-4 h-4 flex-shrink-0" aria-hidden />
+              <div className="bg-white rounded-2xl border border-[#e2e8f0] overflow-hidden">
+                <label className="flex items-center gap-3 px-4 py-3 border-b border-[#e2e8f0] focus-within:bg-[#ffffff] transition-colors duration-150">
+                  <Search className="text-[#64748b] w-4 h-4 flex-shrink-0" aria-hidden />
                   <input
-                    className="flex-1 min-w-0 font-[Be_Vietnam_Pro] text-[14px] text-[#141413] placeholder:text-[#87867F] bg-transparent outline-none"
+                    className="flex-1 min-w-0 font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] placeholder:text-[#64748b] bg-transparent outline-none"
                     placeholder={`Tìm kiếm ${UI_TEXT.COURSE.toLowerCase()}...`}
                     value={search}
                     onChange={(e) => {
@@ -981,7 +981,7 @@ const TeacherCourses: React.FC = () => {
                       type="button"
                       aria-label="Xóa nội dung tìm kiếm"
                       onClick={() => setSearch('')}
-                      className="text-[#87867F] hover:text-[#141413] transition-colors flex-shrink-0"
+                      className="text-[#64748b] hover:text-[#0f172a] transition-colors flex-shrink-0"
                     >
                       <X className="w-4 h-4" />
                     </button>
@@ -1021,7 +1021,7 @@ const TeacherCourses: React.FC = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row sm:items-center gap-3 flex-wrap">
-                <div className="flex flex-wrap items-center gap-1 p-1 bg-[#F5F4ED] rounded-xl flex-1 min-w-0">
+                <div className="flex flex-wrap items-center gap-1 p-1 bg-[#f8fafc] rounded-xl flex-1 min-w-0">
                   {filterTabs.map((tab) => (
                     <button
                       key={tab.id}
@@ -1031,8 +1031,8 @@ const TeacherCourses: React.FC = () => {
                         setCurrentPage(1);
                       }}
                       className={`px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-medium transition-all duration-150 whitespace-nowrap ${filterStatus === tab.id
-                        ? 'bg-white text-[#141413] shadow-sm'
-                        : 'text-[#87867F] hover:text-[#5E5D59]'
+                        ? 'bg-white text-[#0f172a] shadow-sm'
+                        : 'text-[#64748b] hover:text-[#475569]'
                         }`}
                     >
                       {tab.label}
@@ -1044,25 +1044,25 @@ const TeacherCourses: React.FC = () => {
 
             {/* ── Summary bar ── */}
             {!isLoading && !error && courses.length > 0 && (
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 rounded-xl bg-[#FAF9F5] border border-[#E8E6DC]">
-                <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] uppercase tracking-wide">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 px-4 py-3 rounded-xl bg-[#ffffff] border border-[#e2e8f0]">
+                <span className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] uppercase tracking-wide">
                   Hiển thị
                 </span>
-                <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] tabular-nums">
+                <strong className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] tabular-nums">
                   {paginatedCourses.length} / {filteredCourses.length}
                 </strong>
-                <div className="w-px h-4 bg-[#E8E6DC] hidden sm:block" aria-hidden />
-                <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                <div className="w-px h-4 bg-[#e2e8f0] hidden sm:block" aria-hidden />
+                <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
                   Công khai{' '}
-                  <strong className="text-[#141413] font-semibold tabular-nums">
+                  <strong className="text-[#0f172a] font-semibold tabular-nums">
                     {stats.active}
                   </strong>
                 </span>
-                <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+                <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
                   <span className="w-1.5 h-1.5 rounded-full bg-amber-400 inline-block" />
                   Nháp{' '}
-                  <strong className="text-[#141413] font-semibold tabular-nums">
+                  <strong className="text-[#0f172a] font-semibold tabular-nums">
                     {stats.draft}
                   </strong>
                 </span>
@@ -1078,7 +1078,7 @@ const TeacherCourses: React.FC = () => {
                 {[1, 2, 3, 4, 5, 6].map((i) => (
                   <div
                     key={i}
-                    className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-52 animate-pulse"
+                    className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-52 animate-pulse"
                   />
                 ))}
               </div>
@@ -1240,8 +1240,8 @@ const TeacherCourses: React.FC = () => {
                 >
                   <ArrowLeft className="w-3.5 h-3.5" /> Trước
                 </button>
-                <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] tabular-nums">
-                  Trang <strong className="text-[#141413]">{safeCurrentPage}</strong> / {totalPages}
+                <span className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569] tabular-nums">
+                  Trang <strong className="text-[#0f172a]">{safeCurrentPage}</strong> / {totalPages}
                 </span>
                 <button
                   type="button"
@@ -1259,10 +1259,10 @@ const TeacherCourses: React.FC = () => {
             {/* ── Empty: filtered ── */}
             {!isLoading && !error && filteredCourses.length === 0 && courses.length > 0 && (
               <div className="flex flex-col items-center justify-center py-16 gap-2 px-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#F5F4ED] flex items-center justify-center text-[#87867F]">
+                <div className="w-12 h-12 rounded-2xl bg-[#f8fafc] flex items-center justify-center text-[#64748b]">
                   <Search className="w-6 h-6 opacity-60" aria-hidden />
                 </div>
-                <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center max-w-md">
+                <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center max-w-md">
                   Không tìm thấy {UI_TEXT.COURSE.toLowerCase()}
                   {search ? ` khớp với "${search}"` : ' với bộ lọc này'}.
                 </p>
@@ -1272,10 +1272,10 @@ const TeacherCourses: React.FC = () => {
             {/* ── Empty: no courses ── */}
             {!isLoading && !error && courses.length === 0 && (
               <div className="flex flex-col items-center justify-center py-16 gap-3 px-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#F5F4ED] flex items-center justify-center text-[#87867F]">
+                <div className="w-12 h-12 rounded-2xl bg-[#f8fafc] flex items-center justify-center text-[#64748b]">
                   <BookOpen className="w-6 h-6 opacity-60" aria-hidden />
                 </div>
-                <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F] text-center max-w-md">
+                <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b] text-center max-w-md">
                   Bạn chưa có {UI_TEXT.COURSE.toLowerCase()} nào. Hãy tạo{' '}
                   {UI_TEXT.COURSE.toLowerCase()} để bắt đầu giảng dạy.
                 </p>

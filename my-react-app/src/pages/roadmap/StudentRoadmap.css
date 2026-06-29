@@ -17,7 +17,7 @@
   background:
     radial-gradient(ellipse 80% 50% at 12% 0%, rgba(163, 182, 212, 0.12), transparent 45%),
     radial-gradient(ellipse 65% 42% at 88% 8%, rgba(143, 167, 196, 0.08), transparent 44%),
-    linear-gradient(180deg, #faf9f5 0%, #f5f4ed 42%, #f8f7f2 100%);
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 42%, #f8f7f2 100%);
 }
 
 .module-layout-container.srp .module-page {
@@ -45,7 +45,7 @@
   flex-direction: column;
   gap: 0.75rem;
   border-radius: 1rem;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   background: #ffffff;
   padding: 1rem;
   text-decoration: none;
@@ -56,12 +56,12 @@
 .srp__grid-card:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 0 0 1px #d1cfc5,
+    0 0 0 1px #cbd5e1,
     rgba(0, 0, 0, 0.08) 0 8px 30px;
 }
 
 .srp__grid-card--generated {
-  border-color: #e8e6dc;
+  border-color: #e2e8f0;
 }
 
 .srp__grid-card-top {
@@ -73,7 +73,7 @@
 .srp__grid-card-arrow {
   width: 1rem;
   height: 1rem;
-  color: #87867f;
+  color: #64748b;
 }
 
 .srp__grid-card-title {
@@ -82,7 +82,7 @@
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.45;
-  color: #141413;
+  color: #0f172a;
 }
 
 .srp__grid-card-meta {
@@ -90,7 +90,7 @@
   font-size: 0.88rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #5e5d59;
+  color: #475569;
 }
 
 .srp__grid-progress-wrap {
@@ -102,7 +102,7 @@
 .srp__grid-progress {
   height: 0.45rem;
   flex: 1;
-  background: #e8e6dc;
+  background: #e2e8f0;
   border-radius: 999px;
   overflow: hidden;
 }
@@ -131,13 +131,13 @@
 .srp__grid-card-count {
   font-size: 0.78rem;
   font-weight: 500;
-  color: #5e5d59;
+  color: #475569;
 }
 
 .srp__grid-card-icon {
   width: 1rem;
   height: 1rem;
-  color: #4d4c48;
+  color: #334155;
 }
 
 .srp__badge {
@@ -158,12 +158,12 @@
 }
 
 .srp__badge--in_progress {
-  background: #f0eee6;
-  color: #4d4c48;
+  background: #e2e8f0;
+  color: #334155;
 }
 
 .srp__badge--completed {
-  background: #e8e6dc;
+  background: #e2e8f0;
   color: #3d3d3a;
 }
 
@@ -173,13 +173,13 @@
 }
 
 .srp__badge--archived {
-  background: #f0eee6;
-  color: #5e5d59;
+  background: #e2e8f0;
+  color: #475569;
 }
 
 .srp__empty {
   background: #ffffff;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   border-radius: 1rem;
   padding: 2.5rem 1.6rem;
   text-align: center;
@@ -189,7 +189,7 @@
 .srp__empty-icon {
   width: 2.4rem;
   height: 2.4rem;
-  color: #87867f;
+  color: #64748b;
   margin: 0 auto 0.8rem;
 }
 
@@ -198,13 +198,13 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.15rem;
   font-weight: 500;
-  color: #141413;
+  color: #0f172a;
 }
 
 .srp__empty p {
   margin: 0;
   font-size: 0.92rem;
-  color: #5e5d59;
+  color: #475569;
   line-height: 1.6;
 }
 
@@ -216,7 +216,7 @@
 
 .srp__skeleton {
   border-radius: 16px;
-  background: linear-gradient(90deg, #f0eee6 25%, #faf9f5 50%, #f0eee6 75%);
+  background: linear-gradient(90deg, #e2e8f0 25%, #ffffff 50%, #e2e8f0 75%);
   background-size: 200% 100%;
   animation: srp-shimmer 1.4s infinite;
 }
@@ -229,8 +229,8 @@
   margin: 0;
   padding: 0.9rem 1rem;
   border-radius: 12px;
-  border: 1px solid #e8e6dc;
-  background: #faf9f5;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
   color: #b53333;
   font-size: 0.95rem;
 }

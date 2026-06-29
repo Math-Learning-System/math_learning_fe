@@ -2,20 +2,20 @@
 .sidebar {
   --sb-w: 248px;
   --sb-w-col: 64px;
-  --sb-primary: #c96442;
-  --sb-primary-soft: rgba(201, 100, 66, 0.12);
-  --sb-primary-ring: #d1cfc5;
-  --sb-text-1: #141413;
-  --sb-text-2: #4d4c48;
-  --sb-text-3: #87867f;
-  --sb-border: #e8e6dc;
-  --sb-border-soft: #f0eee6;
-  --sb-bg: #f5f4ed;
-  --sb-bg-elevated: #faf9f5;
+  --sb-primary: #0ea5e9;
+  --sb-primary-soft: rgba(14, 165, 233, 0.1);
+  --sb-primary-ring: #cbd5e1;
+  --sb-text-1: #0f172a;
+  --sb-text-2: #334155;
+  --sb-text-3: #64748b;
+  --sb-border: #e2e8f0;
+  --sb-border-soft: #f1f5f9;
+  --sb-bg: #ffffff;
+  --sb-bg-elevated: #f8fafc;
   --sb-radius: 8px;
   --sb-radius-lg: 12px;
   --sb-f-body: 'Be Vietnam Pro', -apple-system, sans-serif;
-  --sb-f-head: Georgia, 'Times New Roman', serif;
+  --sb-f-head: 'Be Vietnam Pro', -apple-system, sans-serif;
 
   width: var(--sb-w);
   min-width: var(--sb-w);
@@ -132,8 +132,8 @@
   background: var(--sb-primary-soft);
   color: var(--sb-primary);
   box-shadow:
-    0 0 0 1px rgba(201, 100, 66, 0.32),
-    2px 0 10px rgba(201, 100, 66, 0.2);
+    0 0 0 1px rgba(14, 165, 233, 0.32),
+    2px 0 10px rgba(14, 165, 233, 0.2);
 }
 
 .sidebar--collapsed .sb-toggle {
@@ -251,7 +251,7 @@
   background: var(--sb-primary-soft);
   color: var(--sb-primary);
   font-weight: 500;
-  box-shadow: 0 0 0 1px rgba(201, 100, 66, 0.22);
+  box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.22);
 }
 
 .sb-item.active::before {
@@ -287,8 +287,8 @@
   left: calc(100% + 12px);
   top: 50%;
   transform: translateY(-50%);
-  background: #30302e;
-  color: #faf9f5;
+  background: #1e293b;
+  color: #f8fafc;
   font-size: 0.775rem;
   font-weight: 500;
   padding: 0.28rem 0.6rem;
@@ -308,7 +308,7 @@
   top: 50%;
   transform: translateY(-50%);
   border: 5px solid transparent;
-  border-right-color: #30302e;
+  border-right-color: #1e293b;
 }
 
 .sidebar--collapsed .sb-item:hover .sb-tooltip {
@@ -335,12 +335,12 @@
 .sb-item--switch {
   color: var(--sb-primary);
   font-weight: 600;
-  background: rgba(201, 100, 66, 0.08);
-  box-shadow: 0 0 0 1px rgba(201, 100, 66, 0.2);
+  background: rgba(14, 165, 233, 0.08);
+  box-shadow: 0 0 0 1px rgba(14, 165, 233, 0.2);
 }
 
 .sb-item--switch:hover {
-  background: rgba(201, 100, 66, 0.14);
+  background: rgba(14, 165, 233, 0.14);
 }
 
 /* ── Footer ── */

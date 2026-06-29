@@ -264,9 +264,9 @@ export function ExamMatrixRowModal({
                           style={{
                             padding: '5px 14px',
                             borderRadius: 20,
-                            border: active ? '2px solid #C96442' : '1px solid #e2e8f0',
-                            background: active ? '#C96442' : '#f8fafc',
-                            color: active ? '#fff' : '#141413',
+                            border: active ? '2px solid #0ea5e9' : '1px solid #e2e8f0',
+                            background: active ? '#0ea5e9' : '#f8fafc',
+                            color: active ? '#fff' : '#0f172a',
                             fontWeight: active ? 600 : 400,
                             fontSize: 13,
                             cursor: 'pointer',

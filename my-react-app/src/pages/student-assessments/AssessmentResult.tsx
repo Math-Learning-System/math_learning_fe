@@ -60,7 +60,7 @@ function tierFromPct(pct: number) {
       headline: 'Cần cố gắng thêm',
       sub: 'Xem lại các câu sai và đọc lời giải để tiến bộ nhanh hơn.',
       ring: 'stroke-slate-500',
-      scoreGlow: 'text-[#141413]',
+      scoreGlow: 'text-[#0f172a]',
     };
   return {
     key: 'low' as const,
@@ -79,7 +79,7 @@ function statusBadge(status: GradingSubmissionResponse['status']) {
     GRADED: 'bg-emerald-50 text-emerald-900 border-emerald-200',
     SUBMITTED: 'bg-sky-50 text-sky-900 border-sky-200',
     IN_PROGRESS: 'bg-neutral-100 text-neutral-800 border-neutral-200',
-    INVALIDATED: 'bg-neutral-100 text-[#5E5D59] border-[#E8E6DC]',
+    INVALIDATED: 'bg-neutral-100 text-[#475569] border-[#e2e8f0]',
   };
   const label: Record<string, string> = {
     GRADED: 'Đã chấm',
@@ -105,7 +105,7 @@ function MiniStat({
   readonly value: ReactNode;
 }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-[#F0EEE6] bg-white p-4 shadow-[0_2px_20px_rgba(20,20,19,0.04)] transition-all duration-300 hover:border-[#E0DDD4] hover:shadow-[0_12px_36px_rgba(20,20,19,0.07)]">
+    <div className="group relative overflow-hidden rounded-2xl border border-[#e2e8f0] bg-white p-4 shadow-[0_2px_20px_rgba(20,20,19,0.04)] transition-all duration-300 hover:border-[#E0DDD4] hover:shadow-[0_12px_36px_rgba(20,20,19,0.07)]">
       <div className="flex items-center gap-3">
         <div
           className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ring-1 ring-black/[0.04] ${iconBg}`}
@@ -113,10 +113,10 @@ function MiniStat({
           <Icon className="h-5 w-5" aria-hidden />
         </div>
         <div className="min-w-0">
-          <p className="font-[Be_Vietnam_Pro] text-[10px] font-semibold uppercase tracking-[0.14em] text-[#87867F]">
+          <p className="font-[Be_Vietnam_Pro] text-[10px] font-semibold uppercase tracking-[0.14em] text-[#64748b]">
             {label}
           </p>
-          <div className="mt-0.5 font-[Playfair_Display] text-[22px] font-medium tabular-nums leading-none text-[#141413]">
+          <div className="mt-0.5 font-[Playfair_Display] text-[22px] font-medium tabular-nums leading-none text-[#0f172a]">
             {value}
           </div>
         </div>
@@ -144,7 +144,7 @@ function ResultHero({
   const dashOffset = circumference - (progress / 100) * circumference;
 
   return (
-    <section className="relative overflow-hidden rounded-3xl border border-[#E8E6DC] shadow-[0_24px_80px_-16px_rgba(20,20,19,0.14)]">
+    <section className="relative overflow-hidden rounded-3xl border border-[#e2e8f0] shadow-[0_24px_80px_-16px_rgba(20,20,19,0.14)]">
       <div className={`absolute inset-0 bg-gradient-to-br ${tier.gradient}`} aria-hidden />
       <div
         className={`pointer-events-none absolute -left-28 top-1/2 h-[380px] w-[380px] -translate-y-1/2 rounded-full blur-3xl ${tier.orbA}`}
@@ -160,7 +160,7 @@ function ResultHero({
           <button
             type="button"
             onClick={onBack}
-            className="inline-flex w-fit items-center gap-2 rounded-xl border border-[#E8E6DC]/90 bg-white/90 px-3.5 py-2 text-[13px] font-medium text-[#5E5D59] shadow-sm backdrop-blur-md transition-all hover:border-[#d1cfc5] hover:bg-white hover:text-[#141413] active:scale-[0.98] font-[Be_Vietnam_Pro]"
+            className="inline-flex w-fit items-center gap-2 rounded-xl border border-[#e2e8f0]/90 bg-white/90 px-3.5 py-2 text-[13px] font-medium text-[#475569] shadow-sm backdrop-blur-md transition-all hover:border-[#cbd5e1] hover:bg-white hover:text-[#0f172a] active:scale-[0.98] font-[Be_Vietnam_Pro]"
           >
             <ArrowLeft className="h-3.5 w-3.5" aria-hidden />
             Danh sách {UI_TEXT.QUIZ.toLowerCase()}
@@ -173,7 +173,7 @@ function ResultHero({
             </span>
             {result.gradesReleased ? (
               <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200/80 bg-white/80 px-3 py-1 text-[11px] font-semibold text-emerald-900 backdrop-blur-sm font-[Be_Vietnam_Pro]">
-                <Sparkles className="h-3.5 w-3.5 text-[#C96442]" aria-hidden />
+                <Sparkles className="h-3.5 w-3.5 text-[#0ea5e9]" aria-hidden />
                 Đã công bố điểm
               </span>
             ) : (
@@ -187,18 +187,18 @@ function ResultHero({
       </div>
 
       <div className="relative px-6 py-8 sm:px-10 sm:py-10">
-        <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#87867F]">
+        <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#64748b]">
           Kết quả {UI_TEXT.QUIZ.toLowerCase()}
         </p>
         <div className="mt-4 flex flex-col items-start gap-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="min-w-0 flex-1">
-            <h1 className="font-[Playfair_Display] text-[clamp(1.5rem,4vw,2.125rem)] font-medium leading-[1.15] tracking-[-0.02em] text-[#141413]">
+            <h1 className="font-[Playfair_Display] text-[clamp(1.5rem,4vw,2.125rem)] font-medium leading-[1.15] tracking-[-0.02em] text-[#0f172a]">
               {result.assessmentTitle}
             </h1>
-            <p className="mt-4 max-w-xl font-[Playfair_Display] text-[19px] font-medium text-[#141413]/90">
+            <p className="mt-4 max-w-xl font-[Playfair_Display] text-[19px] font-medium text-[#0f172a]/90">
               {tier.headline}
             </p>
-            <p className="mt-2 max-w-xl font-[Be_Vietnam_Pro] text-[14px] leading-relaxed text-[#5E5D59]">
+            <p className="mt-2 max-w-xl font-[Be_Vietnam_Pro] text-[14px] leading-relaxed text-[#475569]">
               {tier.sub}
             </p>
           </div>
@@ -211,7 +211,7 @@ function ResultHero({
                   cy="60"
                   r="52"
                   fill="none"
-                  className="stroke-[#E8E6DC]"
+                  className="stroke-[#e2e8f0]"
                   strokeWidth="8"
                 />
                 <circle
@@ -234,19 +234,19 @@ function ResultHero({
                     ? String(Math.round(numericScore))
                     : numericScore.toFixed(1)}
                 </span>
-                <span className="mt-1 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F]">
+                <span className="mt-1 font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                   / {result.maxScore} điểm
                 </span>
               </div>
             </div>
 
             <div className="rounded-2xl border border-white/70 bg-white/55 px-6 py-4 text-center shadow-inner backdrop-blur-md sm:text-left">
-              <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-[0.14em] text-[#87867F]">
+              <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-[0.14em] text-[#64748b]">
                 Tỷ lệ
               </p>
-              <p className="mt-1 font-[Playfair_Display] text-[36px] font-medium tabular-nums text-[#141413]">
+              <p className="mt-1 font-[Playfair_Display] text-[36px] font-medium tabular-nums text-[#0f172a]">
                 {pct.toFixed(1)}
-                <span className="text-[22px] text-[#87867F]">%</span>
+                <span className="text-[22px] text-[#64748b]">%</span>
               </p>
             </div>
           </div>
@@ -307,27 +307,27 @@ export default function AssessmentResult() {
     return (
       <Shell>
         <div className="space-y-8">
-          <div className="relative h-[320px] overflow-hidden rounded-3xl border border-[#F0EEE6] bg-white">
+          <div className="relative h-[320px] overflow-hidden rounded-3xl border border-[#e2e8f0] bg-white">
             <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-neutral-100 via-white to-neutral-50" />
             <div className="relative flex flex-col gap-6 p-8 lg:flex-row lg:justify-between">
               <div className="space-y-4 flex-1">
-                <div className="h-9 w-48 rounded-xl bg-[#E8E6DC]/90" />
-                <div className="h-5 w-32 rounded-lg bg-[#E8E6DC]/70" />
-                <div className="h-14 max-w-md rounded-xl bg-[#E8E6DC]/75" />
+                <div className="h-9 w-48 rounded-xl bg-[#e2e8f0]/90" />
+                <div className="h-5 w-32 rounded-lg bg-[#e2e8f0]/70" />
+                <div className="h-14 max-w-md rounded-xl bg-[#e2e8f0]/75" />
               </div>
-              <div className="h-[140px] w-[140px] shrink-0 rounded-full bg-[#E8E6DC]/60" />
+              <div className="h-[140px] w-[140px] shrink-0 rounded-full bg-[#e2e8f0]/60" />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
             {[1, 2, 3, 4].map((k) => (
               <div
                 key={k}
-                className="h-[92px] animate-pulse rounded-2xl border border-[#F0EEE6] bg-white"
+                className="h-[92px] animate-pulse rounded-2xl border border-[#e2e8f0] bg-white"
               />
             ))}
           </div>
           <div className="space-y-4">
-            <div className="h-8 w-56 rounded-lg bg-[#E8E6DC]/70" />
+            <div className="h-8 w-56 rounded-lg bg-[#e2e8f0]/70" />
             {[1, 2].map((k) => (
               <div key={k} className="h-40 animate-pulse rounded-2xl bg-neutral-100" />
             ))}
@@ -340,20 +340,20 @@ export default function AssessmentResult() {
   if (isError || !result) {
     return (
       <Shell>
-        <div className="flex flex-col items-center justify-center rounded-3xl border border-[#F0EEE6] bg-white px-6 py-20 text-center shadow-inner">
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-[0_8px_30px_rgba(20,20,19,0.08)] ring-1 ring-[#E8E6DC]">
-            <AlertCircle className="h-8 w-8 text-[#87867F]" aria-hidden />
+        <div className="flex flex-col items-center justify-center rounded-3xl border border-[#e2e8f0] bg-white px-6 py-20 text-center shadow-inner">
+          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-[0_8px_30px_rgba(20,20,19,0.08)] ring-1 ring-[#e2e8f0]">
+            <AlertCircle className="h-8 w-8 text-[#64748b]" aria-hidden />
           </div>
-          <p className="mt-6 font-[Playfair_Display] text-[22px] font-medium text-[#141413]">
+          <p className="mt-6 font-[Playfair_Display] text-[22px] font-medium text-[#0f172a]">
             Không tải được kết quả
           </p>
-          <p className="mt-2 max-w-sm font-[Be_Vietnam_Pro] text-[14px] text-[#87867F]">
+          <p className="mt-2 max-w-sm font-[Be_Vietnam_Pro] text-[14px] text-[#64748b]">
             Kiểm tra kết nối hoặc thử mở lại sau.
           </p>
           <button
             type="button"
             onClick={goBack}
-            className="mt-8 inline-flex items-center gap-2 rounded-xl border border-[#E8E6DC] bg-white px-5 py-3 text-[13px] font-semibold text-[#141413] shadow-sm transition-all hover:bg-[#F5F4ED] active:scale-[0.98] font-[Be_Vietnam_Pro]"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl border border-[#e2e8f0] bg-white px-5 py-3 text-[13px] font-semibold text-[#0f172a] shadow-sm transition-all hover:bg-[#f8fafc] active:scale-[0.98] font-[Be_Vietnam_Pro]"
           >
             <ArrowLeft className="h-3.5 w-3.5" aria-hidden />
             Quay lại danh sách
@@ -381,16 +381,16 @@ export default function AssessmentResult() {
       {result.pendingQuestionsCount > 0 ? (
         <div
           role="status"
-          className="flex gap-4 rounded-2xl border border-[#E8E6DC] bg-white px-5 py-4 shadow-sm"
+          className="flex gap-4 rounded-2xl border border-[#e2e8f0] bg-white px-5 py-4 shadow-sm"
         >
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-neutral-200 bg-neutral-50 text-neutral-600">
             <Hourglass className="h-5 w-5" aria-hidden />
           </div>
           <div>
-            <p className="font-[Playfair_Display] text-[17px] font-medium text-[#141413]">
+            <p className="font-[Playfair_Display] text-[17px] font-medium text-[#0f172a]">
               Còn {result.pendingQuestionsCount} câu chờ chấm tay
             </p>
-            <p className="mt-1 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#5E5D59]">
+            <p className="mt-1 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#475569]">
               Điểm và nhận xét có thể cập nhật sau khi giáo viên hoàn tất chấm.
             </p>
           </div>
@@ -402,11 +402,11 @@ export default function AssessmentResult() {
           <div>
             <h2
               id="result-meta-heading"
-              className="font-[Playfair_Display] text-[20px] font-medium text-[#141413]"
+              className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a]"
             >
               Tóm tắt làm bài
             </h2>
-            <p className="mt-1 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+            <p className="mt-1 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
               Thống kê nhanh theo từng câu
             </p>
           </div>
@@ -441,39 +441,39 @@ export default function AssessmentResult() {
 
         <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {result.timeSpentSeconds ? (
-            <div className="flex items-center gap-3 rounded-2xl border border-[#E8E6DC] bg-white px-4 py-3 shadow-sm">
-              <Clock className="h-5 w-5 text-[#87867F]" aria-hidden />
+            <div className="flex items-center gap-3 rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-sm">
+              <Clock className="h-5 w-5 text-[#64748b]" aria-hidden />
               <div>
-                <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F]">
+                <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                   Thời gian
                 </p>
-                <p className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413]">
+                <p className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a]">
                   {Math.floor(result.timeSpentSeconds / 60)} phút
                 </p>
               </div>
             </div>
           ) : null}
           {result.attemptNumber ? (
-            <div className="flex items-center gap-3 rounded-2xl border border-[#E8E6DC] bg-white px-4 py-3 shadow-sm">
-              <FileText className="h-5 w-5 text-[#87867F]" aria-hidden />
+            <div className="flex items-center gap-3 rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-sm">
+              <FileText className="h-5 w-5 text-[#64748b]" aria-hidden />
               <div>
-                <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F]">
+                <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                   Lượt làm
                 </p>
-                <p className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413]">
+                <p className="font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a]">
                   Thứ {result.attemptNumber}
                 </p>
               </div>
             </div>
           ) : null}
           {result.submittedAt ? (
-            <div className="flex items-center gap-3 rounded-2xl border border-[#E8E6DC] bg-white px-4 py-3 shadow-sm sm:col-span-2 lg:col-span-1">
-              <Clock className="h-5 w-5 text-[#87867F]" aria-hidden />
+            <div className="flex items-center gap-3 rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 shadow-sm sm:col-span-2 lg:col-span-1">
+              <Clock className="h-5 w-5 text-[#64748b]" aria-hidden />
               <div className="min-w-0">
-                <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F]">
+                <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                   Nộp bài
                 </p>
-                <p className="truncate font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+                <p className="truncate font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
                   {new Date(result.submittedAt).toLocaleString('vi-VN')}
                 </p>
               </div>
@@ -483,21 +483,21 @@ export default function AssessmentResult() {
       </section>
 
       {result.manualAdjustment !== undefined && result.manualAdjustment !== 0 ? (
-        <div className="rounded-3xl border border-[#E8E6DC] bg-white px-6 py-5 shadow-[0_12px_40px_-12px_rgba(20,20,19,0.08)]">
+        <div className="rounded-3xl border border-[#e2e8f0] bg-white px-6 py-5 shadow-[0_12px_40px_-12px_rgba(20,20,19,0.08)]">
           <div className="flex items-start gap-3">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-neutral-200 bg-neutral-50 text-[#C96442]">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-neutral-200 bg-neutral-50 text-[#0ea5e9]">
               <Award className="h-5 w-5" aria-hidden />
             </div>
             <div>
-              <p className="font-[Playfair_Display] text-[17px] font-medium text-[#141413]">
+              <p className="font-[Playfair_Display] text-[17px] font-medium text-[#0f172a]">
                 Điều chỉnh điểm thủ công
               </p>
-              <p className="mt-2 font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#141413]">
+              <p className="mt-2 font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#0f172a]">
                 {result.manualAdjustment > 0 ? '+' : ''}
                 {result.manualAdjustment} điểm
               </p>
               {result.manualAdjustmentReason ? (
-                <p className="mt-2 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#5E5D59]">
+                <p className="mt-2 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#475569]">
                   {result.manualAdjustmentReason}
                 </p>
               ) : null}
@@ -506,12 +506,12 @@ export default function AssessmentResult() {
         </div>
       ) : null}
 
-      <div className="flex flex-col gap-4 rounded-3xl border border-[#E8E6DC] bg-white px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 shadow-sm">
+      <div className="flex flex-col gap-4 rounded-3xl border border-[#e2e8f0] bg-white px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-8 shadow-sm">
         <div>
-          <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413]">
+          <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a]">
             Lời giải & đáp án gợi ý
           </p>
-          <p className="mt-1 font-[Be_Vietnam_Pro] text-[12px] text-[#87867F]">
+          <p className="mt-1 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
             Bật để xem phần giải thích từng câu (nếu có).
           </p>
         </div>
@@ -520,8 +520,8 @@ export default function AssessmentResult() {
           onClick={() => setShowExplanations(!showExplanations)}
           className={`inline-flex shrink-0 items-center gap-2 rounded-2xl border px-5 py-3 text-[13px] font-semibold transition-all active:scale-[0.98] font-[Be_Vietnam_Pro] ${
             showExplanations
-              ? 'border-[#C96442] bg-[#C96442] text-[#FAF9F5] shadow-[0_10px_30px_-6px_rgba(201,100,66,0.45)]'
-              : 'border-[#E8E6DC] bg-white text-[#141413] hover:bg-neutral-50'
+              ? 'border-[#0ea5e9] bg-[#0ea5e9] text-[#ffffff] shadow-[0_10px_30px_-6px_rgba(14,165,233,0.45)]'
+              : 'border-[#e2e8f0] bg-white text-[#0f172a] hover:bg-neutral-50'
           }`}
         >
           <BookOpen className="h-4 w-4" aria-hidden />
@@ -535,29 +535,29 @@ export default function AssessmentResult() {
       </div>
 
       <section>
-        <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#141413]">
+        <h2 className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a]">
           Chi tiết câu trả lời
         </h2>
-        <p className="mt-1 mb-6 font-[Be_Vietnam_Pro] text-[13px] text-[#87867F]">
+        <p className="mt-1 mb-6 font-[Be_Vietnam_Pro] text-[13px] text-[#64748b]">
           Cuộn để xem từng phần — có thể yêu cầu chấm lại khi điểm đã được công bố.
         </p>
         <div className="flex flex-col gap-5">
           {result.answers.map((answer, index) => (
             <article
               key={answer.answerId}
-              className="relative overflow-hidden rounded-3xl border border-[#F0EEE6] bg-white p-5 shadow-[0_8px_30px_-10px_rgba(20,20,19,0.06)] transition-shadow duration-300 hover:shadow-[0_16px_48px_-12px_rgba(20,20,19,0.1)] sm:p-7"
+              className="relative overflow-hidden rounded-3xl border border-[#e2e8f0] bg-white p-5 shadow-[0_8px_30px_-10px_rgba(20,20,19,0.06)] transition-shadow duration-300 hover:shadow-[0_16px_48px_-12px_rgba(20,20,19,0.1)] sm:p-7"
             >
               <div
-                className="pointer-events-none absolute right-0 top-0 h-32 w-32 rounded-full bg-[#C96442]/[0.04] blur-2xl"
+                className="pointer-events-none absolute right-0 top-0 h-32 w-32 rounded-full bg-[#0ea5e9]/[0.04] blur-2xl"
                 aria-hidden
               />
 
               <div className="relative mb-5 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex items-center gap-3">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#141413] font-[Playfair_Display] text-[15px] font-medium text-[#FAF9F5]">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#0f172a] font-[Playfair_Display] text-[15px] font-medium text-[#ffffff]">
                     {index + 1}
                   </span>
-                  <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#141413]">
+                  <h3 className="font-[Be_Vietnam_Pro] text-[15px] font-semibold text-[#0f172a]">
                     Câu {index + 1}
                   </h3>
                 </div>
@@ -591,7 +591,7 @@ export default function AssessmentResult() {
                 <MathText text={answer.questionText} />
               </div>
 
-              <div className="relative rounded-2xl border border-[#F0EEE6] bg-white px-4 py-4">
+              <div className="relative rounded-2xl border border-[#e2e8f0] bg-white px-4 py-4">
                 <ResultRenderer answer={answer} options={answer.options} />
               </div>
 
@@ -607,11 +607,11 @@ export default function AssessmentResult() {
               ) : null}
 
               {answer.feedback ? (
-                <div className="relative mt-5 rounded-2xl border border-[#E8E6DC] bg-white px-5 py-4 shadow-inner">
-                  <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F]">
+                <div className="relative mt-5 rounded-2xl border border-[#e2e8f0] bg-white px-5 py-4 shadow-inner">
+                  <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                     Nhận xét từ giáo viên
                   </p>
-                  <p className="mt-2 font-[Be_Vietnam_Pro] text-[14px] leading-relaxed text-[#141413]">
+                  <p className="mt-2 font-[Be_Vietnam_Pro] text-[14px] leading-relaxed text-[#0f172a]">
                     {answer.feedback}
                   </p>
                 </div>
@@ -620,13 +620,13 @@ export default function AssessmentResult() {
               {result.gradesReleased ? (
                 <button
                   type="button"
-                  className="relative mt-5 inline-flex items-center gap-2 rounded-xl border border-[#E8E6DC] bg-white px-4 py-2.5 text-[13px] font-semibold text-[#141413] shadow-sm transition-all hover:border-[#d1cfc5] hover:bg-neutral-50 active:scale-[0.98] font-[Be_Vietnam_Pro]"
+                  className="relative mt-5 inline-flex items-center gap-2 rounded-xl border border-[#e2e8f0] bg-white px-4 py-2.5 text-[13px] font-semibold text-[#0f172a] shadow-sm transition-all hover:border-[#cbd5e1] hover:bg-neutral-50 active:scale-[0.98] font-[Be_Vietnam_Pro]"
                   onClick={() => {
                     setSelectedQuestionId(answer.questionId);
                     setShowRegradeModal(true);
                   }}
                 >
-                  <MessageSquare className="h-4 w-4 text-[#C96442]" aria-hidden />
+                  <MessageSquare className="h-4 w-4 text-[#0ea5e9]" aria-hidden />
                   Yêu cầu chấm lại
                 </button>
               ) : null}
@@ -636,30 +636,30 @@ export default function AssessmentResult() {
       </section>
 
       {showRegradeModal ? (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#141413]/50 p-4 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#0f172a]/50 p-4 backdrop-blur-sm">
           <div
-            className="flex max-h-[90vh] w-full max-w-lg flex-col overflow-hidden rounded-3xl border border-[#F0EEE6] bg-white shadow-[rgba(0,0,0,0.22)_0px_24px_70px]"
+            className="flex max-h-[90vh] w-full max-w-lg flex-col overflow-hidden rounded-3xl border border-[#e2e8f0] bg-white shadow-[rgba(0,0,0,0.22)_0px_24px_70px]"
             role="dialog"
             aria-modal="true"
             aria-labelledby="regrade-modal-title"
           >
-            <div className="relative border-b border-[#F0EEE6] bg-white px-6 pb-4 pt-6">
+            <div className="relative border-b border-[#e2e8f0] bg-white px-6 pb-4 pt-6">
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <h3
                     id="regrade-modal-title"
-                    className="font-[Playfair_Display] text-[20px] font-medium text-[#141413]"
+                    className="font-[Playfair_Display] text-[20px] font-medium text-[#0f172a]"
                   >
                     Yêu cầu chấm lại
                   </h3>
-                  <p className="mt-2 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#87867F]">
+                  <p className="mt-2 font-[Be_Vietnam_Pro] text-[13px] leading-relaxed text-[#64748b]">
                     Giải thích ngắn gọn để giáo viên xem xét công bằng hơn.
                   </p>
                 </div>
                 <button
                   type="button"
                   aria-label="Đóng"
-                  className="rounded-xl p-2 text-[#87867F] transition-colors hover:bg-[#F5F4ED] hover:text-[#141413]"
+                  className="rounded-xl p-2 text-[#64748b] transition-colors hover:bg-[#f8fafc] hover:text-[#0f172a]"
                   onClick={() => {
                     setShowRegradeModal(false);
                     setRegradeReason('');
@@ -672,17 +672,17 @@ export default function AssessmentResult() {
 
             <div className="overflow-y-auto px-6 py-5">
               <textarea
-                className="min-h-[150px] w-full resize-y rounded-2xl border border-[#E8E6DC] bg-white px-4 py-3 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] placeholder:text-[#87867F] outline-none transition-shadow focus:border-[#3898EC] focus:ring-[0_0_0_3px_rgba(56,152,236,0.12)]"
+                className="min-h-[150px] w-full resize-y rounded-2xl border border-[#e2e8f0] bg-white px-4 py-3 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] placeholder:text-[#64748b] outline-none transition-shadow focus:border-[#3898EC] focus:ring-[0_0_0_3px_rgba(56,152,236,0.12)]"
                 value={regradeReason}
                 onChange={(e) => setRegradeReason(e.target.value)}
                 placeholder="Nhập lý do yêu cầu chấm lại..."
               />
             </div>
 
-            <div className="flex flex-wrap justify-end gap-2 border-t border-[#F0EEE6] px-6 py-5">
+            <div className="flex flex-wrap justify-end gap-2 border-t border-[#e2e8f0] px-6 py-5">
               <button
                 type="button"
-                className="rounded-xl border border-[#E8E6DC] bg-white px-5 py-2.5 text-[13px] font-semibold text-[#5E5D59] transition-colors hover:bg-[#F5F4ED] font-[Be_Vietnam_Pro]"
+                className="rounded-xl border border-[#e2e8f0] bg-white px-5 py-2.5 text-[13px] font-semibold text-[#475569] transition-colors hover:bg-[#f8fafc] font-[Be_Vietnam_Pro]"
                 onClick={() => {
                   setShowRegradeModal(false);
                   setRegradeReason('');
@@ -693,7 +693,7 @@ export default function AssessmentResult() {
               <button
                 type="button"
                 disabled={!regradeReason.trim() || createRegradeRequestMutation.isPending}
-                className="rounded-xl bg-[#C96442] px-6 py-2.5 text-[13px] font-semibold text-[#FAF9F5] shadow-[0_10px_28px_-6px_rgba(201,100,66,0.5)] transition-all hover:brightness-105 disabled:cursor-not-allowed disabled:bg-[#ccc] disabled:shadow-none font-[Be_Vietnam_Pro]"
+                className="rounded-xl bg-[#0ea5e9] px-6 py-2.5 text-[13px] font-semibold text-[#ffffff] shadow-[0_10px_28px_-6px_rgba(14,165,233,0.5)] transition-all hover:brightness-105 disabled:cursor-not-allowed disabled:bg-[#ccc] disabled:shadow-none font-[Be_Vietnam_Pro]"
                 onClick={handleRegradeRequest}
               >
                 {createRegradeRequestMutation.isPending ? 'Đang gửi...' : 'Gửi yêu cầu'}

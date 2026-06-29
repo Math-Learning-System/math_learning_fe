@@ -15,11 +15,11 @@ import './MindmapEditor.css';
 // ── Visual theme (mirrors PublicMindmapViewer) ─────────────────────────────
 const MINDMAP_THEME = {
   ...MindElixirLightTheme,
-  background: '#F0EEE6',
-  color: '#141413',
+  background: '#e2e8f0',
+  color: '#0f172a',
   cssVar: {
     ...((MindElixirLightTheme as { cssVar?: Record<string, string> }).cssVar ?? {}),
-    '--bgcolor': '#F0EEE6',
+    '--bgcolor': '#e2e8f0',
     '--main-bgcolor': '#ffffff',
     '--main-color': 'transparent',
     '--color': '#444',
@@ -86,7 +86,7 @@ const getReadableTextColor = (backgroundHex: string): string => {
   const g = Number.parseInt(hex.slice(2, 4), 16);
   const b = Number.parseInt(hex.slice(4, 6), 16);
   const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
-  return luminance > 0.62 ? '#141413' : '#FAF9F5';
+  return luminance > 0.62 ? '#0f172a' : '#ffffff';
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -300,7 +300,7 @@ export default function MindmapEditor() {
         let branchColor: string | undefined;
 
         if (depth === 0) {
-          fallbackStyle = { color: '#FAF9F5', background: '#1C1C1A' };
+          fallbackStyle = { color: '#ffffff', background: '#1C1C1A' };
         } else if (depth === 1) {
           const i = branchIdx % BRANCH_COLORS.length;
           fallbackStyle = { color: '#ffffff', background: BRANCH_COLORS[i] };
@@ -833,22 +833,22 @@ export default function MindmapEditor() {
     >
       <div className="mindmap-editor-page">
         {/* ── Header ─────────────────────────────────────────────── */}
-        <div className="bg-[#FAF9F5] border-b border-[#E8E6DC] px-5 py-3 flex items-center justify-between gap-4 flex-wrap flex-shrink-0">
+        <div className="bg-[#ffffff] border-b border-[#e2e8f0] px-5 py-3 flex items-center justify-between gap-4 flex-wrap flex-shrink-0">
           {/* Left: back + title */}
           <div className="flex items-center gap-3 flex-1 min-w-0">
             <button
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] active:scale-[0.98] transition-all duration-150 flex-shrink-0"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] active:scale-[0.98] transition-all duration-150 flex-shrink-0"
               onClick={() => navigate('/teacher/mindmaps')}
             >
               <ArrowLeft className="w-3.5 h-3.5" />
               Quay lại
             </button>
             <div className="min-w-0">
-              <h1 className="font-[Playfair_Display] text-[17px] font-medium text-[#141413] leading-tight truncate">
+              <h1 className="font-[Playfair_Display] text-[17px] font-medium text-[#0f172a] leading-tight truncate">
                 {mindmap.title}
               </h1>
               {mindmap.description && (
-                <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#87867F] mt-0.5 truncate">
+                <p className="font-[Be_Vietnam_Pro] text-[12px] text-[#64748b] mt-0.5 truncate">
                   {mindmap.description}
                 </p>
               )}
@@ -859,7 +859,7 @@ export default function MindmapEditor() {
           <div className="flex items-center gap-2 flex-shrink-0">
             {/* Mode toggle */}
             <div
-              className="flex items-center gap-0.5 p-0.5 bg-[#F5F4ED] rounded-xl border border-[#E8E6DC]"
+              className="flex items-center gap-0.5 p-0.5 bg-[#f8fafc] rounded-xl border border-[#e2e8f0]"
               role="group"
               aria-label="Chế độ thao tác"
             >
@@ -868,8 +868,8 @@ export default function MindmapEditor() {
                 onClick={() => setInteractionMode('DRAG')}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-semibold transition-all duration-150 ${
                   interactionMode === 'DRAG'
-                    ? 'bg-white text-[#141413] shadow-[rgba(0,0,0,0.06)_0px_2px_8px]'
-                    : 'text-[#87867F] hover:text-[#5E5D59]'
+                    ? 'bg-white text-[#0f172a] shadow-[rgba(0,0,0,0.06)_0px_2px_8px]'
+                    : 'text-[#64748b] hover:text-[#475569]'
                 }`}
               >
                 <Move className="w-3.5 h-3.5" />
@@ -880,8 +880,8 @@ export default function MindmapEditor() {
                 onClick={() => setInteractionMode('EDIT')}
                 className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[12px] font-semibold transition-all duration-150 ${
                   interactionMode === 'EDIT'
-                    ? 'bg-white text-[#141413] shadow-[rgba(0,0,0,0.06)_0px_2px_8px]'
-                    : 'text-[#87867F] hover:text-[#5E5D59]'
+                    ? 'bg-white text-[#0f172a] shadow-[rgba(0,0,0,0.06)_0px_2px_8px]'
+                    : 'text-[#64748b] hover:text-[#475569]'
                 }`}
               >
                 <Pencil className="w-3.5 h-3.5" />
@@ -892,7 +892,7 @@ export default function MindmapEditor() {
             {/* Export button */}
             <button
               type="button"
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-150"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-150"
               onClick={handleExportImage}
               disabled={exportingImage}
             >
@@ -904,7 +904,7 @@ export default function MindmapEditor() {
             <select
               value={mindmap.status === 'ARCHIVED' ? 'DRAFT' : mindmap.status}
               onChange={(e) => handleUpdateStatus(e.target.value as 'DRAFT' | 'PUBLISHED')}
-              className="border border-[#E8E6DC] rounded-xl px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] bg-white outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 cursor-pointer transition-all duration-150"
+              className="border border-[#e2e8f0] rounded-xl px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] bg-white outline-none focus:border-[#3898EC] focus:ring-2 focus:ring-[#3898EC]/20 cursor-pointer transition-all duration-150"
             >
               <option value="DRAFT">Bản nháp</option>
               <option value="PUBLISHED">Công khai</option>
@@ -916,7 +916,7 @@ export default function MindmapEditor() {
         <div className="editor-content">
           <div className="flow-container">
             {/* Mode hint chip */}
-            <div className="absolute top-3 left-3 z-[3] bg-[#141413]/70 text-[#FAF9F5] px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[11px] pointer-events-none max-w-[90%]">
+            <div className="absolute top-3 left-3 z-[3] bg-[#0f172a]/70 text-[#ffffff] px-3 py-1.5 rounded-lg font-[Be_Vietnam_Pro] text-[11px] pointer-events-none max-w-[90%]">
               {interactionMode === 'DRAG'
                 ? 'Chế độ kéo thả — kéo node để thay đổi cấu trúc mindmap.'
                 : 'Chế độ chỉnh sửa — bấm node để mở bảng chỉnh sửa.'}
@@ -928,16 +928,16 @@ export default function MindmapEditor() {
           {interactionMode === 'EDIT' && selectedNodeId && (
             <div
               ref={editPanelRef}
-              className="absolute top-4 right-4 w-[296px] bg-[#FAF9F5] rounded-2xl border border-[#E8E6DC] shadow-[rgba(0,0,0,0.12)_0px_8px_32px,0px_0px_0px_1px_#D1CFC5] z-10 max-h-[calc(100vh-200px)] overflow-y-auto"
+              className="absolute top-4 right-4 w-[296px] bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.12)_0px_8px_32px,0px_0px_0px_1px_#cbd5e1] z-10 max-h-[calc(100vh-200px)] overflow-y-auto"
               style={{ animation: 'panelSlideIn 0.25s cubic-bezier(0.22,1,0.36,1) both' }}
             >
               {/* Panel header with tabs */}
-              <div className="px-4 pt-4 pb-3 border-b border-[#F0EEE6] flex items-center justify-between gap-2">
-                <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#141413] leading-tight">
+              <div className="px-4 pt-4 pb-3 border-b border-[#e2e8f0] flex items-center justify-between gap-2">
+                <h3 className="font-[Playfair_Display] text-[15px] font-medium text-[#0f172a] leading-tight">
                   {nodePanelMode === 'EDIT' ? 'Chỉnh sửa node' : 'Thêm node con'}
                 </h3>
                 <div
-                  className="flex items-center gap-0.5 p-0.5 bg-[#F0EEE6] rounded-lg"
+                  className="flex items-center gap-0.5 p-0.5 bg-[#e2e8f0] rounded-lg"
                   role="tablist"
                   aria-label="Node actions"
                 >
@@ -948,8 +948,8 @@ export default function MindmapEditor() {
                     onClick={() => setNodePanelMode('EDIT')}
                     className={`px-2.5 py-1 rounded-md font-[Be_Vietnam_Pro] text-[11px] font-semibold transition-all duration-150 ${
                       nodePanelMode === 'EDIT'
-                        ? 'bg-white text-[#141413] shadow-sm'
-                        : 'text-[#87867F] hover:text-[#5E5D59]'
+                        ? 'bg-white text-[#0f172a] shadow-sm'
+                        : 'text-[#64748b] hover:text-[#475569]'
                     }`}
                   >
                     Sửa
@@ -961,8 +961,8 @@ export default function MindmapEditor() {
                     onClick={() => setNodePanelMode('ADD')}
                     className={`px-2.5 py-1 rounded-md font-[Be_Vietnam_Pro] text-[11px] font-semibold transition-all duration-150 ${
                       nodePanelMode === 'ADD'
-                        ? 'bg-white text-[#141413] shadow-sm'
-                        : 'text-[#87867F] hover:text-[#5E5D59]'
+                        ? 'bg-white text-[#0f172a] shadow-sm'
+                        : 'text-[#64748b] hover:text-[#475569]'
                     }`}
                   >
                     Thêm
@@ -977,14 +977,14 @@ export default function MindmapEditor() {
                     <div>
                       <label
                         htmlFor="edit-content"
-                        className="block font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#87867F] uppercase tracking-[0.4px] mb-1.5"
+                        className="block font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#64748b] uppercase tracking-[0.4px] mb-1.5"
                       >
                         Nội dung
                       </label>
                       <input
                         id="edit-content"
                         type="text"
-                        className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] bg-white outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442]/20 transition-colors"
+                        className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] bg-white outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9]/20 transition-colors"
                         value={editForm.content}
                         onChange={(e) => setEditForm({ ...editForm, content: e.target.value })}
                       />
@@ -994,14 +994,14 @@ export default function MindmapEditor() {
                       <div>
                         <label
                           htmlFor="edit-color"
-                          className="block font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#87867F] uppercase tracking-[0.4px] mb-1.5"
+                          className="block font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#64748b] uppercase tracking-[0.4px] mb-1.5"
                         >
                           Màu sắc
                         </label>
                         <input
                           id="edit-color"
                           type="color"
-                          className="w-full h-[38px] border border-[#E8E6DC] rounded-xl cursor-pointer bg-white p-0.5 transition-colors"
+                          className="w-full h-[38px] border border-[#e2e8f0] rounded-xl cursor-pointer bg-white p-0.5 transition-colors"
                           value={editForm.color}
                           onChange={(e) => setEditForm({ ...editForm, color: e.target.value })}
                         />
@@ -1011,7 +1011,7 @@ export default function MindmapEditor() {
                     <div className="flex gap-2 pt-1">
                       <button
                         type="button"
-                        className="flex-1 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] active:scale-[0.98] transition-all duration-150"
+                        className="flex-1 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] active:scale-[0.98] transition-all duration-150"
                         onClick={() => setSelectedNodeId(null)}
                       >
                         Hủy
@@ -1026,7 +1026,7 @@ export default function MindmapEditor() {
                       </button>
                       <button
                         type="button"
-                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:brightness-95 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-150"
+                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:brightness-95 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-150"
                         onClick={handleSaveNode}
                         disabled={saving}
                       >
@@ -1047,14 +1047,14 @@ export default function MindmapEditor() {
                     <div>
                       <label
                         htmlFor="new-content"
-                        className="block font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#87867F] uppercase tracking-[0.4px] mb-1.5"
+                        className="block font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#64748b] uppercase tracking-[0.4px] mb-1.5"
                       >
                         Nội dung node mới
                       </label>
                       <input
                         id="new-content"
                         type="text"
-                        className="w-full border border-[#E8E6DC] rounded-xl px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] bg-white outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442]/20 transition-colors placeholder:text-[#B0AEA5]"
+                        className="w-full border border-[#e2e8f0] rounded-xl px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] bg-white outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9]/20 transition-colors placeholder:text-[#94a3b8]"
                         value={newNodeForm.content}
                         onChange={(e) =>
                           setNewNodeForm({ ...newNodeForm, content: e.target.value })
@@ -1066,14 +1066,14 @@ export default function MindmapEditor() {
                       <div>
                         <label
                           htmlFor="new-color"
-                          className="block font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#87867F] uppercase tracking-[0.4px] mb-1.5"
+                          className="block font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#64748b] uppercase tracking-[0.4px] mb-1.5"
                         >
                           Màu
                         </label>
                         <input
                           id="new-color"
                           type="color"
-                          className="w-full h-[38px] border border-[#E8E6DC] rounded-xl cursor-pointer bg-white p-0.5 transition-colors"
+                          className="w-full h-[38px] border border-[#e2e8f0] rounded-xl cursor-pointer bg-white p-0.5 transition-colors"
                           value={newNodeForm.color}
                           onChange={(e) =>
                             setNewNodeForm({ ...newNodeForm, color: e.target.value })
@@ -1084,14 +1084,14 @@ export default function MindmapEditor() {
                     <div className="flex gap-2 pt-1">
                       <button
                         type="button"
-                        className="flex-1 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] active:scale-[0.98] transition-all duration-150"
+                        className="flex-1 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] active:scale-[0.98] transition-all duration-150"
                         onClick={() => setSelectedNodeId(null)}
                       >
                         Hủy
                       </button>
                       <button
                         type="button"
-                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#141413] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:bg-[#30302E] disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-150"
+                        className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl bg-[#0f172a] text-[#ffffff] font-[Be_Vietnam_Pro] text-[12px] font-semibold hover:bg-[#1e293b] disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98] transition-all duration-150"
                         onClick={handleCreateChildNode}
                         disabled={creatingNode}
                       >
@@ -1109,11 +1109,11 @@ export default function MindmapEditor() {
         {/* ── Delete confirm modal ───────────────────────────────── */}
         {deleteConfirm.open && (
           <div
-            className="delete-modal-backdrop absolute inset-0 bg-[#141413]/50 backdrop-blur-[2px] grid place-items-center z-30 p-4"
+            className="delete-modal-backdrop absolute inset-0 bg-[#0f172a]/50 backdrop-blur-[2px] grid place-items-center z-30 p-4"
             onClick={closeDeleteConfirm}
           >
             <div
-              className="w-full max-w-[400px] bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] shadow-[rgba(0,0,0,0.20)_0px_20px_60px,0px_0px_0px_1px_#D1CFC5] p-6 flex flex-col gap-4"
+              className="w-full max-w-[400px] bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.20)_0px_20px_60px,0px_0px_0px_1px_#cbd5e1] p-6 flex flex-col gap-4"
               role="dialog"
               aria-modal="true"
               aria-label="Xác nhận xóa node"
@@ -1124,14 +1124,14 @@ export default function MindmapEditor() {
                 <div className="w-10 h-10 rounded-xl bg-red-50 border border-red-200 flex items-center justify-center text-red-500 flex-shrink-0">
                   <Trash2 className="w-4 h-4" />
                 </div>
-                <h4 className="font-[Playfair_Display] text-[17px] font-medium text-[#141413] leading-tight">
+                <h4 className="font-[Playfair_Display] text-[17px] font-medium text-[#0f172a] leading-tight">
                   Xác nhận xóa node
                 </h4>
               </div>
               <div className="space-y-2">
-                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#5E5D59] leading-[1.6]">
+                <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#475569] leading-[1.6]">
                   Bạn sắp xóa node{' '}
-                  <strong className="text-[#141413]">{deleteConfirm.nodeLabel}</strong>.
+                  <strong className="text-[#0f172a]">{deleteConfirm.nodeLabel}</strong>.
                 </p>
                 <div className="px-3 py-2.5 rounded-xl bg-red-50 border border-red-200 font-[Be_Vietnam_Pro] text-[12px] text-red-700 leading-[1.5]">
                   Tổng số node sẽ bị xóa: <strong>{deleteConfirm.totalNodes}</strong>
@@ -1139,7 +1139,7 @@ export default function MindmapEditor() {
               </div>
               <div className="flex gap-2">
                 <button
-                  className="flex-1 px-4 py-2.5 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] disabled:opacity-50 active:scale-[0.98] transition-all duration-150"
+                  className="flex-1 px-4 py-2.5 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#475569] hover:bg-[#f8fafc] disabled:opacity-50 active:scale-[0.98] transition-all duration-150"
                   onClick={closeDeleteConfirm}
                   disabled={deletingNode}
                 >

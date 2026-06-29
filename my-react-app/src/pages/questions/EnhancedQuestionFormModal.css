@@ -27,9 +27,9 @@
 
 /* Nền chỉnh sửa — ít “trống” hơn, đồng bộ palette Mindmaps */
 .eqfm-modal-bg {
-  background-color: #faf9f5;
+  background-color: #ffffff;
   background-image:
-    radial-gradient(circle at 1px 1px, rgba(232, 230, 220, 0.85) 1px, transparent 0),
+    radial-gradient(circle at 1px 1px, rgba(226, 232, 240, 0.85) 1px, transparent 0),
     linear-gradient(180deg, rgba(250, 249, 245, 0.96) 0%, rgba(245, 244, 237, 0.98) 100%);
   background-size:
     18px 18px,

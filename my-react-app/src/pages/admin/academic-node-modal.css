@@ -13,8 +13,8 @@
 }
 
 .anm-card {
-  background: #faf9f5;
-  border: 1px solid #e8e6dc;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 1rem;
   box-shadow:
     0 4px 24px rgba(0, 0, 0, 0.08),
@@ -30,7 +30,7 @@
 /* ── Header ─────────────────────────────── */
 .anm-header {
   padding: 1.125rem 1.5rem;
-  border-bottom: 1px solid #f0eee6;
+  border-bottom: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -49,8 +49,8 @@
   width: 36px;
   height: 36px;
   border-radius: 0.625rem;
-  background: #e8e6dc;
-  color: #5e5d59;
+  background: #e2e8f0;
+  color: #475569;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -62,20 +62,20 @@
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 1.0625rem;
   font-weight: 500;
-  color: #141413;
+  color: #0f172a;
   line-height: 1.3;
 }
 
 .anm-close {
   width: 34px;
   height: 34px;
-  border: 1px solid #e8e6dc;
+  border: 1px solid #e2e8f0;
   background: transparent;
   border-radius: 0.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #87867f;
+  color: #64748b;
   cursor: pointer;
   flex-shrink: 0;
   transition: all 150ms ease;
@@ -107,7 +107,7 @@
 .anm-label {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #5e5d59;
+  color: #475569;
   font-family: 'Be Vietnam Pro', system-ui, sans-serif;
   letter-spacing: 0.02em;
 }
@@ -125,7 +125,7 @@
   font-size: 0.875rem;
   font-family: 'Be Vietnam Pro', system-ui, sans-serif;
   background: #ffffff;
-  color: #141413;
+  color: #0f172a;
   box-sizing: border-box;
   transition: all 150ms ease;
   appearance: none;
@@ -142,8 +142,8 @@
 }
 
 .anm-input:disabled {
-  background: #f5f4ed;
-  color: #87867f;
+  background: #f8fafc;
+  color: #64748b;
   cursor: not-allowed;
 }
 
@@ -163,7 +163,7 @@ select.anm-input {
   font-size: 0.875rem;
   font-family: 'Be Vietnam Pro', system-ui, sans-serif;
   background: #ffffff;
-  color: #141413;
+  color: #0f172a;
   box-sizing: border-box;
   transition: all 150ms ease;
   min-height: 76px;
@@ -202,7 +202,7 @@ select.anm-input {
   align-items: center;
   gap: 0.5rem;
   font-size: 0.875rem;
-  color: #5e5d59;
+  color: #475569;
   font-family: 'Be Vietnam Pro', system-ui, sans-serif;
   user-select: none;
   cursor: pointer;
@@ -234,7 +234,7 @@ select.anm-input {
   align-items: center;
   gap: 0.625rem;
   padding-top: 0.875rem;
-  border-top: 1px solid #f0eee6;
+  border-top: 1px solid #e2e8f0;
   margin-top: 0.25rem;
 }
 
@@ -258,15 +258,15 @@ select.anm-input {
 }
 
 .anm-btn--ghost {
-  border: 1px solid #d1cfc5;
+  border: 1px solid #cbd5e1;
   background: #ffffff;
-  color: #5e5d59;
+  color: #475569;
 }
 
 .anm-btn--ghost:hover:not(:disabled) {
-  background: #f5f4ed;
+  background: #f8fafc;
   border-color: #b5b3ab;
-  color: #141413;
+  color: #0f172a;
 }
 
 .anm-btn--primary {

@@ -214,14 +214,14 @@ const BookListPage: React.FC = () => {
       <div className="px-6 py-8 lg:px-8">
         <div className="flex items-start justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#E8E6DC] flex items-center justify-center text-[#5E5D59]">
+            <div className="w-10 h-10 rounded-xl bg-[#e2e8f0] flex items-center justify-center text-[#475569]">
               <BookOpenText size={20} />
             </div>
             <div>
-              <h1 className="font-[Playfair_Display] text-[22px] text-[#141413]">
+              <h1 className="font-[Playfair_Display] text-[22px] text-[#0f172a]">
                 Bộ sách giáo khoa
               </h1>
-              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-0.5">
+              <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-0.5">
                 Quản lý bộ sách
               </p>
             </div>

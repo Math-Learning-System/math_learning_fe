@@ -52,7 +52,7 @@ const questionTypeLabels: Record<QuestionType, string> = {
 };
 
 const selectCls =
-  'w-full border border-[#E8E6DC] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#141413] outline-none focus:border-[#C96442] focus:ring-1 focus:ring-[#C96442] bg-white transition-colors disabled:bg-[#F5F4ED] disabled:text-[#87867F]';
+  'w-full border border-[#e2e8f0] rounded-xl px-3 py-2.5 font-[Be_Vietnam_Pro] text-[13px] text-[#0f172a] outline-none focus:border-[#0ea5e9] focus:ring-1 focus:ring-[#0ea5e9] bg-white transition-colors disabled:bg-[#f8fafc] disabled:text-[#64748b]';
 
 export function EnhancedQuestionFormModal({
   isOpen,
@@ -283,19 +283,19 @@ export function EnhancedQuestionFormModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="eqfm-title"
-        className="flex flex-col w-full max-w-[min(1240px,calc(100vw-24px))] max-h-[min(92vh,920px)] rounded-2xl bg-white border border-[#E8E6DC] shadow-[0_24px_80px_rgba(0,0,0,0.18)] overflow-hidden min-h-0"
+        className="flex flex-col w-full max-w-[min(1240px,calc(100vw-24px))] max-h-[min(92vh,920px)] rounded-2xl bg-white border border-[#e2e8f0] shadow-[0_24px_80px_rgba(0,0,0,0.18)] overflow-hidden min-h-0"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header — cố định, không cuộn */}
-        <div className="flex-shrink-0 px-5 py-4 sm:px-6 border-b border-[#F0EEE6] bg-[#FAF9F5] flex items-start justify-between gap-3">
+        <div className="flex-shrink-0 px-5 py-4 sm:px-6 border-b border-[#e2e8f0] bg-[#ffffff] flex items-start justify-between gap-3">
           <div className="min-w-0">
             <h2
               id="eqfm-title"
-              className="font-[Playfair_Display] text-[19px] sm:text-[21px] font-medium text-[#141413] leading-tight"
+              className="font-[Playfair_Display] text-[19px] sm:text-[21px] font-medium text-[#0f172a] leading-tight"
             >
               {mode === 'create' ? 'Tạo câu hỏi mới' : 'Chỉnh sửa câu hỏi'}
             </h2>
-            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] mt-1">
+            <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] mt-1">
               {mode === 'create'
                 ? 'Chọn loại câu hỏi và điền thông tin'
                 : 'Cập nhật thông tin câu hỏi'}
@@ -317,13 +317,13 @@ export function EnhancedQuestionFormModal({
             )}
 
             <div>
-              <label className="block font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59] mb-2 uppercase tracking-wide">
+              <label className="block font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569] mb-2 uppercase tracking-wide">
                 Loại câu hỏi{' '}
                 {mode === 'edit' && (
-                  <span className="font-normal normal-case text-[#87867F]">(không thể thay đổi)</span>
+                  <span className="font-normal normal-case text-[#64748b]">(không thể thay đổi)</span>
                 )}
               </label>
-              <div className="flex flex-wrap gap-1.5 p-1 bg-[#F5F4ED] rounded-xl">
+              <div className="flex flex-wrap gap-1.5 p-1 bg-[#f8fafc] rounded-xl">
                 {(['MULTIPLE_CHOICE', 'TRUE_FALSE', 'SHORT_ANSWER'] as QuestionType[]).map((type) => {
                   const active = questionType === type;
                   return (
@@ -334,8 +334,8 @@ export function EnhancedQuestionFormModal({
                       disabled={mode === 'edit'}
                       className={`flex-1 min-w-[140px] px-3 py-2.5 rounded-lg font-[Be_Vietnam_Pro] text-[13px] font-medium transition-all duration-150 ${
                         active
-                          ? 'bg-white text-[#141413] shadow-sm ring-1 ring-[#E8E6DC]'
-                          : 'text-[#87867F] hover:text-[#5E5D59]'
+                          ? 'bg-white text-[#0f172a] shadow-sm ring-1 ring-[#e2e8f0]'
+                          : 'text-[#64748b] hover:text-[#475569]'
                       } ${mode === 'edit' ? 'opacity-55 cursor-not-allowed' : ''}`}
                     >
                       {questionTypeLabels[type]}
@@ -347,7 +347,7 @@ export function EnhancedQuestionFormModal({
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div>
-                <label className="block font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59] mb-2 uppercase tracking-wide">
+                <label className="block font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569] mb-2 uppercase tracking-wide">
                   Độ khó câu hỏi <span className="text-red-500">*</span>
                 </label>
                 <select
@@ -364,7 +364,7 @@ export function EnhancedQuestionFormModal({
                 </select>
               </div>
               <div>
-                <label className="block font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59] mb-2 uppercase tracking-wide">
+                <label className="block font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569] mb-2 uppercase tracking-wide">
                   Độ khó
                 </label>
                 <select
@@ -379,7 +379,7 @@ export function EnhancedQuestionFormModal({
                 </select>
               </div>
               <div>
-                <label className="block font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59] mb-2 uppercase tracking-wide">
+                <label className="block font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569] mb-2 uppercase tracking-wide">
                   Điểm
                 </label>
                 <input
@@ -394,12 +394,12 @@ export function EnhancedQuestionFormModal({
               </div>
             </div>
 
-            <div className="rounded-xl border border-[#E8E6DC] bg-white/90 p-3 shadow-[0_1px_0_rgba(0,0,0,0.04)]">
+            <div className="rounded-xl border border-[#e2e8f0] bg-white/90 p-3 shadow-[0_1px_0_rgba(0,0,0,0.04)]">
               <LatexToolbar onInsert={handleInsertLatex} disabled={saving} />
             </div>
 
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 items-start">
-              <div className="rounded-2xl border-2 border-[#E8E6DC] bg-white p-4 sm:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.03]">
+              <div className="rounded-2xl border-2 border-[#e2e8f0] bg-white p-4 sm:p-5 shadow-[0_8px_30px_rgba(0,0,0,0.06)] ring-1 ring-black/[0.03]">
                 <QuestionEditorSwitch
                   type={questionType}
                   value={editorValue}
@@ -408,26 +408,26 @@ export function EnhancedQuestionFormModal({
                 />
               </div>
 
-              <section className="rounded-2xl border border-[#E8E6DC] bg-white p-4 sm:p-5 min-h-[120px] flex flex-col gap-2">
-                <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F]">
+              <section className="rounded-2xl border border-[#e2e8f0] bg-white p-4 sm:p-5 min-h-[120px] flex flex-col gap-2">
+                <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                   Xem trước câu hỏi
                 </p>
                 <span className="inline-flex self-start px-2 py-0.5 rounded-full bg-[#EEF2FF] font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#4F7EF7]">
                   {previewTypeLabel}
                 </span>
-                <div className="font-[Be_Vietnam_Pro] text-[14px] text-[#141413] leading-relaxed eqfm-preview-question min-h-[2.5rem]">
+                <div className="font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] leading-relaxed eqfm-preview-question min-h-[2.5rem]">
                   <MathText text={previewQuestionText || 'Chưa có nội dung câu hỏi.'} />
                 </div>
 
                 {previewOptionEntries.length > 0 && (
-                  <div className="mt-2 pt-3 border-t border-[#F0EEE6]">
-                    <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#5E5D59] mb-2">
+                  <div className="mt-2 pt-3 border-t border-[#e2e8f0]">
+                    <p className="font-[Be_Vietnam_Pro] text-[12px] font-semibold text-[#475569] mb-2">
                       Lựa chọn
                     </p>
                     <ol className="list-decimal list-inside space-y-1.5 font-[Be_Vietnam_Pro] text-[13px] text-[#374151]">
                       {previewOptionEntries.map(([key, value], index) => (
                         <li key={`preview-option-${key}`}>
-                          <strong className="text-[#141413]">
+                          <strong className="text-[#0f172a]">
                             {(key || String.fromCharCode(65 + index)).toUpperCase()}.
                           </strong>{' '}
                           <MathText text={String(value)} />
@@ -437,9 +437,9 @@ export function EnhancedQuestionFormModal({
                   </div>
                 )}
 
-                <p className="mt-auto pt-3 border-t border-[#F0EEE6] font-[Be_Vietnam_Pro] text-[13px]">
-                  <span className="text-[#87867F] font-medium">Đáp án:</span>{' '}
-                  <span className="text-[#141413] font-semibold">
+                <p className="mt-auto pt-3 border-t border-[#e2e8f0] font-[Be_Vietnam_Pro] text-[13px]">
+                  <span className="text-[#64748b] font-medium">Đáp án:</span>{' '}
+                  <span className="text-[#0f172a] font-semibold">
                     {previewAnswerDisplay || 'Chưa có đáp án'}
                   </span>
                 </p>
@@ -447,8 +447,8 @@ export function EnhancedQuestionFormModal({
             </div>
 
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 items-start">
-              <div className="rounded-2xl border border-[#E8E6DC] bg-white p-4 sm:p-5">
-                <label className="block font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] mb-2">
+              <div className="rounded-2xl border border-[#e2e8f0] bg-white p-4 sm:p-5">
+                <label className="block font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] mb-2">
                   Hình vẽ <span className="text-red-500 font-normal">*</span>
                 </label>
                 <textarea
@@ -461,8 +461,8 @@ export function EnhancedQuestionFormModal({
                 />
               </div>
 
-              <section className="rounded-2xl border border-[#E8E6DC] bg-white p-4 sm:p-5 min-h-[140px]">
-                <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F] mb-2">
+              <section className="rounded-2xl border border-[#e2e8f0] bg-white p-4 sm:p-5 min-h-[140px]">
+                <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b] mb-2">
                   Xem trước hình
                 </p>
                 {hasDiagramPreview ? (
@@ -473,14 +473,14 @@ export function EnhancedQuestionFormModal({
                     }}
                   />
                 ) : (
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] m-0">Chưa có hình minh họa.</p>
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] m-0">Chưa có hình minh họa.</p>
                 )}
               </section>
             </div>
 
             <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 items-start">
-              <div className="rounded-2xl border border-[#E8E6DC] bg-white p-4 sm:p-5">
-                <label className="block font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#141413] mb-2">
+              <div className="rounded-2xl border border-[#e2e8f0] bg-white p-4 sm:p-5">
+                <label className="block font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] mb-2">
                   Giải thích <span className="text-red-500 font-normal">*</span>
                 </label>
                 <textarea
@@ -493,8 +493,8 @@ export function EnhancedQuestionFormModal({
                 />
               </div>
 
-              <section className="rounded-2xl border border-[#E8E6DC] bg-white p-4 sm:p-5 min-h-[120px]">
-                <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#87867F] mb-2">
+              <section className="rounded-2xl border border-[#e2e8f0] bg-white p-4 sm:p-5 min-h-[120px]">
+                <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b] mb-2">
                   Xem trước giải thích
                 </p>
                 {previewExplanation ? (
@@ -502,7 +502,7 @@ export function EnhancedQuestionFormModal({
                     <MathText text={previewExplanation} />
                   </div>
                 ) : (
-                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#87867F] m-0">
+                  <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#64748b] m-0">
                     Chưa có nội dung giải thích.
                   </p>
                 )}
@@ -512,9 +512,9 @@ export function EnhancedQuestionFormModal({
         </div>
 
         {/* Footer: AI thấp hơn (tách khối), nút Hủy / Lưu nổi bật */}
-        <div className="flex-shrink-0 border-t border-[#E8E6DC] bg-white">
+        <div className="flex-shrink-0 border-t border-[#e2e8f0] bg-white">
           {showAiEnhance && (
-            <div className="px-4 sm:px-6 pt-5 pb-5 bg-gradient-to-b from-[#FAF9F5] to-[#F5F4ED] border-b border-[#E8E6DC]/90 flex justify-center">
+            <div className="px-4 sm:px-6 pt-5 pb-5 bg-gradient-to-b from-[#ffffff] to-[#f8fafc] border-b border-[#e2e8f0]/90 flex justify-center">
               <button
                 type="button"
                 onClick={handleAIEnhance}
@@ -532,7 +532,7 @@ export function EnhancedQuestionFormModal({
               type="button"
               onClick={onClose}
               disabled={saving}
-              className="w-full sm:w-auto min-w-[132px] px-5 py-3 rounded-xl border-2 border-[#141413] bg-white font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#141413] hover:bg-[#FAF9F5] disabled:opacity-45 transition-colors"
+              className="w-full sm:w-auto min-w-[132px] px-5 py-3 rounded-xl border-2 border-[#0f172a] bg-white font-[Be_Vietnam_Pro] text-[14px] font-semibold text-[#0f172a] hover:bg-[#ffffff] disabled:opacity-45 transition-colors"
             >
               Hủy
             </button>
@@ -540,7 +540,7 @@ export function EnhancedQuestionFormModal({
               type="button"
               onClick={handleSubmit}
               disabled={saving}
-              className="w-full sm:w-auto min-w-[156px] px-6 py-3 rounded-xl bg-[#C96442] text-[#FAF9F5] font-[Be_Vietnam_Pro] text-[14px] font-bold shadow-[0_6px_22px_rgba(201,100,66,0.38)] hover:brightness-[1.03] active:scale-[0.98] disabled:opacity-45 disabled:shadow-none transition-all duration-150"
+              className="w-full sm:w-auto min-w-[156px] px-6 py-3 rounded-xl bg-[#0ea5e9] text-[#ffffff] font-[Be_Vietnam_Pro] text-[14px] font-bold shadow-[0_6px_22px_rgba(14,165,233,0.38)] hover:brightness-[1.03] active:scale-[0.98] disabled:opacity-45 disabled:shadow-none transition-all duration-150"
             >
               {saving ? 'Đang lưu...' : mode === 'create' ? 'Tạo câu hỏi' : 'Lưu thay đổi'}
             </button>

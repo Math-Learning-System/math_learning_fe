@@ -410,13 +410,13 @@ const SubscriptionManagement: React.FC = () => {
                 {[1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="bg-[#FAF9F5] rounded-2xl border border-[#F0EEE6] h-72 animate-pulse"
+                    className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] h-72 animate-pulse"
                   />
                 ))}
               </div>
             ) : plans.length === 0 && !plansError ? (
               <div className="flex flex-col items-center justify-center py-16 gap-2">
-                <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#87867F]">
+                <p className="font-[Be_Vietnam_Pro] text-[14px] text-[#64748b]">
                   Chưa có gói đăng ký nào. Hãy tạo gói đầu tiên!
                 </p>
               </div>
@@ -434,13 +434,13 @@ const SubscriptionManagement: React.FC = () => {
                           className={`inline-flex items-center px-2 py-0.5 rounded-full font-[Be_Vietnam_Pro] text-[11px] font-medium ${
                             plan.status === 'ACTIVE'
                               ? 'bg-emerald-50 text-emerald-700'
-                              : 'bg-[#F5F4ED] text-[#87867F]'
+                              : 'bg-[#f8fafc] text-[#64748b]'
                           }`}
                         >
                           {plan.status === 'ACTIVE' ? 'Hoạt động' : 'Vô hiệu'}
                         </span>
                         {!plan.isPublic && (
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#F5F4ED] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#87867F]">
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-[#f8fafc] font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#64748b]">
                             Ẩn
                           </span>
                         )}
@@ -449,14 +449,14 @@ const SubscriptionManagement: React.FC = () => {
                     actions={
                       <div className="flex items-center gap-2">
                         <button
-                          className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                          className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                           onClick={() => setSelectedPlan(plan)}
                         >
                           <Eye size={13} />
                           Chi tiết
                         </button>
                         <button
-                          className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-[#E8E6DC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#5E5D59] hover:bg-[#F5F4ED] transition-colors"
+                          className="flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl border border-[#e2e8f0] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#475569] hover:bg-[#f8fafc] transition-colors"
                           onClick={() => openEditModal(plan)}
                         >
                           <Pencil size={13} />
@@ -955,7 +955,7 @@ const SubscriptionManagement: React.FC = () => {
                       style={{
                         marginTop: '8px',
                         fontSize: '0.85rem',
-                        color: '#87867f',
+                        color: '#64748b',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -976,7 +976,7 @@ const SubscriptionManagement: React.FC = () => {
                       >
                         {selectedPlan.featured ? (
                           <>
-                            <Star size={12} style={{ color: '#c96442' }} /> Gói nổi bật
+                            <Star size={12} style={{ color: '#0ea5e9' }} /> Gói nổi bật
                           </>
                         ) : (
                           'Gói thường'
