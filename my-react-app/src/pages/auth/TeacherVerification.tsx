@@ -224,12 +224,12 @@ const TeacherVerification: React.FC = () => {
             onClick={() => setStep2Data({ ...step2Data, documentType: 'StaffCard' })}
             style={{
               padding: '1rem',
-              border: '1px solid #667eea',
+              border: '1px solid #0ea5e9',
               borderRadius: '0.5rem',
               textAlign: 'center',
               cursor: 'pointer',
               background: '#f0f4ff',
-              borderColor: '#667eea',
+              borderColor: '#0ea5e9',
             }}
           >
             Thẻ Cán bộ, Công chức, Viên chức (Giáo Viên)
@@ -264,7 +264,7 @@ const TeacherVerification: React.FC = () => {
         <Upload size={40} style={{ color: '#cbd5e0', marginBottom: '1rem' }} />
         <p style={{ color: '#718096' }}>{step2Data.fileName || 'Kéo thả hoặc nhấp để tải lên'}</p>
         {step2Data.fileName && (
-          <p style={{ color: '#667eea', fontWeight: 'bold', marginTop: '0.5rem' }}>
+          <p style={{ color: '#0ea5e9', fontWeight: 'bold', marginTop: '0.5rem' }}>
             Đã chọn: {step2Data.fileName}
           </p>
         )}
@@ -457,8 +457,8 @@ const TeacherVerification: React.FC = () => {
     >
       <div className="v-content" style={{ flex: 1 }}>
         <h1 style={{ fontSize: '2.2rem', lineHeight: '1.2', fontWeight: 'bold', color: '#1a202c' }}>
-          Chúng tôi đang <span style={{ color: '#667eea' }}>xem xét thông tin</span> của bạn, nhưng
-          bạn có thể <span style={{ color: '#667eea' }}>bắt đầu ngay</span> bây giờ.
+          Chúng tôi đang <span style={{ color: '#0ea5e9' }}>xem xét thông tin</span> của bạn, nhưng
+          bạn có thể <span style={{ color: '#0ea5e9' }}>bắt đầu ngay</span> bây giờ.
         </h1>
         <p style={{ color: '#4a5568', marginTop: '1.5rem', fontSize: '1.1rem', lineHeight: '1.6' }}>
           Bạn có thể tiếp tục khám phá, thiết kế và sáng tạo nội dung trên MathMaster trong khi
@@ -474,7 +474,7 @@ const TeacherVerification: React.FC = () => {
           style={{
             marginTop: '3rem',
             padding: '1rem 3.5rem',
-            background: '#667eea',
+            background: '#0ea5e9',
             borderRadius: '0.5rem',
             fontWeight: 'bold',
             fontSize: '1.1rem',
@@ -523,14 +523,14 @@ const TeacherVerification: React.FC = () => {
               style={{
                 width: '120px',
                 height: '120px',
-                background: '#667eea',
+                background: '#0ea5e9',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 margin: '0 auto 2rem',
                 color: 'white',
-                boxShadow: '0 10px 25px rgba(102, 126, 234, 0.3)',
+                boxShadow: '0 10px 25px rgba(14, 165, 233, 0.3)',
               }}
             >
               <GraduationCap size={60} />
@@ -551,7 +551,7 @@ const TeacherVerification: React.FC = () => {
                     width: '40px',
                     height: '8px',
                     borderRadius: '4px',
-                    background: s <= step ? '#667eea' : '#cbd5e0',
+                    background: s <= step ? '#0ea5e9' : '#cbd5e0',
                   }}
                 />
               ))}
@@ -624,8 +624,8 @@ const TeacherVerification: React.FC = () => {
                 }
                 .form-control:focus {
                     outline: none;
-                    border-color: #667eea;
-                    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+                    border-color: #0ea5e9;
+                    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
                 }
                 .btn {
                     padding: 0.8rem 1.5rem;
@@ -636,7 +636,7 @@ const TeacherVerification: React.FC = () => {
                     border: none;
                 }
                 .btn-primary {
-                    background: #667eea;
+                    background: #0ea5e9;
                     color: white;
                 }
                 .btn-primary:hover:not(:disabled) {

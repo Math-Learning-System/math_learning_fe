@@ -59,9 +59,9 @@ const SelectRole: React.FC = () => {
                 background: 'white'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#667eea';
+                e.currentTarget.style.borderColor = '#0ea5e9';
                 e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.boxShadow = '0 10px 25px rgba(102, 126, 234, 0.1)';
+                e.currentTarget.style.boxShadow = '0 10px 25px rgba(14, 165, 233, 0.1)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = '#e2e8f0';
@@ -72,13 +72,13 @@ const SelectRole: React.FC = () => {
               <div className="role-icon" style={{ 
                 width: '80px', 
                 height: '80px', 
-                background: 'rgba(102, 126, 234, 0.1)', 
+                background: 'rgba(14, 165, 233, 0.1)', 
                 borderRadius: '50%', 
                 display: 'flex', 
                 alignItems: 'center', 
                 justifyContent: 'center',
                 margin: '0 auto 1.5rem',
-                color: '#667eea'
+                color: '#0ea5e9'
               }}>
                 <GraduationCap size={40} />
               </div>
@@ -101,9 +101,9 @@ const SelectRole: React.FC = () => {
                 background: 'white'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#667eea';
+                e.currentTarget.style.borderColor = '#0ea5e9';
                 e.currentTarget.style.transform = 'translateY(-5px)';
-                e.currentTarget.style.boxShadow = '0 10px 25px rgba(102, 126, 234, 0.1)';
+                e.currentTarget.style.boxShadow = '0 10px 25px rgba(14, 165, 233, 0.1)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = '#e2e8f0';
@@ -114,13 +114,13 @@ const SelectRole: React.FC = () => {
               <div className="role-icon" style={{ 
                 width: '80px', 
                 height: '80px', 
-                background: 'rgba(102, 126, 234, 0.1)', 
+                background: 'rgba(14, 165, 233, 0.1)', 
                 borderRadius: '50%', 
                 display: 'flex', 
                 alignItems: 'center', 
                 justifyContent: 'center',
                 margin: '0 auto 1.5rem',
-                color: '#667eea'
+                color: '#0ea5e9'
               }}>
                 <User size={40} />
               </div>

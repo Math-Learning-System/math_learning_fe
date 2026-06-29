@@ -42,13 +42,13 @@
   font-weight: 700;
   text-align: center;
   margin-bottom: 3rem;
-  color: #1a202c;
+  color: var(--c-text-1, #0f172a);
 }
 
 .section-text {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #4a5568;
+  color: var(--c-text-3, #475569);
   margin-bottom: 1.5rem;
 }
 
@@ -66,7 +66,7 @@
 .features-hero-dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(94, 92, 230, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(14, 165, 233, 0.06) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
 }
@@ -149,7 +149,7 @@
   height: 22px;
   min-width: 22px;
   border-radius: 6px;
-  background: linear-gradient(135deg, rgba(94, 92, 230, 0.12), rgba(133, 141, 255, 0.2));
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(56, 189, 248, 0.2));
   color: #0f172a;
 }
 
@@ -193,7 +193,7 @@
 .about-hero-dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(94, 92, 230, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(14, 165, 233, 0.06) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
 }
@@ -324,7 +324,7 @@
   border-radius: 50%;
   top: -60px;
   right: -60px;
-  background: radial-gradient(circle, rgba(94, 92, 230, 0.1), transparent 70%);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.1), transparent 70%);
   filter: blur(30px);
   pointer-events: none;
 }
@@ -333,8 +333,8 @@
   transform: translateY(-6px);
   box-shadow:
     0 4px 16px rgba(14, 165, 233, 0.12),
-    0 12px 40px rgba(94, 92, 230, 0.1);
-  border-color: rgba(94, 92, 230, 0.12);
+    0 12px 40px rgba(14, 165, 233, 0.1);
+  border-color: rgba(14, 165, 233, 0.12);
 }
 
 .about-visual-icon {
@@ -344,7 +344,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(94, 92, 230, 0.12), rgba(133, 141, 255, 0.18));
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.12), rgba(56, 189, 248, 0.18));
   color: var(--c-primary, #0ea5e9);
   margin-bottom: 1.25rem;
 }
@@ -623,7 +623,7 @@
   top: -150px;
   left: 50%;
   transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(94, 92, 230, 0.06), transparent 70%);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.06), transparent 70%);
   filter: blur(50px);
   pointer-events: none;
 }
@@ -757,7 +757,7 @@
 /* ==================== PRICING PAGE ==================== */
 .pricing-section {
   padding: 100px 0;
-  background: #f8f9fa;
+  background: #f8fafc;
 }
 
 .pricing-grid {
@@ -779,9 +779,9 @@
 }
 
 .pricing-card.highlighted {
-  border-color: #667eea;
+  border-color: #0ea5e9;
   transform: scale(1.05);
-  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.25);
+  box-shadow: 0 20px 60px rgba(14, 165, 233, 0.25);
 }
 
 .pricing-card:hover {
@@ -798,19 +798,19 @@
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
   color: #0f172a;
   padding: 0.5rem 1.5rem;
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 700;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
 }
 
 .plan-name {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #1a202c;
+  color: #0f172a;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -823,18 +823,18 @@
 .price {
   font-size: 3rem;
   font-weight: 800;
-  color: #667eea;
+  color: #0ea5e9;
   display: block;
 }
 
 .period {
   font-size: 1rem;
-  color: #718096;
+  color: #64748b;
 }
 
 .plan-description {
   text-align: center;
-  color: #4a5568;
+  color: #475569;
   margin-bottom: 2rem;
   font-size: 0.95rem;
 }
@@ -847,7 +847,7 @@
 
 .plan-features li {
   padding: 0.75rem 0;
-  color: #2d3748;
+  color: #334155;
   display: flex;
   align-items: center;
   font-size: 0.95rem;
@@ -881,12 +881,12 @@
 .faq-item h4 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #1a202c;
+  color: #0f172a;
   margin-bottom: 1rem;
 }
 
 .faq-item p {
-  color: #4a5568;
+  color: #475569;
   line-height: 1.6;
   font-size: 0.95rem;
 }
@@ -912,10 +912,10 @@
 }
 
 .info-card {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: inset 3px 0 0 #667eea;
+  box-shadow: inset 3px 0 0 #0ea5e9;
   transition: all 0.3s ease;
 }
 
@@ -933,18 +933,18 @@
 .info-card h3 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #1a202c;
+  color: #0f172a;
   margin-bottom: 0.75rem;
 }
 
 .info-card p {
-  color: #4a5568;
+  color: #475569;
   margin: 0.5rem 0;
   font-size: 0.95rem;
 }
 
 .contact-form-wrapper {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
   padding: 3rem;
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
@@ -953,7 +953,7 @@
 .contact-form-wrapper h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #1a202c;
+  color: #0f172a;
   margin-bottom: 2rem;
 }
 
@@ -964,7 +964,7 @@
 .contact-form label {
   display: block;
   font-weight: 600;
-  color: #2d3748;
+  color: #334155;
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
 }
@@ -981,8 +981,8 @@
 
 .contact-form .form-control:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #0ea5e9;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
 }
 
 .contact-form textarea.form-control {

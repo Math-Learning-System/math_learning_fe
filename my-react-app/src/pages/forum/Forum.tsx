@@ -174,7 +174,7 @@ const Forum: React.FC = () => {
           <div className="stat-card">
             <div
               className="stat-icon"
-              style={{ background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }}
+              style={{ background: 'linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%)' }}
             >
               💬
             </div>

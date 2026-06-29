@@ -35,7 +35,7 @@
 .contact-hero-dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(94, 92, 230, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(14, 165, 233, 0.06) 1px, transparent 1px);
   background-size: 28px 28px;
   pointer-events: none;
 }
@@ -55,7 +55,7 @@
   letter-spacing: -1.5px;
   margin: 0 0 1.25rem 0;
   font-family: var(--f-heading, 'Be Vietnam Pro', sans-serif);
-  color: var(--c-text-1, #0e0c15);
+  color: var(--c-text-1, #0f172a);
 }
 
 .contact-hero-desc {
@@ -118,7 +118,7 @@
   border-radius: 50%;
   top: -50px;
   right: -50px;
-  background: radial-gradient(circle, rgba(94, 92, 230, 0.1), transparent 70%);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.1), transparent 70%);
   filter: blur(25px);
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -134,8 +134,8 @@
   transform: translateY(-6px);
   box-shadow:
     0 4px 16px rgba(14, 165, 233, 0.12),
-    0 12px 36px rgba(94, 92, 230, 0.1);
-  border-color: rgba(94, 92, 230, 0.12);
+    0 12px 36px rgba(14, 165, 233, 0.1);
+  border-color: rgba(14, 165, 233, 0.12);
 }
 
 /* Icon container */
@@ -147,7 +147,7 @@
   height: 48px;
   min-width: 48px;
   border-radius: 14px;
-  background: linear-gradient(135deg, rgba(94, 92, 230, 0.1), rgba(133, 141, 255, 0.15));
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.1), rgba(56, 189, 248, 0.15));
   color: var(--c-primary, #0ea5e9);
   font-size: 1.25rem;
   position: relative;
@@ -169,7 +169,7 @@
   font-family: var(--f-heading, 'Be Vietnam Pro', sans-serif);
   font-size: 1.05rem;
   font-weight: 700;
-  color: var(--c-text-1, #0e0c15);
+  color: var(--c-text-1, #0f172a);
   margin: 0 0 0.35rem 0;
   letter-spacing: -0.2px;
 }
@@ -251,7 +251,7 @@
   font-family: var(--f-heading, 'Be Vietnam Pro', sans-serif);
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--c-text-1, #0e0c15);
+  color: var(--c-text-1, #0f172a);
   letter-spacing: -0.3px;
   margin: 0 0 0.4rem 0;
   position: relative;
@@ -308,7 +308,7 @@
   padding: 0.85rem 1rem;
   font-size: 0.88rem;
   font-family: inherit;
-  color: var(--c-text-1, #0e0c15);
+  color: var(--c-text-1, #0f172a);
   background: rgba(255, 255, 255, 0.8);
   border: 1.5px solid var(--c-border, #e8e5f0);
   border-radius: var(--r-md, 16px);
@@ -328,7 +328,7 @@
 .contact-form-select:focus,
 .contact-form-textarea:focus {
   border-color: var(--c-primary, #0ea5e9);
-  box-shadow: 0 0 0 4px rgba(94, 92, 230, 0.1);
+  box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
   background: #fff;
 }
 
@@ -365,17 +365,17 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow:
-    0 2px 8px rgba(94, 92, 230, 0.2),
-    0 4px 16px rgba(94, 92, 230, 0.15);
+    0 2px 8px rgba(14, 165, 233, 0.2),
+    0 4px 16px rgba(14, 165, 233, 0.15);
   margin-top: 0.5rem;
 }
 
 .contact-submit-btn:hover {
-  background: #4e4cc6;
+  background: #0284c7;
   transform: translateY(-3px);
   box-shadow:
-    0 4px 12px rgba(94, 92, 230, 0.25),
-    0 8px 32px rgba(94, 92, 230, 0.2);
+    0 4px 12px rgba(14, 165, 233, 0.25),
+    0 8px 32px rgba(14, 165, 233, 0.2);
 }
 
 .contact-submit-btn:active {

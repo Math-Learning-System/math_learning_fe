@@ -204,7 +204,7 @@ export default function MindmapEditor() {
   const interactionModeRef = useRef<InteractionMode>('DRAG');
   const [editForm, setEditForm] = useState({
     content: '',
-    color: '#667eea',
+    color: '#0ea5e9',
     icon: 'lightbulb',
   });
   const [newNodeForm, setNewNodeForm] = useState({

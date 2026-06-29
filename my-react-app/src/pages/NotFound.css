@@ -9,11 +9,11 @@
   --c-primary: #0ea5e9;
   --c-primary-soft: rgba(14, 165, 233, 0.12);
   --c-primary-glow: rgba(14, 165, 233, 0.24);
-  --c-dark: #0e0c15;
+  --c-dark: #0f172a;
   --c-dark-alt: #1a1725;
   --c-bg: #fafaff;
   --c-surface: #ffffff;
-  --c-text-1: #0e0c15;
+  --c-text-1: #0f172a;
   --c-text-2: #3f3a52;
   --c-text-3: #756b85;
   --c-border: #e8e5f0;
@@ -55,7 +55,7 @@
   height: 520px;
   top: -140px;
   left: -120px;
-  background: radial-gradient(circle, rgba(94, 92, 230, 0.14) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.14) 0%, transparent 70%);
   animation: nf-blob-drift 12s ease-in-out infinite alternate;
 }
 .nf-blob-2 {
@@ -91,8 +91,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(94, 92, 230, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(94, 92, 230, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(14, 165, 233, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.04) 1px, transparent 1px);
   background-size: 48px 48px;
   pointer-events: none;
   z-index: 0;
@@ -362,7 +362,7 @@
     filter: drop-shadow(0 8px 32px rgba(14, 165, 233, 0.28));
   }
   50% {
-    filter: drop-shadow(0 8px 48px rgba(94, 92, 230, 0.48));
+    filter: drop-shadow(0 8px 48px rgba(14, 165, 233, 0.48));
   }
 }
 
@@ -439,7 +439,7 @@
   color: var(--c-primary);
   text-decoration: none;
   padding: 0.25rem 0.75rem;
-  border: 1px solid rgba(94, 92, 230, 0.25);
+  border: 1px solid rgba(14, 165, 233, 0.25);
   border-radius: 100px;
   background: var(--c-primary-soft);
   transition:
@@ -449,8 +449,8 @@
 }
 
 .nf-quick-link:hover {
-  background: rgba(94, 92, 230, 0.14);
-  border-color: rgba(94, 92, 230, 0.5);
+  background: rgba(14, 165, 233, 0.14);
+  border-color: rgba(14, 165, 233, 0.5);
   transform: translateY(-1px);
 }
 
@@ -493,11 +493,11 @@
 .nf-btn-primary {
   background: linear-gradient(135deg, var(--c-primary) 0%, #7c3aed 100%);
   color: #fff;
-  box-shadow: 0 4px 20px rgba(94, 92, 230, 0.35);
+  box-shadow: 0 4px 20px rgba(14, 165, 233, 0.35);
 }
 
 .nf-btn-primary:hover {
-  box-shadow: 0 8px 28px rgba(94, 92, 230, 0.45);
+  box-shadow: 0 8px 28px rgba(14, 165, 233, 0.45);
 }
 
 .nf-btn-ghost {
@@ -511,7 +511,7 @@
   border-color: var(--c-primary);
   color: var(--c-primary);
   background: var(--c-primary-soft);
-  box-shadow: 0 4px 16px rgba(94, 92, 230, 0.14);
+  box-shadow: 0 4px 16px rgba(14, 165, 233, 0.14);
 }
 
 /* ── Decorative math card ── */

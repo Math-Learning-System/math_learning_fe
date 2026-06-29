@@ -461,7 +461,7 @@
 .tp-textarea:focus {
   outline: none;
   border-color: #0ea5e9;
-  box-shadow: 0 0 0 3px rgba(94, 92, 230, 0.1);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
   background: #fafaff;
 }
 
@@ -616,8 +616,8 @@
 }
 
 .tp-btn--primary:hover:not(:disabled) {
-  background: #4e4cc6;
-  border-color: #4e4cc6;
+  background: #0284c7;
+  border-color: #0284c7;
   box-shadow: 0 4px 24px rgba(14, 165, 233, 0.24);
   transform: translateY(-1px);
 }
