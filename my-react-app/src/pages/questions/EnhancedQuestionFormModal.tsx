@@ -412,7 +412,7 @@ export function EnhancedQuestionFormModal({
                 <p className="font-[Be_Vietnam_Pro] text-[11px] font-semibold uppercase tracking-wide text-[#64748b]">
                   Xem trước câu hỏi
                 </p>
-                <span className="inline-flex self-start px-2 py-0.5 rounded-full bg-[#EEF2FF] font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#4F7EF7]">
+                <span className="inline-flex self-start px-2 py-0.5 rounded-full bg-[#F0F9FF] font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#4F7EF7]">
                   {previewTypeLabel}
                 </span>
                 <div className="font-[Be_Vietnam_Pro] text-[14px] text-[#0f172a] leading-relaxed eqfm-preview-question min-h-[2.5rem]">
@@ -519,7 +519,7 @@ export function EnhancedQuestionFormModal({
                 type="button"
                 onClick={handleAIEnhance}
                 disabled={enhancing || saving}
-                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#7c3aed] text-white font-[Be_Vietnam_Pro] text-[13px] font-semibold shadow-[0_8px_24px_rgba(124,58,237,0.28)] hover:bg-[#6d28d9] hover:brightness-[1.02] disabled:opacity-45 disabled:cursor-not-allowed disabled:shadow-none transition-all duration-150 active:scale-[0.98]"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#0ea5e9] text-white font-[Be_Vietnam_Pro] text-[13px] font-semibold shadow-[0_8px_24px_rgba(14,165,233,0.28)] hover:bg-[#0284c7] hover:brightness-[1.02] disabled:opacity-45 disabled:cursor-not-allowed disabled:shadow-none transition-all duration-150 active:scale-[0.98]"
               >
                 <Sparkles className="w-4 h-4 shrink-0" />
                 {enhancing ? 'Đang tạo lời giải...' : '✨ Tạo lời giải bằng AI'}

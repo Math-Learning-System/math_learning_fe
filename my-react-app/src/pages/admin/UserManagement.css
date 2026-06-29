@@ -6,7 +6,7 @@
   --text-secondary: #475569;
   --text-tertiary: #64748b;
   --brand: #0ea5e9;
-  --brand-hover: #b85535;
+  --brand-hover: #0284c7;
   --border-soft: #e2e8f0;
   --border-strong: #e2e8f0;
   --ring-soft: #cbd5e1;
@@ -123,7 +123,7 @@
 .stat-card:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 0 0 1px #c2c0b6,
+    0 0 0 1px #cbd5e1,
     0 8px 24px rgba(15, 23, 42, 0.08);
 }
 
@@ -440,7 +440,7 @@
 }
 
 .action-btn.view:hover {
-  border-color: #c2c0b6;
+  border-color: #cbd5e1;
   color: #1e293b;
   background: #f5f3ea;
 }

@@ -101,22 +101,22 @@ const AdminDashboard: React.FC = () => {
           Icon: Users,
           label: 'Tổng người dùng',
           value: dashboardStats.totalUsers.toLocaleString('vi-VN'),
-          bg: 'bg-[#EEF2FF]',
+          bg: 'bg-[#F0F9FF]',
           color: 'text-[#4F7EF7]',
         },
         {
           Icon: BookOpen,
           label: 'Enrollment hoạt động',
           value: dashboardStats.activeEnrollments.toLocaleString('vi-VN'),
-          bg: 'bg-[#FFF7ED]',
-          color: 'text-[#E07B39]',
+          bg: 'bg-[#F0F9FF]',
+          color: 'text-[#0EA5E9]',
         },
         {
           Icon: BarChart2,
           label: 'Giao dịch',
           value: dashboardStats.totalTransactions.toLocaleString('vi-VN'),
-          bg: 'bg-[#F5F3FF]',
-          color: 'text-[#9B6FE0]',
+          bg: 'bg-[#F0F9FF]',
+          color: 'text-[#0EA5E9]',
         },
       ]
     : [];
@@ -363,7 +363,7 @@ const AdminDashboard: React.FC = () => {
               </h2>
               <Link
                 to="/admin/users"
-                className="inline-flex items-center gap-1 font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0ea5e9] hover:text-[#A95536] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9] rounded"
+                className="inline-flex items-center gap-1 font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0ea5e9] hover:text-[#0284c7] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ea5e9] rounded"
               >
                 Xem tất cả <ChevronRight className="w-3.5 h-3.5" />
               </Link>

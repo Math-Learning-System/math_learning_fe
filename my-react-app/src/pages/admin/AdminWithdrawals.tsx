@@ -617,7 +617,7 @@ const AdminWithdrawals: React.FC = () => {
               </div>
             ) : requests.length === 0 ? (
               <div className="wad-empty-state">
-                <Download size={32} style={{ color: '#C2C0B6' }} />
+                <Download size={32} style={{ color: '#cbd5e1' }} />
                 <p>Không có yêu cầu nào.</p>
               </div>
             ) : (

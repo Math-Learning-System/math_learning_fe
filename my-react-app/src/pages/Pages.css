@@ -57,7 +57,7 @@
 /* ── Hero ── */
 .features-page-hero {
   padding: 8rem 0 4rem;
-  background: var(--c-bg, #fafaff);
+  background: var(--c-bg, #f8fafc);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -184,7 +184,7 @@
 /* ── Hero ── */
 .about-hero {
   padding: 8rem 0 5rem;
-  background: var(--c-bg, #fafaff);
+  background: var(--c-bg, #f8fafc);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -415,7 +415,7 @@
 /* ── Vision — Accent Section ── */
 .about-vision-section {
   padding: 5rem 0;
-  background: var(--c-bg, #fafaff);
+  background: var(--c-bg, #f8fafc);
   position: relative;
   overflow: hidden;
 }
@@ -526,7 +526,7 @@
 /* ── Benefits — Why MathMaster ── */
 .about-benefits-section {
   padding: 5rem 0;
-  background: var(--c-bg, #fafaff);
+  background: var(--c-bg, #f8fafc);
   position: relative;
   overflow: hidden;
 }
@@ -606,7 +606,7 @@
   text-align: center;
   padding: 4rem 2rem;
   border-radius: var(--r-xl, 20px);
-  background: var(--c-bg, #fafaff);
+  background: var(--c-bg, #f8fafc);
   border: 1px solid var(--c-border-soft, rgba(0, 0, 0, 0.04));
   position: relative;
   overflow: hidden;

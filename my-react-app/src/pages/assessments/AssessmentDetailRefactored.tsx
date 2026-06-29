@@ -610,14 +610,14 @@ export default function AssessmentDetailRefactored() {
                 sub: typeLabel,
                 Icon: FileText,
                 bg: 'bg-[#FFF7ED]',
-                color: 'text-[#E07B39]',
+                color: 'text-[#0EA5E9]',
               },
               {
                 label: 'Câu hỏi',
                 value: assessment.totalQuestions ?? 0,
                 sub: `Tổng điểm: ${assessment.totalPoints ?? 0}`,
                 Icon: ListChecks,
-                bg: 'bg-[#EEF2FF]',
+                bg: 'bg-[#F0F9FF]',
                 color: 'text-[#4F7EF7]',
               },
               {
@@ -637,8 +637,8 @@ export default function AssessmentDetailRefactored() {
                     ? `${assessment.timeLimitMinutes} phút`
                     : 'Không giới hạn',
                 Icon: Clock,
-                bg: 'bg-[#F5F3FF]',
-                color: 'text-[#9B6FE0]',
+                bg: 'bg-[#F0F9FF]',
+                color: 'text-[#0EA5E9]',
               },
             ] as const
           ).map(({ label, value, sub, Icon, bg, color }) => (

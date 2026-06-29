@@ -533,7 +533,7 @@ const UnifiedCourseView: React.FC<UnifiedCourseViewProps> = ({
                         </div>
                         <div className="h-2 rounded-full bg-[#e2e8f0] overflow-hidden">
                           <div
-                            className="h-full rounded-full bg-gradient-to-r from-[#0ea5e9] to-[#E07B39] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] origin-left"
+                            className="h-full rounded-full bg-gradient-to-r from-[#0ea5e9] to-[#0EA5E9] transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] origin-left"
                             style={{
                               transform: `scaleX(${Math.min(1, Math.max(0, progress.completionRate / 100))})`,
                             }}

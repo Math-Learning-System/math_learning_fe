@@ -4114,7 +4114,7 @@ const StudentWallet: React.FC = () => {
                   label: 'Số dư hiện tại',
                   value: walletLoading ? '—' : `${formatCurrency(wallet?.balance ?? 0)} ₫`,
                   Icon: Wallet,
-                  bg: 'bg-[#EEF2FF]',
+                  bg: 'bg-[#F0F9FF]',
                   color: 'text-[#4F7EF7]',
                 },
                 {

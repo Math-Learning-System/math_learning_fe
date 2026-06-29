@@ -347,7 +347,7 @@ const AdminCommissionProposals: React.FC = () => {
               </div>
             ) : proposals.length === 0 ? (
               <div className="acp-empty-state">
-                <Percent size={32} style={{ color: '#C2C0B6' }} />
+                <Percent size={32} style={{ color: '#cbd5e1' }} />
                 <p>Không có đề xuất nào.</p>
               </div>
             ) : (

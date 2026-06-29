@@ -22,8 +22,8 @@ const RESOURCE_META: Record<ResourceType, { label: string; icon: React.ReactNode
   TEMPLATE_SLIDE: {
     label: 'Slide',
     icon: <Presentation size={14} />,
-    color: '#8b5cf6',
-    bgColor: '#f5f3ff',
+    color: '#0ea5e9',
+    bgColor: '#f0f9ff',
   },
   ASSESSMENT: {
     label: 'Bài kiểm tra',

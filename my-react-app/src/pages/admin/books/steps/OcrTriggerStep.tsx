@@ -47,7 +47,7 @@ const STATUS_TONE: Record<BookResponse['status'], string> = {
   DRAFT: 'bg-slate-100 text-slate-700 border-slate-200',
   MAPPING: 'bg-amber-50 text-amber-700 border-amber-200',
   READY: 'bg-blue-50 text-blue-700 border-blue-200',
-  OCR_RUNNING: 'bg-indigo-50 text-indigo-700 border-indigo-200',
+  OCR_RUNNING: 'bg-sky-50 text-sky-700 border-sky-200',
   OCR_DONE: 'bg-emerald-50 text-emerald-700 border-emerald-200',
   OCR_FAILED: 'bg-red-50 text-red-700 border-red-200',
 };
@@ -728,10 +728,10 @@ const OcrPipelineLivePanel: React.FC<{
       : '';
 
   return (
-    <div className="rounded-lg border border-indigo-100 bg-indigo-50/40 p-3 space-y-3">
+    <div className="rounded-lg border border-sky-100 bg-sky-50/40 p-3 space-y-3">
       <div className="flex items-start justify-between gap-2">
         <div>
-          <div className="text-xs font-semibold text-indigo-900 tracking-wide">
+          <div className="text-xs font-semibold text-sky-900 tracking-wide">
             Máy đang quét nội dung{cachedHint}
           </div>
           <div className="text-[11px] text-slate-600 mt-0.5">
@@ -740,7 +740,7 @@ const OcrPipelineLivePanel: React.FC<{
           </div>
         </div>
         {runner ? (
-          <span className="shrink-0 text-[10px] font-mono uppercase px-1.5 py-0.5 rounded bg-white border border-indigo-100 text-indigo-800">
+          <span className="shrink-0 text-[10px] font-mono uppercase px-1.5 py-0.5 rounded bg-white border border-sky-100 text-sky-800">
             {runner}
           </span>
         ) : null}
@@ -748,7 +748,7 @@ const OcrPipelineLivePanel: React.FC<{
 
       {queryLoading && !hasSignal ? (
         <div className="flex items-center gap-2 text-xs text-slate-600">
-          <Loader2 size={14} className="animate-spin text-indigo-600" />
+          <Loader2 size={14} className="animate-spin text-sky-600" />
           Đang tải thông tin tiến độ…
         </div>
       ) : null}
@@ -791,7 +791,7 @@ const OcrPipelineLivePanel: React.FC<{
                 done
                   ? 'border-emerald-200 bg-emerald-50/80 text-emerald-900'
                   : active
-                    ? 'border-indigo-300 bg-white text-indigo-950 shadow-sm'
+                    ? 'border-sky-300 bg-white text-sky-950 shadow-sm'
                     : 'border-slate-100 bg-white/60 text-slate-500'
               }`}
             >
@@ -799,7 +799,7 @@ const OcrPipelineLivePanel: React.FC<{
                 {done ? (
                   <CheckCircle2 size={14} className="text-emerald-600" />
                 ) : active ? (
-                  <Loader2 size={14} className="animate-spin text-indigo-600" />
+                  <Loader2 size={14} className="animate-spin text-sky-600" />
                 ) : (
                   <div className="w-3.5 h-3.5 rounded-full border border-slate-300 bg-white" />
                 )}

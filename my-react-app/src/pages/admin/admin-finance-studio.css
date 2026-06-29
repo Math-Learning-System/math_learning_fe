@@ -53,8 +53,8 @@
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .refresh-button:hover,
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .export-button:hover {
-  background: #b85535;
-  border-color: #b85535;
+  background: #0284c7;
+  border-color: #0284c7;
   color: #ffffff;
 }
 
@@ -155,7 +155,7 @@
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-transactions-page header.page-header .btn-outline:hover:not(:disabled) {
   border-color: #0ea5e9;
   color: #9a4a32;
-  background: #fdf8f3;
+  background: #f8fafc;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .subscription-management-page header.page-header .btn-primary {
@@ -202,7 +202,7 @@
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .metric-card.subscriptions::before {
-  background: linear-gradient(90deg, #6d28d9 0%, #7c3aed 100%) !important;
+  background: linear-gradient(90deg, #0369a1 0%, #7c3aed 100%) !important;
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .metric-card.instructors::before {
@@ -244,7 +244,7 @@
 }
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .info-banner {
-  background: #fdf8f3;
+  background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 14px;
   color: #334155;
@@ -376,8 +376,8 @@
 
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .admin-transactions-page .btn-primary:hover:not(:disabled),
 .module-layout-container.admin-mgmt-shell.admin-finance-studio .subscription-management-page .btn-primary:hover:not(:disabled) {
-  background: #b85535;
-  border-color: #b85535;
+  background: #0284c7;
+  border-color: #0284c7;
   color: #ffffff;
 }
 

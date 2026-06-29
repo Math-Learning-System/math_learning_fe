@@ -126,8 +126,8 @@
 }
 
 .course-detail-tab .stat-card.stat-violet .stat-icon-wrap {
-  background: #f5f3ff;
-  border-color: #ede9fe;
+  background: #f0f9ff;
+  border-color: #e0f2fe;
 }
 .course-detail-tab .stat-card.stat-violet .stat-icon-wrap svg {
   color: #7c3aed;
@@ -514,7 +514,7 @@
 
 .cdt-reviews__dist-fill {
   height: 100%;
-  background: #e07b39;
+  background: #0ea5e9;
   border-radius: 99px;
   width: 100%;
   transform-origin: left center;

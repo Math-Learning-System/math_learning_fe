@@ -538,7 +538,7 @@ const StudentCourses: React.FC = () => {
                       label: 'Đang học',
                       value: stats.active,
                       Icon: BookOpen,
-                      bg: 'bg-[#EEF2FF]',
+                      bg: 'bg-[#F0F9FF]',
                       color: 'text-[#4F7EF7]',
                     },
                     {
@@ -553,7 +553,7 @@ const StudentCourses: React.FC = () => {
                       value: stats.incomplete,
                       Icon: Award,
                       bg: 'bg-[#FFF7ED]',
-                      color: 'text-[#E07B39]',
+                      color: 'text-[#0EA5E9]',
                     },
                   ] as const
                 ).map(({ label, value, Icon, bg, color }) => (

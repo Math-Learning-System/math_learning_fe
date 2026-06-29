@@ -8,7 +8,7 @@
   --rb-surface: #ffffff;
   --rb-canvas: transparent;
   --rb-accent: #0ea5e9;
-  --rb-violet: #9b6fe0;
+  --rb-violet: #0ea5e9;
   --rb-green: #2ead7a;
 
   width: 100%;
@@ -407,7 +407,7 @@
 }
 
 .source-mini-card--subs .source-icon {
-  background: #f5f3ff;
+  background: #f0f9ff;
   color: #7c5cbf;
 }
 

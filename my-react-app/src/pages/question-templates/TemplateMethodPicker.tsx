@@ -62,7 +62,7 @@ export function TemplateMethodPicker({
             style={{
               minHeight: 0,
               border: '2px solid #c4b5fd',
-              background: 'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
+              background: 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
               textAlign: 'left',
               cursor: 'pointer',
               padding: '1.25rem 1.3rem',

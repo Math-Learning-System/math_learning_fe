@@ -85,7 +85,7 @@ export function AIExtractPanel({
       style={{
         border: '1px solid #e0f2fe',
         borderRadius: 10,
-        background: '#f5f3ff',
+        background: '#f0f9ff',
         padding: '14px 16px',
         marginTop: 12,
       }}

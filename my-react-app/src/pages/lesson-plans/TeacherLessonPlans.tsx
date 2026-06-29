@@ -46,13 +46,13 @@ const PAGE_SIZE = 9;
 const coverGradients = [
   'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
   'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
-  'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
+  'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
   'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
   'linear-gradient(135deg, #ecfeff 0%, #cffafe 100%)',
   'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)',
 ] as const;
 
-const coverAccents = ['#1d4ed8', '#047857', '#6d28d9', '#c2410c', '#0f766e', '#be185d'] as const;
+const coverAccents = ['#1d4ed8', '#047857', '#0369a1', '#c2410c', '#0f766e', '#be185d'] as const;
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 

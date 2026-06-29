@@ -124,7 +124,7 @@
   width: 100px;
   height: 100px;
   border-radius: 22px;
-  background: linear-gradient(145deg, #ede9fe, #ddd6fe);
+  background: linear-gradient(145deg, #e0f2fe, #ddd6fe);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -292,7 +292,7 @@
 
 /* ── Chat panel ── */
 .gemini-chat-page {
-  --bg-soft: #f5f3ff;
+  --bg-soft: #f0f9ff;
   --bg-panel: #ffffff;
   --bg-panel-2: #fafafa;
   --line-soft: #e5e7eb;
@@ -902,7 +902,7 @@
 .math-block-wrap {
   margin: 0.75rem 0;
   padding: 0.85rem 1rem;
-  background: linear-gradient(135deg, #f8fbff 0%, #f5f3ff 100%);
+  background: linear-gradient(135deg, #f8fbff 0%, #f0f9ff 100%);
   border: 1px solid #e2e8f0;
   border-radius: var(--radius-md, 8px);
   overflow-x: auto;
@@ -991,7 +991,7 @@
 }
 
 .md-code-inline {
-  background: #f5f3ff;
+  background: #f0f9ff;
   color: #0ea5e9;
   border: 1px solid #e0f2fe;
   border-radius: 4px;

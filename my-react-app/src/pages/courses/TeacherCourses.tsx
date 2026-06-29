@@ -49,10 +49,10 @@ const coverGradients = [
   'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
   'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
   'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)',
-  'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
+  'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
 ] as const;
 
-const coverAccents = ['#1d4ed8', '#0f766e', '#047857', '#c2410c', '#be185d', '#6d28d9'] as const;
+const coverAccents = ['#1d4ed8', '#0f766e', '#047857', '#c2410c', '#be185d', '#0369a1'] as const;
 const PAGE_SIZE = 9;
 type CourseFilterStatus =
   | 'all'
@@ -915,7 +915,7 @@ const TeacherCourses: React.FC = () => {
                     label: UI_TEXT.TOTAL_COURSES,
                     value: stats.total,
                     Icon: BookOpen,
-                    bg: 'bg-[#EEF2FF]',
+                    bg: 'bg-[#F0F9FF]',
                     color: 'text-[#4F7EF7]',
                   },
                   {
@@ -930,14 +930,14 @@ const TeacherCourses: React.FC = () => {
                     value: stats.draft,
                     Icon: FileText,
                     bg: 'bg-[#FFF7ED]',
-                    color: 'text-[#E07B39]',
+                    color: 'text-[#0EA5E9]',
                   },
                   {
                     label: 'Học viên',
                     value: stats.students,
                     Icon: Users,
-                    bg: 'bg-[#F5F3FF]',
-                    color: 'text-[#9B6FE0]',
+                    bg: 'bg-[#F0F9FF]',
+                    color: 'text-[#0EA5E9]',
                   },
                 ] as const
               ).map(({ label, value, Icon, bg, color }) => (

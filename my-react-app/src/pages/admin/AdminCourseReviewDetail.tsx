@@ -353,7 +353,7 @@ const AdminCourseReviewDetail: React.FC = () => {
                       <Users size={14} className="text-[#64748b]" />
                       {course.studentsCount} học viên
                     </span>
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#EEF2FF] border border-[#C7D2FE] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#4338CA]">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F0F9FF] border border-[#BAE6FD] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#0369A1]">
                       GV: {course.teacherName ?? '—'}
                     </span>
                   </div>

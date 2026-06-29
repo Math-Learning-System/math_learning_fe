@@ -697,7 +697,7 @@ const AdminCourseReviewsPage: React.FC = () => {
       display: pendingQuery.isPending && !pendingQuery.data ? '…' : String(pendingTotal),
       Icon: Clock3,
       bg: 'bg-[#FFF7ED]',
-      color: 'text-[#E07B39]',
+      color: 'text-[#0EA5E9]',
     },
     {
       label: 'Đã công khai',
@@ -715,13 +715,13 @@ const AdminCourseReviewsPage: React.FC = () => {
         statDraft.isPending && !statDraft.data ? '…' : String(pickTotalElements(statDraft.data)),
       Icon: FileText,
       bg: 'bg-[#f8fafc]',
-      color: 'text-[#9B6FE0]',
+      color: 'text-[#0EA5E9]',
     },
     {
       label: 'Tổng lịch sử',
       display: statAll.isPending && !statAll.data ? '…' : String(pickTotalElements(statAll.data)),
       Icon: Network,
-      bg: 'bg-[#EEF2FF]',
+      bg: 'bg-[#F0F9FF]',
       color: 'text-[#4F7EF7]',
     },
   ] as const;

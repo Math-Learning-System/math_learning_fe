@@ -447,8 +447,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: #f5f3ff;
-  color: #6d28d9;
+  background: #f0f9ff;
+  color: #0369a1;
   border: 1px solid #ddd6fe;
   font-size: 0.76rem;
   font-weight: 600;
@@ -1152,7 +1152,7 @@
   text-align: center;
   padding: 4rem 2rem;
   border-radius: var(--r-xl, 24px);
-  background: linear-gradient(180deg, #ffffff 0%, #f5f3ff 50%, #eeedf8 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 50%, #e2e8f0 100%);
   border: 1px solid var(--c-border-soft, #cbd5e1);
   position: relative;
   overflow: hidden;

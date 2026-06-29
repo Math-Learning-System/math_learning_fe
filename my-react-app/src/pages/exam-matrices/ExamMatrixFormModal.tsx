@@ -116,7 +116,7 @@ export function ExamMatrixFormModal({
           <div className="flex items-center gap-3 min-w-0">
             <div
               className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
-                isCreate ? 'bg-[#EEF2FF] text-[#4F7EF7]' : 'bg-[#F5F3FF] text-[#9B6FE0]'
+                isCreate ? 'bg-[#F0F9FF] text-[#4F7EF7]' : 'bg-[#F0F9FF] text-[#0EA5E9]'
               }`}
             >
               {isCreate ? <LayoutGrid size={17} /> : <FileText size={17} />}

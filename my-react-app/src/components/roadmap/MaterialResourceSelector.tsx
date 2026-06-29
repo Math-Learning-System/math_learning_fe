@@ -36,8 +36,8 @@ const RESOURCE_CONFIG: Record<ResourceType, { label: string; icon: React.ReactNo
   TEMPLATE_SLIDE: {
     label: 'Slide mẫu',
     icon: <Presentation size={18} />,
-    color: '#8b5cf6',
-    bgColor: '#f5f3ff',
+    color: '#0ea5e9',
+    bgColor: '#f0f9ff',
   },
   ASSESSMENT: {
     label: 'Bài kiểm tra',

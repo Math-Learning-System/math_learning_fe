@@ -64,9 +64,9 @@ const typeVisual: Record<
 > = {
   QUIZ: {
     Icon: ListChecks,
-    gradient: 'from-[#f0f9ff] via-[#ffffff] to-[#ede9fe]',
-    orb: 'bg-indigo-500/30',
-    chip: 'text-indigo-800 bg-indigo-50/90 border-indigo-200/70',
+    gradient: 'from-[#f0f9ff] via-[#ffffff] to-[#e0f2fe]',
+    orb: 'bg-sky-500/30',
+    chip: 'text-sky-800 bg-sky-50/90 border-sky-200/70',
   },
   TEST: {
     Icon: ClipboardList,
@@ -331,7 +331,7 @@ export default function AssessmentDetail() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-6">
           <StatBentoCard
             icon={FileText}
-            iconBg="bg-[#EEF2FF] text-indigo-600"
+            iconBg="bg-[#F0F9FF] text-sky-600"
             label="Số câu"
             className="lg:col-span-2"
           >
@@ -429,7 +429,7 @@ export default function AssessmentDetail() {
           {assessment.allowMultipleAttempts ? (
             <StatBentoCard
               icon={RefreshCw}
-              iconBg="bg-[#F5F3FF] text-violet-600"
+              iconBg="bg-[#F0F9FF] text-violet-600"
               label="Lượt làm"
               className="lg:col-span-6"
             >

@@ -205,7 +205,7 @@ export function AssessmentPdfPageWorkspace({ assessment, questions, isDraft, onR
                   <div className="flex items-start justify-between gap-2 mb-1">
                     <span className="font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#64748b]">Câu {q.orderIndex}</span>
                     {isDraft ? (
-                      <button type="button" className="inline-flex items-center gap-1 text-[11px] text-indigo-700 hover:underline" onClick={() => openEdit(q)}>
+                      <button type="button" className="inline-flex items-center gap-1 text-[11px] text-sky-700 hover:underline" onClick={() => openEdit(q)}>
                         <Pencil className="h-3.5 w-3.5" /> Sửa
                       </button>
                     ) : null}

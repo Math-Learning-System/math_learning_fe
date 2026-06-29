@@ -202,7 +202,7 @@ const TokenConfigPage: React.FC = () => {
                   className={`bg-white rounded-2xl border transition-all duration-200 ${
                     isEditing
                       ? 'border-[#0ea5e9] shadow-sm'
-                      : 'border-[#e2e8f0] hover:border-[#D5D3C9]'
+                      : 'border-[#e2e8f0] hover:border-[#cbd5e1]'
                   }`}
                 >
                   <div className="p-5 space-y-5">
@@ -478,7 +478,7 @@ const TokenConfigPage: React.FC = () => {
                             </span>
                             {formatValue(log.oldValue)}
                           </div>
-                          <span className="text-[#D5D3C9] text-lg">→</span>
+                          <span className="text-[#cbd5e1] text-lg">→</span>
                           <div className="flex flex-col items-center gap-1 flex-1">
                             <span className="font-[Be_Vietnam_Pro] text-[10px] uppercase font-semibold text-[#A8A7A0] tracking-wide">
                               Sau

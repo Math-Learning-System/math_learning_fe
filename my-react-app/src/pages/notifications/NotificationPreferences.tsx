@@ -172,7 +172,7 @@ const NotificationPreferences: React.FC = () => {
               </p>
             </div>
             <button
-              className="flex items-center gap-2 bg-[#e2e8f0] text-[#334155] rounded-xl px-4 py-2.5 font-['Be_Vietnam_Pro'] text-[14px] font-medium shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] hover:shadow-[#e2e8f0_0px_0px_0px_0px,#C2C0B6_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150 disabled:opacity-50"
+              className="flex items-center gap-2 bg-[#e2e8f0] text-[#334155] rounded-xl px-4 py-2.5 font-['Be_Vietnam_Pro'] text-[14px] font-medium shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] hover:shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150 disabled:opacity-50"
               onClick={handleResetToDefaults}
               disabled={isResetting || resetMutation.isPending}
             >

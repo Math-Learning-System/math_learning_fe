@@ -26,7 +26,7 @@
    ══════════════════════════════════ */
 .contact-hero {
   padding: 8rem 0 4rem;
-  background: var(--c-bg, #fafaff);
+  background: var(--c-bg, #f8fafc);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -71,7 +71,7 @@
    ══════════════════════════════════ */
 .contact-main-section {
   padding: 1rem 0 5rem;
-  background: var(--c-bg, #fafaff);
+  background: var(--c-bg, #f8fafc);
   position: relative;
 }
 

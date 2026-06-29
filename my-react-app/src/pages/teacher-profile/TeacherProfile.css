@@ -29,7 +29,7 @@
 .tp-card-header {
   padding: 1.75rem 2rem 1.5rem;
   border-bottom: 1px solid #f0edf8;
-  background: linear-gradient(135deg, #fafaff 0%, #f5f3ff 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
   position: relative;
 }
 
@@ -179,7 +179,7 @@
 
 /* ── Info Grid ── */
 .tp-info-grid {
-  background: #fafaff;
+  background: #f8fafc;
   border: 1px solid #f0edf8;
   border-radius: 14px;
   overflow: hidden;
@@ -201,7 +201,7 @@
 }
 
 .tp-info-row:hover {
-  background: #f5f3ff;
+  background: #f0f9ff;
 }
 
 .tp-info-label {
@@ -462,7 +462,7 @@
   outline: none;
   border-color: #0ea5e9;
   box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
-  background: #fafaff;
+  background: #f8fafc;
 }
 
 .tp-input:disabled,
@@ -473,7 +473,7 @@
 }
 
 .tp-input--readonly {
-  background: #f5f3ff;
+  background: #f0f9ff;
   color: #756b85;
   cursor: not-allowed;
   border-style: dashed;
@@ -501,13 +501,13 @@
   text-align: center;
   cursor: pointer;
   transition: all 0.25s ease;
-  background: #fafaff;
+  background: #f8fafc;
   user-select: none;
 }
 
 .tp-file-zone:hover {
   border-color: #0ea5e9;
-  background: #f5f3ff;
+  background: #f0f9ff;
 }
 
 .tp-file-zone--filled {
@@ -629,7 +629,7 @@
 }
 
 .tp-btn--ghost:hover:not(:disabled) {
-  background: #f5f3ff;
+  background: #f0f9ff;
   border-color: #c4bfcf;
   color: #0e0c15;
 }

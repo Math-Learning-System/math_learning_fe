@@ -395,29 +395,29 @@ const MaterialsGenerator: React.FC = () => {
                     label: 'Tổng tài liệu',
                     value: stats.total,
                     Icon: Presentation,
-                    bg: 'bg-[#FFF7ED]',
-                    color: 'text-[#E07B39]',
+                    bg: 'bg-[#F0F9FF]',
+                    color: 'text-[#0EA5E9]',
                   },
                   {
                     label: 'Slide bài giảng',
                     value: stats.slides,
                     Icon: Presentation,
-                    bg: 'bg-[#FFF7ED]',
-                    color: 'text-[#E07B39]',
+                    bg: 'bg-[#F0F9FF]',
+                    color: 'text-[#0EA5E9]',
                   },
                   {
                     label: 'Sơ đồ tư duy',
                     value: stats.mindmaps,
                     Icon: Network,
-                    bg: 'bg-[#F5F3FF]',
-                    color: 'text-[#9B6FE0]',
+                    bg: 'bg-[#F0F9FF]',
+                    color: 'text-[#0EA5E9]',
                   },
                   {
                     label: 'Công cụ AI',
                     value: cards.length,
                     Icon: Sparkles,
-                    bg: 'bg-[#F5F3FF]',
-                    color: 'text-[#9B6FE0]',
+                    bg: 'bg-[#F0F9FF]',
+                    color: 'text-[#0EA5E9]',
                   },
                 ] as const
               ).map(({ label, value, Icon, bg, color }) => (
@@ -580,8 +580,8 @@ const MaterialsGenerator: React.FC = () => {
                   key={`${row.kind}-${row.id}`}
                   className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] shadow-[rgba(0,0,0,0.05)_0px_4px_24px] overflow-hidden group hover:shadow-[0px_0px_0px_1px_#cbd5e1,rgba(0,0,0,0.08)_0px_8px_30px] hover:-translate-y-0.5 transition-all duration-200"
                 >
-                  <div className="h-[120px] relative flex items-end p-4 overflow-hidden bg-gradient-to-br from-[#FFF7ED] to-[#FFE8D6]">
-                    <span className="absolute top-3 left-3 font-[Playfair_Display] text-[12px] font-medium opacity-40 text-[#E07B39]">
+                  <div className="h-[120px] relative flex items-end p-4 overflow-hidden bg-gradient-to-br from-[#F0F9FF] to-[#BAE6FD]">
+                    <span className="absolute top-3 left-3 font-[Playfair_Display] text-[12px] font-medium opacity-40 text-[#0EA5E9]">
                       #{String(idx + 1).padStart(2, '0')}
                     </span>
                     <div className="absolute top-3 right-3">
@@ -611,7 +611,7 @@ const MaterialsGenerator: React.FC = () => {
                         </>
                       )}
                     </div>
-                    <h3 className="relative font-[Playfair_Display] text-[15px] font-medium leading-[1.3] line-clamp-2 text-[#E07B39]">
+                    <h3 className="relative font-[Playfair_Display] text-[15px] font-medium leading-[1.3] line-clamp-2 text-[#0EA5E9]">
                       {row.title}
                     </h3>
                   </div>

@@ -99,13 +99,13 @@ const cognitiveLevelLabel: Record<string, string> = {
 const coverGradients = [
   'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
   'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
-  'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
+  'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
   'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
   'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)',
   'linear-gradient(135deg, #ecfeff 0%, #cffafe 100%)',
 ] as const;
 
-const coverAccents = ['#1d4ed8', '#047857', '#6d28d9', '#c2410c', '#be185d', '#0f766e'] as const;
+const coverAccents = ['#1d4ed8', '#047857', '#0369a1', '#c2410c', '#be185d', '#0f766e'] as const;
 
 const LoadingSpinner = ({ label }: { label: string }) => (
   <span
@@ -402,7 +402,7 @@ export function TemplateDashboard() {
       <div className="px-6 py-8 lg:px-8">
         <div className="space-y-6">
           {hasTargetContext && (
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-4 py-3 rounded-2xl bg-[#EEF2FF] border border-[#C7D2FE]">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-4 py-3 rounded-2xl bg-[#F0F9FF] border border-[#BAE6FD]">
               <p className="font-[Be_Vietnam_Pro] text-[13px] text-[#1e3a8a] leading-relaxed">
                 Đang chọn mẫu để bổ sung câu cho{' '}
                 <strong className="text-[#172554]">{targetBankName ?? '(ngân hàng)'}</strong>
@@ -416,7 +416,7 @@ export function TemplateDashboard() {
               </p>
               <button
                 type="button"
-                className="flex-shrink-0 px-3 py-2 rounded-xl border border-[#A5B4FC] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#3730A3] hover:bg-[#EEF2FF] transition-colors"
+                className="flex-shrink-0 px-3 py-2 rounded-xl border border-[#38BDF8] bg-white font-[Be_Vietnam_Pro] text-[12px] font-medium text-[#0284C7] hover:bg-[#F0F9FF] transition-colors"
                 onClick={() => {
                   const next = new URLSearchParams(searchParams);
                   next.delete('bankId');
@@ -477,7 +477,7 @@ export function TemplateDashboard() {
                   label: 'Tổng mẫu',
                   value: stats.total,
                   Icon: FileText,
-                  bg: 'bg-[#EEF2FF]',
+                  bg: 'bg-[#F0F9FF]',
                   color: 'text-[#4F7EF7]',
                 },
                 {
@@ -491,8 +491,8 @@ export function TemplateDashboard() {
                   label: 'Nháp',
                   value: stats.draft,
                   Icon: Network,
-                  bg: 'bg-[#FFF7ED]',
-                  color: 'text-[#E07B39]',
+                  bg: 'bg-[#F0F9FF]',
+                  color: 'text-[#0EA5E9]',
                 },
               ] as const
             ).map(({ label, value, Icon, bg, color }) => (

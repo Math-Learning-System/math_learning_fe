@@ -151,9 +151,9 @@ const Homepage: React.FC = () => {
           <div className="intro-content">
             <div className="intro-icon-card">
               <svg viewBox="0 0 100 100" fill="none" className="intro-math-icon" aria-hidden="true">
-                <text x="8" y="48" fontSize="36" fontWeight="700" fill="#5E5CE6" fontFamily="serif">³</text>
+                <text x="8" y="48" fontSize="36" fontWeight="700" fill="#0EA5E9" fontFamily="serif">³</text>
                 <text x="24" y="72" fontSize="52" fontWeight="700" fill="#1a1a2e" fontFamily="serif">√</text>
-                <text x="58" y="72" fontSize="42" fontWeight="800" fill="#5E5CE6" fontFamily="sans-serif">x</text>
+                <text x="58" y="72" fontSize="42" fontWeight="800" fill="#0EA5E9" fontFamily="sans-serif">x</text>
               </svg>
             </div>
             <div className="intro-text">

@@ -46,8 +46,8 @@ const RoadmapHeader: React.FC<RoadmapHeaderProps> = ({
               label: 'Đang học',
               value: inProgress,
               Icon: Clock3,
-              bg: 'bg-[#FFF7ED]',
-              color: 'text-[#E07B39]',
+              bg: 'bg-[#F0F9FF]',
+              color: 'text-[#0EA5E9]',
             },
             {
               label: 'Hoàn thành',
@@ -60,7 +60,7 @@ const RoadmapHeader: React.FC<RoadmapHeaderProps> = ({
               label: 'Tiến độ TB',
               value: `${avgProgress}%`,
               Icon: BarChart3,
-              bg: 'bg-[#EEF2FF]',
+              bg: 'bg-[#F0F9FF]',
               color: 'text-[#4F7EF7]',
             },
           ] as const

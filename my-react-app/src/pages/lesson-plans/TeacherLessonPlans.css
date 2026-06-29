@@ -405,12 +405,12 @@
 }
 
 .module-layout-container .create-course-modal .lesson-plan-view-wizard .lp-ds--orange {
-  background: #fdf8f3;
-  border-color: #ebe3dc;
-  border-left-color: #b85839;
+  background: #fff7ed;
+  border-color: #fed7aa;
+  border-left-color: #f97316;
 }
 .module-layout-container .create-course-modal .lesson-plan-view-wizard .lp-di--orange {
-  background: #f5e6dc;
+  background: #ffedd5;
   color: #7a3d28;
 }
 
@@ -898,7 +898,7 @@
   border-left-color: #22c55e;
 }
 .lp-ds--violet {
-  background: #f5f3ff;
+  background: #f0f9ff;
   border-color: #ddd6fe;
   border-left-color: #14b8a6;
 }
@@ -922,8 +922,8 @@
   color: #15803d;
 }
 .lp-di--violet {
-  background: #ede9fe;
-  color: #6d28d9;
+  background: #e0f2fe;
+  color: #0369a1;
 }
 .lp-di--orange {
   background: #ffedd5;

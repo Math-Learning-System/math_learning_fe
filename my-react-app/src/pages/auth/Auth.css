@@ -763,15 +763,15 @@
 }
 
 .auth-container .btn-primary:hover:not(:disabled) {
-  background: #b65b3c;
+  background: #0284c7;
   color: #fff;
-  box-shadow: 0px 0px 0px 1px #c2c0b6;
+  box-shadow: 0px 0px 0px 1px #cbd5e1;
   transform: translateY(-1px);
 }
 
 .auth-container .btn-primary:active:not(:disabled) {
   transform: translateY(0);
-  box-shadow: 0px 0px 0px 1px #c2c0b6;
+  box-shadow: 0px 0px 0px 1px #cbd5e1;
 }
 
 .auth-container .btn-outline {

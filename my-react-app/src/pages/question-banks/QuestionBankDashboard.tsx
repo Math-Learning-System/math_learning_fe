@@ -42,13 +42,13 @@ import { QuestionBankFormModal } from './QuestionBankFormModal';
 const coverGradients = [
   'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
   'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
-  'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
+  'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
   'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
   'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)',
   'linear-gradient(135deg, #ecfeff 0%, #cffafe 100%)',
 ] as const;
 
-const coverAccents = ['#1d4ed8', '#047857', '#6d28d9', '#c2410c', '#be185d', '#0f766e'] as const;
+const coverAccents = ['#1d4ed8', '#047857', '#0369a1', '#c2410c', '#be185d', '#0f766e'] as const;
 
 const PAGE_SIZE_OPTIONS = [10, 20, 30, 50];
 
@@ -271,15 +271,15 @@ export function QuestionBankDashboard() {
                   label: 'Tổng ngân hàng',
                   value: effectiveTotalElements,
                   Icon: Database,
-                  bg: 'bg-[#EEF2FF]',
+                  bg: 'bg-[#F0F9FF]',
                   color: 'text-[#4F7EF7]',
                 },
                 {
                   label: 'Câu hỏi',
                   value: pageStats.questionsOnPage,
                   Icon: BookOpen,
-                  bg: 'bg-[#F5F3FF]',
-                  color: 'text-[#9B6FE0]',
+                  bg: 'bg-[#F0F9FF]',
+                  color: 'text-[#0EA5E9]',
                 },
               ] as const
             ).map(({ label, value, Icon, bg, color }) => (
@@ -399,7 +399,7 @@ export function QuestionBankDashboard() {
               </strong>
               <div className="hidden sm:block w-px h-4 bg-[#e2e8f0]" />
               <span className="flex items-center gap-1.5 font-[Be_Vietnam_Pro] text-[12px] text-[#64748b]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#9B6FE0] inline-block" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#0EA5E9] inline-block" />
                 Tổng câu hỏi{' '}
                 <strong className="text-[#0f172a] font-semibold tabular-nums">
                   {pageStats.questionsOnPage}

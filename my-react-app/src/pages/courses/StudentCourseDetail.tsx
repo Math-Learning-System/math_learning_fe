@@ -58,7 +58,7 @@ const coverGradients = [
   'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
   'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
   'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)',
-  'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
+  'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
 ] as const;
 
 const levelMap: Record<string, { label: string; color: string }> = {
@@ -196,7 +196,7 @@ const StudentCourseDetail: React.FC = () => {
             className="rounded-2xl border border-[#e2e8f0] bg-white shadow-[0_2px_24px_rgba(20,20,19,0.06)] overflow-hidden"
           >
             <div
-              className="h-1 w-full bg-gradient-to-r from-[#0ea5e9] via-[#E07B39] to-[#6366F1]"
+              className="h-1 w-full bg-gradient-to-r from-[#0ea5e9] via-[#0EA5E9] to-[#0EA5E9]"
               aria-hidden
             />
             <div className="p-6 md:p-8 space-y-6">
@@ -246,7 +246,7 @@ const StudentCourseDetail: React.FC = () => {
                       Giảng viên:{' '}
                       <Link
                         to={`/student/instructors/${teacherProfile.userId}`}
-                        className="font-semibold text-[#4338CA] hover:text-[#3730A3]"
+                        className="font-semibold text-[#0369A1] hover:text-[#0284C7]"
                       >
                         {teacherProfile.fullName}
                       </Link>
@@ -256,7 +256,7 @@ const StudentCourseDetail: React.FC = () => {
                   {course ? (
                     <div className="flex flex-wrap gap-2">
                       {course.provider === 'MINISTRY' ? (
-                        <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-[#EEF2FF] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#1e3a8a]">
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-[#F0F9FF] px-3 py-1.5 font-[Be_Vietnam_Pro] text-[11px] font-semibold text-[#1e3a8a]">
                           <BookOpen size={12} strokeWidth={2} /> Chuẩn Bộ GD&ĐT
                         </span>
                       ) : (
@@ -323,7 +323,7 @@ const StudentCourseDetail: React.FC = () => {
                       </div>
                       <div className="h-2 rounded-full bg-[#e2e8f0] overflow-hidden">
                         <div
-                          className="h-full rounded-full bg-gradient-to-r from-[#0ea5e9] to-[#E07B39] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+                          className="h-full rounded-full bg-gradient-to-r from-[#0ea5e9] to-[#0EA5E9] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
                           style={{
                             width: `${Math.min(100, Math.max(0, progress.completionRate))}%`,
                           }}

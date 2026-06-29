@@ -527,7 +527,7 @@ const HelpCenter: React.FC = () => {
 
               <div className="p-5 border-t border-[#e2e8f0] bg-[#f8fafc] flex justify-end gap-3">
                 <button
-                  className="px-5 py-2.5 rounded-xl font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#334155] bg-[#e2e8f0] shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] hover:shadow-[#e2e8f0_0px_0px_0px_0px,#C2C0B6_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150"
+                  className="px-5 py-2.5 rounded-xl font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#334155] bg-[#e2e8f0] shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] hover:shadow-[#e2e8f0_0px_0px_0px_0px,#cbd5e1_0px_0px_0px_1px] active:scale-[0.98] transition-all duration-150"
                   onClick={() => setShowContactModal(false)}
                 >
                   Hủy

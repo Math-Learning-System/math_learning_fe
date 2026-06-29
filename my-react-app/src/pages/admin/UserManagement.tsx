@@ -329,15 +329,15 @@ const UserManagement: React.FC = () => {
                       label: 'Tổng người dùng',
                       value: showSkeleton ? '…' : stats.total,
                       Icon: Users,
-                      bg: 'bg-[#EEF2FF]',
+                      bg: 'bg-[#F0F9FF]',
                       color: 'text-[#4F7EF7]',
                     },
                     {
                       label: 'Admin',
                       value: showSkeleton ? '…' : stats.admins,
                       Icon: Settings,
-                      bg: 'bg-[#F5F3FF]',
-                      color: 'text-[#9B6FE0]',
+                      bg: 'bg-[#F0F9FF]',
+                      color: 'text-[#0EA5E9]',
                     },
                     {
                       label: 'Giáo viên',
@@ -351,7 +351,7 @@ const UserManagement: React.FC = () => {
                       value: showSkeleton ? '…' : stats.students,
                       Icon: GraduationCap,
                       bg: 'bg-[#FFF7ED]',
-                      color: 'text-[#E07B39]',
+                      color: 'text-[#0EA5E9]',
                     },
                     {
                       label: 'Đang hoạt động',

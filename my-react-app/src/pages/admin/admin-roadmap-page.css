@@ -51,10 +51,10 @@
 }
 
 .admin-roadmap-page__action:hover {
-  background: #b85a3a;
+  background: #0284c7;
   box-shadow:
-    #b85a3a 0 0 0 0,
-    #b85a3a 0 0 0 1px;
+    #0284c7 0 0 0 0,
+    #0284c7 0 0 0 1px;
   transform: translateY(-1px);
 }
 
@@ -372,7 +372,7 @@
 
 .admin-roadmap-page__page-btn:hover:not(:disabled) {
   background: #f8fafc;
-  border-color: #c2c0b6;
+  border-color: #cbd5e1;
   transform: translateY(-1px);
 }
 
@@ -721,7 +721,7 @@
   background: #dedcd2;
   box-shadow:
     #dedcd2 0 0 0 0,
-    #c2c0b6 0 0 0 1px;
+    #cbd5e1 0 0 0 1px;
   transform: translateY(-1px);
 }
 

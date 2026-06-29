@@ -614,7 +614,7 @@ const CashFlowDashboard: React.FC = () => {
                   amount={summary.netCashFlow}
                   trend={summary.netTrend}
                   icon={Wallet}
-                  iconBg="bg-[#EEF2FF]"
+                  iconBg="bg-[#F0F9FF]"
                   iconColor="text-[#4F7EF7]"
                 />
               </div>

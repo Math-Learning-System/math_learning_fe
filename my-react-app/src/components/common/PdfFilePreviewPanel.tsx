@@ -39,7 +39,7 @@ export function PdfFilePreviewPanel({
     ? 'font-[Be_Vietnam_Pro] text-[11px] text-[#64748b]'
     : 'text-xs text-slate-500';
   const linkCls = isWarm
-    ? 'inline-flex shrink-0 items-center gap-1 font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#0ea5e9] hover:text-[#A84F33]'
+    ? 'inline-flex shrink-0 items-center gap-1 font-[Be_Vietnam_Pro] text-[11px] font-medium text-[#0ea5e9] hover:text-[#0284c7]'
     : 'inline-flex shrink-0 items-center gap-1 text-xs font-medium text-blue-600 hover:text-blue-800';
   const bodyBg = isWarm ? 'bg-[#f8fafc]' : 'bg-slate-100';
 

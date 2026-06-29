@@ -345,7 +345,7 @@ export function QuestionBankDetailPage() {
 
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-4 border-t border-[#e2e8f0]">
                   <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-3 flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-[#EEF2FF] flex items-center justify-center flex-shrink-0">
+                    <div className="w-9 h-9 rounded-xl bg-[#F0F9FF] flex items-center justify-center flex-shrink-0">
                       <ListChecks className="w-4 h-4 text-[#4F7EF7]" aria-hidden />
                     </div>
                     <div className="min-w-0">
@@ -376,8 +376,8 @@ export function QuestionBankDetailPage() {
                     </div>
                   </div>
                   <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-3 flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-[#FFF7ED] flex items-center justify-center flex-shrink-0">
-                      <BookOpen className="w-4 h-4 text-[#E07B39]" aria-hidden />
+                    <div className="w-9 h-9 rounded-xl bg-[#F0F9FF] flex items-center justify-center flex-shrink-0">
+                      <BookOpen className="w-4 h-4 text-[#0EA5E9]" aria-hidden />
                     </div>
                     <div className="min-w-0">
                       <p
@@ -393,8 +393,8 @@ export function QuestionBankDetailPage() {
                     </div>
                   </div>
                   <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-3 flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-xl bg-[#F5F3FF] flex items-center justify-center flex-shrink-0">
-                      <User className="w-4 h-4 text-[#9B6FE0]" aria-hidden />
+                    <div className="w-9 h-9 rounded-xl bg-[#F0F9FF] flex items-center justify-center flex-shrink-0">
+                      <User className="w-4 h-4 text-[#0EA5E9]" aria-hidden />
                     </div>
                     <div className="min-w-0">
                       <p className="font-[Be_Vietnam_Pro] text-[13px] font-semibold text-[#0f172a] leading-tight truncate">
@@ -444,7 +444,7 @@ export function QuestionBankDetailPage() {
                 <span
                   className={`tabular-nums text-[11px] font-bold px-1.5 py-0.5 rounded-full ${
                     activeTab === 'all'
-                      ? 'bg-[#EEF2FF] text-[#4F7EF7]'
+                      ? 'bg-[#F0F9FF] text-[#4F7EF7]'
                       : 'bg-[#e2e8f0] text-[#475569]'
                   }`}
                 >

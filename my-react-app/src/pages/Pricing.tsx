@@ -471,7 +471,7 @@ const Pricing: React.FC = () => {
                       label: 'Số dư ví',
                       value: wallet ? formatPrice(wallet.balance) : '—',
                       Icon: CreditCard,
-                      bg: 'bg-[#EEF2FF]',
+                      bg: 'bg-[#F0F9FF]',
                       color: 'text-[#4F7EF7]',
                     },
                     {
@@ -489,15 +489,15 @@ const Pricing: React.FC = () => {
                         ? String(activeSubscription.tokenQuota)
                         : '—',
                       Icon: Layers,
-                      bg: 'bg-[#F5F3FF]',
-                      color: 'text-[#9B6FE0]',
+                      bg: 'bg-[#F0F9FF]',
+                      color: 'text-[#0EA5E9]',
                     },
                     {
                       label: 'Gói đang dùng',
                       value: activeSubscription ? activeSubscription.planName : '—',
                       Icon: Tag,
                       bg: 'bg-[#FFF7ED]',
-                      color: 'text-[#E07B39]',
+                      color: 'text-[#0EA5E9]',
                     },
                   ] as const
                 ).map(({ label, value, Icon, bg, color }) => (

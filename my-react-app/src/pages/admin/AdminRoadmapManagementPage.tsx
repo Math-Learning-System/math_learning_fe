@@ -166,7 +166,7 @@ export default function AdminRoadmapManagementPage() {
                     label: 'Tổng bản ghi',
                     value: isLoading ? '…' : totalElements,
                     Icon: Route,
-                    bg: 'bg-[#EEF2FF]',
+                    bg: 'bg-[#F0F9FF]',
                     color: 'text-[#4F7EF7]',
                   },
                   {
@@ -181,14 +181,14 @@ export default function AdminRoadmapManagementPage() {
                     value: isLoading ? '…' : pageStatusStats.inProgress,
                     Icon: Clock3,
                     bg: 'bg-[#FFF7ED]',
-                    color: 'text-[#E07B39]',
+                    color: 'text-[#0EA5E9]',
                   },
                   {
                     label: 'Hoàn thành (trang)',
                     value: isLoading ? '…' : pageStatusStats.done,
                     Icon: Trophy,
-                    bg: 'bg-[#F5F3FF]',
-                    color: 'text-[#9B6FE0]',
+                    bg: 'bg-[#F0F9FF]',
+                    color: 'text-[#0EA5E9]',
                   },
                 ] as const
               ).map(({ label, value, Icon, bg, color }) => (

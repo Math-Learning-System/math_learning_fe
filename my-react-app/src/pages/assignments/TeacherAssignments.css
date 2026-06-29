@@ -96,7 +96,7 @@
   border-color: #fde68a;
 }
 .module-layout-container .stat-card.stat-violet {
-  background: linear-gradient(145deg, #f5f3ff, #ede9fe);
+  background: linear-gradient(145deg, #f0f9ff, #e0f2fe);
   border-color: #ddd6fe;
 }
 
@@ -110,7 +110,7 @@
   color: #92400e;
 }
 .module-layout-container .stat-card.stat-violet h3 {
-  color: #6d28d9;
+  color: #0369a1;
 }
 
 .module-layout-container .stat-card.stat-blue h3,

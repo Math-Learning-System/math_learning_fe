@@ -481,7 +481,7 @@ export function AssessmentPdfOcrPanel({
                   Trang {p.pageNumber}
                 </span>
                 {p.status === 'running' ? (
-                  <Loader2 className="h-4 w-4 animate-spin text-indigo-600" />
+                  <Loader2 className="h-4 w-4 animate-spin text-sky-600" />
                 ) : p.status === 'done' ? (
                   <CheckCircle2 className="h-4 w-4 text-emerald-600" />
                 ) : p.status === 'error' ? (
@@ -495,7 +495,7 @@ export function AssessmentPdfOcrPanel({
                 {p.status === 'done' ? (
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 text-[11px] text-indigo-700 hover:underline"
+                    className="inline-flex items-center gap-1 text-[11px] text-sky-700 hover:underline"
                     onClick={() =>
                       setPreviewPageNumber((cur) =>
                         cur === p.pageNumber ? null : p.pageNumber

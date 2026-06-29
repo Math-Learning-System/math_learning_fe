@@ -89,8 +89,8 @@
   color: #0369a1;
 }
 .module-layout-container .stat-violet .stat-icon-wrap {
-  background: #f5f3ff;
-  color: #6d28d9;
+  background: #f0f9ff;
+  color: #0369a1;
 }
 .module-layout-container .stat-emerald .stat-icon-wrap {
   background: #ecfdf5;
@@ -176,8 +176,8 @@
   color: #1d4ed8;
 }
 .module-layout-container .tool-accent-violet .materials-tool-icon {
-  background: #f5f3ff;
-  color: #6d28d9;
+  background: #f0f9ff;
+  color: #0369a1;
 }
 .module-layout-container .tool-accent-amber .materials-tool-icon {
   background: #fffbeb;
@@ -255,8 +255,8 @@
   box-shadow: 0 6px 16px rgba(124, 58, 237, 0.3);
 }
 .module-layout-container .materials-tool-cta.materials-tool-cta--violet:hover:not(:disabled) {
-  background: #6d28d9;
-  border-color: #6d28d9;
+  background: #0369a1;
+  border-color: #0369a1;
   color: #fff;
 }
 
@@ -325,8 +325,8 @@
 }
 
 .module-layout-container .badge.materials-kind-badge.mindmap {
-  background: #f5f3ff;
-  color: #6d28d9;
+  background: #f0f9ff;
+  color: #0369a1;
   border-color: #ddd6fe;
 }
 
@@ -365,13 +365,13 @@
 }
 
 .module-layout-container .materials-action-btn.materials-action-btn--mindmap {
-  color: #6d28d9;
-  background: #f5f3ff;
+  color: #0369a1;
+  background: #f0f9ff;
   border-color: #ddd6fe;
   box-shadow: none;
 }
 .module-layout-container .materials-action-btn.materials-action-btn--mindmap:hover:not(:disabled) {
-  background: #ede9fe;
+  background: #e0f2fe;
   border-color: #c4b5fd;
   color: #5b21b6;
 }

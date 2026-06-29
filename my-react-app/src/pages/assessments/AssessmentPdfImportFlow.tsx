@@ -1255,7 +1255,7 @@ function ParsedQuestionsList({
               <MathText text={q.questionText} />
             </div>
             {q.detail?.mathLatex && q.detail.mathLatex.length > 0 && (
-              <p className="mt-1 font-mono text-[11px] text-[#6D28D9]">
+              <p className="mt-1 font-mono text-[11px] text-[#0369A1]">
                 LaTeX: {q.detail.mathLatex.slice(0, 2).join(' · ')}
                 {q.detail.mathLatex.length > 2 ? '…' : ''}
               </p>

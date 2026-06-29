@@ -161,7 +161,7 @@ const RevenueBreakdownChart: React.FC<RevenueBreakdownChartProps> = ({ data, gro
             dataKey="subscriptions"
             name="Gói đăng ký"
             stackId="1"
-            fill="#9b6fe0"
+            fill="#0ea5e9"
             radius={[0, 0, 0, 0]}
             animationDuration={1500}
           />

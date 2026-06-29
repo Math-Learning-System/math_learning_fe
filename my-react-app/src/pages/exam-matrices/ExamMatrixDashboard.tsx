@@ -50,13 +50,13 @@ import { ExamMatrixFormModal } from './ExamMatrixFormModal';
 const coverGradients = [
   'linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)',
   'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
-  'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
+  'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
   'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
   'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)',
   'linear-gradient(135deg, #ecfeff 0%, #cffafe 100%)',
 ] as const;
 
-const coverAccents = ['#1d4ed8', '#047857', '#6d28d9', '#c2410c', '#be185d', '#0f766e'] as const;
+const coverAccents = ['#1d4ed8', '#047857', '#0369a1', '#c2410c', '#be185d', '#0f766e'] as const;
 
 const filters: Array<'ALL' | MatrixStatus> = [
   'ALL',
@@ -340,7 +340,7 @@ export function ExamMatrixDashboard() {
                   label: 'Tổng ma trận',
                   value: stats.total,
                   Icon: Grid2x2,
-                  bg: 'bg-[#EEF2FF]',
+                  bg: 'bg-[#F0F9FF]',
                   color: 'text-[#4F7EF7]',
                 },
                 {
@@ -348,7 +348,7 @@ export function ExamMatrixDashboard() {
                   value: stats.draft,
                   Icon: FileText,
                   bg: 'bg-[#FFF7ED]',
-                  color: 'text-[#E07B39]',
+                  color: 'text-[#0EA5E9]',
                 },
                 {
                   label: 'Đã phê duyệt',
@@ -428,7 +428,7 @@ export function ExamMatrixDashboard() {
                 <div className="rounded-xl border border-[#e2e8f0] bg-[#ffffff] p-4 flex flex-col gap-2 hover:border-[#cbd5e1] transition-colors">
                   <div className="flex items-center gap-2">
                     <span
-                      className="w-6 h-6 rounded-full bg-[#f5f3ff] text-[#6d28d9] flex items-center justify-center font-[Be_Vietnam_Pro] text-[11px] font-bold"
+                      className="w-6 h-6 rounded-full bg-[#f0f9ff] text-[#0369a1] flex items-center justify-center font-[Be_Vietnam_Pro] text-[11px] font-bold"
                       aria-hidden
                     >
                       3

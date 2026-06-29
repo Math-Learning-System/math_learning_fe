@@ -17,7 +17,7 @@ const COVER_GRADIENTS = [
   'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)',
   'linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%)',
   'linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%)',
-  'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%)',
+  'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)',
 ] as const;
 
 const COVER_ACCENTS = [
@@ -26,7 +26,7 @@ const COVER_ACCENTS = [
   '#047857',
   '#c2410c',
   '#be185d',
-  '#6d28d9',
+  '#0369a1',
 ] as const;
 
 const FEATURED_COVER: React.CSSProperties = {

@@ -263,7 +263,7 @@ const TeacherCommissionPage: React.FC = () => {
                 <div className="tcp-spinner"><Loader2 size={22} className="tcp-spin" /></div>
               ) : proposals.length === 0 ? (
                 <div className="tcp-empty">
-                  <Percent size={32} style={{ color: '#C2C0B6' }} />
+                  <Percent size={32} style={{ color: '#cbd5e1' }} />
                   <p>Chưa có đề xuất nào.</p>
                 </div>
               ) : (

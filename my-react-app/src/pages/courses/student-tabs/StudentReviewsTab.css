@@ -124,7 +124,7 @@
 }
 
 .srt-stat-row.active {
-  background: #f5f3ff;
+  background: #f0f9ff;
   border-color: rgba(67, 56, 202, 0.28);
 }
 
@@ -263,7 +263,7 @@
   font-weight: 700;
   color: #0369a1;
   font-size: 0.75rem;
-  background: #f5f3ff;
+  background: #f0f9ff;
   padding: 0.25rem 0.55rem;
   border-radius: 999px;
   border: 1px solid rgba(67, 56, 202, 0.18);
@@ -366,7 +366,7 @@
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background: #f5f3ff;
+  background: #f0f9ff;
   color: #0369a1;
   display: flex;
   align-items: center;
@@ -481,7 +481,7 @@
 }
 
 .srt-active-filter-badge {
-  background: #f5f3ff;
+  background: #f0f9ff;
   color: #0369a1;
   padding: 0.25rem 0.45rem;
   border-radius: 999px;

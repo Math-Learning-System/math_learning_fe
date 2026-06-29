@@ -159,7 +159,7 @@ export default function StudentAssessmentList() {
                   label: `Tổng ${UI_TEXT.QUIZ.toLowerCase()}`,
                   value: statsTotalDisplay,
                   Icon: ClipboardList,
-                  bg: 'bg-[#EEF2FF]',
+                  bg: 'bg-[#F0F9FF]',
                   color: 'text-[#4F7EF7]',
                 },
                 {
@@ -173,8 +173,8 @@ export default function StudentAssessmentList() {
                   label: 'Đang làm',
                   value: isLoading ? '…' : summary.IN_PROGRESS,
                   Icon: ListChecks,
-                  bg: 'bg-[#FFF7ED]',
-                  color: 'text-[#E07B39]',
+                  bg: 'bg-[#F0F9FF]',
+                  color: 'text-[#0EA5E9]',
                 },
                 {
                   label: 'Hoàn thành',

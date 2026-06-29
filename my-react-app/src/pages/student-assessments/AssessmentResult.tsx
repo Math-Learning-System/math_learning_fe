@@ -427,7 +427,7 @@ export default function AssessmentResult() {
           />
           <MiniStat
             icon={Award}
-            iconBg="bg-[#EEF2FF] text-indigo-600"
+            iconBg="bg-[#F0F9FF] text-sky-600"
             label="Tự động chấm"
             value={result.autoGradedQuestionsCount}
           />

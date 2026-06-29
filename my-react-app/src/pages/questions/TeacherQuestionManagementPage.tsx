@@ -244,7 +244,7 @@ export default function TeacherQuestionManagementPage() {
       title: 'Ngân hàng câu hỏi',
       desc: 'Quản lý kho câu hỏi dùng cho ma trận đề',
       icon: Database,
-      iconBg: 'bg-[#EEF2FF]',
+      iconBg: 'bg-[#F0F9FF]',
       iconColor: 'text-[#4F7EF7]',
       onClick: () => navigate('/teacher/question-banks'),
     },
@@ -253,8 +253,8 @@ export default function TeacherQuestionManagementPage() {
       title: 'Mẫu câu hỏi',
       desc: 'Soạn mẫu và sinh câu hỏi với AI',
       icon: Sparkles,
-      iconBg: 'bg-[#F5F3FF]',
-      iconColor: 'text-[#9B6FE0]',
+      iconBg: 'bg-[#F0F9FF]',
+      iconColor: 'text-[#0EA5E9]',
       onClick: () => navigate('/teacher/question-templates'),
     },
     {
@@ -316,7 +316,7 @@ export default function TeacherQuestionManagementPage() {
                   label: 'Tổng câu hỏi',
                   value: totalElements,
                   Icon: FileQuestion,
-                  bg: 'bg-[#EEF2FF]',
+                  bg: 'bg-[#F0F9FF]',
                   color: 'text-[#4F7EF7]',
                 },
                 {
@@ -330,15 +330,15 @@ export default function TeacherQuestionManagementPage() {
                   label: 'Chờ / nháp (trang)',
                   value: pageStats.pendingOrDraft,
                   Icon: Clock,
-                  bg: 'bg-[#FFF7ED]',
-                  color: 'text-[#E07B39]',
+                  bg: 'bg-[#F0F9FF]',
+                  color: 'text-[#0EA5E9]',
                 },
                 {
                   label: 'Trắc nghiệm (trang)',
                   value: pageStats.mcq,
                   Icon: FileText,
-                  bg: 'bg-[#F5F3FF]',
-                  color: 'text-[#9B6FE0]',
+                  bg: 'bg-[#F0F9FF]',
+                  color: 'text-[#0EA5E9]',
                 },
               ] as const
             ).map(({ label, value, Icon, bg, color }) => (
@@ -543,7 +543,7 @@ export default function TeacherQuestionManagementPage() {
                   className="bg-[#ffffff] rounded-2xl border border-[#e2e8f0] p-4 flex flex-col lg:flex-row lg:items-center gap-4 hover:bg-white hover:shadow-[rgba(0,0,0,0.06)_0px_4px_16px] transition-all duration-150"
                 >
                   <div className="flex items-start gap-3 flex-1 min-w-0">
-                    <div className="w-11 h-11 rounded-xl bg-[#EEF2FF] flex items-center justify-center flex-shrink-0 text-[#4F7EF7]">
+                    <div className="w-11 h-11 rounded-xl bg-[#F0F9FF] flex items-center justify-center flex-shrink-0 text-[#4F7EF7]">
                       <FileQuestion className="w-5 h-5" />
                     </div>
                     <div className="flex-1 min-w-0 flex flex-col gap-2">

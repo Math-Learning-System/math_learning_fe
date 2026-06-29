@@ -155,7 +155,7 @@ const StudentDashboard: React.FC = () => {
               <Brain className="h-4 w-4" /> <span>Hỏi AI</span>
             </button>
             <button
-              className="inline-flex items-center gap-2 rounded-xl bg-[#e2e8f0] px-4 py-2.5 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#e2e8f0] px-4 py-2.5 font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#cbd5e1] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
               onClick={() => navigate('/student/courses')}
               aria-label="Học bài mới"
             >
@@ -268,7 +268,7 @@ const StudentDashboard: React.FC = () => {
                         </div>
                       )}
                       <button
-                        className="mt-3 inline-flex items-center gap-1 rounded-xl bg-[#e2e8f0] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
+                        className="mt-3 inline-flex items-center gap-1 rounded-xl bg-[#e2e8f0] px-3 py-2 font-[Be_Vietnam_Pro] text-[13px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#cbd5e1] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
                         onClick={() => {
                           setNavigatingTaskId(task.id);
                           navigate('/student/assessments');
@@ -469,7 +469,7 @@ const StudentDashboard: React.FC = () => {
               return (
                 <li key={qa.label}>
                   <button
-                    className="flex w-full items-center gap-2 rounded-xl bg-[#e2e8f0] px-3 py-2.5 text-left font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
+                    className="flex w-full items-center gap-2 rounded-xl bg-[#e2e8f0] px-3 py-2.5 text-left font-[Be_Vietnam_Pro] text-[14px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#cbd5e1] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98]"
                     onClick={() => navigate(qa.path)}
                     aria-label={qa.label}
                   >
@@ -533,7 +533,7 @@ const StudentDashboard: React.FC = () => {
                 <div className="mt-2 flex items-center justify-end gap-2">
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 rounded-xl bg-[#e2e8f0] px-3 py-2 text-[13px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98] disabled:opacity-50"
+                    className="inline-flex items-center gap-1 rounded-xl bg-[#e2e8f0] px-3 py-2 text-[13px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#cbd5e1] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98] disabled:opacity-50"
                     onClick={() => setRoadmapPage((p) => Math.max(1, p - 1))}
                     disabled={safeRoadmapPage === 1}
                   >
@@ -544,7 +544,7 @@ const StudentDashboard: React.FC = () => {
                   </span>
                   <button
                     type="button"
-                    className="inline-flex items-center gap-1 rounded-xl bg-[#e2e8f0] px-3 py-2 text-[13px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#C2C0B6] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98] disabled:opacity-50"
+                    className="inline-flex items-center gap-1 rounded-xl bg-[#e2e8f0] px-3 py-2 text-[13px] font-medium text-[#334155] shadow-[0px_0px_0px_1px_#cbd5e1] transition-all duration-150 hover:shadow-[0px_0px_0px_1px_#cbd5e1] focus-visible:ring-2 focus-visible:ring-[#3898EC] focus-visible:ring-offset-2 active:scale-[0.98] disabled:opacity-50"
                     onClick={() => setRoadmapPage((p) => Math.min(roadmapTotalPages, p + 1))}
                     disabled={safeRoadmapPage === roadmapTotalPages}
                   >
